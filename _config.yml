@@ -25,8 +25,8 @@ author: gakwaya
 
 # This URL is the main address for absolute links. Don't include a slash at the end.
 #
-url: 'https://rutura.github.io/learnqt'
-baseurl: '/feeling-responsive'
+url: 'https://rutura.github.io/learnqt/'
+baseurl: ''
 
 # This is for the editing function in _/includes/improve_content
 # Leave it empty if your site is not on GitHub/GitHub Pages
@@ -39,7 +39,7 @@ improve_content:
 # Markdown-Example for posts ![Image Text]({{ site.urlimg }}image.jpg)
 #
 #urlimg: 'https://phlow.github.io/feeling-responsive/images/'
-#urlimg: 'http://localhost:4000/feeling-responsive/images/'
+#urlimg: 'http://localhost:4000/images/'
 urlimg: 'https://rutura.github.io/learnqt/images/'
 
 
