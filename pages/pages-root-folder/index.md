@@ -9,12 +9,12 @@ header:
   image_fullwidth: header_qt.jpg
 widget1:
   title: "Qt C++ & GUI Video Courses"
-  url: 'https://learnqtguide.teachable.com/courses'
+  url: 'https://www.learnqt.guide/courses/'
   image: qt_courses.png
   text: 'Qt C++ GUI Development step by step courses from beginner level all the way to advanced stuff like Threading and Networking'
 widget2:
   title: "Courses on Qt Quick and QML"
-  url: 'https://learnqtguide.teachable.com/courses'
+  url: 'https://www.learnqt.guide/courses/'
   image: qt_qml.png
   text: 'Qt Quick and QML courses structured all the way from the beginner level to where you do advanced stuff like interfacing to C++. All covered'
 widget3:
@@ -33,7 +33,7 @@ widget3:
 # To change colors see sass/_01_settings_colors.scss
 #
 callforaction:
-  url: https://learnqtguide.teachable.com/courses
+  url: https://www.learnqt.guide/courses/
   text: See the courses we have on offer ›
   style: alert
 permalink: /index.html

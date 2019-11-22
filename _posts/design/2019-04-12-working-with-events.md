@@ -8,9 +8,8 @@ tags:
     - Qt
     - Events
 header:
-    title: Working with Events
+    title: Working with Qt Events
     background-color: "#EFC94C;"
-#    pattern: pattern_concrete.jpg
     image_fullwidth: header_qt.jpg
 ---
 

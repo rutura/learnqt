@@ -1,11 +1,11 @@
 - menu_name: "Important Links"
 
 - name: "Courses on Offer"
-  url: "http://entypo.com/"
+  url: "https://www.learnqt.guide/courses/"
   class: "network-entypo"
-  title: "Icons by Daniel Bruce"
+  title: "Courses on Offer"
 
-- name: "Why LearnQt and Udemy?"
-  url: "http://foundation.zurb.com/"
+- name: "Why do we host courses both on LearnQtGuide and Udemy ?"
+  url: "https://www.learnqt.guide/why-learnqt-udemy/"
   class: "services-newsletter"
-  title: "Built on Foundation"
+  title: "Why do we host courses both on LearnQtGuide and Udemy ?"
