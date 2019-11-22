@@ -11,9 +11,7 @@ header:
     title: Working with Events
     background-color: "#EFC94C;"
 #    pattern: pattern_concrete.jpg
-    image_fullwidth: unsplash_brooklyn-bridge_header.jpg
-    caption: This is a caption for working with events
-    caption_url: https://unsplash.com/
+    image_fullwidth: header_qt.jpg
 ---
 
 Qt has two main mechanisms to allow developers to react to things that happen in your application. One of these, which is more common is Signals and Slots. The other one, is using events. The aim of this guide is to lay out a comprehensive coverage of different techniques to deliver and handle events in Qt applications. The guide is highly practical and provides enough ground for the reader to try out the techniques in the IDE right way. It is expected of the reader to already have a basic understanding on working with Qt.
