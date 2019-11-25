@@ -5,7 +5,7 @@ permalink: "/courses/"
 header: no
 ---
 
-{% include alert alert='PROMOTION : Our Udemy courses discounted to just $9.99 for BLACK FRIDAY .Please navigate to your favorite course and hit the udemy button on any course of your choosing below. The deal is valid until Dec 29,2019' %}
+{% include alert alert='PROMOTION : Our Udemy courses discounted to just $9.99 for BLACK FRIDAY .Please navigate to your favorite course and hit the udemy button on any course of your choosing below. The deal is valid until Nov 29,2019' %}
 
 
 <div class="row">
