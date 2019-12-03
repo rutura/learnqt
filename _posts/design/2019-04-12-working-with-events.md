@@ -11,6 +11,7 @@ header:
     title: Working with Qt Events
     background-color: "#EFC94C;"
     image_fullwidth: header_qt.jpg
+sidebar: right
 comments: true
 ---
 
