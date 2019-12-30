@@ -43,6 +43,15 @@ urlimg: 'https://www.learnqt.guide/images/'
 #urlimg: 'http://localhost:4000/images/'
 #urlimg: 'https://rutura.github.io/learnqt/images/'
 
+# Course Links
+coupon: 'LEARNQT012020'
+couponvalidity: 'Jan 30,2020'
+qtguibeginners: 'https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beginners/?couponCode='
+qtguiintermediate: 'https://www.udemy.com/course/qt-c-gui-development-intermediate/?couponCode='
+qmlbeginners: 'https://www.udemy.com/course/qt_quick_qml_tutorial_for_beginners/?couponCode='
+qmlintermediate: 'https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-intermediate/?couponCode'
+qmladvanced: 'https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-advanced/?couponCode='
+multithreading: 'https://www.udemy.com/course/multi-threading-and-ipc-with-qt-c-plus-plus/?couponCode='
 
 # Logo size is 600x80 pixels
 logo: "logo.png"

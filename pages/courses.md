@@ -5,8 +5,10 @@ permalink: "/courses/"
 header: no
 ---
 
-{% include alert alert='PROMOTION : Our Udemy courses discounted to just $13.99 using coupon code LEARNQT112019 .Please navigate to your favorite course and hit the udemy button on any course of your choosing below. The deal is valid until Dec 22,2019' %}
-
+<div data-alert class="alert-box alert">
+  PROMOTION : Our Udemy courses discounted to just $13.99 using coupon code {{ site.coupon }} .Please navigate to your favorite course and hit the udemy button on any course of your choosing below. The deal is valid until {{ site.couponvalidity }}
+ 
+</div>
 
 <div class="row">
     <div class="medium-6 columns t30">
@@ -17,7 +19,7 @@ header: no
 
 			</div>
 
-			<a href="https://learnqtguide.teachable.com/p/beginning-qt-5-c-gui-development-the-fundamentals">
+			<a href="{{ site.qtguibeginners }}{{ site.coupon }}">
 			   <img src="{{ site.urlimg }}qt_gui_beginners.png" alt="">
 			</a>
 			<div class="card-section">
@@ -36,11 +38,10 @@ header: no
 					<li>Model View Architecture and more</li>
 
 				</ul>
-				<ul class="button-group round even-2">
-					<li><a href="https://learnqtguide.teachable.com/p/beginning-qt-5-c-gui-development-the-fundamentals" class="button alert">Take Course</a></li>
-					<li><a href="https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beginners/?couponCode=LEARNQT112019" class="button alert">Udemy</a></li>
-				</ul>
-				<p class="text-center"><a href="https://www.learnqt.guide/why-learnqt-udemy/">Why LearnQtGuide and Udemy?</a></p>
+					
+					<a href="{{ site.qtguibeginners }}{{ site.coupon }}" class="button expand round alert">Take Course on Udemy</a>
+			
+				
 			</div>
 		</div>
 
@@ -56,7 +57,7 @@ header: no
 
 			</div>
 			
-			<a href="https://learnqtguide.teachable.com/p/qt-c-gui-development-intermediate">
+			<a href="{{ site.qtguiintermediate }}{{ site.coupon }}">
 				<img src="{{ site.urlimg }}qt_gui_intermediate.png" alt="">
 			</a>
 			
@@ -74,12 +75,8 @@ header: no
 					<li>Deploying your Qt applications on Windows, Mac and Linux</li>
 					<li>Undo Redo and more</li>
 			</ul>
-			<ul class="button-group round even-2">
-			<li><a href="https://learnqtguide.teachable.com/p/qt-c-gui-development-intermediate" class="button alert">Take Course</a></li>
-			<li><a href="https://www.udemy.com/course/qt-c-gui-development-intermediate/?couponCode=LEARNQT112019" class="button alert">Udemy</a></li>
 			
-		</ul>
-		<p class="text-center"><a href="https://www.learnqt.guide/why-learnqt-udemy/">Why LearnQtGuide and Udemy?</a></p>
+			<a href="{{ site.qtguiintermediate }}{{ site.coupon }}" class="button expand round alert">Take Course on Udemy</a>
 
 			</div>
 		</div>
@@ -99,7 +96,7 @@ header: no
 
 			</div>
 
-			<a href="https://learnqtguide.teachable.com/p/building-fluid-user-interfaces-with-qt-quick-and-qml">
+			<a href="{{ site.qmlbeginners }}{{ site.coupon }}">
 			   <img src="{{ site.urlimg }}qt_quick_fundamentals.png" alt="">
 			</a>
 			<div class="card-section">
@@ -122,11 +119,10 @@ header: no
 					<li>Settings and Local Storage</li>
 
 				</ul>
-				<ul class="button-group round even-2">
-					<li><a href="https://learnqtguide.teachable.com/p/building-fluid-user-interfaces-with-qt-quick-and-qml" class="button alert">Take Course</a></li>
-					<li><a href="https://www.udemy.com/course/qt_quick_qml_tutorial_for_beginners/?couponCode=LEARNQT112019" class="button alert">Udemy</a></li>
-				</ul>
-				<p class="text-center"><a href="https://www.learnqt.guide/why-learnqt-udemy/">Why LearnQtGuide and Udemy?</a></p>
+			
+					
+					<a href="{{ site.qmlbeginners }}{{ site.coupon }}" class="button round expand alert">Take Course on Udemy</a>
+				
 			</div>
 		</div>
 
@@ -142,7 +138,7 @@ header: no
 
 			</div>
 			
-			<a href="https://learnqtguide.teachable.com/p/interfacing-qt-quick-to-c-intermediate">
+			<a href="{{ site.qmlintermediate }}{{ site.coupon }}">
 				<img src="{{ site.urlimg }}qt_quick_intermediate.png" alt="">
 			</a>
 			
@@ -161,11 +157,10 @@ header: no
 					<li>Enhancing your custom QML types with Attached Properties from C++</li>
 					<li>Property value sources and more</li>
 			</ul>
-			<ul class="button-group round even-2">
-			<li><a href="https://learnqtguide.teachable.com/p/interfacing-qt-quick-to-c-intermediate" class="button alert">Take Course</a></li>
-			<li><a href="https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-intermediate/?couponCode=LEARNQT112019" class="button alert">Udemy</a></li>
-		</ul>
-		<p class="text-center"><a href="https://www.learnqt.guide/why-learnqt-udemy/">Why LearnQtGuide and Udemy?</a></p>
+			
+			
+			<a href="{{ site.qmlintermediate }}{{ site.coupon }}" class="button round expand alert">Take Course on Udemy</a>
+		
 			</div>
 		</div>
 		
@@ -185,7 +180,7 @@ header: no
 
 			</div>
 
-			<a href="https://learnqtguide.teachable.com/p/interfacing-qt-quick-to-c-advanced">
+			<a href="{{ site.qmladvanced }}{{ site.coupon }}">
 			   <img src="{{ site.urlimg }}qt_quick_advanced.png" alt="">
 			</a>
 			<div class="card-section">
@@ -200,11 +195,8 @@ header: no
 					<li>Digging Deep in the QML tree and manipulating your QML Elements from C++</li>
 
 				</ul>
-				<ul class="button-group round even-2">
-					<li><a href="https://learnqtguide.teachable.com/p/interfacing-qt-quick-to-c-advanced" class="button alert">Take Course</a></li>
-					<li><a href="https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-advanced/?couponCode=LEARNQT112019" class="button alert">Udemy</a></li>
-				</ul>
-				<p class="text-center"><a href="https://www.learnqt.guide/why-learnqt-udemy/">Why LearnQtGuide and Udemy?</a></p>
+					<a href="{{ site.qmladvanced }}{{ site.coupon }}" class="button round expand alert">Take Course on Udemy</a>
+				
 			</div>
 		</div>
 
@@ -220,7 +212,7 @@ header: no
 
 			</div>
 			
-			<a href="https://learnqtguide.teachable.com/p/multithreading-and-ipc-with-qt-c">
+			<a href="{{ site.multithreading }}{{ site.coupon }}">
 				<img src="{{ site.urlimg }}qt_multithreading.png" alt="">
 			</a>
 			
@@ -237,11 +229,8 @@ header: no
 					<li>Managing Processes</li>
 					<li>Inter Process Communication,DBus and more</li>
 			</ul>
-			<ul class="button-group round even-2">
-			<li><a href="https://learnqtguide.teachable.com/p/multithreading-and-ipc-with-qt-c" class="button alert">Take Course</a></li>
-			<li><a href="https://www.udemy.com/course/multi-threading-and-ipc-with-qt-c-plus-plus/?couponCode=LEARNQT112019" class="button alert">Udemy</a></li>
-		</ul>
-		<p class="text-center"><a href="https://www.learnqt.guide/why-learnqt-udemy/">Why LearnQtGuide and Udemy?</a></p>
+			<a href="{{ site.multithreading }}{{ site.coupon }}" class="button round expand alert"> Take Course on Udemy</a>
+		
 			</div>
 		</div>
 		
@@ -250,56 +239,5 @@ header: no
 </div><!-- /.row -->
 <hr>
 
-
-<div class="row">
-
-	<div class="medium-2 columns t30">
-
-	</div><!-- /.medium-2.columns -->
-
-
-
-    <div class="medium-8 columns t30">
-		{% include alert info='Become a member and get ACCESS to all these amazing courses. Never pay again!' %}
-		<p>It's easy. For one low single | montly | yearly payment, you can learn from all the courses we have published. Oh, and future courses! Never have to pay again.</p>
-
-
-		<a href="https://learnqtguide.teachable.com/p/learn-qt-guide-online-membership">
-			<img src="{{ site.urlimg }}qt_course_membership.png" alt="">
-		</a>		
-
-    </div><!-- /.medium-8.columns -->
-	
-	
-	<div class="medium-2 columns t30">
-
-	</div><!-- /.medium-2.columns -->
-
-
-</div><!-- /.row -->
-
-<div class="row">
-
-	<div class="medium-4 columns t30">
-
-	</div><!-- /.medium-4.columns -->
-
-
-	<div class="medium-4 columns t30">
-	
-		<a href="https://learnqtguide.teachable.com/p/learn-qt-guide-online-membership" class="button round alert large">Become a Member</a>
-
-	</div><!-- /.medium-4.columns -->
-	
-	
-	<div class="medium-4 columns t30">
-
-	</div><!-- /.medium-4.columns -->
-
-
-</div><!-- /.row -->
-
-
-<hr>
 
 
