@@ -1,13 +1,13 @@
 ---
 layout: qtsinglecourse
 meta_title: "Qt Gui Intermediate Video Course"
-permalink: "qt_gui_intermediate/"
+permalink: "qt-gui-intermediate/"
 course_title : "Qt C++ GUI Development - Intermediate"
 course_sub_title : "Learn Advanced Qt C++ GUI : Events, Painting, Model View Architecture, Graphics View Framework,Deployment and more."
 youtube_promo_video_link : "https://www.youtube.com/embed/70zn9jA9tZ0"
+course_promo_image : "qt_gui_intermediate.png"
 header: no
 ---
-
   <div role="main" class='view-school'>
 
 
@@ -738,8 +738,8 @@ header: no
                 What if I am unhappy with the course?
               </div>
               <div class='faq-answer'>
-                We would never want you to be unhappy! If you are unsatisfied with your purchase, contact us in the
-                first 30 days and we will give you a full refund.
+                We would never want you to be unhappy! If you are unsatisfied with your purchase, request for a full refund in your udemy account in the
+                first 30 days and you will get all your funds back.
               </div>
 
             </div>
@@ -754,7 +754,7 @@ header: no
 
 
           <h2>
-            Get started now!
+            Start Learning now!
           </h2>
 
 
