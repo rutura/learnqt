@@ -304,7 +304,7 @@ header: no
               <br>
               <div class='row'>
                 <div class='col-lg-3 col-md-4 col-sm-4 text-center'>
-                  <img class='large-img-rounded img-responsive' src='http://127.0.0.1:4000/images/gakwayasmall.png'
+                  <img class='large-img-rounded img-responsive' src='{{site.url}}/images/gakwayasmall.png'
                     alt='Daniel Gakwaya'>
                   <div class='author-name'>
                     Daniel Gakwaya
