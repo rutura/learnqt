@@ -1,7 +1,7 @@
 ---
 layout: qtsinglecourse
 meta_title: "Qt Gui Intermediate Video Course"
-permalink: "/qt_gui_intermediate/"
+permalink: "qt_gui_intermediate/"
 course_title : "Qt C++ GUI Development - Intermediate"
 course_sub_title : "Learn Advanced Qt C++ GUI : Events, Painting, Model View Architecture, Graphics View Framework,Deployment and more."
 youtube_promo_video_link : "https://www.youtube.com/embed/70zn9jA9tZ0"
