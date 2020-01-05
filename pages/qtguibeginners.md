@@ -1,11 +1,11 @@
 ---
 layout: qtsinglecourse
-meta_title: "Qt Gui Intermediate Video Course"
-permalink: "qt-gui-intermediate/"
-course_title : "Qt C++ GUI Development - Intermediate"
-course_sub_title : "Learn Advanced Qt C++ GUI : Events, Painting, Model View Architecture, Graphics View Framework,Deployment and more."
-youtube_promo_video_link : "https://www.youtube.com/embed/xx4TlnKXLPI"
-course_promo_image : "qt_gui_intermediate.png"
+meta_title: "Qt Gui For Beginners Video Course"
+permalink: "qt-gui-for-beginners/"
+course_title : "Beginning Qt 5 C++ GUI Development : The Fundamentals"
+course_sub_title : "A Step by Step Guide to Build C++ GUI Applications For Beginners"
+youtube_promo_video_link : "https://www.youtube.com/embed/70zn9jA9tZ0"
+course_promo_image : "qt_gui_beginners.png"
 header: no
 ---
   <div role="main" class='view-school'>
@@ -43,7 +43,7 @@ header: no
                     class='fa fa-play'></i>&nbsp;&nbsp; Watch Promo Video</a>
 
                 <a class="btn btn-hg btn-success"
-                  href="{{ site.qtguiintermediate }}{{ site.coupon }}"><i
+                  href="{{ site.qtguibeginners }}{{ site.coupon }}"><i
                     class='fa fa-shopping-cart'></i>&nbsp;&nbsp; Enroll in Course on Udemy</a>
 
 
@@ -108,26 +108,26 @@ header: no
                 </a>
                 <br>
                 <a aria-label="Share on facebook"
-                  href="https://www.facebook.com/sharer.php?u={{ site.qtguiintermediate }}{{ site.coupon }}"
+                  href="https://www.facebook.com/sharer.php?u={{ site.qtguibeginners }}{{ site.coupon }}"
                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                   <i class='fa fa-facebook-square facebook-button' data-event-name='Facebook link'
-                    data-event-href="https://www.facebook.com/sharer.php?u={{ site.qtguiintermediate }}{{ site.coupon }}"
+                    data-event-href="https://www.facebook.com/sharer.php?u={{ site.qtguibeginners }}{{ site.coupon }}"
                     data-event-type="button"></i>
                 </a>
                 <br>
                 <a aria-label="Share on twitter"
-                  href="https://twitter.com/intent/tweet/?url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;text={{site.course_title}}:"
+                  href="https://twitter.com/intent/tweet/?url={{ site.qtguibeginners }}{{ site.coupon }}&amp;text={{site.course_title}}:"
                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                   <i class="fa fa-twitter-square twitter-button" data-event-name='Twitter link'
-                    data-event-href="https://twitter.com/intent/tweet/?url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;text={{site.course_title}}:"
+                    data-event-href="https://twitter.com/intent/tweet/?url={{ site.qtguibeginners }}{{ site.coupon }}&amp;text={{site.course_title}}:"
                     data-event-type="button"></i>
                 </a>
                 <br>
                 <a aria-label="Share on linkedin"
-                  href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;title={{site.course_title}}"
+                  href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.qtguibeginners }}{{ site.coupon }}&amp;title={{site.course_title}}"
                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                   <i class="fa fa-linkedin-square linkedin-button" data-event-name='LinkedIn link'
-                    data-event-href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;title={{site.course_title}}"
+                    data-event-href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.qtguibeginners }}{{ site.coupon }}&amp;title={{site.course_title}}"
                     data-event-type="button"></i>
                 </a>
               </center>
@@ -142,97 +142,115 @@ header: no
                 <p><strong><span style="font-size: 28px;"><span style="color: rgb(75, 172, 198);">Course
                         Description</span></span></strong>
                 </p>
-                <p>Qt is a mature cross platform application development framework you can use to develop for Windows,
-                  Mac ,Linux, Mobile and Embedded Devices.
+                <p>This course will take you from zero to a level where you can write any Qt C++ Gui application you may want. It is aimed at complete beginners but people with varying levels of experience wishing to learn Qt C++ Gui will equally find it useful.
                 </p>
-                <p>This course will teach you some of the advanced features of the Qt framework. This is not a beginners
-                  course. It is a follow up course on our Qt 5 C++ GUI Development for Beginners course, so you should
-                  have completed that course or have similar experience from elsewhere.
+
+
+                <p>Qt is second to none in the field of building cross platform GUI application based on C++. It can currently be used to build software that runs on virtually any platform out there: Windows, Mac, Linux, Android, IOS and even embedded systems. You basically build your software once and all you have to do is build it for your desired platform and voila !
                 </p>
-                <p>The course is packed with lots of tips and tricks, to help you master what it takes to build
-                  professional GUI applications using C++ and Qt. The lectures are carefully designed and revolving
-                  around demos that are to the point and easy to understand. Cutting down the fat and helping you
-                  understand a given topic at hand.
+
+
+                <p>The course starts with a complete beginner to both C++ and Qt in mind, and we take  you through the the process of getting your environment set up on your platform of choice :
                 </p>
-                <p>This course is is not just about theory and simple demos. No !
-                </p>
-                <p>We will do theory and simple demos because you need that to understand the basics.
-                </p>
-                <p>But we will go even further and not build full fledged practical projects for you to put together and
-                  practice all the knowledge in the course. You will build a clone of the Flappy Bird game and a full
-                  fledged painting application that supports tons of cool features like drawing with the pen, erasing ,
-                  re-sizable shapes, copy, cut and paste, drag and drop , undo redo , saving and loading documents and
-                  many more features.
-                </p>
-                <p>Here are some of things you'll get to master in the course :
-                </p>
-                <ul>
-                  <li>Event Programming in Qt</li>
-                  <li>Building Custom Widgets</li>
-                  <li>Painting and Drawing with Qt</li>
-                  <li>Drag and Drop in Qt Widgets</li>
-                  <li>Advanced Features in Qt Model View Programming</li>
-                  <li>Graphics View Framework</li>
-                  <li>Copy, Cut and Paste Features in GUI applications</li>
-                  <li>Building Resizable Graphics Items</li>
-                  <li>Saving and Loading Documents in your Qt applications</li>
-                  <li>Undo Redo</li>
-                  <li>Building read only and editable tree models from scratch</li>
-                  <li>Supporting multiple languages in your Qt C++ GUI applications</li>
-                  <li>Deploying your Qt applications on Windows, Mac and Linux and way way more...</li>
+
+                 <ul>
+                  <li> We do a live install of Qt Creator on Windows</li>
+                  <li>We do a live install of Qt Creator on Linux</li>
+                  <li>We guide you though how you would install Qt Creator on a Mac</li>
+                  <li>We guide you through Qt Creator showing you the tools that work together to get your application built </li>
                 </ul>
-                <p>Towards the end we will build a complete Graphics View based Painting application and a clone of the
-                  popular Flappy Bird game for you to put together and use all the knowledge in the course on real
-                  projects.
+
+                <p>We then take you on a tour of the C++ programming language, covering the concepts deemed important to start working with Qt to build your shinny GUI applications. You don't need to be a C++ wizard to start writing your applications using Qt. One of the goals behind Qt itself is to be as easy to use as possible, helping you to focus on your application logic rather than the C++ complex plumbing. This does not mean that you can do with zero C++ knowledge though. That's why we take you on a tour to cover the basic concepts of the language covering topics like:
                 </p>
-                <p>The course was carefully designed to get you to build projects step by step, making even complex
-                  concepts easy to understand. If you're looking to build professional grade Qt C++ GUI applications,
-                  then this course will help you get there in the shortest amount of time possible.
+
+
+                <ul>
+                  <li>Running your first console application and understanding the main function</li>
+                  <li>Streams that help you write and read data from your C++ applications</li>
+                  <li>Variables and Data Types</li>
+                  <li>Basic C++ Operators and Control flow where among other things you learn about if clauses and loops</li>
+                   <li>Build an app to guess numbers and put together the concepts learned so far</li>
+                  <li>C++ Functions</li>
+                  <li>C++ classes</li>
+                  <li>Building your first Qt C++ GUI Application</li>
+                  <li>Building a GUI Version of your Number guessing game</li>
+                </ul>
+
+                <p>We then visit the fascinating concept signals and slots in Qt where  you learn the most flexible way to respond to events :
                 </p>
-                <p>Qt is the platform of choice for thousands of software projects, both open source and commercial,
-                  including the one we passionately we use to record the videos for our courses. If you want to use C++
-                  to build professional grade GUI applications, that can run virtually on any platform out there, Qt is
-                  second to none in that regard. Please check out some of the preview videos and let's get you started
-                  building professional C++ GUI applications using Qt
+
+                 <ul>
+                  <li>We'll explore lambda functions in C++ in general, we'll need them to use their SIGNAL SLOT syntax</li>
+                  <li>We explore different ways to connect signals to slots in Qt</li>
+                  <li>We then do a concept enforcing demo for you to try them out</li>
+                  
+                </ul>
+
+                <p>Next we dive in the Qt Widgets section and visit some of the most important widget classes in Qt. We will cover: 
                 </p>
+
+                <ul>
+                    <li>QWiget</li>
+                    <li>QMainWindow</li>
+                    <li>QMessageBox</li>
+                    <li>QPushButton</li>
+                    <li>QLineEdit</li>
+                    <li>QTextEdit</li>
+                    <li>QLabel</li>
+                    <li>QHBoxLayout, QVBoxLayout, QGridLayout</li>
+                    <li>We visit size policies and stretches and how they help tie the knots in  your layouts</li>
+                    <li>QCheckBox and QRadioButton</li>
+                    <li>QList</li>
+                    <li>QComboBox</li>
+                    <li>QListWidget</li>
+                    <li>QTabWidget</li>
+                    <li>QMenu, QToolBar, QAction</li>
+
+                </ul>
+
+                <p>Dialogs are explored next , we look at QDialog and how to build  your own custom dialog class from scratch , QDialogButtonBox, QMessageBox, QFontDialog, QFileDialog, QInputDialog and how they add a layer of interactivity to your Qt GUI applications.
+                </p>
+
+                <p>We then go on and explore how to work with the Qt Resource System , Styling your Qt applications with QStyle, QPalette and Style Sheets, Saving your application settings with QSetting, Working with Files and Directories using QFile and QDir and we wrap up the course with a tour of the network capabilities of Qt where we : 
+                </p>
+
+                 <ul>
+                    <li>See the different classes that are available to work with networks in Qt</li>
+                    <li>Build an application to download web pages in our Qt Applications</li>
+                    <li>Build an application to consume Rest APIs in your Qt Applications</li>
+
+                </ul>
+
+                <p>This course was designed to help you succeed in becoming a Qt Gui application developer regardless of your current level of expertise. The only requirement is to bring in an open mind and a strong willingness to learn. Now, please check out some of the preview videos andl let's get you STARTED building cross platform GUI applications using Qt.
+                </p>
+
+
+
+          
                 <div><strong><span style="font-size: 28px;"><span style="color: rgb(75, 172, 198);">What you'll
                         learn</span></span></strong>
                 </div>
                 <ul>
-                  <li><span class="what-you-get__text">Event Programming</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Custom
-                      Widgets</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Painting
-                      and Drawing</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Drag and
-                      Drop</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Copying
-                      data through the clipboard</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Model View
-                      Architecture</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Graphics
-                      View Framework</span></li>
+                  <li><span class="what-you-get__text">The fundamentals of working with Qt to build C++ Gui Applications</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Working with Qt Widget Classes</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Working with Dialog Classes</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">sing the Qt Resource System</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Styling Qt Applications</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Working with Networks to fetch HTTP Data</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Working with the File System</span></li>
                   <li><span class="udi udi-check what-you-get__icon"></span><span
-                      class="what-you-get__text">Implementing Copy, Cut and Paste Features in Qt Apps</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Saving and
-                      Loading Documents</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Undo Redo
-                      in Qt Apps</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Building
-                      Resizable Items in Graphics View</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Multi
-                      Language Support in Qt Apps</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Deploying
-                      Qt applications on Windows and Linux and Mac</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Building
-                      Games and Painting Applications with Qt</span></li>
+                      class="what-you-get__text">Model View Architecture and more</span></li>
+                  
                 </ul>
+                
                 <div><span style="font-size: 28px;"><strong><span style="color: rgb(75, 172, 198);">Who is this course
                         for</span></strong></span><strong></strong>
                 </div>
                 <ul>
-                  <li>Developers and Researchers and Students willing to build professional grade Qt C++ GUI
-                    applications</li>
+                  <li>Anyone willing to Build Cross Platform Gui Software using Qt</li>
+                  <li>Complete Beginners </li>
+                  <li>Anyone willing to get a job building Qt Gui Applications </li>
+                  <li>Students and Researchers willing to use Qt Gui features in their projects </li>
                 </ul>
                 <p><strong><span style="font-size: 28px;"><span style="color: rgb(75, 172, 198);">Get in touch. We're
                         there for you</span></span></strong>
@@ -255,7 +273,9 @@ header: no
                           style="color: rgb(75, 172, 198);">Requirements</span></span></strong>
                   </p>
                   <ul>
-                    <li>Basic Knowledge of Qt C++ GUI Development</li>
+                    <li>Basic knowledge of working with Computers</li>
+                    <li>Open mind and strong willingness to learn how to build Qt C++ Gui applications </li>
+                    <li>Basic understanding of programming will be useful but not required </li>
                   </ul>
                 </div>
                 <div><strong><span style="font-size: 28px;"></span></strong><strong><span style="font-size: 28px;"><span
@@ -351,9 +371,9 @@ header: no
           <div class='row'>
             <div class='col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2'>
               <h2>
-                Course Content (Over 40 hours)
+                Course Content (Over 14 hours)
               </h2>
-              <div> <a href ="{{ site.qtguiintermediate }}{{ site.coupon }}">See detailed Curriculum on Udemy</a></div>
+              <div> <a href ="{{ site.qtguibeginners }}{{ site.coupon }}">See detailed Curriculum on Udemy</a></div>
               <br>
 
               <div class='row'>
@@ -363,7 +383,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Introduction ( 2 Lectures - 17:19 )
+                    Getting Started ( 6 Lectures - 56:56 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -389,7 +409,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Event Handling ( 11 Lectures - 01:48:07 )
+                    C++ Beginner Crash Course ( 12 Lectures - 02:13:12 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -415,7 +435,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Custom Widgets ( 8 Lectures - 01:23:45 )
+                    Signals and Slots ( 3 Lectures - 44:44 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -446,7 +466,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Painting and Drawing ( 17 Lectures - 03:37:30 )
+                    A Tour of Qt Widgets ( 19 Lectures - 04:27:04 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -472,7 +492,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Drag and Drop/ Clipboard ( 12 Lectures - 02:09:28 )
+                    Working with Dialogs ( 8 Lectures - 01:15:33 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -498,7 +518,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Model View Architecture -Advanced ( 28 Lectures - 08:53:49 )
+                    Working with Resources ( 2 Lectures - 15:30 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -524,7 +544,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Graphics View Framework ( 34 Lectures - 12:45:31 )
+                    Styling your Qt Applications ( 5 Lectures - 51:52 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -550,7 +570,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Miscellaneous : Tuning PainterApp like a real App ( 20 Lectures - 05:22:34 )
+                    Working with Settings ( 2 Lectures - 33:25 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -576,7 +596,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Internationalization ( 8 Lectures - 01:58:46 )
+                    Working with Files and Directories ( 2 Lectures - 45:28 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -602,7 +622,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Application Icons ( 1 Lecture - 08:46 )
+                    Model View Architecture Framework ( 10 Lectures - 01:43:30 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -628,7 +648,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Deployment ( 7 Lectures - 01:21:53 )
+                    Working with Networks ( 6 Lectures - 49:24 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -647,30 +667,7 @@ header: no
               </div>
 
 
-              <div class='row'>
-                <div class='col-sm-12 course-section'>
-                  <div class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date=""
-                    data-course-id="643756">
-                    <span class="section-lock">
-                      <i class="fa fa-lock"></i>&nbsp;
-                    </span>
-                    Next Steps ( 1 Lecture - 02:46 )
-                    <div class="section-days-to-drip">
-                      <div class="section-days-logged-in">
-                        Available in
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                      </div>
-                      <div class="section-days-logged-out">
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                        after you enroll
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
+             
 
 
 
@@ -773,7 +770,7 @@ header: no
 
 
                     <a class="btn btn-hg btn-success"
-                      href="{{ site.qtguiintermediate }}{{ site.coupon }}"><i
+                      href="{{ site.qtguibeginners }}{{ site.coupon }}"><i
                         class='fa fa-shopping-cart'></i>&nbsp;&nbsp; Enroll in Course on Udemy</a>
 
                     <br><br><br><br><br><br><br>

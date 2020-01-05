@@ -1,11 +1,11 @@
 ---
 layout: qtsinglecourse
-meta_title: "Qt Gui Intermediate Video Course"
-permalink: "qt-gui-intermediate/"
-course_title : "Qt C++ GUI Development - Intermediate"
-course_sub_title : "Learn Advanced Qt C++ GUI : Events, Painting, Model View Architecture, Graphics View Framework,Deployment and more."
-youtube_promo_video_link : "https://www.youtube.com/embed/xx4TlnKXLPI"
-course_promo_image : "qt_gui_intermediate.png"
+meta_title: "Multi-Threading and IPC with Qt C++ | Video Course"
+permalink: "qt-multithreading-ipc/"
+course_title : "Multi-Threading and IPC with Qt C++ "
+course_sub_title : "Use Threads and Inter Process Communication in your Qt C++ applications : A Practical Walk Through of Qt offerings"
+youtube_promo_video_link : "https://www.youtube.com/embed/vanoAUc4zD0"
+course_promo_image : "qt_multithreading.png"
 header: no
 ---
   <div role="main" class='view-school'>
@@ -43,7 +43,7 @@ header: no
                     class='fa fa-play'></i>&nbsp;&nbsp; Watch Promo Video</a>
 
                 <a class="btn btn-hg btn-success"
-                  href="{{ site.qtguiintermediate }}{{ site.coupon }}"><i
+                  href="{{ site.multithreading }}{{ site.coupon }}"><i
                     class='fa fa-shopping-cart'></i>&nbsp;&nbsp; Enroll in Course on Udemy</a>
 
 
@@ -108,26 +108,26 @@ header: no
                 </a>
                 <br>
                 <a aria-label="Share on facebook"
-                  href="https://www.facebook.com/sharer.php?u={{ site.qtguiintermediate }}{{ site.coupon }}"
+                  href="https://www.facebook.com/sharer.php?u={{ site.multithreading }}{{ site.coupon }}"
                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                   <i class='fa fa-facebook-square facebook-button' data-event-name='Facebook link'
-                    data-event-href="https://www.facebook.com/sharer.php?u={{ site.qtguiintermediate }}{{ site.coupon }}"
+                    data-event-href="https://www.facebook.com/sharer.php?u={{ site.multithreading }}{{ site.coupon }}"
                     data-event-type="button"></i>
                 </a>
                 <br>
                 <a aria-label="Share on twitter"
-                  href="https://twitter.com/intent/tweet/?url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;text={{site.course_title}}:"
+                  href="https://twitter.com/intent/tweet/?url={{ site.multithreading }}{{ site.coupon }}&amp;text={{site.course_title}}:"
                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                   <i class="fa fa-twitter-square twitter-button" data-event-name='Twitter link'
-                    data-event-href="https://twitter.com/intent/tweet/?url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;text={{site.course_title}}:"
+                    data-event-href="https://twitter.com/intent/tweet/?url={{ site.multithreading }}{{ site.coupon }}&amp;text={{site.course_title}}:"
                     data-event-type="button"></i>
                 </a>
                 <br>
                 <a aria-label="Share on linkedin"
-                  href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;title={{site.course_title}}"
+                  href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.multithreading }}{{ site.coupon }}&amp;title={{site.course_title}}"
                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                   <i class="fa fa-linkedin-square linkedin-button" data-event-name='LinkedIn link'
-                    data-event-href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;title={{site.course_title}}"
+                    data-event-href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.multithreading }}{{ site.coupon }}&amp;title={{site.course_title}}"
                     data-event-type="button"></i>
                 </a>
               </center>
@@ -142,97 +142,75 @@ header: no
                 <p><strong><span style="font-size: 28px;"><span style="color: rgb(75, 172, 198);">Course
                         Description</span></span></strong>
                 </p>
-                <p>Qt is a mature cross platform application development framework you can use to develop for Windows,
-                  Mac ,Linux, Mobile and Embedded Devices.
-                </p>
-                <p>This course will teach you some of the advanced features of the Qt framework. This is not a beginners
-                  course. It is a follow up course on our Qt 5 C++ GUI Development for Beginners course, so you should
-                  have completed that course or have similar experience from elsewhere.
-                </p>
-                <p>The course is packed with lots of tips and tricks, to help you master what it takes to build
-                  professional GUI applications using C++ and Qt. The lectures are carefully designed and revolving
-                  around demos that are to the point and easy to understand. Cutting down the fat and helping you
-                  understand a given topic at hand.
-                </p>
-                <p>This course is is not just about theory and simple demos. No !
-                </p>
-                <p>We will do theory and simple demos because you need that to understand the basics.
-                </p>
-                <p>But we will go even further and not build full fledged practical projects for you to put together and
-                  practice all the knowledge in the course. You will build a clone of the Flappy Bird game and a full
-                  fledged painting application that supports tons of cool features like drawing with the pen, erasing ,
-                  re-sizable shapes, copy, cut and paste, drag and drop , undo redo , saving and loading documents and
-                  many more features.
-                </p>
-                <p>Here are some of things you'll get to master in the course :
-                </p>
+
+
+                <p>Qt is a cross platform application development framework , you can use it to develop applications for windows, mac, linux , mobile and embedded devices.</p>
+
+                <p>This course will enable you to take advantage of the Multi-threading and Inter Process Communication features offered by the Qt framework, using the C++ programming language.</p>
+
+                <p>You will learn and master different ways you can create and manage threads, give them work they can do in the background and let them report back to you when they are done with the results.The course won't just show you how to create threads and use them to improve the design of your application; you will also understand why each technique works and the common pitfalls one comes across when using threads and  IPC in their C++ applications.</p>
+
+                <p>The lectures are carefully designed backed by engaging demos for you to try out the concepts on your own, right away. If you're  looking to use Multi-threading or Inter Process Communication in your Qt C++ applications, this course will get  you up and running in the shortest amount of time possible. Here are some of the things you'll get to master as you go through the course : </p>
+
                 <ul>
-                  <li>Event Programming in Qt</li>
-                  <li>Building Custom Widgets</li>
-                  <li>Painting and Drawing with Qt</li>
-                  <li>Drag and Drop in Qt Widgets</li>
-                  <li>Advanced Features in Qt Model View Programming</li>
-                  <li>Graphics View Framework</li>
-                  <li>Copy, Cut and Paste Features in GUI applications</li>
-                  <li>Building Resizable Graphics Items</li>
-                  <li>Saving and Loading Documents in your Qt applications</li>
-                  <li>Undo Redo</li>
-                  <li>Building read only and editable tree models from scratch</li>
-                  <li>Supporting multiple languages in your Qt C++ GUI applications</li>
-                  <li>Deploying your Qt applications on Windows, Mac and Linux and way way more...</li>
+
+                  <li>Creating and Managing Threads</li>
+
+                  <li>Sending Feedback to main thread</li>
+
+                  <li>Thread Synchronization</li>
+
+                  <li>Thread Safety and Reentrancy</li>
+
+                  <li>Using Thread Pools</li>
+
+                  <li>Qt Concurrent : High level Threading API</li>
+
+                  <li>Managing Processes</li>
+
+                  <li>Inter Process Communication</li>
+
+                  <li>DBus</li>
+
+                  <li>and more</li>
+
                 </ul>
-                <p>Towards the end we will build a complete Graphics View based Painting application and a clone of the
-                  popular Flappy Bird game for you to put together and use all the knowledge in the course on real
-                  projects.
-                </p>
-                <p>The course was carefully designed to get you to build projects step by step, making even complex
-                  concepts easy to understand. If you're looking to build professional grade Qt C++ GUI applications,
-                  then this course will help you get there in the shortest amount of time possible.
-                </p>
-                <p>Qt is the platform of choice for thousands of software projects, both open source and commercial,
-                  including the one we passionately we use to record the videos for our courses. If you want to use C++
-                  to build professional grade GUI applications, that can run virtually on any platform out there, Qt is
-                  second to none in that regard. Please check out some of the preview videos and let's get you started
-                  building professional C++ GUI applications using Qt
-                </p>
+
+                <p>Qt is the platform of choice for thousands of software projects, both open source and commercial,  including the one we passionately use to record our videos. If you want to use threads and inter process communication mechanisms in your cross platform applications, Qt is going to make your life a whole lot easier. Please check out some of the preview videos, and let's get  you started using Threads and Inter Process Communication, in your Qt C++ cross platform applications.</p>
+
+
+
+
+
+
+
+
+                
+
+
+
                 <div><strong><span style="font-size: 28px;"><span style="color: rgb(75, 172, 198);">What you'll
                         learn</span></span></strong>
                 </div>
                 <ul>
-                  <li><span class="what-you-get__text">Event Programming</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Custom
-                      Widgets</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Painting
-                      and Drawing</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Drag and
-                      Drop</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Copying
-                      data through the clipboard</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Model View
-                      Architecture</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Graphics
-                      View Framework</span></li>
+                  <li><span class="what-you-get__text">Creating and Managing Threads</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Sending Feedback to main thread</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Thread Synchronization</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Thread Safety and Reentrancy</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Using Thread Pools</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Qt Concurrent : High level Threading API</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Managing Processes</span></li>
                   <li><span class="udi udi-check what-you-get__icon"></span><span
-                      class="what-you-get__text">Implementing Copy, Cut and Paste Features in Qt Apps</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Saving and
-                      Loading Documents</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Undo Redo
-                      in Qt Apps</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Building
-                      Resizable Items in Graphics View</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Multi
-                      Language Support in Qt Apps</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Deploying
-                      Qt applications on Windows and Linux and Mac</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Building
-                      Games and Painting Applications with Qt</span></li>
+                      class="what-you-get__text">Inter Process Communication</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">DBus and more</span></li>
+
+                  
                 </ul>
                 <div><span style="font-size: 28px;"><strong><span style="color: rgb(75, 172, 198);">Who is this course
                         for</span></strong></span><strong></strong>
                 </div>
                 <ul>
-                  <li>Developers and Researchers and Students willing to build professional grade Qt C++ GUI
-                    applications</li>
+                  <li>Anyone willing to use Qt C++ threading capabilities in their projects.</li>
                 </ul>
                 <p><strong><span style="font-size: 28px;"><span style="color: rgb(75, 172, 198);">Get in touch. We're
                         there for you</span></span></strong>
@@ -255,7 +233,8 @@ header: no
                           style="color: rgb(75, 172, 198);">Requirements</span></span></strong>
                   </p>
                   <ul>
-                    <li>Basic Knowledge of Qt C++ GUI Development</li>
+                    <li>Basic Qt C++ Knowledge</li>
+                    <li>Strong drive and willingness to learn </li>
                   </ul>
                 </div>
                 <div><strong><span style="font-size: 28px;"></span></strong><strong><span style="font-size: 28px;"><span
@@ -351,9 +330,9 @@ header: no
           <div class='row'>
             <div class='col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2'>
               <h2>
-                Course Content (Over 40 hours)
+                Course Content (Over 13 hours)
               </h2>
-              <div> <a href ="{{ site.qtguiintermediate }}{{ site.coupon }}">See detailed Curriculum on Udemy</a></div>
+              <div> <a href ="{{ site.multithreading }}{{ site.coupon }}">See detailed Curriculum on Udemy</a></div>
               <br>
 
               <div class='row'>
@@ -363,7 +342,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Introduction ( 2 Lectures - 17:19 )
+                    Introduction ( 2 Lectures - 17:07 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -389,7 +368,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Event Handling ( 11 Lectures - 01:48:07 )
+                    Creating Threads ( 12 Lectures - 02:49:45 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -415,7 +394,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Custom Widgets ( 8 Lectures - 01:23:45 )
+                    Thread Synchronization ( 8 Lectures - 02:09:18 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -446,7 +425,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Painting and Drawing ( 17 Lectures - 03:37:30 )
+                    Thread Safety and Reentrancy ( 6 Lectures - 01:09:36 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -472,7 +451,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Drag and Drop/ Clipboard ( 12 Lectures - 02:09:28 )
+                    Qt Concurrent ( 12 Lectures - 02:36:42 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -498,7 +477,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Model View Architecture -Advanced ( 28 Lectures - 08:53:49 )
+                    Processes ( 1 Lecture - 14:36 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -524,7 +503,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Graphics View Framework ( 34 Lectures - 12:45:31 )
+                    Inter Process Communication ( 5 Lectures - 01:13:43 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -550,7 +529,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Miscellaneous : Tuning PainterApp like a real App ( 20 Lectures - 05:22:34 )
+                    DBus ( 8 Lectures - 02:17:03 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -576,7 +555,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Internationalization ( 8 Lectures - 01:58:46 )
+                    Wrap Up ( 1 Lecture - 04:14 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -593,85 +572,6 @@ header: no
 
                 </div>
               </div>
-
-
-              <div class='row'>
-                <div class='col-sm-12 course-section'>
-                  <div class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date=""
-                    data-course-id="643756">
-                    <span class="section-lock">
-                      <i class="fa fa-lock"></i>&nbsp;
-                    </span>
-                    Application Icons ( 1 Lecture - 08:46 )
-                    <div class="section-days-to-drip">
-                      <div class="section-days-logged-in">
-                        Available in
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                      </div>
-                      <div class="section-days-logged-out">
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                        after you enroll
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div class='row'>
-                <div class='col-sm-12 course-section'>
-                  <div class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date=""
-                    data-course-id="643756">
-                    <span class="section-lock">
-                      <i class="fa fa-lock"></i>&nbsp;
-                    </span>
-                    Deployment ( 7 Lectures - 01:21:53 )
-                    <div class="section-days-to-drip">
-                      <div class="section-days-logged-in">
-                        Available in
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                      </div>
-                      <div class="section-days-logged-out">
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                        after you enroll
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div class='row'>
-                <div class='col-sm-12 course-section'>
-                  <div class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date=""
-                    data-course-id="643756">
-                    <span class="section-lock">
-                      <i class="fa fa-lock"></i>&nbsp;
-                    </span>
-                    Next Steps ( 1 Lecture - 02:46 )
-                    <div class="section-days-to-drip">
-                      <div class="section-days-logged-in">
-                        Available in
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                      </div>
-                      <div class="section-days-logged-out">
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                        after you enroll
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
 
 
 
@@ -773,7 +673,7 @@ header: no
 
 
                     <a class="btn btn-hg btn-success"
-                      href="{{ site.qtguiintermediate }}{{ site.coupon }}"><i
+                      href="{{ site.multithreading }}{{ site.coupon }}"><i
                         class='fa fa-shopping-cart'></i>&nbsp;&nbsp; Enroll in Course on Udemy</a>
 
                     <br><br><br><br><br><br><br>

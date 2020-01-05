@@ -1,11 +1,11 @@
 ---
 layout: qtsinglecourse
-meta_title: "Qt Gui Intermediate Video Course"
-permalink: "qt-gui-intermediate/"
-course_title : "Qt C++ GUI Development - Intermediate"
-course_sub_title : "Learn Advanced Qt C++ GUI : Events, Painting, Model View Architecture, Graphics View Framework,Deployment and more."
-youtube_promo_video_link : "https://www.youtube.com/embed/xx4TlnKXLPI"
-course_promo_image : "qt_gui_intermediate.png"
+meta_title: "Qt Quick and QML - Intermediate : Interfacing to C++ | Video Course"
+permalink: "qt-qml-intermediate/"
+course_title : "Qt Quick and QML - Intermediate : Interfacing to C++"
+course_sub_title : "Connect Your Fluid and Dynamic Qt Quick(QML) User Interface to a Powerful C++ Back End"
+youtube_promo_video_link : "https://www.youtube.com/embed/p0NunHIPy4Q"
+course_promo_image : "qt_quick_intermediate.png"
 header: no
 ---
   <div role="main" class='view-school'>
@@ -43,7 +43,7 @@ header: no
                     class='fa fa-play'></i>&nbsp;&nbsp; Watch Promo Video</a>
 
                 <a class="btn btn-hg btn-success"
-                  href="{{ site.qtguiintermediate }}{{ site.coupon }}"><i
+                  href="{{ site.qmlintermediate }}{{ site.coupon }}"><i
                     class='fa fa-shopping-cart'></i>&nbsp;&nbsp; Enroll in Course on Udemy</a>
 
 
@@ -108,26 +108,26 @@ header: no
                 </a>
                 <br>
                 <a aria-label="Share on facebook"
-                  href="https://www.facebook.com/sharer.php?u={{ site.qtguiintermediate }}{{ site.coupon }}"
+                  href="https://www.facebook.com/sharer.php?u={{ site.qmlintermediate }}{{ site.coupon }}"
                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                   <i class='fa fa-facebook-square facebook-button' data-event-name='Facebook link'
-                    data-event-href="https://www.facebook.com/sharer.php?u={{ site.qtguiintermediate }}{{ site.coupon }}"
+                    data-event-href="https://www.facebook.com/sharer.php?u={{ site.qmlintermediate }}{{ site.coupon }}"
                     data-event-type="button"></i>
                 </a>
                 <br>
                 <a aria-label="Share on twitter"
-                  href="https://twitter.com/intent/tweet/?url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;text={{site.course_title}}:"
+                  href="https://twitter.com/intent/tweet/?url={{ site.qmlintermediate }}{{ site.coupon }}&amp;text={{site.course_title}}:"
                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                   <i class="fa fa-twitter-square twitter-button" data-event-name='Twitter link'
-                    data-event-href="https://twitter.com/intent/tweet/?url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;text={{site.course_title}}:"
+                    data-event-href="https://twitter.com/intent/tweet/?url={{ site.qmlintermediate }}{{ site.coupon }}&amp;text={{site.course_title}}:"
                     data-event-type="button"></i>
                 </a>
                 <br>
                 <a aria-label="Share on linkedin"
-                  href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;title={{site.course_title}}"
+                  href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.qmlintermediate }}{{ site.coupon }}&amp;title={{site.course_title}}"
                   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                   <i class="fa fa-linkedin-square linkedin-button" data-event-name='LinkedIn link'
-                    data-event-href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.qtguiintermediate }}{{ site.coupon }}&amp;title={{site.course_title}}"
+                    data-event-href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.qmlintermediate }}{{ site.coupon }}&amp;title={{site.course_title}}"
                     data-event-type="button"></i>
                 </a>
               </center>
@@ -139,100 +139,47 @@ header: no
 
 
 
+
+
                 <p><strong><span style="font-size: 28px;"><span style="color: rgb(75, 172, 198);">Course
                         Description</span></span></strong>
                 </p>
-                <p>Qt is a mature cross platform application development framework you can use to develop for Windows,
-                  Mac ,Linux, Mobile and Embedded Devices.
-                </p>
-                <p>This course will teach you some of the advanced features of the Qt framework. This is not a beginners
-                  course. It is a follow up course on our Qt 5 C++ GUI Development for Beginners course, so you should
-                  have completed that course or have similar experience from elsewhere.
-                </p>
-                <p>The course is packed with lots of tips and tricks, to help you master what it takes to build
-                  professional GUI applications using C++ and Qt. The lectures are carefully designed and revolving
-                  around demos that are to the point and easy to understand. Cutting down the fat and helping you
-                  understand a given topic at hand.
-                </p>
-                <p>This course is is not just about theory and simple demos. No !
-                </p>
-                <p>We will do theory and simple demos because you need that to understand the basics.
-                </p>
-                <p>But we will go even further and not build full fledged practical projects for you to put together and
-                  practice all the knowledge in the course. You will build a clone of the Flappy Bird game and a full
-                  fledged painting application that supports tons of cool features like drawing with the pen, erasing ,
-                  re-sizable shapes, copy, cut and paste, drag and drop , undo redo , saving and loading documents and
-                  many more features.
-                </p>
-                <p>Here are some of things you'll get to master in the course :
-                </p>
-                <ul>
-                  <li>Event Programming in Qt</li>
-                  <li>Building Custom Widgets</li>
-                  <li>Painting and Drawing with Qt</li>
-                  <li>Drag and Drop in Qt Widgets</li>
-                  <li>Advanced Features in Qt Model View Programming</li>
-                  <li>Graphics View Framework</li>
-                  <li>Copy, Cut and Paste Features in GUI applications</li>
-                  <li>Building Resizable Graphics Items</li>
-                  <li>Saving and Loading Documents in your Qt applications</li>
-                  <li>Undo Redo</li>
-                  <li>Building read only and editable tree models from scratch</li>
-                  <li>Supporting multiple languages in your Qt C++ GUI applications</li>
-                  <li>Deploying your Qt applications on Windows, Mac and Linux and way way more...</li>
-                </ul>
-                <p>Towards the end we will build a complete Graphics View based Painting application and a clone of the
-                  popular Flappy Bird game for you to put together and use all the knowledge in the course on real
-                  projects.
-                </p>
-                <p>The course was carefully designed to get you to build projects step by step, making even complex
-                  concepts easy to understand. If you're looking to build professional grade Qt C++ GUI applications,
-                  then this course will help you get there in the shortest amount of time possible.
-                </p>
-                <p>Qt is the platform of choice for thousands of software projects, both open source and commercial,
-                  including the one we passionately we use to record the videos for our courses. If you want to use C++
-                  to build professional grade GUI applications, that can run virtually on any platform out there, Qt is
-                  second to none in that regard. Please check out some of the preview videos and let's get you started
-                  building professional C++ GUI applications using Qt
-                </p>
+
+
+                <p>Qt Quick is the latest and greatest User Interface design technology from the Qt Framework.It is best known and used to build Fluid, Dynamic and cross platform user interfaces, that can run on Windows,Mac,Linux,Android,IOS and even embedded devices.</p>
+
+                <p>Qt Quick User interfaces can be easily extended or interfaced with a powerful C++ back end. Allowing you to take full advantage of what Qt has to offer.</p>
+
+                <p><strong>This course will teach you various key techniques you need to know to make your powerful C++ back end and your shinny fluid Qt Quick User interface work together in one single piece of software product</strong>.You will be exposed to  different facilities at your disposal in the Qt framework.Those will help you write Qt code in the recommended way. That is building fluid an eye catching UI in QML and connecting it a a powerful C++ code base for heavy operations.</p>
+
+                <p><strong>The ideal student for the course is someone who already knows their way around both the C++ side of Qt and Qt Quick</strong> ; and is willing to learn how the two sides can communicate.<strong>So if you are rusty on either Qt C++ or Qt Quick(QML), please learn the basics first</strong>. If in doubt, do check my previous courses on both Qt C++ and Qt Quick.</p>
+
+                <p>You will take advantage of lots of straight to the point and easy to understand lectures, most of them backed by engaging demos for you to try out the concepts on your own right away.</p>
+
+                <p>If you're looking to learn how you can get your Qt C++ and QML code bases to connect and talk to each other, this course will get you up and running in the shortest amount of time possible.</p>
+
+                <p>The course starts right away getting your hands dirty doing things like <strong> Calling C++ methods from QML,Calling Javascript/QML methods from C++ </strong>, Using <strong>Q_PROPERTY mechanism to propagate properties and changes between C++ and QML</strong> and more.</p>
+
+                <p>You then get to take a comprehensive look at <strong>how your data is transformed when you juggle it between QML and C++</strong>. Next we do a live demo; a REST API client that <strong>downloads data in C++ and feeds the data to Qt Quick for display</strong>. The course then dives in one of the most interesting topics of <strong>registering a type in C++ to be used and instantiated in Qt Quick</strong>. This will allow you to create your own QML types like Person, Car, Tomato,... On top of that you'll also learn how to make your own QML Apis more readable and usable by incorporating features like <strong> Object and List Properties,Default Properties, Attached Properties and Property Value Sources.</strong></p>
+
+                <p>Qt is the platform choice for thousands of software projects and used by some of the most successful companies on the planet today. Learning how to make your C++ talk to your shiny Qt Quick UI will unlock the door to really using Qt the way it should be used today. Leveling up your skills as a Qt Developer.</p>
+
+                <p>Please check out some of the preview videos, and lets get you STARTED connecting your powerful C++ back end to a Dynamic and Fluid Qt Quick User Interface.</p>
+
+
                 <div><strong><span style="font-size: 28px;"><span style="color: rgb(75, 172, 198);">What you'll
                         learn</span></span></strong>
                 </div>
                 <ul>
-                  <li><span class="what-you-get__text">Event Programming</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Custom
-                      Widgets</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Painting
-                      and Drawing</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Drag and
-                      Drop</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Copying
-                      data through the clipboard</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Model View
-                      Architecture</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Graphics
-                      View Framework</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span
-                      class="what-you-get__text">Implementing Copy, Cut and Paste Features in Qt Apps</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Saving and
-                      Loading Documents</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Undo Redo
-                      in Qt Apps</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Building
-                      Resizable Items in Graphics View</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Multi
-                      Language Support in Qt Apps</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Deploying
-                      Qt applications on Windows and Linux and Mac</span></li>
-                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Building
-                      Games and Painting Applications with Qt</span></li>
+                  <li><span class="what-you-get__text">Interfacing Qt Quick and QML to C++</span></li>
+                  <li><span class="udi udi-check what-you-get__icon"></span><span class="what-you-get__text">Building your own QML Types</span></li>
+                  
                 </ul>
                 <div><span style="font-size: 28px;"><strong><span style="color: rgb(75, 172, 198);">Who is this course
                         for</span></strong></span><strong></strong>
                 </div>
                 <ul>
-                  <li>Developers and Researchers and Students willing to build professional grade Qt C++ GUI
-                    applications</li>
+                  <li>Anyone willing to learn what it takes to interface QML to C++</li>
                 </ul>
                 <p><strong><span style="font-size: 28px;"><span style="color: rgb(75, 172, 198);">Get in touch. We're
                         there for you</span></span></strong>
@@ -255,7 +202,9 @@ header: no
                           style="color: rgb(75, 172, 198);">Requirements</span></span></strong>
                   </p>
                   <ul>
-                    <li>Basic Knowledge of Qt C++ GUI Development</li>
+                    <li>The student should come with a fair knowledge about the C++ side of Qt</li>
+                    <li>The student should have a fair knowledge about Qt Quick and QML </li>
+                    <li>Should have the latest version of Qt and Qt Creator Installed on your PC or Mac </li>
                   </ul>
                 </div>
                 <div><strong><span style="font-size: 28px;"></span></strong><strong><span style="font-size: 28px;"><span
@@ -351,9 +300,9 @@ header: no
           <div class='row'>
             <div class='col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2'>
               <h2>
-                Course Content (Over 40 hours)
+                Course Content (Over 5 hours)
               </h2>
-              <div> <a href ="{{ site.qtguiintermediate }}{{ site.coupon }}">See detailed Curriculum on Udemy</a></div>
+              <div> <a href ="{{ site.qmlintermediate }}{{ site.coupon }}">See detailed Curriculum on Udemy</a></div>
               <br>
 
               <div class='row'>
@@ -363,7 +312,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Introduction ( 2 Lectures - 17:19 )
+                    Introduction : Dive In ( 9 Lectures - 01:36:09 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -389,7 +338,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Event Handling ( 11 Lectures - 01:48:07 )
+                    Data Conversion Between QML and C++ ( 7 Lectures - 01:07:36 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -415,7 +364,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Custom Widgets ( 8 Lectures - 01:23:45 )
+                    Challenge : REST Api client v1, Feeding Raw C++ Data to QML ( 4 Lectures - 37:01 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -446,7 +395,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Painting and Drawing ( 17 Lectures - 03:37:30 )
+                    Custom Non Visual Types ( 13 Lectures - 02:16:41 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -472,7 +421,7 @@ header: no
                     <span class="section-lock">
                       <i class="fa fa-lock"></i>&nbsp;
                     </span>
-                    Drag and Drop/ Clipboard ( 12 Lectures - 02:09:28 )
+                    Farewell, Next Steps and Bonus ( 2 Lectures - 06:32 )
                     <div class="section-days-to-drip">
                       <div class="section-days-logged-in">
                         Available in
@@ -491,190 +440,7 @@ header: no
               </div>
 
 
-              <div class='row'>
-                <div class='col-sm-12 course-section'>
-                  <div class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date=""
-                    data-course-id="643756">
-                    <span class="section-lock">
-                      <i class="fa fa-lock"></i>&nbsp;
-                    </span>
-                    Model View Architecture -Advanced ( 28 Lectures - 08:53:49 )
-                    <div class="section-days-to-drip">
-                      <div class="section-days-logged-in">
-                        Available in
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                      </div>
-                      <div class="section-days-logged-out">
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                        after you enroll
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div class='row'>
-                <div class='col-sm-12 course-section'>
-                  <div class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date=""
-                    data-course-id="643756">
-                    <span class="section-lock">
-                      <i class="fa fa-lock"></i>&nbsp;
-                    </span>
-                    Graphics View Framework ( 34 Lectures - 12:45:31 )
-                    <div class="section-days-to-drip">
-                      <div class="section-days-logged-in">
-                        Available in
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                      </div>
-                      <div class="section-days-logged-out">
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                        after you enroll
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div class='row'>
-                <div class='col-sm-12 course-section'>
-                  <div class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date=""
-                    data-course-id="643756">
-                    <span class="section-lock">
-                      <i class="fa fa-lock"></i>&nbsp;
-                    </span>
-                    Miscellaneous : Tuning PainterApp like a real App ( 20 Lectures - 05:22:34 )
-                    <div class="section-days-to-drip">
-                      <div class="section-days-logged-in">
-                        Available in
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                      </div>
-                      <div class="section-days-logged-out">
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                        after you enroll
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div class='row'>
-                <div class='col-sm-12 course-section'>
-                  <div class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date=""
-                    data-course-id="643756">
-                    <span class="section-lock">
-                      <i class="fa fa-lock"></i>&nbsp;
-                    </span>
-                    Internationalization ( 8 Lectures - 01:58:46 )
-                    <div class="section-days-to-drip">
-                      <div class="section-days-logged-in">
-                        Available in
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                      </div>
-                      <div class="section-days-logged-out">
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                        after you enroll
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div class='row'>
-                <div class='col-sm-12 course-section'>
-                  <div class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date=""
-                    data-course-id="643756">
-                    <span class="section-lock">
-                      <i class="fa fa-lock"></i>&nbsp;
-                    </span>
-                    Application Icons ( 1 Lecture - 08:46 )
-                    <div class="section-days-to-drip">
-                      <div class="section-days-logged-in">
-                        Available in
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                      </div>
-                      <div class="section-days-logged-out">
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                        after you enroll
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div class='row'>
-                <div class='col-sm-12 course-section'>
-                  <div class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date=""
-                    data-course-id="643756">
-                    <span class="section-lock">
-                      <i class="fa fa-lock"></i>&nbsp;
-                    </span>
-                    Deployment ( 7 Lectures - 01:21:53 )
-                    <div class="section-days-to-drip">
-                      <div class="section-days-logged-in">
-                        Available in
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                      </div>
-                      <div class="section-days-logged-out">
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                        after you enroll
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div class='row'>
-                <div class='col-sm-12 course-section'>
-                  <div class='section-title' data-release-date="" data-days-until-dripped="" data-is-dripped-by-date=""
-                    data-course-id="643756">
-                    <span class="section-lock">
-                      <i class="fa fa-lock"></i>&nbsp;
-                    </span>
-                    Next Steps ( 1 Lecture - 02:46 )
-                    <div class="section-days-to-drip">
-                      <div class="section-days-logged-in">
-                        Available in
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                      </div>
-                      <div class="section-days-logged-out">
-                        <span class="section-days-to-drip-number"></span>
-                        days
-                        after you enroll
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-
-
+              
               <br>
             </div>
           </div>
@@ -773,7 +539,7 @@ header: no
 
 
                     <a class="btn btn-hg btn-success"
-                      href="{{ site.qtguiintermediate }}{{ site.coupon }}"><i
+                      href="{{ site.qmlintermediate }}{{ site.coupon }}"><i
                         class='fa fa-shopping-cart'></i>&nbsp;&nbsp; Enroll in Course on Udemy</a>
 
                     <br><br><br><br><br><br><br>
