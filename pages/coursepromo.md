@@ -6,7 +6,7 @@ header: no
 ---
 
 <div data-alert class="alert-box alert">
-  Get any Qt related course for just $10. Choose your favorite course below. Deal valid until May 1,2020.
+  Get any Qt related course starting from just $9.9. Choose your favorite course below. Deal valid until May 14,2020.
 </div>
 
 <div class="row">
