@@ -6,7 +6,7 @@ header: no
 ---
 
 <div data-alert class="alert-box alert">
-  Get any Qt related course for just $9.99. Choose your favorite course below. Deal valid until April 27,2021.
+  Get any Qt related course for just $15. Choose your favorite course below. Deal valid until May 31,2021.
 </div>
 
 <div class="row">
@@ -15,17 +15,17 @@ header: no
     </div> <!-- /.medium-2.columns -->
 
     <div class="medium-8 columns t30">
-	<h5><a href="https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beginners/?couponCode=ENDAPRIL2021">Qt C++ GUI Development for Beginners </a> </h5>
+	<h5><a href="https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beginners/?couponCode=ENDINGAPRIL2021">Qt C++ GUI Development for Beginners </a> </h5>
 
-	<h5><a href="https://www.udemy.com/course/qt-c-gui-development-intermediate/?couponCode=ENDAPRIL2021">Qt C++ GUI Development - Intermediate </a> </h5>
+	<h5><a href="https://www.udemy.com/course/qt-c-gui-development-intermediate/?couponCode=ENDINGAPRIL2021">Qt C++ GUI Development - Intermediate </a> </h5>
 
-	<h5><a href="https://www.udemy.com/course/qt_quick_qml_tutorial_for_beginners/?couponCode=ENDAPRIL2021">Qt Quick and QML For Beginners </a> </h5>
+	<h5><a href="https://www.udemy.com/course/qt_quick_qml_tutorial_for_beginners/?couponCode=ENDINGAPRIL2021">Qt Quick and QML For Beginners </a> </h5>
 
-	<h5> <a href="https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-intermediate/?couponCode=ENDAPRIL2021">Qt Quick and QML Intermediate </a> </h5>
+	<h5> <a href="https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-intermediate/?couponCode=ENDINGAPRIL2021">Qt Quick and QML Intermediate </a> </h5>
 
-	<h5> <a href="https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-advanced/?couponCode=ENDAPRIL2021">Qt Quick and QML Advanced </a></h5>
+	<h5> <a href="https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-advanced/?couponCode=ENDINGAPRIL2021">Qt Quick and QML Advanced </a></h5>
 
-	<h5> <a href="https://www.udemy.com/course/multi-threading-and-ipc-with-qt-c-plus-plus/?couponCode=ENDAPRIL2021"> Multithreading and IPC with Qt C++ </a> </h5>
+	<h5> <a href="https://www.udemy.com/course/multi-threading-and-ipc-with-qt-c-plus-plus/?couponCode=ENDINGAPRIL2021"> Multithreading and IPC with Qt C++ </a> </h5>
 		
 		
     </div> <!-- /.medium-8.columns -->

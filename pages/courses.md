@@ -6,7 +6,7 @@ header: no
 ---
 
 <div data-alert class="alert-box alert">
-  PROMOTION : Our Udemy courses discounted to just $9.99 using coupon code {{ site.coupon }} .Please navigate to your favorite course and hit the udemy button on any course of your choosing below. The deal is valid until {{ site.couponvalidity }}
+  PROMOTION : Our Udemy courses discounted to just $15 using coupon code {{ site.coupon }} .Please navigate to your favorite course and hit the udemy button on any course of your choosing below. The deal is valid until {{ site.couponvalidity }}
  
 </div>
 
