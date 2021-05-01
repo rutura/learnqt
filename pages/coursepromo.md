@@ -6,7 +6,7 @@ header: no
 ---
 
 <div data-alert class="alert-box alert">
-  Get any Qt related course for just {{side.price}}. Choose your favorite course below. The deal is valid until {{ site.couponvalidity }}
+  Get any Qt related course for just {{site.price}}. Choose your favorite course below. The deal is valid until {{ site.couponvalidity }}
 </div>
 
 <div class="row">
