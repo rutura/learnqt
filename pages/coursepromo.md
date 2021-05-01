@@ -15,7 +15,7 @@ header: no
     </div> <!-- /.medium-2.columns -->
 
     <div class="medium-8 columns t30">
-	<h5><a href="https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beginners/?couponCode=ENDINGAPRIL2021">Qt C++ GUI Development for Beginners </a> </h5>
+	<h5><a href="{{ site.qtguibeginners }}{{ site.coupon }}">Qt 5 C++ GUI Development for Beginners  </a> </h5>
 
 	<h5><a href="https://www.udemy.com/course/qt-c-gui-development-intermediate/?couponCode=ENDINGAPRIL2021">Qt C++ GUI Development - Intermediate </a> </h5>
 
