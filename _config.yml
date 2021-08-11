@@ -44,8 +44,8 @@ urlimg: 'https://www.learnqt.guide/images/'
 #urlimg: 'https://rutura.github.io/learnqt/images/'
 
 # Course Links
-coupon: 'ENDJULY2021'
-couponvalidity: 'August 1,2021'
+coupon: 'STARTAUGUST2021'
+couponvalidity: 'August 16,2021'
 price: '$9.99'
 qtguibeginners: 'https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beginners/?couponCode='
 qtguiintermediate: 'https://www.udemy.com/course/qt-c-gui-development-intermediate/?couponCode='
