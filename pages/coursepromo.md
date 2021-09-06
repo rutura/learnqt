@@ -15,6 +15,9 @@ header: no
     </div> <!-- /.medium-2.columns -->
 
     <div class="medium-8 columns t30">
+	
+	<h5><a href="{{ site.cpp20masterclass }}{{ site.coupon }}">The C++ 20 Masterclass : From Fundamentals to Advanced  </a> </h5>
+
 	<h5><a href="{{ site.qtguibeginners }}{{ site.coupon }}">Qt C++ GUI Development for Beginners  </a> </h5>
 
 	<h5><a href="{{ site.qtguiintermediate }}{{ site.coupon }}">Qt C++ GUI Development - Intermediate </a> </h5>
