@@ -44,8 +44,8 @@ urlimg: 'https://www.learnqt.guide/images/'
 #urlimg: 'https://rutura.github.io/learnqt/images/'
 
 # Course Links
-coupon: 'ENDDEC2021'
-couponvalidity: 'December 28,2021'
+coupon: 'STARTJAN2022'
+couponvalidity: 'January 13,2022'
 price: '$9.99'
 cpp20masterclass:  'https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode='
 qtguibeginners: 'https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beginners/?couponCode='
