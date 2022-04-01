@@ -18,17 +18,19 @@ header: no
 	
 	<h5><a href="{{ site.cpp20masterclass }}{{ site.coupon }}">The C++ 20 Masterclass : From Fundamentals to Advanced  </a> </h5>
 
-	<h5><a href="{{ site.qtguibeginners }}{{ site.coupon }}">Qt C++ GUI Development for Beginners  </a> </h5>
+	<h5><a href="{{ site.qt6guibeginners }}{{ site.coupon }}">Qt 6 C++ GUI Development for Beginners : The Fundamentals [Latest/Recommended]  </a> </h5>
 
-	<h5><a href="{{ site.qtguiintermediate }}{{ site.coupon }}">Qt C++ GUI Development - Intermediate </a> </h5>
+	<h5><a href="{{ site.qtguibeginners }}{{ site.coupon }}">Qt 5 C++ GUI Development for Beginners : The Fundamentals  </a> </h5>
 
-	<h5><a href="{{ site.qmlbeginners }}{{ site.coupon }}">Qt Quick and QML For Beginners </a> </h5>
+	<h5><a href="{{ site.qtguiintermediate }}{{ site.coupon }}">Qt 5 C++ GUI Development - Intermediate </a> </h5>
 
-	<h5> <a href="{{ site.qmlintermediate }}{{ site.coupon }}">Qt Quick and QML Intermediate </a> </h5>
+	<h5><a href="{{ site.qmlbeginners }}{{ site.coupon }}">Qt Quick and QML For Beginners(Qt 5) </a> </h5>
 
-	<h5> <a href="{{ site.qmladvanced }}{{ site.coupon }}">Qt Quick and QML Advanced </a></h5>
+	<h5> <a href="{{ site.qmlintermediate }}{{ site.coupon }}">Qt Quick and QML Intermediate(Qt 5) </a> </h5>
 
-	<h5> <a href="{{ site.multithreading }}{{ site.coupon }}"> Multithreading and IPC with Qt C++ </a> </h5>
+	<h5> <a href="{{ site.qmladvanced }}{{ site.coupon }}">Qt Quick and QML Advanced(Qt 5) </a></h5>
+
+	<h5> <a href="{{ site.multithreading }}{{ site.coupon }}"> Multithreading and IPC with Qt 5 C++ </a> </h5>
 		
 		
     </div> <!-- /.medium-8.columns -->
