@@ -20,6 +20,8 @@ header: no
 
 	<h5><a href="{{ site.qt6guibeginners }}{{ site.coupon }}">Qt 6 C++ GUI Development for Beginners : The Fundamentals [Latest/Recommended]  </a> </h5>
 
+	<h5><a href="{{ site.pyside6widgetsbeginners }}{{ site.coupon }}">Qt For Python (PySide6) GUI For Beginners : The Fundamentals </a> </h5>
+
 	<h5><a href="{{ site.qtguibeginners }}{{ site.coupon }}">Qt 5 C++ GUI Development for Beginners : The Fundamentals[Archived]  </a> </h5>
 
 	<h5><a href="{{ site.qtguiintermediate }}{{ site.coupon }}">Qt 5 C++ GUI Development - Intermediate </a> </h5>
