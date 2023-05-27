@@ -44,8 +44,8 @@ urlimg: 'https://www.learnqt.guide/images/'
 #urlimg: 'https://rutura.github.io/learnqt/images/'
 
 # Course Links
-coupon: 'STARTMAY2023'
-couponvalidity: 'May 16,2023'
+coupon: 'ENDMAY2023'
+couponvalidity: 'June 1st,2023'
 price: '$9.99'
 pyside6widgetsbeginners : 'https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/?couponCode='
 qt6guibeginners : 'https://www.udemy.com/course/qt6-c-gui-widgets-tutorial-for-beginners/?couponCode='
