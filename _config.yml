@@ -8,9 +8,9 @@ logo: /assets/blog/image/LearnQt.png
 
 # for activate comment integration with github issue 
 # need to install on repo visit https://github.com/apps/utterances - and click install
-#githubrepo: rutura/learnqt
+githubrepo: rutura/learnqt
 
-githubrepo: mesinkasir/mesinkasir.github.io
+#githubrepo: mesinkasir/mesinkasir.github.io
 
 #navbar homepage slider version
 navhome: 
