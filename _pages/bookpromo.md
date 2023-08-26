@@ -1,7 +1,7 @@
 ---
 layout: promo
 title: "Qt,C++ and QML Books on discount!"
-description: QT Courses description promo
+description: 
 cover: /assets/courses/image/LearnQt.png
 permalink: "/books-discounted/"
 ---
