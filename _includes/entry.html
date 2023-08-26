@@ -1,0 +1,25 @@
+{% if entry.id %}
+  {% assign title = entry.title | markdownify | strip_html %}
+{% else %}
+  {% assign title = entry.title %}
+{% endif %}
+
+<article class="col-md-12 p-1">
+<header>
+<h3>
+{% if entry.link %}
+<a class="u-bookmark-of" href="{{ entry.link }}">{{ title }}</a> <a href="{{ entry.url | relative_url }}" rel="bookmark"><span class="link-arrow">&rarr;</span></a>
+{% else %}
+<a href="{{ entry.url | relative_url }}" rel="bookmark">{{ title }}</a>
+{% endif %}
+</h3><hr/>
+{% if entry.image.cover %}
+{% assign entry_image = entry.image.cover%}
+{% unless entry_image contains '://' %}
+{% assign entry_image = entry_image | relative_url %}
+{% endunless %}
+{% assign entry_cover = entry_cover | escape %}
+<!--<img class="entry-image u-photo" src="{{ entry_image }}" alt="">-->
+{% endif %}
+</header>
+</article>

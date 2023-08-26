@@ -1,0 +1,37 @@
+# Configuration Courses Widget -All courses widget min have 3 list
+
+# BEST COURSES
+
+best_courses_title: Best Seller Courses
+
+best_courses_list: # do not enter text in this area, it is blank by default for lists
+ - title: 'Qt 6 C++ GUI Development for Beginners : The Fundamentals'
+   subtitle: Qt 6 C++ GUI subtitle in here
+   image: /assets/img/learnqtcourses1.webp
+   star: 5
+   level: beginer
+   link: /courses/
+ - title: 'The C++20 Masterclass : From Fundamentals to Advanced'
+   subtitle: The C++20 Masterclass subtitle in here
+   image: /assets/img/learnqtcourses2.webp
+   star: 4
+   level: advance
+   link:  /courses/
+ - title: 'Qt For Python (PySide6) GUI For Beginners'
+   subtitle: Qt For Python (PySide6) subtitle in here
+   image: /assets/img/learnqtcourses3.webp
+   star: 5
+   level: beginer
+   link: /courses/
+
+courses_button: Explore All Courses
+
+courses_button_singgle: Read More
+
+buy_button_page: Buy This Courses
+
+buy_button_on_list: Take Courses
+
+
+
+

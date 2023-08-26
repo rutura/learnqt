@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<g data-name="21_Certificate" id="_21_Certificate">
+<path d="M61,50H3a1,1,0,0,1-1-1V5A1,1,0,0,1,3,4H61a1,1,0,0,1,1,1V49A1,1,0,0,1,61,50Z" style="fill:#febc00"/>
+<path d="M25.583,48l-5.767,5.675a1.051,1.051,0,0,0-.269,1.061,1.075,1.075,0,0,0,.824.734l3.1.6.634,3.077a1.067,1.067,0,0,0,.747.806,1.089,1.089,0,0,0,1.075-.265L32.5,53.218A9.72,9.72,0,0,1,25.583,48Z" style="fill:#f74e0c"/>
+<path d="M38.417,48l5.767,5.675a1.051,1.051,0,0,1,.269,1.061,1.075,1.075,0,0,1-.824.734l-3.1.6L39.9,59.148a1.067,1.067,0,0,1-.747.806,1.089,1.089,0,0,1-1.075-.265L31.5,53.218A9.72,9.72,0,0,0,38.417,48Z" style="fill:#f74e0c"/>
+<path d="M57,46H7a1,1,0,0,1-1-1V9A1,1,0,0,1,7,8H57a1,1,0,0,1,1,1V45A1,1,0,0,1,57,46Z" style="fill:#fdfeff"/>
+<path d="M21.051,46a10.9,10.9,0,0,0,1.163,4H41.786a10.9,10.9,0,0,0,1.163-4Z" style="fill:#edaa03"/>
+<path d="M43,45a11,11,0,0,0-22,0c0,.338.021.67.051,1h21.9C42.979,45.67,43,45.338,43,45Z" style="fill:#dfeaef"/>
+<path d="M8,45V9A1,1,0,0,1,9,8H7A1,1,0,0,0,6,9V45a1,1,0,0,0,1,1H9A1,1,0,0,1,8,45Z" style="fill:#dfeaef"/>
+<path d="M32,54a9,9,0,1,1,9-9A9.01,9.01,0,0,1,32,54Z" style="fill:#f74e0c"/>
+<path d="M34,52a8.984,8.984,0,0,1-7.276-14.276A8.99,8.99,0,1,0,39.276,50.276,8.944,8.944,0,0,1,34,52Z" style="fill:#cc2600"/>
+<circle cx="32" cy="45" r="4" style="fill:#febc00"/>
+<path d="M34,47a4,4,0,0,1-4-4,3.964,3.964,0,0,1,.36-1.64,3.995,3.995,0,1,0,5.28,5.28A3.964,3.964,0,0,1,34,47Z" style="fill:#edaa03"/>
+<rect height="2" style="fill:#dfeaef" width="28" x="18" y="16"/>
+<rect height="2" style="fill:#dfeaef" width="28" x="18" y="20"/>
+<rect height="2" style="fill:#dfeaef" width="28" x="18" y="24"/>
+<rect height="2" style="fill:#dfeaef" width="14" x="32" y="28"/>
+<rect height="2" style="fill:#dfeaef" width="8" x="38" y="32"/>
+</g>
+</svg>

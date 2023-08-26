@@ -1,0 +1,91 @@
+<div class="container-fluid black bgs2" id="book">
+<div class="row text-center">
+
+<div class="col-md-12 p-3 p-md-5 mt-5 text-center">
+<h2><strong>{{page.books.title}}</strong></h2>
+<div class="bot-center col-md-1 col-2 mt-3"></div>
+<p class="mt-3 col-md-6 mx-auto">{{page.books.desrciption}}</p>
+</div>
+<div class="col-md-8 mx-auto p-3">
+<div class="row">
+
+<div class="col-md-2 mt-1" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+<div class="row justify-content-center mt-3">
+<button class="btn zoom  active col-md-12 col-3" style="border:none;" id="v-learnqtbook1-tab" data-bs-toggle="pill" data-bs-target="#v-learnqtbook1" 
+type="button" role="tab" aria-controls="v-learnqtbook1" aria-selected="true">
+<img class="img-fluid lazyload" width="90" height="90" loading="lazy" alt="{{page.book1.title}}"
+data-src="{{page.book1.cover}}"/>
+</button>
+<button class="btn zoom col-md-12 col-3" style="border:none;" id="v-learnqtbook2-tab" data-bs-toggle="pill" data-bs-target="#v-learnqtbook2" 
+type="button" role="tab" aria-controls="v-learnqtbook2" aria-selected="false">
+<img class="img-fluid lazyload" width="90" height="90" loading="lazy" alt="{{page.book2.title}}"
+data-src="{{page.book2.cover}}"/>	
+</button>
+<button class="btn zoom col-md-12 col-3" style="border:none;" id="v-learnqtbook3-tab" data-bs-toggle="pill" data-bs-target="#v-learnqtbook3" 
+type="button" role="tab" aria-controls="v-learnqtbook3" aria-selected="false">
+<img class="img-fluid lazyload" width="90" height="90" loading="lazy" alt="{{page.book3.title}}"
+data-src="{{page.book3.cover}}"/>
+</button>
+</div>
+</div>
+
+<div class="tab-content col-md-10 p-3 text-start" id="v-pills-tabContent">
+
+<div class="tab-pane fade show active" id="v-learnqtbook1" role="tabpanel" aria-labelledby="v-learnqtbook1-tab" tabindex="0">
+<div class="row">
+<div class="col-md-5 p-3">
+<img class="img-fluid lazyload" width="100%" height="100%" loading="lazy" alt="{{page.book1.title}}"
+data-src="{{page.book1.cover}}"/>
+</div>
+<div class="col-md-7 p-3">
+<h3><strong><a href="{{page.book1.link}}">{{page.book1.title}}</a></strong></h3>
+<p class="mt-3">{{page.book1.description}}</p>
+<p class="mt-3">{{page.book1.content}}</p>
+<p><a href="{{page.book1.link}}" title="{{page.book1.title}} info" class="btn bg-green btn-outline-success mt-3">More info</a></p>
+</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="v-learnqtbook2" role="tabpanel" aria-labelledby="v-learnqtbook2-tab" tabindex="0">
+<div class="row">
+<div class="col-md-5 p-3">
+<img class="img-fluid lazyload" width="100%" height="100%" loading="lazy" alt="{{page.book2.title}}"
+data-src="{{page.book2.cover}}"/>
+</div>
+<div class="col-md-7 p-3">
+<h3><strong><a href="{{page.book2.link}}">{{page.book2.title}}</a></strong></h3>
+<p class="mt-3">{{page.book2.description}}</p>
+<p class="mt-3">{{page.book2.content}}</p>
+<p><a href="{{page.book2.link}}" title="{{page.book2.title}} info" class="btn bg-green btn-outline-success mt-3">{{page.books.button_post}}</a></p>
+</div>
+</div>
+</div>
+	
+<div class="tab-pane fade" id="v-learnqtbook3" role="tabpanel" aria-labelledby="v-learnqtbook3-tab" tabindex="0">
+<div class="row">
+<div class="col-md-5 p-3">
+<img class="img-fluid lazyload" width="100%" height="100%" loading="lazy" alt="{{page.book3.title}}"
+data-src="{{page.book3.cover}}"/>
+</div>
+<div class="col-md-7 p-3">
+<h3><strong><a href="{{page.book3.link}}">{{page.book3.title}}</a></strong></h3>
+<p class="mt-3">{{page.book3.description}}</p>
+<p class="mt-3">{{page.book3.content}}</p>
+<p><a href="{{page.book3.link}}" title="{{page.book3.title}} info" class="btn bg-green btn-outline-success mt-3">{{page.books.button_post}}</a></p>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="col-md-12 p-3 p-md-5 mt-1 mb-5 text-center">
+<a href="/books/" title="explore all book {{site.title}}" class="btn btn-greenns ser zoom">{{page.books.button}}</a>
+</div>
+
+
+</div>
+</div>

@@ -1,0 +1,54 @@
+<div class="col-md-3 p-3">
+<div class="row">
+<div class="mb-3 shadow-sm mt-3 ">
+<div class="p-1 bg-greens">
+<h3 class="p-1 text-center lead"><a href="{{page.url}}" class="text-white">{{page.information}}</a></strong></h3>
+</div>
+
+<div class="p-3">
+<p><small>
+<a href="{{page.url}}">Version</a> <span class="float-end">{{page.bookinfo.version}}</span>
+<br/>
+<a href="{{page.url}}">Last Update</a> <span class="float-end">{{page.bookinfo.update}}</span>
+<br/>
+<a href="{{page.url}}">QT Version</a> <span class="float-end">{{page.bookinfo.qt_version}}</span>
+<br/>
+<a href="{{page.url}}">Build System</a> <span class="float-end">{{page.bookinfo.system}}</span>
+<br/>
+<a href="{{page.url}}">Chapter count</a> <span class="float-end">{{page.bookinfo.chapter_count}}</span>
+</small></p>
+</div>
+
+</div>
+
+
+<div class="zoom mb-3 shadow-sm bg-green text-white bookabout">
+<div class="p-3 text-center">
+<img src="{{page.about.icon}}" width="60" class="p-1 mb-1 mt-1 bg-light rounded-circle"/>
+<h3 class="lead"><strong><a href="{{page.url}}" class="text-white">{{page.about.title}}</a></strong></h3><hr/>
+<p class="text-start"><small>{{page.about.description}}</small></p>
+<p><a href="{{page.buylink}}" class="btn col-12 mt-1 mb-1 btn-light" 
+style="border-radius:0;">{{page.button}}</a></p>
+</div>
+</div>
+
+<div class="mb-3 shadow-sm">
+<div class="text-dark p-3">
+<h3 class="lead text-center"><a href="{{page.url}}">Book Chapter</a></strong></h3><hr/>
+<p class="mt-1"><small>{% for c in page.chapter %}{{c}}<br/>{% endfor %}</small></p>
+</div>
+
+<div class="mb-3 shadow-sm bg-green text-white">
+<div class="p-3 text-center">
+<img src="{{site.data.books.message_icon}}" width="60" 
+class="p-1 mb-1 mt-1 bg-light rounded-circle"/>
+<h3 class="lead"><strong><a href="{{page.url}}" class="text-white">
+Help</a></strong></h3><hr/>
+<p class="text-start"><small>
+{{site.data.books.message_info}}
+</small></p>
+<p><button class="btn col-12 mt-1 mb-1 btn-light" style="border-radius:0px" data-bs-toggle="modal" data-bs-target="#contactModal">{{site.data.books.message_button}}</button></p>
+
+</div>
+</div>
+</div>

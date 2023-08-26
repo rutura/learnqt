@@ -1,0 +1,22 @@
+<div class="row">
+<h2 class="col-md-8"><strong><a href="/blog/">{{site.data.blogs.featured_blog_title}}</a></strong></h2>
+<div class="col-md-4 p-1 text-end"><p><a href="/blog/" class="xp">{{site.data.blogs.blog_button}} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+</svg></a></p></div>
+{% for f_post in site.data.blogs.featured_blog_list limit : 4 %}
+<div class="col-md-12" style="padding-top: 5px;">
+<div class="shadow-sm bg-white zoom row mt-1">
+<a href="{{f_post.url}}" class="col-md-4">
+<img class="img-fluid lazyload p-1" loading="lazy" data-src="{{f_post.image}}"/>
+</a>
+<div class="col-md-8">
+<a href="{{f_post.url}}"><p class="mt-1 card-title"><strong>{{f_post.title}}</strong></p>
+</a>
+</div>
+<div class="col-md-12">
+<p class="mt-1"><small>{{f_post.subtitle}}</small></p>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>

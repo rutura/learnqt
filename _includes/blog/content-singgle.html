@@ -1,0 +1,44 @@
+<div class="col-md-12 p-1 mt-1">
+<div class="col-md-12 p-3 mt-1">
+<div class="p-3 shadow-sm">
+<h2 class="card-title p-3"><strong><a href="{{page.url}}">{{page.title}}</a></strong></h2>
+<a href="{{page.url}}"><img class="img-fluid p-3 lazyload" loading="lazy" width="100%" height="100%" data-src="{{page.cover}}"/></a>
+<div class="row">
+<div class="col-md-6">
+<span class="ms-3"><small>
+<img class="img-fluid" width="30" height="30" src="/assets/img/calendar.svg"/> {{ page.date| date: "%d %b %Y" }}
+</small></span>
+</div>
+<div class="col-md-6 text-end">
+<span class="me-3"><small>
+<img class="img-fluid" width="30" height="30" src="/assets/img/clock.svg"/> 
+{% capture words %}
+{{ content | number_of_words | minus: 180 }}
+{% endcapture %}
+{% unless words contains '-' %}
+{{ words | plus: 150 | divided_by: 150 | append: ' mins' }}
+{% endunless %}
+</small></span>
+</div>
+<p class="col-md-12 ms-3 mt-1">
+{% for ct in page.categories %}
+<span class="badge text-bg-dark">
+<a href="{{site.url}}/categories.html#{{ct}}" class="text-white">{{ct}}</a>
+</span>
+{% endfor %}
+{% for t in page.tags %}
+<span class="badge text-bg-success">
+<a href="{{site.url}}/tag.html#{{t}}" class="text-white">{{t}}</a>
+</span>
+{% endfor %}
+</p>
+<div class="text-dark col-md-12 p-3">
+{{content}}
+</div>
+{% if page.comment == true %}{% include widget/comment.html %}{% endif %}
+</div>
+</div>
+</div>
+
+
+</div>

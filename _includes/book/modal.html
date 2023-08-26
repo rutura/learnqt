@@ -1,0 +1,42 @@
+<div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-fullscreen">
+<div class="modal-content" style="border-radius: 0;">
+<div class="modal-header bg-dark">
+<h1 class="modal-title fs-5" id="bookModalLabel"><a href="{{page.url}}">{{page.title}}</a></h1>
+<button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<img class="img-fluid" width="100%" height="100%" alt="{{page.description}}" 
+src="{{page.image1}}"/>
+</div>
+</div>
+</div>
+</div>
+{% if page.image2 %}<div class="modal fade" id="book1Modal" tabindex="-1" aria-labelledby="book1ModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-fullscreen">
+<div class="modal-content" style="border-radius: 0;">
+<div class="modal-header bg-dark">
+<h1 class="modal-title fs-5" id="book1ModalLabel"><a href="{{page.url}}">{{page.title}}</a></h1>
+<button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<img class="img-fluid" width="100%" height="100%" alt="{{page.description}}" 
+src="{{page.image2}}"/>
+</div>
+</div>
+</div>
+</div>{% endif %}
+{% if page.image3 %}<div class="modal fade" id="book2Modal" tabindex="-1" aria-labelledby="book2ModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-fullscreen">
+<div class="modal-content" style="border-radius: 0;">
+<div class="modal-header bg-dark">
+<h1 class="modal-title fs-5" id="book2ModalLabel"><a href="{{page.url}}">{{page.title}}</a></h1>
+<button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<img class="img-fluid" width="100%" height="100%" alt="{{page.description}}" 
+src="{{page.image3}}"/>
+</div>
+</div>
+</div>
+</div>{% endif %}

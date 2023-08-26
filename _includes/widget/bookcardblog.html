@@ -1,0 +1,17 @@
+{% if page.bookcard == true %}
+{% for ca in site.data.cardbook.cardlist | limit:{{site.data.cardbook.display_on_blog_page}} %}
+<div class="zoom mb-3 mt-3 shadow-sm border-success border-top">
+<h3 class="p-3 lead">
+<strong><a href="{{ca.link}}">{{ca.title}}</a></strong>
+</h3>
+<img class="img-fluid p-1 lazyload" loading="lazy" 
+width="100%" height="100%" data-src="{{ca.image}}"/>
+<p class="text-dark p-1 mt-3">
+{{ca.subtitle}}
+</p>
+<p><a href="{{ca.link}}" 
+class="btn col-12 mt-3 mb-3 bg-green btn-outline-success" 
+style="border-radius:0;">{{ca.button}}</a></p>
+</div>
+{% endfor %}
+{% endif %}

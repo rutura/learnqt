@@ -1,0 +1,44 @@
+<div class="container">
+
+<div class="row">
+<div class="col-md-10 mx-auto p-3 mt-3 text-center">
+<h2><strong><a href="{{page.url}}">{{page.title}}</a></strong></h2>
+<div class="bot-center col-md-1 col-2 mt-3"></div>
+<p class="mt-3 col-md-8 mx-auto">{{page.description}}</p>
+</div>
+
+<div class="col-md-10 mx-auto">
+{% for bk in site.data.bookslist %}
+<div class="col-md-12 p-3 mb-3">
+<div class="row shadow-sm zoom">
+<div class="col-md-6 p-3 ">
+<img class="img-fluid lazyload" loading="lazy" width="100%" height="100%" alt="{{bk.title}}" data-src="{{bk.cover}}"/>
+</div>
+<div class="col-md-6 p-3">
+<h3 class="card-title"><strong><a href="{{bk.url}}">{{bk.title}}</a></strong></h3>
+<p class="mt-3">
+{{bk.subtitle}}
+</p>
+<h3 class="card-title mt-3"><strong>
+{{bk.why}}
+</strong></h3>
+<ul class="mt-3">
+{% for bkl in bk.whylist %}
+<li>{{bkl}}</li>
+{% endfor %}
+</ul>
+<p><a href="{{bk.link}}" class="btn col-12 mt-3 mb-3 bg-green btn-outline-success btn-lg" 
+style="border-radius:0;">Get The Book Now</a></p>
+</div>
+
+
+
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+</div>
+
+</div>

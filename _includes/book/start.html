@@ -1,0 +1,12 @@
+<div class="container">
+<div class="row mb-5">
+{% include book/header.html %}
+{% if page.sidebar == true %}{% include book/content.html %}{% include book/sidebar.html %}{% else if %}{% include book/content-singgle.html %}{% endif %}
+</div>
+</div>
+</div>
+</div>
+{% include book/modal.html %}
+{% include book/message.html %}
+
+{% include courses/widget.html %}

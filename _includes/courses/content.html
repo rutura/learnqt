@@ -1,0 +1,41 @@
+<div class="col-md-4 p-3">
+<h3><a href="{{page.url}}">{{page.what_you_learn}}</a></h3>
+<div class="row">
+{% for l in page.learn_list %}
+<div class="col-1">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-green me-3" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg> 
+</div>
+<div class="col-11 dtl">{{l}}</div>
+{% endfor %}
+
+<div class="row mt-3 text-center">
+{% for c in page.counts %}
+<div class="col-md-4 col-4 border border-success">
+<strong>{{c.number}}</strong> <br/><small>{{c.name}}</small>
+</div>
+{% endfor %}
+</div>
+<p class="mt-3">
+Level: {% for i in page.level %}<span class="badge bg-green">{{i}}</span> {% endfor %}
+</p>
+
+<div class="row mt-3">
+<div class="col-md-4">
+<img class="img-fluid rounded-circle lazyload" loading="lazy" width="120" height="120" title="{{site.author.name}}" data-src="{{site.author.image}}"/>
+</div>
+<div class="col-md-8">
+<h4><strong>{{site.author.name}}</strong></h3>
+<p><span class="badge bg-green">{{site.author.label}}</span></p>
+</div>
+</div>
+
+</div>
+</div>
+<div class="col-md-8 p-3">
+<h3><a href="{{page.url}}">Description</a></h3>
+{{content}}
+<p>
+<a href="{{page.buylink}}" class="btn col-md-4 col-12 mt-1 mb-1 bg-greens border-white btn-outline-success zoom" style="border-radius:0;">{{site.data.courses.buy_button_page}}</a></p>
+</div>

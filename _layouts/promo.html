@@ -1,0 +1,17 @@
+{% include seo.html %}
+{% include navpage.html %}
+<style>img { max-width: 100%;  height: auto;}</style>
+<div class="container">
+<div class="row">
+<main class="col-md-12 p-3">
+<div class="p-3 mt-3">
+<h1><strong><a href="{{page.url}}">{{page.title}}</a></strong></h1>
+<h2 class="lead mb-3">{{page.description}}</h2>
+<div class="col-md-10 mx-auto">
+{{content}}
+</div>
+</div>
+</main>
+</div>
+</div>
+{% include footerpage.html %}

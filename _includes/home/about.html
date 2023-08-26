@@ -1,0 +1,71 @@
+<div class="container-fluid">
+
+<div class="row mb-5">
+<div class="col-md-10 mx-auto p-3 p-md-5 text-center mt-5">
+<h2><strong><a href="{{page.url}}">{{page.why.title}}</a></strong></h2>
+<div class="bot-center col-md-1 mt-3 col-2"></div>
+<p class="mt-5 col-md-6 mx-auto">{{page.why.description}}</p>
+</div>
+
+<div class="col-md-9 mx-auto">
+<div class="row">
+
+{% for w in page.why.list %}
+<div class="col-md-3 p-3">
+<div class="p-3 p-md-3 shadow-sm rounded border-top border-success zoom">
+<div class="text-center"><img class="img-fluid bg-light rounded-circle p-3 mt-3 lazyload" alt="{{page.title}}" loading="lazy" width="120" height="120" data-src="{{w.image}}"/></div>
+<div class="p-3">
+<p><a href="{{site.url}}">{{w.title}}</a></p>
+<p><small>{{w.description}}</small></p>
+</div>
+</div>
+</div>
+{% endfor %}
+
+</div>
+</div>
+
+</div>
+
+<div class="col-md-10 mx-auto p-3">
+<div class="row bg-light sers mt-5 mail shadow-sm">
+<h2 class="col-md-8 offset-md-2 p-3 mt-5 mb-3 text-center"><strong>{{page.notified.title}}</strong></h2>
+<div class="col-md-6 p-5 offset-md-3">
+ <form action="https://airform.io/{{site.email}}" method="post">
+<div class="row">
+<div class="col-md-9 offset-md-1 p-1">
+<input type="email" name="email" class="form-control form-control-lg rounded" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="col-md-2 p-1">
+<button class="btn btn-greenoss btn-lg col-12"> Go</button>
+</div>
+</div>
+</form>
+</div>
+<p class="col-md-6 mx-auto p-3 text-center mb-5">
+{{page.notified.description}}
+</p>
+<div class="p-3">
+</div>
+</div>
+</div>
+
+<div class="row mb-5" id="about">
+<div class="col-md-12 p-3 p-md-5 text-center mt-5">
+<h2><strong><a href="{{site.url}}">{{site.author.title}}</a></strong></h2>
+</div>
+<div class="col-md-8 mx-auto">
+<div class="row">
+<div class="col-md-4 p-3 p-md-5 text-center">
+<img class="img-fluid rounded-circle lazyload" loading="lazy" width="200" height="200" alt="{{site.author.name}}" data-src="{{site.author.image}}"/>
+</div>
+<div class="col-md-8 p-3">
+<h3><strong>{{site.author.name}}</strong></h3>
+<span class="badge bg-green">{{site.author.label}}</span>
+<hr class="hr-green col-md-1 col-2"/>
+<p>{{site.author.description}}</p>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,21 @@
+cardlist: 
+  - title: 33 Tips and Tricks to Speed up your workflow .
+    subtitle: Get this higly visual, 15 pages PDF Guide On Qt Creator for FREE!
+    image: /assets/img/qt_creator_guide.webp
+    button: GET IT NOW!
+    link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+  - title: Example Book 2.
+    subtitle: Description example book 2
+    image: /assets/img/bookis.webp
+    button: GET IT NOW!
+    link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+  - title: Example Book 3.
+    subtitle: Description example book 3 you can write anything in here...
+    image: /assets/img/qt_creator_guide.webp
+    button: GET IT NOW!
+    link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+
+display_on_blog_list: 1
+
+display_on_blog_page: 2
+

@@ -1,0 +1,21 @@
+<div class="bg-green col-md-2 p-1">
+<div class="text-white">
+<div class="p-3 text-center row">
+{% for s in page.info %}
+<div class="col-4 col-md-12 mt-1 zoom cdt">
+<div class="p-1">
+<img data-src="{{s.icon}}" width="60" height="60" title="{{s.title}}"
+class="p-1 mb-1 mt-1 bg-light rounded-circle lazyload" loading="lazy"/>
+<p><small>{{s.title}}</small></p>
+</div>
+</div>
+{% endfor %}
+<div class="p-1 mt-1 mb-3"></div>
+</div>
+</div>
+</div>
+<div class="col-md-10 p-1">
+<div class="ratio ratio-16x9 bg-dark p-1">
+<iframe data-src="{{page.video}}" loading="lazy" class="lazyload" title="{{page.title}}" allowfullscreen></iframe>
+</div>
+</div>

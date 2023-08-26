@@ -1,0 +1,27 @@
+<div class="col-md-3 p-3">
+
+
+<div class="row">
+
+{% include widget/bookcardblog.html %}
+
+<div href="{{page.url}}" class="mb-3 shadow-sm mt-3">
+<div class="p-3 bg-greens">
+<h3 class="p-3"><img class="img-fluid p-1 bg-white rounded-circle" 
+width="60" height="60" src="/assets/img/tag.svg"/> 
+<strong><a href="{{page.url}}" class="text-white">Tags</a></strong></h3>
+</div>
+<div class="p-3">
+{% for tag in site.tags %}
+<p><a href="{{site.url}}/tag.html#{{tag[0]}}">{{ tag[0] }} <span class="float-end">({{ tag[1].size }}) </span></a>
+<br/>
+{% endfor %}
+</p>
+</div>
+</div>
+
+{% include widget/coursescardblog.html %}
+
+
+</div>
+</div>

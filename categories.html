@@ -1,0 +1,99 @@
+---
+layout: skeleton
+title: Learn QT Categories
+description: Categories list learn qt guide
+cover: /assets/img/learnqt-black.webp
+thumbnail : /assets/img/learnqt-black.webp
+---
+
+
+<div class="col-md-8 mx-auto mt-3 mb-5">
+<div class="row p-3 shadow-sm">
+<div class="col-md-12 text-center p-3 bg-greens">
+<img class="img-fluid rounded-circle" alt="{{page.title}}" width="250" height="250" src="/assets/img/learnqt-black.webp"/>
+<h1>{{page.title}}</h1>
+<h2 class="lead">{{page.description}}</h2>
+</div>
+
+{% assign categories_max = 0 %}
+{% for category in site.categories %}
+  {% if category[1].size > categories_max %}
+    {% assign categories_max = category[1].size %}
+  {% endif %}
+{% endfor %}
+
+{% assign category_names_array = "" %}
+{% assign category_counts = "" %}
+{% assign first_array_element = true %}
+{% for i in (1..categories_max) reversed %}
+  {% assign category_names = "" %}
+  {% assign first_category = true %}
+
+  {% for category in site.categories %}
+    {% if category[1].size == i %}
+      {% if first_category %}
+        {% assign first_category = false %}
+      {% else %}
+        {% assign category_names = category_names | append: "," %}
+      {% endif %}
+      {% assign category_names = category_names | append: category[0] %}
+    {% endif %}
+  {% endfor %}
+
+  {% if category_names != "" %}
+    {% assign category_names = category_names | split: "," | sort | join: "," %}
+
+    {% if first_array_element %}
+      {% assign first_array_element = false %}
+    {% else %}
+      {% assign category_names_array = category_names_array | append: "|" %}
+      {% assign category_counts = category_counts | append: "|" %}
+    {% endif %}
+    {% assign category_names_array = category_names_array | append: category_names %}
+    {% assign category_counts = category_counts | append: i %}
+  {% endif %}
+{% endfor %}
+
+{% assign category_names_array = category_names_array | split: "|" %}
+{% assign category_counts = category_counts | split: "|" %}
+
+
+<div class="p-3 row">
+  {% for category_names in category_names_array %}
+    {% assign category_names_list = category_names | split: "," %}
+    {% assign category_count = category_counts[forloop.index0] %}
+    {% for category_name in category_names_list %}
+      
+        <a href="#{{ category_name | slugify }}" class="col-md-2 p-3 btn-orange">
+          <strong>{{ category_name }}</strong> <span class="orange">{{ category_count }}</span>
+        </a>
+    {% endfor %}
+  {% endfor %}
+</div>
+
+<div class="container">
+{% for category_names in category_names_array %}
+  {% assign category_names_list = category_names | split: "," %}
+  {% for category_name in category_names_list %}
+    <section id="{{ category_name | slugify | downcase }}" class="p-3">
+      <h2>{{ category_name }}</h2>
+      {% for category in site.categories %}
+        {% if category[0] == category_name %}
+          <div class="entries-{{ page.entries_layout | default: 'list' }} row">
+	            {% for entry in category.last %}
+              {% include entry.html %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>
+  {% endfor %}
+{% endfor %}
+</div>
+
+<div class="text-center p-1 mb-5">
+<a href="#" class="btn-green">{{ site.data.text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+</div>
+	  
+</div>
+</div>  

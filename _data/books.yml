@@ -1,0 +1,25 @@
+# Configuration best books Widget - best books widget min have 2 list
+
+# BEST BOOKS
+
+best_books_title: Best Booklet
+
+best_books_list: # do not enter text in this area, it is blank by default for lists
+ - title: Qt6 QML For Beginners
+   subtitle: Qt6 QML For Beginners subtitle in here
+   cover: /assets/img/learnqtbook.webp
+   link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+ - title: The C++20 Masterclass
+   subtitle: The C++20 Masterclass subtitle in here
+   cover: /assets/img/learnqtbook2.webp
+   link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+
+
+
+books_button: Explore All Booklet
+
+book_button_list: Learn More
+
+
+
+

@@ -1,0 +1,173 @@
+@import url(https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap);
+.bgs,.bgs2,.bgs3,.bgw,.bookabout,.header,.mail,.promosi{
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover
+}
+body,html{
+    font-family:'Titillium Web',sans-serif;
+    font-size:18px
+}
+.black,.cdt:hover{
+    background-color:#000;
+    color:#fff
+}
+.btn-greenos,.btn-greenoss{
+    background-color:#15ba29
+}
+.nav-item:hover{
+    background-color:#8ebe30;
+    color:#fff
+}
+.ser,.sers{
+    border-radius:5px
+}
+.btn-greenns,.btn-greens,.btn-greens-mail{
+    border:1px solid #8ebe30;
+    font-size:18px;
+    color:#fff
+}
+a{
+    color:#15ba29;
+    text-decoration:none
+}
+.btn-greenns:hover,.btn-greens:hover{
+    background-color:#8ebe30;
+    font-size:18px;
+    padding:18px
+}
+.btn-greenns,.btn-greens{
+    padding:18px
+}
+.btn-greens-mail:hover{
+    background-color:#8ebe30;
+    font-size:18px
+}
+.bg-green,.btn-greenos:hover,.btn-greenoss:hover{
+    background-color:#149f25
+}
+.btn-greenos,.btn-greenos:hover{
+    font-size:18px;
+    color:#fff;
+    padding:18px
+}
+.btn-greenoss,.btn-greenoss:hover{
+    font-size:18px;
+    color:#fff;
+    padding:8px
+}
+.text-green{
+    color:#149f25
+}
+.bot-center{
+    border-bottom:2px solid #8ebe30;
+    margin:auto
+}
+.bot-top{
+    border-top:2px solid #15ba29
+}
+.bot{
+    border-bottom:2px solid #15ba29
+}
+.hr-green,.hr-green-center{
+    border-style:solid;
+    border-width:2px
+}
+.hr-green{
+    color:#15ba29
+}
+.hr-green-center{
+    color:#7ef96a;
+    margin:auto
+}
+.bg-green,.bgs,.bgs2,.bgs3,.header,.nav-link,.xp-link:hover{
+    color:#fff
+}
+.bg-greens,.cs:hover{
+    background-color:#15ba29;
+    color:#fff
+}
+.slu:hover{
+    background-color:#8ebe30
+}
+.header{
+    height:490px
+}
+.bgs{
+    background-image:url('/assets/img/bgs.webp')
+}
+.bgs2{
+    background-image:url('/assets/img/bgs2.webp')
+}
+.bgs3,.promosi{
+    background-image:url('/assets/img/bgs3.webp')
+}
+.bgw{
+    background-image:url('/assets/img/bg.svg')
+}
+.mail{
+    background-image:url('/assets/img/mail.webp')
+}
+.intro{
+    margin-top:160px
+}
+.navis{
+    height:55px
+}
+.nav-item{
+    border-bottom:1px solid #000
+}
+.img-cards{
+    border-radius:5px 5px 0 0
+}
+.form-control::placeholder,.form-control:focus{
+    background-color:#000;
+    color:#fff;
+    border:none;
+    border-bottom:1px solid #8ebe30
+}
+.form-control,.form-control::placeholder{
+    background-color:#000;
+    color:#fff;
+    border:none;
+    border-bottom:1px solid #8ebe30
+}
+.dtl:hover,.xp:hover{
+    background-color:#15ba29;
+    color:#fff;
+    padding:8px;
+    transition:.8s
+}
+.zoom:hover{
+    transform:scale(1.05)
+}
+.zoom{
+    transition:transform .6s
+}
+.bookabout{
+    background-image:url('/assets/img/bookabout.webp')
+}
+.dtl:hover{
+    border-radius:0 0 60px
+}
+a.xp-link{
+    color:#000
+}
+.form-contact{
+    border-radius:0;
+    background-color:#fff;
+    color:#000
+}
+code{
+	margin: 10px;
+    padding: 5px;
+}
+ pre {
+    padding: 15px;
+    background-color:#F8F9F8;
+	border-radius: 2px 2px 2px 2px;
+	border: solid 1px #D4D4D4;
+}
+
+
+ 

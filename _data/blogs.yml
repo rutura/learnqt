@@ -1,0 +1,30 @@
+# Configuration Featured Blog Widget - All posts widget min have 4 list
+
+# FEAURED BLOGS
+
+featured_blog_title: Featured Blog
+
+featured_blog_list: # do not enter text in this area, it is blank by default for lists
+ - title: The FullStack Python Django Web App
+   subtitle: Why Fullstack Python Django web app ?? Lorep ipsum dolor siamet amet jabang bayi lanang wedok.
+   image: /assets/img/learnqtcourses1.webp
+   url: /python-django
+ - title: 'Working With Qt Events : A Comprehensive Guide '
+   subtitle: Qt has two main mechanisms to allow developers to react to things that happen in your application. One of these, which is more common is Signals and Slots.
+   image: /assets/img/learnqtcourses2.webp
+   url: /working-with-events
+ - title: 'Qt 5.12 LTS is out .Time to update your projects. '
+   subtitle: Qt 5.12 was released on December 6, 2018. This is a LTS(Long Term Supported version) of Qt which will be supported for a 3 year period time. 
+   image: /assets/img/learnqtcourses3.webp
+   url: /qt-5-12-lts-is-out-time-to-update-your-projects
+ - title: 'How to Get Rid of SSL Warnings in Qt Applications : QSslSocket '
+   subtitle: When you try to get some data from a network resource protected by SSL, you get the warnings 
+   image: /assets/img/learnqtcourses1.webp
+   url: /networking/how-to-get-rid-of-ssl-warnings-in-qt-applications-qsslsocket-cannot-resolve-tlsv1_1_client_method-warnings
+
+
+blog_button: All Article
+
+
+
+

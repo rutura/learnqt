@@ -1,0 +1,11 @@
+<nav class="mt-5 ms-3 " style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="{{site.url}}/blog/">BLOG</a></li>
+{% for cat in page.categories %}
+<li class="breadcrumb-item"><a href="{{site.url}}/categories.html#{{cat}}">{{cat}}</a></li>
+{% endfor %}
+{% for tag in page.tags %}
+<li class="breadcrumb-item"><a href="{{site.url}}/tag.html#{{tag}}">{{tag}}</a></li>
+{% endfor %}
+</ol>
+</nav>

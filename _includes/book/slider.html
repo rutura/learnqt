@@ -1,0 +1,41 @@
+<div id="carouselExampleIndicators" class="carousel slide">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<a href="#" data-bs-toggle="modal" data-bs-target="#bookModal">
+<img data-src="{{page.image1}}" class="img-fluid lazyload" 
+loading="lazy" alt="{{page.title}}">
+</a>
+</div>
+{% if page.image2 %}<div class="carousel-item">
+<a href="#" data-bs-toggle="modal" data-bs-target="#book1Modal">
+<img data-src="{{page.image2}}" class="d-block w-100 lazyload"
+loading="lazy" alt="{{page.title}}">
+</a>
+</div>{% endif %}
+{% if page.image3 %}<div class="carousel-item">
+<a href="#" data-bs-toggle="modal" data-bs-target="#book2Modal">
+<img data-src="{{page.image3}}" class="d-block w-100 lazyload" 
+loading="lazy" alt="{{page.title}}">
+</a>
+</div>{% endif %}
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+<span class="carousel-control-prev-icon bg-green" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+<span class="carousel-control-next-icon bg-green" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+<div class="row">
+<div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active p-3 col-md-4" aria-current="true" aria-label="Slide 1">
+<img data-src="{{page.image1}}" class="img-fluid lazyload" loading="lazy" alt="{{page.description}}">
+</div>
+{% if page.image2 %}<div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="p-3 col-md-4" aria-label="Slide 2">
+<img data-src="{{page.image2}}" class="img-fluid lazyload" loading="lazy" alt="{{page.description}}">
+</div>{% endif %}
+{% if page.image3 %}<div type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="p-3 col-md-4" aria-label="Slide 3">
+<img data-src="{{page.image3}}" class="img-fluid lazyload" loading="lazy" alt="{{page.description}}">
+</div>{% endif %}
+</div>

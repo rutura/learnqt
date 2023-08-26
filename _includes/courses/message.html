@@ -1,0 +1,33 @@
+</div>
+<div class="row  bg-green">
+<div class="col-md-8 p-3">
+<h4>{{site.data.courses.message_info}}</h4>
+</div>
+<div class="col-md-4 p-3">
+<button class="btn btn-light float-end" style="border-radius:0px" data-bs-toggle="modal" data-bs-target="#contactModal">{{site.data.courses.message_button}}</button>
+</div>
+</div>
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content black" style="border-radius:0px">
+<div class="modal-header bg-greens" style="border-radius:0px" >
+<h1 class="modal-title fs-5" id="contactModalLabel">
+<img class="img-fluid rounded-circle lazyload" loading="lazy" width="40" height="40" data-src="{{site.logo}}"/> {{site.data.courses.message_title}}</h1>
+<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<form action="https://airform.io/{{site.email}}" method="post">
+<input type="text" name="name" class="form-control mt-1 mb-1 form-contact" placeholder="Enter your name" required>
+<input type="text" name="email" class="form-control mt-1 mb-1 form-contact" placeholder="Enter your email" required>
+<input type="text" name="courses" value="{{page.title}}" class="form-control mt-1 mb-1 form-contact" placeholder="{{page.title}}" readonly>
+<textarea name="message" rows="3" class="form-control mt-1 mb-1 form-contact" placeholder="Enter your message" required></textarea>
+<button class="btn bg-greens btn-success mt-1 col-12" style="border-radius:0px;">{{site.data.courses.message_button}}</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>

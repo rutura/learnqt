@@ -1,0 +1,19 @@
+<div class="container-fluid black bgs3" id="contact">
+<div class="row">
+<div class="col-md-12 p-3 p-md-5 mt-5 mb-5 text-center">
+<a href="mailto:{{site.email}}" title="send message to {{site.title}}" class="btn btn-greens rounded-circle p-3">
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-send" viewBox="0 0 19 19">
+<path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+</svg></a>
+<h3 class="display-4 p-3 p-md-5 zoom"><strong>{{site.email}}</strong></h3>
+<div class="col-md-4 mx-auto p-3">
+<form action="https://airform.io/{{site.email}}" method="post">
+<input class="form-control p-3 mt-3 shadow-none" type="text" name="name" placeholder="Enter your name">
+<input class="form-control p-3 mt-3 shadow-none" type="text" name="email" placeholder="Enter your email">
+<textarea class="form-control p-3 mt-3 shadow-none" name="message" placeholder="Enter your message"></textarea>
+<button class="btn btn-greens-mail mt-5 col-12 btn-lg">Send Question</button>
+</form>
+</div>
+</div>
+</div>
+</div>

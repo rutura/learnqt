@@ -1,0 +1,21 @@
+<div class="col-md-9 p-1 mt-1">
+<div class="col-md-12 p-3 mt-1">
+<h1 class="card-title p-3"><strong><a href="{{page.url}}">{{page.title}}</a></strong></h1>
+<div class="p-3">
+{% if post.cover %}<a href="{{page.url}}"><img class="img-fluid p-3 lazyload" loading="lazy" width="100%" height="100%" data-src="{{page.cover}}"/></a>{% endif %}
+<div class="row">
+<div class="col-md-12 border-top border-bottom p-1">
+<span>
+{{ page.date| date: "%d %b %Y" }} by <a href="{{site.url}}#about">{{site.author.name}}</a> | <a href="#comment">comments</a>
+</span>
+</div>
+<div class="text-dark col-md-12 p-3">
+{{content}}
+</div>
+{% if page.comments == true %}{% include widget/comment.html %}{% endif %}
+</div>
+</div>
+</div>
+
+
+</div>
