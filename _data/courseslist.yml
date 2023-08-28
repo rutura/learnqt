@@ -1,7 +1,7 @@
-- title: 'Beginning Qt 5 C++ GUI Development : The Fundamentals'
-  subtitle: A Step by Step Guide to Build C++ GUI Applications For Beginners.Learn about Widgets,Dialogs, Buttons, Signals,Slots and more
-  image: /assets/courses/image/qt_gui_beginners.png
-  link: https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beginners/?couponCode=STARTAUG2023
+- title: 'Qt 6 C++ GUI Development for Beginners : The Fundamentals'
+  subtitle: Build Cross Platform Desktop Applications and Run Them on Windows, Mac and Linux. Build once, Run Everywhere!
+  image: /assets/courses/image/qt6_gui_beginners.png
+  link: https://www.udemy.com/course/qt6-c-gui-widgets-tutorial-for-beginners/?couponCode=STARTAUG2023
   what: What you'll learn
   what_learn_list: 
     - The fundamentals of working with Qt to build C++ Gui Applications
@@ -12,27 +12,47 @@
     - Working with Networks to fetch HTTP Data
     - Working with the File System
     - Model View Architecture and more
-    
 
-- title: 'Qt C++ GUI Development - Intermediate'
-  subtitle: 'Learn Advanced Qt C++ GUI : Events, Painting, Model View Architecture, Graphics View Framework, Deployment,Internationalization and more.'
-  image: /assets/courses/image/qt_gui_intermediate.png
-  link: https://www.udemy.com/course/qt-c-gui-development-intermediate/?couponCode=STARTAUG2023
+    
+- title: 'The C++20 Masterclass : From Fundamentals to Advanced'
+  subtitle: Learn and Master Modern C++ From Beginning to Advanced in Plain English - C++11, C++14, C++17, C++20 and More!
+  image: /assets/courses/image/the_cpp_20_masterclass.png
+  link: https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode=STARTAUG2023
   what: What you'll learn
   what_learn_list: 
-    - Event Programming in Qt
-    - Painting and Drawing with Qt
-    - Drag and Drop in Qt Widgets
-    - Advanced Features in Qt Model View Programming
-    - Graphics View Framework
-    - Copy, Cut and Paste Features in GUI applications
-    - Saving and Loading Documents in your Qt applications
-    - Deploying your Qt applications on Windows, Mac and Linux
-    - Undo Redo and more
+    - C++11, C++14, C++17 and C++20 Features
+    - Ranges, Concepts, Modules, and Coroutines
+    - Classes and Object Oriented Programming
+    - Inheritance and Polymorphism
+    - Stl containers, iterators and algorithms
+    - Character manipulation and strings
+    - Move Semantics
+    - Operator Overloading
+    - Move Semantics
+    - Function and Class Templates
+    - Function like entities and callbacks
+    - And more!
 
 
-- title: 'Building Fluid User Interfaces with Qt Quick and QML'
-  subtitle: Learn Qt Quick(QML) , Build Fluid User Interfaces, Deploy them Everywhere
+- title: 'Qt For Python (PySide6) GUI For Beginners : The Fundamentals'
+  subtitle: Build Cross Platform Desktop Applications in Python. Run Them on Windows, Mac and Linux. Build once, Run Everywhere!
+  image: /assets/courses/image/pyside6_beginners.png
+  link: https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/?couponCode=STARTAUG2023
+  what: What you'll learn
+  what_learn_list: 
+    - The fundamentals of working with Qt to build Gui Applications using PySide6
+    - Working with Qt Widget Classes
+    - Working with Dialog Classes
+    - Using the Qt Resource System
+    - Using Qt Designer and Qt Creator for Ui Design
+    - Styling Qt Applications
+    - Working with Networks to fetch HTTP Data
+    - Working with the Model View Architecture
+    - Packaging PySide6 Applications
+
+
+- title: 'Qt Quick and QML For Beginners (Qt5): The Fundamentals'
+  subtitle: Build Cross Platform Fluid And Dynamic UIs. Run Them on Windows, Mac, Linux, Android,iOS and Embedded.
   image: /assets/courses/image/qt_quick_fundamentals.png
   link: https://www.udemy.com/course/qt_quick_qml_tutorial_for_beginners/?couponCode=STARTAUG2023
   what: What you'll learn
@@ -51,8 +71,26 @@
     - Settings and Local Storage
 
 
-- title: 'Interfacing Qt Quick to C++ - Intermediate'
-  subtitle: Learn how to connect a fluid and dynamic Qt Quick(QML) User Interface to a powerful C++ back end.
+- title: 'Qt5 C++ GUI Development - Intermediate'
+  subtitle: 'Learn Advanced Qt C++ GUI : Events, Painting, Model View Architecture, Graphics View Framework, Deployment,Internationalization and more.'
+  image: /assets/courses/image/qt_gui_intermediate.png
+  link: https://www.udemy.com/course/qt-c-gui-development-intermediate/?couponCode=STARTAUG2023
+  what: What you'll learn
+  what_learn_list: 
+    - Event Programming in Qt
+    - Painting and Drawing with Qt
+    - Drag and Drop in Qt Widgets
+    - Advanced Features in Qt Model View Programming
+    - Graphics View Framework
+    - Copy, Cut and Paste Features in GUI applications
+    - Saving and Loading Documents in your Qt applications
+    - Deploying your Qt applications on Windows, Mac and Linux
+    - Undo Redo and more
+
+
+
+- title: 'Qt Quick and QML - Intermediate (Qt5) : Interfacing to C++'
+  subtitle: Connect Your Fluid and Dynamic Qt Quick(QML) User Interface to a Powerful C++ Back End
   image: /assets/courses/image/qt_quick_intermediate.png
   link: https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-intermediate/?couponCode=STARTAUG2023
   what: What you'll learn
@@ -69,8 +107,8 @@
     - Property value sources and more 
 
 
-- title: 'Interfacing Qt Quick to C++ - Advanced'
-  subtitle: Learn to use Custom C++ Models in QML, Building your own Visual C++ QML Types, Using Singletons and Digging QML from C++
+- title: 'Qt Quick and QML - Advanced (Qt5) : Interfacing to C++'
+  subtitle: Use Custom C++ Models in QML, Build your own Visual C++ QML Types, Use Singletons and Dig Deep Through QML from C++
   image: /assets/courses/image/qt_quick_advanced.png
   link: https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-advanced/?couponCode=STARTAUG2023
   what: What you'll learn
@@ -81,8 +119,8 @@
     - Digging Deep in the QML tree and manipulating your QML Elements from C++ 
 
 
-- title: 'Qt For Python (PySide6) GUI For Beginners : The Fundamentals'
-  subtitle: Build Cross Platform Desktop Applications in Python. Run Them on Windows, Mac and Linux. Build once, Run Everywhere!
+- title: 'Multi-Threading and IPC with Qt 5 C++'
+  subtitle: Use Threads and Inter Process Communication in your Qt 5 C++ applications - A Practical Walk Through of Qt5 offerings
   image: /assets/courses/image/qt_multithreading.png
   link: https://www.udemy.com/course/multi-threading-and-ipc-with-qt-c-plus-plus/?couponCode=STARTAUG2023
   what: What you'll learn
@@ -97,17 +135,17 @@
     - Inter Process Communication,DBus and more
 
 
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+- title: 'Qt5 C++ GUI Development For Beginners : The Fundamentals'
+  subtitle: Build Cross Platform C++ GUI Applications with Qt, Run them on Windows, Mac, Linux, Android, iOS and Embedded Devices
+  image: /assets/courses/image/qt_gui_beginners.png
+  link: https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beginners/?couponCode=STARTAUG2023
+  what: What you'll learn
+  what_learn_list: 
+    - The fundamentals of working with Qt to build C++ Gui Applications
+    - Working with Qt Widget Classes
+    - Working with Dialog Classes
+    - Using the Qt Resource System
+    - Styling Qt Applications
+    - Working with Networks to fetch HTTP Data
+    - Working with the File System
+    - Model View Architecture and more

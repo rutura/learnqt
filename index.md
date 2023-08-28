@@ -5,9 +5,9 @@ description : Clear, up front Courses and books on Qt. We have made it our busin
 banner: /assets/img/bgqt.webp
 
 button_video: On Demand Video Courses
-button_video_link: 'https://www.learnqt.guide/courses/'
+button_video_link: '/courses/'
 button_book: Books on Qt, C++ and QML
-button_book_link: 'https://www.learnqt.guide/books/'
+button_book_link: '/books/'
 
 courses: 
  title: Featured Courses
