@@ -1,4 +1,4 @@
-title: QT TRaining Services
+title: Qt Training Services
 description: All about QT in one place 
 url: # you website url https://www.learnqt.guide/
 baseurl: ''
@@ -61,10 +61,10 @@ multithreading: 'https://www.udemy.com/course/multi-threading-and-ipc-with-qt-c-
 footer: 
  logo: /assets/blog/image/LearnQt.png
  title: Learn QT
- content:  'Clear, Up Front Courses on Qt , We have made it our business to provide the best online learning resources for Qt Development.We put in the required effort to make sure the code resources coming with the courses are up to date and use the latest tools to reduce the husstle for students as much as possible. We already have the basic courses on Qt C++ and QML out and there are more in the pipeline.'
+ content:  'Clear, Up Front Courses on Qt , We have made it our business to provide the best online learning resources for Qt Development.We put in the required effort to make sure the code resources coming with the courses are up to date and use the latest tools to reduce the hustle for students as much as possible. We already have the basic courses on Qt C++ and QML out and there are more in the pipeline.'
  icon: /assets/img/learnqt-nav.webp
- button: Become a Pro Member
- link: /premium/
+ button: See our courses
+ link: /courses/
 
 #social media
 youtube: https://www.youtube.com/channel/UCUYUFiuJ5XZ3JYtbq5dXRKQ
@@ -75,13 +75,13 @@ linked: https://www.linkedin.com/in/daniel-gakwaya-2a570092
 #author
 author: 
  title: Your Instructor Author and Mentor
- image: /assets/img/daniel.webp
- name: Daniel Haghwa
- label: Udemy Instructor Patner
- description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+ image: /assets/img/daniel.jpg
+ name: Daniel Gakwaya
+ label: Udemy Instructor Partner
+ description: Daniel is a Senior Software Engineer at Blikoon Technologies. He has been writing software since  2011 and Qt is one of his favorite frameworks. Many of his cross platform Qt based projects are completed and out there on the market. Autodidact by nature ,he has a passion for learning new things and loves sharing knowledge with others. Especially people new to the dark art of software development.
 
 # copyrights
-footercopyrights: copyrights 2023 learnqtguides.com all rights reserved
+footercopyrights: copyrights 2023 LearnQtGuide all rights reserved
 
 # blog post pagination
 paginate: 3
