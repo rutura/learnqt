@@ -2,6 +2,7 @@
 layout: post
 title: "Working With Qt Events : A Comprehensive Guide"
 description: All you need to know about working with events in Qt.
+cover: /assets/img/blog/working_with_qt_events_blog.png
 date: '2019-04-12'
 categories:
     - Events
@@ -13,6 +14,7 @@ sidebar: true
 
 coursescard: true
 bookcard: true
+
 
 ---
 
