@@ -6,14 +6,13 @@ cover: /assets/courses/image/LearnQt.png
 permalink: "/books-discounted/"
 ---
 
-<div class="alert bg-greens alert-dismissible fade show promosi" role="alert">
 <div class="p-3">
-  Grab your copy of Qt6 QML For Beginners for a fresh discount.
-</div>
+  The books are discounted as stated below:
 </div>
 
 
-- ##### [Qt6 QML For Beginners](https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners/msyynft)
+
+- ##### [Qt6 QML For Beginners [25% discount]](https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners/msyynft)
 
 
 
