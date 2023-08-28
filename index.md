@@ -44,7 +44,7 @@ book3:
  link: /https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
 
 why: 
- title: Why Chose Us
+ title: Why Choose Us
  description: We have made it our business to provide the best online learning resources for Qt Development.We put in the required effort to make sure the code resources coming with the courses are up to date and use the latest tools to reduce the hustle for students as much as possible. We already have the basic courses on Qt C++ and QML out and there are more in the pipeline.
  content: xxx
  list: 

@@ -1,19 +1,19 @@
 cardlist: 
-  - title: 33 Tips and Tricks to Speed up your workflow .
-    subtitle: Get this higly visual, 15 pages PDF Guide On Qt Creator for FREE!
-    image: /assets/img/qt_creator_guide.webp
-    button: GET IT NOW!
-    link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
-  - title: Example Book 2.
-    subtitle: Description example book 2
-    image: /assets/img/bookis.webp
-    button: GET IT NOW!
-    link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
-  - title: Example Book 3.
-    subtitle: Description example book 3 you can write anything in here...
-    image: /assets/img/qt_creator_guide.webp
-    button: GET IT NOW!
-    link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+  - title: Qt6 QML For Beginners
+    subtitle: Fluid and dynamic user interfaces for desktop, mobile and embedded devices.
+    image: /assets/img/qt6_qml_for_beginners.png
+    button: Get your copy!
+    link: https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners
+  # - title: Example Book 2.
+  #   subtitle: Description example book 2
+  #   image: /assets/img/bookis.webp
+  #   button: GET IT NOW!
+  #   link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+  # - title: Example Book 3.
+  #   subtitle: Description example book 3 you can write anything in here...
+  #   image: /assets/img/qt_creator_guide.webp
+  #   button: GET IT NOW!
+  #   link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
 
 display_on_blog_list: 1
 

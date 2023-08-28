@@ -5,10 +5,6 @@
 featured_blog_title: Featured Blog
 
 featured_blog_list: # do not enter text in this area, it is blank by default for lists
- - title: The FullStack Python Django Web App
-   subtitle: Why Fullstack Python Django web app ?? Lorep ipsum dolor siamet amet jabang bayi lanang wedok.
-   image: /assets/img/learnqtcourses1.webp
-   url: /python-django
  - title: 'Working With Qt Events : A Comprehensive Guide '
    subtitle: Qt has two main mechanisms to allow developers to react to things that happen in your application. One of these, which is more common is Signals and Slots.
    image: /assets/img/learnqtcourses2.webp

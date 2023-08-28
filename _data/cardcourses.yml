@@ -4,16 +4,16 @@ cardlist:
    image: /assets/img/qt_courses.webp
    button: Learn More
    link: /courses
- - title: Courses video 2
-   subtitle: This is courses video 2 description or subtitle just write in here for courses information.
-   image: /assets/courses/image/qt_qml.png
-   button: Call to Action
-   link: /courses
- - title: Courses video 3
-   subtitle: This is courses video 3 description or subtitle just write in here for courses information.
-   image: /assets/img/qt_quick_advanced.png
-   button: Take Courses
-   link: /courses
+ - title: Discounted Video Courses.
+   subtitle: We regularly publish discounts for our courses. 
+   image: /assets/img/learn_qt_guide_course_discounts.png
+   button: Grab our discount now!
+   link: /udemy-discounted-9/
+#  - title: Courses video 3
+#    subtitle: This is courses video 3 description or subtitle just write in here for courses information.
+#    image: /assets/img/qt_quick_advanced.png
+#    button: Take Courses
+#    link: /courses
  
  
 display_on_blog_list: 1
