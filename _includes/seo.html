@@ -6,12 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% feed_meta %}
 {% seo %}
-<meta content='{{page.cover}}' name='twitter:image'/>
-<meta content='{{page.cover}}' name='facebook:image'/>
+<meta name="twitter:card" content="summary_large_image">
+<meta content='{{page.cover}}' property='twitter:image'/>
+<meta content='{{page.cover}}' property='facebook:image'/>
 <link rel="icon" type="image/x-icon" href="{{site.favicon}}" />
 <meta content='{{site.url}}' property='facebook:author'/>
 <meta content='{{page.description}}' property='facebook:description'/>
-<meta content='{{page.description}}' name='twitter:description'/>
+<meta content='{{page.description}}' property='og:description'/>
+<meta content='{{page.description}}' property='twitter:description'/>
 <meta content='index, follow' name='robots'/>
 <meta content='{{site.author.name}}' property='twitter:author'/>
 <meta content='{{site.url}}' name='twitter:site'/>
