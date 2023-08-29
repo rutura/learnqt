@@ -1,7 +1,7 @@
 ---
 layout: courses
-title: Courses List
-description: Premium Learn Qt Code Courses List
+title: Our published video courses
+description: Our video courses span a range of topics revolving around Qt, C++, QML, Python and the tooling ecosystem around these technologies.
 cover: /assets/img/learnqtbook.webp
 best_courses_widget: false
 permalink: /courses/
