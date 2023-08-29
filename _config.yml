@@ -1,5 +1,5 @@
 title: Qt Training Services
-description: All about QT in one place 
+description: All about Qt in one place 
 url: https://www.learnqt.guide
 baseurl: ''
 favicon: /assets/blog/image/LearnQt.png
@@ -18,7 +18,7 @@ navhome:
    link: '#'
  - name: Courses
    link: '#courses'
- - name: Book
+ - name: Books
    link: '#book'
  - name: About
    link: '#about'
@@ -61,7 +61,7 @@ multithreading: 'https://www.udemy.com/course/multi-threading-and-ipc-with-qt-c-
 footer: 
  logo: /assets/blog/image/LearnQt.png
  title: LearnQtGuide
- content:  'Clear, Up Front Courses on Qt , We have made it our business to provide the best online learning resources for Qt Development.We put in the required effort to make sure the code resources coming with the courses are up to date and use the latest tools to reduce the hustle for students as much as possible. We already have the basic courses on Qt C++ and QML out and there are more in the pipeline.'
+ content:  'Clear, up Front Courses on Qt. We have made it our business to provide the best online learning resources for Qt Development. We put in the required effort to make sure the code resources coming with the courses are up to date and use the latest tools to reduce the hustle for students as much as possible. We already have the basic courses on Qt C++ and QML out and there are more in the pipeline.'
  icon: /assets/img/learnqt-nav.webp
  button: See our courses
  link: /courses/
