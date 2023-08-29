@@ -1,16 +1,13 @@
 ---
 layout: promo
-title: "Qt Courses Discounted to just $9"
-description: QT Courses description promo
+title: "All our courses discounted to just $9.99"
+description:
 cover: /assets/courses/image/LearnQt.png
 permalink: "/udemy-discounted-9/"
 ---
 
-<div class="alert bg-greens alert-dismissible fade show promosi" role="alert">
 <div class="p-3">
-  Get any Qt related course for just {{site.price}}. Choose your favorite course below. The deal is valid until {{ site.couponvalidity }}
-  <button type="button" class="btn-close btn-sm bg-white" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+  Get any of our courses for just {{site.price}}. The deal is valid until {{ site.couponvalidity }}
 </div>
 
 
@@ -24,7 +21,7 @@ permalink: "/udemy-discounted-9/"
 - ##### [Qt Quick and QML Advanced(Qt 5)]({{ site.qmladvanced }}{{ site.coupon }})
 - ##### [Multithreading and IPC with Qt 5 C++ ]({{ site.multithreading }}{{ site.coupon }})
 
-
+<br>
 <div class="alert bg-greens alert-dismissible fade show promosi" role="alert">
 <div class="p-1">
  Get a Free Copy of our 33 Tips on Qt Creator to Speed Up your workflow
