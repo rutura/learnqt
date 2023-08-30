@@ -4,13 +4,13 @@ title: Qt, C++ and QML Training Services
 description : Clear, up front Courses and books on Qt. We have made it our business to provide the best online learning resources for Qt, C++ and QML Development.
 banner: /assets/img/bgqt.webp
 
-button_video: On Demand Video Courses
+button_video: On Demand Video courses
 button_video_link: '/courses/'
 button_book: Books on Qt, C++ and QML
 button_book_link: '/books/'
 
 courses: 
- title: Featured Courses
+ title: Featured courses
  description: Our video courses span a range of topics revolving around Qt, C++, QML, Python and the tooling ecosystem around these technologies. 
  display: 3
  button: Explore All Courses
@@ -44,7 +44,7 @@ book3:
  link: /https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
 
 why: 
- title: Why Choose Us
+ title: Why choose us
  description: We have made it our business to provide the best online learning resources for Qt Development.We put in the required effort to make sure the code resources coming with the courses are up to date and use the latest tools to reduce the hustle for students as much as possible. We already have the basic courses on Qt C++ and QML out and there are more in the pipeline.
  content: xxx
  list: 
@@ -99,7 +99,7 @@ testimonial3:
  description: I have spent years trying to become a programmer / developer based on tutorials and online references. I have made some progress, but there was always this sense that if I had a computer science degree, I would know all the things I do not know. The way Daniel teaches, he teaches you everything, why you should do certain things, and not do other things, even if they are technically possible. Daniel's way of teaching gives me a great deal of confidence.
 
 blog: 
- title: Featured Blog Posts
+ title: Featured blog posts
  description: 
  button: See All Blog Posts
 

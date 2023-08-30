@@ -1,14 +1,14 @@
 cardlist: 
-  - title: Qt6 QML For Beginners
+  - title: Qt6 QML For Beginners Book
     subtitle: Fluid and dynamic user interfaces for desktop, mobile and embedded devices.
     image: /assets/img/qt6_qml_for_beginners.png
-    button: Get your copy!
+    button: GET YOUR COPY!
     link: https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners
-  # - title: Example Book 2.
-  #   subtitle: Description example book 2
-  #   image: /assets/img/bookis.webp
-  #   button: GET IT NOW!
-  #   link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+  - title: Free Qt Creator Booklet
+    subtitle: 33 Tips on Qt Creator to Speed Up your workflow 
+    image: /assets/img/qt_creator_guide.webp
+    button: GET IT FOR FREE!
+    link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
   # - title: Example Book 3.
   #   subtitle: Description example book 3 you can write anything in here...
   #   image: /assets/img/qt_creator_guide.webp

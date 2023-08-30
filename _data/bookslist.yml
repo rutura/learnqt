@@ -2,12 +2,13 @@
    subtitle: Fluid and dynamic user interfaces for desktop, mobile and embedded.
    cover: /assets/img/qt6_qml_for_beginners.png
    link: https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners
-   why: Why you must buy this book ?
+   why: Why this book?
    whylist: 
+
+    - A step by step guide to help you grasp the fundamentals necessary to take full advantage of QML's declarative approach to build dynamic user interfaces.
     - Updated for the latest version of Qt
     - Updated source code is available to follow along
     - Uses the build system favored by Qt developers, CMake.
-    - A step by step guide to help you grasp the fundamentals necessary to take full advantage of QML's declarative approach to build dynamic user interfaces.
     - Free updates to new versions of Qt when they are released.
    
 #  - title: The C++20 Masterclass
