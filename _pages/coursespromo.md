@@ -1,13 +1,19 @@
 ---
 layout: promo
-title: "All our courses discounted to just $9.99"
+title: "All our courses and books are on discount!"
 description:
 cover: /assets/courses/image/LearnQt.png
 permalink: "/udemy-discounted-9/"
 ---
 
 <div class="p-3">
-  Get any of our courses for just {{site.price}}. The deal is valid until {{ site.couponvalidity }}
+  Book discounts:
+</div>
+
+- ##### [Qt6 QML For Beginners [25% discount]](https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners/msyynft)
+
+<div class="p-3">
+  Our video courses discounted to just {{site.price}}. The deal is valid until {{ site.couponvalidity }}:
 </div>
 
 
