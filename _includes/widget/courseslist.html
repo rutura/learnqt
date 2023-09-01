@@ -1,12 +1,12 @@
 <div class="row">
-<h2 class="col-md-8"><strong><a href="{{site.url}}">{{site.data.courses.best_courses_title }}</a></strong></h2>
+<h2 class="col-md-8"><strong><a href="{{site.url}}{{site.coupon}}">{{site.data.courses.best_courses_title }}</a></strong></h2>
 <div class="col-md-4 p-1 text-end"><p><a href="/courses/" class="xp">{{site.data.courses.courses_button}} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
 </svg></a></p></div>
 {% for c in site.courses limit:3 %}
 <div class="col-md-4 p-1">
 <div class="shadow-sm p-3 zoom xp">
-<a href="{{c.link}}" class="xp-link">
+<a href="{{c.link}}{{site.coupon}}" class="xp-link">
 <img class="img-fluid" src="{{c.image}}"/>
 <p class="mt-1 card-title"><strong>{{c.title}}</strong></p>
 <p class="mt-1 card-title"><small>{{c.subtitle}}</small></p>
