@@ -4,4 +4,4 @@
 
 Author: [Daniel Gakwaya](https://www.udemy.com/user/daniel-gakwaya/)
 
-Jekyll Developer [Creativitas](https://www.fiverr.com/creativitas/)
+Jekyll Developer [Creativitas](https://www.fiverr.com/creativitas/design-your-modern-website-using-jekyll)
