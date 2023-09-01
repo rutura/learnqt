@@ -10,19 +10,19 @@ best_courses_list: # do not enter text in this area, it is blank by default for 
    image: /assets/courses/image/qt6_gui_beginners.png
    star: 5
    level: beginner
-   link: https://www.udemy.com/course/qt6-c-gui-widgets-tutorial-for-beginners/
+   link: https://www.udemy.com/course/qt6-c-gui-widgets-tutorial-for-beginners/?couponCode=
  - title: 'The C++20 Masterclass : From Fundamentals to Advanced'
    subtitle: Learn and Master Modern C++ From Beginning to Advanced in Plain English - C++11, C++14, C++17, C++20 and More!
    image: /assets/courses/image/the_cpp_20_masterclass.png
    star: 5
    level: beginner
-   link:  https://www.udemy.com/course/the-modern-cpp-20-masterclass/
+   link:  https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode=
  - title: 'Qt For Python (PySide6) GUI For Beginners'
    subtitle: Build Cross Platform Desktop Applications in Python. Run Them on Windows, Mac and Linux. Build once, Run Everywhere!
    image: /assets/courses/image/pyside6_beginners.png
    star: 5
    level: beginner
-   link: https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/
+   link: https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/?couponCode=
 
 courses_button: Explore All Courses
 

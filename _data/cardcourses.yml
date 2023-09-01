@@ -1,14 +1,14 @@
 cardlist: 
- - title: High Quality Online Courses on Qt,C++, Qt Quick/QML and More. 
-   subtitle: Elevate Your Skills. Explore High-Quality Online Courses in Qt, C++, and Qt Quick/QML. 
+ - title: 'Qt 6 C++ GUI Development for Beginners : The Fundamentals'
+   subtitle: 'Build Cross Platform Desktop Applications and Run Them on Windows, Mac and Linux. Build once, Run Everywhere!'
    image: /assets/img/qt_courses.webp
    button: Learn More
-   link: /courses
- - title: Discounted Video Courses.
-   subtitle: We regularly publish discounts for our courses. 
+   link: https://www.udemy.com/course/qt6-c-gui-widgets-tutorial-for-beginners/?couponCode=
+ - title: 'The C++20 Masterclass : From Fundamentals to Advanced'
+   subtitle: 'Learn and Master Modern C++ From Beginning to Advanced in Plain English - C++11, C++14, C++17, C++20 and More!'
    image: /assets/img/learn_qt_guide_course_discounts.png
    button: Grab your discount now!
-   link: /udemy-discounted-9/
+   link: https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode=
 #  - title: Courses video 3
 #    subtitle: This is courses video 3 description or subtitle just write in here for courses information.
 #    image: /assets/img/qt_quick_advanced.png
