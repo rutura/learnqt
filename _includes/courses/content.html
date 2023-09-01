@@ -37,5 +37,5 @@ Level: {% for i in page.level %}<span class="badge bg-green">{{i}}</span> {% end
 <h3><a href="{{page.url}}">Description</a></h3>
 {{content}}
 <p>
-<a href="{{page.buylink}}" class="btn col-md-4 col-12 mt-1 mb-1 bg-greens border-white btn-outline-success zoom" style="border-radius:0;">{{site.data.courses.buy_button_page}}</a></p>
+<a href="{{page.buylink}}{{site.coupon}}" class="btn col-md-4 col-12 mt-1 mb-1 bg-greens border-white btn-outline-success zoom" style="border-radius:0;">{{site.data.courses.buy_button_page}}</a></p>
 </div>
