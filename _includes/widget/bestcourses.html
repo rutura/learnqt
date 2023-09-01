@@ -6,7 +6,7 @@
 {% for b_c in site.data.courses.best_courses_list limit:3 %}
 <div class="col-md-4 p-1">
 <div class="shadow-sm p-3 zoom xp">
-<a href="{{b_c.link}}" class="xp-link">
+<a href="{{b_c.link}}{{site.coupon}}" class="xp-link">
 <img class="img-fluid lazyload" loading="lazy" width="100%" height="100%" data-src="{{b_c.image}}"/>
 <p class="mt-1 card-title"><strong>{{b_c.title}}</strong></p>
 <p class="mt-1 card-title"><small>{{b_c.subtitle}}</small></p>

@@ -17,7 +17,7 @@
 {% for b_c in site.data.courses.best_courses_list limit:3 %}
 <div class="col-md-4 p-1">
 <div class="shadow-sm p-3 zoom xp">
-<a href="{{b_c.link}}" class="xp-link">
+<a href="{{b_c.link}}{{site.coupon}}" class="xp-link">
 <img class="img-fluid lazyload" loading="lazy" width="100%" height="100%" data-src="{{b_c.image}}"/>
 <p class="mt-1 card-title"><strong>{{b_c.title}}</strong></p>
 <p class="mt-1 card-title"><small>{{b_c.subtitle}}</small></p>
@@ -33,7 +33,7 @@
 <div class="col-md-12 p-3 mb-3">
 <div class="row shadow-sm zoom">
 <div class="col-md-12 p-3 ">
-<h5 class="card-title"><strong><a href="{{cs.url}}">{{cs.title}}</a></strong></h5>
+<h5 class="card-title"><strong><a href="{{cs.url}}{{site.coupon}}">{{cs.title}}</a></strong></h5>
 </div>
 <div class="col-md-6 p-3 ">
 <img class="img-fluid p-3 lazyload" loading="lazy" width="100%" height="100%" data-src="{{cs.image}}"/>
@@ -48,7 +48,7 @@
 <li>{{ccs}}</li>
 {% endfor %}
 </ul>
-<p><a href="{{cs.link}}" class="btn col-12 mt-3 mb-3 bg-green btn-outline-success btn-lg" style="border-radius:0;">{{site.data.courses.buy_button_on_list}}</a></p>
+<p><a href="{{cs.link}}{{site.coupon}}" class="btn col-12 mt-3 mb-3 bg-green btn-outline-success btn-lg" style="border-radius:0;">{{site.data.courses.buy_button_on_list}}</a></p>
 </div>
 
 
