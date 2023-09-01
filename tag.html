@@ -31,7 +31,7 @@ thumbnail: /assets/img/learnqtguide-social-cover.webp
   <p class="col-md-12 p-1" id="{{ this_word | cgi_escape }}">#{{ this_word }}</h3>
     {% for post in site.tags[this_word] %}{% if post.title != null %}
 	<div class="col-md-12 p-1"><div class="p-3 rounded black"><h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-	<p><small>Publish @ {{ post.date | date_to_string }}</small></p></div></div>
+	<p><small>Published @ {{ post.date | date_to_string }}</small></p></div></div>
     {% endif %}{% endfor %}
 	{% endfor %}
 
