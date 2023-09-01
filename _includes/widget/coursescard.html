@@ -1,11 +1,11 @@
 {% if page.coursescard == true %}
 {% for cv in site.data.cardcourses.cardlist | limit:{{site.data.cardbook.display_on_blog_list}} %}
 <div class="zoom mb-3 shadow-sm border-success border-top">
-<h3 class="p-3 lead"><strong><a href="{{cv.link}}{{site.coupon}}">{{cv.title}}</a></strong></h3>
+<h3 class="p-3 lead"><strong><a href="{{cv.link}}">{{cv.title}}</a></strong></h3>
 <img class="img-fluid p-1 lazyload" loading="lazy" width="100%" height="100%" 
 data-src="{{cv.image}}"/>
 <p class="text-dark p-1 mt-3">{{cv.subtitle}}</p>
-<p><a href="{{cv.link}}{{site.coupon}}" 
+<p><a href="{{cv.link}}" 
 class="btn col-12 mt-3 mb-3 bg-green btn-outline-success" 
 style="border-radius:0;">{{cv.button}}</a></p>
 </div>
