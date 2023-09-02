@@ -465,7 +465,7 @@ TableModel{
 
 ## Consuming the C++ model on the QML side
 
-We won't do anything special to consume the model on the QML side, we'll instantiate it , just like we did for built-in models earlier in the chapter. The entire code in the Main.qml file is reproduced below for convenience.
+We won't do anything special to consume the model on the QML side, we will just instantiate it. The entire code in the Main.qml file is reproduced below for convenience.
 
 ~~~qml
 //Main.qml
@@ -570,6 +570,10 @@ We're printing the data inside the cell at the location `(row: 0, column: 1)` in
 
 ## Summary
 
-Congratulations on making it to the end! You should now be equipped with the basic knowledge you'll use to build your models and expose complex data from the C++ side of things. The key thing is to know the interface methods, built-into your base class of interest. In this article, QAbstractTableModel was our base class. The are a few required methods like rowCount() and data(), but depending on your requirements, you may need to override and provide your customizations for much more. Once you have the model set up in C++, you expose it as a type to QML and configure it as a model for the TableView instance we have on the QML side. Once you understand the concepts, it quickly becomes second nature to use these concepts in your projects.
+Congratulations on reaching the conclusion of this article! By now, you should have a solid foundation of knowledge to create your models and make intricate data accessible from the C++ perspective. The key takeaway is to grasp the interface methods embedded within your chosen base class, as demonstrated using QAbstractTableModel in this article. While certain methods like rowCount() and data() are essential, you may find it necessary to override and customize them to meet your specific requirements.
 
-If you need the source code for all we did in the article, you can find it [here](https://github.com/rutura/learnqt_blog_posts/tree/main/01-TableViewCppModel). I hope you got some value out of this article. If you'd like more content from us, do check out our [course catalog](/courses). We also have a [published book](/books) that covers the latest trends in QML in a systematic way. Have a cool tip you use to expose complex models for consumption on the QML side? A question? Shoot us in the comments below. I'll see you around.
+Once your model is configured in C++, you can expose it as a QML type and seamlessly integrate it as a model for the TableView component on the QML side. As you become more proficient with these concepts, they will become second nature and prove invaluable in your project endeavors.
+
+For those seeking the source code used in this article, you can access it [here](https://github.com/rutura/learnqt_blog_posts/tree/main/01-TableViewCppModel). We trust that you have found value in this article. If you crave more insightful content, explore our comprehensive [course catalog](/courses). Additionally, we offer a [published book](/books) that systematically delves into the latest trends in QML.
+
+Do you have any ingenious tips for exposing complex models for QML consumption, or perhaps burning questions? Feel free to share them in the comments below. I look forward to engaging with you in future discussions. Until then, happy coding!
