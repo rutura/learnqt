@@ -10,7 +10,7 @@ permalink: "/udemy-discounted-9/"
   Book discounts:
 </div>
 
-- ##### [Qt6 QML For Beginners [25% discount]](https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners/STARTSEPT2023)
+- ##### [Qt6 QML For Beginners](https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners/STARTSEPT2023)
 
 <div class="p-3">
   Our video courses discounted to just {{site.price}}. The deal is valid until {{ site.couponvalidity }}:
