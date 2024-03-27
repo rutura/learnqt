@@ -71,26 +71,6 @@
     - Packaging PySide6 Applications
 
 
-- title: 'Qt Quick and QML For Beginners (Qt5): The Fundamentals'
-  subtitle: Build Cross Platform Fluid And Dynamic UIs. Run Them on Windows, Mac, Linux, Android,iOS and Embedded.
-  image: /assets/courses/image/qt_quick_fundamentals.png
-  link: https://www.udemy.com/course/qt_quick_qml_tutorial_for_beginners/?couponCode=
-  what: What you'll learn
-  what_learn_list: 
-    - The basics of working with the QML language
-    - Working with Qt Quick basic elements and building your own in QML
-    - Signals and slots in QML
-    - Working with input elements
-    - Working with Javascript in QML
-    - Positioning elements in QML
-    - Running your QML Apps on Android
-    - Dialogs in QML
-    - Models,Views and Delegates
-    - Transforms,Transitions and Animations
-    - Networking Fetching HTTP Data and JSON(REST) APIs
-    - Settings and Local Storage
-
-
 - title: 'Qt5 C++ GUI Development - Intermediate'
   subtitle: 'Learn Advanced Qt C++ GUI : Events, Painting, Model View Architecture, Graphics View Framework, Deployment,Internationalization and more.'
   image: /assets/courses/image/qt_gui_intermediate.png
@@ -109,7 +89,7 @@
 
 
 
-- title: 'Qt Quick and QML - Intermediate (Qt5) : Interfacing to C++'
+- title: 'Qt5 QML Intermediate : Interfacing to C++'
   subtitle: Connect Your Fluid and Dynamic Qt Quick(QML) User Interface to a Powerful C++ Back End
   image: /assets/courses/image/qt_quick_intermediate.png
   link: https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-intermediate/?couponCode=
@@ -127,7 +107,7 @@
     - Property value sources and more 
 
 
-- title: 'Qt Quick and QML - Advanced (Qt5) : Interfacing to C++'
+- title: 'Qt5 QML Advanced : Interfacing to C++'
   subtitle: Use Custom C++ Models in QML, Build your own Visual C++ QML Types, Use Singletons and Dig Deep Through QML from C++
   image: /assets/courses/image/qt_quick_advanced.png
   link: https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-advanced/?couponCode=
@@ -155,7 +135,7 @@
     - Inter Process Communication,DBus and more
 
 
-- title: 'Qt5 C++ GUI Development For Beginners : The Fundamentals'
+- title: 'Qt5 C++ GUI Development For Beginners : The Fundamentals( Archived)'
   subtitle: Build Cross Platform C++ GUI Applications with Qt, Run them on Windows, Mac, Linux, Android, iOS and Embedded Devices
   image: /assets/courses/image/qt_gui_beginners.png
   link: https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beginners/?couponCode=
@@ -169,3 +149,23 @@
     - Working with Networks to fetch HTTP Data
     - Working with the File System
     - Model View Architecture and more
+    
+    
+- title: 'Qt5 QML For Beginners: The Fundamentals (Archived)'
+  subtitle: Build Cross Platform Fluid And Dynamic UIs. Run Them on Windows, Mac, Linux, Android,iOS and Embedded.
+  image: /assets/courses/image/qt_quick_fundamentals.png
+  link: https://www.udemy.com/course/qt_quick_qml_tutorial_for_beginners/?couponCode=
+  what: What you'll learn
+  what_learn_list: 
+    - The basics of working with the QML language
+    - Working with Qt Quick basic elements and building your own in QML
+    - Signals and slots in QML
+    - Working with input elements
+    - Working with Javascript in QML
+    - Positioning elements in QML
+    - Running your QML Apps on Android
+    - Dialogs in QML
+    - Models,Views and Delegates
+    - Transforms,Transitions and Animations
+    - Networking Fetching HTTP Data and JSON(REST) APIs
+    - Settings and Local Storage
