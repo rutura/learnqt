@@ -32,7 +32,7 @@ permalink: "/udemy-discounted-9/"
 </div>
 
 - ##### [Qt 5 C++ GUI Development for Beginners: The Fundamentals[Archived] ]({{ site.qtguibeginners }}{{ site.coupon }})
-- ##### [Qt5 QML For Beginners: The Fundamentals ]({{ site.qmlbeginners }}{{ site.coupon }})
+- ##### [Qt5 QML For Beginners: The Fundamentals[Archived] ]({{ site.qmlbeginners }}{{ site.coupon }})
 
 
 <br>
