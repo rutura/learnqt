@@ -19,6 +19,7 @@ permalink: "/udemy-discounted-9/"
 
 - ##### [The C++ 20 Masterclass: From Fundamentals to Advanced]({{ site.cpp20masterclass }}{{ site.coupon }})
 - ##### [Qt 6 C++ GUI Development for Beginners: The Fundamentals [Latest/Recommended] ]({{ site.qt6guibeginners }}{{ site.coupon }})
+- ##### [Qt6 QML For Beginners: The Fundamentals [Latest/Recommended] ]({{ site.qt6qmlbeginners }}{{ site.coupon }})
 - ##### [Qt For Python (PySide6) GUI For Beginners: The Fundamentals ]({{ site.pyside6widgetsbeginners }}{{ site.coupon }})
 - ##### [Qt 5 C++ GUI Development - Intermediate]({{ site.qtguiintermediate }}{{ site.coupon }})
 - ##### [Qt Quick and QML For Beginners(Qt 5) ]({{ site.qmlbeginners }}{{ site.coupon }})

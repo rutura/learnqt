@@ -32,6 +32,26 @@
     - Function and Class Templates
     - Function like entities and callbacks
     - And more!
+    
+    
+- title: 'Qt6 QML For Beginners: The Fundamentals'
+  subtitle: Build Cross Platform Fluid And Dynamic UIs with QML. Run Them on Windows, Mac, Linux, Android,iOS and Embedded.
+  image: /assets/courses/image/qt6_qml_beginners.png
+  link: https://www.udemy.com/course/qt6-qml-for-beginners/?couponCode=
+  what: What you'll learn
+  what_learn_list: 
+    - The basics of working with the QML language
+    - Working with Javascript in QML
+    - Animations
+    - Positioning
+    - CMake
+    - Qt Quick Controls
+    - Local Storage with Settings and SQLite
+    - Http Requests and REST Api
+    - Move Semantics
+    - Dialogs
+    - Model View Architecture
+    - And more!
 
 
 - title: 'Qt For Python (PySide6) GUI For Beginners : The Fundamentals'
