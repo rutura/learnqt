@@ -52,6 +52,18 @@
     - Dialogs
     - Model View Architecture
     - And more!
+    
+- title: 'Qt6 QML Intermediate: Interfacing to C++'
+  subtitle: Connect your beautiful QML user interface to a powerfull C++ back end.
+  image: /assets/courses/image/qt6_qml_intermediate.png
+  link: https://www.udemy.com/course/qt6-qml-intermediate-interfacing-to-c/?couponCode=
+  what: What you'll learn
+  what_learn_list: 
+    - Interfacing C++ to QML
+    - Building QML friendly types
+    - Building your own QML types from C++
+    - Data conversions between C++ and QML.
+    - And more!
 
 
 - title: 'Qt For Python (PySide6) GUI For Beginners : The Fundamentals'

@@ -44,8 +44,8 @@ navigation:
 
 
 # Course Links
-coupon: 'ENDAPRIL2024'
-couponvalidity: 'May 1st,2024'
+coupon: 'QT6QMLINTERMEDIATE'
+couponvalidity: 'May 11,2024'
 price: '$9.99'
 pyside6widgetsbeginners : 'https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/?couponCode='
 qt6guibeginners : 'https://www.udemy.com/course/qt6-c-gui-widgets-tutorial-for-beginners/?couponCode='
@@ -54,6 +54,7 @@ qtguibeginners: 'https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beg
 qtguiintermediate: 'https://www.udemy.com/course/qt-c-gui-development-intermediate/?couponCode='
 qmlbeginners: 'https://www.udemy.com/course/qt_quick_qml_tutorial_for_beginners/?couponCode='
 qt6qmlbeginners: 'https://www.udemy.com/course/qt6-qml-for-beginners/?couponCode='
+qt6qmlintermediate: 'https://www.udemy.com/course/qt6-qml-intermediate-interfacing-to-c/?couponCode='
 qmlintermediate: 'https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-intermediate/?couponCode='
 qmladvanced: 'https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-advanced/?couponCode='
 multithreading: 'https://www.udemy.com/course/multi-threading-and-ipc-with-qt-c-plus-plus/?couponCode='

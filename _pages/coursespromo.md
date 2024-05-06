@@ -20,9 +20,9 @@ permalink: "/udemy-discounted-9/"
 - ##### [The C++ 20 Masterclass: From Fundamentals to Advanced]({{ site.cpp20masterclass }}{{ site.coupon }})
 - ##### [Qt6 C++ GUI Development for Beginners: The Fundamentals [Latest/Recommended] ]({{ site.qt6guibeginners }}{{ site.coupon }})
 - ##### [Qt6 QML For Beginners: The Fundamentals [Latest/Recommended] ]({{ site.qt6qmlbeginners }}{{ site.coupon }})
+- ##### [Qt6 QML Intermediate: Interfacing to C++ [Latest/Recommended] ]({{ site.qt6qmlintermediate }}{{ site.coupon }})
 - ##### [Qt For Python (PySide6) GUI For Beginners: The Fundamentals ]({{ site.pyside6widgetsbeginners }}{{ site.coupon }})
 - ##### [Qt5 C++ GUI Development - Intermediate]({{ site.qtguiintermediate }}{{ site.coupon }})
-- ##### [Qt5 QML Intermediate]({{ site.qmlintermediate }}{{ site.coupon }})
 - ##### [Qt5 QML Advanced]({{ site.qmladvanced }}{{ site.coupon }})
 - ##### [Multithreading and IPC with Qt5 C++ ]({{ site.multithreading }}{{ site.coupon }})
 
@@ -33,6 +33,7 @@ permalink: "/udemy-discounted-9/"
 
 - ##### [Qt 5 C++ GUI Development for Beginners: The Fundamentals[Archived] ]({{ site.qtguibeginners }}{{ site.coupon }})
 - ##### [Qt5 QML For Beginners: The Fundamentals[Archived] ]({{ site.qmlbeginners }}{{ site.coupon }})
+- ##### [Qt5 QML Intermediate: Interfacing to C++[Archived]({{ site.qmlintermediate }}{{ site.coupon }})
 
 
 <br>
