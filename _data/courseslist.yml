@@ -64,6 +64,20 @@
     - Building your own QML types from C++
     - Data conversions between C++ and QML.
     - And more!
+    
+    
+- title: 'Qt6 QML Advanced: Interfacing to C++'
+  subtitle: Use Custom C++ Models in QML, Build your own Visual C++ QML Types, Use Singletons and Dig Deep Through QML from C++.
+  image: /assets/courses/image/qt6_qml_advanced.png
+  link: https://www.udemy.com/course/qt6-qml-advanced-interfacing-to-c/?couponCode=
+  what: What you'll learn
+  what_learn_list: 
+    - Working with custom C++ models in QML
+    - Using your C++ classes as singletons in QML
+    - Building custom C++ visual types and using them in QML
+    - Digging through the QML tree structure and manipulating elements from C++
+    - And more!
+
 
 
 - title: 'Qt For Python (PySide6) GUI For Beginners : The Fundamentals'
