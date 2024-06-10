@@ -47,6 +47,6 @@ permalink: "/udemy-discounted-9/"
 
 ![Learn QT Books](/assets/books/image/qt6_qml_mock.jpg)
 
-<a href="https://mailchi.mp/learnqt.guide/qt6_qml_for_beginners" class="btn bg-green btn-success col-md-12 btn-lg">
+<a href="https://mailchi.mp/4513275df9e4/qt6_qml_for_beginners" class="btn bg-green btn-success col-md-12 btn-lg">
 Get the Book Now
 </a>
