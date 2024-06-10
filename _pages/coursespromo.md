@@ -10,7 +10,7 @@ permalink: "/udemy-discounted-9/"
   Book discounts:
 </div>
 
-- ##### [Qt6 QML For Beginners](https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners/STARTSEPT2023)
+- ##### [Qt6 QML For Beginners](https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners/)
 
 <div class="p-3">
   Our video courses discounted to just {{site.price}}. The deal is valid until {{ site.couponvalidity }}:
@@ -40,13 +40,13 @@ permalink: "/udemy-discounted-9/"
 <br>
 <div class="alert bg-greens alert-dismissible fade show promosi" role="alert">
 <div class="p-1">
- Get a Free Copy of our 33 Tips on Qt Creator to Speed Up your workflow
+ Get a Free Copy of Qt6 QML For Beginners - Community Version
 </div>
 </div>
 
 
-![Learn QT Books](/assets/books/image/qt_creator_guide.png)
+![Learn QT Books](/assets/books/image/qt6_qml_mock.jpg)
 
-<a href="https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts" class="btn bg-green btn-success col-md-12 btn-lg">
+<a href="https://mailchi.mp/learnqt.guide/qt6_qml_for_beginners" class="btn bg-green btn-success col-md-12 btn-lg">
 Get the Book Now
 </a>
