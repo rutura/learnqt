@@ -12,8 +12,12 @@ permalink: "/udemy-discounted-9/"
 
 - ##### [Qt6 QML For Beginners](https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners/)
 
-<div class="p-3">
+<!-- <div class="p-3">
   Our video courses discounted to just {{site.price}}. The deal is valid until {{ site.couponvalidity }}:
+</div> -->
+
+<div class="p-3">
+  Our video courses discounted for a <strong>SHORT</strong> period of time. Choose yours below:
 </div>
 
 
