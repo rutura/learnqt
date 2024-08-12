@@ -44,8 +44,8 @@ navigation:
 
 
 # Course Links
-coupon: 'STARTJULY2024'
-couponvalidity: 'Aug 10,2024'
+coupon: 'STARTAUG2024'
+couponvalidity: 'Sep 12,2024'
 price: '$12.99'
 pyside6widgetsbeginners : 'https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/?couponCode='
 qt6guibeginners : 'https://www.udemy.com/course/qt6-c-gui-widgets-tutorial-for-beginners/?couponCode='
