@@ -30,7 +30,8 @@ To use constexpr, your function must:
 - Only use other constexpr functions and literal types (e.g., integers, floats, pointers, and other constexpr-friendly types).
 
 That said, it’s a tool with immense potential. Let’s see how it works in action.
-Development Time, Compile Time, and Run Time: The Three Phases of Your Code
+
+## Development Time, Compile Time, and Run Time: The Three Phases of Your Code
 
 Before diving into the examples, let’s define the key phases of code execution:
 
