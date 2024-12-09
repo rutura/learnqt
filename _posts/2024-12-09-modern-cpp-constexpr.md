@@ -3,7 +3,7 @@ layout: post
 title: "Your Code is Dying... Are You Ready to Lose Your Performance?"
 description: Take advantage of the constexpr keyword in modern C++ to improve performance and flexibility in your code.
 cover: /assets/img/blog/modern-cpp-constexpr/modern-cpp-constexpr.png
-date: '2024-08-24'
+date: '2024-12-09'
 categories:
     - C++
 tags:
