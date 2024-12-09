@@ -116,16 +116,20 @@ mov eax, 832040  ; The result of fibonacci(30) is precomputed at compile time
 ## Why This Matters: Performance Benefits
 
 The main takeaway here is the performance difference between runtime and compile-time computation. Here's why using constexpr is important:
-1. Reduced Run-Time Overhead
+
+# Reduced Run-Time Overhead
 
 The Fibonacci calculation done at runtime involves recursion, which leads to redundant work and increased run-time overhead. On the other hand, with constexpr, the computation is done at compile time, and the result is directly inserted into the program’s final executable.
-2. Smaller Executables and Faster Execution
+
+# Smaller Executables and Faster Execution
 
 Since constexpr computes values at compile time, the resulting program is typically smaller and faster. It doesn’t need to spend time making recursive calls or performing repetitive calculations. The compiler does the heavy lifting for you.
-3. Compile-Time Safety
+
+# Compile-Time Safety
 
 constexpr allows you to ensure that certain values are computed before runtime, leading to compile-time errors if something goes wrong. This makes it easier to catch mistakes early.
-Limitations of constexpr
+
+## Limitations of constexpr
 
 It's important to note that not every type or function can be constexpr. Here's what you need to consider:
 
