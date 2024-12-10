@@ -140,7 +140,8 @@ It's important to note that not every type or function can be constexpr. Here's 
 - No runtime I/O: Functions that depend on runtime data (like file reading or user input) cannot be constexpr.
 
 This is why not all functions can be marked as constexpr, but where possible, it’s a game-changer for performance.
-Conclusion: The Importance of constexpr
+
+## Conclusion: The Importance of constexpr
 
 If you’re not using constexpr when you can, you’re letting your program suffer. It's like choosing to repeatedly re-calculate the same values at runtime when you could be precomputing them at compile time. Without constexpr, your program wastes time, memory, and CPU resources during execution. But with constexpr, you’re ensuring that your program runs faster, more efficiently, and with less overhead.
 
