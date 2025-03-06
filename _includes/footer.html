@@ -41,14 +41,20 @@
 
 
 <div class="col-10 mx-auto p-3 text-center">
-<p><small>{{site.footercopyrights}}</small></p>
+<p><small>© {{ site.time | date: "%Y" }} LearnQt Guide. All Rights Reserved</small></p>
 </div>
 
 </div>
 </div>
 
-
-
+<footer>
+  <!-- Your footer content -->
+  <div class="copyright">
+    © {{ site.time | date: "%Y" }} LearnQt Guide. All Rights Reserved
+    <!-- Or use the config value and add the year: -->
+    <!-- {{ site.footercopyrights | replace: "©", "© " | append: site.time | date: "%Y" }} -->
+  </div>
+</footer>
 
 <script>
 $(function () {

@@ -47,9 +47,9 @@ navigation:
 coupon: 'ENDFEB2025'
 couponvalidity: 'March 2, 2025'
 price: '$9.99'
-pyside6widgetsbeginners : 'https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/?couponCode='
-qt6guibeginners : 'https://www.udemy.com/course/qt6-c-gui-widgets-tutorial-for-beginners/?couponCode='
-cpp20masterclass:  'https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode='
+pyside6widgetsbeginners: 'https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/?couponCode='
+qt6guibeginners: 'https://www.udemy.com/course/qt6-c-gui-widgets-tutorial-for-beginners/?couponCode='
+cpp20masterclass: 'https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode='
 qtguibeginners: 'https://www.udemy.com/course/qt-c-gui-tutorial-for-complete-beginners/?couponCode='
 qtguiintermediate: 'https://www.udemy.com/course/qt-c-gui-development-intermediate/?couponCode='
 qmlbeginners: 'https://www.udemy.com/course/qt_quick_qml_tutorial_for_beginners/?couponCode='
@@ -61,13 +61,18 @@ qmladvanced: 'https://www.udemy.com/course/interfacing-qt-quick-qml-to-cpp-advan
 multithreading: 'https://www.udemy.com/course/multi-threading-and-ipc-with-qt-c-plus-plus/?couponCode='
 
 #footer area
-footer: 
- logo: /assets/blog/image/LearnQt.png
- title: LearnQtGuide
- content:  'Clear, up front courses on Qt. We have made it our business to provide the best online learning resources for Qt Development. We put in the required effort to make sure the code resources coming with the courses are up to date and use the latest tools to reduce the hustle for students as much as possible. We already have the basic courses on Qt C++ and QML out and there are more in the pipeline.'
- icon: /assets/img/learnqt-nav.webp
- button: See our courses
- link: /courses/
+footer:
+  logo: /assets/blog/image/LearnQt.png
+  title: LearnQtGuide
+  content: >-
+    Clear, up front courses on Qt. We have made it our business to provide the best 
+    online learning resources for Qt Development. We put in the required effort to make 
+    sure the code resources coming with the courses are up to date and use the latest 
+    tools to reduce the hustle for students as much as possible. We already have the 
+    basic courses on Qt C++ and QML out and there are more in the pipeline.
+  icon: /assets/img/learnqt-nav.webp
+  button: See our courses
+  link: /courses/
 
 #social media
 youtube: https://www.youtube.com/channel/UCUYUFiuJ5XZ3JYtbq5dXRKQ
@@ -77,14 +82,14 @@ linked: https://www.linkedin.com/in/daniel-gakwaya-2a570092
 
 #author
 author: 
- title: Your Instructor Author and Mentor
- image: /assets/img/daniel.jpg
- name: Daniel Gakwaya
- label: Udemy Instructor Partner
- description: Daniel is a Senior Software Engineer at Blikoon Technologies. He has been writing software since  2011 and Qt is one of his favorite frameworks. Many of his cross platform Qt based projects are completed and out there on the market. Autodidact by nature ,he has a passion for learning new things and loves sharing knowledge with others. Especially people new to the dark art of software development.
+  title: Your Instructor Author and Mentor
+  image: /assets/img/daniel.jpg
+  name: Daniel Gakwaya
+  label: Udemy Instructor Partner
+  description: Daniel is a Senior Software Engineer at Blikoon Technologies. He has been writing software since  2011 and Qt is one of his favorite frameworks. Many of his cross platform Qt based projects are completed and out there on the market. Autodidact by nature ,he has a passion for learning new things and loves sharing knowledge with others. Especially people new to the dark art of software development.
 
 # copyrights
-footercopyrights: © 2023 LearnQt Guide. All Rights Reserved 
+footercopyrights: "© LearnQt Guide. All Rights Reserved"
 
 # blog post pagination
 paginate: 3
@@ -134,8 +139,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
 
-markdown: kramdown
-highlighter: rouge
 markdown: kramdown
 highlighter: rouge
 kramdown:
