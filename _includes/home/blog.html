@@ -7,7 +7,7 @@
 <div class="bot-center col-md-1 col-2 mt-3"></div>
 <p class="mt-5 col-md-8 mx-auto">{{page.blog.description}}</p>
 </div>
-{% for b in site.posts %}
+{% for b in site.posts limit:2 %}
 <div class="col-md-12 p-3">
 <div class="sers bg-light zoom row shadow-sm">
 <a class="col-md-4 p-3" href="{{b.url}}" title="{{b.title}}"><img class="img-fluid sers lazyload" loading="lazy" width="100%" height="100%" alt="{{b.title}}" 
