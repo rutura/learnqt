@@ -20,7 +20,7 @@ permalink: "/udemy-discounted-9/"
   Our video courses discounted for a <strong>SHORT</strong> period of time. Choose yours below:
 </div>
 
-
+- ##### [C++23 Fundamentals with Projects & Algorithms]({{ site.cpp23fundamentals }}{{ site.coupon }})
 - ##### [The C++ 20 Masterclass: From Fundamentals to Advanced]({{ site.cpp20masterclass }}{{ site.coupon }})
 - ##### [Qt6 C++ GUI Development for Beginners: The Fundamentals [Latest/Recommended] ]({{ site.qt6guibeginners }}{{ site.coupon }})
 - ##### [Qt6 QML For Beginners: The Fundamentals [Latest/Recommended] ]({{ site.qt6qmlbeginners }}{{ site.coupon }})

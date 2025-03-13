@@ -13,6 +13,23 @@
     - Working with the File System
     - Model View Architecture and more
 
+
+- title: 'C++23 Fundamentals with Projects & Algorithms'
+  subtitle: 'Go beyond the basics—build, debug, and optimize modern C++23 projects with pro tools like CMake and vcpkg.'
+  image: /assets/courses/image/cpp23_fundamentals.png
+  link: https://www.udemy.com/course/cpp23-fundamentals-projects-algorithms/?couponCode=
+  what: What you'll learn
+  what_learn_list: 
+    - Modern C++23 - Write efficient, maintainable, and modern C++ code using the latest language features.
+    - Debugging Like a Pro - Learn debugging techniques using the debugger coming with your compiler.
+    - Building GUI Apps - Create graphical applications using libraries like SFML and ftxui
+    - Working with Containers - Use STL containers effectively and understand their best use cases.
+    - Optimizing Performance - Write high-performance C++ using smart pointers, compile time computations, move semantics, and more.
+    - Using Pro Tools - Build projects with CMake, vcpkg, and third-party libraries like a professional.
+    - Handleing File I/O - Work with modern C++ file handling using std::filesystem and streams.
+    - Memory Management - Understand RAII, smart pointers, and modern memory management techniques.
+    - Writing Modular Code - Build scalable projects with C++20 modules and best design practices.
+
     
 - title: 'The C++20 Masterclass : From Fundamentals to Advanced'
   subtitle: Learn and Master Modern C++ From Beginning to Advanced in Plain English - C++11, C++14, C++17, C++20 and More!
