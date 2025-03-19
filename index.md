@@ -62,7 +62,7 @@ why:
     description: Upon completing the course, you will receive a Udemy course completion certificate.
 
 notified: 
- title: GET NOTIFIED ABOUT NEW BOOK AND COURSE RELEASES FROM US.
+ title: JOIN OUR NEWSLETTER & GET A FREE QT6 QML BOOK! STAY UPDATED. 
  description: Your email will never be shared.
 
 follow: FOLLOW US
