@@ -41,12 +41,16 @@ permalink: "/udemy-discounted-9/"
 - ##### [Qt5 QML Advanced [Archived] ]({{ site.qmladvanced }}{{ site.coupon }})
 
 
-<br>
-![Learn QT Books](/assets/books/image/qt6_qml_mock.jpg)
+<div class="mt-5 p-4 bg-light rounded shadow-sm mb-2">
+  <h2 class="text-center mb-3">🎁 Get Your FREE Copy of Qt6 QML For Beginners - Community Version! 📖</h2>
+  
+  <p class="text-center">Kickstart your Qt journey with our free beginner-friendly guide! Learn the fundamentals of Qt6 QML, build interactive UIs, and start creating real-world applications today.</p>
+  
+</div>
 
-<div class="mt-5 mb-5"></div>
+![Learn QT Books](/assets/books/image/qt6_qml_mock.jpg){: .my-2}
 
-<div class="row bg-light sers mt-5 mail shadow-sm">
+<div class="row bg-light sers mt-2 mail shadow-sm">
   <div class="col-md-5 p-4 d-flex align-items-center">
     <h2 class="mb-0"><strong>Get the community version this book for FREE. Just tell me where to send it.</strong></h2>
   </div>
