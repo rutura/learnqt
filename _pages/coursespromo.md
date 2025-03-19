@@ -42,38 +42,66 @@ permalink: "/udemy-discounted-9/"
 
 
 <br>
-<div class="alert bg-greens alert-dismissible fade show promosi" role="alert">
-<div class="p-1">
- Get a Free Copy of Qt6 QML For Beginners - Community Version. Just tell me where to send it!
-</div>
-</div>
-
 ![Learn QT Books](/assets/books/image/qt6_qml_mock.jpg)
 
-<style>
-.formkit-form[data-uid="67a33fe28d"] {
-  margin-top: -30px !important;
-  margin-bottom: -20px !important;
-}
-.formkit-form[data-uid="67a33fe28d"] .formkit-fields {
-  display: flex !important;
-  gap: 10px !important;
-  flex-wrap: wrap !important;
-  align-items: flex-start !important;
-  justify-content: center !important;
-}
-.formkit-form[data-uid="67a33fe28d"] .formkit-field {
-  flex: 1 !important;
-  min-width: 200px !important;
-}
-.formkit-form[data-uid="67a33fe28d"] .formkit-input {
-  font-size: 16px !important;
-  padding: 12px 15px !important;
-  width: 100% !important;
-}
-.formkit-form[data-uid="67a33fe28d"] .formkit-submit {
-  margin: 0 !important;
-}
-</style>
+<div class="mt-5 mb-5"></div>
 
-<script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
+<div class="row bg-light sers mt-5 mail shadow-sm">
+  <div class="col-md-5 p-4 d-flex align-items-center">
+    <h2 class="mb-0"><strong>Get the community version this book for FREE. Just tell me where to send it.</strong></h2>
+  </div>
+  <div class="col-md-7 p-4">
+    <style>
+    .formkit-form[data-uid="67a33fe28d"] {
+      margin: 0 !important;
+      display: flex !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+    }
+    .formkit-form[data-uid="67a33fe28d"] > div {
+      width: 100% !important;
+      margin: 0 !important;
+    }
+    .formkit-form[data-uid="67a33fe28d"] .formkit-fields {
+      display: flex !important;
+      gap: 10px !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      width: 100% !important;
+      margin: 0 !important;
+    }
+    .formkit-form[data-uid="67a33fe28d"] .formkit-field {
+      width: 100% !important;
+    }
+    .formkit-form[data-uid="67a33fe28d"] .formkit-input {
+      font-size: 16px !important;
+      padding: 12px 15px !important;
+      width: 100% !important;
+      min-height: 40px !important;
+    }
+    .formkit-form[data-uid="67a33fe28d"] .formkit-submit {
+      margin: 0 !important;
+      width: 100% !important;
+    }
+    .formkit-form[data-uid="67a33fe28d"] .formkit-submit > span {
+      width: 100% !important;
+      min-height: 40px !important;
+    }
+    .formkit-form[data-uid="67a33fe28d"] + p {
+      margin-top: 10px !important;
+      width: 100% !important;
+      text-align: center !important;
+      font-size: 14px !important;
+      opacity: 0.8 !important;
+    }
+    @media (max-width: 768px) {
+      .formkit-form[data-uid="67a33fe28d"] {
+        margin-top: 20px !important;
+      }
+    }
+    </style>
+
+    <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
+  </div>
+</div>
