@@ -44,8 +44,8 @@ navigation:
 
 
 # Course Links
-coupon: 'STARTAPRIL2025'
-couponvalidity: 'April 17, 2025'
+coupon: 'ENDAPRIL2025'
+couponvalidity: May 4, 2025'
 price: '$9.99'
 cpp23fundamentals: 'https://www.udemy.com/course/cpp23-fundamentals-projects-algorithms/?couponCode='
 pyside6widgetsbeginners: 'https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/?couponCode='
