@@ -13,6 +13,21 @@
     - Working with the File System
     - Model View Architecture and more
 
+- title: 'Qt6 Model-View Architecture in C++: Build Data Driven UIs'
+  subtitle: Build advanced UIs in Qt using C++ with clean architecture, reusable components, and real data models.
+  image: /assets/courses/image/qt6_widgets_mvc_cpp.png
+  link: https://www.udemy.com/course/qt-6-model-view-architecture-in-cplusplus/?couponCode=
+  what: What you'll learn
+  what_learn_list: 
+    - Build and connect Qt's built-in models to views like QListView, QTableView, and QTreeView for dynamic, data-driven UIs.
+    - Design custom delegates and editors for rich user interaction, including painting, editing, and a reusable star rating widget.
+    - Design and build desktop apps like inventory systems, project trackers, and media libraries that are fast, scalable, and user-friendly.
+    - Create responsive UIs that can handle complex data structures—without resorting to spaghetti code or manual widget management.
+    - Create custom models using QAbstractItemModel to support editing, dynamic rows, and custom roles in list, table, and tree formats.
+    - Build a complete Expense Tracker app with SQLite, applying models, views, delegates, and drag-and-drop in a real-world project.
+    - Architect clean, maintainable Qt applications by separating data, logic, and presentation using the Model/View approach.
+    - Gain the confidence to take on real-world client projects or jobs that require advanced Qt and C++ UI development skills.
+
 
 - title: 'C++23 Fundamentals with Projects & Algorithms'
   subtitle: 'Go beyond the basics—build, debug, and optimize modern C++23 projects with pro tools like CMake and vcpkg.'
