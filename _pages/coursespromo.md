@@ -26,7 +26,7 @@ Empower yourself with structured courses designed to take you from beginner to e
 **Courses Included**:
 
 {% for course in path.courses %}
-* **[{{ course.title }}]({{ site.prefix }}{{ course.title | slugify }}{{ site.coupon }})** {% if course.tag %}*{{ course.tag }}*{% endif %}: {{ course.subtitle }}
+* **[{{ course.title }}]({{ site[course.url_key] }}{{ site.coupon }})** {% if course.tag %}*{{ course.tag }}*{% endif %}: {{ course.subtitle }}
 {% endfor %}
 
 **Outcome**: {{ path.outcome }}

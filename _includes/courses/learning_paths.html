@@ -18,8 +18,9 @@
 
             <ul class="course-list mb-3">
                 {% for course in path.courses %}
+                        {% assign course_url = site[course.url_key] %}
                     <li>
-                        <a href="#"><strong>{{ course.title }}</strong></a>{% if course.tag %} <em>{{ course.tag }}</em>{% endif %}: 
+                        <a href="{{ course_url }}{{ site.coupon }}" target="_blank"><strong>{{ course.title }}</strong></a>{% if course.tag %} <em>{{ course.tag }}</em>{% endif %}: 
                         {{ course.subtitle }}
                     </li>
                 {% endfor %}

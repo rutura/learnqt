@@ -7,8 +7,10 @@ learning_paths:
     courses:
       - title: "C++23 Fundamentals with Projects & Algorithms"
         subtitle: "Gain solid foundations, practice with real-world algorithms, and develop a deep understanding of modern C++."
+        url_key: "cpp23fundamentals"
       - title: "The C++20 Masterclass : From Fundamentals to Advanced"
         subtitle: "Elevate your skills, master modern features, and solve complex, practical programming challenges."
+        url_key: "cpp20masterclass"
 
   - title: "Build Cross-Platform Desktop Apps with Qt Widgets in C++"
     icon: "🖥️"
@@ -18,8 +20,10 @@ learning_paths:
       - title: "Qt 6 C++ GUI Development for Beginners : The Fundamentals"
         subtitle: "Quickly master essential Qt widgets, signals, slots, and build interactive GUIs."
         tag: "[Latest/Recommended]"
+        url_key: "qt6guibeginners"
       - title: "Qt6 Model-View Architecture in C++: Build Data Driven UIs"
         subtitle: "Learn advanced data-handling techniques to create scalable, maintainable, and professional-grade apps."
+        url_key: "cppqt6mvc"
 
   - title: "Build Cross-Platform Desktop Apps with Qt Widgets in PySide6"
     icon: "🐍"
@@ -28,8 +32,10 @@ learning_paths:
     courses:
       - title: "Qt For Python (PySide6) GUI For Beginners"
         subtitle: "Dive into GUI creation, widgets, layouts, signals, and slots, using Python's easy-to-read syntax."
+        url_key: "pyside6widgetsbeginners"
       - title: "Qt6 Model-View Architecture in PySide6: Build Data Driven UIs"
         subtitle: "Master the Model-View architecture to build efficient, maintainable Python-based desktop applications."
+        url_key: "pyside6widgetsbeginners"
 
   - title: "Fluid and Dynamic UIs for Mobile & Embedded with Qt QML"
     icon: "📱"
@@ -39,9 +45,12 @@ learning_paths:
       - title: "Qt6 QML For Beginners: The Fundamentals"
         subtitle: "Learn how to quickly build intuitive, fluid, and visually appealing UIs using Qt Quick."
         tag: "[Latest/Recommended]"
+        url_key: "qt6qmlbeginners"
       - title: "Qt6 QML Intermediate: Interfacing to C++"
         subtitle: "Deepen your skills by integrating QML with C++ for powerful, high-performance applications."
         tag: "[Latest/Recommended]"
+        url_key: "qt6qmlintermediate"
       - title: "Qt6 QML Advanced: Interfacing to C++"
         subtitle: "Master advanced integration, performance optimization, and sophisticated UI development."
         tag: "[Latest/Recommended]"
+        url_key: "qt6qmladvanced"
