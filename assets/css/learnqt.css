@@ -19,6 +19,15 @@ body,html{
     background-color:#8ebe30;
     color:#fff
 }
+.nav-item{
+    text-align: center;
+}
+.nav-link {
+    color: #fff !important;
+}
+.nav-item:hover .nav-link {
+    color: #000 !important;
+}
 .ser,.sers{
     border-radius:5px
 }
@@ -115,7 +124,14 @@ a{
     height:55px
 }
 .nav-item{
-    border-bottom:1px solid #000
+    border-bottom:1px solid #000;
+    text-align: center;
+}
+.nav-link {
+    color: #fff !important;
+}
+.nav-item:hover .nav-link {
+    color: #000 !important;
 }
 .img-cards{
     border-radius:5px 5px 0 0
@@ -170,4 +186,4 @@ code{
 }
 
 
- 
+
