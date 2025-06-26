@@ -2,8 +2,10 @@
 learning_paths:
   - title: "C++ Programming Mastery"
     icon: "🚀"
+    image: "/assets/img/learning-paths/cpp-mastery.webp"
     description: "Perfect for aspiring developers who want a deep and thorough understanding of modern C++ programming, from basics to advanced concepts."
     outcome: "Confidently write modern, efficient, and maintainable C++ code ready for professional development."
+    path_id: "cpp-mastery"
     courses:
       - title: "C++23 Fundamentals with Projects & Algorithms"
         subtitle: "Gain solid foundations, practice with real-world algorithms, and develop a deep understanding of modern C++."
@@ -14,8 +16,10 @@ learning_paths:
 
   - title: "Build Cross-Platform Desktop Apps with Qt Widgets in C++"
     icon: "🖥️"
+    image: "/assets/img/learning-paths/qt-widgets-cpp.webp"
     description: "Perfect for developers aiming to build professional desktop applications that run smoothly across Windows, macOS, and Linux."
     outcome: "Create sophisticated cross-platform desktop applications with powerful, dynamic data-driven interfaces."
+    path_id: "qt-widgets-cpp"
     courses:
       - title: "Qt 6 C++ GUI Development for Beginners : The Fundamentals"
         subtitle: "Quickly master essential Qt widgets, signals, slots, and build interactive GUIs."
@@ -27,8 +31,10 @@ learning_paths:
 
   - title: "Build Cross-Platform Desktop Apps with Qt Widgets in PySide6"
     icon: "🐍"
+    image: "/assets/img/learning-paths/qt-widgets-python.webp"
     description: "Perfect for Python developers who want the power of Qt combined with the simplicity of Python for building desktop apps."
     outcome: "Seamlessly design, build, and deploy cross-platform Python desktop applications with professional UIs."
+    path_id: "qt-widgets-python"
     courses:
       - title: "Qt For Python (PySide6) GUI For Beginners"
         subtitle: "Dive into GUI creation, widgets, layouts, signals, and slots, using Python's easy-to-read syntax."
@@ -39,8 +45,10 @@ learning_paths:
 
   - title: "Fluid and Dynamic UIs for Mobile & Embedded with Qt QML"
     icon: "📱"
+    image: "/assets/img/learning-paths/qt-qml.webp"
     description: "Perfect for developers who want to create fluid, modern interfaces ideal for embedded devices and mobile apps."
     outcome: "Expertly design responsive, beautiful UIs tailored for embedded and mobile applications with seamless C++ integration."
+    path_id: "qt-qml"
     courses:
       - title: "Qt6 QML For Beginners: The Fundamentals"
         subtitle: "Learn how to quickly build intuitive, fluid, and visually appealing UIs using Qt Quick."

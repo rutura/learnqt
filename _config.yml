@@ -17,7 +17,7 @@ navhome:
  - name: Home
    link: '#'
  - name: Courses
-   link: '#courses'
+   link: '#learning-paths'
  - name: Books
    link: '#book'
  - name: About

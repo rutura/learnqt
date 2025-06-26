@@ -10,7 +10,8 @@
 
     <div class="learning-paths">
         {% for path in site.data.learning_paths.learning_paths %}
-            <h3>{{ path.icon }} {{ path.title }}</h3>
+            <div id="{{ path.path_id }}" class="learning-path-section">
+                <h3>{{ path.title }}</h3>
 
             <p><strong>Perfect for</strong>: {{ path.description }}</p>
 
@@ -48,4 +49,27 @@
 hr {
     margin: 2rem 0;
 }
+.learning-path-section {
+    scroll-margin-top: 100px;
+}
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const targetId = window.location.hash.substring(1);
+    const scrollTo = localStorage.getItem('scrollTo');
+    
+    if (targetId) {
+        const element = document.getElementById(targetId);
+        if (element) {
+            setTimeout(() => {
+                element.scrollIntoView();
+            }, 100);
+        }
+    }
+    
+    if (scrollTo) {
+        localStorage.removeItem('scrollTo');
+    }
+});
+</script>

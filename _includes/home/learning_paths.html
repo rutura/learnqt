@@ -1,0 +1,139 @@
+<!-- Learning Paths Section -->
+<section id="learning-paths" class="learning-paths py-5">
+    <div class="container">
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title text-success">Learning Paths</h2>
+                <div class="title-underline"></div>
+                <p class="lead mt-4">Choose your path to Qt mastery with our structured learning programs. Whether you're starting with C++, building desktop apps, or creating dynamic mobile interfaces, we have the perfect learning path for you.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            {% for path in site.data.learning_paths.learning_paths %}
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow hover-shadow">
+                    <div class="card-image-wrapper">
+                        <img class="card-img-top lazyload" loading="lazy" alt="{{ path.title }}" data-src="{{ site.baseurl }}/assets/courses/image/qt6_gui_beginners.png">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title h4 mb-3">{{ path.title }}</h3>
+                        <p class="card-text">{{ path.description }}</p>
+                        <div class="mt-4">
+                            <h4 class="h6 text-success fw-bold">What you'll achieve:</h4>
+                            <p class="card-text">{{ path.outcome }}</p>
+                        </div>
+                        <div class="mt-4">
+                            <a href="/courses#{{ path.path_id }}" class="btn btn-success w-100" onclick="localStorage.setItem('scrollTo', '{{ path.path_id }}')">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --qt-green: #15ba29;
+}
+
+.learning-paths {
+    background-color: #f8f9fa;
+}
+
+.learning-paths .card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.learning-paths .hover-shadow {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.learning-paths .hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.learning-paths .card-image-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+.learning-paths .card-img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+.learning-paths .card {
+    transition: all 0.3s ease;
+    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+}
+
+.learning-paths .card-body {
+    padding: 2rem;
+}
+
+.learning-paths .card-title {
+    color: #2c3e50;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.learning-paths .card-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--qt-green);
+}
+
+.learning-paths .card-text {
+    color: #505c66;
+    line-height: 1.6;
+}
+
+.learning-paths .btn-success {
+    background-color: var(--qt-green);
+    border-color: var(--qt-green);
+}
+
+.learning-paths .btn-success:hover {
+    background-color: #149f25;
+    border-color: #149f25;
+}
+
+.learning-paths .text-success {
+    color: var(--qt-green) !important;
+}
+
+.title-underline {
+    width: 70px;
+    height: 3px;
+    background-color: var(--qt-green);
+    margin: 1rem auto;
+}
+
+.section-title {
+    margin-bottom: 0;
+    font-weight: 600;
+}
+</style>
