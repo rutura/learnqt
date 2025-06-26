@@ -1,0 +1,78 @@
+/* Learning Paths Styles */
+.learning-paths-section {
+    background-color: #f8f9fa;
+}
+
+.learning-path {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.learning-path:hover {
+    transform: translateY(-5px);
+}
+
+.path-icon {
+    font-size: 1.5em;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.path-header {
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 1rem;
+}
+
+.courses-container {
+    padding: 1rem 0;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.path-outcome {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.tag-recommended {
+    background-color: #28a745;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+}
+
+/* Accordion customization */
+.accordion-button:not(.collapsed) {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+
+.accordion-item {
+    border-radius: 8px !important;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(0,0,0,.125);
+}

@@ -1,9 +1,31 @@
 <div class="container" id="courses">
 <div class="row">
 <div class="col-md-12 p-3 p-md-5 mt-5 text-center">
-<h2><strong><a href="{{site.url}}">{{page.courses.title}}</a></strong></h2>
-<div class="bot-center col-md-1 col-2 mt-3"></div>
-<p class="mt-3 col-md-8 mx-auto">{{page.courses.description}}</p>
+    <h2><strong>Learning Paths</strong></h2>
+    <div class="bot-center col-md-1 col-2 mt-3"></div>
+    <p class="mt-3 col-md-8 mx-auto">
+        Choose your path to mastery with our structured learning programs. Whether you're starting with C++, 
+        building desktop apps, or creating dynamic mobile interfaces, we have the perfect learning path for you.
+    </p>
+    <a href="/courses" class="btn btn-primary mt-3">Explore Learning Paths</a>
+</div>
+</div>
+
+<div class="row mt-4">
+    {% for path in site.data.learning_paths.learning_paths limit:2 %}
+    <div class="col-md-6 mb-4">
+        <div class="learning-path h-100">
+            <h3 class="h4 mb-3">
+                <span class="path-icon">{{ path.icon }}</span>
+                {{ path.title }}
+            </h3>
+            <p>{{ path.description }}</p>
+            <div class="text-end">
+                <a href="/courses#{{ path.title | slugify }}" class="btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 
 {% for c in site.data.courses.best_courses_list limit:{{page.courses.display}} %}

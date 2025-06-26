@@ -1,0 +1,50 @@
+<!-- Learning Paths Section -->
+<div class="container py-4">
+    <div class="text-center mb-5">
+        <h2>Structured Learning Paths</h2>
+        <p class="col-lg-8 mx-auto">
+            Empower yourself with structured courses designed to take you from beginner to expert, step-by-step. 
+            Each path is carefully crafted to deliver clear, practical skills you can immediately apply.
+        </p>
+    </div>
+
+    <div class="learning-paths">
+        {% for path in site.data.learning_paths.learning_paths %}
+            <h3>{{ path.icon }} {{ path.title }}</h3>
+
+            <p><strong>Perfect for</strong>: {{ path.description }}</p>
+
+            <p><strong>Courses Included</strong>:</p>
+
+            <ul class="course-list mb-3">
+                {% for course in path.courses %}
+                    <li>
+                        <a href="#"><strong>{{ course.title }}</strong></a>{% if course.tag %} <em>{{ course.tag }}</em>{% endif %}: 
+                        {{ course.subtitle }}
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <p><strong>Outcome</strong>: {{ path.outcome }}</p>
+
+            {% unless forloop.last %}
+                <hr class="my-4">
+            {% endunless %}
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.learning-paths h3 {
+    margin-top: 2rem;
+}
+.course-list {
+    margin-left: 1.5rem;
+}
+.course-list li {
+    margin-bottom: 1rem;
+}
+hr {
+    margin: 2rem 0;
+}
+</style>

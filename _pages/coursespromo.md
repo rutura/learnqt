@@ -1,101 +1,61 @@
 ---
 layout: promo
-title: "All our courses and books are on discount!"
-description:
+title: "Master Qt Development with Our Learning Paths"
+description: "Structured learning paths to take you from beginner to expert in Qt and C++ development"
 cover: /assets/courses/image/LearnQt.png
 permalink: "/udemy-discounted-9/"
 ---
 
-<div class="p-3">
-  Book discounts:
+<div class="alert alert-primary text-center p-4 mb-5">
+  <h4 class="alert-heading mb-2">🎉 LIMITED TIME OFFER!</h4>
+  <p class="mb-0">All courses are currently discounted to just {{site.price}}! Use coupon code <code>{{site.coupon}}</code> at checkout.<br>
+  <small>Valid until {{site.couponvalidity}}</small></p>
 </div>
 
-- ##### [Qt6 QML For Beginners](https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners/)
+### Structured Learning Paths
 
-<!-- <div class="p-3">
-  Our video courses discounted to just {{site.price}}. The deal is valid until {{ site.couponvalidity }}:
-</div> -->
+Empower yourself with structured courses designed to take you from beginner to expert, step-by-step. Each path is carefully crafted to deliver clear, practical skills you can immediately apply.
 
-<div class="p-3">
-  Our video courses discounted for a <strong>SHORT</strong> period of time. Choose yours below:
-</div>
+---
 
-- ##### [C++23 Fundamentals with Projects & Algorithms]({{ site.cpp23fundamentals }}{{ site.coupon }})
-- ##### [The C++ 20 Masterclass: From Fundamentals to Advanced]({{ site.cpp20masterclass }}{{ site.coupon }})
-- ##### [Qt6 C++ GUI Development for Beginners: The Fundamentals [Latest/Recommended] ]({{ site.qt6guibeginners }}{{ site.coupon }})
-- ##### [Qt6 Model-View Architecture in C++: Build Data Driven UIs]({{ site.cppqt6mvc }}{{ site.coupon }})
-- ##### [Qt6 QML For Beginners: The Fundamentals [Latest/Recommended] ]({{ site.qt6qmlbeginners }}{{ site.coupon }})
-- ##### [Qt6 QML Intermediate: Interfacing to C++ [Latest/Recommended] ]({{ site.qt6qmlintermediate }}{{ site.coupon }})
-- ##### [Qt6 QML Advanced: Interfacing to C++ [Latest/Recommended] ]({{ site.qt6qmladvanced }}{{ site.coupon }})
-- ##### [Qt For Python (PySide6) GUI For Beginners: The Fundamentals ]({{ site.pyside6widgetsbeginners }}{{ site.coupon }})
-- ##### [Qt5 C++ GUI Development - Intermediate]({{ site.qtguiintermediate }}{{ site.coupon }})
-- ##### [Multithreading and IPC with Qt5 C++ ]({{ site.multithreading }}{{ site.coupon }})
+{% for path in site.data.learning_paths.learning_paths %}
+### {{ path.icon }} {{ path.title }}
 
-<div class="mt-5 p-4 bg-light rounded shadow-sm mb-2">
-  <h2 class="text-center mb-3">🎁 Get Your FREE Copy of Qt6 QML For Beginners - Community Version! 📖</h2>
+**Perfect for**: {{ path.description }}
+
+**Courses Included**:
+
+{% for course in path.courses %}
+* **[{{ course.title }}]({{ site.prefix }}{{ course.title | slugify }}{{ site.coupon }})** {% if course.tag %}*{{ course.tag }}*{% endif %}: {{ course.subtitle }}
+{% endfor %}
+
+**Outcome**: {{ path.outcome }}
+
+{% unless forloop.last %}---{% endunless %}
+
+{% endfor %}
+
+<style>
+.learning-path-courses {
+  background: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+
+hr {
+  margin: 2rem 0;
+}
+</style>
+
+<div class="mt-5 p-4 bg-light rounded shadow-sm mb-4 text-center">
+  <h2 class="h3 mb-3">🎁 Get Started with Our Free Resources!</h2>
+  <p class="mb-4">Download your FREE copy of "Qt6 QML For Beginners - Community Edition" and kickstart your Qt journey today!</p>
+  <img src="/assets/books/image/qt6_qml_mock.jpg" alt="Qt6 QML For Beginners Book Cover" class="img-fluid mb-4" style="max-width: 300px;">
   
-  <p class="text-center">Kickstart your Qt journey with our free beginner-friendly guide! Learn the fundamentals of Qt6 QML, build interactive UIs, and start creating real-world applications today.</p>
-  
-</div>
-
-![Learn QT Books](/assets/books/image/qt6_qml_mock.jpg){: .my-2}
-
-<div class="row bg-light sers mt-2 mail shadow-sm">
-  <div class="col-md-5 p-4 d-flex align-items-center">
-    <h2 class="mb-0"><strong>Get the community version this book for FREE. Just tell me where to send it.</strong></h2>
-  </div>
-  <div class="col-md-7 p-4">
-    <style>
-    .formkit-form[data-uid="67a33fe28d"] {
-      margin: 0 !important;
-      display: flex !important;
-      justify-content: flex-start !important;
-      align-items: flex-start !important;
-      width: 100% !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] > div {
-      width: 100% !important;
-      margin: 0 !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] .formkit-fields {
-      display: flex !important;
-      gap: 10px !important;
-      flex-direction: column !important;
-      align-items: stretch !important;
-      width: 100% !important;
-      margin: 0 !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] .formkit-field {
-      width: 100% !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] .formkit-input {
-      font-size: 16px !important;
-      padding: 12px 15px !important;
-      width: 100% !important;
-      min-height: 40px !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] .formkit-submit {
-      margin: 0 !important;
-      width: 100% !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] .formkit-submit > span {
-      width: 100% !important;
-      min-height: 40px !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] + p {
-      margin-top: 10px !important;
-      width: 100% !important;
-      text-align: center !important;
-      font-size: 14px !important;
-      opacity: 0.8 !important;
-    }
-    @media (max-width: 768px) {
-      .formkit-form[data-uid="67a33fe28d"] {
-        margin-top: 20px !important;
-      }
-    }
-    </style>
-
-    <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
-  </div>
+  <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
 </div>

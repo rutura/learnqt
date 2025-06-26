@@ -1,11 +1,14 @@
 ---
-layout: courses
-title: Our published video courses
-description: Our video courses span a range of topics revolving around Qt, C++, QML, Python and the tooling ecosystem around these technologies.
+layout: page
+title: Qt Training Courses
+description: Structured learning paths to master Qt and C++ development
 cover: /assets/img/learnqtbook.webp
-best_courses_widget: false
+best_courses_widget: true
 permalink: /courses/
+display_widget: true
 ---
+
+{% include courses/learning_paths.html %}
 
 <div class="alert bg-greens alert-dismissible fade show promosi" role="alert">
 <div class="p-3">
