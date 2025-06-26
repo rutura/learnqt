@@ -1,58 +1,230 @@
 <!-- Learning Paths Section -->
-<div class="container">
+<div class="container learning-paths-container">
     <div class="row">
-        <div class="col-md-10 mx-auto text-center pt-2">
-            <h2><strong><a href="">Structured Learning Paths</a></strong></h2>
-            <div class="bot-center col-md-1 col-2 mt-3"></div>
-            <p class="mt-3 col-md-8 mx-auto">
-            Empower yourself with structured courses designed to take you from beginner to expert, step-by-step. 
-            Each path is carefully crafted to deliver clear, practical skills you can immediately apply.
-        </p>
+        <div class="col-md-10 mx-auto text-center pt-4 pb-5">
+            <h2 class="section-title"><strong>Structured Learning Paths</strong></h2>
+            <div class="title-underline"></div>
+            <p class="section-description mt-4">
+                Empower yourself with structured courses designed to take you from beginner to expert, step-by-step. 
+                Each path is carefully crafted to deliver clear, practical skills you can immediately apply.
+            </p>
+        </div>
     </div>
 
     <div class="learning-paths">
         {% for path in site.data.learning_paths.learning_paths %}
-            <div id="{{ path.path_id }}" class="learning-path-section">
-                <h3>{{ path.title }}</h3>
+            <div id="{{ path.path_id }}" class="learning-path-card">
+                <div class="path-header">
+                    <h3 class="path-title">{{ path.title }}</h3>
+                </div>
+                
+                <div class="path-content">
+                    <div class="path-section">
+                        <h4 class="section-label">Perfect for</h4>
+                        <p class="section-text">{{ path.description }}</p>
+                    </div>
 
-            <p><strong>Perfect for</strong>: {{ path.description }}</p>
+                    <div class="path-section courses-section">
+                        <h4 class="section-label">Courses Included</h4>
+                        <ul class="course-list">
+                            {% for course in path.courses %}
+                                {% assign course_url = site[course.url_key] %}
+                                <li class="course-item">
+                                    <a href="{{ course_url }}{{ site.coupon }}" target="_blank" class="course-link">
+                                        <span class="course-title">{{ course.title }}</span>
+                                        {% if course.tag %}
+                                            <span class="course-tag">{{ course.tag }}</span>
+                                        {% endif %}
+                                    </a>
+                                    <p class="course-subtitle">{{ course.subtitle }}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
 
-            <p><strong>Courses Included</strong>:</p>
-
-            <ul class="course-list mb-3">
-                {% for course in path.courses %}
-                        {% assign course_url = site[course.url_key] %}
-                    <li>
-                        <a href="{{ course_url }}{{ site.coupon }}" target="_blank"><strong>{{ course.title }}</strong></a>{% if course.tag %} <em>{{ course.tag }}</em>{% endif %}: 
-                        {{ course.subtitle }}
-                    </li>
-                {% endfor %}
-            </ul>
-
-            <p><strong>Outcome</strong>: {{ path.outcome }}</p>
+                    <div class="path-section outcome-section">
+                        <h4 class="section-label">Learning Outcome</h4>
+                        <p class="section-text">{{ path.outcome }}</p>
+                    </div>
+                </div>
+            </div>
 
             {% unless forloop.last %}
-                <hr class="my-4">
+                <div class="path-separator"></div>
             {% endunless %}
         {% endfor %}
     </div>
 </div>
 
 <style>
-.learning-paths h3 {
-    margin-top: 2rem;
+.learning-paths-container {
+    padding: 2rem 0;
 }
-.course-list {
-    margin-left: 1.5rem;
-}
-.course-list li {
+
+.section-title {
+    color: #333;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
-hr {
-    margin: 2rem 0;
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #15ba29, #8ebe30);
+    margin: 0 auto;
 }
-.learning-path-section {
-    scroll-margin-top: 100px;
+
+.section-description {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.learning-paths {
+    margin-top: 3rem;
+}
+
+.learning-path-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.learning-path-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.path-header {
+    background: linear-gradient(135deg, #15ba29, #8ebe30);
+    padding: 1.5rem 2rem;
+    border-radius: 12px 12px 0 0;
+}
+
+.path-title {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.path-content {
+    padding: 2rem;
+}
+
+.path-section {
+    margin-bottom: 2rem;
+}
+
+.path-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-label {
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.section-label::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: #15ba29;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.section-text {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.course-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.course-item::before {
+    content: '•';
+    color: #15ba29;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -4px;
+}
+
+.course-link {
+    text-decoration: none;
+    color: #15ba29;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.course-link:hover {
+    color: #8ebe30;
+}
+
+.course-title {
+    font-weight: 600;
+}
+
+.course-tag {
+    background: rgba(21, 186, 41, 0.1);
+    color: #15ba29;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.course-subtitle {
+    color: #666;
+    margin: 0.3rem 0 0;
+    font-size: 0.95rem;
+}
+
+.outcome-section {
+    background: rgba(21, 186, 41, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.path-separator {
+    height: 2rem;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .path-content {
+        padding: 1.5rem;
+    }
+
+    .path-title {
+        font-size: 1.5rem;
+    }
 }
 </style>
 
@@ -65,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const element = document.getElementById(targetId);
         if (element) {
             setTimeout(() => {
-                element.scrollIntoView();
+                element.scrollIntoView({ behavior: 'smooth' });
             }, 100);
         }
     }
