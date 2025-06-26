@@ -1,61 +1,105 @@
 ---
 layout: promo
-title: "Master Qt Development with Our Learning Paths"
-description: "Structured learning paths to take you from beginner to expert in Qt and C++ development"
+title: "Modern C++, Qt, QML and PySide6"
+description: "Get Our Most Popular Time-Tested Course Bundles at Special Discount Prices"
 cover: /assets/courses/image/LearnQt.png
 permalink: "/udemy-discounted-9/"
 ---
 
-<div class="alert alert-primary text-center p-4 mb-5">
-  <h4 class="alert-heading mb-2">🎉 LIMITED TIME OFFER!</h4>
-  <p class="mb-0">All courses are currently discounted to just {{site.price}}! Use coupon code <code>{{site.coupon}}</code> at checkout.<br>
-  <small>Valid until {{site.couponvalidity}}</small></p>
+<div class="alert text-white p-4 mb-5 shadow-sm" style="background-color: #15ba29;">
+  <div class="text-center">
+    <h4 class="alert-heading mb-3">🎉 LIMITED TIME SPECIAL OFFER!</h4>
+    <p class="h5 mb-2">Get Complete Learning Paths for Just {{site.price}} per Course</p>
+    <div class="badge bg-white px-3 py-2 mb-2" style="color: #15ba29;">Use Code: <strong>{{site.coupon}}</strong></div>
+    <p class="mb-0"><small>Offer Valid Until {{site.couponvalidity}}</small></p>
+  </div>
 </div>
 
-### Structured Learning Paths
-
-Empower yourself with structured courses designed to take you from beginner to expert, step-by-step. Each path is carefully crafted to deliver clear, practical skills you can immediately apply.
-
----
-
+<div class="learning-paths">
 {% for path in site.data.learning_paths.learning_paths %}
-### {{ path.icon }} {{ path.title }}
+  <div class="learning-path-card mb-5 p-4 bg-white shadow-sm rounded">
+    <h3 class="path-title mb-4">{{ path.title }}</h3>
+    
+    <div class="path-content">
+      <div class="what-youll-learn mb-4">
+        <h4 class="section-title h5" style="color: #15ba29;">What You'll Learn:</h4>
+        <p class="mb-3">{{ path.description }}</p>
+      </div>
 
-**Perfect for**: {{ path.description }}
+      <div class="learning-outcome mb-4">
+        <h4 class="section-title h5" style="color: #15ba29;">By The End You'll Be Able To:</h4>
+        <p>{{ path.outcome }}</p>
+      </div>
 
-**Courses Included**:
+      <div class="courses-included">
+        <h4 class="section-title h5 mb-3" style="color: #15ba29;">Courses in This Path:</h4>
+        <ul class="course-list list-unstyled">
+        {% for course in path.courses %}
+          <li class="mb-3">
+            <div class="d-flex align-items-start">
+              <span style="color: #15ba29;" class="me-2">✓</span>
+              <div>
+                <strong>{{ course.title }}</strong>
+                {% if course.tag %}
+                <span class="badge ms-2" style="background-color: #15ba29;">{{ course.tag }}</span>
+                {% endif %}
+                <br>
+                <small class="text-muted">{{ course.subtitle }}</small>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
 
-{% for course in path.courses %}
-* **[{{ course.title }}]({{ site[course.url_key] }}{{ site.coupon }})** {% if course.tag %}*{{ course.tag }}*{% endif %}: {{ course.subtitle }}
+      <div class="text-center mt-4">
+        <a href="/courses#{{ path.path_id }}" onclick="localStorage.setItem('scrollTo', '{{ path.path_id }}')" class="btn btn-lg px-4" style="background-color: #15ba29; color: white;">
+          I Want These Courses
+        </a>
+      </div>
+    </div>
+  </div>
 {% endfor %}
+</div>
 
-**Outcome**: {{ path.outcome }}
-
-{% unless forloop.last %}---{% endunless %}
-
-{% endfor %}
+<div class="free-resource-card mt-5 p-4 bg-light rounded shadow-sm">
+  <div class="row align-items-center">
+    <div class="col-md-4 text-center mb-4 mb-md-0">
+      <img src="/assets/books/image/qt6_qml_mock.jpg" alt="Qt6 QML For Beginners Book Cover" class="img-fluid rounded shadow-sm" style="max-width: 200px;">
+    </div>
+    <div class="col-md-8">
+      <h2 class="h3 mb-3">🎁 Start Learning Qt Today!</h2>
+      <p class="lead mb-4">Get your FREE copy of "Qt6 QML For Beginners - Community Edition" and begin your Qt journey with confidence.</p>
+      <div class="newsletter-form bg-white p-4 rounded shadow-sm">
+        <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style>
-.learning-path-courses {
-  background: #f8f9fa;
-  border-left: 4px solid #0d6efd;
-  padding: 1rem 1.5rem;
-  margin: 1rem 0;
+.learning-path-card {
+  border-left: 4px solid #15ba29;
 }
 
-h3 {
-  margin-top: 2rem;
+.path-title {
+  color: #333;
+  font-size: 1.75rem;
 }
 
-hr {
-  margin: 2rem 0;
+.section-title {
+  font-weight: 600;
+}
+
+.course-list li {
+  padding-left: 1rem;
+}
+
+.free-resource-card {
+  background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.newsletter-form {
+  border: 1px solid rgba(21, 186, 41, 0.1);
 }
 </style>
-
-<div class="mt-5 p-4 bg-light rounded shadow-sm mb-4 text-center">
-  <h2 class="h3 mb-3">🎁 Get Started with Our Free Resources!</h2>
-  <p class="mb-4">Download your FREE copy of "Qt6 QML For Beginners - Community Edition" and kickstart your Qt journey today!</p>
-  <img src="/assets/books/image/qt6_qml_mock.jpg" alt="Qt6 QML For Beginners Book Cover" class="img-fluid mb-4" style="max-width: 300px;">
-  
-  <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
-</div>
