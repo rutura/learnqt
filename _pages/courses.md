@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Qt Training Courses
-description: Structured learning paths to master Qt and C++ development
+title: ""
+description: null
 cover: /assets/img/learnqtbook.webp
 best_courses_widget: true
 permalink: /courses/
