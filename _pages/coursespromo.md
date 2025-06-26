@@ -22,7 +22,7 @@ permalink: "/udemy-discounted-9/"
     
     <div class="path-content">
       <div class="what-youll-learn mb-4">
-        <h4 class="section-title h5" style="color: #15ba29;">What You'll Learn:</h4>
+        <h4 class="section-title h5" style="color: #15ba29;">Who Is It For:</h4>
         <p class="mb-3">{{ path.description }}</p>
       </div>
 
@@ -68,8 +68,8 @@ permalink: "/udemy-discounted-9/"
       <img src="/assets/books/image/qt6_qml_mock.jpg" alt="Qt6 QML For Beginners Book Cover" class="img-fluid rounded shadow-sm" style="max-width: 200px;">
     </div>
     <div class="col-md-8">
-      <h2 class="h3 mb-3">🎁 Start Learning Qt Today!</h2>
-      <p class="lead mb-4">Get your FREE copy of "Qt6 QML For Beginners - Community Edition" and begin your Qt journey with confidence.</p>
+      <h2 class="h3 mb-3">Start Learning Qt QML Today.</h2>
+      <p class="lead mb-4">Get Our Qt6 QML For Beginners Book For Free!</p>
       <div class="newsletter-form bg-white p-4 rounded shadow-sm">
         <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
       </div>
