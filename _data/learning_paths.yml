@@ -41,7 +41,7 @@ learning_paths:
         url_key: "pyside6widgetsbeginners"
       - title: "Qt6 Model-View Architecture in PySide6: Build Data Driven UIs"
         subtitle: "Master the Model-View architecture to build efficient, maintainable Python-based desktop applications."
-        url_key: "pyside6widgetsbeginners"
+        url_key: "pyside6mvc"
 
   - title: "Build Fluid, Dynamic UIs for Mobile & Embedded with Qt QML"
     icon: "📱"
