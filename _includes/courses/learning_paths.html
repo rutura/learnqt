@@ -1,0 +1,248 @@
+<!-- Learning Paths Section -->
+<div class="container learning-paths-container">
+    <div class="row">
+        <div class="col-md-10 mx-auto text-center pb-4">
+            <h2 class="section-title"><strong>Structured Learning Paths</strong></h2>
+            <div class="title-underline"></div>
+            <p class="section-description mt-4">
+                Build the skills you need to create professional cross-platform apps. Our structured learning paths in modern C++, Qt Widgets, PySide6, and QML guide you step-by-step, giving you practical expertise ready for real-world projects.
+            </p>
+        </div>
+    </div>
+
+    <div class="learning-paths">
+        {% for path in site.data.learning_paths.learning_paths %}
+            <div id="{{ path.path_id }}" class="learning-path-card">
+                <div class="path-header">
+                    <h3 class="path-title">{{ path.title }}</h3>
+                </div>
+                
+                <div class="path-content">
+                    <div class="path-section">
+                        <h4 class="section-label">Perfect for</h4>
+                        <p class="section-text">{{ path.description }}</p>
+                    </div>
+
+                    <div class="path-section courses-section">
+                        <h4 class="section-label">Courses Included</h4>
+                        <ul class="course-list">
+                            {% for course in path.courses %}
+                                {% assign course_url = site[course.url_key] %}
+                                <li class="course-item">
+                                    <a href="{{ course_url }}{{ site.coupon }}" target="_blank" class="course-link">
+                                        <span class="course-title">{{ course.title }}</span>
+                                        {% if course.tag %}
+                                            <span class="course-tag">{{ course.tag }}</span>
+                                        {% endif %}
+                                    </a>
+                                    <p class="course-subtitle">{{ course.subtitle }}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="path-section outcome-section">
+                        <h4 class="section-label">Learning Outcome</h4>
+                        <p class="section-text">{{ path.outcome }}</p>
+                    </div>
+                </div>
+            </div>
+
+            {% unless forloop.last %}
+                <div class="path-separator"></div>
+            {% endunless %}
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.learning-paths-container {
+    padding: 0;
+}
+
+.section-title {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #15ba29, #8ebe30);
+    margin: 0 auto;
+}
+
+.section-description {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.learning-paths {
+    margin-top: 3rem;
+}
+
+.learning-path-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.learning-path-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.path-header {
+    background: linear-gradient(135deg, #15ba29, #8ebe30);
+    padding: 1.5rem 2rem;
+    border-radius: 12px 12px 0 0;
+}
+
+.path-title {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.path-content {
+    padding: 2rem;
+}
+
+.path-section {
+    margin-bottom: 2rem;
+}
+
+.path-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-label {
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.section-label::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: #15ba29;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.section-text {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.course-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.course-item::before {
+    content: '•';
+    color: #15ba29;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -4px;
+}
+
+.course-link {
+    text-decoration: none;
+    color: #15ba29;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.course-link:hover {
+    color: #8ebe30;
+}
+
+.course-title {
+    font-weight: 600;
+}
+
+.course-tag {
+    background: rgba(21, 186, 41, 0.1);
+    color: #15ba29;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.course-subtitle {
+    color: #666;
+    margin: 0.3rem 0 0;
+    font-size: 0.95rem;
+}
+
+.outcome-section {
+    background: rgba(21, 186, 41, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.path-separator {
+    height: 2rem;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .path-content {
+        padding: 1.5rem;
+    }
+
+    .path-title {
+        font-size: 1.5rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const targetId = window.location.hash.substring(1);
+    const scrollTo = localStorage.getItem('scrollTo');
+    
+    if (targetId) {
+        const element = document.getElementById(targetId);
+        if (element) {
+            setTimeout(() => {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+    }
+    
+    if (scrollTo) {
+        localStorage.removeItem('scrollTo');
+    }
+});
+</script>
