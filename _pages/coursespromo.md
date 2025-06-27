@@ -1,6 +1,6 @@
 ---
 layout: promo
-title: "Modern C++, Qt, QML and PySide6"
+title: "Modern C++ and UI Design with Qt, QML and PySide6"
 description: "Get Our Most Popular Time-Tested Course Bundles at Special Discount Prices"
 cover: /assets/courses/image/LearnQt.png
 permalink: "/udemy-discounted-9/"
@@ -22,12 +22,12 @@ permalink: "/udemy-discounted-9/"
     
     <div class="path-content">
       <div class="what-youll-learn mb-4">
-        <h4 class="section-title h5" style="color: #15ba29;">Who Is It For:</h4>
+        <h4 class="section-title h5" style="color: #15ba29;">For Who?</h4>
         <p class="mb-3">{{ path.description }}</p>
       </div>
 
       <div class="learning-outcome mb-4">
-        <h4 class="section-title h5" style="color: #15ba29;">By The End You'll Be Able To:</h4>
+        <h4 class="section-title h5" style="color: #15ba29;">What You Will Achieve:</h4>
         <p>{{ path.outcome }}</p>
       </div>
 
