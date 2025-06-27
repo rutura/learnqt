@@ -1,10 +1,10 @@
 # Learning Paths Configuration
 learning_paths:
-  - title: "C++ Programming Mastery"
+  - title: "Modern C++ 20 and C++ 23 with Pro Tools and Projects"
     icon: "🚀"
     image: "/assets/img/learning-paths/cpp-mastery.webp"
-    description: "Perfect for aspiring developers who want a deep and thorough understanding of modern C++ programming, from basics to advanced concepts."
-    outcome: "Confidently write modern, efficient, and maintainable C++ code ready for professional development."
+    description: "For those ready to master modern C++ from fundamentals to expert-level skills, empowering you to confidently build high-performance, industry-grade applications with the latest tools and standards."
+    outcome: "You'll confidently write robust, clean, and efficient C++ code leveraging cutting-edge standards like C++20 and C++23, equipped with professional-grade tools and secure coding practices to elevate your development skills and career opportunities."
     path_id: "cpp-mastery"
     courses:
       - title: "C++23 Fundamentals with Projects & Algorithms"
@@ -14,11 +14,11 @@ learning_paths:
         subtitle: "Elevate your skills, master modern features, and solve complex, practical programming challenges."
         url_key: "cpp20masterclass"
 
-  - title: "Build Cross-Platform Desktop Apps with Qt Widgets in C++"
+  - title: "Professional Cross-Platform Desktop Development with Qt Widgets and C++"
     icon: "🖥️"
     image: "/assets/img/learning-paths/qt-widgets-cpp.webp"
-    description: "Perfect for developers aiming to build professional desktop applications that run smoothly across Windows, macOS, and Linux."
-    outcome: "Create sophisticated cross-platform desktop applications with powerful, dynamic data-driven interfaces."
+    description: "For developers who want to build professional, high-quality desktop applications that run seamlessly across Windows, macOS, and Linux, delivering a polished user experience while leveraging the power of Qt Widgets with modern C++ for true cross-platform development."
+    outcome: " You will craft versatile, maintainable desktop software using Qt Widgets and modern C++, building polished, responsive apps that run seamlessly across Windows, macOS, and Linux."
     path_id: "qt-widgets-cpp"
     courses:
       - title: "Qt 6 C++ GUI Development for Beginners : The Fundamentals"
@@ -29,11 +29,11 @@ learning_paths:
         subtitle: "Learn advanced data-handling techniques to create scalable, maintainable, and professional-grade apps."
         url_key: "cppqt6mvc"
 
-  - title: "Build Cross-Platform Desktop Apps with Qt Widgets in PySide6"
+  - title: "Building Cross-Platform Desktop Apps with Qt Widgets in PySide6"
     icon: "🐍"
     image: "/assets/img/learning-paths/qt-widgets-python.webp"
-    description: "Perfect for Python developers who want the power of Qt combined with the simplicity of Python for building desktop apps."
-    outcome: "Seamlessly design, build, and deploy cross-platform Python desktop applications with professional UIs."
+    description: "For Python developers ready to harness the power of Qt with  Python to create polished, professional desktop applications for Windows, macOS, and Linux."
+    outcome: "You will confidently design, build, and deploy cross-platform Python desktop applications with responsive, professional-grade user interfaces using PySide6 and Qt Widgets."
     path_id: "qt-widgets-python"
     courses:
       - title: "Qt For Python (PySide6) GUI For Beginners"
@@ -43,11 +43,11 @@ learning_paths:
         subtitle: "Master the Model-View architecture to build efficient, maintainable Python-based desktop applications."
         url_key: "pyside6widgetsbeginners"
 
-  - title: "Fluid and Dynamic UIs for Mobile & Embedded with Qt QML"
+  - title: "Build Fluid, Dynamic UIs for Mobile & Embedded with Qt QML"
     icon: "📱"
     image: "/assets/img/learning-paths/qt-qml.webp"
-    description: "Perfect for developers who want to create fluid, modern interfaces ideal for embedded devices and mobile apps."
-    outcome: "Expertly design responsive, beautiful UIs tailored for embedded and mobile applications with seamless C++ integration."
+    description: "For developers aiming to cook up modern, fluid and dynamic user interfaces for embedded systems and mobile apps using Qt Quick and QML."
+    outcome: "You will design responsive and visually stunning UIs optimized for embedded and mobile applications, seamlessly integrating with C++ for high-performance, real-world deployments."
     path_id: "qt-qml"
     courses:
       - title: "Qt6 QML For Beginners: The Fundamentals"
