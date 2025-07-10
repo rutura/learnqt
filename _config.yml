@@ -44,8 +44,8 @@ navigation:
 
 
 # Course Links
-coupon: 'MVCCPPLAUNCH'
-couponvalidity: 'June 16, 2025'
+coupon: 'STARTJULY2025'
+couponvalidity: 'July 15, 2025'
 price: '$9.99'
 pyside6mvc: 'https://www.udemy.com/course/pyside6_model_view_architecture/?couponCode='
 cppqt6mvc: 'https://www.udemy.com/course/qt-6-model-view-architecture-in-cplusplus/?couponCode='
