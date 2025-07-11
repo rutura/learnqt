@@ -1,0 +1,7 @@
+- name: John Doe
+  image: /assets/img/testimonials/placeholder.jpg
+  text: "Clear, practical, and the projects helped me deploy my first Qt app to my Android phone within weeks."
+
+- name: Jane Smith
+  image: /assets/img/testimonials/placeholder.jpg
+  text: "Finally, a QML resource that goes beyond toy examples."
