@@ -28,6 +28,11 @@ permalink: /qt6-qml-books
     font-size: 1.75rem;
 }
 
+.book-image {
+    max-width: 400px;
+    width: 100%;
+}
+
 .instructor-photo {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -111,6 +116,23 @@ permalink: /qt6-qml-books
     .instructor-photo {
         width: 180px !important;
         height: 180px !important;
+    }
+    
+    .book-image {
+        max-width: 300px;
+    }
+}
+
+/* Additional responsive book image styles */
+@media (max-width: 991.98px) {
+    .book-image {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .book-image {
+        max-width: 280px;
     }
 }
 </style>
@@ -209,10 +231,10 @@ permalink: /qt6-qml-books
     <div class="container">
         <!-- Beginners Book -->
         <div class="row align-items-center mb-5">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="/assets/img/books/qt6-qml-for-beginners.png" alt="Qt6 QML Beginners Book" class="img-fluid rounded shadow-lg">
+            <div class="col-lg-5 col-md-6 mb-4 mb-lg-0 text-center">
+                <img src="/assets/img/books/qt6-qml-for-beginners.png" alt="Qt6 QML Beginners Book" class="img-fluid rounded shadow-lg book-image">
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-7 col-md-6">
                 <span class="badge bg-primary mb-3">Book 1: QML Foundations</span>
                 <h2 class="mb-4 responsive-book-title">Qt6 QML For Beginners <span class="badge bg-success ms-2 d-inline-block">Complete</span></h2>
                 <div class="alert alert-success mb-4">
@@ -245,10 +267,10 @@ permalink: /qt6-qml-books
 
         <!-- Advanced Book -->
         <div class="row align-items-center mb-5">
-            <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
-                <img src="/assets/img/books/qt6-qml-advanced.png" alt="Qt6 QML Advanced Book" class="img-fluid rounded shadow-lg">
+            <div class="col-lg-5 col-md-6 order-lg-2 mb-4 mb-lg-0 text-center">
+                <img src="/assets/img/books/qt6-qml-advanced.png" alt="Qt6 QML Advanced Book" class="img-fluid rounded shadow-lg book-image">
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-7 col-md-6">
                 <span class="badge bg-warning mb-3">Book 2: Professional QML</span>
                 <h2 class="mb-4 responsive-book-title">Qt6 QML Advanced <span class="badge bg-info ms-2 d-inline-block">In Progress</span></h2>
                 <div class="alert alert-info mb-4">
