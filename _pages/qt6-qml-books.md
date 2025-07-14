@@ -11,7 +11,7 @@ permalink: /qt6-qml-books
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <span class="badge bg-danger mb-3 fs-6 px-3 py-2">⚠️ Stop Wasting Months on Scattered Tutorials</span>
-                <h1 class="display-4 fw-bold mb-4">Build Professional Qt6 QML Apps in 30 Days (Not 6 Months)</h1>
+                <h1 class="display-4 fw-bold mb-4">Build Professional Qt6 QML Apps in 8 Weeks (Not 6 Months)</h1>
                 <p class="lead mb-4 fs-5">The complete system used by 3,000+ developers to master Qt6 QML and build real deployable apps.</p>
                 
                 <!-- Social Proof -->
