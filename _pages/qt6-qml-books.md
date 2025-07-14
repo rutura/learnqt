@@ -5,6 +5,116 @@ description: The only complete Qt6 QML system that gets you from confused beginn
 permalink: /qt6-qml-books
 ---
 
+<style>
+/* Responsive styles for the landing page */
+.responsive-title {
+    font-size: 2.5rem;
+}
+
+.responsive-lead {
+    font-size: 1.25rem;
+}
+
+.responsive-cta {
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+}
+
+.responsive-hero-img {
+    max-width: 700px;
+}
+
+.responsive-book-title {
+    font-size: 1.75rem;
+}
+
+.instructor-photo {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instructor-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.instructor-content {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 1rem;
+    border-left: 4px solid #007bff;
+}
+
+/* Tablet styles */
+@media (max-width: 991.98px) {
+    .responsive-title {
+        font-size: 2rem;
+    }
+    
+    .responsive-lead {
+        font-size: 1.1rem;
+    }
+    
+    .instructor-content {
+        padding: 1.5rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 767.98px) {
+    .responsive-title {
+        font-size: 1.75rem;
+    }
+    
+    .responsive-lead {
+        font-size: 1rem;
+    }
+    
+    .responsive-cta {
+        font-size: 0.9rem;
+        padding: 0.75rem 1.5rem;
+        display: block;
+        word-wrap: break-word;
+    }
+    
+    .responsive-book-title {
+        font-size: 1.5rem;
+    }
+    
+    .instructor-photo {
+        width: 200px !important;
+        height: 200px !important;
+    }
+    
+    .instructor-content {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .badge {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Extra small mobile styles */
+@media (max-width: 575.98px) {
+    .responsive-title {
+        font-size: 1.5rem;
+    }
+    
+    .responsive-cta {
+        font-size: 0.85rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .instructor-photo {
+        width: 180px !important;
+        height: 180px !important;
+    }
+}
+</style>
+
 <!-- Hero Section -->
 <section class="hero position-relative overflow-hidden py-5" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);">
     <div class="container text-center text-white">
@@ -104,11 +214,15 @@ permalink: /qt6-qml-books
             </div>
             <div class="col-lg-6">
                 <span class="badge bg-primary mb-3">Book 1: QML Foundations</span>
-                <h2 class="mb-4 responsive-book-title">Qt6 QML For Beginners</h2>
+                <h2 class="mb-4 responsive-book-title">Qt6 QML For Beginners <span class="badge bg-success ms-2 d-inline-block">Complete</span></h2>
+                <div class="alert alert-success mb-4">
+                    <strong>✅ Complete Edition:</strong> All chapters available now! 
+                    <br><small>Perfect foundation for your QML journey.</small>
+                </div>
                 <div class="mb-4">
                     <div class="d-flex align-items-center mb-2 flex-wrap">
                         <span class="h6 h5-md mb-0 me-2">Regular Price:</span>
-                        <span class="text-decoration-line-through text-muted">$70</span>
+                        <span class="text-muted">$70</span>
                     </div>
                     <div class="d-flex align-items-center flex-wrap">
                         <span class="h6 h5-md mb-0 me-2">Your Price:</span>
@@ -123,6 +237,9 @@ permalink: /qt6-qml-books
                     <li>Deploy to mobile and desktop platforms</li>
                 </ul>
                 <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-primary btn-lg">Get Started Now →</a>
+                <div class="mt-2">
+                    <small class="text-muted">💡 Complete book with immediate access to all content</small>
+                </div>
             </div>
         </div>
 
@@ -191,6 +308,38 @@ permalink: /qt6-qml-books
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Your Instructor Section -->
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <h2 class="text-center mb-5">Your Instructor</h2>
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-4 mb-4 mb-md-0 text-center">
+                        <img src="/assets/img/books/daniel.webp" alt="Daniel Gakwaya - Qt6 QML Instructor" class="img-fluid rounded-circle shadow instructor-photo" style="width: 200px; height: 200px; object-fit: cover;">
+                        <h4 class="mt-3 mb-1">Daniel Gakwaya</h4>
+                        <p class="text-muted mb-0 fs-6">Senior Software Engineer & CEO</p>
+                        <p class="text-primary fw-bold fs-6">50,000+ Students Taught</p>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <p class="mb-3">Daniel is a builder at heart. He has been working as a senior software engineer for the better part of the last decade and is currently the CEO of Squared Computing, where he focuses on integrating hardware and embedded solutions with intuitive Human Machine Interfaces.</p>
+                        
+                        <p class="mb-3">Daniel has created dozens of video courses on Qt and QML and is best known for his popular Udemy courses, where he has taught more than 50,000 students—many of whom now use Qt and QML professionally to solve real-world problems.</p>
+                        
+                        <p class="mb-4">He has distilled all of that experience into these two books, designed to take you from zero to confidently building and deploying your own apps with Qt 6 QML. These books are continually updated, guaranteeing you'll always have access to the latest advancements in Qt and QML.</p>
+                        
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary">Senior Engineer</span>
+                            <span class="badge bg-success">CEO</span>
+                            <span class="badge bg-info">Qt Expert</span>
                         </div>
                     </div>
                 </div>
