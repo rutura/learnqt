@@ -67,6 +67,126 @@
             position: absolute;
             left: 0;
         }
+
+        /* Responsive styles */
+        .responsive-title {
+            font-size: 2.5rem;
+        }
+        
+        .responsive-lead {
+            font-size: 1.1rem;
+        }
+        
+        .responsive-cta {
+            white-space: nowrap;
+        }
+        
+        .responsive-hero-img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .responsive-book-title {
+            font-size: 1.75rem;
+        }
+        
+        .responsive-bundle-title {
+            font-size: 1.5rem;
+        }
+        
+        .responsive-bundle-btn {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .responsive-final-cta {
+            width: 100%;
+            max-width: 280px;
+        }
+
+        /* Media queries for better responsiveness */
+        @media (min-width: 576px) {
+            .responsive-title {
+                font-size: 3rem;
+            }
+            .responsive-lead {
+                font-size: 1.25rem;
+            }
+            .responsive-book-title {
+                font-size: 2rem;
+            }
+            .responsive-bundle-title {
+                font-size: 1.75rem;
+            }
+            .h4-md {
+                font-size: calc(1.275rem + 0.3vw) !important;
+            }
+            .h5-md {
+                font-size: calc(1.275rem + 0.3vw) !important;
+            }
+            .h3-md {
+                font-size: calc(1.3rem + 1.5vw) !important;
+            }
+            .fs-5-md {
+                font-size: 1.25rem !important;
+            }
+            .fs-6-md {
+                font-size: 1rem !important;
+            }
+            .display-4-md {
+                font-size: calc(1.475rem + 2.7vw) !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .responsive-title {
+                font-size: 3.5rem;
+            }
+            .responsive-lead {
+                font-size: 1.35rem;
+            }
+            .responsive-hero-img {
+                max-width: 700px;
+            }
+            .responsive-book-title {
+                font-size: 2.25rem;
+            }
+            .responsive-bundle-title {
+                font-size: 2rem;
+            }
+            .responsive-cta {
+                white-space: normal;
+            }
+            .responsive-bundle-btn {
+                width: auto;
+            }
+            .responsive-final-cta {
+                width: auto;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .badge {
+                font-size: 0.8rem !important;
+                padding: 0.5rem 0.75rem !important;
+                line-height: 1.2;
+                word-break: break-word;
+                white-space: normal;
+                text-align: center;
+            }
+            .responsive-cta {
+                font-size: 0.9rem !important;
+                padding: 0.75rem 1rem !important;
+            }
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .px-4 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
     </style>
 </head>
 <body>

@@ -9,30 +9,30 @@ permalink: /qt6-qml-books
 <section class="hero position-relative overflow-hidden py-5" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);">
     <div class="container text-center text-white">
         <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <span class="badge bg-danger mb-3 fs-6 px-3 py-2">⚠️ Stop Wasting Months on Scattered QML Tutorials</span>
-                <h1 class="display-4 fw-bold mb-4">Build Professional Qt6 QML Apps in 8 Weeks (Not 6 Months)</h1>
-                <p class="lead mb-4 fs-5">The complete system used by 3,000+ developers to master Qt6 QML and build real deployable apps.</p>
+            <div class="col-lg-10 col-md-11">
+                <span class="badge bg-danger mb-3 fs-6 px-3 py-2 text-center d-inline-block" style="word-wrap: break-word;">⚠️ Stop Wasting Months on Scattered QML Tutorials</span>
+                <h1 class="display-4 fw-bold mb-4 responsive-title">Build Professional Qt6 QML Apps in 8 Weeks (Not 6 Months)</h1>
+                <p class="lead mb-4 fs-5 responsive-lead">The complete system used by 3,000+ developers to master Qt6 QML and build real deployable apps.</p>
                 
                 <!-- Social Proof -->
-                <div class="d-flex justify-content-center align-items-center gap-4 mb-4 flex-wrap">
+                <div class="d-flex justify-content-center align-items-center gap-3 gap-md-4 mb-4 flex-wrap">
                     <div class="text-center">
-                        <div class="h4 mb-0 text-warning">3,000+</div>
-                        <small>Students</small>
+                        <div class="h5 h4-md mb-0 text-warning">3,000+</div>
+                        <small class="d-block">Students</small>
                     </div>
                     <div class="text-center">
-                        <div class="h4 mb-0">⭐⭐⭐⭐⭐</div>
-                        <small>4.8/5 Rating</small>
+                        <div class="h5 h4-md mb-0">⭐⭐⭐⭐⭐</div>
+                        <small class="d-block">4.8/5 Rating</small>
                     </div>
                     <div class="text-center">
-                        <div class="h4 mb-0 text-warning">50+</div>
-                        <small>Real Projects</small>
+                        <div class="h5 h4-md mb-0 text-warning">50+</div>
+                        <small class="d-block">Real Projects</small>
                     </div>
                 </div>
 
                 <!-- Main CTA -->
                 <div class="mb-5">
-                    <a href="#bundle-offer" class="btn btn-warning btn-lg px-5 py-3 fs-5 fw-bold shadow-lg text-dark">
+                    <a href="#bundle-offer" class="btn btn-warning btn-lg px-4 px-md-5 py-3 fs-6 fs-md-5 fw-bold shadow-lg text-dark responsive-cta">
                         🚀 Get Both Books for $89 (Save $51)
                     </a>
                     <div class="mt-2">
@@ -42,7 +42,7 @@ permalink: /qt6-qml-books
 
                 <!-- Hero Image -->
                 <div class="text-center">
-                    <img src="/assets/img/books/mockup-01.jpg" alt="Qt6 QML Complete Bundle" class="img-fluid rounded shadow-lg" style="max-width: 700px;">
+                    <img src="/assets/img/books/mockup-01.jpg" alt="Qt6 QML Complete Bundle" class="img-fluid rounded shadow-lg responsive-hero-img">
                 </div>
             </div>
         </div>
@@ -99,20 +99,20 @@ permalink: /qt6-qml-books
     <div class="container">
         <!-- Beginners Book -->
         <div class="row align-items-center mb-5">
-            <div class="col-lg-6">
+            <div class="col-lg-6 mb-4 mb-lg-0">
                 <img src="/assets/img/books/qt6-qml-for-beginners.png" alt="Qt6 QML Beginners Book" class="img-fluid rounded shadow-lg">
             </div>
             <div class="col-lg-6">
                 <span class="badge bg-primary mb-3">Book 1: QML Foundations</span>
-                <h2 class="mb-4">Qt6 QML For Beginners</h2>
+                <h2 class="mb-4 responsive-book-title">Qt6 QML For Beginners</h2>
                 <div class="mb-4">
-                    <div class="d-flex align-items-center mb-2">
-                        <span class="h5 mb-0 me-2">Regular Price:</span>
+                    <div class="d-flex align-items-center mb-2 flex-wrap">
+                        <span class="h6 h5-md mb-0 me-2">Regular Price:</span>
                         <span class="text-decoration-line-through text-muted">$70</span>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <span class="h5 mb-0 me-2">Your Price:</span>
-                        <span class="h3 text-success mb-0">$50</span>
+                    <div class="d-flex align-items-center flex-wrap">
+                        <span class="h6 h5-md mb-0 me-2">Your Price:</span>
+                        <span class="h4 h3-md text-success mb-0">$50</span>
                     </div>
                 </div>
                 <ul class="check-list mb-4">
@@ -128,24 +128,24 @@ permalink: /qt6-qml-books
 
         <!-- Advanced Book -->
         <div class="row align-items-center mb-5">
-            <div class="col-lg-6 order-lg-2">
+            <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
                 <img src="/assets/img/books/qt6-qml-advanced.png" alt="Qt6 QML Advanced Book" class="img-fluid rounded shadow-lg">
             </div>
             <div class="col-lg-6">
                 <span class="badge bg-warning mb-3">Book 2: Professional QML</span>
-                <h2 class="mb-4">Qt6 QML Advanced <span class="badge bg-info ms-2">In Progress</span></h2>
+                <h2 class="mb-4 responsive-book-title">Qt6 QML Advanced <span class="badge bg-info ms-2 d-inline-block">In Progress</span></h2>
                 <div class="alert alert-info mb-4">
                     <strong>🚧 Early Access:</strong> 7 chapters completed and available now! 
                     <br><small>Price increases when book is complete.</small>
                 </div>
                 <div class="mb-4">
-                    <div class="d-flex align-items-center mb-2">
-                        <span class="h5 mb-0 me-2">Final Price:</span>
+                    <div class="d-flex align-items-center mb-2 flex-wrap">
+                        <span class="h6 h5-md mb-0 me-2">Final Price:</span>
                         <span class="text-muted">$90 (when complete)</span>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <span class="h5 mb-0 me-2">Early Access Price:</span>
-                        <span class="h3 text-success mb-0">$50</span>
+                    <div class="d-flex align-items-center flex-wrap">
+                        <span class="h6 h5-md mb-0 me-2">Early Access Price:</span>
+                        <span class="h4 h3-md text-success mb-0">$50</span>
                     </div>
                 </div>
                 <ul class="check-list mb-4">
@@ -169,24 +169,25 @@ permalink: /qt6-qml-books
                 <div class="card border-0 shadow-lg overflow-hidden">
                     <div class="card-body p-0">
                         <div class="row g-0">
-                            <div class="col-md-4">
+                            <div class="col-md-4 d-none d-md-block">
                                 <img src="/assets/img/books/mockup-2.jpg" alt="Bundle Mockup" class="img-fluid h-100 object-fit-cover">
                             </div>
                             <div class="col-md-8">
-                                <div class="p-5 text-center" style="background: linear-gradient(135deg, #41cd52 0%, #217a2d 100%);">
-                                    <h2 class="text-white mb-4">🎁 Complete Bundle - Save $51!</h2>
+                                <div class="p-4 p-md-5 text-center" style="background: linear-gradient(135deg, #41cd52 0%, #217a2d 100%);">
+                                    <h2 class="text-white mb-4 responsive-bundle-title">🎁 Complete Bundle - Save $51!</h2>
                                     <div class="mb-4">
                                         <span class="h6 text-white-50">Regular Price: <span class="text-decoration-line-through">$140</span></span>
-                                        <div class="display-4 text-white fw-bold">$89</div>
+                                        <div class="display-5 display-4-md text-white fw-bold">$89</div>
                                         <span class="badge bg-danger fs-6">36% OFF - Early Access Price!</span>
                                     </div>
-                                    <p class="text-white mb-4 fs-5">Get both books (one complete + one early access with 7 chapters). Master QML from zero to professional level.</p>
-                                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-light btn-lg px-5 py-3 fs-5 fw-bold shadow">
+                                    <p class="text-white mb-4 fs-6 fs-5-md">Get both books (one complete + one early access with 7 chapters). Master QML from zero to professional level.</p>
+                                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-light btn-lg px-4 px-md-5 py-3 fs-6 fs-5-md fw-bold shadow responsive-bundle-btn">
                                         <span class="d-block">🚀 Get The Complete Bundle</span>
                                         <small class="d-block text-muted">30-Day Money-Back Guarantee</small>
                                     </a>
                                     <div class="mt-3">
-                                        <small class="text-white-50">⏰ Price increases when advanced book is complete • Instant download • Lifetime updates</small>
+                                        <small class="text-white-50 d-block">⏰ Price increases when advanced book is complete</small>
+                                        <small class="text-white-50 d-block">Instant download • Lifetime updates</small>
                                     </div>
                                 </div>
                             </div>
@@ -285,18 +286,18 @@ permalink: /qt6-qml-books
 <!-- Final CTA Section -->
 <section class="section bg-dark text-white">
     <div class="container text-center">
-        <h2 class="mb-4">Ready to Transform Your QML Development?</h2>
-        <p class="lead mb-4">Join thousands of successful developers who've mastered Qt6 QML with our system.</p>
+        <h2 class="mb-4 responsive-book-title">Ready to Transform Your QML Development?</h2>
+        <p class="lead mb-4 responsive-lead">Join thousands of successful developers who've mastered Qt6 QML with our system.</p>
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-success btn-lg px-4 gap-3">
+                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-success btn-lg px-4 py-3 responsive-final-cta">
                         <span class="d-block">Get the Complete Bundle</span>
                         <small class="d-block">Save 43% Today!</small>
                     </a>
                 </div>
                 <p class="mt-3 text-muted">
-                    <small>🔒 Secure Payment • Instant Access • Lifetime Updates</small>
+                    <small class="d-block">🔒 Secure Payment • Instant Access • Lifetime Updates</small>
                 </p>
             </div>
         </div>
