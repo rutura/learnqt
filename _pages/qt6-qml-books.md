@@ -10,7 +10,7 @@ permalink: /qt6-qml-books
     <div class="container text-center text-white">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <span class="badge bg-danger mb-3 fs-6 px-3 py-2">⚠️ Stop Wasting Months on Scattered Tutorials</span>
+                <span class="badge bg-danger mb-3 fs-6 px-3 py-2">⚠️ Stop Wasting Months on Scattered QML Tutorials</span>
                 <h1 class="display-4 fw-bold mb-4">Build Professional Qt6 QML Apps in 8 Weeks (Not 6 Months)</h1>
                 <p class="lead mb-4 fs-5">The complete system used by 3,000+ developers to master Qt6 QML and build real deployable apps.</p>
                 
@@ -36,7 +36,7 @@ permalink: /qt6-qml-books
                         🚀 Get Both Books for $89 (Save $51)
                     </a>
                     <div class="mt-2">
-                        <small class="text-warning">⏰ Limited time • Instant access • 60-day guarantee</small>
+                        <small class="text-warning">⏰ Limited time • Instant access • 30-day guarantee</small>
                     </div>
                 </div>
 
@@ -183,7 +183,7 @@ permalink: /qt6-qml-books
                                     <p class="text-white mb-4 fs-5">Get both books (one complete + one early access with 7 chapters). Master QML from zero to professional level.</p>
                                     <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-light btn-lg px-5 py-3 fs-5 fw-bold shadow">
                                         <span class="d-block">🚀 Get The Complete Bundle</span>
-                                        <small class="d-block text-muted">60-Day Money-Back Guarantee</small>
+                                        <small class="d-block text-muted">30-Day Money-Back Guarantee</small>
                                     </a>
                                     <div class="mt-3">
                                         <small class="text-white-50">⏰ Price increases when advanced book is complete • Instant download • Lifetime updates</small>
@@ -275,8 +275,8 @@ permalink: /qt6-qml-books
                         <span class="text-white fs-1">✓</span>
                     </div>
                 </div>
-                <h2 class="mb-4">60-Day Money-Back Guarantee</h2>
-                <p class="lead mb-4">If you're not deploying better apps and feeling more confident with QML within 60 days, we'll refund every penny. No questions asked.</p>
+                <h2 class="mb-4">30-Day Money-Back Guarantee</h2>
+                <p class="lead mb-4">If you're not deploying better apps and feeling more confident with QML within 30 days, we'll refund every penny. No questions asked.</p>
             </div>
         </div>
     </div>
