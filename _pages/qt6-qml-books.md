@@ -429,8 +429,8 @@ permalink: /qt6-qml-books
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
-                <h2 class="mb-4">Not Ready to Buy? Get a Free Sample Chapter</h2>
-                <p class="lead mb-4">See the quality of our content firsthand. We'll send you a complete chapter about building your first QML application.</p>
+                <h2 class="mb-4">Not Ready to Buy? Get Two Free Sample Chapters</h2>
+                <p class="lead mb-4">See the quality of our content firsthand. We'll send you two complete chapters covering essential QML concepts and building your first QML application.</p>
                 <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
             </div>
         </div>
