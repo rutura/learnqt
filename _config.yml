@@ -17,7 +17,7 @@ navhome:
  - name: Home
    link: '#'
  - name: Courses
-   link: '#courses'
+   link: '#learning-paths'
  - name: Books
    link: '#book'
  - name: About
@@ -46,7 +46,10 @@ navigation:
 # Course Links
 coupon: 'ENDAUGUST2025'
 couponvalidity: Aug 30, 2025'
+coupon: 'STARTJULY2025'
+couponvalidity: 'July 15, 2025'
 price: '$9.99'
+pyside6mvc: 'https://www.udemy.com/course/pyside6_model_view_architecture/?couponCode='
 cppqt6mvc: 'https://www.udemy.com/course/qt-6-model-view-architecture-in-cplusplus/?couponCode='
 cpp23fundamentals: 'https://www.udemy.com/course/cpp23-fundamentals-projects-algorithms/?couponCode='
 pyside6widgetsbeginners: 'https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/?couponCode='
