@@ -143,7 +143,7 @@ permalink: /qt6-qml-books
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-11">
                 <span class="badge bg-danger mb-3 fs-6 px-3 py-2 text-center d-inline-block" style="word-wrap: break-word;">⚠️ Stop Wasting Months on Scattered QML Tutorials</span>
-                <h1 class="display-4 fw-bold mb-4 responsive-title">Build Professional Qt6 QML Apps in 8 Weeks — Not 6 Months</h1>
+                <h1 class="display-4 fw-bold mb-4 responsive-title">Learn to Build Professional Qt6 QML Apps Without the Guesswork</h1>
                 <p class="lead mb-4 fs-5 responsive-lead">Join over <strong>3,000 developers</strong> mastering Qt6 QML through a <strong>step-by-step system</strong> that delivers <strong>real results</strong>.</p>
                 
                 <!-- Bundle Offer Highlight -->
@@ -434,8 +434,8 @@ permalink: /qt6-qml-books
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
                 <h2 class="mb-4">Not Ready to Buy? Get Two Free Sample Chapters</h2>
-                <p class="lead mb-4">See the quality of our content firsthand. We'll send you two complete chapters covering essential QML concepts and building your first QML application.</p>
-                <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
+                <p class="lead mb-4">See the quality of our content firsthand. We'll send you two complete chapters from Qt6 QML For Beginners, covering essential QML concepts and building your first QML application.</p>
+                <script async data-uid="bd3823e06b" src="https://learnqtguide.kit.com/bd3823e06b/index.js"></script>
             </div>
         </div>
     </div>
