@@ -143,32 +143,24 @@ permalink: /qt6-qml-books
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-11">
                 <span class="badge bg-danger mb-3 fs-6 px-3 py-2 text-center d-inline-block" style="word-wrap: break-word;">⚠️ Stop Wasting Months on Scattered QML Tutorials</span>
-                <h1 class="display-4 fw-bold mb-4 responsive-title">Build Professional Qt6 QML Apps in 8 Weeks (Not 6 Months)</h1>
-                <p class="lead mb-4 fs-5 responsive-lead">The complete system used by 3,000+ developers to master Qt6 QML and build real deployable apps.</p>
+                <h1 class="display-4 fw-bold mb-4 responsive-title">Build Professional Qt6 QML Apps in 8 Weeks — Not 6 Months</h1>
+                <p class="lead mb-4 fs-5 responsive-lead">Join over <strong>3,000 developers</strong> mastering Qt6 QML through a <strong>step-by-step system</strong> that delivers <strong>real results</strong>.</p>
                 
-                <!-- Social Proof -->
-                <div class="d-flex justify-content-center align-items-center gap-3 gap-md-4 mb-4 flex-wrap">
-                    <div class="text-center">
-                        <div class="h5 h4-md mb-0 text-warning">3,000+</div>
-                        <small class="d-block">Students</small>
-                    </div>
-                    <div class="text-center">
-                        <div class="h5 h4-md mb-0">⭐⭐⭐⭐⭐</div>
-                        <small class="d-block">4.8/5 Rating</small>
-                    </div>
-                    <div class="text-center">
-                        <div class="h5 h4-md mb-0 text-warning">50+</div>
-                        <small class="d-block">Real Projects</small>
-                    </div>
+                <!-- Bundle Offer Highlight -->
+                <div class="alert alert-warning d-inline-block mb-4 px-4 py-3 shadow">
+                    <h3 class="h5 mb-2 text-dark">🎁 The Qt6 QML Book Bundle</h3>
+                    <p class="mb-2 text-dark"><strong>🚀 Master QML from Beginner to Pro with Two Powerful Books</strong></p>
+                    <p class="mb-1 text-dark">Buy individually: <span class="text-decoration-line-through">$110</span> — Bundle price: <strong>$89</strong></p>
+                    <p class="mb-0 text-danger fw-bold">🎉 First 50 buyers get it for only $69</p>
                 </div>
 
                 <!-- Main CTA -->
                 <div class="mb-5">
                     <a href="#bundle-offer" class="btn btn-warning btn-lg px-4 px-md-5 py-3 fs-6 fs-md-5 fw-bold shadow-lg text-dark responsive-cta">
-                        🚀 Get Both Books for $89 (Save $51)
+                        � Claim Special Offer - $69 (Limited Time)
                     </a>
                     <div class="mt-2">
-                        <small class="text-warning">⏰ Limited time • Instant access • 30-day guarantee</small>
+                        <small class="text-warning">🔒 Secure Checkout • Instant Access • Lifetime Updates</small>
                     </div>
                 </div>
 
@@ -185,37 +177,33 @@ permalink: /qt6-qml-books
 <section class="section py-5">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <h2 class="mb-5">Why 90% of QML Developers Give Up (And How to Be in the 10% Who Succeed)</h2>
-                
-                <!-- Problem -->
+            <div class="col-lg-10">
+                <!-- Problem/Solution comparison -->
                 <div class="row g-4 mb-5">
                     <div class="col-md-6">
                         <div class="card border-danger h-100">
-                            <div class="card-body text-center">
-                                <div class="text-danger mb-3 fs-1">😤</div>
-                                <h4 class="text-danger">The Wrong Way</h4>
-                                <ul class="list-unstyled text-start">
-                                    <li>❌ Following scattered YouTube tutorials</li>
-                                    <li>❌ Getting stuck on toy examples</li>
-                                    <li>❌ Fighting C++ integration for weeks</li>
-                                    <li>❌ Never finishing a real project</li>
-                                    <li>❌ Constantly second-guessing your approach</li>
+                            <div class="card-body">
+                                <h4 class="text-danger mb-4">❌ Why Most Developers Fail with QML</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">❌ Scattered YouTube tutorials</li>
+                                    <li class="mb-2">❌ Toy examples that don't scale</li>
+                                    <li class="mb-2">❌ Weeks fighting C++ integration</li>
+                                    <li class="mb-2">❌ No real projects, no real progress</li>
+                                    <li class="mb-2">❌ Constant second-guessing</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card border-success h-100">
-                            <div class="card-body text-center">
-                                <div class="text-success mb-3 fs-1">🚀</div>
-                                <h4 class="text-success">The Right Way</h4>
-                                <ul class="list-unstyled text-start">
-                                    <li>✅ Follow a proven step-by-step system</li>
-                                    <li>✅ Build 15+ real-world applications</li>
-                                    <li>✅ Master C++ integration patterns</li>
-                                    <li>✅ Deploy apps to multiple platforms</li>
-                                    <li>✅ Feel confident in your QML skills</li>
+                            <div class="card-body">
+                                <h4 class="text-success mb-4">✅ Why This System Works</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">✅ Structured, step-by-step learning path</li>
+                                    <li class="mb-2">✅ Build 15+ complete real-world apps</li>
+                                    <li class="mb-2">✅ Master QML + C++ integration</li>
+                                    <li class="mb-2">✅ Deploy on desktop, mobile, and embedded</li>
+                                    <li class="mb-2">✅ Get lifetime updates and support</li>
                                 </ul>
                             </div>
                         </div>
@@ -229,75 +217,56 @@ permalink: /qt6-qml-books
 <!-- Books Section -->
 <section class="section bg-light">
     <div class="container">
-        <!-- Beginners Book -->
+        <!-- Book 1: Beginners -->
         <div class="row align-items-center mb-5">
             <div class="col-lg-5 col-md-6 mb-4 mb-lg-0 text-center">
                 <img src="/assets/img/books/qt6-qml-for-beginners.png" alt="Qt6 QML Beginners Book" class="img-fluid rounded shadow-lg book-image">
             </div>
             <div class="col-lg-7 col-md-6">
-                <span class="badge bg-primary mb-3">Book 1: QML Foundations</span>
-                <h2 class="mb-4 responsive-book-title">Qt6 QML For Beginners <span class="badge bg-success ms-2 d-inline-block">Complete</span></h2>
-                <div class="alert alert-success mb-4">
-                    <strong>✅ Complete Edition:</strong> All chapters available now! 
-                    <br><small>Perfect foundation for your QML journey.</small>
-                </div>
-                <div class="mb-4">
-                    <div class="d-flex align-items-center mb-2 flex-wrap">
-                        <span class="h6 h5-md mb-0 me-2">Regular Price:</span>
-                        <span class="text-muted">$70</span>
-                    </div>
-                    <div class="d-flex align-items-center flex-wrap">
-                        <span class="h6 h5-md mb-0 me-2">Your Price:</span>
-                        <span class="h4 h3-md text-success mb-0">$50</span>
-                    </div>
-                </div>
+                <span class="badge bg-primary mb-3">📘 Book 1</span>
+                <h2 class="mb-3 responsive-book-title">Qt6 QML for Beginners</h2>
+                <p class="text-success fw-bold mb-3">_The Complete Edition – All Chapters Available Now!_</p>
+                
                 <ul class="check-list mb-4">
-                    <li>Master QML syntax and component architecture</li>
-                    <li>Build 8 complete applications from scratch</li>
+                    <li>Build 8 real-world apps from scratch</li>
+                    <li>Learn QML syntax and component architecture</li>
                     <li>Handle user input, animations, and transitions</li>
-                    <li>Implement data storage and networking</li>
-                    <li>Deploy to mobile and desktop platforms</li>
+                    <li>Work with data storage and networking</li>
+                    <li>Deploy to desktop and mobile</li>
                 </ul>
-                <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-primary btn-lg">Get Started Now →</a>
-                <div class="mt-2">
-                    <small class="text-muted">💡 Complete book with immediate access to all content</small>
+                
+                <p class="text-primary fw-bold mb-3">💡 <strong>Perfect foundation for your QML journey</strong></p>
+                
+                <div class="d-flex align-items-center mb-3">
+                    <span class="h6 me-2">Individual Price:</span>
+                    <span class="h4 text-success">$70</span>
                 </div>
             </div>
         </div>
 
-        <!-- Advanced Book -->
+        <!-- Book 2: Advanced -->
         <div class="row align-items-center mb-5">
             <div class="col-lg-5 col-md-6 order-lg-2 mb-4 mb-lg-0 text-center">
                 <img src="/assets/img/books/qt6-qml-advanced.png" alt="Qt6 QML Advanced Book" class="img-fluid rounded shadow-lg book-image">
             </div>
             <div class="col-lg-7 col-md-6">
-                <span class="badge bg-warning mb-3">Book 2: Professional QML</span>
-                <h2 class="mb-4 responsive-book-title">Qt6 QML Advanced <span class="badge bg-info ms-2 d-inline-block">In Progress</span></h2>
-                <div class="alert alert-info mb-4">
-                    <strong>🚧 Early Access:</strong> 7 chapters completed and available now! 
-                    <br><small>Price increases when book is complete.</small>
-                </div>
-                <div class="mb-4">
-                    <div class="d-flex align-items-center mb-2 flex-wrap">
-                        <span class="h6 h5-md mb-0 me-2">Final Price:</span>
-                        <span class="text-muted">$90 (when complete)</span>
-                    </div>
-                    <div class="d-flex align-items-center flex-wrap">
-                        <span class="h6 h5-md mb-0 me-2">Early Access Price:</span>
-                        <span class="h4 h3-md text-success mb-0">$50</span>
-                    </div>
-                </div>
+                <span class="badge bg-success mb-3">📗 Book 2</span>
+                <h2 class="mb-3 responsive-book-title">Qt6 QML Advanced (Early Access)</h2>
+                <p class="text-info fw-bold mb-3">_7 chapters already available – Final Price: $90_</p>
+                
                 <ul class="check-list mb-4">
-                    <li>✅ 7 chapters available now</li>
-                    <li>🚧 Build professional REST API clients</li>
-                    <li>🚧 Master C++ integration and custom models</li>
-                    <li>🚧 Create hardware integration systems</li>
-                    <li>🚧 Implement advanced UI patterns</li>
-                    <li>🚧 Build the ultimate Raspberry Pi dashboard</li>
+                    <li>Build professional REST API clients</li>
+                    <li>Integrate with C++ using advanced techniques</li>
+                    <li>Create hardware integration systems (e.g. Raspberry Pi)</li>
+                    <li>Use custom QML models and views</li>
+                    <li>Design advanced UI patterns</li>
                 </ul>
-                <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-warning btn-lg text-dark">Get Early Access →</a>
-                <div class="mt-2">
-                    <small class="text-muted">💡 Lock in this price now + get all future chapters free</small>
+                
+                <p class="text-primary fw-bold mb-3">� <strong>Includes all future updates for free</strong></p>
+                
+                <div class="d-flex align-items-center mb-3">
+                    <span class="h6 me-2">Individual Price:</span>
+                    <span class="h4 text-success">$40 (Early Access)</span>
                 </div>
             </div>
         </div>
@@ -313,21 +282,31 @@ permalink: /qt6-qml-books
                             </div>
                             <div class="col-md-8">
                                 <div class="p-4 p-md-5 text-center" style="background: linear-gradient(135deg, #41cd52 0%, #217a2d 100%);">
-                                    <h2 class="text-white mb-4 responsive-bundle-title">🎁 Complete Bundle - Save $51!</h2>
+                                    <h2 class="text-white mb-4 responsive-bundle-title">🔥 Get the Complete Qt6 QML Book Bundle</h2>
+                                    
                                     <div class="mb-4">
-                                        <span class="h6 text-white-50">Regular Price: <span class="text-decoration-line-through">$140</span></span>
-                                        <div class="display-5 display-4-md text-white fw-bold">$89</div>
-                                        <span class="badge bg-danger fs-6">36% OFF - Early Access Price!</span>
+                                        <p class="text-white mb-2">💰 <strong>Save 36% — $89 instead of $110</strong></p>
+                                        <div class="display-5 display-4-md text-warning fw-bold mb-2">$69</div>
+                                        <span class="badge bg-danger fs-6 mb-2">🎉 First 50 buyers only!</span>
+                                        <p class="text-white-50 small">Regular bundle price: $89</p>
                                     </div>
-                                    <p class="text-white mb-4 fs-6 fs-5-md">Get both books (one complete + one early access with 7 chapters). Master QML from zero to professional level.</p>
+
+                                    <div class="text-white mb-4">
+                                        <h4 class="mb-3">✨ What You Get</h4>
+                                        <ul class="list-unstyled text-start">
+                                            <li class="mb-2">📚 <strong>Both books</strong> (Beginner + Advanced)</li>
+                                            <li class="mb-2">📄 <strong>PDF and EPUB formats</strong>, with lifetime updates</li>
+                                            <li class="mb-2">📖 <strong>650+ pages</strong> of premium content</li>
+                                            <li class="mb-2">🛠️ <strong>15+ deployable projects</strong></li>
+                                            <li class="mb-2">🎯 <strong>Proven learning path</strong> from fundamentals to mastery</li>
+                                            <li class="mb-2">⚡ <strong>Instant access</strong>, future updates included</li>
+                                        </ul>
+                                    </div>
+                                    
                                     <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-light btn-lg px-4 px-md-5 py-3 fs-6 fs-5-md fw-bold shadow responsive-bundle-btn">
-                                        <span class="d-block">🚀 Get The Complete Bundle</span>
-                                        <small class="d-block text-muted">30-Day Money-Back Guarantee</small>
+                                        <span class="d-block">🔥 Grab the Bundle for $69</span>
+                                        <small class="d-block text-muted">🔒 Secure Checkout • Instant Access • Lifetime Updates</small>
                                     </a>
-                                    <div class="mt-3">
-                                        <small class="text-white-50 d-block">⏰ Price increases when advanced book is complete</small>
-                                        <small class="text-white-50 d-block">Instant download • Lifetime updates</small>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -343,7 +322,7 @@ permalink: /qt6-qml-books
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <h2 class="text-center mb-5">Your Instructor</h2>
+                <h2 class="text-center mb-5">👨‍🏫 About the Author: Daniel Gakwaya</h2>
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-md-4 mb-4 mb-md-0 text-center">
                         <img src="/assets/img/books/daniel.webp" alt="Daniel Gakwaya - Qt6 QML Instructor" class="img-fluid rounded-circle shadow instructor-photo" style="width: 200px; height: 200px; object-fit: cover;">
@@ -352,16 +331,17 @@ permalink: /qt6-qml-books
                         <p class="text-primary fw-bold fs-6">50,000+ Students Taught</p>
                     </div>
                     <div class="col-lg-8 col-md-8">
-                        <p class="mb-3">Daniel is a builder at heart. He has been working as a senior software engineer for the better part of the last decade and is currently the CEO of Squared Computing, where he focuses on integrating hardware and embedded solutions with intuitive Human Machine Interfaces.</p>
+                        <p class="mb-3">Daniel Gakwaya has been writing Qt code in a professional setting since <strong>2011</strong>. He is a senior software engineer and the CEO of <strong>Squared Computing</strong>, where he leads development of embedded and HMI solutions.</p>
                         
-                        <p class="mb-3">Daniel has created dozens of video courses on Qt and QML and is best known for his popular Udemy courses, where he has taught more than 50,000 students—many of whom now use Qt and QML professionally to solve real-world problems.</p>
+                        <p class="mb-3">With over <strong>50,000 students</strong> on Udemy and dozens of top-rated courses, Daniel has helped thousands of developers confidently build real-world applications using Qt and QML.</p>
                         
-                        <p class="mb-4">He has distilled all of that experience into these two books, designed to take you from zero to confidently building and deploying your own apps with Qt 6 QML. These books are continually updated, guaranteeing you'll always have access to the latest advancements in Qt and QML.</p>
+                        <p class="mb-4">These two books are the distillation of over a decade of hands-on experience with Qt, C++, and embedded development—packaged into a clear, actionable system.</p>
                         
                         <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-primary">Senior Engineer</span>
+                            <span class="badge bg-primary">Since 2011</span>
                             <span class="badge bg-success">CEO</span>
                             <span class="badge bg-info">Qt Expert</span>
+                            <span class="badge bg-warning text-dark">50K+ Students</span>
                         </div>
                     </div>
                 </div>
@@ -373,7 +353,7 @@ permalink: /qt6-qml-books
 <!-- Success Stories Section -->
 <section class="section">
     <div class="container">
-        <h2 class="text-center mb-5">What Students Are Saying</h2>
+        <h2 class="text-center mb-5">💬 What Developers Are Saying</h2>
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="row">
@@ -405,18 +385,36 @@ permalink: /qt6-qml-books
 <section class="section bg-light">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <h2 class="text-center mb-5">Everything You Need to Master Qt6 QML</h2>
+            <div class="col-lg-10 text-center">
+                <h2 class="mb-5">✨ Everything You Need to Master Qt6 QML</h2>
                 <div class="row g-4">
-                    <div class="col-md-6">
-                        <img src="/assets/img/books/book-content-1.webp" alt="Book Content" class="img-fluid rounded shadow mb-3">
-                        <h4>📚 650+ Pages of Content</h4>
-                        <p>Comprehensive coverage from basics to advanced topics with real-world examples.</p>
+                    <div class="col-md-3 col-6">
+                        <div class="text-center">
+                            <div class="display-6 mb-3">📚</div>
+                            <h5>650+ Pages</h5>
+                            <p class="small text-muted">Premium content</p>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="/assets/img/books/book-content-2.webp" alt="Projects" class="img-fluid rounded shadow mb-3">
-                        <h4>🛠️ 15+ Complete Projects</h4>
-                        <p>Build real applications you can deploy and add to your portfolio.</p>
+                    <div class="col-md-3 col-6">
+                        <div class="text-center">
+                            <div class="display-6 mb-3">🛠️</div>
+                            <h5>15+ Projects</h5>
+                            <p class="small text-muted">Deployable applications</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="text-center">
+                            <div class="display-6 mb-3">🎯</div>
+                            <h5>Proven Path</h5>
+                            <p class="small text-muted">Fundamentals to mastery</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="text-center">
+                            <div class="display-6 mb-3">⚡</div>
+                            <h5>Instant Access</h5>
+                            <p class="small text-muted">Future updates included</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -444,11 +442,12 @@ permalink: /qt6-qml-books
             <div class="col-lg-8 text-center">
                 <div class="mb-4">
                     <div class="d-inline-flex align-items-center justify-content-center bg-success rounded-circle" style="width: 80px; height: 80px;">
-                        <span class="text-white fs-1">✓</span>
+                        <span class="text-white fs-1">🛡️</span>
                     </div>
                 </div>
-                <h2 class="mb-4">30-Day Money-Back Guarantee</h2>
-                <p class="lead mb-4">If you're not deploying better apps and feeling more confident with QML within 30 days, we'll refund every penny. No questions asked.</p>
+                <h2 class="mb-4">🛡️ Try It Risk-Free</h2>
+                <p class="lead mb-4">You're backed by a <strong>30-day money-back guarantee</strong>.</p>
+                <p class="mb-4">If you're not more confident with QML in 30 days, get a full refund. No questions asked.</p>
             </div>
         </div>
     </div>
@@ -457,18 +456,25 @@ permalink: /qt6-qml-books
 <!-- Final CTA Section -->
 <section class="section bg-dark text-white">
     <div class="container text-center">
-        <h2 class="mb-4 responsive-book-title">Ready to Transform Your QML Development?</h2>
+        <h2 class="mb-4 responsive-book-title">🔥 Get the Complete Qt6 QML Book Bundle</h2>
         <p class="lead mb-4 responsive-lead">Join thousands of successful developers who've mastered Qt6 QML with our system.</p>
+        
+        <div class="mb-4">
+            <div class="display-5 text-warning fw-bold mb-2">$69</div>
+            <p class="text-warning">💰 Save 36% — $89 instead of $110</p>
+            <p class="text-danger fw-bold">🎉 First 50 buyers get the bundle for $69</p>
+        </div>
+        
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-success btn-lg px-4 py-3 responsive-final-cta">
-                        <span class="d-block">Get the Complete Bundle</span>
-                        <small class="d-block">Save 43% Today!</small>
+                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-warning btn-lg px-4 py-3 responsive-final-cta text-dark fw-bold">
+                        <span class="d-block">🔥 Grab it Now</span>
+                        <small class="d-block">First 50 buyers only!</small>
                     </a>
                 </div>
                 <p class="mt-3 text-muted">
-                    <small class="d-block">🔒 Secure Payment • Instant Access • Lifetime Updates</small>
+                    <small class="d-block">🔒 Secure Checkout • Instant Access • Lifetime Updates</small>
                 </p>
             </div>
         </div>
