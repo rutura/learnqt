@@ -150,13 +150,14 @@ permalink: /qt6-qml-books
                 <div class="alert alert-warning d-inline-block mb-4 px-4 py-3 shadow">
                     <h3 class="h5 mb-2 text-dark">🎁 The Qt6 QML Book Bundle</h3>
                     <p class="mb-2 text-dark"><strong>🚀 Master QML from Beginner to Pro with Two Powerful Books</strong></p>
-                    <p class="mb-1 text-dark">Buy individually: <span class="text-decoration-line-through">$110</span> — Bundle price: <strong>$89</strong></p>
-                    <p class="mb-0 text-danger fw-bold">🎉 First 50 buyers get it for only $69</p>
+                    <p class="mb-1 text-dark">Buy individually: <span class="text-decoration-line-through">$110</span> — Regular bundle: <strong>$89</strong></p>
+                    <p class="mb-1 text-danger fw-bold">🎉 First 50 buyers get it for only $69</p>
+                    <p class="mb-0 text-dark small">After first 50 sales, price returns to $89 (still a big saving!)</p>
                 </div>
 
                 <!-- Main CTA -->
                 <div class="mb-5">
-                    <a href="#bundle-offer" class="btn btn-warning btn-lg px-4 px-md-5 py-3 fs-6 fs-md-5 fw-bold shadow-lg text-dark responsive-cta">
+                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_bundle/cf06ya7" class="btn btn-warning btn-lg px-4 px-md-5 py-3 fs-6 fs-md-5 fw-bold shadow-lg text-dark responsive-cta">
                         � Claim Special Offer - $69 (Limited Time)
                     </a>
                     <div class="mt-2">
@@ -290,10 +291,10 @@ permalink: /qt6-qml-books
                                     <h2 class="text-white mb-4 responsive-bundle-title">🔥 Get the Complete Qt6 QML Book Bundle</h2>
                                     
                                     <div class="mb-4">
-                                        <p class="text-white mb-2">💰 <strong>Save 36% — $89 instead of $110</strong></p>
+                                        <p class="text-white mb-2">💰 <strong>Save 19% — $89 instead of $110 individually</strong></p>
                                         <div class="display-5 display-4-md text-warning fw-bold mb-2">$69</div>
                                         <span class="badge bg-danger fs-6 mb-2">🎉 First 50 buyers only!</span>
-                                        <p class="text-white-50 small">Regular bundle price: $89</p>
+                                        <p class="text-white-50 small">After first 50 sales, price returns to $89 (still a big saving!)</p>
                                     </div>
 
                                     <div class="text-white mb-4">
@@ -308,7 +309,7 @@ permalink: /qt6-qml-books
                                         </ul>
                                     </div>
                                     
-                                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-light btn-lg px-4 px-md-5 py-3 fs-6 fs-5-md fw-bold shadow responsive-bundle-btn">
+                                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_bundle/cf06ya7" class="btn btn-light btn-lg px-4 px-md-5 py-3 fs-6 fs-5-md fw-bold shadow responsive-bundle-btn">
                                         <span class="d-block">🔥 Grab the Bundle for $69</span>
                                         <small class="d-block text-muted">🔒 Secure Checkout • Instant Access • Lifetime Updates</small>
                                     </a>
@@ -466,14 +467,15 @@ permalink: /qt6-qml-books
         
         <div class="mb-4">
             <div class="display-5 text-warning fw-bold mb-2">$69</div>
-            <p class="text-warning">💰 Save 36% — $89 instead of $110</p>
+            <p class="text-warning">💰 Save 19% — $89 instead of $110 individually</p>
             <p class="text-danger fw-bold">🎉 First 50 buyers get the bundle for $69</p>
+            <p class="text-white-50 small">After first 50 sales, price returns to $89 (still a big saving!)</p>
         </div>
         
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners" class="btn btn-warning btn-lg px-4 py-3 responsive-final-cta text-dark fw-bold">
+                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_bundle/cf06ya7" class="btn btn-warning btn-lg px-4 py-3 responsive-final-cta text-dark fw-bold">
                         <span class="d-block">🔥 Grab it Now</span>
                         <small class="d-block">First 50 buyers only!</small>
                     </a>
