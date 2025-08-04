@@ -128,11 +128,37 @@ permalink: /qt6-qml-books
     .book-image {
         max-width: 350px;
     }
+    
+    .responsive-hero-img {
+        max-width: 500px;
+    }
 }
 
 @media (max-width: 767.98px) {
     .book-image {
         max-width: 280px;
+    }
+    
+    .responsive-hero-img {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .responsive-hero-img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-hero-img {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 375px) {
+    .responsive-hero-img {
+        max-width: 200px;
     }
 }
 </style>
