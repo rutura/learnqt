@@ -252,7 +252,7 @@ permalink: /qt6-qml-books
             <div class="col-lg-7 col-md-6">
                 <span class="badge bg-success mb-3">📗 Book 2</span>
                 <h2 class="mb-3 responsive-book-title">Qt6 QML Advanced (Early Access)</h2>
-                <p class="text-info fw-bold mb-3">_7 chapters already available – Final Price: $90_</p>
+                <p class="text-info fw-bold mb-3">_1 chapters already available – Final Price: $99.99_</p>
                 
                 <ul class="check-list mb-4">
                     <li>Build professional REST API clients</li>
