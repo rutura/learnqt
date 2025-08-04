@@ -254,6 +254,11 @@ permalink: /qt6-qml-books
                 <h2 class="mb-3 responsive-book-title">Qt6 QML Advanced (Early Access)</h2>
                 <p class="text-info fw-bold mb-3">_1 chapters already available – Final Price: $99.99_</p>
                 
+                <!-- Price Warning -->
+                <div class="alert alert-warning mb-3" role="alert">
+                    <strong>⚠️ Price Increase Notice:</strong> The price for this book will increase to <strong>$100</strong> when it's complete. Get early access now and save. All future updates are free!
+                </div>
+                
                 <ul class="check-list mb-4">
                     <li>Build professional REST API clients</li>
                     <li>Integrate with C++ using advanced techniques</li>
