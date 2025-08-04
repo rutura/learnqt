@@ -239,7 +239,7 @@ permalink: /qt6-qml-books
                 
                 <div class="d-flex align-items-center mb-3">
                     <span class="h6 me-2">Individual Price:</span>
-                    <span class="h4 text-success">$70</span>
+                    <span class="h4 text-success">$45</span>
                 </div>
             </div>
         </div>
@@ -266,7 +266,7 @@ permalink: /qt6-qml-books
                 
                 <div class="d-flex align-items-center mb-3">
                     <span class="h6 me-2">Individual Price:</span>
-                    <span class="h4 text-success">$40 (Early Access)</span>
+                    <span class="h4 text-success">$65 (Early Access)</span>
                 </div>
             </div>
         </div>
