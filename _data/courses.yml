@@ -1,36 +1,113 @@
-# Configuration Courses Widget -All courses widget min have 3 list
+# Courses Configuration
+# Pricing structure for all courses
+pricing:
+  lifetime: 101
+  monthly: 30
+  yearly: 330
 
-# BEST COURSES
+# Featured courses section
+featured_section:
+  title: "Featured Courses"
+  description: "Master Qt development with our comprehensive courses designed to take you from beginner to professional developer."
+  button_text: "Explore All Courses"
 
-best_courses_title: Best Seller Courses
+# All available courses
+courses:
+  - id: "qt-widgets-cpp"
+    title: "Desktop Apps with Qt Widgets and C++"
+    short_title: "Qt Widgets C++"
+    description: "Master professional desktop application development using Qt Widgets and modern C++. Build cross-platform applications that run seamlessly on Windows, macOS, and Linux with native performance and polished user interfaces."
+    detailed_description: "This comprehensive course teaches you to create sophisticated desktop applications using Qt Widgets framework and modern C++. You'll learn everything from basic widget usage to advanced concepts like custom widgets, layouts, event handling, and application architecture. Perfect for developers who want to build professional-grade desktop software."
+    image: "/assets/courses/image/qt6_gui_beginners.png"
+    category: "Desktop Development"
+    technology: "Qt Widgets"
+    language: "C++"
+    level: "Beginner to Intermediate"
+    duration: "40+ hours"
+    featured: true
+    what_you_learn:
+      - "Build cross-platform desktop applications with Qt Widgets"
+      - "Master modern C++ programming techniques"
+      - "Create responsive and intuitive user interfaces"
+      - "Implement proper application architecture and design patterns"
+      - "Handle events, signals, and slots effectively"
+      - "Deploy applications across multiple platforms"
+    prerequisites:
+      - "Basic programming knowledge"
+      - "Familiarity with C++ basics (variables, functions, classes)"
+    includes:
+      - "40+ hours of video content"
+      - "Source code for all projects"
+      - "Lifetime access to course materials"
+      - "Certificate of completion"
+      - "Community support"
 
-best_courses_list: # do not enter text in this area, it is blank by default for lists
- - title: 'Qt 6 C++ GUI Development for Beginners : The Fundamentals'
-   subtitle: Build Cross Platform Desktop Applications and Run Them on Windows, Mac and Linux. Build once, Run Everywhere!
-   image: /assets/courses/image/qt6_gui_beginners.png
-   star: 5
-   level: beginner
-   link: https://www.udemy.com/course/qt6-c-gui-widgets-tutorial-for-beginners/?couponCode=
- - title: 'The C++20 Masterclass : From Fundamentals to Advanced'
-   subtitle: Learn and Master Modern C++ From Beginning to Advanced in Plain English - C++11, C++14, C++17, C++20 and More!
-   image: /assets/courses/image/the_cpp_20_masterclass.png
-   star: 5
-   level: beginner
-   link:  https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode=
- - title: 'Qt For Python (PySide6) GUI For Beginners'
-   subtitle: Build Cross Platform Desktop Applications in Python. Run Them on Windows, Mac and Linux. Build once, Run Everywhere!
-   image: /assets/courses/image/pyside6_beginners.png
-   star: 5
-   level: beginner
-   link: https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/?couponCode=
+  - id: "qt-widgets-pyside6"
+    title: "Desktop Apps with Qt Widgets and PySide6"
+    short_title: "Qt Widgets Python"
+    description: "Learn to build powerful desktop applications using Qt Widgets and Python. Leverage Python's simplicity with Qt's robust GUI framework to create professional applications with minimal complexity and maximum productivity."
+    detailed_description: "Discover the power of Python GUI development with PySide6 and Qt Widgets. This course covers everything from basic widget creation to advanced application development, making desktop development accessible to Python developers. Build real-world applications while learning best practices."
+    image: "/assets/courses/image/pyside6_beginners.png"
+    category: "Desktop Development"
+    technology: "Qt Widgets"
+    language: "Python"
+    level: "Beginner to Intermediate"
+    duration: "35+ hours"
+    featured: true
+    what_you_learn:
+      - "Develop desktop applications using PySide6 and Qt Widgets"
+      - "Master Python GUI programming concepts"
+      - "Create modern and responsive user interfaces"
+      - "Implement data handling and file operations"
+      - "Build and distribute Python desktop applications"
+      - "Integrate with Python ecosystem libraries"
+    prerequisites:
+      - "Basic Python programming knowledge"
+      - "Understanding of Python classes and functions"
+    includes:
+      - "35+ hours of video content"
+      - "Complete Python source code"
+      - "Lifetime access to course materials"
+      - "Certificate of completion"
+      - "Community support"
 
-courses_button: Explore All Courses
+  - id: "qt-qml-pro"
+    title: "Qt QML From Beginner to Pro"
+    short_title: "Qt QML Pro"
+    description: "Master modern UI development with Qt QML and Qt Quick. Create fluid, dynamic, and visually stunning user interfaces for desktop, mobile, and embedded applications. Learn declarative programming and advanced animation techniques."
+    detailed_description: "Become a QML expert with this comprehensive course covering everything from basic QML syntax to advanced topics like custom components, animations, and C++ integration. Perfect for creating modern, touch-friendly applications with beautiful user interfaces."
+    image: "/assets/courses/image/qt6_qml_beginners.png"
+    category: "UI Development"
+    technology: "Qt QML"
+    language: "QML/JavaScript"
+    level: "Beginner to Advanced"
+    duration: "50+ hours"
+    featured: true
+    what_you_learn:
+      - "Master QML syntax and declarative programming"
+      - "Create fluid animations and transitions"
+      - "Build custom QML components and controls"
+      - "Integrate QML with C++ backend"
+      - "Develop applications for multiple platforms"
+      - "Implement advanced UI patterns and architectures"
+    prerequisites:
+      - "Basic programming knowledge"
+      - "Some familiarity with JavaScript (helpful but not required)"
+    includes:
+      - "50+ hours of video content"
+      - "QML and C++ source code"
+      - "Lifetime access to course materials"
+      - "Certificate of completion"
+      - "Community support"
 
-courses_button_singgle: Read More
-
-buy_button_page: Buy This Courses
-
-buy_button_on_list: Take This Course
+# UI Configuration
+ui:
+  courses_button: "Explore All Courses"
+  learn_more_button: "Learn More"
+  enroll_button: "Get Started Today"
+  lifetime_button: "Buy for Life - $101"
+  monthly_button: "Monthly Access - $30"
+  yearly_button: "Yearly Access - $330"
 
 
 

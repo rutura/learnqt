@@ -1,11 +1,8 @@
 ---
-layout: page
-title: ""
-description: null
+layout: courses
+title: "All Courses"
+description: "Master Qt development with our comprehensive course library. Learn Qt Widgets, QML, C++, and Python with hands-on projects and real-world applications."
 cover: /assets/img/learnqtbook.webp
-best_courses_widget: true
 permalink: /courses/
-display_widget: true
 ---
-{% include courses/learning_paths.html %}
 

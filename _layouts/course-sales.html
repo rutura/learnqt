@@ -1,0 +1,401 @@
+{% include seo.html %}
+{% include navpage.html %}
+
+<!-- Course Hero Section -->
+<section class="course-hero py-5" style="background: linear-gradient(135deg, #15ba29 0%, #149f25 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content text-white">
+                    <h1 class="display-4 fw-bold mb-4">{{ page.course_title }}</h1>
+                    <p class="lead mb-4">{{ page.course_subtitle }}</p>
+                    <div class="hero-badges mb-4">
+                        <span class="badge bg-light text-dark me-2">{{ page.course_level }}</span>
+                        <span class="badge bg-light text-dark me-2">{{ page.course_duration }}</span>
+                        <span class="badge bg-light text-dark">{{ page.course_language }}</span>
+                    </div>
+                    <div class="pricing-highlight p-3 bg-white bg-opacity-10 rounded">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <div class="h4 mb-1">${{ site.data.courses.pricing.lifetime }}</div>
+                                <small>Lifetime Access</small>
+                            </div>
+                            <div class="col-4">
+                                <div class="h4 mb-1">${{ site.data.courses.pricing.monthly }}</div>
+                                <small>Per Month</small>
+                            </div>
+                            <div class="col-4">
+                                <div class="h4 mb-1">${{ site.data.courses.pricing.yearly }}</div>
+                                <small>Per Year</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image">
+                    <img src="{{ site.baseurl }}{{ page.course_image }}" alt="{{ page.course_title }}" class="img-fluid rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Details Section -->
+<section class="course-details py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Course Description -->
+                <div class="section-block mb-5">
+                    <h2 class="h3 mb-4">Course Overview</h2>
+                    <p class="lead">{{ page.course_description }}</p>
+                    <p>{{ page.course_detailed_description }}</p>
+                </div>
+
+                <!-- What You'll Learn -->
+                <div class="section-block mb-5">
+                    <h2 class="h3 mb-4">What You'll Learn</h2>
+                    <div class="row">
+                        {% assign course_data = site.data.courses.courses | where: "id", page.course_id | first %}
+                        {% for item in course_data.what_you_learn %}
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                                <span>{{ item }}</span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Prerequisites -->
+                <div class="section-block mb-5">
+                    <h2 class="h3 mb-4">Prerequisites</h2>
+                    <ul class="list-unstyled">
+                        {% for prerequisite in course_data.prerequisites %}
+                        <li class="mb-2">
+                            <i class="fas fa-arrow-right text-success me-2"></i>{{ prerequisite }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Course Includes -->
+                <div class="section-block mb-5">
+                    <h2 class="h3 mb-4">This Course Includes</h2>
+                    <div class="row">
+                        {% for include_item in course_data.includes %}
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex">
+                                <i class="fas fa-gift text-success me-3 mt-1"></i>
+                                <span>{{ include_item }}</span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Sidebar -->
+            <div class="col-lg-4">
+                <div class="pricing-card sticky-top">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-header bg-success text-white text-center py-4">
+                            <h3 class="h4 mb-0">Get Started Today</h3>
+                        </div>
+                        <div class="card-body p-4">
+                            <!-- Lifetime Option -->
+                            <div class="pricing-option mb-4 p-3 border rounded position-relative">
+                                <div class="popular-badge">
+                                    <span class="badge bg-warning text-dark">Most Popular</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="mb-0">Lifetime Access</h5>
+                                    <span class="h4 text-success mb-0">${{ site.data.courses.pricing.lifetime }}</span>
+                                </div>
+                                <p class="text-muted small mb-3">One-time payment, yours forever</p>
+                                <button class="btn btn-success w-100 btn-lg" onclick="selectPlan('lifetime', {{ site.data.courses.pricing.lifetime }})">
+                                    {{ site.data.courses.ui.lifetime_button }}
+                                </button>
+                            </div>
+
+                            <!-- Monthly Option -->
+                            <div class="pricing-option mb-4 p-3 border rounded">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="mb-0">Monthly Access</h5>
+                                    <span class="h4 text-success mb-0">${{ site.data.courses.pricing.monthly }}</span>
+                                </div>
+                                <p class="text-muted small mb-3">Cancel anytime</p>
+                                <button class="btn btn-outline-success w-100" onclick="selectPlan('monthly', {{ site.data.courses.pricing.monthly }})">
+                                    {{ site.data.courses.ui.monthly_button }}
+                                </button>
+                            </div>
+
+                            <!-- Yearly Option -->
+                            <div class="pricing-option mb-4 p-3 border rounded">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="mb-0">Yearly Access</h5>
+                                    <div class="text-end">
+                                        <span class="h4 text-success mb-0">${{ site.data.courses.pricing.yearly }}</span>
+                                        <div class="small text-success">Save $30!</div>
+                                    </div>
+                                </div>
+                                <p class="text-muted small mb-3">Best value, one month free</p>
+                                <button class="btn btn-outline-success w-100" onclick="selectPlan('yearly', {{ site.data.courses.pricing.yearly }})">
+                                    {{ site.data.courses.ui.yearly_button }}
+                                </button>
+                            </div>
+
+                            <div class="text-center">
+                                <p class="small text-muted mb-3">
+                                    <i class="fas fa-shield-alt me-1"></i>30-day money-back guarantee
+                                </p>
+                                <p class="small text-muted">
+                                    <i class="fas fa-lock me-1"></i>Secure payment processing
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Stats -->
+                    <div class="card mt-4 border-0 bg-light">
+                        <div class="card-body text-center">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="h4 text-success">{{ course_data.duration }}</div>
+                                    <small class="text-muted">Video Content</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="h4 text-success">∞</div>
+                                    <small class="text-muted">Lifetime Access</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="h4 text-success">✓</div>
+                                    <small class="text-muted">Certificate</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                What if I'm not satisfied with the course?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We offer a 30-day money-back guarantee. If you're not completely satisfied with the course, contact us within 30 days for a full refund.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                How long do I have access to the course?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                With lifetime access, you can watch the course as many times as you want, whenever you want. Monthly and yearly subscribers have access as long as their subscription is active.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Will I get a certificate upon completion?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! Upon completing the course, you'll receive a certificate of completion that you can add to your professional portfolio or LinkedIn profile.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                Can I access the course on mobile devices?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely! Our platform is fully responsive and works great on desktop, tablet, and mobile devices. Learn anywhere, anytime.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include footerpage.html %}
+
+<style>
+:root {
+    --qt-green: #15ba29;
+    --qt-green-dark: #149f25;
+}
+
+.course-hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    padding-right: 2rem;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pricing-highlight {
+    backdrop-filter: blur(10px);
+}
+
+.section-block {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.section-block:last-child {
+    border-bottom: none;
+}
+
+.pricing-card {
+    top: 2rem;
+}
+
+.pricing-option {
+    transition: all 0.3s ease;
+}
+
+.pricing-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.btn-success {
+    background-color: var(--qt-green);
+    border-color: var(--qt-green);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.btn-success:hover {
+    background-color: var(--qt-green-dark);
+    border-color: var(--qt-green-dark);
+    transform: translateY(-1px);
+}
+
+.btn-outline-success {
+    color: var(--qt-green);
+    border-color: var(--qt-green);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.btn-outline-success:hover {
+    background-color: var(--qt-green);
+    border-color: var(--qt-green);
+    transform: translateY(-1px);
+}
+
+.text-success {
+    color: var(--qt-green) !important;
+}
+
+.bg-success {
+    background-color: var(--qt-green) !important;
+}
+
+.rounded-lg {
+    border-radius: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+    
+    .course-hero {
+        min-height: auto;
+        padding: 3rem 0;
+    }
+    
+    .pricing-card {
+        position: static !important;
+        margin-top: 2rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .pricing-highlight .col-4 {
+        margin-bottom: 1rem;
+    }
+    
+    .hero-badges .badge {
+        display: block;
+        margin-bottom: 0.5rem;
+        margin-right: 0 !important;
+    }
+}
+</style>
+
+<script>
+function selectPlan(planType, price) {
+    // This would integrate with your payment processor
+    // For now, we'll just show an alert
+    alert(`Selected ${planType} plan for $${price}. This would redirect to payment processing.`);
+    
+    // Example integration with Stripe, PayPal, or other payment processor
+    // window.location.href = `/checkout?plan=${planType}&course={{ page.course_id }}&price=${price}`;
+}
+
+// Add smooth scrolling for anchor links
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+</script>
