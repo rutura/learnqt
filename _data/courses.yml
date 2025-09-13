@@ -3,45 +3,46 @@
 pricing:
   lifetime: 
     price: 101
-    title: "Lifetime Access"
-    subtitle: "One-time payment for unlimited access"
-    popular: true
+    title: "Single Course"
+    subtitle: "One-time purchase for this course only"
+    popular: false
     benefits:
-      - "✅ 130+ video Lessons"
-      - "✅ All PDF Workbooks"
-      - "✅ All Animation source files (4)"
-      - "✅ All template file downloads"
-      - "✅ 20% reduction on TVPaint software"
-      - "✅ Downloadable videos"
-      - "💖 Lifetime course access"
+      - "Access to this course only"
+      - "Complete video library for this course"
+      - "All PDF workbooks & resources"
+      - "Download all course materials"
+      - "Discord community access"
+      - "Certificate of completion"
+      - "Yours forever"
     teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-widgets-cpp-lifetime"
   monthly: 
     price: 30
-    title: "Monthly Access"
-    subtitle: "Cancel anytime"
-    popular: false
+    title: "Library Access"
+    subtitle: "per month"
+    popular: true
     benefits:
-      - "✅ 130+ video Lessons"
-      - "✅ All PDF Workbooks"
-      - "✅ All source files"
-      - "✅ Community access"
-      - "✅ Monthly updates"
-      - "⏰ Access while subscribed"
+      - "Access to entire course library"
+      - "All current and future courses"
+      - "Discord community access"
+      - "Direct help from Daniel"
+      - "Monthly content updates"
+      - "Cancel anytime"
     teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-widgets-cpp-monthly"
+    library_link: "/courses"
   yearly: 
     price: 330
-    title: "Yearly Access"
-    subtitle: "Best value, one month free"
+    title: "Library Pro"
+    subtitle: "per year (save $30)"
     popular: false
     benefits:
-      - "✅ 130+ video Lessons"
-      - "✅ All PDF Workbooks"
-      - "✅ All source files"
-      - "✅ Priority community support"
-      - "✅ Early access to new content"
-      - "✅ Yearly updates"
-      - "💰 Save $30!"
+      - "Everything in Library Access +"
+      - "Priority Discord support"
+      - "Enhanced access to Daniel"
+      - "Early access to new content"
+      - "Quarterly exclusive content"
+      - "Save $30 vs monthly"
     teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-widgets-cpp-yearly"
+    library_link: "/courses"
 
 # Featured courses section
 featured_section:

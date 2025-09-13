@@ -130,146 +130,138 @@
     </div>
 </section>
 
-<!-- Ready to Join Section (Modeled after Animator Guild) -->
-<section id="ready-to-join" class="ready-to-join py-5" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);">
+<!-- Ready to Join Section (Clean Notion-Style Design) -->
+<section id="ready-to-join" class="ready-to-join py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <h2 class="text-center text-white mb-5">{{ site.data.courses.ui.ready_to_join_title }}</h2>
-                
-                <div class="row g-4">
-                    <!-- Lifetime Access Plan -->
-                    <div class="col-lg-4">
-                        <div class="pricing-card h-100 {% if site.data.courses.pricing.lifetime.popular %}popular{% endif %}">
-                            {% if site.data.courses.pricing.lifetime.popular %}
-                            <div class="popular-ribbon">
-                                <span>Popular</span>
-                            </div>
-                            {% endif %}
-                            
-                            <div class="card-header text-center py-4">
-                                <h3 class="card-title">{{ site.data.courses.pricing.lifetime.title }}</h3>
-                                <p class="card-subtitle text-muted">{{ site.data.courses.pricing.lifetime.subtitle }}</p>
-                            </div>
-                            
-                            <div class="card-body">
-                                <div class="benefits-list mb-4">
-                                    {% for benefit in site.data.courses.pricing.lifetime.benefits %}
-                                    <div class="benefit-item mb-2">
-                                        {{ benefit }}
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                                
-                                <div class="price-section text-center mb-4">
-                                    <div class="price">
-                                        <span class="currency">$</span>
-                                        <span class="amount">{{ site.data.courses.pricing.lifetime.price }}</span>
-                                    </div>
-                                    <p class="price-note text-muted">Vat. Not Included</p>
-                                </div>
-                                
-                                <a href="{% if course_data.pricing_override.lifetime.teachable_link %}{{ course_data.pricing_override.lifetime.teachable_link }}{% else %}{{ site.data.courses.pricing.lifetime.teachable_link }}{% endif %}" 
-                                   class="btn btn-primary w-100 btn-lg">
-                                    Select
-                                </a>
+        <!-- Section Header -->
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title mb-4">{{ site.data.courses.ui.ready_to_join_title }}</h2>
+                <p class="section-subtitle">Choose how you want to access our Qt development courses. Single purchase for one course, or subscribe for access to our entire growing library.</p>
+            </div>
+        </div>
+        
+        <!-- Pricing Cards -->
+        <div class="pricing-container">
+            <div class="row g-0 justify-content-center">
+                <!-- Single Course -->
+                <div class="col-lg-4">
+                    <div class="pricing-card single-course">
+                        <div class="card-header">
+                            <h3 class="plan-title">{{ site.data.courses.pricing.lifetime.title }}</h3>
+                            <div class="price-display">
+                                <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.lifetime.price }}</span>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Monthly Plan -->
-                    <div class="col-lg-4">
-                        <div class="pricing-card h-100">
-                            <div class="card-header text-center py-4">
-                                <h3 class="card-title">{{ site.data.courses.pricing.monthly.title }}</h3>
-                                <p class="card-subtitle text-muted">{{ site.data.courses.pricing.monthly.subtitle }}</p>
-                            </div>
+                        
+                        <div class="card-body">
+                            <a href="{% if course_data.pricing_override.lifetime.teachable_link %}{{ course_data.pricing_override.lifetime.teachable_link }}{% else %}{{ site.data.courses.pricing.lifetime.teachable_link }}{% endif %}" 
+                               class="btn btn-outline w-100 mb-4">
+                                Sign up
+                            </a>
                             
-                            <div class="card-body">
-                                <div class="benefits-list mb-4">
-                                    {% for benefit in site.data.courses.pricing.monthly.benefits %}
-                                    <div class="benefit-item mb-2">
-                                        {{ benefit }}
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                                
-                                <div class="price-section text-center mb-4">
-                                    <div class="price">
-                                        <span class="currency">$</span>
-                                        <span class="amount">{{ site.data.courses.pricing.monthly.price }}</span>
-                                    </div>
-                                    <p class="price-note text-muted">Vat. not included</p>
-                                </div>
-                                
-                                <a href="{% if course_data.pricing_override.monthly.teachable_link %}{{ course_data.pricing_override.monthly.teachable_link }}{% else %}{{ site.data.courses.pricing.monthly.teachable_link }}{% endif %}" 
-                                   class="btn btn-outline-primary w-100 btn-lg">
-                                    Select
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Yearly Plan -->
-                    <div class="col-lg-4">
-                        <div class="pricing-card h-100">
-                            <div class="card-header text-center py-4">
-                                <h3 class="card-title">{{ site.data.courses.pricing.yearly.title }}</h3>
-                                <p class="card-subtitle text-muted">{{ site.data.courses.pricing.yearly.subtitle }}</p>
-                            </div>
-                            
-                            <div class="card-body">
-                                <div class="benefits-list mb-4">
-                                    {% for benefit in site.data.courses.pricing.yearly.benefits %}
-                                    <div class="benefit-item mb-2">
-                                        {{ benefit }}
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                                
-                                <div class="price-section text-center mb-4">
-                                    <div class="price">
-                                        <span class="currency">$</span>
-                                        <span class="amount">{{ site.data.courses.pricing.yearly.price }}</span>
-                                    </div>
-                                    <p class="price-note text-muted">Vat. not included</p>
-                                </div>
-                                
-                                <a href="{% if course_data.pricing_override.yearly.teachable_link %}{{ course_data.pricing_override.yearly.teachable_link }}{% else %}{{ site.data.courses.pricing.yearly.teachable_link }}{% endif %}" 
-                                   class="btn btn-outline-primary w-100 btn-lg">
-                                    Select
-                                </a>
-                            </div>
+                            <ul class="benefits-list">
+                                {% for benefit in site.data.courses.pricing.lifetime.benefits %}
+                                <li>{{ benefit }}</li>
+                                {% endfor %}
+                            </ul>
                         </div>
                     </div>
                 </div>
                 
-                <div class="text-center mt-5">
-                    <p class="text-white-50">
-                        <i class="fas fa-shield-alt me-2"></i>30-day money-back guarantee
-                        <span class="mx-3">•</span>
-                        <i class="fas fa-lock me-2"></i>Secure payment processing
-                    </p>
+                <!-- Library Access (Popular) -->
+                <div class="col-lg-4">
+                    <div class="pricing-card library-access popular">
+                        {% if site.data.courses.pricing.monthly.popular %}
+                        <div class="popular-badge">
+                            <span>Popular</span>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="card-header">
+                            <h3 class="plan-title">{{ site.data.courses.pricing.monthly.title }}</h3>
+                            <div class="price-display">
+                                <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.monthly.price }}</span>
+                                <span class="period">{{ site.data.courses.pricing.monthly.subtitle }}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <a href="{% if course_data.pricing_override.monthly.teachable_link %}{{ course_data.pricing_override.monthly.teachable_link }}{% else %}{{ site.data.courses.pricing.monthly.teachable_link }}{% endif %}" 
+                               class="btn btn-primary w-100 mb-4">
+                                Get started
+                            </a>
+                            
+                            <div class="library-link mb-3">
+                                <p class="mb-2"><strong>Everything in Single Course +</strong></p>
+                                <a href="{{ site.data.courses.pricing.monthly.library_link }}" class="library-access-link">
+                                    <i class="fas fa-books me-1"></i>View full course library
+                                </a>
+                            </div>
+                            
+                            <ul class="benefits-list">
+                                {% for benefit in site.data.courses.pricing.monthly.benefits %}
+                                <li>{{ benefit }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Library Pro -->
+                <div class="col-lg-4">
+                    <div class="pricing-card library-pro">
+                        <div class="card-header">
+                            <h3 class="plan-title">{{ site.data.courses.pricing.yearly.title }}</h3>
+                            <div class="price-display">
+                                <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.yearly.price }}</span>
+                                <span class="period">{{ site.data.courses.pricing.yearly.subtitle }}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-body">
+                            <a href="{% if course_data.pricing_override.yearly.teachable_link %}{{ course_data.pricing_override.yearly.teachable_link }}{% else %}{{ site.data.courses.pricing.yearly.teachable_link }}{% endif %}" 
+                               class="btn btn-outline w-100 mb-4">
+                                Get started
+                            </a>
+                            
+                            <div class="library-link mb-3">
+                                <p class="mb-2"><strong>Everything in Library Access +</strong></p>
+                                <a href="{{ site.data.courses.pricing.yearly.library_link }}" class="library-access-link">
+                                    <i class="fas fa-books me-1"></i>View full course library
+                                </a>
+                            </div>
+                            
+                            <ul class="benefits-list">
+                                {% for benefit in site.data.courses.pricing.yearly.benefits %}
+                                <li>{{ benefit }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Call to Action Banner -->
-<section class="cta-banner py-4" style="background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <div class="text-white">
-                    <h4 class="mb-1">Spring Sale ends soon</h4>
-                    <p class="mb-0">Get lifetime access at the best price. Limited time offer!</p>
+        
+        <!-- Trust Indicators -->
+        <div class="trust-indicators mt-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="trust-items">
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>30-day money-back guarantee</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure payment processing</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-users"></i>
+                            <span>Join 32,000+ students</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 text-end">
-                <a href="#ready-to-join" class="btn btn-dark btn-lg scroll-to-pricing">
-                    <i class="fas fa-bolt me-2"></i>BUY NOW
-                </a>
             </div>
         </div>
     </div>
