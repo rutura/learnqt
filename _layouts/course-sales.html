@@ -1,244 +1,275 @@
 {% include seo.html %}
 {% include navpage.html %}
 
+<!-- Get Course Data -->
+{% assign course_data = site.data.courses.courses | where: "id", page.course_id | first %}
+
 <!-- Course Hero Section -->
 <section class="course-hero py-5" style="background: linear-gradient(135deg, #15ba29 0%, #149f25 100%);">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="hero-content text-white">
-                    <h1 class="display-4 fw-bold mb-4">{{ page.course_title }}</h1>
-                    <p class="lead mb-4">{{ page.course_subtitle }}</p>
+                    <h1 class="display-4 fw-bold mb-4">{{ course_data.title }}</h1>
+                    <p class="lead mb-4">{{ course_data.sections.hero.subtitle }}</p>
                     <div class="hero-badges mb-4">
-                        <span class="badge bg-light text-dark me-2">{{ page.course_level }}</span>
-                        <span class="badge bg-light text-dark me-2">{{ page.course_duration }}</span>
-                        <span class="badge bg-light text-dark">{{ page.course_language }}</span>
+                        <span class="badge bg-light text-dark me-2">{{ course_data.level }}</span>
+                        <span class="badge bg-light text-dark me-2">{{ course_data.duration }}</span>
+                        <span class="badge bg-light text-dark">{{ course_data.language }}</span>
                     </div>
-                    <div class="pricing-highlight p-3 bg-white bg-opacity-10 rounded">
-                        <div class="row text-center">
-                            <div class="col-4">
-                                <div class="h4 mb-1">${{ site.data.courses.pricing.lifetime }}</div>
-                                <small>Lifetime Access</small>
-                            </div>
-                            <div class="col-4">
-                                <div class="h4 mb-1">${{ site.data.courses.pricing.monthly }}</div>
-                                <small>Per Month</small>
-                            </div>
-                            <div class="col-4">
-                                <div class="h4 mb-1">${{ site.data.courses.pricing.yearly }}</div>
-                                <small>Per Year</small>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="#ready-to-join" class="btn btn-light btn-lg text-success fw-bold scroll-to-pricing">
+                        <i class="fas fa-rocket me-2"></i>{{ site.data.courses.ui.scroll_to_pricing }}
+                    </a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="hero-image">
-                    <img src="{{ site.baseurl }}{{ page.course_image }}" alt="{{ page.course_title }}" class="img-fluid rounded-lg shadow-lg">
+                    <img src="{{ site.baseurl }}{{ course_data.sections.hero.showcase_image }}" alt="{{ course_data.title }}" class="img-fluid rounded-lg shadow-lg">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Course Details Section -->
-<section class="course-details py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <!-- Course Description -->
-                <div class="section-block mb-5">
-                    <h2 class="h3 mb-4">Course Overview</h2>
-                    <p class="lead">{{ page.course_description }}</p>
-                    <p>{{ page.course_detailed_description }}</p>
-                </div>
-
-                <!-- What You'll Learn -->
-                <div class="section-block mb-5">
-                    <h2 class="h3 mb-4">What You'll Learn</h2>
-                    <div class="row">
-                        {% assign course_data = site.data.courses.courses | where: "id", page.course_id | first %}
-                        {% for item in course_data.what_you_learn %}
-                        <div class="col-md-6 mb-3">
-                            <div class="d-flex">
-                                <i class="fas fa-check-circle text-success me-3 mt-1"></i>
-                                <span>{{ item }}</span>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <!-- Prerequisites -->
-                <div class="section-block mb-5">
-                    <h2 class="h3 mb-4">Prerequisites</h2>
-                    <ul class="list-unstyled">
-                        {% for prerequisite in course_data.prerequisites %}
-                        <li class="mb-2">
-                            <i class="fas fa-arrow-right text-success me-2"></i>{{ prerequisite }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-
-                <!-- Course Includes -->
-                <div class="section-block mb-5">
-                    <h2 class="h3 mb-4">This Course Includes</h2>
-                    <div class="row">
-                        {% for include_item in course_data.includes %}
-                        <div class="col-md-6 mb-3">
-                            <div class="d-flex">
-                                <i class="fas fa-gift text-success me-3 mt-1"></i>
-                                <span>{{ include_item }}</span>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pricing Sidebar -->
-            <div class="col-lg-4">
-                <div class="pricing-card sticky-top">
-                    <div class="card shadow-lg border-0">
-                        <div class="card-header bg-success text-white text-center py-4">
-                            <h3 class="h4 mb-0">Get Started Today</h3>
-                        </div>
-                        <div class="card-body p-4">
-                            <!-- Lifetime Option -->
-                            <div class="pricing-option mb-4 p-3 border rounded position-relative">
-                                <div class="popular-badge">
-                                    <span class="badge bg-warning text-dark">Most Popular</span>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h5 class="mb-0">Lifetime Access</h5>
-                                    <span class="h4 text-success mb-0">${{ site.data.courses.pricing.lifetime }}</span>
-                                </div>
-                                <p class="text-muted small mb-3">One-time payment, yours forever</p>
-                                <button class="btn btn-success w-100 btn-lg" onclick="selectPlan('lifetime', {{ site.data.courses.pricing.lifetime }})">
-                                    {{ site.data.courses.ui.lifetime_button }}
-                                </button>
-                            </div>
-
-                            <!-- Monthly Option -->
-                            <div class="pricing-option mb-4 p-3 border rounded">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h5 class="mb-0">Monthly Access</h5>
-                                    <span class="h4 text-success mb-0">${{ site.data.courses.pricing.monthly }}</span>
-                                </div>
-                                <p class="text-muted small mb-3">Cancel anytime</p>
-                                <button class="btn btn-outline-success w-100" onclick="selectPlan('monthly', {{ site.data.courses.pricing.monthly }})">
-                                    {{ site.data.courses.ui.monthly_button }}
-                                </button>
-                            </div>
-
-                            <!-- Yearly Option -->
-                            <div class="pricing-option mb-4 p-3 border rounded">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h5 class="mb-0">Yearly Access</h5>
-                                    <div class="text-end">
-                                        <span class="h4 text-success mb-0">${{ site.data.courses.pricing.yearly }}</span>
-                                        <div class="small text-success">Save $30!</div>
-                                    </div>
-                                </div>
-                                <p class="text-muted small mb-3">Best value, one month free</p>
-                                <button class="btn btn-outline-success w-100" onclick="selectPlan('yearly', {{ site.data.courses.pricing.yearly }})">
-                                    {{ site.data.courses.ui.yearly_button }}
-                                </button>
-                            </div>
-
-                            <div class="text-center">
-                                <p class="small text-muted mb-3">
-                                    <i class="fas fa-shield-alt me-1"></i>30-day money-back guarantee
-                                </p>
-                                <p class="small text-muted">
-                                    <i class="fas fa-lock me-1"></i>Secure payment processing
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Course Stats -->
-                    <div class="card mt-4 border-0 bg-light">
-                        <div class="card-body text-center">
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="h4 text-success">{{ course_data.duration }}</div>
-                                    <small class="text-muted">Video Content</small>
-                                </div>
-                                <div class="col-4">
-                                    <div class="h4 text-success">∞</div>
-                                    <small class="text-muted">Lifetime Access</small>
-                                </div>
-                                <div class="col-4">
-                                    <div class="h4 text-success">✓</div>
-                                    <small class="text-muted">Certificate</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ Section -->
-<section class="faq-section py-5 bg-light">
+<!-- Why This Course Section -->
+<section class="why-course py-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <h2 class="text-center mb-5">Frequently Asked Questions</h2>
-                <div class="accordion" id="faqAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                What if I'm not satisfied with the course?
-                            </button>
-                        </h2>
-                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                We offer a 30-day money-back guarantee. If you're not completely satisfied with the course, contact us within 30 days for a full refund.
+                <h2 class="text-center mb-5">{{ course_data.sections.why_this_course.title }}</h2>
+                
+                <div class="content-block mb-4">
+                    <p class="lead">{{ course_data.sections.why_this_course.content }}</p>
+                </div>
+                
+                <div class="benefits-list mb-4">
+                    {% for bullet in course_data.sections.why_this_course.bullets %}
+                    <div class="benefit-item mb-3">
+                        {{ bullet }}
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                {% if course_data.sections.why_this_course.showcase_image %}
+                <div class="showcase-image text-center mb-4">
+                    <img src="{{ site.baseurl }}{{ course_data.sections.why_this_course.showcase_image }}" alt="Course Preview" class="img-fluid rounded-lg shadow">
+                </div>
+                {% endif %}
+                
+                <div class="text-center mb-5">
+                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
+                        <i class="fas fa-shopping-cart me-2"></i>{{ site.data.courses.ui.buy_now_button }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Creator Story Section -->
+<section class="creator-story py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-5">{{ course_data.sections.creator_story.title }}</h2>
+                
+                <div class="story-content">
+                    <div class="quote-block mb-4">
+                        <p class="lead font-italic">{{ course_data.sections.creator_story.content | split: '"' | join: '"' }}</p>
+                    </div>
+                    
+                    <div class="credentials-list mb-4">
+                        {% for bullet in course_data.sections.creator_story.bullets %}
+                        <div class="credential-item mb-2">
+                            {{ bullet }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="additional-content mb-4">
+                        <p>{{ course_data.sections.creator_story.content_2 }}</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mb-5">
+                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
+                        <i class="fas fa-user-graduate me-2"></i>Learn From Experience
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What You'll Get Section -->
+<section class="what-you-get py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-5">{{ course_data.sections.what_you_get.title }}</h2>
+                
+                <div class="features-grid mb-4">
+                    {% for bullet in course_data.sections.what_you_get.bullets %}
+                    <div class="feature-item mb-3">
+                        {{ bullet }}
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="outcome-content mb-4">
+                    <p class="lead">{{ course_data.sections.what_you_get.content }}</p>
+                </div>
+                
+                <div class="text-center mb-5">
+                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
+                        <i class="fas fa-gift me-2"></i>Get All This Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ready to Join Section (Modeled after Animator Guild) -->
+<section id="ready-to-join" class="ready-to-join py-5" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="text-center text-white mb-5">{{ site.data.courses.ui.ready_to_join_title }}</h2>
+                
+                <div class="row g-4">
+                    <!-- Lifetime Access Plan -->
+                    <div class="col-lg-4">
+                        <div class="pricing-card h-100 {% if site.data.courses.pricing.lifetime.popular %}popular{% endif %}">
+                            {% if site.data.courses.pricing.lifetime.popular %}
+                            <div class="popular-ribbon">
+                                <span>Popular</span>
+                            </div>
+                            {% endif %}
+                            
+                            <div class="card-header text-center py-4">
+                                <h3 class="card-title">{{ site.data.courses.pricing.lifetime.title }}</h3>
+                                <p class="card-subtitle text-muted">{{ site.data.courses.pricing.lifetime.subtitle }}</p>
+                            </div>
+                            
+                            <div class="card-body">
+                                <div class="benefits-list mb-4">
+                                    {% for benefit in site.data.courses.pricing.lifetime.benefits %}
+                                    <div class="benefit-item mb-2">
+                                        {{ benefit }}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                
+                                <div class="price-section text-center mb-4">
+                                    <div class="price">
+                                        <span class="currency">$</span>
+                                        <span class="amount">{{ site.data.courses.pricing.lifetime.price }}</span>
+                                    </div>
+                                    <p class="price-note text-muted">Vat. Not Included</p>
+                                </div>
+                                
+                                <a href="{% if course_data.pricing_override.lifetime.teachable_link %}{{ course_data.pricing_override.lifetime.teachable_link }}{% else %}{{ site.data.courses.pricing.lifetime.teachable_link }}{% endif %}" 
+                                   class="btn btn-primary w-100 btn-lg">
+                                    Select
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                How long do I have access to the course?
-                            </button>
-                        </h2>
-                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                With lifetime access, you can watch the course as many times as you want, whenever you want. Monthly and yearly subscribers have access as long as their subscription is active.
+                    
+                    <!-- Monthly Plan -->
+                    <div class="col-lg-4">
+                        <div class="pricing-card h-100">
+                            <div class="card-header text-center py-4">
+                                <h3 class="card-title">{{ site.data.courses.pricing.monthly.title }}</h3>
+                                <p class="card-subtitle text-muted">{{ site.data.courses.pricing.monthly.subtitle }}</p>
+                            </div>
+                            
+                            <div class="card-body">
+                                <div class="benefits-list mb-4">
+                                    {% for benefit in site.data.courses.pricing.monthly.benefits %}
+                                    <div class="benefit-item mb-2">
+                                        {{ benefit }}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                
+                                <div class="price-section text-center mb-4">
+                                    <div class="price">
+                                        <span class="currency">$</span>
+                                        <span class="amount">{{ site.data.courses.pricing.monthly.price }}</span>
+                                    </div>
+                                    <p class="price-note text-muted">Vat. not included</p>
+                                </div>
+                                
+                                <a href="{% if course_data.pricing_override.monthly.teachable_link %}{{ course_data.pricing_override.monthly.teachable_link }}{% else %}{{ site.data.courses.pricing.monthly.teachable_link }}{% endif %}" 
+                                   class="btn btn-outline-primary w-100 btn-lg">
+                                    Select
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                Will I get a certificate upon completion?
-                            </button>
-                        </h2>
-                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Yes! Upon completing the course, you'll receive a certificate of completion that you can add to your professional portfolio or LinkedIn profile.
+                    
+                    <!-- Yearly Plan -->
+                    <div class="col-lg-4">
+                        <div class="pricing-card h-100">
+                            <div class="card-header text-center py-4">
+                                <h3 class="card-title">{{ site.data.courses.pricing.yearly.title }}</h3>
+                                <p class="card-subtitle text-muted">{{ site.data.courses.pricing.yearly.subtitle }}</p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                                Can I access the course on mobile devices?
-                            </button>
-                        </h2>
-                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Absolutely! Our platform is fully responsive and works great on desktop, tablet, and mobile devices. Learn anywhere, anytime.
+                            
+                            <div class="card-body">
+                                <div class="benefits-list mb-4">
+                                    {% for benefit in site.data.courses.pricing.yearly.benefits %}
+                                    <div class="benefit-item mb-2">
+                                        {{ benefit }}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                
+                                <div class="price-section text-center mb-4">
+                                    <div class="price">
+                                        <span class="currency">$</span>
+                                        <span class="amount">{{ site.data.courses.pricing.yearly.price }}</span>
+                                    </div>
+                                    <p class="price-note text-muted">Vat. not included</p>
+                                </div>
+                                
+                                <a href="{% if course_data.pricing_override.yearly.teachable_link %}{{ course_data.pricing_override.yearly.teachable_link }}{% else %}{{ site.data.courses.pricing.yearly.teachable_link }}{% endif %}" 
+                                   class="btn btn-outline-primary w-100 btn-lg">
+                                    Select
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <div class="text-center mt-5">
+                    <p class="text-white-50">
+                        <i class="fas fa-shield-alt me-2"></i>30-day money-back guarantee
+                        <span class="mx-3">•</span>
+                        <i class="fas fa-lock me-2"></i>Secure payment processing
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="cta-banner py-4" style="background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div class="text-white">
+                    <h4 class="mb-1">Spring Sale ends soon</h4>
+                    <p class="mb-0">Get lifetime access at the best price. Limited time offer!</p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-end">
+                <a href="#ready-to-join" class="btn btn-dark btn-lg scroll-to-pricing">
+                    <i class="fas fa-bolt me-2"></i>BUY NOW
+                </a>
             </div>
         </div>
     </div>
@@ -250,6 +281,8 @@
 :root {
     --qt-green: #15ba29;
     --qt-green-dark: #149f25;
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
 }
 
 .course-hero {
@@ -265,83 +298,183 @@
 .hero-image img {
     max-width: 100%;
     height: auto;
-}
-
-.pricing-highlight {
-    backdrop-filter: blur(10px);
-}
-
-.section-block {
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #e9ecef;
-}
-
-.section-block:last-child {
-    border-bottom: none;
-}
-
-.pricing-card {
-    top: 2rem;
-}
-
-.pricing-option {
-    transition: all 0.3s ease;
-}
-
-.pricing-option:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.popular-badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-}
-
-.btn-success {
-    background-color: var(--qt-green);
-    border-color: var(--qt-green);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.btn-success:hover {
-    background-color: var(--qt-green-dark);
-    border-color: var(--qt-green-dark);
-    transform: translateY(-1px);
-}
-
-.btn-outline-success {
-    color: var(--qt-green);
-    border-color: var(--qt-green);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.btn-outline-success:hover {
-    background-color: var(--qt-green);
-    border-color: var(--qt-green);
-    transform: translateY(-1px);
-}
-
-.text-success {
-    color: var(--qt-green) !important;
-}
-
-.bg-success {
-    background-color: var(--qt-green) !important;
+    border: 4px solid rgba(255,255,255,0.2);
 }
 
 .rounded-lg {
     border-radius: 12px;
 }
 
-/* Responsive adjustments */
+/* Content Sections */
+.content-block p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+.benefits-list .benefit-item,
+.features-grid .feature-item {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding-left: 0;
+    color: #2c3e50;
+}
+
+.credentials-list .credential-item {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.quote-block {
+    border-left: 4px solid var(--qt-green);
+    padding-left: 2rem;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.showcase-image img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Ready to Join Section */
+.ready-to-join {
+    position: relative;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.pricing-card.popular {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.popular-ribbon {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: #e74c3c;
+    color: white;
+    padding: 8px 40px;
+    transform: rotate(45deg);
+    font-size: 0.85rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.pricing-card .card-header {
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.benefits-list .benefit-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 0.95rem;
+}
+
+.benefits-list .benefit-item:last-child {
+    border-bottom: none;
+}
+
+.price-section .price {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.price .currency {
+    font-size: 1.5rem;
+    vertical-align: top;
+}
+
+.price-note {
+    font-size: 0.85rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 1rem 2rem;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 1rem 2rem;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* CTA Buttons */
+.btn-success {
+    background-color: var(--qt-green);
+    border-color: var(--qt-green);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: var(--qt-green-dark);
+    border-color: var(--qt-green-dark);
+    transform: translateY(-2px);
+}
+
+/* CTA Banner */
+.cta-banner {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+}
+
+/* Smooth Scrolling */
+.scroll-to-pricing {
+    cursor: pointer;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
         padding-right: 0;
         margin-bottom: 2rem;
+        text-align: center;
     }
     
     .course-hero {
@@ -349,46 +482,52 @@
         padding: 3rem 0;
     }
     
-    .pricing-card {
-        position: static !important;
-        margin-top: 2rem;
-    }
-    
     .display-4 {
         font-size: 2rem;
+    }
+    
+    .pricing-card.popular {
+        transform: none;
+    }
+    
+    .popular-ribbon {
+        display: none;
+    }
+    
+    .cta-banner .col-lg-4 {
+        text-align: center !important;
+        margin-top: 1rem;
     }
 }
 
 @media (max-width: 576px) {
-    .pricing-highlight .col-4 {
-        margin-bottom: 1rem;
-    }
-    
     .hero-badges .badge {
         display: block;
         margin-bottom: 0.5rem;
         margin-right: 0 !important;
     }
+    
+    .price {
+        font-size: 2.5rem !important;
+    }
+    
+    .quote-block {
+        padding: 1.5rem;
+        padding-left: 1.5rem;
+        border-left-width: 3px;
+    }
 }
 </style>
 
 <script>
-function selectPlan(planType, price) {
-    // This would integrate with your payment processor
-    // For now, we'll just show an alert
-    alert(`Selected ${planType} plan for $${price}. This would redirect to payment processing.`);
-    
-    // Example integration with Stripe, PayPal, or other payment processor
-    // window.location.href = `/checkout?plan=${planType}&course={{ page.course_id }}&price=${price}`;
-}
-
-// Add smooth scrolling for anchor links
+// Smooth scrolling for pricing buttons
 document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
+    const scrollButtons = document.querySelectorAll('.scroll-to-pricing');
+    
+    scrollButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector('#ready-to-join');
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
@@ -396,6 +535,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+    });
+});
+
+// Add entrance animations
+window.addEventListener('load', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+    
+    const elements = document.querySelectorAll('.pricing-card, .benefit-item, .feature-item');
+    elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
     });
 });
 </script>
