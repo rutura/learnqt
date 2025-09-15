@@ -528,25 +528,94 @@
 <section class="what-you-get py-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2 class="text-center mb-5">{{ course_data.sections.what_you_get.title }}</h2>
-                
-                <div class="features-grid mb-4">
-                    {% for bullet in course_data.sections.what_you_get.bullets %}
-                    <div class="feature-item mb-3">
-                        {{ bullet }}
+            <div class="col-lg-12">
+                <div class="what-you-get-wrapper">
+                    <!-- Section Header -->
+                    <div class="get-header text-center mb-5">
+                        <div class="get-badge-container">
+                            <div class="get-badge">
+                                <i class="fas fa-gift"></i>
+                                <span>Course Package</span>
+                            </div>
+                        </div>
+                        <h2 class="get-title">{{ course_data.sections.what_you_get.title }}</h2>
+                        <p class="get-subtitle">Everything you need to master {{ course_data.technology }} development</p>
+                        <div class="get-divider"></div>
                     </div>
-                    {% endfor %}
-                </div>
-                
-                <div class="outcome-content mb-4">
-                    <p class="lead">{{ course_data.sections.what_you_get.content }}</p>
-                </div>
-                
-                <div class="text-center mb-5">
-                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
-                        <i class="fas fa-gift me-2"></i>Get All This Today
-                    </a>
+
+                    <!-- Features Grid -->
+                    <div class="get-features-container mb-5">
+                        <div class="row g-4">
+                            {% for bullet in course_data.sections.what_you_get.bullets %}
+                            <div class="col-lg-6">
+                                <div class="get-feature-card">
+                                    <div class="feature-card-content">
+                                        <div class="feature-icon-area">
+                                            {% assign icon_index = forloop.index0 | modulo: 6 %}
+                                            {% case icon_index %}
+                                                {% when 0 %}
+                                                    <i class="fas fa-video feature-icon"></i>
+                                                {% when 1 %}
+                                                    <i class="fas fa-code feature-icon"></i>
+                                                {% when 2 %}
+                                                    <i class="fas fa-sync-alt feature-icon"></i>
+                                                {% when 3 %}
+                                                    <i class="fas fa-download feature-icon"></i>
+                                                {% when 4 %}
+                                                    <i class="fas fa-users feature-icon"></i>
+                                                {% when 5 %}
+                                                    <i class="fas fa-certificate feature-icon"></i>
+                                            {% endcase %}
+                                        </div>
+                                        <div class="feature-text-area">
+                                            <div class="feature-text">{{ bullet | remove: '• ' }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-hover-effect"></div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Content Description -->
+                    <div class="get-content-section">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="content-description-card">
+                                    <div class="description-header">
+                                        <i class="fas fa-star-of-life description-icon"></i>
+                                        <h3 class="description-title">Your Complete Learning Journey</h3>
+                                    </div>
+                                    <div class="description-content">
+                                        <p class="description-text">{{ course_data.sections.what_you_get.content }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="get-cta-section text-center mt-5">
+                        <div class="cta-container">
+                            <div class="cta-highlight">
+                                <span class="cta-highlight-text">🎯 Ready to transform your {{ course_data.language }} skills?</span>
+                            </div>
+                            <a href="#ready-to-join" class="btn btn-get-started scroll-to-pricing">
+                                <div class="btn-content">
+                                    <div class="btn-main-text">Get All This Today</div>
+                                    <div class="btn-sub-text">Start your journey now</div>
+                                </div>
+                                <div class="btn-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                            </a>
+                            <div class="cta-guarantee">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>60-day money-back guarantee</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2610,6 +2679,431 @@
         width: 60px;
         height: 60px;
         font-size: 1.5rem;
+    }
+}
+
+/* Enhanced What You'll Get Section */
+.what-you-get {
+    background: #ffffff;
+    position: relative;
+}
+
+.what-you-get::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(135deg, rgba(21, 186, 41, 0.02) 0%, rgba(255, 255, 255, 1) 30%, rgba(21, 186, 41, 0.01) 100%);
+    pointer-events: none;
+}
+
+.what-you-get-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.get-header {
+    margin-bottom: 4rem;
+}
+
+.get-badge-container {
+    margin-bottom: 2rem;
+}
+
+.get-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.get-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.get-badge i {
+    font-size: 0.9rem;
+}
+
+.get-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.get-subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.get-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.get-features-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.get-feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #f8f9fa;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.get-feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--qt-green);
+    box-shadow: 0 12px 30px rgba(21, 186, 41, 0.15);
+}
+
+.feature-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(21, 186, 41, 0.02), rgba(21, 186, 41, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.get-feature-card:hover .feature-hover-effect {
+    opacity: 1;
+}
+
+.feature-card-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-icon-area {
+    flex-shrink: 0;
+}
+
+.feature-icon {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 6px 20px rgba(21, 186, 41, 0.3);
+    position: relative;
+}
+
+.feature-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+.get-feature-card:hover .feature-icon::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.feature-text-area {
+    flex: 1;
+    padding-top: 0.5rem;
+}
+
+.feature-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    font-weight: 500;
+    margin: 0;
+}
+
+.get-content-section {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.content-description-card {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(21, 186, 41, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.content-description-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 80% 20%, rgba(21, 186, 41, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.description-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.description-icon {
+    color: var(--qt-green);
+    font-size: 1.5rem;
+}
+
+.description-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.description-content {
+    position: relative;
+    z-index: 2;
+}
+
+.description-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #34495e;
+    margin: 0;
+    font-weight: 400;
+}
+
+.get-cta-section {
+    padding: 3rem 0 2rem;
+}
+
+.cta-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cta-highlight {
+    background: rgba(21, 186, 41, 0.1);
+    color: var(--qt-green-dark);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.btn-get-started {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);
+    margin-bottom: 1.5rem;
+}
+
+.btn-get-started::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--qt-green-dark), var(--qt-green));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-get-started:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(21, 186, 41, 0.4);
+    color: white;
+}
+
+.btn-get-started:hover::before {
+    opacity: 1;
+}
+
+.btn-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.btn-main-text {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+}
+
+.btn-sub-text {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1;
+}
+
+.btn-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.btn-get-started:hover .btn-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.cta-guarantee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.cta-guarantee i {
+    color: var(--qt-green);
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .get-title {
+        font-size: 2.2rem;
+    }
+    
+    .feature-card-content {
+        gap: 1rem;
+    }
+    
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+    
+    .content-description-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .get-title {
+        font-size: 1.9rem;
+    }
+    
+    .get-subtitle {
+        font-size: 1rem;
+    }
+    
+    .get-feature-card {
+        padding: 1.5rem;
+    }
+    
+    .feature-card-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .feature-text {
+        font-size: 1rem;
+    }
+    
+    .description-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .description-text {
+        font-size: 1rem;
+    }
+    
+    .btn-get-started {
+        padding: 1.2rem 2rem;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .btn-main-text {
+        font-size: 1.1rem;
+    }
+    
+    .content-description-card {
+        padding: 1.5rem;
     }
 }
 </style>
