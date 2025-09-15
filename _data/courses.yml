@@ -718,7 +718,8 @@ ui:
   enroll_button: "Start Building Apps Today"
   buy_now_button: "Get Instant Access"
   scroll_to_pricing: "Choose Your Plan Below"
-  ready_to_join_title: "Ready to Build Professional Desktop Apps?"
+  ready_to_join_title: "Ready to Join?"
+  ready_to_join_subtitle: "Choose how you want to access our Qt development courses. Single purchase for one course, or subscribe for access to our entire growing library?"
   
   # CTA variants for different contexts
   cta_variants:
