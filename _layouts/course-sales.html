@@ -439,12 +439,13 @@
                             </ul>
                             
                             {% if site.data.courses.pricing.lifetime.highlight_benefits %}
-                            <div class="highlight-benefits mt-3">
-                                {% for highlight in site.data.courses.pricing.lifetime.highlight_benefits %}
-                                <div class="highlight-item">
-                                    <i class="fas fa-star text-warning me-2"></i>{{ highlight }}
-                                </div>
-                                {% endfor %}
+                            <div class="highlight-benefits-section mt-3">
+                                <h6 class="highlight-benefits-title mb-2">Why Choose This Plan:</h6>
+                                <ul class="highlight-benefits-list">
+                                    {% for highlight in site.data.courses.pricing.lifetime.highlight_benefits %}
+                                    <li>{{ highlight }}</li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                             {% endif %}
                         </div>
@@ -491,12 +492,13 @@
                             </ul>
                             
                             {% if site.data.courses.pricing.monthly.highlight_benefits %}
-                            <div class="highlight-benefits mt-3">
-                                {% for highlight in site.data.courses.pricing.monthly.highlight_benefits %}
-                                <div class="highlight-item">
-                                    <i class="fas fa-star text-warning me-2"></i>{{ highlight }}
-                                </div>
-                                {% endfor %}
+                            <div class="highlight-benefits-section mt-3">
+                                <h6 class="highlight-benefits-title mb-2">Subscription Perks:</h6>
+                                <ul class="highlight-benefits-list">
+                                    {% for highlight in site.data.courses.pricing.monthly.highlight_benefits %}
+                                    <li>{{ highlight }}</li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                             {% endif %}
                         </div>
@@ -540,12 +542,13 @@
                             </ul>
                             
                             {% if site.data.courses.pricing.yearly.highlight_benefits %}
-                            <div class="highlight-benefits mt-3">
-                                {% for highlight in site.data.courses.pricing.yearly.highlight_benefits %}
-                                <div class="highlight-item">
-                                    <i class="fas fa-star text-warning me-2"></i>{{ highlight }}
-                                </div>
-                                {% endfor %}
+                            <div class="highlight-benefits-section mt-3">
+                                <h6 class="highlight-benefits-title mb-2">Premium Advantages:</h6>
+                                <ul class="highlight-benefits-list">
+                                    {% for highlight in site.data.courses.pricing.yearly.highlight_benefits %}
+                                    <li>{{ highlight }}</li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                             {% endif %}
                         </div>
@@ -1150,6 +1153,32 @@
 
 .highlight-item:last-child {
     margin-bottom: 0;
+}
+
+/* New Highlight Benefits Bullet Lists */
+.highlight-benefits-section {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.highlight-benefits-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.highlight-benefits-list {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.highlight-benefits-list li {
+    padding: 0.2rem 0;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    line-height: 1.4;
 }
 
 .library-access-link {
