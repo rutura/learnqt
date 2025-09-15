@@ -79,44 +79,122 @@
 
 <!-- Course Preview Section -->
 {% if course_data.sections.preview %}
-<section id="preview" class="course-preview py-5 bg-light">
-    <div class="container">
+<section id="preview" class="course-preview py-5">
+    <div class="preview-background">
+        <div class="preview-pattern"></div>
+        <div class="preview-gradient"></div>
+    </div>
+    
+    <div class="container position-relative">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <h2 class="text-center mb-5">{{ course_data.sections.preview.title }}</h2>
+                <!-- Section Header -->
+                <div class="preview-header text-center mb-5">
+                    <div class="preview-badge">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Course Preview</span>
+                    </div>
+                    <h2 class="preview-title">{{ course_data.sections.preview.title }}</h2>
+                    <p class="preview-subtitle">Get a sneak peek at what you'll master in this comprehensive course</p>
+                    <div class="preview-divider"></div>
+                </div>
                 
                 {% if course_data.sections.preview.demo_video %}
                 <div class="demo-video-container mb-5">
-                    <div class="video-wrapper">
-                        {% assign video_url = course_data.sections.preview.demo_video %}
-                        {% if video_url contains 'youtube.com' or video_url contains 'youtu.be' %}
-                            {% comment %} Extract YouTube video ID for embed {% endcomment %}
-                            {% assign video_id = '' %}
-                            {% if video_url contains 'youtu.be/' %}
-                                {% assign url_parts = video_url | split: 'youtu.be/' %}
-                                {% assign video_id = url_parts[1] | split: '?' | first %}
-                            {% elsif video_url contains 'youtube.com/watch?v=' %}
-                                {% assign url_parts = video_url | split: 'v=' %}
-                                {% assign video_id = url_parts[1] | split: '&' | first %}
+                    <div class="video-frame">
+                        <div class="video-frame-header">
+                            <div class="frame-controls">
+                                <span class="control-dot red"></span>
+                                <span class="control-dot yellow"></span>
+                                <span class="control-dot green"></span>
+                            </div>
+                            <div class="frame-title">{{ course_data.title }} - Course Demo</div>
+                            <div class="frame-actions">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="video-wrapper">
+                            {% assign video_url = course_data.sections.preview.demo_video %}
+                            {% if video_url contains 'youtube.com' or video_url contains 'youtu.be' %}
+                                {% comment %} Extract YouTube video ID for embed {% endcomment %}
+                                {% assign video_id = '' %}
+                                {% if video_url contains 'youtu.be/' %}
+                                    {% assign url_parts = video_url | split: 'youtu.be/' %}
+                                    {% assign video_id = url_parts[1] | split: '?' | first %}
+                                {% elsif video_url contains 'youtube.com/watch?v=' %}
+                                    {% assign url_parts = video_url | split: 'v=' %}
+                                    {% assign video_id = url_parts[1] | split: '&' | first %}
+                                {% endif %}
+                                {% if video_id != '' %}
+                                    <div class="youtube-embed-container">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/{{ video_id }}" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen
+                                            class="youtube-video">
+                                        </iframe>
+                                    </div>
+                                {% endif %}
+                            {% else %}
+                                {% comment %} Local video file {% endcomment %}
+                                <video class="demo-video" controls poster="{{ site.baseurl }}{{ course_data.image }}">
+                                    <source src="{{ site.baseurl }}{{ video_url }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             {% endif %}
-                            {% if video_id != '' %}
-                                <div class="youtube-embed-container">
-                                    <iframe 
-                                        src="https://www.youtube.com/embed/{{ video_id }}" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen
-                                        class="youtube-video">
-                                    </iframe>
+                        </div>
+                        
+                        <div class="video-info-overlay">
+                            <div class="video-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>{{ course_data.duration }}</span>
                                 </div>
-                            {% endif %}
-                        {% else %}
-                            {% comment %} Local video file {% endcomment %}
-                            <video class="demo-video" controls poster="{{ site.baseurl }}{{ course_data.image }}">
-                                <source src="{{ site.baseurl }}{{ video_url }}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        {% endif %}
+                                <div class="stat-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>{{ site.data.courses.social_proof.student_count }} students</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>{{ site.data.courses.social_proof.avg_rating }} rating</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Context Information -->
+                    <div class="video-context mt-4">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="context-card">
+                                    <div class="context-icon">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <h5>Hands-On Coding</h5>
+                                    <p>Watch real development in action</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="context-card">
+                                    <div class="context-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <h5>Project-Based</h5>
+                                    <p>Build complete applications step-by-step</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="context-card">
+                                    <div class="context-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <h5>Expert Teaching</h5>
+                                    <p>Learn from industry professionals</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {% endif %}
@@ -1069,14 +1147,144 @@
     min-width: 200px;
 }
 
-/* Course Preview Section */
+/* Enhanced Course Preview Section */
 .course-preview {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+    color: white;
 }
 
+.preview-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.preview-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 60px 60px, 40px 40px;
+    animation: float 20s ease-in-out infinite;
+}
+
+.preview-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(21, 186, 41, 0.1) 0%, rgba(255,255,255,0.05) 100%);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+/* Section Header */
+.preview-header {
+    position: relative;
+    z-index: 3;
+}
+
+.preview-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.preview-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.preview-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.preview-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--qt-green), rgba(255,255,255,0.5));
+    border-radius: 2px;
+    margin: 0 auto 3rem;
+}
+
+/* Enhanced Video Container */
 .demo-video-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+    position: relative;
+    z-index: 3;
+}
+
+.video-frame {
+    background: #2d3748;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.video-frame-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: #1a202c;
+    border-bottom: 1px solid #4a5568;
+}
+
+.frame-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.control-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.control-dot.red { background: #ff5f57; }
+.control-dot.yellow { background: #ffbd2e; }
+.control-dot.green { background: #28ca42; }
+
+.frame-title {
+    color: #e2e8f0;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.frame-actions {
+    color: #a0aec0;
+    font-size: 0.9rem;
 }
 
 .video-wrapper {
@@ -1084,9 +1292,7 @@
     width: 100%;
     height: 0;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    background: #000;
 }
 
 .demo-video {
@@ -1109,7 +1315,114 @@
 .youtube-video {
     width: 100%;
     height: 100%;
-    border-radius: 12px;
+}
+
+/* Video Info Overlay */
+.video-info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 2rem 1.5rem 1rem;
+}
+
+.video-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.stat-item i {
+    color: var(--qt-green);
+}
+
+/* Video Context Cards */
+.video-context {
+    position: relative;
+    z-index: 3;
+}
+
+.context-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.context-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.context-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--qt-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.context-card h5 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.context-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .preview-title {
+        font-size: 2rem;
+    }
+    
+    .preview-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .video-stats {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .frame-title {
+        display: none;
+    }
+    
+    .context-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .context-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
 }
 
 .project-card {
