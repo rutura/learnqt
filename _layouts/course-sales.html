@@ -95,7 +95,7 @@
                         <span>Course Preview</span>
                     </div>
                     <h2 class="preview-title">{{ course_data.sections.preview.title }}</h2>
-                    <p class="preview-subtitle">Get a sneak peek at what you'll master in this comprehensive course</p>
+                    <p class="preview-subtitle">{% if course_data.sections.preview.subtitle %}{{ course_data.sections.preview.subtitle }}{% else %}Get a sneak peek at what you'll master in this comprehensive course{% endif %}</p>
                     <div class="preview-divider"></div>
                 </div>
                 
@@ -167,33 +167,48 @@
                     <!-- Video Context Information -->
                     <div class="video-context mt-4">
                         <div class="row g-4">
-                            <div class="col-md-4">
-                                <div class="context-card">
-                                    <div class="context-icon">
-                                        <i class="fas fa-code"></i>
+                            {% if course_data.sections.preview.context_cards %}
+                                {% for card in course_data.sections.preview.context_cards %}
+                                <div class="col-md-4">
+                                    <div class="context-card">
+                                        <div class="context-icon">
+                                            <i class="{{ card.icon }}"></i>
+                                        </div>
+                                        <h5>{{ card.title }}</h5>
+                                        <p>{{ card.description }}</p>
                                     </div>
-                                    <h5>Hands-On Coding</h5>
-                                    <p>Watch real development in action</p>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="context-card">
-                                    <div class="context-icon">
-                                        <i class="fas fa-rocket"></i>
+                                {% endfor %}
+                            {% else %}
+                                <!-- Fallback content if no cards defined -->
+                                <div class="col-md-4">
+                                    <div class="context-card">
+                                        <div class="context-icon">
+                                            <i class="fas fa-code"></i>
+                                        </div>
+                                        <h5>Hands-On Coding</h5>
+                                        <p>Watch real development in action</p>
                                     </div>
-                                    <h5>Project-Based</h5>
-                                    <p>Build complete applications step-by-step</p>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="context-card">
-                                    <div class="context-icon">
-                                        <i class="fas fa-graduation-cap"></i>
+                                <div class="col-md-4">
+                                    <div class="context-card">
+                                        <div class="context-icon">
+                                            <i class="fas fa-rocket"></i>
+                                        </div>
+                                        <h5>Project-Based</h5>
+                                        <p>Build complete applications step-by-step</p>
                                     </div>
-                                    <h5>Expert Teaching</h5>
-                                    <p>Learn from industry professionals</p>
                                 </div>
-                            </div>
+                                <div class="col-md-4">
+                                    <div class="context-card">
+                                        <div class="context-icon">
+                                            <i class="fas fa-graduation-cap"></i>
+                                        </div>
+                                        <h5>Expert Teaching</h5>
+                                        <p>Learn from industry professionals</p>
+                                    </div>
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

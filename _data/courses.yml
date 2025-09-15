@@ -328,7 +328,18 @@ courses:
         
       preview:
         title: "See What You'll Build"
+        subtitle: "Get a sneak peek at what you'll master in this comprehensive C++ course"
         demo_video: "https://youtu.be/uoA_bybiV9g?si=AZtXgY8zXLfnFZWe"
+        context_cards:
+          - title: "Hands-On C++ Coding"
+            description: "Watch modern C++ development in action"
+            icon: "fas fa-code"
+          - title: "Real Desktop Apps"
+            description: "Build complete cross-platform applications"
+            icon: "fas fa-desktop"
+          - title: "Qt Expert Teaching"
+            description: "Learn from 10+ years of Qt experience"
+            icon: "fas fa-graduation-cap"
         projects:
           - name: "Text Editor Pro"
             description: "Build a professional text editor with syntax highlighting, file management, and modern UI design using Qt Widgets and C++."
@@ -471,7 +482,18 @@ courses:
         
       preview:
         title: "See What You'll Build"
+        subtitle: "Get a sneak peek at what you'll master in this comprehensive Python course"
         demo_video: "https://youtu.be/uoA_bybiV9g?si=AZtXgY8zXLfnFZWe"
+        context_cards:
+          - title: "Python GUI Magic"
+            description: "See Python's simplicity meet Qt's power"
+            icon: "fab fa-python"
+          - title: "Data-Driven Apps"
+            description: "Build visualization and analysis tools"
+            icon: "fas fa-chart-bar"
+          - title: "Rapid Development"
+            description: "From idea to working app in minutes"
+            icon: "fas fa-rocket"
         projects:
           - name: "Python File Manager"
             description: "Build a complete file management application with Python and PySide6, featuring drag-and-drop, file operations, and modern UI."
@@ -611,7 +633,18 @@ courses:
         
       preview:
         title: "See What You'll Build"
+        subtitle: "Get a sneak peek at the stunning UIs you'll create with QML"
         demo_video: "https://youtu.be/uoA_bybiV9g?si=AZtXgY8zXLfnFZWe"
+        context_cards:
+          - title: "Fluid Animations"
+            description: "Create smooth, engaging user experiences"
+            icon: "fas fa-magic"
+          - title: "Modern UI Design"
+            description: "Build interfaces that users love"
+            icon: "fas fa-palette"
+          - title: "Cross-Platform UIs"
+            description: "One codebase, runs everywhere"
+            icon: "fas fa-globe"
         projects:
           - name: "Modern Music Player"
             description: "Create a stunning music player with fluid animations, custom controls, and beautiful QML interfaces that work across all platforms."
