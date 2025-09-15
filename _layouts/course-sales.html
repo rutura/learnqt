@@ -261,28 +261,45 @@
 <section class="creator-story py-5 bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-10 mx-auto">
                 <h2 class="text-center mb-5">{{ course_data.sections.creator_story.title }}</h2>
                 
-                <div class="story-content">
-                    <div class="quote-block mb-4">
-                        <p class="lead font-italic">{{ course_data.sections.creator_story.content | split: '"' | join: '"' }}</p>
-                    </div>
-                    
-                    <div class="credentials-list mb-4">
-                        {% for bullet in course_data.sections.creator_story.bullets %}
-                        <div class="credential-item mb-2">
-                            {{ bullet }}
+                <div class="creator-card">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                            <div class="creator-image-container">
+                                <div class="creator-image">
+                                    <img src="{{ site.baseurl }}/assets/img/daniel.jpg" alt="Daniel Gakwaya" class="img-fluid">
+                                </div>
+                                <div class="creator-badge">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                            </div>
                         </div>
-                        {% endfor %}
-                    </div>
-                    
-                    <div class="additional-content mb-4">
-                        <p>{{ course_data.sections.creator_story.content_2 }}</p>
+                        <div class="col-lg-8">
+                            <div class="creator-content">
+                                <div class="creator-quote mb-4">
+                                    <i class="fas fa-quote-left quote-icon"></i>
+                                    <p class="lead font-italic">{{ course_data.sections.creator_story.content | split: '"' | join: '"' }}</p>
+                                </div>
+                                
+                                <div class="creator-credentials mb-4">
+                                    {% for bullet in course_data.sections.creator_story.bullets %}
+                                    <div class="credential-item mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>{{ bullet }}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                
+                                <div class="creator-additional">
+                                    <p>{{ course_data.sections.creator_story.content_2 }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="text-center mb-5">
+                <div class="text-center mt-5">
                     <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
                         <i class="fas fa-user-graduate me-2"></i>Learn From Experience
                     </a>
@@ -917,12 +934,91 @@
     font-weight: 500;
 }
 
-.quote-block {
-    border-left: 4px solid var(--qt-green);
+/* Creator Story Section */
+.creator-card {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.creator-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.creator-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--qt-green);
+    box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3);
+    position: relative;
+    margin: 0 auto;
+}
+
+.creator-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.creator-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--qt-green);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(21, 186, 41, 0.4);
+}
+
+.creator-content {
     padding-left: 2rem;
-    background-color: #f8f9fa;
-    padding: 2rem;
-    border-radius: 8px;
+}
+
+.creator-quote {
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: var(--qt-green);
+    opacity: 0.3;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+.creator-quote p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+    padding-left: 2rem;
+}
+
+.creator-credentials .credential-item {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.creator-additional p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #666;
 }
 
 .showcase-image img {
@@ -1441,6 +1537,21 @@
     .outcome-item {
         padding: 0.75rem;
     }
+    
+    /* Creator Story Responsive */
+    .creator-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .creator-content {
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+    
+    .creator-image {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1454,10 +1565,22 @@
         font-size: 2.5rem !important;
     }
     
-    .quote-block {
-        padding: 1.5rem;
+    .creator-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .creator-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .creator-quote p {
+        font-size: 1.1rem;
         padding-left: 1.5rem;
-        border-left-width: 3px;
+    }
+    
+    .quote-icon {
+        font-size: 1.5rem;
     }
     
     .social-proof-number {
