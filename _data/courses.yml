@@ -97,132 +97,23 @@ testimonials:
       content: "Daniel's courses got me from zero Qt knowledge to building production apps in 6 weeks. The project-based approach made everything click."
       rating: 5
       course_completed: "qt-widgets-cpp"
-      avatar: "/assets/testimonials/sarah-chen.jpg"
     - name: "Mike Rodriguez"
       role: "Freelance Developer"
       content: "Best Qt courses I've found. Daniel's teaching style is clear and the projects are actually useful in real work."
       rating: 5
       course_completed: "qt-qml-pro"
-      avatar: "/assets/testimonials/mike-rodriguez.jpg"
     - name: "Priya Patel"
       role: "Python Developer at Tesla"
       content: "The PySide6 course transformed how I think about GUI development. Now I can build desktop apps that actually look professional."
       rating: 5
       course_completed: "qt-widgets-pyside6"
-      avatar: "/assets/testimonials/priya-patel.jpg"
     - name: "David Kim"
       role: "Senior Software Architect"
       content: "After 15 years of development, this is the most practical programming course I've taken. The real-world projects make all the difference."
       rating: 5
       course_completed: "qt-widgets-cpp"
-      avatar: "/assets/testimonials/david-kim.jpg"
 
-# Global comparison framework (DEPRECATED - now using course-specific value_proposition)
-comparison_deprecated:
-  title: "Why Choose Our Courses Over Other Options?"
-  subtitle: "See how we stack up against the alternatives"
-  options:
-    - name: "Our Courses"
-      highlight: true
-      price: "From $30/month"
-      features:
-        - value: "✅ Complete project-based learning"
-          highlight: true
-        - value: "✅ Modern Qt 6 + Latest Standards"
-          highlight: true
-        - value: "✅ Production deployment guides"
-          highlight: false
-        - value: "✅ Active community support (4,000+ developers)"
-          highlight: true
-        - value: "✅ Lifetime updates included"
-          highlight: false
-        - value: "✅ 30-day money-back guarantee"
-          highlight: false
-    - name: "University Courses"
-      highlight: false
-      price: "$3,000+"
-      features:
-        - value: "❌ Mostly theoretical focus"
-          highlight: false
-        - value: "❌ Often outdated versions"
-          highlight: false
-        - value: "❌ Limited real-world projects"
-          highlight: false
-        - value: "❌ Fixed schedules & deadlines"
-          highlight: false
-        - value: "❌ No updates after completion"
-          highlight: false
-        - value: "❌ No refund options"
-          highlight: false
-    - name: "YouTube/Free Content"
-      highlight: false
-      price: "Free"
-      features:
-        - value: "❌ Scattered, incomplete coverage"
-          highlight: false
-        - value: "❌ No structured learning path"
-          highlight: false
-        - value: "❌ No support when stuck"
-          highlight: false
-        - value: "❌ Often outdated information"
-          highlight: false
-        - value: "❌ No completion tracking"
-          highlight: false
-        - value: "❌ Quality varies wildly"
-          highlight: false
 
-# Default value proposition structure (can be overridden per course)
-default_value_proposition:
-  title: "Why Choose This Course Over Other Options?"
-  subtitle: "See how this course delivers real value for your learning goals"
-  sections:
-    learning_approach:
-      title: "🎯 Learning Approach"
-      icon: "fas fa-bullseye"
-      points:
-        - text: "Complete project-based learning - build real applications, not toy examples"
-          highlight: true
-        - text: "Step-by-step progression that builds your confidence gradually"
-          highlight: true
-        - text: "Production-ready patterns and best practices from day one"
-          highlight: false
-      vs_alternatives: "Unlike university courses that focus on theory or fragmented YouTube tutorials, you get a structured path from beginner to professional."
-    
-    technology_tools:
-      title: "🔧 Technology & Tools"
-      icon: "fas fa-tools"
-      points:
-        - text: "Modern Qt 6 with latest C++/Python standards and best practices"
-          highlight: true
-        - text: "Professional development setup and deployment guidance"
-          highlight: false
-        - text: "Complete source code and project files for every lesson"
-          highlight: false
-      vs_alternatives: "While free content often uses outdated versions, you learn with the latest tools and techniques that employers actually use."
-    
-    support_community:
-      title: "👥 Support & Community"
-      icon: "fas fa-users"
-      points:
-        - text: "Active Discord community with 4,000+ Qt developers worldwide"
-          highlight: true
-        - text: "Direct help from instructor and experienced developers"
-          highlight: true
-        - text: "Detailed answers to your specific questions, not generic responses"
-          highlight: false
-      vs_alternatives: "University courses have limited office hours and YouTube comments don't provide real help when you're stuck."
-    
-    value_guarantees:
-      title: "💰 Value & Guarantees"
-      icon: "fas fa-shield-alt"
-      points:
-        - text: "30-day money-back guarantee - learn risk-free"
-          highlight: false
-        - text: "Lifetime updates as Qt evolves - your investment stays current"
-          highlight: false
-        - text: "One-time payment option available - no ongoing subscription required"
-          highlight: true
-      vs_alternatives: "University courses cost $3,000+ with no guarantees, and free content has no accountability or updates."
 
 # Global FAQ section
 faq:
@@ -729,12 +620,6 @@ ui:
     trial: "Start Your 7-Day Free Trial"
     guarantee: "Try Risk-Free for 30 Days"
   
-  # Urgency and scarcity elements
-  urgency:
-    price_increase_date: "October 1st, 2025"
-    early_bird_message: "Limited time: Save 32% on lifetime access"
-    student_count_threshold: "4,000"
-    
   # Social proof labels
   social_labels:
     students: "students worldwide"
