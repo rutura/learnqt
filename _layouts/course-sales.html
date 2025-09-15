@@ -50,11 +50,20 @@
                     </div>
                     
                     <div class="hero-cta-buttons">
-                        <a href="#ready-to-join" class="btn btn-light btn-lg text-success fw-bold scroll-to-pricing me-3">
-                            <i class="fas fa-rocket me-2"></i>{{ site.data.courses.ui.enroll_button }}
+                        <a href="#ready-to-join" class="btn btn-hero-primary scroll-to-pricing me-3">
+                            <div class="btn-content">
+                                <div class="btn-main-text">{{ site.data.courses.ui.enroll_button }}</div>
+                                <div class="btn-sub-text">Join 4,000+ developers</div>
+                            </div>
+                            <div class="btn-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
                         </a>
-                        <a href="#preview" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-play me-2"></i>{{ site.data.courses.ui.learn_more_button }}
+                        <a href="#preview" class="btn btn-hero-secondary">
+                            <span class="btn-text">{{ site.data.courses.ui.learn_more_button }}</span>
+                            <div class="btn-arrow">
+                                <i class="fas fa-play"></i>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -250,8 +259,14 @@
                 {% endif %}
                 
                 <div class="text-center mt-5">
-                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
-                        <i class="fas fa-code me-2"></i>Start Building These Projects
+                    <a href="#ready-to-join" class="btn btn-projects-cta scroll-to-pricing">
+                        <div class="btn-content">
+                            <div class="btn-main-text">Start Building These Projects</div>
+                            <div class="btn-sub-text">Begin your developer journey</div>
+                        </div>
+                        <div class="btn-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -290,8 +305,14 @@
                 </div>
                 
                 <div class="text-center mt-5">
-                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
-                        <i class="fas fa-graduation-cap me-2"></i>Master These Skills
+                    <a href="#ready-to-join" class="btn btn-skills-cta scroll-to-pricing">
+                        <div class="btn-content">
+                            <div class="btn-main-text">Master These Skills</div>
+                            <div class="btn-sub-text">Unlock your potential</div>
+                        </div>
+                        <div class="btn-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -341,8 +362,11 @@
                 
                 <div class="text-center mt-5">
                     <p class="lead mb-4">Join {{ site.data.courses.social_proof.student_count }} successful students</p>
-                    <a href="#ready-to-join" class="btn btn-light btn-lg text-primary fw-bold scroll-to-pricing">
-                        <i class="fas fa-users me-2"></i>{{ site.data.courses.ui.cta_variants.social }}
+                    <a href="#ready-to-join" class="btn btn-social-cta scroll-to-pricing">
+                        <span class="btn-text">{{ site.data.courses.ui.cta_variants.social }}</span>
+                        <div class="btn-arrow">
+                            <i class="fas fa-users"></i>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -515,8 +539,14 @@
                 </div>
                 
                 <div class="text-center mt-5">
-                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
-                        <i class="fas fa-user-graduate me-2"></i>Learn From Experience
+                    <a href="#ready-to-join" class="btn btn-experience-cta scroll-to-pricing">
+                        <div class="btn-content">
+                            <div class="btn-main-text">Learn From Experience</div>
+                            <div class="btn-sub-text">Get expert guidance</div>
+                        </div>
+                        <div class="btn-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -668,8 +698,14 @@
                 </div>
                 
                 <div class="text-center mt-5">
-                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
-                        <i class="fas fa-rocket me-2"></i>Start Learning Today
+                    <a href="#ready-to-join" class="btn btn-testimonials-cta scroll-to-pricing">
+                        <div class="btn-content">
+                            <div class="btn-main-text">Start Learning Today</div>
+                            <div class="btn-sub-text">Join thousands of developers</div>
+                        </div>
+                        <div class="btn-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
                     </a>
                     <p class="text-muted mt-2 small">
                         <i class="fas fa-shield-alt me-1"></i>
@@ -957,8 +993,11 @@
                 
                 <div class="text-center mt-5">
                     <p class="lead mb-4">Still have questions?</p>
-                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
-                        <i class="fas fa-question-circle me-2"></i>{{ site.data.courses.ui.cta_variants.guarantee }}
+                    <a href="#ready-to-join" class="btn btn-faq-cta scroll-to-pricing">
+                        <span class="btn-text">{{ site.data.courses.ui.cta_variants.guarantee }}</span>
+                        <div class="btn-arrow">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -3106,6 +3145,308 @@
         padding: 1.5rem;
     }
 }
+
+/* Enhanced Button Styles - Unified Design System */
+
+/* Hero Section Buttons */
+.btn-hero-primary {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);
+    margin-bottom: 1rem;
+}
+
+.btn-hero-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--qt-green-dark), var(--qt-green));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(21, 186, 41, 0.4);
+    color: white;
+}
+
+.btn-hero-primary:hover::before {
+    opacity: 1;
+}
+
+.btn-hero-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.btn-hero-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+    transform: translateY(-2px);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-hero-secondary:hover::before {
+    transform: translateX(0);
+}
+
+/* Section-Specific Button Styles */
+.btn-projects-cta, 
+.btn-skills-cta, 
+.btn-experience-cta, 
+.btn-testimonials-cta {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);
+    margin-bottom: 1rem;
+}
+
+.btn-projects-cta::before,
+.btn-skills-cta::before,
+.btn-experience-cta::before,
+.btn-testimonials-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--qt-green-dark), var(--qt-green));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-projects-cta:hover,
+.btn-skills-cta:hover,
+.btn-experience-cta:hover,
+.btn-testimonials-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(21, 186, 41, 0.4);
+    color: white;
+}
+
+.btn-projects-cta:hover::before,
+.btn-skills-cta:hover::before,
+.btn-experience-cta:hover::before,
+.btn-testimonials-cta:hover::before {
+    opacity: 1;
+}
+
+/* Secondary Action Buttons */
+.btn-social-cta,
+.btn-faq-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+}
+
+.btn-social-cta::before,
+.btn-faq-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.btn-social-cta:hover,
+.btn-faq-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(21, 186, 41, 0.4);
+    color: white;
+}
+
+.btn-social-cta:hover::before,
+.btn-faq-cta:hover::before {
+    transform: translateX(0);
+}
+
+/* Button Content Styles */
+.btn-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-main-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.btn-sub-text {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 400;
+    margin-top: 0.2rem;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.btn-icon i {
+    font-size: 1.2rem;
+}
+
+.btn-text, .btn-arrow {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.btn-arrow i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects for Icons */
+.btn-hero-primary:hover .btn-icon,
+.btn-projects-cta:hover .btn-icon,
+.btn-skills-cta:hover .btn-icon,
+.btn-experience-cta:hover .btn-icon,
+.btn-testimonials-cta:hover .btn-icon {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(10deg);
+}
+
+.btn-social-cta:hover .btn-arrow,
+.btn-faq-cta:hover .btn-arrow,
+.btn-hero-secondary:hover .btn-arrow {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
+
+.btn-social-cta:hover .btn-arrow i,
+.btn-faq-cta:hover .btn-arrow i,
+.btn-hero-secondary:hover .btn-arrow i {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .btn-hero-primary,
+    .btn-projects-cta,
+    .btn-skills-cta,
+    .btn-experience-cta,
+    .btn-testimonials-cta {
+        padding: 1.2rem 2rem;
+        gap: 1rem;
+    }
+    
+    .btn-hero-secondary,
+    .btn-social-cta,
+    .btn-faq-cta {
+        padding: 1rem 2rem;
+        gap: 0.8rem;
+    }
+    
+    .btn-main-text {
+        font-size: 1rem;
+    }
+    
+    .btn-sub-text {
+        font-size: 0.85rem;
+    }
+    
+    .btn-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .btn-arrow {
+        width: 30px;
+        height: 30px;
+    }
+}
+
 </style>
 
 <script>
