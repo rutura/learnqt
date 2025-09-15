@@ -265,6 +265,7 @@ courses:
     level: "Beginner to Intermediate"
     duration: "40+ hours"
     featured: true
+    ready_cta_text: "Ready to build professional desktop apps with C++?"
     
     # Course-specific value proposition
     value_proposition:
@@ -408,6 +409,7 @@ courses:
     level: "Beginner to Intermediate"
     duration: "35+ hours"
     featured: true
+    ready_cta_text: "Ready to build amazing Python desktop apps?"
     
     # Course-specific value proposition
     value_proposition:
@@ -547,6 +549,7 @@ courses:
     level: "Beginner to Advanced"
     duration: "50+ hours"
     featured: true
+    ready_cta_text: "Ready to master modern UI development with QML?"
     
     # Course-specific value proposition
     value_proposition:

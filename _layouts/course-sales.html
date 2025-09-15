@@ -599,7 +599,7 @@
                     <div class="get-cta-section text-center mt-5">
                         <div class="cta-container">
                             <div class="cta-highlight">
-                                <span class="cta-highlight-text">🎯 Ready to transform your {{ course_data.language }} skills?</span>
+                                <span class="cta-highlight-text">🎯 {% if course_data.ready_cta_text %}{{ course_data.ready_cta_text }}{% else %}Ready to transform your {{ course_data.language }} skills?{% endif %}</span>
                             </div>
                             <a href="#ready-to-join" class="btn btn-get-started scroll-to-pricing">
                                 <div class="btn-content">
