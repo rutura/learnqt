@@ -179,6 +179,13 @@
                                     {% endfor %}
                                 </ul>
                             </div>
+                            
+                            <!-- CTA Button for Lifetime Plan -->
+                            <div class="pricing-cta mt-4">
+                                <a href="#courses-showcase" class="btn btn-pricing-primary w-100">
+                                    <i class="fas fa-arrow-up me-2"></i>Choose Your Course
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -209,6 +216,13 @@
                                     <li>{{ highlight }}</li>
                                     {% endfor %}
                                 </ul>
+                            </div>
+                            
+                            <!-- CTA Button for Monthly Plan -->
+                            <div class="pricing-cta mt-4">
+                                <a href="{{ site.data.courses.courses[0].pricing_override.monthly.teachable_link }}" target="_blank" class="btn btn-pricing-primary w-100">
+                                    <i class="fas fa-credit-card me-2"></i> Get Montly Access
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -243,6 +257,13 @@
                                     <li>{{ highlight }}</li>
                                     {% endfor %}
                                 </ul>
+                            </div>
+                            
+                            <!-- CTA Button for Yearly Plan -->
+                            <div class="pricing-cta mt-4">
+                                <a href="{{ site.data.courses.courses[0].pricing_override.yearly.teachable_link }}" target="_blank" class="btn btn-pricing-primary w-100">
+                                    <i class="fas fa-crown me-2"></i>Get Premium Access
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -992,6 +1013,52 @@
     font-weight: bold;
     margin-right: 0.75rem;
     margin-top: 0.1rem;
+}
+
+/* Pricing CTA Buttons */
+.pricing-cta {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.btn-pricing-primary {
+    background: linear-gradient(135deg, var(--qt-green) 0%, var(--qt-green-dark) 100%);
+    border: none;
+    color: white;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    border-radius: 12px;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-pricing-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.5s;
+}
+
+.btn-pricing-primary:hover::before {
+    left: 100%;
+}
+
+.btn-pricing-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);
+    color: white;
+    text-decoration: none;
 }
 
 /* Enhanced CTA Section */
