@@ -149,16 +149,28 @@
 <section class="learning-outcomes py-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-10 mx-auto">
                 <h2 class="text-center mb-5">{{ course_data.sections.outcomes.title }}</h2>
                 
-                <div class="outcomes-grid">
-                    {% for outcome in course_data.sections.outcomes.items %}
-                    <div class="outcome-item">
-                        <i class="fas fa-check-circle outcome-icon"></i>
-                        <span class="outcome-text">{{ outcome }}</span>
+                <div class="outcomes-container">
+                    <div class="row g-4">
+                        {% for outcome in course_data.sections.outcomes.items %}
+                        <div class="col-lg-6">
+                            <div class="outcome-card">
+                                <div class="outcome-header">
+                                    <div class="outcome-number">{{ forloop.index }}</div>
+                                    <div class="outcome-icon-wrapper">
+                                        <i class="fas fa-rocket outcome-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="outcome-content">
+                                    <p class="outcome-text">{{ outcome }}</p>
+                                </div>
+                                <div class="outcome-gradient"></div>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
                 
                 <div class="text-center mt-5">
@@ -824,32 +836,90 @@
 }
 
 /* Learning Outcomes */
-.outcomes-grid {
-    display: grid;
-    gap: 1rem;
+.outcomes-container {
+    margin-bottom: 2rem;
 }
 
-.outcome-item {
-    display: flex;
-    align-items: flex-start;
-    padding: 1rem;
+.outcome-card {
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.outcome-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(21, 186, 41, 0.15);
+    border-color: var(--qt-green);
+}
+
+.outcome-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.outcome-number {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(21, 186, 41, 0.3);
+}
+
+.outcome-icon-wrapper {
+    background: rgba(21, 186, 41, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .outcome-icon {
-    color: var(--success-color);
-    font-size: 1.2rem;
-    margin-right: 1rem;
-    margin-top: 0.2rem;
-    flex-shrink: 0;
+    color: var(--qt-green);
+    font-size: 1.3rem;
+}
+
+.outcome-content {
+    position: relative;
+    z-index: 2;
 }
 
 .outcome-text {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     color: var(--secondary-color);
+    margin: 0;
+    font-weight: 500;
+}
+
+.outcome-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--qt-green), var(--qt-green-dark));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.outcome-card:hover .outcome-gradient {
+    opacity: 1;
 }
 
 /* Testimonials Section */
@@ -1530,13 +1600,35 @@
         font-size: 1.1rem;
     }
     
-    .outcomes-grid {
-        gap: 0.75rem;
+    /* Learning Outcomes Responsive */
+    .outcome-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
     }
     
-    .outcome-item {
-        padding: 0.75rem;
+    .outcome-card:hover {
+        transform: none;
     }
+    
+    .outcome-header {
+        margin-bottom: 1rem;
+    }
+    
+    .outcome-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .outcome-icon-wrapper {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .outcome-text {
+        font-size: 1rem;
+    }
+}
     
     /* Creator Story Responsive */
     .creator-card {
@@ -1581,6 +1673,30 @@
     
     .quote-icon {
         font-size: 1.5rem;
+    }
+    
+    /* Outcome Cards Mobile */
+    .outcome-card {
+        padding: 1.25rem;
+    }
+    
+    .outcome-number {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    
+    .outcome-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .outcome-icon {
+        font-size: 1.1rem;
+    }
+    
+    .outcome-text {
+        font-size: 0.95rem;
     }
     
     .social-proof-number {
