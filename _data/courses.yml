@@ -631,7 +631,7 @@ ui:
   buy_now_button: "Get Instant Access"
   scroll_to_pricing: "Choose Your Plan Below"
   ready_to_join_title: "Ready to Join?"
-  ready_to_join_subtitle: "Level up with our comprehensive course library. Get this course individually, or unlock our complete collection including Qt Widgets, QML, 3D graphics, embedded systems, and HMI development for automotive and industrial applications."
+  ready_to_join_subtitle: "Level up with our comprehensive course library. Get this course individually, or unlock our complete collection including C++, Qt Widgets, QML, 3D graphics, embedded systems, and HMI development for automotive and industrial applications."
   
   # CTA variants for different contexts
   cta_variants:
