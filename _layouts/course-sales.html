@@ -1247,6 +1247,99 @@
     </div>
 </section>
 
+<!-- Newsletter Section -->
+<section class="newsletter py-5 bg-primary background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-lg" style="top: 20%; right: 10%;"></div>
+        <div class="floating-element floating-md" style="top: 60%; left: 5%;"></div>
+        <div class="floating-element floating-sm" style="top: 40%; right: 75%;"></div>
+        <div class="floating-element floating-md" style="top: 80%; left: 80%;"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="newsletter-content">
+                    <h2 class="newsletter-title text-white mb-3">JOIN OUR NEWSLETTER & GET A FREE QT6 QML BOOK!</h2>
+                    <h3 class="newsletter-subtitle text-white-50 mb-4">STAY UPDATED.</h3>
+                    <p class="newsletter-description text-white-75 mb-4">
+                        Still undecided? Join our newsletter and we'll send you a free Qt6 QML Booklet 
+                        and other goodies to give you a feel of our training material. Get insights, 
+                        tips, and updates from Qt expert Daniel Gakwaya.
+                    </p>
+                    
+                    <div class="newsletter-benefits mb-4">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span class="text-white">Free Qt6 QML Beginner's Guide</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span class="text-white">Exclusive tutorials and tips</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span class="text-white">Course updates and special offers</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span class="text-white">No spam, unsubscribe anytime</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="newsletter-form-container">
+                    <div class="newsletter-book-preview mb-4 text-center">
+                        <img src="{{ site.baseurl }}/assets/img/qt6_qml_for_beginners.png" 
+                             alt="Free Qt6 QML Book" 
+                             class="newsletter-book-image">
+                        <div class="book-badge">
+                            <span>FREE</span>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-form glass-card p-4">
+                        <form action="#" method="post" class="newsletter-signup-form">
+                            <div class="form-group mb-3">
+                                <label for="newsletter-firstname" class="form-label text-dark">Firstname</label>
+                                <input type="text" 
+                                       class="form-control newsletter-input" 
+                                       id="newsletter-firstname" 
+                                       name="firstname" 
+                                       placeholder="Enter your first name"
+                                       required>
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="newsletter-email" class="form-label text-dark">Email Address</label>
+                                <input type="email" 
+                                       class="form-control newsletter-input" 
+                                       id="newsletter-email" 
+                                       name="email" 
+                                       placeholder="Enter your email address"
+                                       required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-newsletter-cta w-100 mb-3">
+                                <span class="btn-text">
+                                    <span class="btn-main-text">Send me the book!</span>
+                                </span>
+                                <div class="btn-icon">
+                                    <i class="fas fa-gift"></i>
+                                </div>
+                            </button>
+                            
+                            <p class="newsletter-privacy text-center text-muted mb-0">
+                                <small>Your email will never be shared.</small>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% include footerpage.html %}
 
 <style>
@@ -4573,6 +4666,240 @@
     .btn-arrow {
         width: 30px;
         height: 30px;
+    }
+}
+
+/* Newsletter Section Styles */
+.newsletter {
+    background: var(--primary-gradient);
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.newsletter-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.newsletter-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.benefit-item i {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
+.newsletter-form-container {
+    position: relative;
+}
+
+.newsletter-book-preview {
+    position: relative;
+    display: inline-block;
+}
+
+.newsletter-book-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.newsletter-book-image:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.book-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--warning-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.newsletter-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-input {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1f2937 !important;
+}
+
+.newsletter-input::placeholder {
+    color: #9ca3af !important;
+    opacity: 1;
+}
+
+.newsletter-input:focus {
+    border-color: var(--qt-green);
+    box-shadow: 0 0 0 3px rgba(21, 186, 41, 0.1);
+    outline: none;
+    background: white;
+    color: #1f2937 !important;
+}
+
+.btn-newsletter-cta {
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 15px;
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-transform: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-newsletter-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-newsletter-cta:hover::before {
+    left: 100%;
+}
+
+.btn-newsletter-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(21, 186, 41, 0.4);
+    color: white;
+}
+
+.btn-newsletter-cta .btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-newsletter-cta .btn-main-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+}
+
+.btn-newsletter-cta .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-newsletter-cta:hover .btn-icon {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(10deg);
+}
+
+.newsletter-privacy {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* Responsive Design for Newsletter */
+@media (max-width: 768px) {
+    .newsletter-title {
+        font-size: 2rem;
+    }
+    
+    .newsletter-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .newsletter-description {
+        font-size: 1rem;
+    }
+    
+    .newsletter-book-image {
+        max-width: 150px;
+    }
+    
+    .btn-newsletter-cta {
+        padding: 1rem 1.5rem;
+        gap: 0.8rem;
+    }
+    
+    .btn-newsletter-cta .btn-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .benefit-item {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .newsletter {
+        text-align: center;
+    }
+    
+    .newsletter-benefits {
+        text-align: left;
+        margin: 0 auto;
+        max-width: 300px;
     }
 }
 
