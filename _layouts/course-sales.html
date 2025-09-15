@@ -5,37 +5,63 @@
 {% assign course_data = site.data.courses.courses | where: "id", page.course_id | first %}
 
 <!-- Course Hero Section -->
-<section class="course-hero py-5" style="background: linear-gradient(135deg, #15ba29 0%, #149f25 100%);">
-    <div class="container">
+<section class="course-hero py-5 bg-primary-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 20%; right: 15%;"></div>
+        <div class="floating-element floating-lg" style="top: 60%; left: 10%;"></div>
+        <div class="floating-element floating-sm" style="top: 40%; right: 30%;"></div>
+    </div>
+    
+    <div class="container position-relative">
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="hero-content text-white">
-                    <h1 class="display-4 fw-bold mb-4">{{ course_data.title }}</h1>
-                    <p class="lead mb-4">{{ course_data.sections.hero.subtitle }}</p>
+                    <!-- Course Badge -->
+                    <div class="hero-course-badge mb-4">
+                        <div class="badge-content">
+                            <i class="fas fa-star"></i>
+                            <span>{{ course_data.category }}</span>
+                        </div>
+                    </div>
                     
-                    <!-- Social Proof -->
+                    <h1 class="hero-title fw-bold mb-4">{{ course_data.title }}</h1>
+                    <p class="hero-subtitle mb-4">{{ course_data.sections.hero.subtitle }}</p>
+                    
+                    <!-- Enhanced Social Proof -->
                     <div class="social-proof-section mb-4">
-                        <div class="row text-center">
-                            <div class="col-6 col-md-3">
-                                <div class="social-proof-item">
+                        <div class="social-proof-grid">
+                            <div class="social-proof-item">
+                                <div class="proof-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="proof-content">
                                     <div class="social-proof-number">{{ site.data.courses.social_proof.student_count }}</div>
                                     <div class="social-proof-label">{{ site.data.courses.ui.social_labels.students }}</div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3">
-                                <div class="social-proof-item">
+                            <div class="social-proof-item">
+                                <div class="proof-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="proof-content">
                                     <div class="social-proof-number">{{ site.data.courses.social_proof.avg_rating }}/5</div>
                                     <div class="social-proof-label">{{ site.data.courses.ui.social_labels.rating }}</div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3">
-                                <div class="social-proof-item">
+                            <div class="social-proof-item">
+                                <div class="proof-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="proof-content">
                                     <div class="social-proof-number">{{ site.data.courses.social_proof.completion_rate }}%</div>
                                     <div class="social-proof-label">{{ site.data.courses.ui.social_labels.completion }}</div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3">
-                                <div class="social-proof-item">
+                            <div class="social-proof-item">
+                                <div class="proof-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="proof-content">
                                     <div class="social-proof-number">{{ site.data.courses.social_proof.countries }}+</div>
                                     <div class="social-proof-label">{{ site.data.courses.ui.social_labels.countries }}</div>
                                 </div>
@@ -44,9 +70,18 @@
                     </div>
                     
                     <div class="hero-badges mb-4">
-                        <span class="badge bg-light text-dark me-2">{{ course_data.level }}</span>
-                        <span class="badge bg-light text-dark me-2">{{ course_data.duration }}</span>
-                        <span class="badge bg-light text-dark">{{ course_data.language }}</span>
+                        <div class="badge-item">
+                            <i class="fas fa-signal"></i>
+                            <span>{{ course_data.level }}</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-clock"></i>
+                            <span>{{ course_data.duration }}</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-code"></i>
+                            <span>{{ course_data.language }}</span>
+                        </div>
                     </div>
                     
                     <div class="hero-cta-buttons">
@@ -69,8 +104,27 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="hero-image">
-                    <img src="{{ site.baseurl }}{{ course_data.sections.hero.showcase_image }}" alt="{{ course_data.title }}" class="img-fluid rounded-lg shadow-lg">
+                <div class="hero-image-container">
+                    <div class="hero-image-frame">
+                        <div class="image-glow"></div>
+                        <img src="{{ site.baseurl }}{{ course_data.sections.hero.showcase_image }}" alt="{{ course_data.title }}" class="hero-image">
+                        <div class="image-overlay">
+                            <div class="tech-stack-indicator">
+                                <div class="tech-icon qt-icon">
+                                    <img src="/assets/img/qt-logo.png" alt="Qt" style="width: 24px; height: 24px;">
+                                </div>
+                                <div class="tech-icon language-icon">
+                                    {% if course_data.language == 'C++' %}
+                                        <i class="fas fa-code"></i>
+                                    {% elsif course_data.language == 'Python' %}
+                                        <i class="fab fa-python"></i>
+                                    {% else %}
+                                        <i class="fas fa-code"></i>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,10 +133,11 @@
 
 <!-- Course Preview Section -->
 {% if course_data.sections.preview %}
-<section id="preview" class="course-preview py-5">
-    <div class="preview-background">
-        <div class="preview-pattern"></div>
-        <div class="preview-gradient"></div>
+<section id="preview" class="course-preview py-5 bg-secondary-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-sm" style="top: 15%; left: 5%;"></div>
+        <div class="floating-element floating-md" style="top: 70%; right: 10%;"></div>
+        <div class="floating-element floating-lg" style="top: 30%; left: 80%;"></div>
     </div>
     
     <div class="container position-relative">
@@ -468,7 +523,12 @@
 </section>
 
 <!-- Why This Course Section -->
-<section class="why-course py-5">
+<section class="why-course py-5 bg-accent-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 25%; right: 8%;"></div>
+        <div class="floating-element floating-sm" style="top: 65%; left: 12%;"></div>
+        <div class="floating-element floating-lg" style="top: 45%; right: 75%;"></div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -648,7 +708,12 @@
 </section>
 
 <!-- What You'll Get Section -->
-<section class="what-you-get py-5">
+<section class="what-you-get py-5 bg-neutral-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-lg" style="top: 20%; left: 5%;"></div>
+        <div class="floating-element floating-sm" style="top: 55%; right: 15%;"></div>
+        <div class="floating-element floating-md" style="top: 75%; left: 70%;"></div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -811,7 +876,12 @@
 </section>
 
 <!-- Ready to Join Section (Enhanced with Urgency) -->
-<section id="ready-to-join" class="ready-to-join py-5">
+<section id="ready-to-join" class="ready-to-join py-5 bg-primary-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 30%; right: 5%;"></div>
+        <div class="floating-element floating-lg" style="top: 60%; left: 8%;"></div>
+        <div class="floating-element floating-sm" style="top: 15%; left: 75%;"></div>
+    </div>
     <div class="container">
         <!-- Urgency Banner -->
         {% if site.data.courses.pricing.lifetime.urgency_text %}
@@ -1109,101 +1179,471 @@
     --warning-color: #f39c12;
     --success-color: #27ae60;
     --danger-color: #e74c3c;
+    
+    /* Shared Design System Variables */
+    --primary-gradient: linear-gradient(135deg, #15ba29 0%, #149f25 50%, #0d7a1c 100%);
+    --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --neutral-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-blur: blur(15px);
 }
 
-/* Hero Section */
+/* Shared Background Pattern System */
+.background-pattern {
+    position: relative;
+    overflow: hidden;
+}
+
+.background-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.3) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.2) 1px, transparent 1px);
+    background-size: 100px 100px, 120px 120px, 80px 80px;
+    animation: patternMove 20s linear infinite;
+    z-index: 1;
+}
+
+.background-pattern > .container {
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes patternMove {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-100px) translateY(-100px); }
+}
+
+/* Floating Elements System */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.floating-element {
+    position: absolute;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    backdrop-filter: var(--glass-blur);
+}
+
+.floating-sm {
+    width: 60px;
+    height: 60px;
+    animation: float-small 7s ease-in-out infinite;
+}
+
+.floating-md {
+    width: 80px;
+    height: 80px;
+    animation: float-medium 6s ease-in-out infinite;
+}
+
+.floating-lg {
+    width: 120px;
+    height: 120px;
+    animation: float-large 8s ease-in-out infinite;
+}
+
+@keyframes float-small {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(360deg); }
+}
+
+@keyframes float-medium {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes float-large {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(-180deg); }
+}
+
+/* Glassmorphism System */
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 16px;
+}
+
+.glass-button {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Section Background Classes */
+.bg-primary-gradient {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.bg-secondary-gradient {
+    background: var(--secondary-gradient);
+    color: white;
+}
+
+.bg-accent-gradient {
+    background: var(--accent-gradient);
+    color: white;
+}
+
+.bg-neutral-gradient {
+    background: var(--neutral-gradient);
+    color: white;
+}
+
+/* Enhanced Hero Section */
 .course-hero {
-    min-height: 700px;
+    position: relative;
+    min-height: 80vh;
     display: flex;
     align-items: center;
 }
 
 .hero-content {
+    z-index: 10;
+    position: relative;
     padding-right: 2rem;
 }
 
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    border: 4px solid rgba(255,255,255,0.2);
+.hero-course-badge {
+    display: inline-block;
 }
 
-.rounded-lg {
-    border-radius: 12px;
+.badge-content {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
 }
 
-/* Social Proof in Hero */
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+/* Enhanced Social Proof in Hero */
 .social-proof-section {
-    background: rgba(255,255,255,0.1);
-    border-radius: 12px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 16px;
     padding: 1.5rem;
-    backdrop-filter: blur(10px);
+    margin-bottom: 2rem;
+}
+
+.social-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
 }
 
 .social-proof-item {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+
+.proof-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.proof-icon i {
+    color: white;
+    font-size: 1rem;
+}
+
+.proof-content {
+    flex-grow: 1;
 }
 
 .social-proof-number {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 0.25rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
 }
 
 .social-proof-label {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.8);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.3;
 }
 
-.hero-cta-buttons .btn {
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.badge-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+}
+
+.hero-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+
+.btn-hero-primary {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #15ba29;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
     min-width: 200px;
+}
+
+.btn-hero-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.btn-hero-primary:hover::before {
+    left: 100%;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    color: #149f25;
+}
+
+.btn-hero-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-arrow {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-secondary:hover .btn-arrow {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.hero-image-container {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-image-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: all 0.3s ease;
+}
+
+.hero-image-frame:hover {
+    transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+}
+
+.image-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(21, 186, 41, 0.3) 0%, transparent 70%);
+    filter: blur(20px);
+    z-index: -1;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.hero-image-frame:hover .hero-image {
+    transform: scale(1.02);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.tech-stack-indicator {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.tech-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Hero Responsive Design */
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .social-proof-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .hero-image-frame {
+        transform: none;
+        margin-top: 2rem;
+    }
+    
+    .floating-elements {
+        display: none;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        justify-content: center;
+    }
 }
 
 /* Enhanced Course Preview Section */
 .course-preview {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     position: relative;
-    overflow: hidden;
-    color: white;
-}
-
-.preview-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-}
-
-.preview-pattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
-        radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 60px 60px, 40px 40px;
-    animation: float 20s ease-in-out infinite;
-}
-
-.preview-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(21, 186, 41, 0.1) 0%, rgba(255,255,255,0.05) 100%);
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(1deg); }
 }
 
 /* Section Header */
@@ -1216,15 +1656,15 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
     color: white;
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     font-weight: 600;
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .preview-title {
@@ -2268,7 +2708,8 @@
         font-size: 1rem;
     }
 }
-    
+
+@media (max-width: 768px) {
     /* Creator Story Responsive */
     .creator-card {
         padding: 2rem 1.5rem;
