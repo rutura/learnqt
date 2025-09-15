@@ -17,7 +17,6 @@ pricing:
     title: "Single Course Lifetime"
     subtitle: "One-time purchase for this course only"
     popular: false
-    urgency_text: "Price increases to $149 on October 1st"
     value_proposition: "Best value for single course mastery"
     benefits:
       - "🎯 Access to this course only"
