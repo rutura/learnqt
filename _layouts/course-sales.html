@@ -114,21 +114,137 @@
                 
                 {% if course_data.sections.preview.projects %}
                 <div class="projects-showcase">
-                    <h3 class="text-center mb-4">Projects You'll Build</h3>
-                    <div class="row g-4">
-                        {% for project in course_data.sections.preview.projects %}
-                        <div class="col-md-4">
-                            <div class="project-card">
-                                <div class="project-image">
-                                    <img src="{{ site.baseurl }}{{ project.image }}" alt="{{ project.name }}" class="img-fluid">
-                                </div>
-                                <div class="project-content">
-                                    <h4 class="project-title">{{ project.name }}</h4>
-                                    <p class="project-description">{{ project.description }}</p>
+                    <div class="projects-header text-center mb-5">
+                        <h3 class="projects-main-title">Real-World Projects You'll Build</h3>
+                        <p class="projects-subtitle">Learn by building practical Qt applications that you can showcase in your portfolio</p>
+                    </div>
+                    
+                    <div class="projects-grid">
+                        <div class="row g-4">
+                            {% for project in course_data.sections.preview.projects %}
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="project-number">{{ forloop.index }}</div>
+                                    <div class="project-image">
+                                        <img src="{{ site.baseurl }}{{ project.image }}" alt="{{ project.name }}" class="img-fluid">
+                                        <div class="project-overlay">
+                                            <div class="project-tech-stack">
+                                                <span class="tech-badge">Qt</span>
+                                                <span class="tech-badge">C++</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">{{ project.name }}</h4>
+                                        <p class="project-description">{{ project.description }}</p>
+                                        <div class="project-features">
+                                            <div class="feature-item">
+                                                <i class="fas fa-code project-icon"></i>
+                                                <span>Full Source Code</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-video project-icon"></i>
+                                                <span>Step-by-step Guide</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-status">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Beginner Friendly</span>
+                                    </div>
                                 </div>
                             </div>
+                            {% endfor %}
+                            
+                            <!-- Add placeholder projects if there are fewer than 3 -->
+                            {% assign projects_count = course_data.sections.preview.projects.size %}
+                            {% if projects_count < 3 %}
+                                {% for i in (1..3) %}
+                                    {% assign placeholder_index = projects_count | plus: forloop.index %}
+                                    {% if placeholder_index <= 3 %}
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="project-card">
+                                            <div class="project-number">{{ placeholder_index }}</div>
+                                            <div class="project-image">
+                                                <img src="{{ site.baseurl }}/assets/projects/placeholder.png" alt="Project {{ placeholder_index }}" class="img-fluid">
+                                                <div class="project-overlay">
+                                                    <div class="project-tech-stack">
+                                                        <span class="tech-badge">Qt</span>
+                                                        <span class="tech-badge">C++</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="project-content">
+                                                <h4 class="project-title">Amazing Qt Project #{{ placeholder_index }}</h4>
+                                                <p class="project-description">Build a professional Qt application with modern C++ practices and clean architecture patterns.</p>
+                                                <div class="project-features">
+                                                    <div class="feature-item">
+                                                        <i class="fas fa-code project-icon"></i>
+                                                        <span>Full Source Code</span>
+                                                    </div>
+                                                    <div class="feature-item">
+                                                        <i class="fas fa-video project-icon"></i>
+                                                        <span>Step-by-step Guide</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="project-status">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>Beginner Friendly</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
                         </div>
-                        {% endfor %}
+                    </div>
+                </div>
+                {% else %}
+                <!-- Fallback for when no projects are defined -->
+                <div class="projects-showcase">
+                    <div class="projects-header text-center mb-5">
+                        <h3 class="projects-main-title">Real-World Projects You'll Build</h3>
+                        <p class="projects-subtitle">Learn by building practical Qt applications that you can showcase in your portfolio</p>
+                    </div>
+                    
+                    <div class="projects-grid">
+                        <div class="row g-4">
+                            {% for i in (1..3) %}
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="project-number">{{ forloop.index }}</div>
+                                    <div class="project-image">
+                                        <img src="{{ site.baseurl }}/assets/projects/placeholder.png" alt="Project {{ forloop.index }}" class="img-fluid">
+                                        <div class="project-overlay">
+                                            <div class="project-tech-stack">
+                                                <span class="tech-badge">Qt</span>
+                                                <span class="tech-badge">C++</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">Professional Qt Application #{{ forloop.index }}</h4>
+                                        <p class="project-description">Build a complete Qt application with modern C++ practices, clean architecture, and professional UI design.</p>
+                                        <div class="project-features">
+                                            <div class="feature-item">
+                                                <i class="fas fa-code project-icon"></i>
+                                                <span>Full Source Code</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-video project-icon"></i>
+                                                <span>Step-by-step Guide</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-status">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Beginner Friendly</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
                 {% endif %}
@@ -1737,6 +1853,197 @@
     }
     
     .pricing-card .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Enhanced Projects Section Styling */
+.projects-showcase {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(21, 186, 41, 0.02) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.projects-header {
+    margin-bottom: 3rem;
+}
+
+.projects-main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.projects-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(21, 186, 41, 0.15);
+}
+
+.project-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--qt-green);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(21, 186, 41, 0.3);
+}
+
+.project-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(21, 186, 41, 0.8), rgba(20, 159, 37, 0.8));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-tech-stack {
+    display: flex;
+    gap: 10px;
+}
+
+.tech-badge {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--qt-green);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.project-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+}
+
+.project-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+    flex-grow: 1;
+}
+
+.project-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.project-icon {
+    color: var(--qt-green);
+    font-size: 0.8rem;
+}
+
+.project-status {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    padding: 8px 15px;
+    margin: 1rem 1.5rem 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project-status i {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .projects-main-title {
+        font-size: 2rem;
+    }
+    
+    .projects-subtitle {
+        font-size: 1rem;
+    }
+    
+    .project-image {
+        height: 150px;
+    }
+    
+    .project-content {
         padding: 1rem;
     }
 }
