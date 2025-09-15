@@ -136,7 +136,7 @@ comparison_deprecated:
           highlight: true
         - value: "✅ Lifetime updates included"
           highlight: false
-        - value: "✅ 60-day money-back guarantee"
+        - value: "✅ 30-day money-back guarantee"
           highlight: false
     - name: "University Courses"
       highlight: false
@@ -216,7 +216,7 @@ default_value_proposition:
       title: "💰 Value & Guarantees"
       icon: "fas fa-shield-alt"
       points:
-        - text: "60-day money-back guarantee - learn risk-free"
+        - text: "30-day money-back guarantee - learn risk-free"
           highlight: false
         - text: "Lifetime updates as Qt evolves - your investment stays current"
           highlight: false
@@ -238,7 +238,7 @@ faq:
     - q: "Will this help me get a job?"
       a: "Absolutely! Our courses focus on real-world projects that showcase skills employers want. Many students have landed developer roles, freelance contracts, and promotions after completing our courses."
     - q: "What if I'm not satisfied?"
-      a: "We offer a 60-day money-back guarantee. If you're not completely satisfied with your progress, get a full refund - no questions asked."
+      a: "We offer a 30-day money-back guarantee. If you're not completely satisfied with your progress, get a full refund - no questions asked."
     - q: "Do courses get updated?"
       a: "Yes! All courses receive lifetime updates as technologies evolve. When Qt releases new versions or we add new content, you get it automatically at no extra cost."
     - q: "Can I download the course materials?"
@@ -312,7 +312,7 @@ courses:
           title: "💰 Risk-Free Investment in Your Future"
           icon: "fas fa-shield-alt"
           points:
-            - text: "60-day money-back guarantee - try the complete course risk-free"
+            - text: "30-day money-back guarantee - try the complete course risk-free"
               highlight: false
             - text: "Lifetime access with free updates as Qt evolves"
               highlight: false
@@ -458,7 +458,7 @@ courses:
           points:
             - text: "Add GUI skills to your Python toolkit without learning a new language"
               highlight: true
-            - text: "60-day guarantee to master Python desktop development risk-free"
+            - text: "30-day guarantee to master Python desktop development risk-free"
               highlight: false
             - text: "Lifetime updates as PySide6 and Python evolve together"
               highlight: false
@@ -600,7 +600,7 @@ courses:
               highlight: true
             - text: "Skills that transfer to mobile, embedded, and emerging platforms"
               highlight: false
-            - text: "60-day guarantee to master professional-level QML development"
+            - text: "30-day guarantee to master professional-level QML development"
               highlight: false
           vs_alternatives: "Platform-specific skills become obsolete, web frameworks change constantly. QML skills are future-proof and cross-platform."
     
@@ -693,7 +693,7 @@ ui:
     benefit: "Start Building Apps in Minutes"
     social: "Join 4,000+ Successful Students"
     trial: "Start Your 7-Day Free Trial"
-    guarantee: "Try Risk-Free for 60 Days"
+    guarantee: "Try Risk-Free for 30 Days"
   
   # Urgency and scarcity elements
   urgency:
