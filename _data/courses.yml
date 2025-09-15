@@ -37,7 +37,7 @@ pricing:
     title: "Library Access"
     subtitle: "per month"
     popular: true
-    value_proposition: "Perfect for exploring multiple technologies"
+    value_proposition: "Get access to all our courses"
     cancel_anytime: true
     benefits:
       - "🚀 Access to entire course library"
@@ -58,10 +58,10 @@ pricing:
     original_price: 360
     monthly_equivalent: 27.50
     savings_amount: 30
-    title: "Library Pro Annual"
+    title: "Library Annual"
     subtitle: "per year (save $30)"
     popular: false
-    value_proposition: "Maximum savings for serious learners"
+    value_proposition: "Access all courses at the best price"
     benefits:
       - "✨ Everything in Library Access +"
       - "🎯 Priority Discord support"
@@ -79,12 +79,12 @@ pricing:
 
 # Money-back guarantee
 guarantee:
-  days: 60
-  title: "60-Day Money-Back Guarantee"
+  days: 30
+  title: "30-Day Money-Back Guarantee"
   subtitle: "Learn with confidence"
-  description: "If you're not completely satisfied with your progress after 60 days, get a full refund. No questions asked."
+  description: "If you're not completely satisfied with your progress after 30 days, get a full refund. No questions asked."
   features:
-    - "Full 60-day trial period"
+    - "Full 30-day trial period"
     - "No questions asked policy"
     - "Email support for refunds"
     - "Risk-free learning"
