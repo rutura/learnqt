@@ -79,10 +79,35 @@
                 {% if course_data.sections.preview.demo_video %}
                 <div class="demo-video-container mb-5">
                     <div class="video-wrapper">
-                        <video class="demo-video" controls poster="{{ site.baseurl }}{{ course_data.image }}">
-                            <source src="{{ site.baseurl }}{{ course_data.sections.preview.demo_video }}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        {% assign video_url = course_data.sections.preview.demo_video %}
+                        {% if video_url contains 'youtube.com' or video_url contains 'youtu.be' %}
+                            {% comment %} Extract YouTube video ID for embed {% endcomment %}
+                            {% assign video_id = '' %}
+                            {% if video_url contains 'youtu.be/' %}
+                                {% assign url_parts = video_url | split: 'youtu.be/' %}
+                                {% assign video_id = url_parts[1] | split: '?' | first %}
+                            {% elsif video_url contains 'youtube.com/watch?v=' %}
+                                {% assign url_parts = video_url | split: 'v=' %}
+                                {% assign video_id = url_parts[1] | split: '&' | first %}
+                            {% endif %}
+                            {% if video_id != '' %}
+                                <div class="youtube-embed-container">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/{{ video_id }}" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen
+                                        class="youtube-video">
+                                    </iframe>
+                                </div>
+                            {% endif %}
+                        {% else %}
+                            {% comment %} Local video file {% endcomment %}
+                            <video class="demo-video" controls poster="{{ site.baseurl }}{{ course_data.image }}">
+                                <source src="{{ site.baseurl }}{{ video_url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        {% endif %}
                     </div>
                 </div>
                 {% endif %}
@@ -716,6 +741,20 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.youtube-embed-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.youtube-video {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
 }
 
 .project-card {

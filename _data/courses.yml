@@ -222,7 +222,7 @@ courses:
         
       preview:
         title: "See What You'll Build"
-        demo_video: "/assets/courses/videos/qt-widgets-cpp-demo.mp4"
+        demo_video: "https://youtu.be/uoA_bybiV9g?si=AZtXgY8zXLfnFZWe"
         projects:
           - name: "Text Editor Pro"
             image: "/assets/projects/text-editor.png"
@@ -311,7 +311,7 @@ courses:
         
       preview:
         title: "See What You'll Build"
-        demo_video: "/assets/courses/videos/pyside6-demo.mp4"
+        demo_video: "https://youtu.be/uoA_bybiV9g?si=AZtXgY8zXLfnFZWe"
         projects:
           - name: "Python File Manager"
             image: "/assets/projects/python-file-manager.png"
@@ -397,7 +397,7 @@ courses:
         
       preview:
         title: "See What You'll Build"
-        demo_video: "/assets/courses/videos/qml-demo.mp4"
+        demo_video: "https://youtu.be/uoA_bybiV9g?si=AZtXgY8zXLfnFZWe"
         projects:
           - name: "Modern Music Player"
             image: "/assets/projects/music-player.png"
