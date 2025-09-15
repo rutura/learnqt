@@ -1,45 +1,198 @@
 # Courses Configuration
+# Global social proof metrics
+social_proof:
+  student_count: "4,000+"
+  avg_rating: "4.9"
+  completion_rate: "87"
+  countries: "120+"
+  testimonial_count: "500+"
+
 # Pricing structure for all courses
 pricing:
   lifetime: 
     price: 101
-    title: "Single Course"
+    original_price: 149
+    savings_amount: 48
+    discount_percentage: 32
+    title: "Single Course Lifetime"
     subtitle: "One-time purchase for this course only"
     popular: false
+    urgency_text: "Price increases to $149 on October 1st"
+    value_proposition: "Best value for single course mastery"
     benefits:
-      - "Access to this course only"
-      - "Complete video library for this course"
-      - "All PDF workbooks & resources"
-      - "Download all course materials"
-      - "Discord community access"
-      - "Certificate of completion"
-      - "Yours forever"
+      - "🎯 Access to this course only"
+      - "🎥 Complete video library for this course"
+      - "📚 All PDF workbooks & resources"
+      - "💾 Download all course materials"
+      - "💬 Discord community access (4,000+ developers)"
+      - "🏆 Certificate of completion"
+      - "♾️ Yours forever - no monthly fees"
+      - "🔄 Free updates when course is enhanced"
+    highlight_benefits:
+      - "No recurring payments"
+      - "Complete ownership"
+      - "Lifetime access"
   monthly: 
     price: 30
+    trial_days: 7
     title: "Library Access"
     subtitle: "per month"
     popular: true
+    value_proposition: "Perfect for exploring multiple technologies"
+    cancel_anytime: true
     benefits:
-      - "Access to entire course library"
-      - "All current and future courses"
-      - "Discord community access"
-      - "Direct help from Daniel"
-      - "Monthly content updates"
-      - "Cancel anytime"
+      - "🚀 Access to entire course library"
+      - "📈 All current and future courses"
+      - "💬 Discord community access"
+      - "👨‍💻 Direct help from Daniel"
+      - "📅 Monthly content updates"
+      - "❌ Cancel anytime"
+      - "🆓 7-day free trial"
+      - "📱 Mobile app access"
     library_link: "/courses"
+    highlight_benefits:
+      - "Try risk-free for 7 days"
+      - "Access to all courses"
+      - "Regular new content"
   yearly: 
     price: 330
-    title: "Library Pro"
+    original_price: 360
+    monthly_equivalent: 27.50
+    savings_amount: 30
+    title: "Library Pro Annual"
     subtitle: "per year (save $30)"
     popular: false
+    value_proposition: "Maximum savings for serious learners"
     benefits:
-      - "Everything in Library Access +"
-      - "Priority Discord support"
-      - "Enhanced access to Daniel"
-      - "Early access to new content"
-      - "Quarterly exclusive content"
-      - "Save $30 vs monthly"
+      - "✨ Everything in Library Access +"
+      - "🎯 Priority Discord support"
+      - "⚡ Enhanced access to Daniel"
+      - "🔥 Early access to new content"
+      - "🎁 Quarterly exclusive content"
+      - "💰 Save $30 vs monthly billing"
+      - "📞 Monthly live Q&A sessions"
+      - "🎖️ Pro badge in community"
     library_link: "/courses"
+    highlight_benefits:
+      - "Best price per month"
+      - "Exclusive content access"
+      - "Priority support"
+
+# Money-back guarantee
+guarantee:
+  days: 60
+  title: "60-Day Money-Back Guarantee"
+  subtitle: "Learn with confidence"
+  description: "If you're not completely satisfied with your progress after 60 days, get a full refund. No questions asked."
+  features:
+    - "Full 60-day trial period"
+    - "No questions asked policy"
+    - "Email support for refunds"
+    - "Risk-free learning"
+
+# Global testimonials (can be overridden per course)
+testimonials:
+  featured:
+    - name: "Sarah Chen"
+      role: "Software Engineer at Microsoft"
+      content: "Daniel's courses got me from zero Qt knowledge to building production apps in 6 weeks. The project-based approach made everything click."
+      rating: 5
+      course_completed: "qt-widgets-cpp"
+      avatar: "/assets/testimonials/sarah-chen.jpg"
+    - name: "Mike Rodriguez"
+      role: "Freelance Developer"
+      content: "Best Qt courses I've found. Daniel's teaching style is clear and the projects are actually useful in real work."
+      rating: 5
+      course_completed: "qt-qml-pro"
+      avatar: "/assets/testimonials/mike-rodriguez.jpg"
+    - name: "Priya Patel"
+      role: "Python Developer at Tesla"
+      content: "The PySide6 course transformed how I think about GUI development. Now I can build desktop apps that actually look professional."
+      rating: 5
+      course_completed: "qt-widgets-pyside6"
+      avatar: "/assets/testimonials/priya-patel.jpg"
+    - name: "David Kim"
+      role: "Senior Software Architect"
+      content: "After 15 years of development, this is the most practical programming course I've taken. The real-world projects make all the difference."
+      rating: 5
+      course_completed: "qt-widgets-cpp"
+      avatar: "/assets/testimonials/david-kim.jpg"
+
+# Global comparison framework
+comparison:
+  title: "Why Choose Our Courses Over Other Options?"
+  subtitle: "See how we stack up against the alternatives"
+  options:
+    - name: "Our Courses"
+      highlight: true
+      price: "From $30/month"
+      features:
+        - value: "✅ Complete project-based learning"
+          highlight: true
+        - value: "✅ Modern Qt 6 + Latest Standards"
+          highlight: true
+        - value: "✅ Production deployment guides"
+          highlight: false
+        - value: "✅ Active community support (4,000+ developers)"
+          highlight: true
+        - value: "✅ Lifetime updates included"
+          highlight: false
+        - value: "✅ 60-day money-back guarantee"
+          highlight: false
+    - name: "University Courses"
+      highlight: false
+      price: "$3,000+"
+      features:
+        - value: "❌ Mostly theoretical focus"
+          highlight: false
+        - value: "❌ Often outdated versions"
+          highlight: false
+        - value: "❌ Limited real-world projects"
+          highlight: false
+        - value: "❌ Fixed schedules & deadlines"
+          highlight: false
+        - value: "❌ No updates after completion"
+          highlight: false
+        - value: "❌ No refund options"
+          highlight: false
+    - name: "YouTube/Free Content"
+      highlight: false
+      price: "Free"
+      features:
+        - value: "❌ Scattered, incomplete coverage"
+          highlight: false
+        - value: "❌ No structured learning path"
+          highlight: false
+        - value: "❌ No support when stuck"
+          highlight: false
+        - value: "❌ Often outdated information"
+          highlight: false
+        - value: "❌ No completion tracking"
+          highlight: false
+        - value: "❌ Quality varies wildly"
+          highlight: false
+
+# Global FAQ section
+faq:
+  title: "Frequently Asked Questions"
+  subtitle: "Everything you need to know before getting started"
+  items:
+    - q: "Do I need prior programming experience?"
+      a: "No! Our courses are designed for complete beginners. We cover everything from language basics to advanced patterns. However, if you have programming experience, you'll be able to progress faster."
+    - q: "What if I get stuck on something?"
+      a: "You'll have access to our Discord community with 4,000+ developers plus direct help from Daniel. Most questions are answered within hours, and complex issues get detailed video responses."
+    - q: "How long will it take to complete a course?"
+      a: "Most students finish in 8-12 weeks studying 1-2 hours per day. However, you can go at your own pace with lifetime access - no pressure or deadlines."
+    - q: "Will this help me get a job?"
+      a: "Absolutely! Our courses focus on real-world projects that showcase skills employers want. Many students have landed developer roles, freelance contracts, and promotions after completing our courses."
+    - q: "What if I'm not satisfied?"
+      a: "We offer a 60-day money-back guarantee. If you're not completely satisfied with your progress, get a full refund - no questions asked."
+    - q: "Do courses get updated?"
+      a: "Yes! All courses receive lifetime updates as technologies evolve. When Qt releases new versions or we add new content, you get it automatically at no extra cost."
+    - q: "Can I download the course materials?"
+      a: "With the lifetime purchase, yes! You get downloadable videos, source code, PDFs, and resources. Monthly subscribers can access everything online."
+    - q: "Are there prerequisites for specific courses?"
+      a: "Each course lists its prerequisites in the description. Generally, C++ courses assume no prior C++ knowledge, and Python courses assume basic Python familiarity, but we provide refreshers."
 
 # Featured courses section
 featured_section:
@@ -66,6 +219,30 @@ courses:
       hero:
         subtitle: "Master professional desktop application development using Qt Widgets and modern C++. Build cross-platform applications that run seamlessly on Windows, macOS, and Linux with native performance and polished user interfaces."
         showcase_image: "/assets/courses/image/qt6_gui_beginners.png"
+        
+      preview:
+        title: "See What You'll Build"
+        demo_video: "/assets/courses/videos/qt-widgets-cpp-demo.mp4"
+        projects:
+          - name: "Text Editor Pro"
+            image: "/assets/projects/text-editor.png"
+            description: "Full-featured text editor with syntax highlighting and tabbed interface"
+          - name: "Database Manager"
+            image: "/assets/projects/db-manager.png"
+            description: "Professional GUI for managing SQLite databases with tables and queries"
+          - name: "System Monitor"
+            image: "/assets/projects/system-monitor.png"
+            description: "Real-time system performance tracker with charts and alerts"
+            
+      outcomes:
+        title: "After This Course, You'll Be Able To:"
+        items:
+          - "🎯 Build cross-platform desktop apps that run on Windows, Mac, and Linux"
+          - "🎨 Create professional UIs with Qt Designer and custom widgets"
+          - "💾 Handle databases, file I/O, and network communications"
+          - "🚀 Deploy applications with proper installers and auto-updaters"
+          - "💼 Confidently apply for Qt developer positions"
+          - "🔧 Debug and optimize Qt applications for production"
         
       why_this_course:
         title: "Why This Course?"
@@ -132,6 +309,30 @@ courses:
         subtitle: "Learn to build powerful desktop applications using Qt Widgets and Python. Leverage Python's simplicity with Qt's robust GUI framework to create professional applications with minimal complexity and maximum productivity."
         showcase_image: "/assets/courses/image/pyside6_beginners.png"
         
+      preview:
+        title: "See What You'll Build"
+        demo_video: "/assets/courses/videos/pyside6-demo.mp4"
+        projects:
+          - name: "Python File Manager"
+            image: "/assets/projects/python-file-manager.png"
+            description: "Intuitive file browser with search, preview, and operations"
+          - name: "Data Analyzer GUI"
+            image: "/assets/projects/data-analyzer.png"
+            description: "Interactive data visualization and analysis tool"
+          - name: "Task Manager App"
+            image: "/assets/projects/task-manager.png"
+            description: "Personal productivity app with calendars and reminders"
+            
+      outcomes:
+        title: "After This Course, You'll Be Able To:"
+        items:
+          - "🐍 Build beautiful desktop apps using Python and Qt"
+          - "📊 Create data visualization and analysis tools"
+          - "🔧 Integrate with Python libraries and APIs"
+          - "📱 Deploy Python GUI applications professionally"
+          - "💼 Add GUI development to your Python skill set"
+          - "🌐 Connect desktop apps to web services and databases"
+        
       why_this_course:
         title: "Why This Course?"
         content: |
@@ -194,6 +395,30 @@ courses:
         subtitle: "Master modern UI development with Qt QML and Qt Quick. Create fluid, dynamic, and visually stunning user interfaces for desktop, mobile, and embedded applications. Learn declarative programming and advanced animation techniques."
         showcase_image: "/assets/courses/image/qt6_qml_beginners.png"
         
+      preview:
+        title: "See What You'll Build"
+        demo_video: "/assets/courses/videos/qml-demo.mp4"
+        projects:
+          - name: "Modern Music Player"
+            image: "/assets/projects/music-player.png"
+            description: "Sleek media player with smooth animations and custom controls"
+          - name: "Dashboard App"
+            image: "/assets/projects/dashboard.png"
+            description: "Real-time data dashboard with charts and interactive widgets"
+          - name: "Mobile-Style Interface"
+            image: "/assets/projects/mobile-interface.png"
+            description: "Touch-friendly interface with swipe gestures and transitions"
+            
+      outcomes:
+        title: "After This Course, You'll Be Able To:"
+        items:
+          - "🎨 Create stunning, modern user interfaces with QML"
+          - "⚡ Build fluid animations and interactive transitions"
+          - "📱 Design touch-friendly interfaces for any platform"
+          - "🔗 Integrate QML frontends with C++ backends"
+          - "🚀 Develop high-performance, scalable applications"
+          - "🎯 Master declarative programming patterns"
+        
       why_this_course:
         title: "Why This Course?"
         content: |
@@ -242,11 +467,32 @@ courses:
 # UI Configuration
 ui:
   courses_button: "Explore All Courses"
-  learn_more_button: "Learn More"
-  enroll_button: "Get Started Today"
-  buy_now_button: "Get This Course Now"
-  scroll_to_pricing: "Choose Your Plan"
-  ready_to_join_title: "Ready to Join?"
+  learn_more_button: "See What's Inside"
+  enroll_button: "Start Building Apps Today"
+  buy_now_button: "Get Instant Access"
+  scroll_to_pricing: "Choose Your Plan Below"
+  ready_to_join_title: "Ready to Build Professional Desktop Apps?"
+  
+  # CTA variants for different contexts
+  cta_variants:
+    urgency: "Get Started Before Price Increases"
+    benefit: "Start Building Apps in Minutes"
+    social: "Join 4,000+ Successful Students"
+    trial: "Start Your 7-Day Free Trial"
+    guarantee: "Try Risk-Free for 60 Days"
+  
+  # Urgency and scarcity elements
+  urgency:
+    price_increase_date: "October 1st, 2025"
+    early_bird_message: "Limited time: Save 32% on lifetime access"
+    student_count_threshold: "4,000"
+    
+  # Social proof labels
+  social_labels:
+    students: "students worldwide"
+    rating: "average rating"
+    completion: "completion rate"
+    countries: "countries represented"
 
 
 

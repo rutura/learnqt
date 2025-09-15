@@ -12,19 +12,185 @@
                 <div class="hero-content text-white">
                     <h1 class="display-4 fw-bold mb-4">{{ course_data.title }}</h1>
                     <p class="lead mb-4">{{ course_data.sections.hero.subtitle }}</p>
+                    
+                    <!-- Social Proof -->
+                    <div class="social-proof-section mb-4">
+                        <div class="row text-center">
+                            <div class="col-6 col-md-3">
+                                <div class="social-proof-item">
+                                    <div class="social-proof-number">{{ site.data.courses.social_proof.student_count }}</div>
+                                    <div class="social-proof-label">{{ site.data.courses.ui.social_labels.students }}</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="social-proof-item">
+                                    <div class="social-proof-number">{{ site.data.courses.social_proof.avg_rating }}/5</div>
+                                    <div class="social-proof-label">{{ site.data.courses.ui.social_labels.rating }}</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="social-proof-item">
+                                    <div class="social-proof-number">{{ site.data.courses.social_proof.completion_rate }}%</div>
+                                    <div class="social-proof-label">{{ site.data.courses.ui.social_labels.completion }}</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="social-proof-item">
+                                    <div class="social-proof-number">{{ site.data.courses.social_proof.countries }}+</div>
+                                    <div class="social-proof-label">{{ site.data.courses.ui.social_labels.countries }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="hero-badges mb-4">
                         <span class="badge bg-light text-dark me-2">{{ course_data.level }}</span>
                         <span class="badge bg-light text-dark me-2">{{ course_data.duration }}</span>
                         <span class="badge bg-light text-dark">{{ course_data.language }}</span>
                     </div>
-                    <a href="#ready-to-join" class="btn btn-light btn-lg text-success fw-bold scroll-to-pricing">
-                        <i class="fas fa-rocket me-2"></i>{{ site.data.courses.ui.scroll_to_pricing }}
-                    </a>
+                    
+                    <div class="hero-cta-buttons">
+                        <a href="#ready-to-join" class="btn btn-light btn-lg text-success fw-bold scroll-to-pricing me-3">
+                            <i class="fas fa-rocket me-2"></i>{{ site.data.courses.ui.enroll_button }}
+                        </a>
+                        <a href="#preview" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-play me-2"></i>{{ site.data.courses.ui.learn_more_button }}
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="hero-image">
                     <img src="{{ site.baseurl }}{{ course_data.sections.hero.showcase_image }}" alt="{{ course_data.title }}" class="img-fluid rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Preview Section -->
+{% if course_data.sections.preview %}
+<section id="preview" class="course-preview py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="text-center mb-5">{{ course_data.sections.preview.title }}</h2>
+                
+                {% if course_data.sections.preview.demo_video %}
+                <div class="demo-video-container mb-5">
+                    <div class="video-wrapper">
+                        <video class="demo-video" controls poster="{{ site.baseurl }}{{ course_data.image }}">
+                            <source src="{{ site.baseurl }}{{ course_data.sections.preview.demo_video }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if course_data.sections.preview.projects %}
+                <div class="projects-showcase">
+                    <h3 class="text-center mb-4">Projects You'll Build</h3>
+                    <div class="row g-4">
+                        {% for project in course_data.sections.preview.projects %}
+                        <div class="col-md-4">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="{{ site.baseurl }}{{ project.image }}" alt="{{ project.name }}" class="img-fluid">
+                                </div>
+                                <div class="project-content">
+                                    <h4 class="project-title">{{ project.name }}</h4>
+                                    <p class="project-description">{{ project.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                
+                <div class="text-center mt-5">
+                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
+                        <i class="fas fa-code me-2"></i>Start Building These Projects
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Learning Outcomes Section -->
+{% if course_data.sections.outcomes %}
+<section class="learning-outcomes py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-5">{{ course_data.sections.outcomes.title }}</h2>
+                
+                <div class="outcomes-grid">
+                    {% for outcome in course_data.sections.outcomes.items %}
+                    <div class="outcome-item">
+                        <i class="fas fa-check-circle outcome-icon"></i>
+                        <span class="outcome-text">{{ outcome }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
+                        <i class="fas fa-graduation-cap me-2"></i>Master These Skills
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Testimonials Section -->
+<section class="testimonials py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="text-center mb-5">What Students Are Saying</h2>
+                
+                <div class="row g-4">
+                    {% assign course_testimonials = site.data.courses.testimonials.featured | where: "course_completed", course_data.id %}
+                    {% assign other_testimonials = site.data.courses.testimonials.featured | where_exp: "item", "item.course_completed != course_data.id" %}
+                    {% assign all_testimonials = course_testimonials | concat: other_testimonials %}
+                    
+                    {% for testimonial in all_testimonials limit: 6 %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="{{ site.baseurl }}{{ testimonial.avatar }}" alt="{{ testimonial.name }}" class="avatar-img">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h5 class="testimonial-name">{{ testimonial.name }}</h5>
+                                    <p class="testimonial-role">{{ testimonial.role }}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-rating mb-3">
+                                {% for i in (1..testimonial.rating) %}
+                                <i class="fas fa-star text-warning"></i>
+                                {% endfor %}
+                            </div>
+                            
+                            <blockquote class="testimonial-content">
+                                "{{ testimonial.content }}"
+                            </blockquote>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="text-center mt-5">
+                    <p class="lead mb-4">Join {{ site.data.courses.social_proof.student_count }} successful students</p>
+                    <a href="#ready-to-join" class="btn btn-light btn-lg text-primary fw-bold scroll-to-pricing">
+                        <i class="fas fa-users me-2"></i>{{ site.data.courses.ui.cta_variants.social }}
+                    </a>
                 </div>
             </div>
         </div>
@@ -130,9 +296,75 @@
     </div>
 </section>
 
-<!-- Ready to Join Section (Clean Notion-Style Design) -->
+<!-- Comparison Section -->
+<section class="comparison py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="text-center mb-4">{{ site.data.courses.comparison.title }}</h2>
+                <p class="text-center text-muted mb-5">{{ site.data.courses.comparison.subtitle }}</p>
+                
+                <div class="comparison-table-wrapper">
+                    <div class="table-responsive">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th class="feature-column">Features</th>
+                                    {% for option in site.data.courses.comparison.options %}
+                                    <th class="option-column {% if option.highlight %}highlight{% endif %}">
+                                        <div class="option-header">
+                                            <h4 class="option-name">{{ option.name }}</h4>
+                                            <div class="option-price">{{ option.price }}</div>
+                                        </div>
+                                    </th>
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% assign first_option = site.data.courses.comparison.options[0] %}
+                                {% for feature in first_option.features %}
+                                <tr>
+                                    <td class="feature-name">{{ feature.value | remove: '✅ ' | remove: '❌ ' }}</td>
+                                    {% for option in site.data.courses.comparison.options %}
+                                        {% assign current_feature = option.features[forloop.index0] %}
+                                        <td class="option-value {% if option.highlight %}highlight{% endif %}">
+                                            {% if current_feature.value contains '✅' %}
+                                                <i class="fas fa-check text-success comparison-icon"></i>
+                                            {% else %}
+                                                <i class="fas fa-times text-danger comparison-icon"></i>
+                                            {% endif %}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
+                        <i class="fas fa-trophy me-2"></i>Choose the Best Option
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ready to Join Section (Enhanced with Urgency) -->
 <section id="ready-to-join" class="ready-to-join py-5">
     <div class="container">
+        <!-- Urgency Banner -->
+        {% if site.data.courses.pricing.lifetime.urgency_text %}
+        <div class="urgency-banner text-center mb-4">
+            <div class="alert alert-warning border-0 shadow-sm">
+                <i class="fas fa-clock me-2"></i>
+                <strong>⏰ {{ site.data.courses.pricing.lifetime.urgency_text }}</strong>
+            </div>
+        </div>
+        {% endif %}
+        
         <!-- Section Header -->
         <div class="row mb-5">
             <div class="col-lg-8 mx-auto text-center">
@@ -143,28 +375,55 @@
         
         <!-- Pricing Cards -->
         <div class="pricing-container">
-            <div class="row g-0 justify-content-center">
+            <div class="row g-4 justify-content-center">
                 <!-- Single Course -->
                 <div class="col-lg-4">
                     <div class="pricing-card single-course">
+                        {% if site.data.courses.pricing.lifetime.urgency_text %}
+                        <div class="urgency-badge">
+                            <span>{{ site.data.courses.ui.urgency.early_bird_message }}</span>
+                        </div>
+                        {% endif %}
+                        
                         <div class="card-header">
                             <h3 class="plan-title">{{ site.data.courses.pricing.lifetime.title }}</h3>
                             <div class="price-display">
-                                <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.lifetime.price }}</span>
+                                {% if site.data.courses.pricing.lifetime.original_price %}
+                                <span class="original-price">${{ site.data.courses.pricing.lifetime.original_price }}</span>
+                                {% endif %}
+                                <div class="current-price">
+                                    <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.lifetime.price }}</span>
+                                </div>
+                                {% if site.data.courses.pricing.lifetime.discount_percentage %}
+                                <div class="savings-badge">
+                                    Save {{ site.data.courses.pricing.lifetime.discount_percentage }}%
+                                </div>
+                                {% endif %}
                             </div>
+                            <p class="plan-subtitle">{{ site.data.courses.pricing.lifetime.subtitle }}</p>
                         </div>
                         
                         <div class="card-body">
                             <a href="{% if course_data.pricing_override.lifetime.teachable_link %}{{ course_data.pricing_override.lifetime.teachable_link }}{% else %}{{ site.data.courses.pricing.lifetime.teachable_link }}{% endif %}" 
-                               class="btn btn-outline w-100 mb-4">
-                                Sign up
+                               class="btn btn-outline-primary w-100 mb-4">
+                                {{ site.data.courses.ui.buy_now_button }}
                             </a>
                             
                             <ul class="benefits-list">
                                 {% for benefit in site.data.courses.pricing.lifetime.benefits %}
-                                <li>{{ benefit }}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ benefit }}</li>
                                 {% endfor %}
                             </ul>
+                            
+                            {% if site.data.courses.pricing.lifetime.highlight_benefits %}
+                            <div class="highlight-benefits mt-3">
+                                {% for highlight in site.data.courses.pricing.lifetime.highlight_benefits %}
+                                <div class="highlight-item">
+                                    <i class="fas fa-star text-warning me-2"></i>{{ highlight }}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -174,22 +433,30 @@
                     <div class="pricing-card library-access popular">
                         {% if site.data.courses.pricing.monthly.popular %}
                         <div class="popular-badge">
-                            <span>Popular</span>
+                            <span>🔥 Most Popular</span>
                         </div>
                         {% endif %}
                         
                         <div class="card-header">
                             <h3 class="plan-title">{{ site.data.courses.pricing.monthly.title }}</h3>
                             <div class="price-display">
-                                <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.monthly.price }}</span>
-                                <span class="period">{{ site.data.courses.pricing.monthly.subtitle }}</span>
+                                <div class="current-price">
+                                    <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.monthly.price }}</span>
+                                    <span class="period">{{ site.data.courses.pricing.monthly.subtitle }}</span>
+                                </div>
+                                {% if site.data.courses.pricing.monthly.trial_days %}
+                                <div class="trial-badge">
+                                    {{ site.data.courses.pricing.monthly.trial_days }}-day free trial
+                                </div>
+                                {% endif %}
                             </div>
+                            <p class="plan-subtitle">{{ site.data.courses.pricing.monthly.value_proposition }}</p>
                         </div>
                         
                         <div class="card-body">
                             <a href="{% if course_data.pricing_override.monthly.teachable_link %}{{ course_data.pricing_override.monthly.teachable_link }}{% else %}{{ site.data.courses.pricing.monthly.teachable_link }}{% endif %}" 
                                class="btn btn-primary w-100 mb-4">
-                                Get started
+                                {{ site.data.courses.ui.cta_variants.trial }}
                             </a>
                             
                             <div class="library-link mb-3">
@@ -201,9 +468,19 @@
                             
                             <ul class="benefits-list">
                                 {% for benefit in site.data.courses.pricing.monthly.benefits %}
-                                <li>{{ benefit }}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ benefit }}</li>
                                 {% endfor %}
                             </ul>
+                            
+                            {% if site.data.courses.pricing.monthly.highlight_benefits %}
+                            <div class="highlight-benefits mt-3">
+                                {% for highlight in site.data.courses.pricing.monthly.highlight_benefits %}
+                                <div class="highlight-item">
+                                    <i class="fas fa-star text-warning me-2"></i>{{ highlight }}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -214,14 +491,25 @@
                         <div class="card-header">
                             <h3 class="plan-title">{{ site.data.courses.pricing.yearly.title }}</h3>
                             <div class="price-display">
-                                <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.yearly.price }}</span>
-                                <span class="period">{{ site.data.courses.pricing.yearly.subtitle }}</span>
+                                {% if site.data.courses.pricing.yearly.original_price %}
+                                <span class="original-price">${{ site.data.courses.pricing.yearly.original_price }}</span>
+                                {% endif %}
+                                <div class="current-price">
+                                    <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.yearly.price }}</span>
+                                    <span class="period">{{ site.data.courses.pricing.yearly.subtitle }}</span>
+                                </div>
+                                {% if site.data.courses.pricing.yearly.monthly_equivalent %}
+                                <div class="equivalent-price">
+                                    Only ${{ site.data.courses.pricing.yearly.monthly_equivalent }}/month
+                                </div>
+                                {% endif %}
                             </div>
+                            <p class="plan-subtitle">{{ site.data.courses.pricing.yearly.value_proposition }}</p>
                         </div>
                         
                         <div class="card-body">
                             <a href="{% if course_data.pricing_override.yearly.teachable_link %}{{ course_data.pricing_override.yearly.teachable_link }}{% else %}{{ site.data.courses.pricing.yearly.teachable_link }}{% endif %}" 
-                               class="btn btn-outline w-100 mb-4">
+                               class="btn btn-outline-primary w-100 mb-4">
                                 Get started
                             </a>
                             
@@ -234,9 +522,43 @@
                             
                             <ul class="benefits-list">
                                 {% for benefit in site.data.courses.pricing.yearly.benefits %}
-                                <li>{{ benefit }}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ benefit }}</li>
                                 {% endfor %}
                             </ul>
+                            
+                            {% if site.data.courses.pricing.yearly.highlight_benefits %}
+                            <div class="highlight-benefits mt-3">
+                                {% for highlight in site.data.courses.pricing.yearly.highlight_benefits %}
+                                <div class="highlight-item">
+                                    <i class="fas fa-star text-warning me-2"></i>{{ highlight }}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Money-back Guarantee -->
+        <div class="guarantee-section mt-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="guarantee-title">{{ site.data.courses.guarantee.title }}</h3>
+                        <p class="guarantee-subtitle">{{ site.data.courses.guarantee.subtitle }}</p>
+                        <p class="guarantee-description">{{ site.data.courses.guarantee.description }}</p>
+                        
+                        <div class="guarantee-features">
+                            {% for feature in site.data.courses.guarantee.features %}
+                            <span class="guarantee-feature">
+                                <i class="fas fa-check text-success me-1"></i>{{ feature }}
+                            </span>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -250,7 +572,7 @@
                     <div class="trust-items">
                         <div class="trust-item">
                             <i class="fas fa-shield-alt"></i>
-                            <span>30-day money-back guarantee</span>
+                            <span>60-day money-back guarantee</span>
                         </div>
                         <div class="trust-item">
                             <i class="fas fa-lock"></i>
@@ -258,9 +580,45 @@
                         </div>
                         <div class="trust-item">
                             <i class="fas fa-users"></i>
-                            <span>Join 32,000+ students</span>
+                            <span>Join {{ site.data.courses.social_proof.student_count }} students</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">{{ site.data.courses.faq.title }}</h2>
+                <p class="text-center text-muted mb-5">{{ site.data.courses.faq.subtitle }}</p>
+                
+                <div class="accordion" id="faqAccordion">
+                    {% for item in site.data.courses.faq.items %}
+                    <div class="accordion-item mb-3">
+                        <h3 class="accordion-header" id="faq{{ forloop.index }}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse{{ forloop.index }}" aria-expanded="false" aria-controls="faqCollapse{{ forloop.index }}">
+                                {{ item.q }}
+                            </button>
+                        </h3>
+                        <div id="faqCollapse{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="faq{{ forloop.index }}" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                {{ item.a }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="text-center mt-5">
+                    <p class="lead mb-4">Still have questions?</p>
+                    <a href="#ready-to-join" class="btn btn-success btn-lg scroll-to-pricing">
+                        <i class="fas fa-question-circle me-2"></i>{{ site.data.courses.ui.cta_variants.guarantee }}
+                    </a>
                 </div>
             </div>
         </div>
@@ -275,10 +633,14 @@
     --qt-green-dark: #149f25;
     --primary-color: #3498db;
     --secondary-color: #2c3e50;
+    --warning-color: #f39c12;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
 }
 
+/* Hero Section */
 .course-hero {
-    min-height: 600px;
+    min-height: 700px;
     display: flex;
     align-items: center;
 }
@@ -295,6 +657,188 @@
 
 .rounded-lg {
     border-radius: 12px;
+}
+
+/* Social Proof in Hero */
+.social-proof-section {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.social-proof-item {
+    text-align: center;
+}
+
+.social-proof-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+.social-proof-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero-cta-buttons .btn {
+    min-width: 200px;
+}
+
+/* Course Preview Section */
+.course-preview {
+    background: #f8f9fa;
+}
+
+.demo-video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.demo-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.project-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.project-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Learning Outcomes */
+.outcomes-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.outcome-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.outcome-icon {
+    color: var(--success-color);
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.outcome-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2980b9 100%);
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--secondary-color);
+}
+
+.testimonial-role {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.testimonial-rating {
+    margin-bottom: 1rem;
+}
+
+.testimonial-content {
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
 }
 
 /* Content Sections */
@@ -332,9 +876,103 @@
     object-fit: cover;
 }
 
+/* Comparison Table */
+.comparison-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.comparison-table {
+    width: 100%;
+    min-width: 600px;
+    background: white;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.comparison-table thead th {
+    background: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.comparison-table tbody td {
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.option-column.highlight,
+.option-value.highlight {
+    background: rgba(52, 152, 219, 0.1);
+    border-left: 3px solid var(--primary-color);
+    border-right: 3px solid var(--primary-color);
+}
+
+.option-header h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.option-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.feature-name {
+    text-align: left;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.comparison-icon {
+    font-size: 1.2rem;
+}
+
 /* Ready to Join Section */
 .ready-to-join {
     position: relative;
+}
+
+/* Urgency Banner */
+.urgency-banner .alert {
+    background: linear-gradient(90deg, var(--warning-color), #e67e22) !important;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.urgency-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--danger-color), #c0392b);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--success-color), #229954);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 10;
 }
 
 .pricing-card {
@@ -342,124 +980,299 @@
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     border: 2px solid transparent;
-    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.pricing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    height: 100%;
 }
 
 .pricing-card.popular {
     border-color: var(--primary-color);
-    transform: scale(1.05);
-}
-
-.popular-ribbon {
-    position: absolute;
-    top: 20px;
-    right: -35px;
-    background: #e74c3c;
-    color: white;
-    padding: 8px 40px;
-    transform: rotate(45deg);
-    font-size: 0.85rem;
-    font-weight: bold;
-    z-index: 10;
+    transform: scale(1.02);
 }
 
 .pricing-card .card-header {
     border-bottom: 1px solid #e9ecef;
     background: #f8f9fa;
+    padding: 2rem 1.5rem 1.5rem;
 }
 
-.card-title {
-    font-size: 1.5rem;
+.plan-title {
+    font-size: 1.4rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--secondary-color);
     margin-bottom: 0.5rem;
 }
 
-.card-subtitle {
+.plan-subtitle {
     font-size: 0.95rem;
-    margin-bottom: 0;
+    color: #666;
+    margin-bottom: 1rem;
 }
 
-.benefits-list .benefit-item {
+.price-display {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.original-price {
+    font-size: 1.2rem;
+    color: #999;
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.current-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.currency {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    line-height: 1;
+}
+
+.period {
+    font-size: 1rem;
+    color: #666;
+}
+
+.savings-badge,
+.trial-badge,
+.equivalent-price {
+    display: inline-block;
+    background: var(--success-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.trial-badge {
+    background: var(--primary-color);
+}
+
+.equivalent-price {
+    background: var(--warning-color);
+}
+
+.pricing-card .card-body {
+    padding: 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-list li {
     padding: 0.5rem 0;
     border-bottom: 1px solid #f1f1f1;
     font-size: 0.95rem;
+    line-height: 1.4;
 }
 
-.benefits-list .benefit-item:last-child {
+.benefits-list li:last-child {
     border-bottom: none;
 }
 
-.price-section .price {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #2c3e50;
+.highlight-benefits {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+.highlight-item {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
-.price .currency {
+.highlight-item:last-child {
+    margin-bottom: 0;
+}
+
+.library-access-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.library-access-link:hover {
+    text-decoration: underline;
+}
+
+/* Guarantee Section */
+.guarantee-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.guarantee-icon {
+    font-size: 3rem;
+    color: var(--success-color);
+    margin-bottom: 1rem;
+}
+
+.guarantee-title {
     font-size: 1.5rem;
-    vertical-align: top;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
 }
 
-.price-note {
-    font-size: 0.85rem;
+.guarantee-subtitle {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
+.guarantee-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.guarantee-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.guarantee-feature {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* Trust Indicators */
+.trust-indicators {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.trust-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.trust-item i {
+    color: var(--success-color);
+}
+
+/* FAQ Section */
+.faq .accordion-item {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq .accordion-button {
+    background: white;
+    border: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.faq .accordion-button:not(.collapsed) {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: none;
+}
+
+.faq .accordion-button:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.faq .accordion-body {
+    padding: 1.5rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+/* Button Styles */
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), #2980b9);
+    border: none;
     font-weight: 600;
     padding: 1rem 2rem;
+    border-radius: 8px;
 }
 
 .btn-outline-primary {
     color: var(--primary-color);
-    border-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
     font-weight: 600;
     padding: 1rem 2rem;
+    border-radius: 8px;
 }
 
 .btn-outline-primary:hover {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     border-color: var(--primary-color);
 }
 
-/* CTA Buttons */
 .btn-success {
-    background-color: var(--qt-green);
-    border-color: var(--qt-green);
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    border: none;
     font-weight: 600;
     letter-spacing: 0.5px;
     padding: 1rem 2rem;
     border-radius: 8px;
-    transition: all 0.3s ease;
 }
 
 .btn-success:hover {
-    background-color: var(--qt-green-dark);
-    border-color: var(--qt-green-dark);
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--qt-green-dark), var(--qt-green));
 }
 
-/* CTA Banner */
-.cta-banner {
-    position: sticky;
-    bottom: 0;
-    z-index: 1000;
+.btn-outline-light {
+    border: 2px solid rgba(255,255,255,0.7);
+    color: white;
+    font-weight: 600;
 }
 
-/* Smooth Scrolling */
-.scroll-to-pricing {
-    cursor: pointer;
+.btn-outline-light:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+    color: white;
 }
+
+/* Animations */
+/* Removed all animations for cleaner experience */
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -480,15 +1293,38 @@
     
     .pricing-card.popular {
         transform: none;
+        margin-bottom: 1rem;
     }
     
-    .popular-ribbon {
-        display: none;
+    .hero-cta-buttons .btn {
+        min-width: auto;
+        margin-bottom: 1rem;
     }
     
-    .cta-banner .col-lg-4 {
-        text-align: center !important;
-        margin-top: 1rem;
+    .social-proof-section .row > div {
+        margin-bottom: 1rem;
+    }
+    
+    .trust-items {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .guarantee-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .comparison-table-wrapper {
+        margin: 0 -1rem;
+    }
+    
+    .outcomes-grid {
+        gap: 0.75rem;
+    }
+    
+    .outcome-item {
+        padding: 0.75rem;
     }
 }
 
@@ -507,6 +1343,26 @@
         padding: 1.5rem;
         padding-left: 1.5rem;
         border-left-width: 3px;
+    }
+    
+    .social-proof-number {
+        font-size: 1.5rem;
+    }
+    
+    .project-content {
+        padding: 1rem;
+    }
+    
+    .testimonial-card {
+        padding: 1rem;
+    }
+    
+    .pricing-card .card-header {
+        padding: 1.5rem 1rem 1rem;
+    }
+    
+    .pricing-card .card-body {
+        padding: 1rem;
     }
 }
 </style>
@@ -528,25 +1384,102 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Initialize Bootstrap components
+    if (typeof bootstrap !== 'undefined') {
+        // Initialize accordion
+        const accordionElements = document.querySelectorAll('.accordion');
+        accordionElements.forEach(element => {
+            new bootstrap.Collapse(element, { toggle: false });
+        });
+    }
 });
 
 // Add entrance animations
 window.addEventListener('load', function() {
-    const observer = new IntersectionObserver((entries) => {
+    // Removed entrance animations for cleaner experience
+    console.log('Page loaded - animations disabled for better UX');
+});
+
+// Urgency timer countdown (if needed)
+function updateUrgencyTimer() {
+    const urgencyDate = new Date('{{ site.data.courses.ui.urgency.price_increase_date }}');
+    const now = new Date();
+    const timeLeft = urgencyDate - now;
+    
+    if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        
+        const urgencyElements = document.querySelectorAll('.urgency-countdown');
+        urgencyElements.forEach(element => {
+            element.textContent = `${days} days, ${hours} hours left`;
+        });
+    }
+}
+
+// Update timer every hour
+setInterval(updateUrgencyTimer, 3600000);
+updateUrgencyTimer();
+
+// Track conversion events (for analytics)
+function trackConversionEvent(eventName, planType) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, {
+            'event_category': 'Course Purchase',
+            'event_label': planType,
+            'value': 1
+        });
+    }
+    
+    console.log(`Conversion event: ${eventName} - ${planType}`);
+}
+
+// Add click tracking to pricing buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const pricingButtons = document.querySelectorAll('.pricing-card a[href*="teachable"]');
+    
+    pricingButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.pricing-card');
+            let planType = 'unknown';
+            
+            if (card.classList.contains('single-course')) {
+                planType = 'lifetime';
+            } else if (card.classList.contains('library-access')) {
+                planType = 'monthly';
+            } else if (card.classList.contains('library-pro')) {
+                planType = 'yearly';
+            }
+            
+            trackConversionEvent('pricing_button_click', planType);
+        });
+    });
+});
+
+// Pricing card hover effects
+document.addEventListener('DOMContentLoaded', function() {
+    // Removed hover animations for cleaner experience
+    console.log('Pricing cards initialized without hover effects');
+});
+
+// Lazy load videos
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('video[data-src]');
+    
+    const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                const video = entry.target;
+                video.src = video.dataset.src;
+                video.load();
+                videoObserver.unobserve(video);
             }
         });
     });
     
-    const elements = document.querySelectorAll('.pricing-card, .benefit-item, .feature-item');
-    elements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.6s ease';
-        observer.observe(el);
+    videos.forEach(video => {
+        videoObserver.observe(video);
     });
 });
 </script>
