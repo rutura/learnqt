@@ -425,7 +425,14 @@
 
 <!-- Learning Outcomes Section -->
 {% if course_data.sections.outcomes %}
-<section class="learning-outcomes py-5">
+<section class="learning-outcomes py-5 bg-gray-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-lg" style="top: 15%; left: 8%;"></div>
+        <div class="floating-element floating-md" style="top: 45%; right: 12%;"></div>
+        <div class="floating-element floating-sm" style="top: 70%; left: 15%;"></div>
+        <div class="floating-element floating-md" style="top: 25%; right: 75%;"></div>
+        <div class="floating-element floating-sm" style="top: 55%; left: 80%;"></div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -1185,6 +1192,7 @@
     --secondary-gradient: linear-gradient(135deg, #0ea5e9 0%, #15ba29 50%, #059669 100%);
     --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --neutral-gradient: linear-gradient(135deg, #15ba29 0%, #3b82f6 50%, #1e40af 100%);
+    --gray-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
     --glass-bg: rgba(255, 255, 255, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
     --glass-blur: blur(15px);
@@ -1213,6 +1221,15 @@
     z-index: 1;
 }
 
+/* Gray background specific patterns */
+.bg-gray-gradient.background-pattern::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(0,0,0,0.05) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(0,0,0,0.05) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(0,0,0,0.03) 1px, transparent 1px);
+    opacity: 0.3;
+}
+
 .background-pattern > .container {
     position: relative;
     z-index: 10;
@@ -1239,6 +1256,12 @@
     background: var(--glass-bg);
     border-radius: 50%;
     backdrop-filter: var(--glass-blur);
+}
+
+/* Gray background specific floating elements */
+.bg-gray-gradient .floating-element {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .floating-sm {
@@ -1315,6 +1338,11 @@
 .bg-neutral-gradient {
     background: var(--neutral-gradient);
     color: white;
+}
+
+.bg-gray-gradient {
+    background: var(--gray-gradient);
+    color: #1f2937;
 }
 
 /* Enhanced Hero Section */
