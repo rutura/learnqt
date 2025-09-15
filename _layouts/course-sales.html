@@ -958,7 +958,7 @@
                             
                             <ul class="benefits-list">
                                 {% for benefit in site.data.courses.pricing.lifetime.benefits %}
-                                <li><i class="fas fa-check text-success me-2"></i>{{ benefit }}</li>
+                                <li>{{ benefit }}</li>
                                 {% endfor %}
                             </ul>
                             
@@ -1011,7 +1011,6 @@
                             </a>
                             
                             <div class="library-link mb-3">
-                                <p class="mb-2"><strong>Everything in Single Course +</strong></p>
                                 <a href="{{ site.data.courses.pricing.monthly.library_link }}" class="library-access-link">
                                     <i class="fas fa-books me-1"></i>View full course library
                                 </a>
@@ -1019,7 +1018,7 @@
                             
                             <ul class="benefits-list">
                                 {% for benefit in site.data.courses.pricing.monthly.benefits %}
-                                <li><i class="fas fa-check text-success me-2"></i>{{ benefit }}</li>
+                                <li>{{ benefit }}</li>
                                 {% endfor %}
                             </ul>
                             
@@ -1069,7 +1068,6 @@
                             </a>
                             
                             <div class="library-link mb-3">
-                                <p class="mb-2"><strong>Everything in Library Access +</strong></p>
                                 <a href="{{ site.data.courses.pricing.yearly.library_link }}" class="library-access-link">
                                     <i class="fas fa-books me-1"></i>View full course library
                                 </a>
@@ -1077,7 +1075,7 @@
                             
                             <ul class="benefits-list">
                                 {% for benefit in site.data.courses.pricing.yearly.benefits %}
-                                <li><i class="fas fa-check text-success me-2"></i>{{ benefit }}</li>
+                                <li>{{ benefit }}</li>
                                 {% endfor %}
                             </ul>
                             
@@ -2907,6 +2905,12 @@
     border-bottom: 1px solid #f1f1f1;
     font-size: 0.95rem;
     line-height: 1.4;
+    list-style: none;
+    list-style-type: none;
+}
+
+.benefits-list li:before {
+    content: none;
 }
 
 .benefits-list li:last-child {
@@ -5098,3 +5102,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+<style>
+/* Force remove all list styling from benefits - Override any existing styles */
+.pricing-card ul,
+.pricing-card ol,
+.benefits-list,
+.highlight-benefits-list {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.pricing-card ul li,
+.pricing-card ol li,
+.benefits-list li,
+.highlight-benefits-list li {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    position: relative;
+}
+
+.pricing-card ul li:before,
+.pricing-card ol li:before,
+.benefits-list li:before,
+.highlight-benefits-list li:before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Ensure clean emoji display */
+.benefits-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: block;
+}
+</style>
