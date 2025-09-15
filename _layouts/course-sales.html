@@ -1184,14 +1184,63 @@
                     {% endfor %}
                 </div>
                 
-                <div class="text-center mt-5">
-                    <p class="lead mb-4">Still have questions?</p>
-                    <a href="#ready-to-join" class="btn btn-faq-cta scroll-to-pricing">
-                        <span class="btn-text">{{ site.data.courses.ui.cta_variants.guarantee }}</span>
-                        <div class="btn-arrow">
-                            <i class="fas fa-question-circle"></i>
+                <!-- Contact Section -->
+                <div class="contact-section mt-5">
+                    <div class="contact-card glass-card p-4">
+                        <div class="text-center mb-4">
+                            <h4 class="contact-title mb-3">Still Have Questions?</h4>
+                            <p class="contact-subtitle">Get personalized help from instructor Daniel Gakwaya and our community</p>
                         </div>
-                    </a>
+                        
+                        <div class="contact-options">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <a href="https://discord.com/invite/PcATcraESW" target="_blank" class="contact-option discord-option">
+                                        <div class="contact-icon discord-icon">
+                                            <i class="fab fa-discord"></i>
+                                        </div>
+                                        <div class="contact-content">
+                                            <h5 class="contact-method">Join Our Discord</h5>
+                                            <p class="contact-description">Chat with 4,000+ Qt developers and get instant help</p>
+                                            <div class="contact-badge">
+                                                <span>Usually replied within hours</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-arrow">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="mailto:daniel.g@learnqt.guide" class="contact-option email-option">
+                                        <div class="contact-icon email-icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="contact-content">
+                                            <h5 class="contact-method">Email the Instructor</h5>
+                                            <p class="contact-description">Send a direct message to Daniel for detailed questions</p>
+                                            <div class="contact-badge">
+                                                <span>daniel.g@learnqt.guide</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-arrow">
+                                            <i class="fas fa-paper-plane"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-cta text-center mt-4">
+                            <p class="mb-3"><strong>Ready to start your journey?</strong></p>
+                            <a href="#ready-to-join" class="btn btn-contact-cta scroll-to-pricing">
+                                <span class="btn-text">{{ site.data.courses.ui.cta_variants.guarantee }}</span>
+                                <div class="btn-arrow">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1396,6 +1445,213 @@
 .bg-gray-gradient {
     background: var(--gray-gradient);
     color: #1f2937;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+    color: #1f2937;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+    color: #6b7280;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.contact-options {
+    margin: 2rem 0;
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.5);
+    height: 100%;
+}
+
+.contact-option:hover {
+    text-decoration: none;
+    color: inherit;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.discord-option {
+    border-color: rgba(88, 101, 242, 0.3);
+}
+
+.discord-option:hover {
+    border-color: #5865f2;
+    background: rgba(88, 101, 242, 0.05);
+}
+
+.email-option {
+    border-color: rgba(21, 186, 41, 0.3);
+}
+
+.email-option:hover {
+    border-color: #15ba29;
+    background: rgba(21, 186, 41, 0.05);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.discord-icon {
+    background: linear-gradient(135deg, #5865f2, #7289da);
+    color: white;
+}
+
+.email-icon {
+    background: linear-gradient(135deg, #15ba29, #149f25);
+    color: white;
+}
+
+.contact-content {
+    flex-grow: 1;
+}
+
+.contact-method {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+.contact-description {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.contact-badge {
+    display: inline-block;
+}
+
+.contact-badge span {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.discord-option .contact-badge span {
+    background: rgba(88, 101, 242, 0.1);
+    color: #5865f2;
+}
+
+.email-option .contact-badge span {
+    background: rgba(21, 186, 41, 0.1);
+    color: #15ba29;
+}
+
+.contact-arrow {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+}
+
+.contact-option:hover .contact-arrow {
+    color: #6b7280;
+    transform: translateX(3px);
+}
+
+.contact-cta {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 1.5rem;
+}
+
+.btn-contact-cta {
+    background: linear-gradient(135deg, #15ba29 0%, #149f25 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(21, 186, 41, 0.3);
+}
+
+.btn-contact-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(21, 186, 41, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-contact-cta .btn-arrow {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-contact-cta:hover .btn-arrow {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-option {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .contact-arrow {
+        display: none;
+    }
+    
+    .contact-title {
+        font-size: 1.5rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 1rem;
+    }
 }
 
 /* Enhanced Hero Section */
