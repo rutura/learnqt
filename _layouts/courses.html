@@ -21,7 +21,7 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100 shadow-sm course-card">
                     <div class="card-image-wrapper">
-                        <img class="card-img-top" loading="lazy" alt="{{ course.title }}" src="{{ site.baseurl }}{{ course.image }}">
+                        <img class="card-img-top" alt="{{ course.title }}" src="{{ site.baseurl }}{{ course.image }}">
                         <div class="course-badges">
                             <span class="badge bg-primary">{{ course.technology }}</span>
                             <span class="badge bg-success">{{ course.level }}</span>
@@ -136,16 +136,17 @@
 
 .all-courses .card-image-wrapper {
     position: relative;
-    height: 220px;
+    min-height: 220px;
     background-color: #f8f9fa;
     overflow: hidden;
 }
 
 .all-courses .card-img-top {
     width: 100%;
-    height: 100%;
+    max-height: 220px;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .all-courses .course-card:hover .card-img-top {
