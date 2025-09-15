@@ -118,8 +118,8 @@ testimonials:
       course_completed: "qt-widgets-cpp"
       avatar: "/assets/testimonials/david-kim.jpg"
 
-# Global comparison framework
-comparison:
+# Global comparison framework (DEPRECATED - now using course-specific value_proposition)
+comparison_deprecated:
   title: "Why Choose Our Courses Over Other Options?"
   subtitle: "See how we stack up against the alternatives"
   options:
@@ -172,6 +172,59 @@ comparison:
         - value: "❌ Quality varies wildly"
           highlight: false
 
+# Default value proposition structure (can be overridden per course)
+default_value_proposition:
+  title: "Why Choose This Course Over Other Options?"
+  subtitle: "See how this course delivers real value for your learning goals"
+  sections:
+    learning_approach:
+      title: "🎯 Learning Approach"
+      icon: "fas fa-bullseye"
+      points:
+        - text: "Complete project-based learning - build real applications, not toy examples"
+          highlight: true
+        - text: "Step-by-step progression that builds your confidence gradually"
+          highlight: true
+        - text: "Production-ready patterns and best practices from day one"
+          highlight: false
+      vs_alternatives: "Unlike university courses that focus on theory or fragmented YouTube tutorials, you get a structured path from beginner to professional."
+    
+    technology_tools:
+      title: "🔧 Technology & Tools"
+      icon: "fas fa-tools"
+      points:
+        - text: "Modern Qt 6 with latest C++/Python standards and best practices"
+          highlight: true
+        - text: "Professional development setup and deployment guidance"
+          highlight: false
+        - text: "Complete source code and project files for every lesson"
+          highlight: false
+      vs_alternatives: "While free content often uses outdated versions, you learn with the latest tools and techniques that employers actually use."
+    
+    support_community:
+      title: "👥 Support & Community"
+      icon: "fas fa-users"
+      points:
+        - text: "Active Discord community with 4,000+ Qt developers worldwide"
+          highlight: true
+        - text: "Direct help from instructor and experienced developers"
+          highlight: true
+        - text: "Detailed answers to your specific questions, not generic responses"
+          highlight: false
+      vs_alternatives: "University courses have limited office hours and YouTube comments don't provide real help when you're stuck."
+    
+    value_guarantees:
+      title: "💰 Value & Guarantees"
+      icon: "fas fa-shield-alt"
+      points:
+        - text: "60-day money-back guarantee - learn risk-free"
+          highlight: false
+        - text: "Lifetime updates as Qt evolves - your investment stays current"
+          highlight: false
+        - text: "One-time payment option available - no ongoing subscription required"
+          highlight: true
+      vs_alternatives: "University courses cost $3,000+ with no guarantees, and free content has no accountability or updates."
+
 # Global FAQ section
 faq:
   title: "Frequently Asked Questions"
@@ -213,6 +266,59 @@ courses:
     level: "Beginner to Intermediate"
     duration: "40+ hours"
     featured: true
+    
+    # Course-specific value proposition
+    value_proposition:
+      title: "Why Choose This Course Over Other C++ GUI Options?"
+      subtitle: "See how this course transforms beginners into professional desktop developers"
+      sections:
+        learning_approach:
+          title: "🎯 Learn By Building Real Apps"
+          icon: "fas fa-bullseye"
+          points:
+            - text: "Build 5+ complete desktop applications from text editors to database managers"
+              highlight: true
+            - text: "Learn modern C++ patterns while creating professional UIs"
+              highlight: true
+            - text: "Master cross-platform development - write once, run on Windows, Mac, and Linux"
+              highlight: false
+          vs_alternatives: "University courses focus on console apps, YouTube tutorials show disconnected examples. You build complete applications that demonstrate real skills."
+        
+        technology_tools:
+          title: "🔧 Modern Qt 6 & C++ Best Practices"
+          icon: "fas fa-tools"
+          points:
+            - text: "Latest Qt 6 with modern C++17/20 features and smart pointers"
+              highlight: true
+            - text: "Professional project structure, CMake builds, and deployment strategies"
+              highlight: false
+            - text: "Database integration, networking, and file handling in real contexts"
+              highlight: false
+          vs_alternatives: "Most courses teach outdated Qt 5 or legacy C++ patterns. Learn the tools and techniques used in professional development today."
+        
+        support_community:
+          title: "👥 Expert Support When You Need It"
+          icon: "fas fa-users"
+          points:
+            - text: "Direct access to instructor Daniel Gakwaya with 10+ years Qt experience"
+              highlight: true
+            - text: "Active Discord community of 4,000+ C++/Qt developers"
+              highlight: true
+            - text: "Code reviews, debugging help, and career guidance from professionals"
+              highlight: false
+          vs_alternatives: "StackOverflow has generic answers, university TAs have limited expertise. Get help from people who build Qt applications professionally."
+        
+        value_guarantees:
+          title: "💰 Risk-Free Investment in Your Future"
+          icon: "fas fa-shield-alt"
+          points:
+            - text: "60-day money-back guarantee - try the complete course risk-free"
+              highlight: false
+            - text: "Lifetime access with free updates as Qt evolves"
+              highlight: false
+            - text: "Professional certificate to showcase your Qt skills to employers"
+              highlight: true
+          vs_alternatives: "Bootcamps cost $10,000+ with no guarantees, books become outdated. Your investment stays valuable and current."
     
     # Sales page content sections
     sections:
@@ -304,6 +410,59 @@ courses:
     duration: "35+ hours"
     featured: true
     
+    # Course-specific value proposition
+    value_proposition:
+      title: "Why Choose This Course Over Other Python GUI Options?"
+      subtitle: "Transform from Python scripts to professional desktop applications"
+      sections:
+        learning_approach:
+          title: "🐍 Python-Focused GUI Development"
+          icon: "fab fa-python"
+          points:
+            - text: "Learn GUI development using Python's readable, beginner-friendly syntax"
+              highlight: true
+            - text: "Build data visualization apps, file managers, and productivity tools"
+              highlight: true
+            - text: "Integrate with popular Python libraries like pandas, requests, and matplotlib"
+              highlight: false
+          vs_alternatives: "Tkinter is outdated and ugly, Kivy is mobile-focused, Django is web-only. Qt gives you professional desktop apps with Python simplicity."
+        
+        technology_tools:
+          title: "🔧 Python + Qt Powerhouse"
+          icon: "fas fa-tools"
+          points:
+            - text: "Latest PySide6 with Python 3.10+ features and type hints"
+              highlight: true
+            - text: "Packaging and distribution for Windows, Mac, and Linux users"
+              highlight: false
+            - text: "Database integration with SQLite and API connections with requests"
+              highlight: false
+          vs_alternatives: "Most Python GUI tutorials use basic widgets. Learn to create applications that look and feel like professional software."
+        
+        support_community:
+          title: "👥 Python Developer Community"
+          icon: "fas fa-users"
+          points:
+            - text: "Connect with Python developers building desktop applications"
+              highlight: true
+            - text: "Get help with Python-specific Qt patterns and best practices"
+              highlight: true
+            - text: "Share your projects and get feedback from experienced developers"
+              highlight: false
+          vs_alternatives: "Generic Python forums don't understand GUI development, Qt forums assume C++ knowledge. Join developers who know both."
+        
+        value_guarantees:
+          title: "💰 Perfect for Python Developers"
+          icon: "fas fa-shield-alt"
+          points:
+            - text: "Add GUI skills to your Python toolkit without learning a new language"
+              highlight: true
+            - text: "60-day guarantee to master Python desktop development risk-free"
+              highlight: false
+            - text: "Lifetime updates as PySide6 and Python evolve together"
+              highlight: false
+          vs_alternatives: "Learning Java/C# for GUIs means new languages, web frameworks need internet. Extend your Python skills directly."
+    
     sections:
       hero:
         subtitle: "Learn to build powerful desktop applications using Qt Widgets and Python. Leverage Python's simplicity with Qt's robust GUI framework to create professional applications with minimal complexity and maximum productivity."
@@ -389,6 +548,59 @@ courses:
     level: "Beginner to Advanced"
     duration: "50+ hours"
     featured: true
+    
+    # Course-specific value proposition
+    value_proposition:
+      title: "Why Choose This Course Over Other UI Development Options?"
+      subtitle: "Master the future of user interface development with declarative programming"
+      sections:
+        learning_approach:
+          title: "🎨 Modern Declarative UI Development"
+          icon: "fas fa-palette"
+          points:
+            - text: "Learn declarative programming - describe what you want, not how to build it"
+              highlight: true
+            - text: "Create smooth animations and transitions that make apps feel alive"
+              highlight: true
+            - text: "Build responsive UIs that adapt to different screen sizes and devices"
+              highlight: false
+          vs_alternatives: "Traditional GUI frameworks require complex imperative code. React Native is mobile-only, web frameworks need browsers. QML works everywhere."
+        
+        technology_tools:
+          title: "🚀 Cutting-Edge UI Technology"
+          icon: "fas fa-rocket"
+          points:
+            - text: "Latest Qt 6 QML with hardware acceleration and smooth 60fps animations"
+              highlight: true
+            - text: "Cross-platform deployment: desktop, mobile, embedded, even web via WebAssembly"
+              highlight: false
+            - text: "Integration with C++ backends for high-performance business logic"
+              highlight: false
+          vs_alternatives: "Web technologies have performance limits, native development means separate codebases. QML gives you performance with portability."
+        
+        support_community:
+          title: "👥 QML Expert Community"
+          icon: "fas fa-users"
+          points:
+            - text: "Learn from QML experts who build production applications daily"
+              highlight: true
+            - text: "Get feedback on UI designs and animation implementations"
+              highlight: true
+            - text: "Connect with developers building the next generation of user interfaces"
+              highlight: false
+          vs_alternatives: "QML is specialized - generic UI forums don't understand its patterns, mobile dev communities focus on platform-specific solutions."
+        
+        value_guarantees:
+          title: "💰 Investment in Future UI Skills"
+          icon: "fas fa-shield-alt"
+          points:
+            - text: "Master the technology behind Tesla's car interfaces and other cutting-edge UIs"
+              highlight: true
+            - text: "Skills that transfer to mobile, embedded, and emerging platforms"
+              highlight: false
+            - text: "60-day guarantee to master professional-level QML development"
+              highlight: false
+          vs_alternatives: "Platform-specific skills become obsolete, web frameworks change constantly. QML skills are future-proof and cross-platform."
     
     sections:
       hero:
