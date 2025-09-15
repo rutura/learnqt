@@ -477,7 +477,12 @@
 {% endif %}
 
 <!-- Testimonials Section -->
-<section class="testimonials py-5 bg-primary text-white">
+<section class="testimonials py-5 bg-primary text-white background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 20%; right: 10%;"></div>
+        <div class="floating-element floating-lg" style="top: 60%; left: 5%;"></div>
+        <div class="floating-element floating-sm" style="top: 40%; left: 85%;"></div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -657,7 +662,13 @@
 </section>
 
 <!-- Creator Story Section -->
-<section class="creator-story py-5 bg-light">
+<section class="creator-story py-5 bg-light background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-lg" style="top: 25%; left: 12%;"></div>
+        <div class="floating-element floating-sm" style="top: 55%; right: 8%;"></div>
+        <div class="floating-element floating-md" style="top: 75%; left: 70%;"></div>
+        <div class="floating-element floating-sm" style="top: 15%; right: 75%;"></div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -818,7 +829,13 @@
 </section>
 
 <!-- Value Proposition Section -->
-<section class="value-proposition py-5 bg-light">
+<section class="value-proposition py-5 bg-light background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 30%; right: 15%;"></div>
+        <div class="floating-element floating-lg" style="top: 65%; left: 10%;"></div>
+        <div class="floating-element floating-sm" style="top: 20%; left: 80%;"></div>
+        <div class="floating-element floating-md" style="top: 80%; right: 70%;"></div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -1137,7 +1154,13 @@
 </section>
 
 <!-- FAQ Section -->
-<section class="faq py-5 bg-light">
+<section class="faq py-5 bg-light background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-sm" style="top: 25%; left: 8%;"></div>
+        <div class="floating-element floating-md" style="top: 50%; right: 12%;"></div>
+        <div class="floating-element floating-lg" style="top: 75%; left: 15%;"></div>
+        <div class="floating-element floating-sm" style="top: 35%; right: 80%;"></div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
@@ -1230,6 +1253,24 @@
     opacity: 0.3;
 }
 
+/* Light background specific patterns */
+.bg-light.background-pattern::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(21, 186, 41, 0.08) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(21, 186, 41, 0.08) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(21, 186, 41, 0.05) 1px, transparent 1px);
+    opacity: 0.4;
+}
+
+/* Primary background specific patterns */
+.bg-primary.background-pattern::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.1) 1px, transparent 1px);
+    opacity: 0.6;
+}
+
 .background-pattern > .container {
     position: relative;
     z-index: 10;
@@ -1262,6 +1303,18 @@
 .bg-gray-gradient .floating-element {
     background: rgba(59, 130, 246, 0.1);
     border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Light background specific floating elements */
+.bg-light .floating-element {
+    background: rgba(21, 186, 41, 0.08);
+    border: 1px solid rgba(21, 186, 41, 0.15);
+}
+
+/* Primary background specific floating elements */
+.bg-primary .floating-element {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .floating-sm {
