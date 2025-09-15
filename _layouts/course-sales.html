@@ -422,11 +422,6 @@
                                 <div class="current-price">
                                     <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.lifetime.price }}</span>
                                 </div>
-                                {% if site.data.courses.pricing.lifetime.discount_percentage %}
-                                <div class="savings-badge">
-                                    Save {{ site.data.courses.pricing.lifetime.discount_percentage }}%
-                                </div>
-                                {% endif %}
                             </div>
                             <p class="plan-subtitle">{{ site.data.courses.pricing.lifetime.subtitle }}</p>
                         </div>
@@ -461,7 +456,7 @@
                     <div class="pricing-card library-access popular">
                         {% if site.data.courses.pricing.monthly.popular %}
                         <div class="popular-badge">
-                            <span>🔥 Most Popular</span>
+                            <span>Popular</span>
                         </div>
                         {% endif %}
                         
@@ -472,11 +467,6 @@
                                     <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.monthly.price }}</span>
                                     <span class="period">{{ site.data.courses.pricing.monthly.subtitle }}</span>
                                 </div>
-                                {% if site.data.courses.pricing.monthly.trial_days %}
-                                <div class="trial-badge">
-                                    {{ site.data.courses.pricing.monthly.trial_days }}-day free trial
-                                </div>
-                                {% endif %}
                             </div>
                             <p class="plan-subtitle">{{ site.data.courses.pricing.monthly.value_proposition }}</p>
                         </div>
@@ -526,11 +516,6 @@
                                     <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.yearly.price }}</span>
                                     <span class="period">{{ site.data.courses.pricing.yearly.subtitle }}</span>
                                 </div>
-                                {% if site.data.courses.pricing.yearly.monthly_equivalent %}
-                                <div class="equivalent-price">
-                                    Only ${{ site.data.courses.pricing.yearly.monthly_equivalent }}/month
-                                </div>
-                                {% endif %}
                             </div>
                             <p class="plan-subtitle">{{ site.data.courses.pricing.yearly.value_proposition }}</p>
                         </div>
