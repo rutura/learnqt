@@ -87,7 +87,7 @@
                             
                             <div class="book-action">
                                 {% if book.coming_soon %}
-                                    <a href="#newsletter-signup" class="btn btn-notify" onclick="scrollToNewsletter()">
+                                    <a href="/#newsletter" class="btn btn-notify">
                                         <i class="fas fa-bell me-2"></i>
                                         Get Notified
                                     </a>
@@ -103,98 +103,6 @@
                 </div>
             </div>
             {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Newsletter Signup Section -->
-<section id="newsletter-signup" class="newsletter py-5 bg-primary background-pattern">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="newsletter-content text-center">
-                    <!-- Newsletter Header -->
-                    <div class="newsletter-header mb-4">
-                        <div class="newsletter-badge mb-3">
-                            <i class="fas fa-gift"></i>
-                            <span>Free Qt Creator Guide</span>
-                        </div>
-                        <h2 class="newsletter-title text-white mb-3">Get Your Free Qt Creator Tips & Tricks Booklet</h2>
-                        <p class="newsletter-subtitle text-white mb-4">
-                            Plus be the first to know when new books are available and get exclusive Qt development insights
-                        </p>
-                    </div>
-                    
-                    <!-- Newsletter Content Grid -->
-                    <div class="row align-items-center">
-                        <!-- Left: Book Preview -->
-                        <div class="col-lg-5 mb-4 mb-lg-0">
-                            <div class="newsletter-book-preview">
-                                <div class="newsletter-book-image">
-                                    <img src="/assets/img/qt_creator_guide.webp" alt="Qt Creator Tips Booklet" class="img-fluid">
-                                    <div class="book-badge">
-                                        <span><i class="fas fa-download me-1"></i>Free PDF</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Right: Form -->
-                        <div class="col-lg-7">
-                            <div class="newsletter-form-container">
-                                <div class="newsletter-benefits mb-4">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="benefit-item">
-                                                <i class="fas fa-rocket"></i>
-                                                <span>Boost your productivity</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="benefit-item">
-                                                <i class="fas fa-keyboard"></i>
-                                                <span>Master keyboard shortcuts</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="benefit-item">
-                                                <i class="fas fa-bell"></i>
-                                                <span>New book notifications</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="benefit-item">
-                                                <i class="fas fa-lightbulb"></i>
-                                                <span>Weekly Qt tips</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="newsletter-form">
-                                    <a href="{{ site.data.books.newsletter.signup_link }}" class="btn btn-newsletter-cta">
-                                        <div class="btn-content">
-                                            <div class="btn-text">
-                                                <div class="btn-main-text">Get Free Booklet</div>
-                                            </div>
-                                            <div class="btn-icon">
-                                                <i class="fas fa-download"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    
-                                    <div class="newsletter-privacy mt-3">
-                                        <small class="text-white-50">
-                                            <i class="fas fa-shield-alt me-1"></i>
-                                            No spam. Unsubscribe anytime. Your data is safe with us.
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -226,26 +134,6 @@
                 </div>
             </div>
             {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Newsletter Section -->
-<section class="newsletter-section py-5 bg-primary-gradient">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <div class="newsletter-card glass-card p-5">
-                    <div class="newsletter-icon mb-4">
-                        <i class="fas fa-gift text-white"></i>
-                    </div>
-                    <h2 class="newsletter-title text-white mb-3">{{ site.data.books.newsletter.title }}</h2>
-                    <p class="newsletter-subtitle text-white-50 mb-4">{{ site.data.books.newsletter.subtitle }}</p>
-                    <a href="{{ site.data.books.newsletter.signup_link }}" class="btn btn-light btn-lg">
-                        <i class="fas fa-download me-2"></i>{{ site.data.books.newsletter.cta_text }}
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -893,14 +781,6 @@ html {
 </style>
 
 <script>
-// Smooth scroll function for "Get Notified" buttons
-function scrollToNewsletter() {
-    document.getElementById('newsletter-signup').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
-}
-
 // Add some interactive effects
 document.addEventListener('DOMContentLoaded', function() {
     // Add hover effects to book cards
