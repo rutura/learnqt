@@ -13,12 +13,12 @@
         
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                {% for nav in site.navhome %}
+                {% for nav in site.navigation %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{nav.link}}">{{nav.name}}</a>
                 </li>
                 {% endfor %}
-                <li class="nav-item">
+                <li class="nav-item cta-nav-item">
                     <a class="nav-link cta-button" href="/courses">
                         <i class="fas fa-play me-2"></i>Start Learning
                     </a>
@@ -108,6 +108,12 @@
     width: 80%;
 }
 
+.cta-nav-item {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.25rem;
+}
+
 .cta-button {
     background: linear-gradient(135deg, #15ba29, #0d8a1f) !important;
     color: white !important;
@@ -117,6 +123,8 @@
     box-shadow: 0 4px 15px rgba(21, 186, 41, 0.3);
     border: none;
     margin-left: 1rem;
+    position: relative;
+    top: -6px;
 }
 
 .cta-button:hover {
