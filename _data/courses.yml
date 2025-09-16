@@ -173,9 +173,9 @@ faq:
     - q: "Are there prerequisites for specific courses?"
       a: "Each course lists its prerequisites in the description. Generally, C++ courses assume no prior C++ knowledge, and Python courses assume basic Python familiarity, but we provide refreshers."
 
-# Featured courses section
+# All courses section
 featured_section:
-  title: "Featured Courses"
+  title: "All Our Courses"
   subtitle: "Master Qt development with our comprehensive courses designed to take you from beginner to professional developer"
   description: "Transform your development skills with hands-on, project-based learning. Build real applications while mastering Qt frameworks, modern C++, and professional development practices."
   button_text: "Explore All Courses"
