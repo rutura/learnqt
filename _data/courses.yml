@@ -6,6 +6,21 @@ social_proof:
   completion_rate: "87"
   countries: "120+"
   testimonial_count: "500+"
+  
+# Hero section configuration
+hero:
+  title: "C++, Qt, QML, PySide6 and More"
+  subtitle: "Learn to build professional desktop, mobile, and embedded applications with Qt and modern C++. Join thousands of developers who've transformed their careers with our comprehensive courses."
+  badge_text: "Cross Platform Software and Embedded Uis Professional Training"
+  trust_indicators:
+    - icon: "fas fa-shield-alt"
+      text: "30-Day Money-Back Guarantee"
+    - icon: "fas fa-infinity"
+      text: "Lifetime Updates"
+    - icon: "fas fa-users"
+      text: "Expert Community Support"
+    - icon: "fas fa-certificate"
+      text: "Professional Certification"
 
 # Pricing structure for all courses
 pricing:
@@ -161,8 +176,14 @@ faq:
 # Featured courses section
 featured_section:
   title: "Featured Courses"
-  description: "Master Qt development with our comprehensive courses designed to take you from beginner to professional developer."
+  subtitle: "Master Qt development with our comprehensive courses designed to take you from beginner to professional developer"
+  description: "Transform your development skills with hands-on, project-based learning. Build real applications while mastering Qt frameworks, modern C++, and professional development practices."
   button_text: "Explore All Courses"
+  stats:
+    courses_count: "3+"
+    projects_count: "15+"
+    hours_content: "125+"
+    skill_level: "Beginner to Expert"
 
 # All available courses
 courses:
@@ -176,7 +197,11 @@ courses:
     language: "C++"
     level: "Beginner to Intermediate"
     duration: "40+ hours"
+    projects: "5+ Real Projects"
+    tools: "Qt Creator, CMake"
     featured: true
+    completion_rate: "92%"
+    satisfaction_rating: "4.9/5"
     ready_cta_text: "Ready to build professional desktop apps with C++?"
     
     # Course-specific value proposition
@@ -331,7 +356,11 @@ courses:
     language: "Python"
     level: "Beginner to Intermediate"
     duration: "35+ hours"
+    projects: "4+ Real Projects"
+    tools: "Qt Designer, pip"
     featured: true
+    completion_rate: "89%"
+    satisfaction_rating: "4.8/5"
     ready_cta_text: "Ready to build amazing Python desktop apps?"
     
     # Course-specific value proposition
@@ -482,7 +511,11 @@ courses:
     language: "QML/JavaScript"
     level: "Beginner to Advanced"
     duration: "50+ hours"
+    projects: "6+ Real Projects"
+    tools: "Qt Quick, JavaScript"
     featured: true
+    completion_rate: "85%"
+    satisfaction_rating: "4.9/5"
     ready_cta_text: "Ready to master modern UI development with QML?"
     
     # Course-specific value proposition
