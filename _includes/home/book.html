@@ -1,91 +1,194 @@
-<div class="container-fluid black bgs2" id="book">
-<div class="row text-center">
+<!-- Featured Books Section -->
+<section id="book" class="books-section" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); padding: 5rem 0; position: relative; overflow: hidden;">
+  <!-- Simple Background Pattern -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(21, 186, 41, 0.02) 50px, rgba(21, 186, 41, 0.02) 52px); opacity: 0.3;"></div>
+  
+  <!-- Subtle Floating Icons -->
+  <div style="position: absolute; top: 20%; left: 8%; font-size: 2rem; color: rgba(21, 186, 41, 0.1); animation: float-gentle 12s ease-in-out infinite;"><i class="fas fa-book-open"></i></div>
+  <div style="position: absolute; bottom: 25%; right: 10%; font-size: 1.8rem; color: rgba(21, 186, 41, 0.08); animation: float-gentle 15s ease-in-out infinite reverse;"><i class="fas fa-graduation-cap"></i></div>
 
-<div class="col-md-12 p-3 p-md-5 mt-5 text-center">
-<h2><strong>{{page.books.title}}</strong></h2>
-<div class="bot-center col-md-1 col-2 mt-3"></div>
-<p class="mt-3 col-md-6 mx-auto">{{page.books.desrciption}}</p>
-</div>
-<div class="col-md-8 mx-auto p-3">
-<div class="row">
+  <div class="container" style="position: relative; z-index: 2;">
+    <!-- Clean Section Header -->
+    <div class="row text-center mb-5">
+      <div class="col-md-12">
+        <!-- Simple Badge -->
+        <div class="books-badge mb-4" style="display: inline-flex; align-items: center; background: rgba(21, 186, 41, 0.1); border: 1px solid rgba(21, 186, 41, 0.3); border-radius: 30px; padding: 0.8rem 2rem; backdrop-filter: blur(15px);">
+          <i class="fas fa-book" style="color: #15ba29; margin-right: 0.8rem; font-size: 1.1rem;"></i>
+          <span style="color: #15ba29; font-weight: 600; font-size: 1rem;">Featured Books</span>
+        </div>
+        
+        <!-- Clean Title -->
+        <h2 class="fw-bold mb-3" style="font-size: 3rem; color: #ffffff;">
+          {{page.books.title}}
+        </h2>
+        
+        <!-- Simple Underline -->
+        <div class="mx-auto mb-4" style="width: 80px; height: 4px; background: linear-gradient(90deg, #15ba29, #28a745); border-radius: 2px;"></div>
+        
+        <!-- Description -->
+        <p class="lead mx-auto" style="max-width: 600px; color: rgba(255, 255, 255, 0.85); font-size: 1.2rem; line-height: 1.7;">
+          {{page.books.description}}
+        </p>
+      </div>
+    </div>
 
-<div class="col-md-2 mt-1" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-<div class="row justify-content-center mt-3">
-<button class="btn zoom  active col-md-12 col-3" style="border:none;" id="v-learnqtbook1-tab" data-bs-toggle="pill" data-bs-target="#v-learnqtbook1" 
-type="button" role="tab" aria-controls="v-learnqtbook1" aria-selected="true">
-<img class="img-fluid lazyload" width="90" height="90" loading="lazy" alt="{{page.book1.title}}"
-data-src="{{page.book1.cover}}"/>
-</button>
-<button class="btn zoom col-md-12 col-3" style="border:none;" id="v-learnqtbook2-tab" data-bs-toggle="pill" data-bs-target="#v-learnqtbook2" 
-type="button" role="tab" aria-controls="v-learnqtbook2" aria-selected="false">
-<img class="img-fluid lazyload" width="90" height="90" loading="lazy" alt="{{page.book2.title}}"
-data-src="{{page.book2.cover}}"/>	
-</button>
-<button class="btn zoom col-md-12 col-3" style="border:none;" id="v-learnqtbook3-tab" data-bs-toggle="pill" data-bs-target="#v-learnqtbook3" 
-type="button" role="tab" aria-controls="v-learnqtbook3" aria-selected="false">
-<img class="img-fluid lazyload" width="90" height="90" loading="lazy" alt="{{page.book3.title}}"
-data-src="{{page.book3.cover}}"/>
-</button>
-</div>
-</div>
+    <!-- Clean Books Grid -->
+    <div class="row g-4 justify-content-center">
+      
+      <!-- Book 1 - Available -->
+      <div class="col-lg-4 col-md-6">
+        <div class="book-card" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; height: 100%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; position: relative;">
+          
+          <!-- Status Badge -->
+          <div class="status-badge" style="position: absolute; top: 1rem; right: 1rem; background: #15ba29; color: white; padding: 0.4rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">
+            <i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i>Available
+          </div>
 
-<div class="tab-content col-md-10 p-3 text-start" id="v-pills-tabContent">
+          <!-- Book Cover -->
+          <div class="text-center mb-4">
+            <img src="{{page.book1.cover}}" alt="{{page.book1.title}}" class="img-fluid rounded" 
+                 style="max-width: 180px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); transition: transform 0.3s ease;">
+          </div>
 
-<div class="tab-pane fade show active" id="v-learnqtbook1" role="tabpanel" aria-labelledby="v-learnqtbook1-tab" tabindex="0">
-<div class="row">
-<div class="col-md-5 p-3">
-<img class="img-fluid lazyload" width="100%" height="100%" loading="lazy" alt="{{page.book1.title}}"
-data-src="{{page.book1.cover}}"/>
-</div>
-<div class="col-md-7 p-3">
-<h3><strong><a href="{{page.book1.link}}">{{page.book1.title}}</a></strong></h3>
-<p class="mt-3">{{page.book1.description}}</p>
-<p class="mt-3">{{page.book1.content}}</p>
-<p><a href="{{page.book1.link}}" title="{{page.book1.title}} info" class="btn bg-green btn-outline-success mt-3">More info</a></p>
-</div>
-</div>
-</div>
+          <!-- Book Info -->
+          <h4 class="fw-bold mb-3" style="color: #ffffff; font-size: 1.3rem; line-height: 1.4;">{{page.book1.title}}</h4>
+          
+          <!-- Rating -->
+          <div class="mb-3" style="color: #ffd700;">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span style="color: rgba(255, 255, 255, 0.7); margin-left: 0.5rem; font-size: 0.9rem;">(4.8/5)</span>
+          </div>
+          
+          <p class="mb-4" style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; font-size: 0.95rem;">{{page.book1.description}}</p>
+          
+          <!-- Features -->
+          <div class="mb-4" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="feature-badge" style="background: rgba(21, 186, 41, 0.1); color: #15ba29; padding: 0.3rem 0.7rem; border-radius: 10px; font-size: 0.8rem; border: 1px solid rgba(21, 186, 41, 0.2);">
+              <i class="fas fa-file-alt" style="margin-right: 0.3rem;"></i>250+ Pages
+            </span>
+            <span class="feature-badge" style="background: rgba(21, 186, 41, 0.1); color: #15ba29; padding: 0.3rem 0.7rem; border-radius: 10px; font-size: 0.8rem; border: 1px solid rgba(21, 186, 41, 0.2);">
+              <i class="fas fa-download" style="margin-right: 0.3rem;"></i>PDF + ePub
+            </span>
+          </div>
+          
+          <a href="{{page.book1.link}}" class="btn btn-outline-success btn-lg w-100" style="border-radius: 15px; font-weight: 600; transition: all 0.3s ease;">
+            <i class="fas fa-book" style="margin-right: 0.5rem;"></i>Get This Book
+          </a>
+        </div>
+      </div>
 
-<div class="tab-pane fade" id="v-learnqtbook2" role="tabpanel" aria-labelledby="v-learnqtbook2-tab" tabindex="0">
-<div class="row">
-<div class="col-md-5 p-3">
-<img class="img-fluid lazyload" width="100%" height="100%" loading="lazy" alt="{{page.book2.title}}"
-data-src="{{page.book2.cover}}"/>
-</div>
-<div class="col-md-7 p-3">
-<h3><strong><a href="{{page.book2.link}}">{{page.book2.title}}</a></strong></h3>
-<p class="mt-3">{{page.book2.description}}</p>
-<p class="mt-3">{{page.book2.content}}</p>
-<p><a href="{{page.book2.link}}" title="{{page.book2.title}} info" class="btn bg-green btn-outline-success mt-3">{{page.books.button_post}}</a></p>
-</div>
-</div>
-</div>
-	
-<div class="tab-pane fade" id="v-learnqtbook3" role="tabpanel" aria-labelledby="v-learnqtbook3-tab" tabindex="0">
-<div class="row">
-<div class="col-md-5 p-3">
-<img class="img-fluid lazyload" width="100%" height="100%" loading="lazy" alt="{{page.book3.title}}"
-data-src="{{page.book3.cover}}"/>
-</div>
-<div class="col-md-7 p-3">
-<h3><strong><a href="{{page.book3.link}}">{{page.book3.title}}</a></strong></h3>
-<p class="mt-3">{{page.book3.description}}</p>
-<p class="mt-3">{{page.book3.content}}</p>
-<p><a href="{{page.book3.link}}" title="{{page.book3.title}} info" class="btn bg-green btn-outline-success mt-3">{{page.books.button_post}}</a></p>
-</div>
-</div>
-</div>
+      <!-- Book 2 - Coming Soon -->
+      <div class="col-lg-4 col-md-6">
+        <div class="book-card" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; height: 100%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; position: relative;">
+          
+          <!-- Status Badge -->
+          <div class="status-badge" style="position: absolute; top: 1rem; right: 1rem; background: #1da1f2; color: white; padding: 0.4rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">
+            <i class="fas fa-clock" style="margin-right: 0.3rem;"></i>Coming Soon
+          </div>
 
-</div>
+          <!-- Book Cover -->
+          <div class="text-center mb-4">
+            <div style="position: relative; display: inline-block;">
+              <img src="{{page.book2.cover}}" alt="{{page.book2.title}}" class="img-fluid rounded" 
+                   style="max-width: 180px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); filter: brightness(0.8);">
+              
+              <!-- Progress Bar -->
+              <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80%; background: rgba(255,255,255,0.2); height: 4px; border-radius: 2px;">
+                <div style="width: 65%; height: 100%; background: #1da1f2; border-radius: 2px;"></div>
+              </div>
+              <div style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); color: #1da1f2; font-size: 0.8rem; font-weight: 600; white-space: nowrap;">65% Complete</div>
+            </div>
+          </div>
 
-</div>
-</div>
+          <h4 class="fw-bold mb-3" style="color: #ffffff; font-size: 1.3rem; margin-top: 1rem;">{{page.book2.title}}</h4>
+          
+          <!-- Timeline -->
+          <div class="mb-3" style="background: rgba(29, 161, 242, 0.1); border: 1px solid rgba(29, 161, 242, 0.3); border-radius: 10px; padding: 0.8rem;">
+            <div style="color: #1da1f2; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem;">
+              <i class="fas fa-calendar-alt" style="margin-right: 0.3rem;"></i>Expected: Q1 2025
+            </div>
+            <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem;">Get notified when available</div>
+          </div>
+          
+          <p class="mb-4" style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; font-size: 0.95rem;">{{page.book2.description}}</p>
+          
+          <a href="{{page.book2.link}}" class="btn btn-outline-primary btn-lg w-100" style="border-radius: 15px; font-weight: 600; border-color: #1da1f2; color: #1da1f2; transition: all 0.3s ease;">
+            <i class="fas fa-bell" style="margin-right: 0.5rem;"></i>Notify Me
+          </a>
+        </div>
+      </div>
 
+      <!-- Book 3 - In Planning -->
+      <div class="col-lg-4 col-md-6">
+        <div class="book-card" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; height: 100%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; position: relative;">
+          
+          <!-- Status Badge -->
+          <div class="status-badge" style="position: absolute; top: 1rem; right: 1rem; background: #ff6b35; color: white; padding: 0.4rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">
+            <i class="fas fa-hourglass-start" style="margin-right: 0.3rem;"></i>Planning
+          </div>
 
-<div class="col-md-12 p-3 p-md-5 mt-1 mb-5 text-center">
-<a href="/books/" title="explore all book {{site.title}}" class="btn btn-greenns ser zoom">{{page.books.button}}</a>
-</div>
+          <!-- Book Cover -->
+          <div class="text-center mb-4">
+            <img src="{{page.book3.cover}}" alt="{{page.book3.title}}" class="img-fluid rounded" 
+                 style="max-width: 180px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); filter: brightness(0.7);">
+          </div>
 
+          <h4 class="fw-bold mb-3" style="color: #ffffff; font-size: 1.3rem;">{{page.book3.title}}</h4>
+          
+          <!-- Status Info -->
+          <div class="mb-3" style="background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.3); border-radius: 10px; padding: 0.8rem;">
+            <div style="color: #ff6b35; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem;">
+              <i class="fas fa-lightbulb" style="margin-right: 0.3rem;"></i>In Development
+            </div>
+            <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem;">Be first to know about updates</div>
+          </div>
+          
+          <p class="mb-4" style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; font-size: 0.95rem;">{{page.book3.description}}</p>
+          
+          <a href="{{page.book3.link}}" class="btn btn-lg w-100" style="background: transparent; border: 2px solid #ff6b35; color: #ff6b35; border-radius: 15px; font-weight: 600; transition: all 0.3s ease;">
+            <i class="fas fa-star" style="margin-right: 0.5rem;"></i>Early Access
+          </a>
+        </div>
+      </div>
+    </div>
 
-</div>
-</div>
+    <!-- Simple CTA Section -->
+    <div class="row mt-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <div style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 3rem;">
+          <h3 class="fw-bold mb-3" style="color: #ffffff; font-size: 2rem;">Explore Our Complete Library</h3>
+          <p class="mb-4" style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; max-width: 500px; margin: 0 auto;">
+            Discover our complete collection of books, tutorials, and resources designed to advance your Qt development skills.
+          </p>
+          
+          <a href="/books/" class="btn btn-success btn-lg px-5 py-3" style="border-radius: 25px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);">
+            <i class="fas fa-book-open" style="margin-right: 0.5rem;"></i>{{page.books.button}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimal CSS -->
+  <style>
+    /* Gentle hover effects only */
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .book-card:hover img {
+      transform: scale(1.02);
+    }
+    
+    /* Subtle floating animation */
+    @keyframes float-gentle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</section>

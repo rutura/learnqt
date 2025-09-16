@@ -1,19 +1,247 @@
-<div class="container-fluid black bgs3" id="contact">
-<div class="row">
-<div class="col-md-12 p-3 p-md-5 mt-5 mb-5 text-center">
-<a href="mailto:{{site.email}}" title="send message to {{site.title}}" class="btn btn-greens rounded-circle p-3">
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-send" viewBox="0 0 19 19">
-<path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
-</svg></a>
-<h3 class="display-4 p-3 p-md-5 zoom"><strong>{{site.email}}</strong></h3>
-<div class="col-md-4 mx-auto p-3">
-<form action="https://airform.io/{{site.email}}" method="post">
-<input class="form-control p-3 mt-3 shadow-none" type="text" name="name" placeholder="Enter your name">
-<input class="form-control p-3 mt-3 shadow-none" type="text" name="email" placeholder="Enter your email">
-<textarea class="form-control p-3 mt-3 shadow-none" name="message" placeholder="Enter your message"></textarea>
-<button class="btn btn-greens-mail mt-5 col-12 btn-lg">Send Message</button>
-</form>
-</div>
-</div>
-</div>
-</div>
+<!-- Contact Section -->
+<section class="contact-section" id="contact" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); padding: 6rem 0; position: relative; overflow: hidden;">
+  <!-- Animated Background -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(&quot;data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='25' cy='25' r='1' fill='%2315ba29' opacity='0.1'/><circle cx='75' cy='75' r='1' fill='%2315ba29' opacity='0.1'/></svg>&quot;) repeat; background-size: 100px 100px; animation: contact-pattern 50s linear infinite;"></div>
+  
+  <!-- Floating Communication Icons -->
+  <div style="position: absolute; top: 15%; left: 8%; font-size: 3rem; color: rgba(21, 186, 41, 0.1); animation: float-contact 10s ease-in-out infinite;"><i class="fas fa-comments"></i></div>
+  <div style="position: absolute; top: 25%; right: 10%; font-size: 2.5rem; color: rgba(21, 186, 41, 0.1); animation: float-contact 8s ease-in-out infinite reverse;"><i class="fab fa-discord"></i></div>
+  <div style="position: absolute; bottom: 20%; left: 12%; font-size: 2.8rem; color: rgba(21, 186, 41, 0.1); animation: float-contact 12s ease-in-out infinite;"><i class="fas fa-envelope-open"></i></div>
+  <div style="position: absolute; bottom: 30%; right: 8%; font-size: 2.2rem; color: rgba(21, 186, 41, 0.1); animation: float-contact 9s ease-in-out infinite reverse;"><i class="fas fa-headset"></i></div>
+
+  <div class="container" style="position: relative; z-index: 2;">
+    <!-- Section Header -->
+    <div class="row text-center mb-5">
+      <div class="col-md-12">
+        <!-- Contact Badge -->
+        <div class="contact-badge mb-4" style="display: inline-flex; align-items: center; background: rgba(21, 186, 41, 0.1); border: 1px solid rgba(21, 186, 41, 0.3); border-radius: 50px; padding: 1rem 2rem; backdrop-filter: blur(10px); transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 0.2s both;">
+          <i class="fas fa-paper-plane" style="color: #15ba29; font-size: 1.3rem; margin-right: 0.8rem; animation: pulse-plane 3s ease-in-out infinite;"></i>
+          <span style="color: #15ba29; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Get In Touch</span>
+        </div>
+
+        <!-- Main Title -->
+        <h2 class="fw-bold mb-3" style="font-size: 3.5rem; background: linear-gradient(135deg, #ffffff 0%, #15ba29 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 0.4s both;">
+          Let's Connect!
+        </h2>
+        
+        <!-- Subtitle -->
+        <h3 class="text-white-50 mb-5" style="font-size: 1.3rem; font-weight: 400; transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 0.6s both; max-width: 600px; margin: 0 auto;">
+          Choose your preferred way to reach out. We're here to help with your Qt development journey!
+        </h3>
+      </div>
+    </div>
+
+    <!-- Contact Options -->
+    <div class="row">
+      <!-- Email Option -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="contact-option-card" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; padding: 3rem; text-align: center; position: relative; overflow: hidden; transform: translateY(30px); opacity: 0; animation: slideInFromBottom 1s ease-out 0.8s both; transition: all 0.3s ease; height: 100%;">
+          
+          <!-- Card Glow Effect -->
+          <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, rgba(21,186,41,0.2), rgba(255,255,255,0.1)); border-radius: 30px; z-index: -1; opacity: 0; transition: opacity 0.3s ease;"></div>
+          
+          <!-- Email Icon -->
+          <div class="contact-icon-container mb-4" style="position: relative; display: inline-block;">
+            <!-- Orbiting Ring -->
+            <div style="position: absolute; top: -15px; left: -15px; right: -15px; bottom: -15px; border: 2px solid rgba(21, 186, 41, 0.3); border-radius: 50%; animation: rotate 15s linear infinite;"></div>
+            
+            <!-- Main Icon Circle -->
+            <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 2rem; display: flex; align-items: center; justify-content: center; width: 100px; height: 100px; margin: 0 auto; box-shadow: 0 15px 35px rgba(21, 186, 41, 0.4); position: relative;">
+              <i class="fas fa-envelope" style="color: white; font-size: 2.5rem; animation: bounce-email 4s ease-in-out infinite;"></i>
+            </div>
+          </div>
+          
+          <!-- Email Content -->
+          <h3 class="text-white fw-bold mb-3" style="font-size: 2rem;">Send Us an Email</h3>
+          <p class="text-white-50 mb-4" style="font-size: 1.1rem; line-height: 1.7;">
+            Got a question about our courses, need technical support, or want to discuss a custom training solution? Send us an email and we'll get back to you within 24 hours.
+          </p>
+          
+          <!-- Email Address Display -->
+          <div class="email-display mb-4" style="background: rgba(21, 186, 41, 0.1); border: 1px solid rgba(21, 186, 41, 0.3); border-radius: 15px; padding: 1.5rem; margin: 1.5rem 0;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+              <i class="fas fa-at" style="color: #15ba29; font-size: 1.3rem;"></i>
+              <span style="color: #15ba29; font-size: 1.3rem; font-weight: 600; font-family: 'Courier New', monospace;">info@learnqt.guide</span>
+            </div>
+          </div>
+          
+          <!-- Email Benefits -->
+          <div class="email-benefits mb-4 text-left">
+            <div class="benefit-item mb-2" style="display: flex; align-items: center; gap: 1rem;">
+              <i class="fas fa-clock" style="color: #15ba29; font-size: 1.1rem;"></i>
+              <span style="color: #ffffff; font-size: 0.95rem;">24-hour response time</span>
+            </div>
+            <div class="benefit-item mb-2" style="display: flex; align-items: center; gap: 1rem;">
+              <i class="fas fa-user-tie" style="color: #15ba29; font-size: 1.1rem;"></i>
+              <span style="color: #ffffff; font-size: 0.95rem;">Direct instructor support</span>
+            </div>
+            <div class="benefit-item" style="display: flex; align-items: center; gap: 1rem;">
+              <i class="fas fa-shield-alt" style="color: #15ba29; font-size: 1.1rem;"></i>
+              <span style="color: #ffffff; font-size: 0.95rem;">Professional & private</span>
+            </div>
+          </div>
+          
+          <!-- Email Button -->
+          <a href="mailto:info@learnqt.guide" class="btn-email-contact" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem; background: linear-gradient(45deg, #15ba29, #28a745); color: white; padding: 1rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3); text-transform: uppercase; letter-spacing: 0.5px;">
+            <i class="fas fa-paper-plane" style="font-size: 1.2rem;"></i>
+            <span>Send Email</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Discord Option -->
+      <div class="col-lg-6">
+        <div class="contact-option-card" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; padding: 3rem; text-align: center; position: relative; overflow: hidden; transform: translateY(30px); opacity: 0; animation: slideInFromBottom 1s ease-out 1s both; transition: all 0.3s ease; height: 100%;">
+          
+          <!-- Card Glow Effect -->
+          <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, rgba(114,137,218,0.2), rgba(255,255,255,0.1)); border-radius: 30px; z-index: -1; opacity: 0; transition: opacity 0.3s ease;"></div>
+          
+          <!-- Discord Icon -->
+          <div class="contact-icon-container mb-4" style="position: relative; display: inline-block;">
+            <!-- Orbiting Ring -->
+            <div style="position: absolute; top: -15px; left: -15px; right: -15px; bottom: -15px; border: 2px solid rgba(114, 137, 218, 0.3); border-radius: 50%; animation: rotate 15s linear infinite reverse;"></div>
+            
+            <!-- Main Icon Circle -->
+            <div style="background: linear-gradient(45deg, #7289da, #5865f2); border-radius: 50%; padding: 2rem; display: flex; align-items: center; justify-content: center; width: 100px; height: 100px; margin: 0 auto; box-shadow: 0 15px 35px rgba(114, 137, 218, 0.4); position: relative;">
+              <i class="fab fa-discord" style="color: white; font-size: 2.5rem; animation: bounce-discord 4s ease-in-out infinite 0.5s;"></i>
+            </div>
+          </div>
+          
+          <!-- Discord Content -->
+          <h3 class="text-white fw-bold mb-3" style="font-size: 2rem;">Join Our Discord</h3>
+          <p class="text-white-50 mb-4" style="font-size: 1.1rem; line-height: 1.7;">
+            Join our vibrant community of Qt developers! Get instant help, share your projects, participate in discussions, and connect with fellow learners and professionals.
+          </p>
+          
+          <!-- Discord Stats -->
+          <div class="discord-stats mb-4" style="background: rgba(114, 137, 218, 0.1); border: 1px solid rgba(114, 137, 218, 0.3); border-radius: 15px; padding: 1.5rem; margin: 1.5rem 0;">
+            <div class="row">
+              <div class="col-6">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                  <i class="fas fa-users" style="color: #7289da; font-size: 1.2rem;"></i>
+                  <span style="color: #7289da; font-size: 1.1rem; font-weight: 600;">4,000+</span>
+                </div>
+                <small style="color: #ffffff; font-size: 0.85rem;">Members</small>
+              </div>
+              <div class="col-6">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                  <i class="fas fa-comment-dots" style="color: #7289da; font-size: 1.2rem;"></i>
+                  <span style="color: #7289da; font-size: 1.1rem; font-weight: 600;">Active</span>
+                </div>
+                <small style="color: #ffffff; font-size: 0.85rem;">Daily Chat</small>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Discord Benefits -->
+          <div class="discord-benefits mb-4 text-left">
+            <div class="benefit-item mb-2" style="display: flex; align-items: center; gap: 1rem;">
+              <i class="fas fa-bolt" style="color: #7289da; font-size: 1.1rem;"></i>
+              <span style="color: #ffffff; font-size: 0.95rem;">Instant community support</span>
+            </div>
+            <div class="benefit-item mb-2" style="display: flex; align-items: center; gap: 1rem;">
+              <i class="fas fa-code" style="color: #7289da; font-size: 1.1rem;"></i>
+              <span style="color: #ffffff; font-size: 0.95rem;">Code sharing & reviews</span>
+            </div>
+            <div class="benefit-item" style="display: flex; align-items: center; gap: 1rem;">
+              <i class="fas fa-rocket" style="color: #7289da; font-size: 1.1rem;"></i>
+              <span style="color: #ffffff; font-size: 0.95rem;">Project showcases</span>
+            </div>
+          </div>
+          
+          <!-- Discord Button -->
+          <a href="https://discord.com/invite/PcATcraESW" target="_blank" class="btn-discord-contact" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem; background: linear-gradient(45deg, #7289da, #5865f2); color: white; padding: 1rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(114, 137, 218, 0.3); text-transform: uppercase; letter-spacing: 0.5px;">
+            <i class="fab fa-discord" style="font-size: 1.2rem;"></i>
+            <span>Join Discord</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Message -->
+    <div class="row mt-5">
+      <div class="col-md-10 mx-auto text-center">
+        <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 1.2s both;">
+          <i class="fas fa-heart" style="color: #15ba29; font-size: 1.5rem; margin-bottom: 1rem; animation: pulse-heart 2s ease-in-out infinite;"></i>
+          <p style="color: #ffffff; font-size: 1.1rem; margin: 0; opacity: 0.9;">
+            <strong>We're here to help you succeed!</strong> Whether you prefer email or Discord, our community and instructors are committed to supporting your Qt development journey.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom CSS and Animations -->
+  <style>
+    /* Hover Effects */
+    .contact-option-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2) !important;
+    }
+    
+    .contact-option-card:hover > div:first-child {
+      opacity: 1 !important;
+    }
+
+    .btn-email-contact:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 12px 35px rgba(21, 186, 41, 0.4) !important;
+    }
+
+    .btn-discord-contact:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 12px 35px rgba(114, 137, 218, 0.4) !important;
+    }
+
+    /* Animations */
+    @keyframes slideInFromBottom {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes contact-pattern {
+      0% { transform: translateX(0) translateY(0); }
+      100% { transform: translateX(-100px) translateY(-100px); }
+    }
+    
+    @keyframes float-contact {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(8deg); }
+    }
+    
+    @keyframes pulse-plane {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    
+    @keyframes bounce-email {
+      0%, 100% { transform: translateY(0px); }
+      25% { transform: translateY(-5px); }
+      50% { transform: translateY(0px); }
+      75% { transform: translateY(-2px); }
+    }
+    
+    @keyframes bounce-discord {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      25% { transform: translateY(-3px) scale(1.05); }
+      50% { transform: translateY(0px) scale(1); }
+      75% { transform: translateY(-1px) scale(1.02); }
+    }
+    
+    @keyframes pulse-heart {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</section>

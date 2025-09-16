@@ -1,132 +1,344 @@
-<div class="bg-light container-fluid">
-<div class="row">
-
-<div class="col-md-8 mx-auto">
-<div class="row text-center">
-<div class="col-md-12 p-3 p-md-5 mt-5">
-<h2><strong>{{page.student.title}}</strong></h2>
-<div class="bot-center col-md-1 col-2 mt-3"></div>
-<p class="mt-5 col-md-8 mx-auto">{{page.student.description}}</p>
-</div>
-
-<div class="col-md-3 col-6 p-3 zoom">
-<div class="p-3 rounded shadow-sm border-top border-success">
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-award p-1 rounded-circle bg-green mt-3" viewBox="0 0 16 16">
-  <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
-  <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
-</svg>
-<h2 class="mt-3"><strong><span class="stat-count" data-n="{{page.count1_number}}">0</span></strong></h2>
-<p class="text-secondary">{{page.count1_title}}</p>
-</div>
-</div>
-
-<div class="col-md-3 col-6 p-3 zoom">
-<div class="p-3 rounded shadow-sm border-top border-success">
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-journals p-1 rounded-circle bg-green mt-3" viewBox="0 0 16 16">
-  <path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2z"/>
-  <path d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0z"/>
-</svg>
-<h2 class="mt-3"><strong><span class="stat-count" data-n="{{page.count2_number}}">0</span></strong></h2>
-<p class="text-secondary">{{page.count2_title}}</p>
-</div>
-</div>
-
-<div class="col-md-3 col-6 p-3 zoom">
-<div class="p-3 rounded shadow-sm border-top border-success">
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-mortarboard-fill p-1 rounded-circle bg-green mt-3" viewBox="0 0 16 16">
-  <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
-  <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
-</svg>
-<h2 class="mt-3"><strong><span class="stat-count" data-n="{{page.count3_number}}">0</span></strong></h2>
-<p class="text-secondary">{{page.count3_title}}</p>
-</div>
-</div>
-
-<div class="col-md-3 col-6 p-3 zoom">
-<div class="p-3 rounded shadow-sm border-top border-success">
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-star p-1 rounded-circle bg-green mt-3" viewBox="0 0 16 16">
-  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
-</svg>
-<h2 class="mt-3"><strong><span class="stat-count" data-n="{{page.count4_number}}">0</span></strong></h2>
-<p class="text-secondary">{{page.count4_title}}</p>
-</div>
-</div>
-
-</div>
-
-
-</div>
-
-<div class="col-md-6 mb-5 mx-auto mt-5 mb-5">
-<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-<div class="row">
-
-<div class="col-md-2 p-3 mt-5">
-<button class="btn" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-<span class="carousel-control-prev-icon btn-greenos" aria-hidden="true"></span>
-<span class="visually-hidden">Previous</span>
-</button>
-</div>
-
-
-<div class="col-md-8">
-
-<div class="carousel-inner">
+<!-- Happy Students Section -->
+<section class="happy-students-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 5rem 0; position: relative; overflow: hidden;">
+  <!-- Background Pattern -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(&quot;data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='1' fill='%2315ba29' opacity='0.05'/></svg>&quot;) repeat; background-size: 80px 80px; animation: stats-pattern 40s linear infinite;"></div>
   
-<div class="carousel-item active" data-bs-interval="5000">
-<div class="row">
-<div class="col-md-3 p-3">
-<img data-src="{{page.testimonial1.photo}}"
-class="img-fluid rounded-circle lazyload" width="100%" height="100%" loading="lazy" alt="{{site.title}} testimonial {{page.testimonial1.name}}">
-</div>
-<div class="col-md-9 p-3 text-start">
-<h3><strong><a href="{{site.url}}">{{page.testimonial1.name}}</a></strong></h3>
-<p class="mt-3">{{page.testimonial1.description}}</p>
-</div>
-</div>
-</div>
-	
-<div class="carousel-item" data-bs-interval="5000">
-<div class="row">
-<div class="col-md-3 p-3">
-<img data-src="{{page.testimonial2.photo}}"
-class="img-fluid rounded-circle lazyload" loading="lazy" width="100%" height="100%" alt="{{site.title}} testimonial {{page.testimonial2.name}}">
-</div>
-<div class="col-md-9 p-3 text-start">
-<h3><strong><a href="{{site.url}}">{{page.testimonial2.name}}</a></strong></h3>
-<p class="mt-3">{{page.testimonial2.description}}</p>
-</div>
-</div>
-</div>
+  <!-- Floating Success Icons -->
+  <div style="position: absolute; top: 10%; left: 5%; font-size: 2.5rem; color: rgba(21, 186, 41, 0.1); animation: float-success 8s ease-in-out infinite;"><i class="fas fa-trophy"></i></div>
+  <div style="position: absolute; top: 15%; right: 8%; font-size: 2rem; color: rgba(21, 186, 41, 0.1); animation: float-success 10s ease-in-out infinite reverse;"><i class="fas fa-medal"></i></div>
+  <div style="position: absolute; bottom: 20%; left: 8%; font-size: 2.2rem; color: rgba(21, 186, 41, 0.1); animation: float-success 9s ease-in-out infinite;"><i class="fas fa-thumbs-up"></i></div>
 
-<div class="carousel-item" data-bs-interval="5000">
-<div class="row">
-<div class="col-md-3 p-3">
-<img data-src="{{page.testimonial3.photo}}"
-class="img-fluid rounded-circle lazyload" loading="lazy" width="100%" height="100%" alt="{{site.title}} testimonial {{page.testimonial3.name}}">
-</div>
-<div class="col-md-9 p-3 text-start">
-<h3><strong><a href="{{site.url}}">{{page.testimonial3.name}}</a></strong></h3>
-<p class="mt-3">{{page.testimonial3.description}}</p>
-</div>
-</div>
-</div>
+  <div class="container" style="position: relative; z-index: 2;">
+    <!-- Section Header -->
+    <div class="row text-center mb-5">
+      <div class="col-md-12">
+        <!-- Achievement Badge -->
+        <div class="achievement-badge mb-4" style="display: inline-flex; align-items: center; background: linear-gradient(45deg, #15ba29, #28a745); color: white; padding: 1rem 2rem; border-radius: 50px; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3); transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 0.2s both;">
+          <i class="fas fa-award" style="font-size: 1.3rem; margin-right: 0.8rem; animation: pulse-award 3s ease-in-out infinite;"></i>
+          <span style="font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Success Stories</span>
+        </div>
 
-</div>
+        <!-- Main Title -->
+        <h2 class="fw-bold mb-3" style="font-size: 3rem; background: linear-gradient(135deg, #2c3e50 0%, #15ba29 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 0.4s both;">
+          {{site.data.courses.social_proof.section.title}}
+        </h2>
+        
+        <!-- Subtitle -->
+        <h3 class="text-muted mb-4" style="font-size: 1.3rem; font-weight: 400; transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 0.6s both;">
+          {{site.data.courses.social_proof.section.subtitle}}
+        </h3>
+        
+        <!-- Animated Underline -->
+        <div class="mx-auto mb-4" style="width: 100px; height: 4px; background: linear-gradient(90deg, #15ba29, #28a745); border-radius: 2px; position: relative; transform: scaleX(0); animation: expandLine 1s ease-out 0.8s both;">
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%); border-radius: 2px; animation: shimmer 2s infinite 1s;"></div>
+        </div>
+        
+        <!-- Description -->
+        <p class="lead mx-auto" style="max-width: 700px; color: #6c757d; font-size: 1.1rem; line-height: 1.7; transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 1s both;">
+          {{site.data.courses.social_proof.section.description}}
+        </p>
+      </div>
+    </div>
 
-</div>
+    <!-- Statistics Cards -->
+    <div class="row">
+      <!-- Courses Card -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-card" style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem 1.5rem; text-align: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border: 1px solid rgba(21, 186, 41, 0.1); position: relative; overflow: hidden; transform: translateY(30px); opacity: 0; animation: slideInFromBottom 1s ease-out 1.2s both; transition: all 0.3s ease;">
+          
+          <!-- Card Glow Effect -->
+          <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, rgba(21,186,41,0.1), rgba(40,167,69,0.1)); border-radius: 25px; z-index: -1; opacity: 0; transition: opacity 0.3s ease;"></div>
+          
+          <!-- Icon Container -->
+          <div class="icon-container mb-4" style="position: relative; display: inline-block;">
+            <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 1.5rem; display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; margin: 0 auto; box-shadow: 0 10px 25px rgba(21, 186, 41, 0.3); position: relative;">
+              <i class="{{site.data.courses.social_proof.stats.courses.icon}}" style="color: white; font-size: 2rem; animation: bounce-icon 3s ease-in-out infinite;"></i>
+              
+              <!-- Orbiting Ring -->
+              <div style="position: absolute; top: -8px; left: -8px; right: -8px; bottom: -8px; border: 2px solid rgba(21, 186, 41, 0.2); border-radius: 50%; animation: rotate 10s linear infinite;"></div>
+            </div>
+          </div>
+          
+          <!-- Number -->
+          <h2 class="fw-bold mb-2" style="font-size: 3rem; color: #15ba29; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <span style="font-family: 'Arial', sans-serif; font-weight: 800;">3</span>
+          </h2>
+          
+          <!-- Title -->
+          <h4 class="fw-semibold mb-2" style="color: #2c3e50; font-size: 1.2rem;">{{site.data.courses.social_proof.stats.courses.title}}</h4>
+          
+          <!-- Description -->
+          <p style="color: #6c757d; font-size: 0.9rem; margin: 0; line-height: 1.5;">{{site.data.courses.social_proof.stats.courses.description}}</p>
+        </div>
+      </div>
 
-<div class="col-md-2 p-3 mt-5">
-<button class="btn" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-<span class="carousel-control-next-icon btn-greenos" aria-hidden="true"></span>
-<span class="visually-hidden">Next</span>
-</button>
-</div>
-</div>  
-</div>
-	
-</div>
+      <!-- Books Card -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-card" style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem 1.5rem; text-align: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border: 1px solid rgba(21, 186, 41, 0.1); position: relative; overflow: hidden; transform: translateY(30px); opacity: 0; animation: slideInFromBottom 1s ease-out 1.4s both; transition: all 0.3s ease;">
+          
+          <!-- Card Glow Effect -->
+          <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, rgba(21,186,41,0.1), rgba(40,167,69,0.1)); border-radius: 25px; z-index: -1; opacity: 0; transition: opacity 0.3s ease;"></div>
+          
+          <!-- Icon Container -->
+          <div class="icon-container mb-4" style="position: relative; display: inline-block;">
+            <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 1.5rem; display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; margin: 0 auto; box-shadow: 0 10px 25px rgba(21, 186, 41, 0.3); position: relative;">
+              <i class="{{site.data.courses.social_proof.stats.books.icon}}" style="color: white; font-size: 2rem; animation: bounce-icon 3s ease-in-out infinite 0.5s;"></i>
+              
+              <!-- Orbiting Ring -->
+              <div style="position: absolute; top: -8px; left: -8px; right: -8px; bottom: -8px; border: 2px solid rgba(21, 186, 41, 0.2); border-radius: 50%; animation: rotate 10s linear infinite reverse;"></div>
+            </div>
+          </div>
+          
+          <!-- Number -->
+          <h2 class="fw-bold mb-2" style="font-size: 3rem; color: #15ba29; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <span style="font-family: 'Arial', sans-serif; font-weight: 800;">4</span>
+          </h2>
+          
+          <!-- Title -->
+          <h4 class="fw-semibold mb-2" style="color: #2c3e50; font-size: 1.2rem;">{{site.data.courses.social_proof.stats.books.title}}</h4>
+          
+          <!-- Description -->
+          <p style="color: #6c757d; font-size: 0.9rem; margin: 0; line-height: 1.5;">{{site.data.courses.social_proof.stats.books.description}}</p>
+        </div>
+      </div>
 
-<div class="col-12 p-3"></div>
-</div>
-</div>
+      <!-- Students Card -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-card" style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem 1.5rem; text-align: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border: 1px solid rgba(21, 186, 41, 0.1); position: relative; overflow: hidden; transform: translateY(30px); opacity: 0; animation: slideInFromBottom 1s ease-out 1.6s both; transition: all 0.3s ease;">
+          
+          <!-- Card Glow Effect -->
+          <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, rgba(21,186,41,0.1), rgba(40,167,69,0.1)); border-radius: 25px; z-index: -1; opacity: 0; transition: opacity 0.3s ease;"></div>
+          
+          <!-- Icon Container -->
+          <div class="icon-container mb-4" style="position: relative; display: inline-block;">
+            <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 1.5rem; display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; margin: 0 auto; box-shadow: 0 10px 25px rgba(21, 186, 41, 0.3); position: relative;">
+              <i class="{{site.data.courses.social_proof.stats.students.icon}}" style="color: white; font-size: 2rem; animation: bounce-icon 3s ease-in-out infinite 1s;"></i>
+              
+              <!-- Orbiting Ring -->
+              <div style="position: absolute; top: -8px; left: -8px; right: -8px; bottom: -8px; border: 2px solid rgba(21, 186, 41, 0.2); border-radius: 50%; animation: rotate 10s linear infinite;"></div>
+            </div>
+          </div>
+          
+          <!-- Number -->
+          <h2 class="fw-bold mb-2" style="font-size: 3rem; color: #15ba29; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <span style="font-family: 'Arial', sans-serif; font-weight: 800;">32,982</span>
+          </h2>
+          
+          <!-- Title -->
+          <h4 class="fw-semibold mb-2" style="color: #2c3e50; font-size: 1.2rem;">{{site.data.courses.social_proof.stats.students.title}}</h4>
+          
+          <!-- Description -->
+          <p style="color: #6c757d; font-size: 0.9rem; margin: 0; line-height: 1.5;">{{site.data.courses.social_proof.stats.students.description}}</p>
+        </div>
+      </div>
+
+      <!-- Reviews Card -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-card" style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-radius: 25px; padding: 2.5rem 1.5rem; text-align: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); border: 1px solid rgba(21, 186, 41, 0.1); position: relative; overflow: hidden; transform: translateY(30px); opacity: 0; animation: slideInFromBottom 1s ease-out 1.8s both; transition: all 0.3s ease;">
+          
+          <!-- Card Glow Effect -->
+          <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, rgba(21,186,41,0.1), rgba(40,167,69,0.1)); border-radius: 25px; z-index: -1; opacity: 0; transition: opacity 0.3s ease;"></div>
+          
+          <!-- Icon Container -->
+          <div class="icon-container mb-4" style="position: relative; display: inline-block;">
+            <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 1.5rem; display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; margin: 0 auto; box-shadow: 0 10px 25px rgba(21, 186, 41, 0.3); position: relative;">
+              <i class="{{site.data.courses.social_proof.stats.reviews.icon}}" style="color: white; font-size: 2rem; animation: bounce-icon 3s ease-in-out infinite 1.5s;"></i>
+              
+              <!-- Orbiting Ring -->
+              <div style="position: absolute; top: -8px; left: -8px; right: -8px; bottom: -8px; border: 2px solid rgba(21, 186, 41, 0.2); border-radius: 50%; animation: rotate 10s linear infinite reverse;"></div>
+            </div>
+          </div>
+          
+          <!-- Number -->
+          <h2 class="fw-bold mb-2" style="font-size: 3rem; color: #15ba29; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <span style="font-family: 'Arial', sans-serif; font-weight: 800;">8,481</span>
+          </h2>
+          
+          <!-- Title -->
+          <h4 class="fw-semibold mb-2" style="color: #2c3e50; font-size: 1.2rem;">{{site.data.courses.social_proof.stats.reviews.title}}</h4>
+          
+          <!-- Description -->
+          <p style="color: #6c757d; font-size: 0.9rem; margin: 0; line-height: 1.5;">{{site.data.courses.social_proof.stats.reviews.description}}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enhanced Testimonials Section -->
+    <div class="row mt-5">
+      <div class="col-lg-10 mx-auto">
+        <div class="testimonials-container" style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(21, 186, 41, 0.1); position: relative; overflow: hidden; transform: translateY(30px); opacity: 0; animation: slideInFromBottom 1s ease-out 2s both;">
+          
+          <!-- Testimonials Header -->
+          <div class="text-center mb-4">
+            <div style="display: inline-flex; align-items: center; background: rgba(21, 186, 41, 0.1); border-radius: 50px; padding: 0.8rem 1.5rem; margin-bottom: 1rem;">
+              <i class="fas fa-quote-left" style="color: #15ba29; font-size: 1.2rem; margin-right: 0.5rem;"></i>
+              <span style="color: #15ba29; font-weight: 600; font-size: 0.9rem;">What Our Students Say</span>
+            </div>
+          </div>
+
+          <!-- Carousel -->
+          <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+            <div class="carousel-inner">
+              
+              <!-- Testimonial 1 -->
+              <div class="carousel-item active">
+                <div class="row align-items-center">
+                  <div class="col-md-3 text-center mb-3 mb-md-0">
+                    <div style="position: relative; display: inline-block;">
+                      <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 4px;">
+                        <img src="{{page.testimonial1.photo}}" alt="{{page.testimonial1.name}}" class="img-fluid rounded-circle" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid white;">
+                      </div>
+                      <div style="position: absolute; top: -5px; right: -5px; background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 0.5rem; color: white;">
+                        <i class="fas fa-check" style="font-size: 0.8rem;"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-9 text-start">
+                    <div class="mb-2">
+                      {% for i in (1..5) %}
+                        <i class="fas fa-star" style="color: #ffd700; font-size: 1rem;"></i>
+                      {% endfor %}
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #2c3e50;">{{page.testimonial1.name}}</h4>
+                    <p style="color: #6c757d; font-size: 1.1rem; line-height: 1.6; font-style: italic;">"{{page.testimonial1.description}}"</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Testimonial 2 -->
+              <div class="carousel-item">
+                <div class="row align-items-center">
+                  <div class="col-md-3 text-center mb-3 mb-md-0">
+                    <div style="position: relative; display: inline-block;">
+                      <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 4px;">
+                        <img src="{{page.testimonial2.photo}}" alt="{{page.testimonial2.name}}" class="img-fluid rounded-circle" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid white;">
+                      </div>
+                      <div style="position: absolute; top: -5px; right: -5px; background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 0.5rem; color: white;">
+                        <i class="fas fa-check" style="font-size: 0.8rem;"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-9 text-start">
+                    <div class="mb-2">
+                      {% for i in (1..5) %}
+                        <i class="fas fa-star" style="color: #ffd700; font-size: 1rem;"></i>
+                      {% endfor %}
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #2c3e50;">{{page.testimonial2.name}}</h4>
+                    <p style="color: #6c757d; font-size: 1.1rem; line-height: 1.6; font-style: italic;">"{{page.testimonial2.description}}"</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Testimonial 3 -->
+              <div class="carousel-item">
+                <div class="row align-items-center">
+                  <div class="col-md-3 text-center mb-3 mb-md-0">
+                    <div style="position: relative; display: inline-block;">
+                      <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 4px;">
+                        <img src="{{page.testimonial3.photo}}" alt="{{page.testimonial3.name}}" class="img-fluid rounded-circle" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid white;">
+                      </div>
+                      <div style="position: absolute; top: -5px; right: -5px; background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 0.5rem; color: white;">
+                        <i class="fas fa-check" style="font-size: 0.8rem;"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-9 text-start">
+                    <div class="mb-2">
+                      {% for i in (1..5) %}
+                        <i class="fas fa-star" style="color: #ffd700; font-size: 1rem;"></i>
+                      {% endfor %}
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #2c3e50;">{{page.testimonial3.name}}</h4>
+                    <p style="color: #6c757d; font-size: 1.1rem; line-height: 1.6; font-style: italic;">"{{page.testimonial3.description}}"</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev" style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; width: 50px; height: 50px; left: -25px; top: 50%; transform: translateY(-50%); border: none; box-shadow: 0 5px 15px rgba(21, 186, 41, 0.3);">
+              <i class="fas fa-chevron-left" style="color: white; font-size: 1.2rem;"></i>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next" style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; width: 50px; height: 50px; right: -25px; top: 50%; transform: translateY(-50%); border: none; box-shadow: 0 5px 15px rgba(21, 186, 41, 0.3);">
+              <i class="fas fa-chevron-right" style="color: white; font-size: 1.2rem;"></i>
+            </button>
+            
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators" style="bottom: -50px;">
+              <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active" style="background: #15ba29; border-radius: 50%; width: 12px; height: 12px; border: none; margin: 0 5px;"></button>
+              <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1" style="background: #15ba29; border-radius: 50%; width: 12px; height: 12px; border: none; margin: 0 5px;"></button>
+              <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2" style="background: #15ba29; border-radius: 50%; width: 12px; height: 12px; border: none; margin: 0 5px;"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom CSS and Animations -->
+  <style>
+    /* Hover Effects */
+    .stat-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    .stat-card:hover .icon-container > div {
+      transform: scale(1.1) !important;
+    }
+    
+    .stat-card:hover > div:first-child {
+      opacity: 1 !important;
+    }
+
+    /* Animations */
+    @keyframes slideInFromBottom {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes expandLine {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    @keyframes stats-pattern {
+      0% { transform: translateX(0) translateY(0); }
+      100% { transform: translateX(-80px) translateY(-80px); }
+    }
+    
+    @keyframes float-success {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(5deg); }
+    }
+    
+    @keyframes pulse-award {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    
+    @keyframes bounce-icon {
+      0%, 100% { transform: translateY(0px); }
+      25% { transform: translateY(-3px); }
+      50% { transform: translateY(0px); }
+      75% { transform: translateY(-1px); }
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</section>

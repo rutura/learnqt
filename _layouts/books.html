@@ -1,4 +1,543 @@
 {% include seo.html %}
 {% include navpage.html %}
-{% include book/starter.html %}
+
+<!-- Enhanced Books Hero Section -->
+<section class="books-hero py-5 bg-secondary-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-lg" style="top: 15%; left: 10%;"></div>
+        <div class="floating-element floating-md" style="top: 55%; right: 20%;"></div>
+        <div class="floating-element floating-sm" style="top: 30%; left: 85%;"></div>
+        <div class="floating-element floating-md" style="top: 10%; right: 75%;"></div>
+    </div>
+    
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 text-center">
+                <!-- Hero Badge -->
+                <div class="hero-badge mb-4">
+                    <span class="badge bg-light text-dark px-4 py-2 rounded-pill">
+                        <i class="fas fa-book me-2"></i>{{ site.data.books.hero.badge_text }}
+                    </span>
+                </div>
+                
+                <!-- Hero Content -->
+                <h1 class="hero-title display-2 fw-bold mb-4">{{ site.data.books.hero.title }}</h1>
+                <p class="hero-subtitle lead mb-5">{{ site.data.books.hero.subtitle }}</p>
+                
+                <!-- Hero Stats -->
+                <div class="hero-stats mb-5">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">{{ site.data.books.social_proof.books_count }}</div>
+                                <div class="stat-label">Expert Books</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">{{ site.data.books.social_proof.total_readers }}</div>
+                                <div class="stat-label">Happy Readers</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">{{ site.data.books.social_proof.avg_rating }}</div>
+                                <div class="stat-label">Average Rating</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">{{ site.data.books.social_proof.formats }}</div>
+                                <div class="stat-label">Available Formats</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="trust-indicators-section mb-5">
+                    <div class="trust-indicators-grid">
+                        {% for indicator in site.data.books.hero.trust_indicators %}
+                        <div class="trust-indicator-item">
+                            <i class="{{ indicator.icon }}"></i>
+                            <span>{{ indicator.text }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Hero CTA Buttons -->
+                <div class="hero-cta-buttons">
+                    <a href="#books-showcase" class="btn btn-hero-primary me-3">
+                        <div class="btn-content">
+                            <div class="btn-main-text">{{ site.data.books.ui.explore_all_button }}</div>
+                            <div class="btn-sub-text">Start your learning journey</div>
+                        </div>
+                    </a>
+                    <a href="{{ site.data.books.newsletter.signup_link }}" class="btn btn-hero-secondary">
+                        <div class="btn-content">
+                            <div class="btn-main-text">{{ site.data.books.newsletter.cta_text }}</div>
+                            <div class="btn-sub-text">Plus Qt development tips</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Books Showcase Section -->
+<section id="books-showcase" class="books-showcase py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <div class="section-badge mb-3">
+                <span class="badge bg-primary text-white px-3 py-2 rounded-pill">
+                    <i class="fas fa-star me-2"></i>{{ site.data.books.featured_section.title }}
+                </span>
+            </div>
+            <h2 class="section-title display-4 fw-bold mb-4">{{ site.data.books.featured_section.subtitle }}</h2>
+            <p class="section-description lead text-muted mb-0">{{ site.data.books.featured_section.description }}</p>
+        </div>
+
+        <!-- Enhanced Books Grid -->
+        <div class="books-grid">
+            {% for book in site.data.books.books %}
+            <div class="book-card-wrapper">
+                <div class="book-card glass-card h-100">
+                    {% if book.featured %}
+                    <div class="featured-badge">
+                        <span><i class="fas fa-star me-1"></i>Featured</span>
+                    </div>
+                    {% endif %}
+                    
+                    {% if book.coming_soon %}
+                    <div class="coming-soon-badge">
+                        <span><i class="fas fa-clock me-1"></i>Coming Soon</span>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="book-cover-container">
+                        <div class="image-glow"></div>
+                        <img class="book-cover" alt="{{ book.title }}" src="{{ site.baseurl }}{{ book.cover }}">
+                        <div class="cover-overlay">
+                            <div class="book-info">
+                                <div class="book-category">{{ book.category }}</div>
+                                <div class="book-level">{{ book.level }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="book-content">
+                        <div class="book-header">
+                            <h3 class="book-title">{{ book.title }}</h3>
+                            <p class="book-description">{{ book.description }}</p>
+                        </div>
+                        
+                        <div class="book-highlights">
+                            <div class="book-stats">
+                                <div class="stat">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>{{ book.pages }} pages</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-list"></i>
+                                    <span>{{ book.chapters }} chapters</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-download"></i>
+                                    <span>{{ book.formats | join: ', ' }}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="highlight-list">
+                                {% for highlight in book.highlights limit:3 %}
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <span>{{ highlight }}</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                        <div class="book-footer">
+                            <div class="book-price">
+                                {% if book.coming_soon %}
+                                    <span class="price coming-soon">{{ book.price }}</span>
+                                {% else %}
+                                    <span class="price">{{ book.price }}</span>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="book-actions">
+                                {% if book.coming_soon %}
+                                    <a href="{{ book.gumroad_link }}" class="btn btn-outline-primary">
+                                        <i class="fas fa-bell me-2"></i>{{ site.data.books.ui.coming_soon_button }}
+                                    </a>
+                                {% else %}
+                                    <a href="{{ book.gumroad_link }}" class="btn btn-primary">
+                                        <i class="fas fa-shopping-cart me-2"></i>{{ site.data.books.ui.buy_now_button }}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section py-5 bg-primary-gradient">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="newsletter-card glass-card p-5">
+                    <div class="newsletter-icon mb-4">
+                        <i class="fas fa-gift text-white"></i>
+                    </div>
+                    <h2 class="newsletter-title text-white mb-3">{{ site.data.books.newsletter.title }}</h2>
+                    <p class="newsletter-subtitle text-white-50 mb-4">{{ site.data.books.newsletter.subtitle }}</p>
+                    <a href="{{ site.data.books.newsletter.signup_link }}" class="btn btn-light btn-lg">
+                        <i class="fas fa-download me-2"></i>{{ site.data.books.newsletter.cta_text }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Books Page Specific Styles */
+:root {
+    --primary-color: #15ba29;
+    --secondary-color: #0d8a1f;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-blur: blur(10px);
+}
+
+/* Background gradient for books */
+.bg-secondary-gradient {
+    background: linear-gradient(135deg, 
+        var(--primary-color) 0%, 
+        var(--secondary-color) 50%, 
+        #0a6818 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Books Hero Styles */
+.books-hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-stats .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+/* Books Grid */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.book-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.book-cover-container {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.book-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-cover {
+    transform: scale(1.05);
+}
+
+.cover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.book-card:hover .cover-overlay {
+    opacity: 1;
+}
+
+.book-info {
+    color: white;
+}
+
+.book-category {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.book-level {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.book-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.book-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+
+.book-description {
+    color: #718096;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.book-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.book-stats .stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.book-stats .stat i {
+    color: var(--primary-color);
+}
+
+.highlight-list {
+    margin-bottom: 2rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.book-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.book-price .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.book-price .coming-soon {
+    color: #718096;
+    font-style: italic;
+}
+
+.featured-badge, .coming-soon-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.featured-badge span {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #1a202c;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.coming-soon-badge span {
+    background: linear-gradient(135deg, #4299e1, #3182ce);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    position: relative;
+}
+
+.newsletter-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+}
+
+.newsletter-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.newsletter-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .books-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .books-hero {
+        min-height: 60vh;
+        padding: 3rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .hero-stats .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .book-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-stats .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .trust-indicators-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .book-content {
+        padding: 1.5rem;
+    }
+}
+</style>
+
 {% include footerpage.html %}

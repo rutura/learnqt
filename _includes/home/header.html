@@ -1,20 +1,560 @@
-<header class="loadinglazy container-fluid header" loading="lazy" data-background-image="{{page.banner}}">
-<div class="row p-3">
-<div class="col-md-8 mx-auto intro text-center">
-<h1 class="col-md-8 mx-auto"><strong>{{page.title}}</strong></h1>
-<h2 class="lead mt-3">{{page.description}}</h2>
-</div>
-</div>
-</header>
-<div class="container-fluid black">
-<div class="row text-center">
-<div class="col-md-8 mx-auto p-3 p-md-5 text-center">
-<a href="{{page.button_video_link}}" title="{{site.title}} video" class="btn btn-greens ser me-3 mt-1">
-{{page.button_video}}
-</a>
-<a href="{{page.button_book_link}}" title="{{page.title}} book" class="btn btn-greens ser mt-1">
-{{page.button_book}}
-</a>
-</div>
-</div>
-</div>
+<!-- Innovative Hero Section -->
+<section class="hero-home py-5 bg-home-gradient background-pattern">
+    <!-- Dynamic Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element code-floating" style="top: 20%; left: 10%;">
+            <div class="code-snippet">
+                <span class="code-keyword">class</span> <span class="code-class">QtApp</span> { ... }
+            </div>
+        </div>
+        <div class="floating-element tech-badge" style="top: 15%; right: 15%;">
+            <i class="fab fa-android"></i>
+            <span>Mobile</span>
+        </div>
+        <div class="floating-element tech-badge" style="top: 60%; left: 5%;">
+            <i class="fas fa-desktop"></i>
+            <span>Desktop</span>
+        </div>
+        <div class="floating-element code-floating" style="bottom: 20%; right: 10%;">
+            <div class="code-snippet">
+                <span class="code-keyword">qml</span>: <span class="code-string">"dynamic"</span>
+            </div>
+        </div>
+        <div class="floating-element tech-badge" style="top: 40%; right: 8%;">
+            <i class="fas fa-microchip"></i>
+            <span>Embedded</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6 text-white">
+                <!-- Hero Badge -->
+                <div class="hero-badge mb-4">
+                    <span class="badge bg-light text-dark px-4 py-2 rounded-pill">
+                        <i class="fas fa-rocket me-2"></i>Expert Training on Qt, C++, QML
+                    </span>
+                </div>
+                
+                <!-- Main Hero Content -->
+                <h1 class="hero-title display-1 fw-bold mb-4">
+                    Build <span class="text-highlight">Cross-Platform</span><br>
+                    Software & <span class="text-highlight">Embedded UIs</span>
+                </h1>
+                
+                <p class="hero-subtitle lead mb-5">
+                    Master Qt development with expert training from industry professionals. 
+                    Create stunning applications that run everywhere—from desktop to mobile to embedded systems.
+                </p>
+                
+                <!-- Trust Metrics -->
+                <div class="trust-metrics mb-5">
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-number">50,000+</div>
+                            <div class="metric-label">Students Trained</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number">4.6★</div>
+                            <div class="metric-label">Average Rating</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-number">10+</div>
+                            <div class="metric-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero CTAs -->
+                <div class="hero-actions">
+                    <a href="{{page.button_video_link}}" class="btn btn-hero-primary btn-lg me-3">
+                        <div class="btn-content">
+                            <div class="btn-main-text">{{page.button_video}}</div>
+                            <div class="btn-sub-text">Start building today</div>
+                        </div>
+                    </a>
+                    <a href="#book" class="btn btn-hero-secondary btn-lg">
+                        <div class="btn-content">
+                            <div class="btn-main-text">{{page.button_book}}</div>
+                            <div class="btn-sub-text">Deep learning resources</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Social Proof -->
+                <div class="social-proof mt-5">
+                    <div class="proof-text">Trusted by developers at:</div>
+                    <div class="company-logos">
+                        <div class="company-badge">Microsoft</div>
+                        <div class="company-badge">Tesla</div>
+                        <div class="company-badge">Amazon</div>
+                        <div class="company-badge">Intel</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <!-- Interactive Visual -->
+                <div class="hero-visual">
+                    <div class="visual-container">
+                        <!-- Central Qt Logo -->
+                        <div class="qt-center">
+                            <div class="qt-logo">
+                                <img src="{{site.logo}}" alt="Qt Logo" class="logo-main">
+                                <div class="logo-pulse"></div>
+                            </div>
+                            <div class="center-text">
+                                <h3>One Framework</h3>
+                                <p>Infinite Possibilities</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Platform Connections -->
+                        <div class="platform-connections">
+                            <div class="platform-node" style="top: 10%; left: 20%;">
+                                <div class="node-icon">
+                                    <i class="fab fa-windows"></i>
+                                </div>
+                                <div class="node-label">Windows</div>
+                                <div class="connection-line" data-target="qt-center"></div>
+                            </div>
+                            
+                            <div class="platform-node" style="top: 10%; right: 20%;">
+                                <div class="node-icon">
+                                    <i class="fab fa-apple"></i>
+                                </div>
+                                <div class="node-label">macOS</div>
+                                <div class="connection-line" data-target="qt-center"></div>
+                            </div>
+                            
+                            <div class="platform-node" style="top: 50%; left: 10%;">
+                                <div class="node-icon">
+                                    <i class="fab fa-linux"></i>
+                                </div>
+                                <div class="node-label">Linux</div>
+                                <div class="connection-line" data-target="qt-center"></div>
+                            </div>
+                            
+                            <div class="platform-node" style="top: 50%; right: 10%;">
+                                <div class="node-icon">
+                                    <i class="fab fa-android"></i>
+                                </div>
+                                <div class="node-label">Android</div>
+                                <div class="connection-line" data-target="qt-center"></div>
+                            </div>
+                            
+                            <div class="platform-node" style="bottom: 10%; left: 20%;">
+                                <div class="node-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="node-label">Embedded</div>
+                                <div class="connection-line" data-target="qt-center"></div>
+                            </div>
+                            
+                            <div class="platform-node" style="bottom: 10%; right: 20%;">
+                                <div class="node-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="node-label">Web</div>
+                                <div class="connection-line" data-target="qt-center"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Hero Home Styles */
+.bg-home-gradient {
+    background: linear-gradient(135deg, 
+        #1a202c 0%, 
+        #2d3748 25%, 
+        #15ba29 75%, 
+        #0d8a1f 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-home {
+    position: relative;
+    min-height: 100vh;
+}
+
+.text-highlight {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.code-floating {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #15ba29;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-family: 'Monaco', monospace;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 20px rgba(21, 186, 41, 0.3);
+    animation: codeFloat 6s ease-in-out infinite;
+}
+
+.code-keyword { color: #ff6b6b; }
+.code-class { color: #4ecdc4; }
+.code-string { color: #ffe66d; }
+
+.tech-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    animation: techFloat 8s ease-in-out infinite;
+}
+
+.tech-badge i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+@keyframes codeFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(2deg); }
+    50% { transform: translateY(-10px) rotate(-1deg); }
+    75% { transform: translateY(-15px) rotate(1deg); }
+}
+
+@keyframes techFloat {
+    0%, 100% { transform: translateY(0px); }
+    33% { transform: translateY(-15px); }
+    66% { transform: translateY(-5px); }
+}
+
+/* Trust Metrics */
+.trust-metrics {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.metric-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffd700;
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+/* Hero Actions */
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn-hero-primary, .btn-hero-secondary {
+    border-radius: 15px;
+    padding: 1.25rem 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    min-width: 250px;
+    text-align: center;
+}
+
+.btn-hero-primary {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    color: #2d3748;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-hero-primary:hover {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #2d3748;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.btn-hero-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.1);
+}
+
+.btn-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.btn-main-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.btn-sub-text {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+/* Social Proof */
+.social-proof {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.proof-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.company-logos {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.company-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* Hero Visual */
+.hero-visual {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visual-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.qt-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.qt-logo {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.logo-main {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #15ba29;
+    animation: logoSpin 20s linear infinite;
+}
+
+.logo-pulse {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid rgba(21, 186, 41, 0.4);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.center-text h3 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.center-text p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.platform-node {
+    position: absolute;
+    text-align: center;
+    color: white;
+    animation: nodeFloat 4s ease-in-out infinite;
+}
+
+.platform-node:nth-child(even) {
+    animation-delay: 2s;
+}
+
+.node-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    font-size: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.node-icon:hover {
+    background: rgba(21, 186, 41, 0.2);
+    border-color: #15ba29;
+    transform: scale(1.1);
+}
+
+.node-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes logoSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+}
+
+@keyframes nodeFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-home {
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 3rem !important;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .hero-visual {
+        height: 400px;
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .btn-hero-primary, .btn-hero-secondary {
+        min-width: auto;
+        width: 100%;
+        padding: 1rem 1.5rem;
+    }
+    
+    .btn-main-text {
+        font-size: 1rem;
+    }
+    
+    .btn-sub-text {
+        font-size: 0.8rem;
+    }
+    
+    .company-logos {
+        justify-content: center;
+    }
+    
+    .platform-node {
+        position: relative !important;
+        display: inline-block;
+        margin: 1rem;
+    }
+    
+    .visual-container {
+        position: relative;
+        height: auto;
+    }
+    
+    .qt-center {
+        position: relative;
+        transform: none;
+        margin-bottom: 2rem;
+    }
+}
+</style>

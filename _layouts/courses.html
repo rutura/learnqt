@@ -2,7 +2,7 @@
 {% include navpage.html %}
 
 <!-- Enhanced Hero Section -->
-<section class="courses-hero py-5 bg-primary-gradient background-pattern">
+<section class="courses-hero py-5 bg-primary-gradient background-pattern" style="padding-top: 120px !important;">
     <div class="floating-elements">
         <div class="floating-element floating-lg" style="top: 20%; left: 10%;"></div>
         <div class="floating-element floating-md" style="top: 60%; right: 15%;"></div>
@@ -718,6 +718,7 @@
     min-height: 90vh;
     display: flex;
     align-items: center;
+    padding-top: 120px !important; /* Account for fixed navbar */
 }
 
 .min-vh-75 {
@@ -1866,6 +1867,10 @@
     
     .cta-subtitle {
         font-size: 1.2rem;
+    }
+    
+    .courses-hero {
+        padding-top: 100px !important; /* Adjusted for mobile navbar */
     }
     
     .courses-grid {

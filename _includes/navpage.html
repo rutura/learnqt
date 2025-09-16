@@ -1,19 +1,232 @@
-<nav class="navbar navbar-expand-lg black">
-<div class="container-fluid">
-<a class="navbar-brand" href="{{site.url}}"><img alt="{{site.title}}" width="40" height="40" src="{{site.logo}}"/></a>
-<button class="navbar-toggler border-light text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-right" viewBox="0 0 16 16">
-<path d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z"/>
-</svg> <small>Menu</small>
-</button>
-<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-<ul class="navbar-nav justify-content-end">
-{% for nav in site.navigation %}
-<li class="nav-item p-3">
-<a class="nav-link col-md-2" href="{{nav.link}}">{{nav.name}}</a>
-</li>
-{% endfor %}
-</ul>
-</div>
-</div>
+<nav class="navbar navbar-expand-lg modern-nav fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{{site.url}}">
+            <img alt="{{site.title}}" width="45" height="45" src="{{site.logo}}" class="logo-img"/>
+            <span class="brand-text">LearnQt</span>
+        </a>
+        
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                {% for nav in site.navigation %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{nav.link}}">{{nav.name}}</a>
+                </li>
+                {% endfor %}
+                <li class="nav-item">
+                    <a class="nav-link cta-button" href="/courses">
+                        <i class="fas fa-play me-2"></i>Start Learning
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
+
+<style>
+/* Modern Navigation Styles */
+.modern-nav {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.modern-nav.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    padding: 0.5rem 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: #2d3748 !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #15ba29 !important;
+}
+
+.logo-img {
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .logo-img {
+    transform: scale(1.05);
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #15ba29, #0d8a1f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.navbar-nav .nav-link {
+    color: #4a5568 !important;
+    font-weight: 500;
+    padding: 0.75rem 1.25rem !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    margin: 0 0.25rem;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #15ba29 !important;
+    background: rgba(21, 186, 41, 0.1);
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #15ba29;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #15ba29, #0d8a1f) !important;
+    color: white !important;
+    border-radius: 25px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(21, 186, 41, 0.3);
+    border: none;
+    margin-left: 1rem;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #0d8a1f, #0a6818) !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(21, 186, 41, 0.4);
+}
+
+.cta-button::after {
+    display: none;
+}
+
+/* Custom Toggler */
+.custom-toggler {
+    border: none;
+    padding: 0.5rem;
+    background: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.custom-toggler:focus {
+    box-shadow: none;
+}
+
+.toggler-icon {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #4a5568;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.custom-toggler[aria-expanded="true"] .toggler-icon:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.custom-toggler[aria-expanded="true"] .toggler-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.custom-toggler[aria-expanded="true"] .toggler-icon:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .modern-nav {
+        padding: 0.75rem 0;
+    }
+    
+    .navbar-collapse {
+        background: white;
+        border-radius: 15px;
+        margin-top: 1rem;
+        padding: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-nav .nav-link {
+        text-align: center;
+        margin: 0.25rem 0;
+    }
+    
+    .cta-button {
+        margin-left: 0 !important;
+        margin-top: 1rem;
+        text-align: center;
+        display: block;
+    }
+}
+
+/* Scroll Animation */
+.navbar-nav .nav-item {
+    animation: fadeInDown 0.6s ease forwards;
+    opacity: 0;
+}
+
+.navbar-nav .nav-item:nth-child(1) { animation-delay: 0.1s; }
+.navbar-nav .nav-item:nth-child(2) { animation-delay: 0.2s; }
+.navbar-nav .nav-item:nth-child(3) { animation-delay: 0.3s; }
+.navbar-nav .nav-item:nth-child(4) { animation-delay: 0.4s; }
+.navbar-nav .nav-item:nth-child(5) { animation-delay: 0.5s; }
+.navbar-nav .nav-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.modern-nav');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+</script>

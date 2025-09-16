@@ -1,24 +1,168 @@
-# Configuration best books Widget - best books widget min have 2 list
+# Books Configuration
+# Global book metrics
+social_proof:
+  books_count: "2+"
+  total_readers: "15,000+"
+  avg_rating: "4.7"
+  formats: "PDF, EPUB, Paperback"
+  
+# Hero section configuration
+hero:
+  title: "Qt & QML Books"
+  subtitle: "Master Qt development with our comprehensive books. From beginner fundamentals to advanced patterns, get in-depth knowledge you can reference anytime, anywhere."
+  badge_text: "Expert-Written Qt Development Books"
+  trust_indicators:
+    - icon: "fas fa-download"
+      text: "Instant Digital Download"
+    - icon: "fas fa-book-open"
+      text: "Multiple Formats Available"
+    - icon: "fas fa-clock"
+      text: "Lifetime Reference"
+    - icon: "fas fa-star"
+      text: "4.7+ Average Rating"
 
-# BEST BOOKS
+# Featured books section
+featured_section:
+  title: "Featured Books"
+  subtitle: "Comprehensive guides to mastering Qt development, written by industry experts"
+  description: "Get deep, structured knowledge that goes beyond video tutorials. Our books provide reference material you can return to throughout your Qt journey."
+  button_text: "Explore All Books"
 
-best_books_title: Best Booklet
+# All available books
+books:
+  - id: "qt6-qml-beginners"
+    title: "Qt6 QML For Beginners"
+    short_title: "QML Beginners"
+    description: "Master the fundamentals of Qt6 QML development. Learn declarative UI programming from scratch and build fluid, dynamic user interfaces for desktop, mobile, and embedded applications."
+    cover: "/assets/img/qt6_qml_for_beginners.png"
+    category: "QML Development"
+    level: "Beginner"
+    pages: "400+"
+    chapters: "15+"
+    formats: ["PDF", "EPUB", "Paperback"]
+    featured: true
+    price: "$29"
+    gumroad_link: "https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners"
+    
+    highlights:
+      - "Complete QML fundamentals"
+      - "Real-world examples"
+      - "Cross-platform development"
+      - "Modern Qt6 features"
+      - "Hands-on projects"
+    
+    what_you_learn:
+      - "QML syntax and declarative programming"
+      - "Building responsive user interfaces" 
+      - "Animations and transitions"
+      - "Component-based architecture"
+      - "Integrating with C++ backends"
+      - "Deployment to multiple platforms"
 
-best_books_list: # do not enter text in this area, it is blank by default for lists
- - title: Qt6 QML For Beginners
-   subtitle: Qt6 QML For Beginners subtitle in here
-   cover: /assets/img/learnqtbook.webp
-   link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
- - title: The C++20 Masterclass
-   subtitle: The C++20 Masterclass subtitle in here
-   cover: /assets/img/learnqtbook2.webp
-   link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+  - id: "qt6-qml-advanced"
+    title: "Interfacing QML to C++"
+    short_title: "QML Advanced"
+    description: "Connect your fluid Qt Quick (QML) user interfaces to powerful C++ backends. Learn advanced integration patterns, performance optimization, and professional architecture."
+    cover: "/assets/img/interfacing_cpp_to_qml_book_cover.png"
+    category: "Advanced QML"
+    level: "Intermediate to Advanced"
+    pages: "350+"
+    chapters: "12+"
+    formats: ["PDF", "EPUB", "Paperback"]
+    featured: true
+    price: "$39"
+    gumroad_link: "https://dgakwaya.gumroad.com/l/qt6_qml_advanced"
+    
+    highlights:
+      - "QML-C++ integration"
+      - "Performance optimization"
+      - "Advanced patterns"
+      - "Professional architecture"
+      - "Real-world solutions"
+    
+    what_you_learn:
+      - "Exposing C++ objects to QML"
+      - "Custom QML types and components"
+      - "Model/View architecture"
+      - "Multithreading patterns"
+      - "Performance optimization techniques"
+      - "Professional project structure"
 
+  - id: "pyside6-beginners"
+    title: "Qt For Python (PySide6) For Beginners"
+    short_title: "PySide6 Beginners"
+    description: "Build cross-platform desktop applications in Python. Learn to create professional GUI applications using PySide6 that run on Windows, Mac, and Linux."
+    cover: "/assets/img/pyside6_beginners_book_cover.png"
+    category: "Python GUI"
+    level: "Beginner"
+    pages: "300+"
+    chapters: "12+"
+    formats: ["PDF", "EPUB"]
+    featured: false
+    price: "Coming Soon"
+    gumroad_link: "https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts"
+    coming_soon: true
+    
+    highlights:
+      - "Python GUI development"
+      - "Cross-platform applications"
+      - "PySide6 fundamentals"
+      - "Real projects"
+      - "Professional deployment"
+    
+    what_you_learn:
+      - "PySide6 widgets and layouts"
+      - "Event handling in Python"
+      - "Database integration"
+      - "Packaging and distribution"
+      - "Professional GUI patterns"
+      - "Cross-platform considerations"
 
+# Money-back guarantee for books
+guarantee:
+  days: 30
+  title: "30-Day Money-Back Guarantee"
+  subtitle: "Learn with confidence"
+  description: "If you're not completely satisfied with your book purchase within 30 days, get a full refund. No questions asked."
+  features:
+    - "Full 30-day trial period"
+    - "No questions asked policy"
+    - "Instant refund processing"
+    - "Risk-free learning"
 
-books_button: Explore All Booklet
+# Global testimonials for books
+testimonials:
+  featured:
+    - name: "Alex Chen"
+      role: "Senior Qt Developer"
+      content: "The QML book is incredibly comprehensive. It covers everything from basics to advanced topics with clear examples. Best Qt book I've read."
+      rating: 5
+      book_purchased: "qt6-qml-beginners"
+    - name: "Maria Rodriguez"
+      role: "Mobile App Developer"
+      content: "Perfect for learning QML from scratch. The step-by-step approach and real examples made complex concepts easy to understand."
+      rating: 5
+      book_purchased: "qt6-qml-beginners"
+    - name: "James Wilson"
+      role: "Embedded Systems Engineer"
+      content: "Finally, a book that explains QML-C++ integration properly. The advanced patterns section is worth the price alone."
+      rating: 5
+      book_purchased: "qt6-qml-advanced"
 
-book_button_list: Learn More
+# UI Configuration for books
+ui:
+  buy_now_button: "Get This Book"
+  learn_more_button: "See What's Inside"
+  coming_soon_button: "Get Notified"
+  explore_all_button: "Explore All Books"
+  read_sample_button: "Read Sample"
+  
+# Newsletter integration
+newsletter:
+  title: "GET A FREE QT CREATOR BOOKLET"
+  subtitle: "Plus stay updated on new books and Qt development tips"
+  cta_text: "Get Free Booklet"
+  signup_link: "https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts"
 
 
 

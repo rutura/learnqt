@@ -1,11 +1,44 @@
 # Courses Configuration
-# Global social proof metrics
+# Global social proof metrics and statistics
 social_proof:
-  student_count: "4,000+"
-  avg_rating: "4.9"
-  completion_rate: "87"
-  countries: "120+"
-  testimonial_count: "500+"
+  # Main statistics for homepage
+  stats:
+    courses:
+      number: "3"
+      title: "Courses"
+      icon: "fas fa-graduation-cap"
+      description: "Professional courses covering Qt, C++, QML and Python"
+    books:
+      number: "4"
+      title: "Books"
+      icon: "fas fa-book"
+      description: "Comprehensive books and guides for developers"
+    students:
+      number: "32982"
+      title: "Students"
+      icon: "fas fa-users"
+      description: "Happy learners worldwide mastering Qt development"
+    reviews:
+      number: "8481"
+      title: "Reviews"
+      icon: "fas fa-star"
+      description: "5-star reviews from satisfied students"
+  
+  # Additional metrics for other pages
+  extended_stats:
+    student_count: "4,000+"
+    avg_rating: "4.9"
+    completion_rate: "87"
+    countries: "120+"
+    testimonial_count: "500+"
+    hours_content: "125+"
+    projects_built: "15+"
+    
+  # Section content
+  section:
+    title: "Happy Students"
+    subtitle: "Join Thousands of Successful Qt Developers"
+    description: "Thousands of students have enrolled in our courses and have subsequently become professional developers, utilizing Qt, C++, and QML across various domains. Our statistics and reviews attest to the effectiveness of our training material."
   
 # Hero section configuration
 hero:

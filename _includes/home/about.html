@@ -1,114 +1,783 @@
-<div class="container-fluid">
-
-<div class="row mb-5">
-<div class="col-md-10 mx-auto p-3 p-md-5 text-center mt-5">
-<h2><strong><a href="{{page.url}}">{{page.why.title}}</a></strong></h2>
-<div class="bot-center col-md-1 mt-3 col-2"></div>
-<p class="mt-5 col-md-6 mx-auto">{{page.why.description}}</p>
-</div>
-
-<div class="col-md-9 mx-auto">
-<div class="row">
-
-{% for w in page.why.list %}
-<div class="col-md-3 p-3">
-<div class="p-3 p-md-3 shadow-sm rounded border-top border-success zoom">
-<div class="text-center"><img class="img-fluid bg-light rounded-circle p-3 mt-3 lazyload" alt="{{page.title}}" loading="lazy" width="120" height="120" data-src="{{w.image}}"/></div>
-<div class="p-3">
-<p><a href="{{site.url}}">{{w.title}}</a></p>
-<p><small>{{w.description}}</small></p>
-</div>
-</div>
-</div>
-{% endfor %}
-
-</div>
-</div>
-
-</div>
-
-<div class="col-md-10 mx-auto p-3">
-<div class="row bg-light sers mt-5 mail shadow-sm">
-  <div class="col-md-5 p-4 d-flex align-items-center">
-    <h2 class="mb-0"><strong>{{page.notified.title}}</strong></h2>
+<!-- Enhanced Why Choose Us Section -->
+<section class="why-choose-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 6rem 0; position: relative; overflow: hidden;">
+  <!-- Background Elements -->
+  <div class="why-choose-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
+    <!-- Floating Icons -->
+    <div style="position: absolute; top: 20%; left: 8%; font-size: 2rem; color: rgba(21, 186, 41, 0.1); animation: float-why 6s ease-in-out infinite;"><i class="fas fa-code"></i></div>
+    <div style="position: absolute; top: 15%; right: 12%; font-size: 1.8rem; color: rgba(21, 186, 41, 0.08); animation: float-why 8s ease-in-out infinite reverse;"><i class="fas fa-infinity"></i></div>
+    <div style="position: absolute; bottom: 25%; left: 15%; font-size: 2.2rem; color: rgba(21, 186, 41, 0.1); animation: float-why 7s ease-in-out infinite;"><i class="fas fa-laptop-code"></i></div>
+    <div style="position: absolute; bottom: 20%; right: 10%; font-size: 1.9rem; color: rgba(21, 186, 41, 0.09); animation: float-why 9s ease-in-out infinite reverse;"><i class="fas fa-rocket"></i></div>
+    
+    <!-- Gradient Orbs -->
+    <div style="position: absolute; top: 30%; left: 5%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(21, 186, 41, 0.08) 0%, transparent 70%); border-radius: 50%; animation: pulse-why 4s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: 40%; right: 8%; width: 120px; height: 120px; background: radial-gradient(circle, rgba(21, 186, 41, 0.06) 0%, transparent 70%); border-radius: 50%; animation: pulse-why 5s ease-in-out infinite reverse;"></div>
   </div>
-  <div class="col-md-7 p-4">
-    <style>
-    .formkit-form[data-uid="67a33fe28d"] {
-      margin: 0 !important;
-      display: flex !important;
-      justify-content: flex-start !important;
-      align-items: flex-start !important;
-      width: 100% !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] > div {
-      width: 100% !important;
-      margin: 0 !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] .formkit-fields {
-      display: flex !important;
-      gap: 10px !important;
-      flex-direction: column !important;
-      align-items: stretch !important;
-      width: 100% !important;
-      margin: 0 !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] .formkit-field {
-      width: 100% !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] .formkit-input {
-      font-size: 16px !important;
-      padding: 12px 15px !important;
-      width: 100% !important;
-      min-height: 40px !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] .formkit-submit {
-      margin: 0 !important;
-      width: 100% !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] .formkit-submit > span {
-      width: 100% !important;
-      min-height: 40px !important;
-    }
-    .formkit-form[data-uid="67a33fe28d"] + p {
-      margin-top: 10px !important;
-      width: 100% !important;
-      text-align: center !important;
-      font-size: 14px !important;
-      opacity: 0.8 !important;
-    }
-    @media (max-width: 768px) {
-      .formkit-form[data-uid="67a33fe28d"] {
-        margin-top: 20px !important;
-      }
-    }
-    </style>
 
-    <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
+  <div class="container" style="position: relative; z-index: 2;">
+    <!-- Enhanced Section Header -->
+    <div class="row text-center mb-5">
+      <div class="col-md-12">
+        <!-- Header Badge -->
+        <div class="why-badge mb-4" style="display: inline-block; background: rgba(21, 186, 41, 0.1); border: 1px solid rgba(21, 186, 41, 0.3); border-radius: 25px; padding: 0.6rem 1.8rem; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(21, 186, 41, 0.1), transparent); animation: badge-slide 3s infinite;"></div>
+          <i class="fas fa-award" style="color: #15ba29; margin-right: 0.5rem;"></i>
+          <span style="color: #15ba29; font-weight: 600; font-size: 0.95rem;">Why Choose LearnQt</span>
+        </div>
+        
+        <h2 class="text-dark fw-bold mb-4" style="font-size: 3rem; line-height: 1.2;">
+          {{page.why.title}}
+        </h2>
+        <div class="mx-auto mb-4" style="width: 80px; height: 4px; background: linear-gradient(90deg, #15ba29, #28a745); border-radius: 2px; position: relative;">
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%); animation: underline-glow 2s infinite;"></div>
+        </div>
+        <p class="text-muted lead mx-auto" style="max-width: 750px; font-size: 1.2rem; line-height: 1.7;">
+          {{page.why.description}}
+        </p>
+      </div>
+    </div>
 
-    <p class="mb-3 text-muted small">
-      {{page.notified.description}}
-    </p>
+    <!-- Revolutionary Three-Card Layout -->
+    <div class="row g-5 mb-5 justify-content-center">
+      
+      <!-- Card 1: Source Code & GitHub -->
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card-enhanced" style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); transition: all 0.5s ease; border: 1px solid rgba(21, 186, 41, 0.1); position: relative; overflow: hidden; cursor: pointer;"
+             onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(21, 186, 41, 0.2)'; this.style.borderColor='#15ba29'; this.querySelector('.card-glow').style.opacity='1'"
+             onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.08)'; this.style.borderColor='rgba(21, 186, 41, 0.1)'; this.querySelector('.card-glow').style.opacity='0'">
+          
+          <!-- Card Glow Effect -->
+          <div class="card-glow" style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 25px; filter: blur(15px); opacity: 0; transition: opacity 0.5s ease; z-index: -1;"></div>
+          
+          <!-- Icon Container with Advanced Styling -->
+          <div class="icon-container text-center mb-4" style="position: relative;">
+            <!-- Rotating Background Ring -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; border: 2px solid rgba(21, 186, 41, 0.2); border-radius: 50%; animation: rotate-ring 20s linear infinite;"></div>
+            
+            <!-- Main Icon Circle -->
+            <div class="main-icon-circle" style="position: relative; width: 100px; height: 100px; background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 25px rgba(21, 186, 41, 0.3); transition: all 0.3s ease;">
+              <i class="fas fa-code" style="font-size: 2.5rem; color: white;"></i>
+              
+              <!-- Floating Mini Icons -->
+              <div style="position: absolute; top: -8px; right: -8px; width: 30px; height: 30px; background: #ffd700; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: float-mini 3s ease-in-out infinite;">
+                <i class="fab fa-github" style="font-size: 0.9rem; color: white;"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <h4 class="text-dark fw-bold mb-3" style="font-size: 1.5rem;">Source Code Access</h4>
+            <p class="text-muted mb-4" style="line-height: 1.7; font-size: 1rem;">The source code for our courses is fully available on GitHub. Learn by doing with complete project repositories and real-world examples.</p>
+            
+            <!-- Feature Tags -->
+            <div class="feature-tags mb-3">
+              <span style="display: inline-block; background: rgba(21, 186, 41, 0.1); color: #15ba29; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; margin: 0.2rem; border: 1px solid rgba(21, 186, 41, 0.2);">
+                <i class="fab fa-github"></i> GitHub Access
+              </span>
+              <span style="display: inline-block; background: rgba(21, 186, 41, 0.1); color: #15ba29; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; margin: 0.2rem; border: 1px solid rgba(21, 186, 41, 0.2);">
+                <i class="fas fa-download"></i> Complete Projects
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Lifetime Access -->
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card-enhanced" style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); transition: all 0.5s ease; border: 1px solid rgba(21, 186, 41, 0.1); position: relative; overflow: hidden; cursor: pointer;"
+             onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(21, 186, 41, 0.2)'; this.style.borderColor='#15ba29'; this.querySelector('.card-glow').style.opacity='1'"
+             onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.08)'; this.style.borderColor='rgba(21, 186, 41, 0.1)'; this.querySelector('.card-glow').style.opacity='0'">
+          
+          <!-- Card Glow Effect -->
+          <div class="card-glow" style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 25px; filter: blur(15px); opacity: 0; transition: opacity 0.5s ease; z-index: -1;"></div>
+          
+          <!-- Icon Container -->
+          <div class="icon-container text-center mb-4" style="position: relative;">
+            <!-- Pulsing Background -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; background: rgba(21, 186, 41, 0.1); border-radius: 50%; animation: pulse-bg 3s ease-in-out infinite;"></div>
+            
+            <!-- Main Icon Circle -->
+            <div class="main-icon-circle" style="position: relative; width: 100px; height: 100px; background: linear-gradient(45deg, #1da1f2, #0d8bf2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 25px rgba(29, 161, 242, 0.3); transition: all 0.3s ease;">
+              <i class="fas fa-infinity" style="font-size: 2.5rem; color: white;"></i>
+              
+              <!-- Floating Mini Icons -->
+              <div style="position: absolute; top: -8px; right: -8px; width: 30px; height: 30px; background: #ffd700; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: float-mini 4s ease-in-out infinite reverse;">
+                <i class="fas fa-crown" style="font-size: 0.9rem; color: white;"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <h4 class="text-dark fw-bold mb-3" style="font-size: 1.5rem;">Lifetime Access</h4>
+            <p class="text-muted mb-4" style="line-height: 1.7; font-size: 1rem;">Once you've acquired the course, it remains yours for a lifetime! Feel free to revisit and watch it as often as necessary.</p>
+            
+            <!-- Feature Tags -->
+            <div class="feature-tags mb-3">
+              <span style="display: inline-block; background: rgba(29, 161, 242, 0.1); color: #1da1f2; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; margin: 0.2rem; border: 1px solid rgba(29, 161, 242, 0.2);">
+                <i class="fas fa-clock"></i> No Expiry
+              </span>
+              <span style="display: inline-block; background: rgba(29, 161, 242, 0.1); color: #1da1f2; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; margin: 0.2rem; border: 1px solid rgba(29, 161, 242, 0.2);">
+                <i class="fas fa-mobile-alt"></i> All Devices
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Hands-on Practice -->
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card-enhanced" style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); transition: all 0.5s ease; border: 1px solid rgba(21, 186, 41, 0.1); position: relative; overflow: hidden; cursor: pointer;"
+             onmouseover="this.style.transform='translateY(-15px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(21, 186, 41, 0.2)'; this.style.borderColor='#15ba29'; this.querySelector('.card-glow').style.opacity='1'"
+             onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.08)'; this.style.borderColor='rgba(21, 186, 41, 0.1)'; this.querySelector('.card-glow').style.opacity='0'">
+          
+          <!-- Card Glow Effect -->
+          <div class="card-glow" style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 25px; filter: blur(15px); opacity: 0; transition: opacity 0.5s ease; z-index: -1;"></div>
+          
+          <!-- Icon Container -->
+          <div class="icon-container text-center mb-4" style="position: relative;">
+            <!-- Orbiting Elements -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px;">
+              <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 15px; height: 15px; background: rgba(255, 107, 53, 0.6); border-radius: 50%; animation: orbit 8s linear infinite;"></div>
+              <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; background: rgba(255, 107, 53, 0.4); border-radius: 50%; animation: orbit 8s linear infinite reverse;"></div>
+            </div>
+            
+            <!-- Main Icon Circle -->
+            <div class="main-icon-circle" style="position: relative; width: 100px; height: 100px; background: linear-gradient(45deg, #ff6b35, #f7931e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3); transition: all 0.3s ease;">
+              <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: white;"></i>
+              
+              <!-- Floating Mini Icons -->
+              <div style="position: absolute; top: -8px; right: -8px; width: 30px; height: 30px; background: #ffd700; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: float-mini 3.5s ease-in-out infinite;">
+                <i class="fas fa-play" style="font-size: 0.9rem; color: white;"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <h4 class="text-dark fw-bold mb-3" style="font-size: 1.5rem;">Hands-on Practice</h4>
+            <p class="text-muted mb-4" style="line-height: 1.7; font-size: 1rem;">We don't simply present concepts without context. Instead, we actively engage by firing up the editor and constructing applications alongside you.</p>
+            
+            <!-- Feature Tags -->
+            <div class="feature-tags mb-3">
+              <span style="display: inline-block; background: rgba(255, 107, 53, 0.1); color: #ff6b35; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; margin: 0.2rem; border: 1px solid rgba(255, 107, 53, 0.2);">
+                <i class="fas fa-tools"></i> Build Projects
+              </span>
+              <span style="display: inline-block; background: rgba(255, 107, 53, 0.1); color: #ff6b35; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; margin: 0.2rem; border: 1px solid rgba(255, 107, 53, 0.2);">
+                <i class="fas fa-graduation-cap"></i> Learn by Doing
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enhanced Special Attention Highlight -->
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="special-attention-card" style="background: linear-gradient(135deg, #15ba29, #28a745); border-radius: 30px; padding: 3.5rem; color: white; text-align: center; box-shadow: 0 20px 50px rgba(21, 186, 41, 0.3); position: relative; overflow: hidden;">
+          
+          <!-- Background Pattern -->
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(&quot;data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='2' fill='white' opacity='0.1'/></svg>&quot;) repeat; background-size: 50px 50px; animation: pattern-move 20s linear infinite;"></div>
+          
+          <div style="position: relative; z-index: 2;">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <div class="special-header mb-4">
+                  <div style="display: inline-block; background: rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 0.5rem 1.2rem; margin-bottom: 1rem;">
+                    <i class="fas fa-star" style="color: #ffd700; margin-right: 0.5rem;"></i>
+                    <span style="font-weight: 600; font-size: 0.9rem;">Premium Learning Experience</span>
+                  </div>
+                </div>
+                
+                <h3 class="fw-bold mb-3" style="font-size: 2rem;">Personal Guidance from the Instructor</h3>
+                <p class="mb-4" style="font-size: 1.1rem; opacity: 0.95; line-height: 1.7;">
+                  Get personalized guidance from an industry expert with 10+ years of Qt development experience. 
+                  Your instructor personally reviews student progress and provides detailed feedback to ensure your success.
+                </p>
+                
+                <div class="instructor-badges d-flex justify-content-center flex-wrap gap-3">
+                  <span class="badge" style="background: rgba(255, 255, 255, 0.2); padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500;">
+                    <i class="fas fa-building"></i> IoT Company Leader
+                  </span>
+                  <span class="badge" style="background: rgba(255, 255, 255, 0.2); padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500;">
+                    <i class="fas fa-graduation-cap"></i> 50,000+ Students Taught
+                  </span>
+                  <span class="badge" style="background: rgba(255, 255, 255, 0.2); padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500;">
+                    <i class="fas fa-clock"></i> 6 Years Teaching Experience
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="instructor-visual" style="position: relative;">
+                  <!-- Animated Rings -->
+                  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 160px; height: 160px; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 50%; animation: rotate-ring 15s linear infinite;"></div>
+                  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 50%; animation: rotate-ring 12s linear infinite reverse;"></div>
+                  
+                  <!-- Floating Elements -->
+                  <div style="position: absolute; top: 0; right: 0; background: rgba(255, 255, 255, 0.2); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; animation: float-instructor 3s ease-in-out infinite;">
+                    <i class="fas fa-rocket" style="font-size: 1.2rem;"></i>
+                  </div>
+                  <div style="position: absolute; bottom: 10px; left: 0; background: rgba(255, 255, 255, 0.2); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; animation: float-instructor 4s ease-in-out infinite reverse;">
+                    <i class="fas fa-award" style="font-size: 1rem;"></i>
+                  </div>
+                  
+                  <!-- Main Instructor Icon -->
+                  <div class="instructor-icon mx-auto" style="position: relative; width: 120px; height: 120px; background: rgba(255, 255, 255, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px);">
+                    <i class="fas fa-user-graduate" style="font-size: 3rem;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
-<div class="row mb-5" id="about">
-<div class="col-md-12 p-3 p-md-5 text-center mt-5">
-<h2><strong><a href="{{site.url}}">{{site.author.title}}</a></strong></h2>
-</div>
-<div class="col-md-8 mx-auto">
-<div class="row">
-<div class="col-md-4 p-3 p-md-5 text-center">
-<img class="img-fluid rounded-circle lazyload" loading="lazy" width="200" height="200" alt="{{site.author.name}}" data-src="{{site.author.image}}"/>
-</div>
-<div class="col-md-8 p-3">
-<h3><strong>{{site.author.name}}</strong></h3>
-<span class="badge bg-green">{{site.author.label}}</span>
-<hr class="hr-green col-md-1 col-2"/>
-<p>{{site.author.description}}</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <!-- Enhanced CSS Animations -->
+  <style>
+    @keyframes float-why {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-12px) rotate(2deg); }
+      50% { transform: translateY(-6px) rotate(-1deg); }
+      75% { transform: translateY(-18px) rotate(1deg); }
+    }
+    
+    @keyframes pulse-why {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+    
+    @keyframes badge-slide {
+      0% { left: -100%; }
+      50% { left: 100%; }
+      100% { left: 100%; }
+    }
+    
+    @keyframes underline-glow {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    @keyframes rotate-ring {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    
+    @keyframes float-mini {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-5px) scale(1.1); }
+    }
+    
+    @keyframes pulse-bg {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+      50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
+    }
+    
+    @keyframes orbit {
+      0% { transform: translateX(-50%) rotate(0deg) translateY(-60px) rotate(0deg); }
+      100% { transform: translateX(-50%) rotate(360deg) translateY(-60px) rotate(-360deg); }
+    }
+    
+    @keyframes pattern-move {
+      0% { background-position: 0 0; }
+      100% { background-position: 50px 50px; }
+    }
+    
+    @keyframes float-instructor {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-8px) scale(1.05); }
+    }
+    
+    /* Card Hover Effects */
+    .feature-card-enhanced:hover .main-icon-circle {
+      transform: scale(1.1) !important;
+    }
+  </style>
+</section>
+
+<!-- Newsletter Section -->
+<section id="newsletter" class="newsletter-section" style="background: linear-gradient(135deg, #15ba29 0%, #28a745 100%); padding: 5rem 0; position: relative; overflow: hidden;">
+  <!-- Background Effects -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(&quot;data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='20' cy='20' r='1' fill='white' opacity='0.1'/><circle cx='80' cy='40' r='1' fill='white' opacity='0.1'/><circle cx='40' cy='80' r='1' fill='white' opacity='0.1'/></svg>&quot;) repeat; background-size: 100px 100px; animation: newsletter-pattern 30s linear infinite;"></div>
+  
+  <!-- Floating Elements -->
+  <div style="position: absolute; top: 10%; left: 5%; font-size: 3rem; color: rgba(255,255,255,0.1); animation: float-newsletter 6s ease-in-out infinite;"><i class="fas fa-envelope-open"></i></div>
+  <div style="position: absolute; top: 20%; right: 8%; font-size: 2.5rem; color: rgba(255,255,255,0.1); animation: float-newsletter 8s ease-in-out infinite reverse;"><i class="fas fa-book-open"></i></div>
+  <div style="position: absolute; bottom: 15%; left: 8%; font-size: 2rem; color: rgba(255,255,255,0.1); animation: float-newsletter 7s ease-in-out infinite;"><i class="fas fa-download"></i></div>
+  <div style="position: absolute; bottom: 25%; right: 10%; font-size: 2.8rem; color: rgba(255,255,255,0.1); animation: float-newsletter 9s ease-in-out infinite reverse;"><i class="fas fa-bell"></i></div>
+
+  <div class="container" style="position: relative; z-index: 2;">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="newsletter-card" style="background: rgba(255, 255, 255, 0.95); border-radius: 25px; padding: 3rem; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(20px); position: relative; overflow: hidden;">
+          
+          <!-- Card Glow Effect -->
+          <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, rgba(255,255,255,0.5), rgba(21,186,41,0.2), rgba(255,255,255,0.5)); border-radius: 25px; z-index: -1; filter: blur(10px); opacity: 0.6;"></div>
+          
+          <div class="row align-items-center">
+            <!-- Left Side - Content -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <!-- Icon Badge -->
+              <div class="newsletter-badge mb-4" style="display: inline-flex; align-items: center; background: linear-gradient(45deg, #15ba29, #28a745); color: white; padding: 0.8rem 1.5rem; border-radius: 50px; box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);">
+                <i class="fas fa-gift" style="font-size: 1.2rem; margin-right: 0.5rem; animation: pulse-gift 2s ease-in-out infinite;"></i>
+                <span style="font-weight: 600; font-size: 0.9rem;">FREE QT6 QML BOOK</span>
+              </div>
+
+              <!-- Title with Gradient -->
+              <h3 class="fw-bold mb-3" style="font-size: 2.2rem; background: linear-gradient(135deg, #2c3e50 0%, #15ba29 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2;">
+                {{page.notified.title}}
+              </h3>
+              
+              <!-- Description with Icon -->
+              <div class="newsletter-description mb-4" style="display: flex; align-items: center; gap: 1rem;">
+                <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 0.8rem; display: flex; align-items: center; justify-content: center; min-width: 50px; height: 50px;">
+                  <i class="fas fa-shield-alt" style="color: white; font-size: 1.2rem;"></i>
+                </div>
+                <p class="text-muted mb-0" style="font-size: 1.1rem; opacity: 0.8;">{{page.notified.description}}</p>
+              </div>
+
+              <!-- Benefits List -->
+              <div class="newsletter-benefits mb-4">
+                <div class="benefit-item mb-2" style="display: flex; align-items: center; gap: 0.8rem;">
+                  <i class="fas fa-check-circle" style="color: #15ba29; font-size: 1.1rem;"></i>
+                  <span style="color: #495057; font-size: 0.95rem;">Instant download after signup</span>
+                </div>
+                <div class="benefit-item mb-2" style="display: flex; align-items: center; gap: 0.8rem;">
+                  <i class="fas fa-check-circle" style="color: #15ba29; font-size: 1.1rem;"></i>
+                  <span style="color: #495057; font-size: 0.95rem;">Latest Qt6 QML techniques</span>
+                </div>
+                <div class="benefit-item" style="display: flex; align-items: center; gap: 0.8rem;">
+                  <i class="fas fa-check-circle" style="color: #15ba29; font-size: 1.1rem;"></i>
+                  <span style="color: #495057; font-size: 0.95rem;">Weekly tips & updates</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side - Form -->
+            <div class="col-lg-6">
+              <div class="newsletter-form-container" style="background: rgba(248, 249, 250, 0.8); border-radius: 20px; padding: 2rem; border: 1px solid rgba(21, 186, 41, 0.1);">
+                
+                <!-- Form Header -->
+                <div class="form-header text-center mb-3">
+                  <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 1rem; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1rem; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3);">
+                    <i class="fas fa-envelope" style="color: white; font-size: 1.5rem; animation: bounce-envelope 3s ease-in-out infinite;"></i>
+                  </div>
+                  <h4 style="color: #2c3e50; font-weight: 600; margin-bottom: 0.5rem;">Get Your Free Book</h4>
+                  <p style="color: #6c757d; font-size: 0.9rem; margin: 0;">Join 32,000+ developers learning Qt</p>
+                </div>
+
+                <style>
+                .formkit-form[data-uid="67a33fe28d"] {
+                  margin: 0 !important;
+                  display: flex !important;
+                  justify-content: flex-start !important;
+                  align-items: flex-start !important;
+                  width: 100% !important;
+                }
+                .formkit-form[data-uid="67a33fe28d"] > div {
+                  width: 100% !important;
+                  margin: 0 !important;
+                }
+                .formkit-form[data-uid="67a33fe28d"] .formkit-fields {
+                  display: flex !important;
+                  gap: 15px !important;
+                  flex-direction: column !important;
+                  align-items: stretch !important;
+                  width: 100% !important;
+                  margin: 0 !important;
+                }
+                .formkit-form[data-uid="67a33fe28d"] .formkit-field {
+                  width: 100% !important;
+                  position: relative !important;
+                }
+                .formkit-form[data-uid="67a33fe28d"] .formkit-input {
+                  font-size: 16px !important;
+                  padding: 15px 20px 15px 50px !important;
+                  width: 100% !important;
+                  min-height: 55px !important;
+                  border-radius: 15px !important;
+                  border: 2px solid #e9ecef !important;
+                  background: white !important;
+                  transition: all 0.3s ease !important;
+                  box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important;
+                }
+                .formkit-form[data-uid="67a33fe28d"] .formkit-input:focus {
+                  border-color: #15ba29 !important;
+                  box-shadow: 0 0 0 0.2rem rgba(21, 186, 41, 0.25), 0 8px 25px rgba(0,0,0,0.1) !important;
+                  transform: translateY(-2px) !important;
+                }
+                .formkit-form[data-uid="67a33fe28d"] .formkit-field:first-child::before {
+                  content: "\f007" !important;
+                  font-family: "Font Awesome 5 Free" !important;
+                  font-weight: 900 !important;
+                  position: absolute !important;
+                  left: 18px !important;
+                  top: 50% !important;
+                  transform: translateY(-50%) !important;
+                  color: #15ba29 !important;
+                  font-size: 1.1rem !important;
+                  z-index: 10 !important;
+                }
+                .formkit-form[data-uid="67a33fe28d"] .formkit-field:nth-child(2)::before {
+                  content: "\f0e0" !important;
+                  font-family: "Font Awesome 5 Free" !important;
+                  font-weight: 900 !important;
+                  position: absolute !important;
+                  left: 18px !important;
+                  top: 50% !important;
+                  transform: translateY(-50%) !important;
+                  color: #15ba29 !important;
+                  font-size: 1.1rem !important;
+                  z-index: 10 !important;
+                }
+                .formkit-form[data-uid="67a33fe28d"] .formkit-submit {
+                  margin: 0 !important;
+                  width: 100% !important;
+                }
+                .formkit-form[data-uid="67a33fe28d"] .formkit-submit > span {
+                  width: 100% !important;
+                  min-height: 55px !important;
+                  background: linear-gradient(45deg, #15ba29, #28a745) !important;
+                  border-radius: 15px !important;
+                  font-weight: 700 !important;
+                  font-size: 1.1rem !important;
+                  transition: all 0.3s ease !important;
+                  display: flex !important;
+                  align-items: center !important;
+                  justify-content: center !important;
+                  gap: 0.5rem !important;
+                  text-transform: uppercase !important;
+                  letter-spacing: 0.5px !important;
+                  box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3) !important;
+                }
+                .formkit-form[data-uid="67a33fe28d"] .formkit-submit > span:hover {
+                  transform: translateY(-3px) !important;
+                  box-shadow: 0 12px 35px rgba(21, 186, 41, 0.4) !important;
+                }
+                .formkit-form[data-uid="67a33fe28d"] .formkit-submit > span::before {
+                  content: "\f019" !important;
+                  font-family: "Font Awesome 5 Free" !important;
+                  font-weight: 900 !important;
+                  font-size: 1.2rem !important;
+                }
+                @media (max-width: 768px) {
+                  .formkit-form[data-uid="67a33fe28d"] {
+                    margin-top: 20px !important;
+                  }
+                }
+
+                /* Custom Animations */
+                @keyframes newsletter-pattern {
+                  0% { transform: translateX(0) translateY(0); }
+                  100% { transform: translateX(-100px) translateY(-100px); }
+                }
+                @keyframes float-newsletter {
+                  0%, 100% { transform: translateY(0px) rotate(0deg); }
+                  50% { transform: translateY(-20px) rotate(5deg); }
+                }
+                @keyframes pulse-gift {
+                  0%, 100% { transform: scale(1); }
+                  50% { transform: scale(1.1); }
+                }
+                @keyframes bounce-envelope {
+                  0%, 100% { transform: translateY(0px); }
+                  25% { transform: translateY(-5px); }
+                  50% { transform: translateY(0px); }
+                  75% { transform: translateY(-3px); }
+                }
+                </style>
+
+                <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Instructor Spotlight Section -->
+<section class="instructor-section" id="about" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); padding: 6rem 0; position: relative; overflow: hidden;">
+  <!-- Floating Background Elements -->
+  <div class="floating-elements" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
+    <div class="floating-element" style="position: absolute; top: 15%; left: 10%; width: 80px; height: 80px; background: linear-gradient(45deg, rgba(21, 186, 41, 0.1), rgba(40, 167, 69, 0.1)); border-radius: 50%; animation: float-1 6s ease-in-out infinite;"></div>
+    <div class="floating-element" style="position: absolute; top: 25%; right: 15%; width: 120px; height: 120px; background: linear-gradient(45deg, rgba(21, 186, 41, 0.05), rgba(40, 167, 69, 0.05)); border-radius: 50%; animation: float-2 8s ease-in-out infinite;"></div>
+    <div class="floating-element" style="position: absolute; bottom: 20%; left: 20%; width: 100px; height: 100px; background: linear-gradient(45deg, rgba(21, 186, 41, 0.08), rgba(40, 167, 69, 0.08)); border-radius: 50%; animation: float-3 7s ease-in-out infinite;"></div>
+    
+    <!-- Code Pattern Background -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: 
+      radial-gradient(circle at 20% 50%, rgba(21, 186, 41, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(21, 186, 41, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(21, 186, 41, 0.03) 0%, transparent 50%);"></div>
+    
+    <!-- Floating Icons -->
+    <div style="position: absolute; top: 30%; left: 5%; font-size: 2rem; color: rgba(21, 186, 41, 0.1); animation: float-icon 4s ease-in-out infinite;"><i class="fas fa-code"></i></div>
+    <div style="position: absolute; top: 60%; right: 8%; font-size: 1.5rem; color: rgba(21, 186, 41, 0.1); animation: float-icon 5s ease-in-out infinite reverse;"><i class="fas fa-laptop-code"></i></div>
+    <div style="position: absolute; bottom: 30%; left: 8%; font-size: 1.8rem; color: rgba(21, 186, 41, 0.1); animation: float-icon 6s ease-in-out infinite;"><i class="fas fa-terminal"></i></div>
+  </div>
+
+  <div class="container" style="position: relative; z-index: 2;">
+    <!-- Section Header with Enhanced Design -->
+    <div class="row text-center mb-5">
+      <div class="col-md-12">
+        <!-- Header Badge -->
+        <div class="instructor-badge mb-3" style="display: inline-block; background: rgba(21, 186, 41, 0.1); border: 1px solid rgba(21, 186, 41, 0.3); border-radius: 25px; padding: 0.5rem 1.5rem; backdrop-filter: blur(10px);">
+          <i class="fas fa-star" style="color: #15ba29; margin-right: 0.5rem;"></i>
+          <span style="color: #15ba29; font-weight: 600; font-size: 0.9rem;">Meet Your Expert Instructor</span>
+        </div>
+        
+        <h2 class="text-white fw-bold mb-3" style="font-size: 3rem; background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          Daniel Gakwaya
+        </h2>
+        
+        <!-- Animated Underline -->
+        <div class="mx-auto mb-4" style="width: 80px; height: 4px; background: linear-gradient(90deg, #15ba29, #28a745); border-radius: 2px; position: relative;">
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%); border-radius: 2px; animation: shimmer 2s infinite;"></div>
+        </div>
+        
+        <p class="text-white lead mx-auto" style="max-width: 600px; opacity: 0.9; font-size: 1.2rem;">
+          Senior Software Engineer at Blikoon Technologies • Udemy Instructor Partner • IoT Company Leader
+        </p>
+      </div>
+    </div>
+
+    <!-- Main Instructor Card -->
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="instructor-main-card" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; padding: 3rem; position: relative; overflow: hidden;">
+          
+          <!-- Card Glow Effect -->
+          <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #15ba29, #28a745, #15ba29); border-radius: 30px; z-index: -1; opacity: 0.3; filter: blur(8px);"></div>
+          
+          <div class="row align-items-center">
+            <!-- Instructor Photo with Creative Frame -->
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+              <div class="instructor-photo-frame" style="position: relative; display: inline-block;">
+                <!-- Rotating Border -->
+                <div style="position: absolute; top: -15px; left: -15px; right: -15px; bottom: -15px; background: conic-gradient(from 0deg, #15ba29, #28a745, #15ba29, #28a745, #15ba29); border-radius: 50%; animation: rotate 10s linear infinite; z-index: 1;"></div>
+                
+                <!-- Photo Container -->
+                <div style="position: relative; z-index: 2; background: #1a1a1a; border-radius: 50%; padding: 8px;">
+                  <img src="{{site.author.image}}" alt="{{site.author.name}}" class="img-fluid rounded-circle" 
+                       style="width: 250px; height: 250px; object-fit: cover; transition: all 0.3s ease;"
+                       onmouseover="this.style.transform='scale(1.05)'"
+                       onmouseout="this.style.transform='scale(1)'">
+                </div>
+                
+                <!-- Experience Badge -->
+                <div class="experience-badge" style="position: absolute; bottom: 20px; right: 20px; background: linear-gradient(45deg, #15ba29, #28a745); color: white; padding: 0.8rem 1.2rem; border-radius: 25px; font-weight: bold; font-size: 0.9rem; box-shadow: 0 8px 25px rgba(21, 186, 41, 0.4); z-index: 3;">
+                  <i class="fas fa-code"></i> 10+ Years Qt Expert
+                </div>
+                
+                <!-- Floating Achievement Icons -->
+                <div style="position: absolute; top: 10%; left: -10%; background: rgba(21, 186, 41, 0.2); backdrop-filter: blur(10px); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; animation: float-achievement 3s ease-in-out infinite;">
+                  <i class="fas fa-trophy" style="color: #ffd700; font-size: 1.2rem;"></i>
+                </div>
+                <div style="position: absolute; top: 20%; right: -15%; background: rgba(21, 186, 41, 0.2); backdrop-filter: blur(10px); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; animation: float-achievement 4s ease-in-out infinite reverse;">
+                  <i class="fas fa-graduation-cap" style="color: #15ba29; font-size: 1rem;"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Instructor Info -->
+            <div class="col-lg-8">
+              <div class="instructor-content">
+                <!-- Role Badge -->
+                <div class="mb-3">
+                  <span class="role-badge" style="background: linear-gradient(45deg, #15ba29, #28a745); color: white; padding: 0.6rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 1rem; display: inline-block; box-shadow: 0 5px 15px rgba(21, 186, 41, 0.3);">
+                    <i class="fas fa-chalkboard-teacher"></i> {{site.author.label}}
+                  </span>
+                </div>
+
+                <!-- Expert Quote -->
+                <div class="expert-quote mb-4" style="position: relative; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-left: 4px solid #15ba29; border-radius: 15px;">
+                  <div style="position: absolute; top: -10px; left: 15px; background: #15ba29; color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-quote-left" style="font-size: 0.8rem;"></i>
+                  </div>
+                  <p class="text-white mb-0" style="font-style: italic; font-size: 1.1rem; line-height: 1.7; margin-top: 10px;">
+                    "Autodidact by nature, I have a passion for learning new things and love sharing knowledge with others. Especially people new to the dark art of software development."
+                  </p>
+                </div>
+
+                <!-- Interactive Stats Grid -->
+                <div class="stats-interactive-grid mb-4" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;">
+                  
+                  <div class="stat-card" style="background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 15px; padding: 1.2rem; text-align: center; transition: all 0.3s ease; cursor: pointer;"
+                       onmouseover="this.style.transform='translateY(-5px) scale(1.02)'; this.style.boxShadow='0 10px 25px rgba(255, 215, 0, 0.2)'; this.style.background='rgba(255, 215, 0, 0.15)'"
+                       onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'; this.style.background='rgba(255, 215, 0, 0.1)'">
+                    <div style="color: #ffd700; font-size: 2rem; margin-bottom: 0.5rem;"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="stat-number text-white fw-bold" style="font-size: 1.8rem;">50,000+</div>
+                    <div class="stat-label" style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Students Worldwide</div>
+                  </div>
+
+                  <div class="stat-card" style="background: rgba(21, 186, 41, 0.1); border: 1px solid rgba(21, 186, 41, 0.3); border-radius: 15px; padding: 1.2rem; text-align: center; transition: all 0.3s ease; cursor: pointer;"
+                       onmouseover="this.style.transform='translateY(-5px) scale(1.02)'; this.style.boxShadow='0 10px 25px rgba(21, 186, 41, 0.2)'; this.style.background='rgba(21, 186, 41, 0.15)'"
+                       onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'; this.style.background='rgba(21, 186, 41, 0.1)'">
+                    <div style="color: #15ba29; font-size: 2rem; margin-bottom: 0.5rem;"><i class="fas fa-clock"></i></div>
+                    <div class="stat-number text-white fw-bold" style="font-size: 1.8rem;">6</div>
+                    <div class="stat-label" style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Years Teaching</div>
+                  </div>
+
+                  <div class="stat-card" style="background: rgba(29, 161, 242, 0.1); border: 1px solid rgba(29, 161, 242, 0.3); border-radius: 15px; padding: 1.2rem; text-align: center; transition: all 0.3s ease; cursor: pointer;"
+                       onmouseover="this.style.transform='translateY(-5px) scale(1.02)'; this.style.boxShadow='0 10px 25px rgba(29, 161, 242, 0.2)'; this.style.background='rgba(29, 161, 242, 0.15)'"
+                       onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'; this.style.background='rgba(29, 161, 242, 0.1)'">
+                    <div style="color: #1da1f2; font-size: 2rem; margin-bottom: 0.5rem;"><i class="fas fa-code"></i></div>
+                    <div class="stat-number text-white fw-bold" style="font-size: 1.8rem;">10+</div>
+                    <div class="stat-label" style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Years Qt Experience</div>
+                  </div>
+
+                  <div class="stat-card" style="background: rgba(255, 45, 85, 0.1); border: 1px solid rgba(255, 45, 85, 0.3); border-radius: 15px; padding: 1.2rem; text-align: center; transition: all 0.3s ease; cursor: pointer;"
+                       onmouseover="this.style.transform='translateY(-5px) scale(1.02)'; this.style.boxShadow='0 10px 25px rgba(255, 45, 85, 0.2)'; this.style.background='rgba(255, 45, 85, 0.15)'"
+                       onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'; this.style.background='rgba(255, 45, 85, 0.1)'">
+                    <div style="color: #ff2d55; font-size: 2rem; margin-bottom: 0.5rem;"><i class="fas fa-building"></i></div>
+                    <div class="stat-number text-white fw-bold" style="font-size: 1.8rem;">IoT</div>
+                    <div class="stat-label" style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">Company Leader</div>
+                  </div>
+                </div>
+
+                <!-- Bio Description -->
+                <p class="instructor-bio mb-4" style="color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; line-height: 1.8;">
+                  {{site.author.description}}
+                </p>
+
+                <!-- Expertise Pills -->
+                <div class="expertise-section mb-4">
+                  <h5 class="text-white mb-3" style="font-size: 1.1rem; opacity: 0.8;">
+                    <i class="fas fa-star" style="color: #15ba29; margin-right: 0.5rem;"></i>
+                    Areas of Expertise
+                  </h5>
+                  <div class="expertise-pills">
+                    <span class="expertise-pill" style="display: inline-block; background: linear-gradient(45deg, rgba(21, 186, 41, 0.2), rgba(40, 167, 69, 0.2)); color: #15ba29; border: 1px solid rgba(21, 186, 41, 0.4); padding: 0.6rem 1.2rem; border-radius: 25px; margin: 0.3rem; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease;"
+                          onmouseover="this.style.background='linear-gradient(45deg, rgba(21, 186, 41, 0.3), rgba(40, 167, 69, 0.3))'; this.style.transform='translateY(-2px)'"
+                          onmouseout="this.style.background='linear-gradient(45deg, rgba(21, 186, 41, 0.2), rgba(40, 167, 69, 0.2))'; this.style.transform='translateY(0)'">
+                      <i class="fas fa-cogs"></i> Qt Framework Expert
+                    </span>
+                    <span class="expertise-pill" style="display: inline-block; background: linear-gradient(45deg, rgba(21, 186, 41, 0.2), rgba(40, 167, 69, 0.2)); color: #15ba29; border: 1px solid rgba(21, 186, 41, 0.4); padding: 0.6rem 1.2rem; border-radius: 25px; margin: 0.3rem; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease;"
+                          onmouseover="this.style.background='linear-gradient(45deg, rgba(21, 186, 41, 0.3), rgba(40, 167, 69, 0.3))'; this.style.transform='translateY(-2px)'"
+                          onmouseout="this.style.background='linear-gradient(45deg, rgba(21, 186, 41, 0.2), rgba(40, 167, 69, 0.2))'; this.style.transform='translateY(0)'">
+                      <i class="fas fa-code"></i> Modern C++ Developer
+                    </span>
+                    <span class="expertise-pill" style="display: inline-block; background: linear-gradient(45deg, rgba(21, 186, 41, 0.2), rgba(40, 167, 69, 0.2)); color: #15ba29; border: 1px solid rgba(21, 186, 41, 0.4); padding: 0.6rem 1.2rem; border-radius: 25px; margin: 0.3rem; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease;"
+                          onmouseover="this.style.background='linear-gradient(45deg, rgba(21, 186, 41, 0.3), rgba(40, 167, 69, 0.3))'; this.style.transform='translateY(-2px)'"
+                          onmouseout="this.style.background='linear-gradient(45deg, rgba(21, 186, 41, 0.2), rgba(40, 167, 69, 0.2))'; this.style.transform='translateY(0)'">
+                      <i class="fas fa-mobile-alt"></i> QML Specialist
+                    </span>
+                    <span class="expertise-pill" style="display: inline-block; background: linear-gradient(45deg, rgba(21, 186, 41, 0.2), rgba(40, 167, 69, 0.2)); color: #15ba29; border: 1px solid rgba(21, 186, 41, 0.4); padding: 0.6rem 1.2rem; border-radius: 25px; margin: 0.3rem; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease;"
+                          onmouseover="this.style.background='linear-gradient(45deg, rgba(21, 186, 41, 0.3), rgba(40, 167, 69, 0.3))'; this.style.transform='translateY(-2px)'"
+                          onmouseout="this.style.background='linear-gradient(45deg, rgba(21, 186, 41, 0.2), rgba(40, 167, 69, 0.2))'; this.style.transform='translateY(0)'">
+                      <i class="fas fa-laptop"></i> Cross-Platform Development
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="instructor-cta">
+                  <a href="#featured-courses" class="btn-instructor-cta" style="display: inline-block; background: linear-gradient(45deg, #15ba29, #28a745); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; position: relative; overflow: hidden;"
+                     onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(21, 186, 41, 0.4)'"
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <span style="position: relative; z-index: 2;">
+                      <i class="fas fa-graduation-cap"></i> Get Expert Guidance
+                    </span>
+                    <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s ease;"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievement Highlights -->
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="achievement-highlights" style="text-align: center;">
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="achievement-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; transition: all 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255, 255, 255, 0.05)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.03)'">
+                <div style="color: #ffd700; font-size: 3rem; margin-bottom: 1rem;"><i class="fas fa-award"></i></div>
+                <h5 class="text-white fw-bold mb-2">Industry Recognition</h5>
+                <p class="text-white" style="opacity: 0.8; font-size: 0.9rem;">Udemy Instructor Partner with proven track record</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="achievement-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; transition: all 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255, 255, 255, 0.05)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.03)'">
+                <div style="color: #15ba29; font-size: 3rem; margin-bottom: 1rem;"><i class="fas fa-rocket"></i></div>
+                <h5 class="text-white fw-bold mb-2">Real-World Projects</h5>
+                <p class="text-white" style="opacity: 0.8; font-size: 0.9rem;">Cross-platform Qt applications in production</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="achievement-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; transition: all 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255, 255, 255, 0.05)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.03)'">
+                <div style="color: #1da1f2; font-size: 3rem; margin-bottom: 1rem;"><i class="fas fa-users"></i></div>
+                <h5 class="text-white fw-bold mb-2">Community Impact</h5>
+                <p class="text-white" style="opacity: 0.8; font-size: 0.9rem;">Building the next generation of Qt developers</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="achievement-card" style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; transition: all 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-10px)'; this.style.background='rgba(255, 255, 255, 0.05)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.03)'">
+                <div style="color: #ff2d55; font-size: 3rem; margin-bottom: 1rem;"><i class="fas fa-heart"></i></div>
+                <h5 class="text-white fw-bold mb-2">Student Success</h5>
+                <p class="text-white" style="opacity: 0.8; font-size: 0.9rem;">Passionate about helping others succeed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enhanced Animations -->
+  <style>
+    @keyframes float-1 {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      25% { transform: translateY(-15px) translateX(5px); }
+      50% { transform: translateY(-10px) translateX(-5px); }
+      75% { transform: translateY(-20px) translateX(10px); }
+    }
+    
+    @keyframes float-2 {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      33% { transform: translateY(-20px) translateX(-10px); }
+      66% { transform: translateY(-5px) translateX(15px); }
+    }
+    
+    @keyframes float-3 {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-25px) translateX(-8px); }
+    }
+    
+    @keyframes float-icon {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+    
+    @keyframes float-achievement {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-8px) scale(1.1); }
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    /* Hover effect for instructor CTA */
+    .btn-instructor-cta:hover > div {
+      left: 0 !important;
+    }
+  </style>
+</section>
