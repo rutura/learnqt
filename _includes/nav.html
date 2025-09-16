@@ -237,4 +237,68 @@ window.addEventListener('scroll', function() {
         navbar.classList.remove('scrolled');
     }
 });
+
+// Smart navigation - scroll on home page, redirect otherwise
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+    
+    // Define navigation mapping
+    const navigationMap = {
+        'Home': { homeTarget: 'top', homeUrl: '/' },
+        'Courses': { homeTarget: '#featured-courses', homeUrl: '/#featured-courses' },
+        'Books': { homeTarget: '#book', homeUrl: '/#book' },
+        'About': { homeTarget: '#about', homeUrl: '/#about' },
+        'Contact': { homeTarget: '#contact', homeUrl: '/#contact' },
+        'Blog': { homeTarget: null, homeUrl: '/blog' } // Always go to blog page
+    };
+    
+    navLinks.forEach(link => {
+        const linkText = link.textContent.trim();
+        const mapping = navigationMap[linkText];
+        
+        if (mapping) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (isHomePage) {
+                    // On home page - scroll to section
+                    if (mapping.homeTarget === 'top') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else if (mapping.homeTarget && mapping.homeTarget !== null) {
+                        const targetElement = document.querySelector(mapping.homeTarget);
+                        if (targetElement) {
+                            // Account for fixed navbar height
+                            const navbarHeight = 80;
+                            const targetPosition = targetElement.offsetTop - navbarHeight;
+                            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                        }
+                    } else if (linkText === 'Blog') {
+                        // Blog always goes to blog page
+                        window.location.href = '/blog';
+                    }
+                } else {
+                    // Not on home page - redirect to home page
+                    if (linkText === 'Blog') {
+                        window.location.href = '/blog';
+                    } else {
+                        window.location.href = mapping.homeUrl;
+                    }
+                }
+            });
+        }
+    });
+    
+    // Handle hash navigation on page load
+    if (isHomePage && window.location.hash) {
+        setTimeout(() => {
+            const targetElement = document.querySelector(window.location.hash);
+            if (targetElement) {
+                const navbarHeight = 80;
+                const targetPosition = targetElement.offsetTop - navbarHeight;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
+        }, 500); // Small delay to ensure page is fully loaded
+    }
+});
 </script>
