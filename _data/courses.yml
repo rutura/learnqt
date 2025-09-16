@@ -209,8 +209,8 @@ faq:
 # All courses section
 featured_section:
   title: "All Our Courses"
-  subtitle: "Master Qt development with our comprehensive courses designed to take you from beginner to professional developer"
-  description: "Transform your development skills with hands-on, project-based learning. Build real applications while mastering Qt frameworks, modern C++, and professional development practices."
+  subtitle: "Cross Platform Software and Embedded UIs"
+  description: "Expert Training on using Modern C++, Qt and QML to build cross-platform applications for Windows, macOS, Linux, Mobile and Embedded systems."
   button_text: "Explore All Courses"
   stats:
     courses_count: "3+"
