@@ -1,197 +1,227 @@
 {% include seo.html %}
 {% include navpage.html %}
 
-<!-- Enhanced Books Hero Section -->
-<section class="books-hero py-5 bg-secondary-gradient background-pattern">
-    <div class="floating-elements">
-        <div class="floating-element floating-lg" style="top: 15%; left: 10%;"></div>
-        <div class="floating-element floating-md" style="top: 55%; right: 20%;"></div>
-        <div class="floating-element floating-sm" style="top: 30%; left: 85%;"></div>
-        <div class="floating-element floating-md" style="top: 10%; right: 75%;"></div>
-    </div>
-    
+<!-- Books Collection Section -->
+<section id="books-collection" class="books-collection py-5">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 text-center">
-                <!-- Hero Badge -->
-                <div class="hero-badge mb-4">
-                    <span class="badge bg-light text-dark px-4 py-2 rounded-pill">
-                        <i class="fas fa-book me-2"></i>{{ site.data.books.hero.badge_text }}
-                    </span>
-                </div>
-                
-                <!-- Hero Content -->
-                <h1 class="hero-title display-2 fw-bold mb-4">{{ site.data.books.hero.title }}</h1>
-                <p class="hero-subtitle lead mb-5">{{ site.data.books.hero.subtitle }}</p>
-                
-                <!-- Hero Stats -->
-                <div class="hero-stats mb-5">
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-icon">
-                                <i class="fas fa-book"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="stat-number">{{ site.data.books.social_proof.books_count }}</div>
-                                <div class="stat-label">Expert Books</div>
-                            </div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="stat-number">{{ site.data.books.social_proof.total_readers }}</div>
-                                <div class="stat-label">Happy Readers</div>
-                            </div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="stat-number">{{ site.data.books.social_proof.avg_rating }}</div>
-                                <div class="stat-label">Average Rating</div>
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Our Book Collection</h2>
+            <p class="section-subtitle">Choose your learning path with our expertly crafted Qt books</p>
+        </div>
+
+        <!-- Books Grid -->
+        <div class="books-grid">
+            {% for book in site.data.books.books %}
+            <div class="book-card-modern" data-aos="fade-up" data-aos-delay="{{ forloop.index | minus: 1 | times: 100 }}">
+                <div class="book-card-inner">
+                    <!-- Book Status Badge -->
+                    {% if book.featured %}
+                    <div class="status-badge featured">
+                        <i class="fas fa-star"></i>
+                        <span>Featured</span>
+                    </div>
+                    {% endif %}
+                    
+                    {% if book.coming_soon %}
+                    <div class="status-badge coming-soon">
+                        <i class="fas fa-clock"></i>
+                        <span>Coming Soon</span>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Book Cover -->
+                    <div class="book-cover-section">
+                        <div class="book-cover-container">
+                            <img src="{{ book.cover }}" alt="{{ book.title }}" class="book-cover-img">
+                            <div class="book-overlay">
+                                <div class="book-meta">
+                                    <span class="book-category">{{ book.category }}</span>
+                                    <span class="book-level">{{ book.level }}</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-icon">
+                    </div>
+                    
+                    <!-- Book Content -->
+                    <div class="book-content-section">
+                        <div class="book-header">
+                            <h3 class="book-title">{{ book.title }}</h3>
+                            <p class="book-description">{{ book.description }}</p>
+                        </div>
+                        
+                        <!-- Book Highlights -->
+                        <div class="book-highlights">
+                            {% for highlight in book.highlights limit:3 %}
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>{{ highlight }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        
+                        <!-- Book Stats -->
+                        <div class="book-stats">
+                            <div class="stat">
+                                <i class="fas fa-file-alt"></i>
+                                <span>{{ book.pages }}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-list"></i>
+                                <span>{{ book.chapters }}</span>
+                            </div>
+                            <div class="stat">
                                 <i class="fas fa-download"></i>
+                                <span>{{ book.formats | join: ', ' }}</span>
                             </div>
-                            <div class="stat-content">
-                                <div class="stat-number">{{ site.data.books.social_proof.formats }}</div>
-                                <div class="stat-label">Available Formats</div>
+                        </div>
+                        
+                        <!-- Book Footer -->
+                        <div class="book-footer">
+                            <div class="book-price">
+                                {% if book.coming_soon %}
+                                    <span class="price-label">Coming Soon</span>
+                                {% else %}
+                                    <span class="price">{{ book.price }}</span>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="book-action">
+                                {% if book.coming_soon %}
+                                    <a href="#newsletter-signup" class="btn btn-notify" onclick="scrollToNewsletter()">
+                                        <i class="fas fa-bell me-2"></i>
+                                        Get Notified
+                                    </a>
+                                {% else %}
+                                    <a href="{{ book.gumroad_link }}" target="_blank" class="btn btn-get-book">
+                                        <span>Get This Book</span>
+                                        <i class="fas fa-external-link-alt ms-2"></i>
+                                    </a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
-                <!-- Trust Indicators -->
-                <div class="trust-indicators-section mb-5">
-                    <div class="trust-indicators-grid">
-                        {% for indicator in site.data.books.hero.trust_indicators %}
-                        <div class="trust-indicator-item">
-                            <i class="{{ indicator.icon }}"></i>
-                            <span>{{ indicator.text }}</span>
+<!-- Newsletter Signup Section -->
+<section id="newsletter-signup" class="newsletter py-5 bg-primary background-pattern">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="newsletter-content text-center">
+                    <!-- Newsletter Header -->
+                    <div class="newsletter-header mb-4">
+                        <div class="newsletter-badge mb-3">
+                            <i class="fas fa-gift"></i>
+                            <span>Free Qt Creator Guide</span>
                         </div>
-                        {% endfor %}
+                        <h2 class="newsletter-title text-white mb-3">Get Your Free Qt Creator Tips & Tricks Booklet</h2>
+                        <p class="newsletter-subtitle text-white mb-4">
+                            Plus be the first to know when new books are available and get exclusive Qt development insights
+                        </p>
                     </div>
-                </div>
-
-                <!-- Hero CTA Buttons -->
-                <div class="hero-cta-buttons">
-                    <a href="#books-showcase" class="btn btn-hero-primary me-3">
-                        <div class="btn-content">
-                            <div class="btn-main-text">{{ site.data.books.ui.explore_all_button }}</div>
-                            <div class="btn-sub-text">Start your learning journey</div>
+                    
+                    <!-- Newsletter Content Grid -->
+                    <div class="row align-items-center">
+                        <!-- Left: Book Preview -->
+                        <div class="col-lg-5 mb-4 mb-lg-0">
+                            <div class="newsletter-book-preview">
+                                <div class="newsletter-book-image">
+                                    <img src="/assets/img/qt_creator_guide.webp" alt="Qt Creator Tips Booklet" class="img-fluid">
+                                    <div class="book-badge">
+                                        <span><i class="fas fa-download me-1"></i>Free PDF</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-                    <a href="{{ site.data.books.newsletter.signup_link }}" class="btn btn-hero-secondary">
-                        <div class="btn-content">
-                            <div class="btn-main-text">{{ site.data.books.newsletter.cta_text }}</div>
-                            <div class="btn-sub-text">Plus Qt development tips</div>
+                        
+                        <!-- Right: Form -->
+                        <div class="col-lg-7">
+                            <div class="newsletter-form-container">
+                                <div class="newsletter-benefits mb-4">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="benefit-item">
+                                                <i class="fas fa-rocket"></i>
+                                                <span>Boost your productivity</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="benefit-item">
+                                                <i class="fas fa-keyboard"></i>
+                                                <span>Master keyboard shortcuts</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="benefit-item">
+                                                <i class="fas fa-bell"></i>
+                                                <span>New book notifications</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="benefit-item">
+                                                <i class="fas fa-lightbulb"></i>
+                                                <span>Weekly Qt tips</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="newsletter-form">
+                                    <a href="{{ site.data.books.newsletter.signup_link }}" class="btn btn-newsletter-cta">
+                                        <div class="btn-content">
+                                            <div class="btn-text">
+                                                <div class="btn-main-text">Get Free Booklet</div>
+                                            </div>
+                                            <div class="btn-icon">
+                                                <i class="fas fa-download"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    
+                                    <div class="newsletter-privacy mt-3">
+                                        <small class="text-white-50">
+                                            <i class="fas fa-shield-alt me-1"></i>
+                                            No spam. Unsubscribe anytime. Your data is safe with us.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Books Showcase Section -->
-<section id="books-showcase" class="books-showcase py-5">
+<!-- Customer Testimonials Section -->
+<section class="testimonials-section py-5">
     <div class="container">
-        <div class="section-header text-center mb-5">
-            <div class="section-badge mb-3">
-                <span class="badge bg-primary text-white px-3 py-2 rounded-pill">
-                    <i class="fas fa-star me-2"></i>{{ site.data.books.featured_section.title }}
-                </span>
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title">What Our Readers Say</h2>
+                <p class="section-subtitle">Join thousands of developers who've mastered Qt with our books</p>
             </div>
-            <h2 class="section-title display-4 fw-bold mb-4">{{ site.data.books.featured_section.subtitle }}</h2>
-            <p class="section-description lead text-muted mb-0">{{ site.data.books.featured_section.description }}</p>
         </div>
-
-        <!-- Enhanced Books Grid -->
-        <div class="books-grid">
-            {% for book in site.data.books.books %}
-            <div class="book-card-wrapper">
-                <div class="book-card glass-card h-100">
-                    {% if book.featured %}
-                    <div class="featured-badge">
-                        <span><i class="fas fa-star me-1"></i>Featured</span>
+        
+        <div class="row">
+            {% for testimonial in site.data.books.testimonials.featured limit:3 %}
+            <div class="col-lg-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating mb-3">
+                        {% for i in (1..5) %}
+                        <i class="fas fa-star{% if i > testimonial.rating %} text-muted{% endif %}"></i>
+                        {% endfor %}
                     </div>
-                    {% endif %}
-                    
-                    {% if book.coming_soon %}
-                    <div class="coming-soon-badge">
-                        <span><i class="fas fa-clock me-1"></i>Coming Soon</span>
-                    </div>
-                    {% endif %}
-                    
-                    <div class="book-cover-container">
-                        <div class="image-glow"></div>
-                        <img class="book-cover" alt="{{ book.title }}" src="{{ site.baseurl }}{{ book.cover }}">
-                        <div class="cover-overlay">
-                            <div class="book-info">
-                                <div class="book-category">{{ book.category }}</div>
-                                <div class="book-level">{{ book.level }}</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="book-content">
-                        <div class="book-header">
-                            <h3 class="book-title">{{ book.title }}</h3>
-                            <p class="book-description">{{ book.description }}</p>
-                        </div>
-                        
-                        <div class="book-highlights">
-                            <div class="book-stats">
-                                <div class="stat">
-                                    <i class="fas fa-file-alt"></i>
-                                    <span>{{ book.pages }} pages</span>
-                                </div>
-                                <div class="stat">
-                                    <i class="fas fa-list"></i>
-                                    <span>{{ book.chapters }} chapters</span>
-                                </div>
-                                <div class="stat">
-                                    <i class="fas fa-download"></i>
-                                    <span>{{ book.formats | join: ', ' }}</span>
-                                </div>
-                            </div>
-                            
-                            <div class="highlight-list">
-                                {% for highlight in book.highlights limit:3 %}
-                                <div class="highlight-item">
-                                    <i class="fas fa-check-circle text-success me-2"></i>
-                                    <span>{{ highlight }}</span>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        
-                        <div class="book-footer">
-                            <div class="book-price">
-                                {% if book.coming_soon %}
-                                    <span class="price coming-soon">{{ book.price }}</span>
-                                {% else %}
-                                    <span class="price">{{ book.price }}</span>
-                                {% endif %}
-                            </div>
-                            
-                            <div class="book-actions">
-                                {% if book.coming_soon %}
-                                    <a href="{{ book.gumroad_link }}" class="btn btn-outline-primary">
-                                        <i class="fas fa-bell me-2"></i>{{ site.data.books.ui.coming_soon_button }}
-                                    </a>
-                                {% else %}
-                                    <a href="{{ book.gumroad_link }}" class="btn btn-primary">
-                                        <i class="fas fa-shopping-cart me-2"></i>{{ site.data.books.ui.buy_now_button }}
-                                    </a>
-                                {% endif %}
-                            </div>
-                        </div>
+                    <p class="testimonial-content">"{{ testimonial.content }}"</p>
+                    <div class="testimonial-author">
+                        <strong>{{ testimonial.name }}</strong>
+                        <small class="text-muted d-block">{{ testimonial.role }}</small>
                     </div>
                 </div>
             </div>
@@ -221,142 +251,161 @@
 </section>
 
 <style>
-/* Books Page Specific Styles */
+/* Modern Books Page Styles */
 :root {
-    --primary-color: #15ba29;
-    --secondary-color: #0d8a1f;
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --glass-blur: blur(10px);
+    --primary-green: #15ba29;
+    --secondary-green: #0d8a1f;
+    --dark-green: #0a6818;
+    --light-gray: #f8f9fa;
+    --medium-gray: #6c757d;
+    --dark-gray: #343a40;
+    --white: #ffffff;
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 15px 35px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --border-radius-lg: 20px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Background gradient for books */
-.bg-secondary-gradient {
-    background: linear-gradient(135deg, 
-        var(--primary-color) 0%, 
-        var(--secondary-color) 50%, 
-        #0a6818 100%);
+/* Books Collection Section */
+.books-collection {
+    background: var(--white);
     position: relative;
-    overflow: hidden;
+    padding-top: 4rem;
+    margin-top: 80px; /* Account for fixed navbar */
 }
 
-/* Books Hero Styles */
-.books-hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    position: relative;
+.section-header {
+    margin-bottom: 4rem;
 }
 
-.hero-stats .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.stat-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: var(--glass-blur);
-    border-radius: 12px;
-    padding: 1.5rem;
-}
-
-.stat-icon {
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: white;
-}
-
-.stat-number {
-    font-size: 1.5rem;
+.section-title {
+    font-size: 2.5rem;
     font-weight: 700;
-    color: white;
-    line-height: 1;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
 }
 
-.stat-label {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    line-height: 1.6;
 }
 
 /* Books Grid */
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
 
-.book-card {
+/* Modern Book Card */
+.book-card-modern {
     position: relative;
-    border-radius: 20px;
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
-    transition: all 0.3s ease;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    border: 1px solid #e9ecef;
 }
 
-.book-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.book-card-modern:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.book-card-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Status Badges */
+.status-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-medium);
+}
+
+.status-badge.featured {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: var(--dark-gray);
+}
+
+.status-badge.coming-soon {
+    background: linear-gradient(135deg, #4299e1, #3182ce);
+    color: var(--white);
+}
+
+/* Book Cover Section */
+.book-cover-section {
+    position: relative;
+    height: 280px;
+    background: linear-gradient(135deg, var(--light-gray), #e9ecef);
+    overflow: hidden;
 }
 
 .book-cover-container {
     position: relative;
-    height: 300px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-}
-
-.book-cover {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
 }
 
-.book-card:hover .book-cover {
+.book-cover-img {
+    max-width: 70%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition);
+}
+
+.book-card-modern:hover .book-cover-img {
     transform: scale(1.05);
 }
 
-.cover-overlay {
+.book-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.8));
     display: flex;
     align-items: flex-end;
     padding: 1.5rem;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: var(--transition);
 }
 
-.book-card:hover .cover-overlay {
+.book-card-modern:hover .book-overlay {
     opacity: 1;
 }
 
-.book-info {
-    color: white;
+.book-meta {
+    color: var(--white);
 }
 
 .book-category {
     font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .book-level {
@@ -364,30 +413,62 @@
     opacity: 0.9;
 }
 
-.book-content {
+/* Book Content Section */
+.book-content-section {
     padding: 2rem;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    flex: 1;
+}
+
+.book-header {
+    margin-bottom: 1.5rem;
 }
 
 .book-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
+    color: var(--dark-gray);
     margin-bottom: 1rem;
-    color: #2d3748;
+    line-height: 1.3;
 }
 
 .book-description {
-    color: #718096;
-    margin-bottom: 1.5rem;
+    color: var(--medium-gray);
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
+/* Book Highlights */
+.book-highlights {
+    margin-bottom: 2rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.highlight-item i {
+    color: var(--primary-green);
+    font-size: 0.8rem;
+}
+
+.highlight-item span {
+    color: var(--dark-gray);
+}
+
+/* Book Stats */
 .book-stats {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: var(--border-radius);
     flex-wrap: wrap;
 }
 
@@ -395,149 +476,477 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.9rem;
-    color: #718096;
+    font-size: 0.85rem;
+    color: var(--medium-gray);
 }
 
 .book-stats .stat i {
-    color: var(--primary-color);
+    color: var(--primary-green);
 }
 
-.highlight-list {
-    margin-bottom: 2rem;
-}
-
-.highlight-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem;
-    color: #4a5568;
-}
-
+/* Book Footer */
 .book-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
     padding-top: 1.5rem;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid #e9ecef;
 }
 
-.book-price .price {
+.book-price {
+    flex: 1;
+}
+
+.price {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary-green);
 }
 
-.book-price .coming-soon {
-    color: #718096;
+.price-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--medium-gray);
     font-style: italic;
 }
 
-.featured-badge, .coming-soon-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10;
+.book-action {
+    flex: 1;
+    text-align: right;
 }
 
-.featured-badge span {
-    background: linear-gradient(135deg, #ffd700, #ffed4e);
-    color: #1a202c;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
+/* Book Action Buttons */
+.btn-get-book {
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    color: var(--white);
+    border: 2px solid transparent;
+    padding: 1rem 2rem;
+    border-radius: 15px;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    min-width: 180px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
 }
 
-.coming-soon-badge span {
-    background: linear-gradient(135deg, #4299e1, #3182ce);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
+.btn-get-book:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+    color: var(--white);
+    background: linear-gradient(135deg, var(--secondary-green), var(--dark-green));
+}
+
+.btn-notify {
+    background: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    padding: 1rem 2rem;
+    border-radius: 15px;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    min-width: 180px;
+    text-align: center;
+}
+
+.btn-notify:hover {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
 }
 
 /* Newsletter Section */
-.newsletter-section {
+.newsletter {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
     position: relative;
+    overflow: hidden;
 }
 
-.newsletter-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: var(--glass-blur);
-    border-radius: 20px;
+.newsletter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v20h40V20H20z'/%3E%3C/g%3E%3C/svg%3E") repeat;
 }
 
-.newsletter-icon {
-    width: 80px;
-    height: 80px;
+.newsletter-content {
+    position: relative;
+    z-index: 2;
+}
+
+.newsletter-badge {
     background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.3;
+}
+
+.newsletter-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.newsletter-book-preview {
+    text-align: center;
+}
+
+.newsletter-book-image {
+    position: relative;
+    display: inline-block;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.newsletter-book-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.newsletter-book-image:hover img {
+    transform: scale(1.05);
+}
+
+.book-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: var(--dark-gray);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-medium);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.newsletter-benefits {
+    margin-bottom: 2rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.benefit-item i {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+.btn-newsletter-cta {
+    background: var(--white);
+    color: var(--primary-green);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: var(--shadow-medium);
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.btn-newsletter-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-heavy);
+    color: var(--primary-green);
+    background: #f8f9fa;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-text {
+    flex: 1;
+}
+
+.btn-main-text {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.btn-icon {
+    background: var(--primary-green);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    font-size: 2rem;
+    transition: var(--transition);
 }
 
-.newsletter-title {
-    font-size: 2rem;
+.btn-newsletter-cta:hover .btn-icon {
+    background: var(--secondary-green);
+    transform: rotate(360deg);
+}
+
+.newsletter-privacy {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: var(--light-gray);
+    position: relative;
+}
+
+.testimonials-section .section-title {
+    font-size: 2.5rem;
     font-weight: 700;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+.testimonials-section .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    border: 1px solid #e9ecef;
+    height: 100%;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.testimonial-rating {
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-rating i {
+    color: #ffc107;
+    font-size: 1.1rem;
+    margin-right: 0.25rem;
+}
+
+.testimonial-content {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    border-top: 1px solid #e9ecef;
+    padding-top: 1rem;
+}
+
+.testimonial-author strong {
+    color: var(--dark-gray);
+    font-weight: 600;
+}
+
+.testimonial-author small {
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+}
+
+/* Background Pattern for Newsletter */
+.bg-primary.background-pattern::before {
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v20h40V20H20z'/%3E%3C/g%3E%3C/svg%3E") repeat;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
     .books-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    .books-hero {
-        min-height: 60vh;
-        padding: 3rem 0;
-    }
-    
     .hero-title {
-        font-size: 2.5rem !important;
+        font-size: 2.5rem;
     }
     
-    .hero-stats .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
         gap: 1rem;
+    }
+    
+    .stat-card {
+        min-width: 200px;
     }
     
     .books-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .book-footer {
         flex-direction: column;
         gap: 1rem;
-        align-items: stretch;
+        text-align: center;
+    }
+    
+    .book-action {
+        text-align: center;
+    }
+    
+    .newsletter-title {
+        font-size: 2rem;
+    }
+    
+    .newsletter-benefits .row {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
 
 @media (max-width: 576px) {
-    .hero-stats .stats-grid {
-        grid-template-columns: 1fr;
+    .hero-title {
+        font-size: 2rem;
     }
     
-    .trust-indicators-grid {
-        grid-template-columns: 1fr;
+    .hero-subtitle {
+        font-size: 1.1rem;
     }
     
-    .book-content {
+    .book-card-modern {
+        margin: 0 0.5rem;
+    }
+    
+    .book-content-section {
         padding: 1.5rem;
     }
+    
+    .newsletter-title {
+        font-size: 1.75rem;
+    }
+    
+    .btn-newsletter-cta {
+        width: 100%;
+        padding: 1rem;
+    }
 }
+
+/* Smooth Scrolling for Newsletter Link */
+html {
+    scroll-behavior: smooth;
+}
+</style>
+
+<script>
+// Smooth scroll function for "Get Notified" buttons
+function scrollToNewsletter() {
+    document.getElementById('newsletter-signup').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
+// Add some interactive effects
+document.addEventListener('DOMContentLoaded', function() {
+    // Add hover effects to book cards
+    const bookCards = document.querySelectorAll('.book-card-modern');
+    
+    bookCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Animate stats on scroll
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe stat cards
+    document.querySelectorAll('.stat-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+    });
+    
+    // Observe book cards
+    document.querySelectorAll('.book-card-modern').forEach((card, index) => {
+        // No animation delays - books appear instantly
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+    });
+});
+</script>
 </style>
 
 {% include footer.html %}
