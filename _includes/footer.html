@@ -141,7 +141,7 @@
             </a>
           </li>
           <li class="mb-2">
-            <a href="/goodies/" class="text-white-50" 
+            <a href="/#newsletter" class="text-white-50" 
                style="text-decoration: none; transition: color 0.3s ease;"
                onmouseover="this.style.color='#15ba29'"
                onmouseout="this.style.color='rgba(255, 255, 255, 0.5)'">
@@ -156,7 +156,7 @@
         <h5 class="text-white fw-bold mb-3">Platform</h5>
         <ul class="list-unstyled">
           <li class="mb-2">
-            <a href="/about/" class="text-white-50" 
+            <a href="/#about" class="text-white-50" 
                style="text-decoration: none; transition: color 0.3s ease;"
                onmouseover="this.style.color='#15ba29'"
                onmouseout="this.style.color='rgba(255, 255, 255, 0.5)'">
@@ -164,7 +164,7 @@
             </a>
           </li>
           <li class="mb-2">
-            <a href="/contact/" class="text-white-50" 
+            <a href="/#contact" class="text-white-50" 
                style="text-decoration: none; transition: color 0.3s ease;"
                onmouseover="this.style.color='#15ba29'"
                onmouseout="this.style.color='rgba(255, 255, 255, 0.5)'">
@@ -188,7 +188,7 @@
         <p class="text-white-50 small mb-3">
           Get the latest Qt, C++ and QML tutorials, tips, and course updates delivered to your inbox.
         </p>
-        <a href="https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts" 
+        <a href="/#newsletter" 
            class="btn btn-outline-success btn-sm fw-bold" 
            style="border-radius: 20px; border-color: #15ba29; color: #15ba29; transition: all 0.3s ease;"
            onmouseover="this.style.background='#15ba29'; this.style.color='white'"
@@ -249,6 +249,42 @@ fx()
 }
 };
 $(window).on("scroll", reset);
+
+// Handle footer navigation links for smooth scrolling
+document.addEventListener('DOMContentLoaded', function() {
+  const footerLinks = document.querySelectorAll('footer a[href^="/#"]');
+  
+  footerLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      // Check if we're already on the home page
+      if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        e.preventDefault();
+        
+        const targetId = href.substring(2); // Remove "/#" to get the ID
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+          // Smooth scroll to the section
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          // Optional: highlight the section briefly
+          targetSection.style.transition = 'all 0.3s ease';
+          targetSection.style.boxShadow = '0 0 20px rgba(21, 186, 41, 0.3)';
+          
+          setTimeout(() => {
+            targetSection.style.boxShadow = '';
+          }, 2000);
+        }
+      }
+      // If we're not on the home page, let the link navigate normally
+    });
+  });
+});
 });
 </script>
 <script src="/assets/js/bg.js"></script>
