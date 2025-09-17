@@ -14,12 +14,12 @@
         <!-- Simple Badge -->
         <div class="books-badge mb-4" style="display: inline-flex; align-items: center; background: rgba(21, 186, 41, 0.1); border: 1px solid rgba(21, 186, 41, 0.3); border-radius: 30px; padding: 0.8rem 2rem; backdrop-filter: blur(15px);">
           <i class="fas fa-book" style="color: #15ba29; margin-right: 0.8rem; font-size: 1.1rem;"></i>
-          <span style="color: #15ba29; font-weight: 600; font-size: 1rem;">Featured Books</span>
+          <span style="color: #15ba29; font-weight: 600; font-size: 1rem;">{{ site.data.books.featured_section.title }}</span>
         </div>
         
         <!-- Clean Title -->
         <h2 class="fw-bold mb-3" style="font-size: 3rem; color: #ffffff;">
-          {{page.books.title}}
+          {{ site.data.books.hero.title }}
         </h2>
         
         <!-- Simple Underline -->
@@ -27,133 +27,99 @@
         
         <!-- Description -->
         <p class="lead mx-auto" style="max-width: 600px; color: rgba(255, 255, 255, 0.85); font-size: 1.2rem; line-height: 1.7;">
-          {{page.books.description}}
+          {{ site.data.books.featured_section.description }}
         </p>
       </div>
     </div>
 
-    <!-- Clean Books Grid -->
+    <!-- Dynamic Books Grid -->
     <div class="row g-4 justify-content-center">
-      
-      <!-- Book 1 - Available -->
-      <div class="col-lg-4 col-md-6">
-        <div class="book-card" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; height: 100%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; position: relative;">
-          
-          <!-- Status Badge -->
-          <div class="status-badge" style="position: absolute; top: 1rem; right: 1rem; background: #15ba29; color: white; padding: 0.4rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">
-            <i class="fas fa-check-circle" style="margin-right: 0.3rem;"></i>Available
-          </div>
+      {% for book in site.data.books.books %}
+        {% if book.featured and book.status != "planning" %}
+        <div class="col-lg-4 col-md-6">
+          <div class="book-card" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; height: 100%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; position: relative;">
+            
+            <!-- Dynamic Status Badge -->
+            {% assign status_color = site.data.books.status_config[book.status].color %}
+            {% assign status_icon = site.data.books.status_config[book.status].icon %}
+            {% assign status_label = site.data.books.status_config[book.status].label %}
+            
+            <div class="status-badge" style="position: absolute; top: 1rem; right: 1rem; background: {{ status_color }}; color: white; padding: 0.4rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">
+              <i class="{{ status_icon }}" style="margin-right: 0.3rem;"></i>{{ status_label }}
+            </div>
 
-          <!-- Book Cover -->
-          <div class="text-center mb-4">
-            <img src="{{page.book1.cover}}" alt="{{page.book1.title}}" class="img-fluid rounded" 
-                 style="max-width: 180px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); transition: transform 0.3s ease;">
-          </div>
+            <!-- Book Cover -->
+            <div class="text-center mb-4">
+              {% if book.status == "coming_up" %}
+                <div style="position: relative; display: inline-block;">
+                  <img src="{{ book.cover }}" alt="{{ book.title }}" class="img-fluid rounded" 
+                       style="max-width: 180px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); filter: brightness(0.8);">
+                  
+                  <!-- Progress Bar for Coming Up Books -->
+                  <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80%; background: rgba(255,255,255,0.2); height: 4px; border-radius: 2px;">
+                    <div style="width: {{ book.progress }}%; height: 100%; background: {{ status_color }}; border-radius: 2px;"></div>
+                  </div>
+                  <div style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); color: {{ status_color }}; font-size: 0.8rem; font-weight: 600; white-space: nowrap;">{{ book.progress }}% Complete</div>
+                </div>
+              {% else %}
+                <img src="{{ book.cover }}" alt="{{ book.title }}" class="img-fluid rounded" 
+                     style="max-width: 180px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); transition: transform 0.3s ease;">
+              {% endif %}
+            </div>
 
-          <!-- Book Info -->
-          <h4 class="fw-bold mb-3" style="color: #ffffff; font-size: 1.3rem; line-height: 1.4;">{{page.book1.title}}</h4>
-          
-          <!-- Rating -->
-          <div class="mb-3" style="color: #ffd700;">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span style="color: rgba(255, 255, 255, 0.7); margin-left: 0.5rem; font-size: 0.9rem;">(4.8/5)</span>
-          </div>
-          
-          <p class="mb-4" style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; font-size: 0.95rem;">{{page.book1.description}}</p>
-          
-          <!-- Features -->
-          <div class="mb-4" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <span class="feature-badge" style="background: rgba(21, 186, 41, 0.1); color: #15ba29; padding: 0.3rem 0.7rem; border-radius: 10px; font-size: 0.8rem; border: 1px solid rgba(21, 186, 41, 0.2);">
-              <i class="fas fa-file-alt" style="margin-right: 0.3rem;"></i>250+ Pages
-            </span>
-            <span class="feature-badge" style="background: rgba(21, 186, 41, 0.1); color: #15ba29; padding: 0.3rem 0.7rem; border-radius: 10px; font-size: 0.8rem; border: 1px solid rgba(21, 186, 41, 0.2);">
-              <i class="fas fa-download" style="margin-right: 0.3rem;"></i>PDF + ePub
-            </span>
-          </div>
-          
-          <a href="{{page.book1.link}}" class="btn btn-outline-success btn-lg w-100" style="border-radius: 15px; font-weight: 600; transition: all 0.3s ease;">
-            <i class="fas fa-book" style="margin-right: 0.5rem;"></i>Get This Book
-          </a>
-        </div>
-      </div>
+            <!-- Book Info -->
+            <h4 class="fw-bold mb-3" style="color: #ffffff; font-size: 1.3rem; line-height: 1.4; {% if book.status == 'coming_up' %}margin-top: 1rem;{% endif %}">{{ book.title }}</h4>
+            
+            <!-- Rating for Available Books -->
+            {% if book.status == "available" and book.rating %}
+            <div class="mb-3" style="color: #ffd700;">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span style="color: rgba(255, 255, 255, 0.7); margin-left: 0.5rem; font-size: 0.9rem;">({{ book.rating }}/5)</span>
+            </div>
+            {% endif %}
 
-      <!-- Book 2 - Coming Soon -->
-      <div class="col-lg-4 col-md-6">
-        <div class="book-card" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; height: 100%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; position: relative;">
-          
-          <!-- Status Badge -->
-          <div class="status-badge" style="position: absolute; top: 1rem; right: 1rem; background: #1da1f2; color: white; padding: 0.4rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">
-            <i class="fas fa-clock" style="margin-right: 0.3rem;"></i>Coming Soon
-          </div>
-
-          <!-- Book Cover -->
-          <div class="text-center mb-4">
-            <div style="position: relative; display: inline-block;">
-              <img src="{{page.book2.cover}}" alt="{{page.book2.title}}" class="img-fluid rounded" 
-                   style="max-width: 180px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); filter: brightness(0.8);">
-              
-              <!-- Progress Bar -->
-              <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80%; background: rgba(255,255,255,0.2); height: 4px; border-radius: 2px;">
-                <div style="width: 65%; height: 100%; background: #1da1f2; border-radius: 2px;"></div>
+            <!-- Timeline for Coming Up Books -->
+            {% if book.status == "coming_up" %}
+            <div class="mb-3" style="background: rgba(243, 156, 18, 0.1); border: 1px solid rgba(243, 156, 18, 0.3); border-radius: 10px; padding: 0.8rem;">
+              <div style="color: {{ status_color }}; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem;">
+                <i class="fas fa-calendar-alt" style="margin-right: 0.3rem;"></i>Expected: {{ book.expected_date }}
               </div>
-              <div style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); color: #1da1f2; font-size: 0.8rem; font-weight: 600; white-space: nowrap;">65% Complete</div>
+              <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem;">Get notified when available</div>
             </div>
-          </div>
-
-          <h4 class="fw-bold mb-3" style="color: #ffffff; font-size: 1.3rem; margin-top: 1rem;">{{page.book2.title}}</h4>
-          
-          <!-- Timeline -->
-          <div class="mb-3" style="background: rgba(29, 161, 242, 0.1); border: 1px solid rgba(29, 161, 242, 0.3); border-radius: 10px; padding: 0.8rem;">
-            <div style="color: #1da1f2; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem;">
-              <i class="fas fa-calendar-alt" style="margin-right: 0.3rem;"></i>Expected: Q1 2025
+            {% endif %}
+            
+            <p class="mb-4" style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; font-size: 0.95rem;">{{ book.description }}</p>
+            
+            <!-- Features for Available Books -->
+            {% if book.status == "available" %}
+            <div class="mb-4" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="feature-badge" style="background: rgba(243, 156, 18, 0.1); color: {{ status_color }}; padding: 0.3rem 0.7rem; border-radius: 10px; font-size: 0.8rem; border: 1px solid rgba(243, 156, 18, 0.2);">
+                <i class="fas fa-file-alt" style="margin-right: 0.3rem;"></i>{{ book.pages }} Pages
+              </span>
+              <span class="feature-badge" style="background: rgba(243, 156, 18, 0.1); color: {{ status_color }}; padding: 0.3rem 0.7rem; border-radius: 10px; font-size: 0.8rem; border: 1px solid rgba(243, 156, 18, 0.2);">
+                <i class="fas fa-download" style="margin-right: 0.3rem;"></i>{% for format in book.formats limit:2 %}{{ format }}{% unless forloop.last %} + {% endunless %}{% endfor %}
+              </span>
             </div>
-            <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem;">Get notified when available</div>
+            {% endif %}
+            
+            <!-- Dynamic Button -->
+            {% if book.status == "available" %}
+              <a href="{{ book.gumroad_link }}" class="btn btn-outline-success btn-lg w-100" style="border-radius: 15px; font-weight: 600; transition: all 0.3s ease;">
+                <i class="fas fa-book" style="margin-right: 0.5rem;"></i>{{ site.data.books.ui.buy_now_button }}
+              </a>
+            {% elsif book.status == "coming_up" %}
+              <a href="{{ book.notify_link }}#newsletter" class="btn btn-outline-primary btn-lg w-100 notify-btn" style="border-radius: 15px; font-weight: 600; border-color: #1da1f2; color: #1da1f2; transition: all 0.3s ease;">
+                <i class="fas fa-bell" style="margin-right: 0.5rem;"></i>{{ site.data.books.ui.coming_soon_button }}
+              </a>
+            {% endif %}
           </div>
-          
-          <p class="mb-4" style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; font-size: 0.95rem;">{{page.book2.description}}</p>
-          
-          <a href="{{page.book2.link}}" class="btn btn-outline-primary btn-lg w-100" style="border-radius: 15px; font-weight: 600; border-color: #1da1f2; color: #1da1f2; transition: all 0.3s ease;">
-            <i class="fas fa-bell" style="margin-right: 0.5rem;"></i>Notify Me
-          </a>
         </div>
-      </div>
-
-      <!-- Book 3 - In Planning -->
-      <div class="col-lg-4 col-md-6">
-        <div class="book-card" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; height: 100%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; position: relative;">
-          
-          <!-- Status Badge -->
-          <div class="status-badge" style="position: absolute; top: 1rem; right: 1rem; background: #ff6b35; color: white; padding: 0.4rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">
-            <i class="fas fa-hourglass-start" style="margin-right: 0.3rem;"></i>Planning
-          </div>
-
-          <!-- Book Cover -->
-          <div class="text-center mb-4">
-            <img src="{{page.book3.cover}}" alt="{{page.book3.title}}" class="img-fluid rounded" 
-                 style="max-width: 180px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); filter: brightness(0.7);">
-          </div>
-
-          <h4 class="fw-bold mb-3" style="color: #ffffff; font-size: 1.3rem;">{{page.book3.title}}</h4>
-          
-          <!-- Status Info -->
-          <div class="mb-3" style="background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.3); border-radius: 10px; padding: 0.8rem;">
-            <div style="color: #ff6b35; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem;">
-              <i class="fas fa-lightbulb" style="margin-right: 0.3rem;"></i>In Development
-            </div>
-            <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem;">Be first to know about updates</div>
-          </div>
-          
-          <p class="mb-4" style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; font-size: 0.95rem;">{{page.book3.description}}</p>
-          
-          <a href="{{page.book3.link}}" class="btn btn-lg w-100" style="background: transparent; border: 2px solid #ff6b35; color: #ff6b35; border-radius: 15px; font-weight: 600; transition: all 0.3s ease;">
-            <i class="fas fa-star" style="margin-right: 0.5rem;"></i>Early Access
-          </a>
-        </div>
-      </div>
+        {% endif %}
+      {% endfor %}
     </div>
 
     <!-- Simple CTA Section -->
@@ -166,7 +132,7 @@
           </p>
           
           <a href="/books/" class="btn btn-success btn-lg px-5 py-3" style="border-radius: 25px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);">
-            <i class="fas fa-book-open" style="margin-right: 0.5rem;"></i>{{page.books.button}}
+            <i class="fas fa-book-open" style="margin-right: 0.5rem;"></i>{{ site.data.books.featured_section.button_text }}
           </a>
         </div>
       </div>
@@ -190,5 +156,63 @@
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
+
+    /* Smooth scroll behavior for notify buttons */
+    .notify-btn {
+      cursor: pointer;
+    }
+    
+    .notify-btn:hover {
+      background: rgba(29, 161, 242, 0.1) !important;
+      transform: translateY(-2px);
+    }
   </style>
+
+  <!-- JavaScript for smooth scrolling to newsletter -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add smooth scroll behavior for notify buttons
+      const notifyButtons = document.querySelectorAll('.notify-btn');
+      
+      notifyButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Get the href attribute
+          const href = this.getAttribute('href');
+          
+          // Check if it contains #newsletter
+          if (href && href.includes('#newsletter')) {
+            // Find the newsletter section
+            const newsletterSection = document.getElementById('newsletter') || 
+                                    document.querySelector('[id*="newsletter"]') ||
+                                    document.querySelector('.newsletter') ||
+                                    document.querySelector('#home'); // fallback to home
+            
+            if (newsletterSection) {
+              // Smooth scroll to newsletter section
+              newsletterSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+              
+              // Optional: highlight the newsletter section briefly
+              newsletterSection.style.transition = 'all 0.3s ease';
+              newsletterSection.style.boxShadow = '0 0 20px rgba(243, 156, 18, 0.3)';
+              
+              setTimeout(() => {
+                newsletterSection.style.boxShadow = '';
+              }, 2000);
+            } else {
+              // If newsletter section not found, follow the original link
+              window.open(href.split('#')[0], '_blank');
+            }
+          } else {
+            // Follow the original link
+            window.open(href, '_blank');
+          }
+        });
+      });
+    });
+  </script>
 </section>

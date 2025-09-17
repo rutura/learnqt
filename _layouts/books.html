@@ -12,27 +12,36 @@
         <!-- Books Grid -->
         <div class="books-grid">
             {% for book in site.data.books.books %}
+            {% unless book.status == "planning" %}
             <div class="book-card-modern" data-aos="fade-up" data-aos-delay="{{ forloop.index | minus: 1 | times: 100 }}">
                 <div class="book-card-inner">
                     <!-- Book Status Badge -->
-                    {% if book.featured %}
-                    <div class="status-badge featured">
-                        <i class="fas fa-star"></i>
-                        <span>Featured</span>
-                    </div>
-                    {% endif %}
+                    {% assign status_color = site.data.books.status_config[book.status].color %}
+                    {% assign status_icon = site.data.books.status_config[book.status].icon %}
+                    {% assign status_label = site.data.books.status_config[book.status].label %}
                     
-                    {% if book.coming_soon %}
-                    <div class="status-badge coming-soon">
-                        <i class="fas fa-clock"></i>
-                        <span>Coming Soon</span>
+                    <div class="status-badge" style="background: {{ status_color }};">
+                        <i class="{{ status_icon }}"></i>
+                        <span>{{ status_label }}</span>
                     </div>
-                    {% endif %}
                     
                     <!-- Book Cover -->
                     <div class="book-cover-section">
                         <div class="book-cover-container">
-                            <img src="{{ book.cover }}" alt="{{ book.title }}" class="book-cover-img">
+                            {% if book.status == "coming_up" %}
+                                <div style="position: relative; display: inline-block;">
+                                    <img src="{{ book.cover }}" alt="{{ book.title }}" class="book-cover-img" style="filter: brightness(0.8);">
+                                    
+                                    <!-- Progress Bar for Coming Up Books -->
+                                    <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 80%; background: rgba(255,255,255,0.2); height: 4px; border-radius: 2px;">
+                                        <div style="width: {{ book.progress }}%; height: 100%; background: {{ status_color }}; border-radius: 2px;"></div>
+                                    </div>
+                                    <div style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); color: {{ status_color }}; font-size: 0.8rem; font-weight: 600; white-space: nowrap;">{{ book.progress }}% Complete</div>
+                                </div>
+                            {% else %}
+                                <img src="{{ book.cover }}" alt="{{ book.title }}" class="book-cover-img">
+                            {% endif %}
+                            
                             <div class="book-overlay">
                                 <div class="book-meta">
                                     <span class="book-category">{{ book.category }}</span>
@@ -48,6 +57,28 @@
                             <h3 class="book-title">{{ book.title }}</h3>
                             <p class="book-description">{{ book.description }}</p>
                         </div>
+                        
+                        <!-- Rating for Available Books -->
+                        {% if book.status == "available" and book.rating %}
+                        <div class="book-rating mb-3" style="color: #ffd700;">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span style="color: #6c757d; margin-left: 0.5rem; font-size: 0.9rem;">({{ book.rating }}/5)</span>
+                        </div>
+                        {% endif %}
+
+                        <!-- Timeline for Coming Up Books -->
+                        {% if book.status == "coming_up" %}
+                        <div class="coming-up-info mb-3" style="background: rgba(243, 156, 18, 0.1); border: 1px solid rgba(243, 156, 18, 0.3); border-radius: 10px; padding: 1rem;">
+                            <div style="color: {{ status_color }}; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">
+                                <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>Expected: {{ book.expected_date }}
+                            </div>
+                            <div style="color: #6c757d; font-size: 0.85rem;">Get notified when available</div>
+                        </div>
+                        {% endif %}
                         
                         <!-- Book Highlights -->
                         <div class="book-highlights">
@@ -78,15 +109,15 @@
                         <!-- Book Footer -->
                         <div class="book-footer">
                             <div class="book-price">
-                                {% if book.coming_soon %}
-                                    <span class="price-label">Coming Soon</span>
+                                {% if book.status == "coming_up" %}
+                                    <span class="price-label">{{ book.price }}</span>
                                 {% else %}
                                     <span class="price">{{ book.price }}</span>
                                 {% endif %}
                             </div>
                             
                             <div class="book-action">
-                                {% if book.coming_soon %}
+                                {% if book.status == "coming_up" %}
                                     <a href="/#newsletter" class="btn btn-notify">
                                         <i class="fas fa-bell me-2"></i>
                                         Get Notified
@@ -102,6 +133,7 @@
                     </div>
                 </div>
             </div>
+            {% endunless %}
             {% endfor %}
         </div>
     </div>
@@ -225,16 +257,7 @@
     align-items: center;
     gap: 0.5rem;
     box-shadow: var(--shadow-medium);
-}
-
-.status-badge.featured {
-    background: linear-gradient(135deg, #ffd700, #ffed4e);
-    color: var(--dark-gray);
-}
-
-.status-badge.coming-soon {
-    background: linear-gradient(135deg, #4299e1, #3182ce);
-    color: var(--white);
+    color: white;
 }
 
 /* Book Cover Section */
@@ -793,6 +816,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Handle "Get Notified" button clicks
+    const notifyButtons = document.querySelectorAll('.btn-notify');
+    
+    notifyButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Navigate to home page and scroll to newsletter
+            window.location.href = '/#newsletter';
         });
     });
     
