@@ -112,7 +112,7 @@
                 <i class="fas fa-book" style="margin-right: 0.5rem;"></i>{{ site.data.books.ui.buy_now_button }}
               </a>
             {% elsif book.status == "coming_up" %}
-              <a href="{{ book.notify_link }}#newsletter" class="btn btn-outline-primary btn-lg w-100 notify-btn" style="border-radius: 15px; font-weight: 600; border-color: #1da1f2; color: #1da1f2; transition: all 0.3s ease;">
+              <a href="#newsletter" class="btn btn-outline-primary btn-lg w-100 notify-btn" style="border-radius: 15px; font-weight: 600; border-color: #1da1f2; color: #1da1f2; transition: all 0.3s ease;">
                 <i class="fas fa-bell" style="margin-right: 0.5rem;"></i>{{ site.data.books.ui.coming_soon_button }}
               </a>
             {% endif %}
@@ -178,38 +178,34 @@
         button.addEventListener('click', function(e) {
           e.preventDefault();
           
-          // Get the href attribute
-          const href = this.getAttribute('href');
+          // Find the newsletter section
+          const newsletterSection = document.getElementById('newsletter') || 
+                                  document.querySelector('[id*="newsletter"]') ||
+                                  document.querySelector('.newsletter');
           
-          // Check if it contains #newsletter
-          if (href && href.includes('#newsletter')) {
-            // Find the newsletter section
-            const newsletterSection = document.getElementById('newsletter') || 
-                                    document.querySelector('[id*="newsletter"]') ||
-                                    document.querySelector('.newsletter') ||
-                                    document.querySelector('#home'); // fallback to home
+          if (newsletterSection) {
+            // Smooth scroll to newsletter section
+            newsletterSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
             
-            if (newsletterSection) {
-              // Smooth scroll to newsletter section
-              newsletterSection.scrollIntoView({
+            // Optional: highlight the newsletter section briefly
+            newsletterSection.style.transition = 'all 0.3s ease';
+            newsletterSection.style.boxShadow = '0 0 20px rgba(29, 161, 242, 0.3)';
+            
+            setTimeout(() => {
+              newsletterSection.style.boxShadow = '';
+            }, 2000);
+          } else {
+            // Fallback: scroll to footer if newsletter section not found
+            const footer = document.querySelector('footer');
+            if (footer) {
+              footer.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
               });
-              
-              // Optional: highlight the newsletter section briefly
-              newsletterSection.style.transition = 'all 0.3s ease';
-              newsletterSection.style.boxShadow = '0 0 20px rgba(243, 156, 18, 0.3)';
-              
-              setTimeout(() => {
-                newsletterSection.style.boxShadow = '';
-              }, 2000);
-            } else {
-              // If newsletter section not found, follow the original link
-              window.open(href.split('#')[0], '_blank');
             }
-          } else {
-            // Follow the original link
-            window.open(href, '_blank');
           }
         });
       });
