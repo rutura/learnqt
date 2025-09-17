@@ -53,7 +53,7 @@ books:
     formats: ["PDF", "EPUB", "Paperback"]
     featured: true
     status: "available"
-    price: "$29"
+    price: "$45"
     rating: "4.8"
     rating_count: "156"
     gumroad_link: "https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners"
@@ -74,9 +74,9 @@ books:
       - "Deployment to multiple platforms"
 
   - id: "qt6-qml-advanced"
-    title: "Interfacing QML to C++"
+    title: "Qt6 QML Advanced"
     short_title: "QML Advanced"
-    description: "Connect your fluid Qt Quick (QML) user interfaces to powerful C++ backends. Learn advanced integration patterns, performance optimization, and professional architecture."
+    description: "Advanced Qt6 QML and C++ integration techniques. Build production-ready apps with real-world patterns, scalable architectures, and high-performance UIs."
     cover: "/assets/img/interfacing_cpp_to_qml_book_cover.png"
     category: "Advanced QML"
     level: "Intermediate to Advanced"
@@ -85,7 +85,7 @@ books:
     formats: ["PDF", "EPUB", "Paperback"]
     featured: true
     status: "available"
-    price: "$39"
+    price: "$65"
     rating: "4.9"
     rating_count: "89"
     gumroad_link: "https://dgakwaya.gumroad.com/l/qt6_qml_advanced"
