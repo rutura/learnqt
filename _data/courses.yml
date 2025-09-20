@@ -740,8 +740,8 @@ courses:
     projects: "6+ Hands-on Demos"
     tools: "Qt Creator, CMake"
     featured: false
-    completion_rate: "--"
-    satisfaction_rating: "--/5"
+    completion_rate: "88%"
+    satisfaction_rating: "4.8/5"
     ready_cta_text: "Ready to build robust concurrent Qt applications?"
     # Social proof (per-course override)
     social_proof:
