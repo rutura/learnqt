@@ -1,11 +1,8 @@
 ---
-layout: page
-title: ""
-description: null
+layout: courses
+title: "Modern C++, Qt, QML and More!"
+description: "Knowledge you'll never find anywhere else in a well structured easy to digest manner. Learn Qt Widgets, QML, C++, and Python with hands-on projects and real-world applications."
 cover: /assets/img/learnqtbook.webp
-best_courses_widget: true
 permalink: /courses/
-display_widget: true
 ---
-{% include courses/learning_paths.html %}
 

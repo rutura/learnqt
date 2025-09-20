@@ -1,35 +1,56 @@
-<!-- Learning Paths Section -->
-<section id="learning-paths" class="learning-paths py-5">
+<!-- Featured Courses Section -->
+<section id="featured-courses" class="featured-courses py-5">
     <div class="container">
         <div class="row mb-5 text-center">
             <div class="col-lg-8 mx-auto">
-                <h2 class="section-title text-success">Learning Paths</h2>
+                <h2 class="section-title text-success">{{ site.data.courses.featured_section.title }}</h2>
                 <div class="title-underline"></div>
-                <p class="lead mt-4">Master modern C++, UI Design with Qt Widgets, PySide6, and QML with our expertly designed learning paths. Each program is tailored to provide practical, real-world skills to accelerate your professional journey.</p>
+                <p class="lead mt-4">{{ site.data.courses.featured_section.description }}</p>
             </div>
         </div>
 
-        <div class="row g-4">
-            {% for path in site.data.learning_paths.learning_paths %}
-            <div class="col-lg-6 mb-4">
-                <div class="card h-100 shadow hover-shadow">
+        <div class="row g-4 justify-content-center">
+            {% assign featured_courses = site.data.courses.courses | where: "featured", true %}
+            {% for course in featured_courses %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 shadow-sm course-card">
                     <div class="card-image-wrapper">
-                        <img class="card-img-top lazyload" loading="lazy" alt="{{ path.title }}" data-src="{{ site.baseurl }}{{ path.image }}">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title h4 mb-3">{{ path.title }}</h3>
-                        <p class="card-text">{{ path.description }}</p>
-                        <div class="mt-4">
-                            <h4 class="h6 text-success fw-bold">What you'll achieve:</h4>
-                            <p class="card-text">{{ path.outcome }}</p>
+                        <img class="card-img-top lazyload" loading="lazy" alt="{{ course.title }}" data-src="{{ site.baseurl }}{{ course.image }}" src="{{ site.baseurl }}{{ course.image }}">
+                        <div class="course-badge">
+                            <span class="badge bg-success">{{ course.level }}</span>
                         </div>
-                        <div class="mt-4">
-                            <a href="/courses#{{ path.path_id }}" class="btn btn-success w-100" onclick="localStorage.setItem('scrollTo', '{{ path.path_id }}')">Learn More</a>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="course-meta mb-2">
+                            <span class="text-muted small">{{ course.technology }} • {{ course.language }}</span>
+                        </div>
+                        <h3 class="card-title h5 mb-3">{{ course.title }}</h3>
+                        <p class="card-text flex-grow-1">{{ course.description }}</p>
+                        <div class="course-details mt-3">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-muted small">
+                                    <i class="fas fa-clock me-1"></i>{{ course.duration }}
+                                </span>
+                                <span class="price text-success fw-bold">
+                                    From ${{ site.data.courses.pricing.monthly }}/mo
+                                </span>
+                            </div>
+                            <a href="/courses/{{ course.id }}/" class="btn btn-success w-100">
+                                {{ site.data.courses.ui.learn_more_button }}
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
             {% endfor %}
+        </div>
+
+        <div class="row mt-5">
+            <div class="col text-center">
+                <a href="/courses/" class="btn btn-outline-success btn-lg">
+                    {{ site.data.courses.featured_section.button_text }}
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -41,87 +62,120 @@ html {
 
 :root {
     --qt-green: #15ba29;
+    --qt-green-dark: #149f25;
 }
 
-.learning-paths {
+.featured-courses {
     background-color: #f8f9fa;
 }
 
-.learning-paths .card {
+.featured-courses .course-card {
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
 }
 
-.learning-paths .hover-shadow {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+.featured-courses .course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.15)!important;
 }
 
-.learning-paths .hover-shadow:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-}
-
-.learning-paths .card-image-wrapper {
+.featured-courses .card-image-wrapper {
     position: relative;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    height: 200px;
     background-color: #f8f9fa;
     overflow: hidden;
 }
 
-.learning-paths .card-img-top {
-    position: absolute;
-    top: 0;
-    left: 0;
+.featured-courses .card-img-top {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 1rem;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.learning-paths .card {
-    transition: all 0.3s ease;
-    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+.featured-courses .course-card:hover .card-img-top {
+    transform: scale(1.05);
 }
 
-.learning-paths .card-body {
-    padding: 2rem;
+.featured-courses .course-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
 
-.learning-paths .card-title {
+.featured-courses .course-badge .badge {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.featured-courses .card-body {
+    padding: 1.5rem;
+}
+
+.featured-courses .course-meta {
+    color: #6c757d;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.featured-courses .card-title {
     color: #2c3e50;
     font-weight: 600;
-    position: relative;
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
 }
 
-.learning-paths .card-title:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 3px;
-    background-color: var(--qt-green);
-}
-
-.learning-paths .card-text {
+.featured-courses .card-text {
     color: #505c66;
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
-.learning-paths .btn-success {
+.featured-courses .course-details {
+    border-top: 1px solid #e9ecef;
+    padding-top: 1rem;
+}
+
+.featured-courses .price {
+    font-size: 1.1rem;
+}
+
+.featured-courses .btn-success {
     background-color: var(--qt-green);
     border-color: var(--qt-green);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
 }
 
-.learning-paths .btn-success:hover {
-    background-color: #149f25;
-    border-color: #149f25;
+.featured-courses .btn-success:hover {
+    background-color: var(--qt-green-dark);
+    border-color: var(--qt-green-dark);
+    transform: translateY(-1px);
 }
 
-.learning-paths .text-success {
+.featured-courses .btn-outline-success {
+    color: var(--qt-green);
+    border-color: var(--qt-green);
+    padding: 1rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+}
+
+.featured-courses .btn-outline-success:hover {
+    background-color: var(--qt-green);
+    border-color: var(--qt-green);
+    transform: translateY(-2px);
+}
+
+.featured-courses .text-success {
     color: var(--qt-green) !important;
 }
 
@@ -135,5 +189,30 @@ html {
 .section-title {
     margin-bottom: 0;
     font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .featured-courses .col-lg-4 {
+        max-width: 100%;
+    }
+    
+    .featured-courses .card-body {
+        padding: 1.25rem;
+    }
+    
+    .featured-courses .card-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .featured-courses .card-image-wrapper {
+        height: 180px;
+    }
+    
+    .featured-courses .btn-outline-success {
+        padding: 0.875rem 1.5rem;
+    }
 }
 </style>

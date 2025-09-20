@@ -1,40 +1,306 @@
-<div class="black container-fluid bgs">
-<div class="row">
-<div class="col-md-8 mx-auto mb-5">
-<div class="row mb-5">
-<div class="col-md-12 p-3 p-md-5 mt-5 text-center">
-<h2><strong>{{page.follow}}</strong></h2>
-<div class="bot-center col-md-1 mt-3 col-2"></div>
-</div>
-<div class="col-md-3 p-3 text-center col-6">
-<div class="p-md-5 p-5 zoom bg-dark rounded shadow-sm">
-<a href="{{site.youtube}}" target="_blank" title="youtube {{site.title}}"><svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-youtube text-danger" viewBox="0 0 16 16">
-  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
-</svg></a>
-</div>
-</div>
-<div class="col-md-3 p-3 text-center col-6">
-<div class="p-md-5 p-5 zoom bg-dark rounded shadow-sm">
-<a href="{{site.facebook}}" target="_blank" title="facebook {{site.title}}"><svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-facebook text-primary" viewBox="0 0 16 16">
-  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-</svg></a>
-</div>
-</div>
-<div class="col-md-3 p-3 text-center col-6">
-<div class="p-md-5 p-5 zoom bg-dark rounded shadow-sm">
-<a href="{{site.twitter}}" target="_blank" title="twitter {{site.title}}"><svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-twitter text-info" viewBox="0 0 16 16">
-  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-</svg></a>
-</div>
-</div>
-<div class="col-md-3 p-3 text-center col-6">
-<div class="p-md-5 p-5 zoom bg-dark rounded shadow-sm">
-<a href="{{site.linked}}" target="_blank" title="linked {{site.title}}"><svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-linkedin text-info" viewBox="0 0 16 16">
-  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-</svg></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!-- Creative Community Connect Section -->
+<section class="community-connect-section" style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #15ba29 100%); padding: 6rem 0; position: relative; overflow: hidden;">
+  <!-- Animated Background Elements -->
+  <div class="community-bg-elements">
+    <div class="floating-code-element" style="position: absolute; top: 10%; left: 5%; animation: floatCode 8s ease-in-out infinite;">
+      <div class="code-snippet-social">
+        <span style="color: #ff6b6b;">connect</span><span style="color: #4ecdc4;">()</span><span style="color: #ffe66d;">;</span>
+      </div>
+    </div>
+    <div class="floating-icon" style="position: absolute; top: 20%; right: 8%; font-size: 2rem; color: rgba(255, 255, 255, 0.1); animation: floatIcon 6s ease-in-out infinite;"><i class="fas fa-comments"></i></div>
+    <div class="floating-icon" style="position: absolute; bottom: 15%; left: 10%; font-size: 1.5rem; color: rgba(255, 255, 255, 0.1); animation: floatIcon 7s ease-in-out infinite 2s;"><i class="fas fa-globe"></i></div>
+    <div class="floating-code-element" style="position: absolute; bottom: 20%; right: 5%; animation: floatCode 9s ease-in-out infinite 3s;">
+      <div class="code-snippet-social">
+        <span style="color: #ff6b6b;">community</span><span style="color: #4ecdc4;">.join()</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Section Header -->
+    <div class="row text-center mb-5">
+      <div class="col-md-12">
+        <div class="community-badge mb-4">
+          <span class="badge bg-light text-dark px-4 py-2 rounded-pill">
+            <i class="fas fa-users me-2"></i>Join 50,000+ Qt Developers
+          </span>
+        </div>
+        
+        <h2 class="text-white fw-bold mb-3" style="font-size: 3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+          Connect with the 
+          <span style="background: linear-gradient(135deg, #ffd700, #ffed4e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 900;">
+            Qt Community
+          </span>
+        </h2>
+        
+        <div class="mx-auto mb-4" style="width: 80px; height: 4px; background: linear-gradient(90deg, #ffd700, #15ba29); border-radius: 2px;"></div>
+        
+        <p class="text-white lead mx-auto" style="max-width: 600px; font-size: 1.2rem; opacity: 0.9;">
+          Stay updated with the latest Qt tutorials, join discussions, and connect with fellow developers worldwide.
+        </p>
+      </div>
+    </div>
+
+    <!-- Community Stats -->
+    <div class="community-stats mb-5">
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card text-center" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 2rem; transition: all 0.3s ease;"
+               onmouseover="this.style.transform='translateY(-10px) scale(1.05)'; this.style.boxShadow='0 20px 40px rgba(255, 215, 0, 0.3)'"
+               onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'">
+            <div class="stat-icon mb-3" style="font-size: 3rem; color: #ffd700;"><i class="fas fa-graduation-cap"></i></div>
+            <div class="stat-number text-white fw-bold" style="font-size: 2.5rem; color: #ffd700;">50K+</div>
+            <div class="stat-label text-white" style="opacity: 0.8;">Students Worldwide</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card text-center" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 2rem; transition: all 0.3s ease;"
+               onmouseover="this.style.transform='translateY(-10px) scale(1.05)'; this.style.boxShadow='0 20px 40px rgba(21, 186, 41, 0.3)'"
+               onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'">
+            <div class="stat-icon mb-3" style="font-size: 3rem; color: #15ba29;"><i class="fas fa-book"></i></div>
+            <div class="stat-number text-white fw-bold" style="font-size: 2.5rem; color: #15ba29;">100+</div>
+            <div class="stat-label text-white" style="opacity: 0.8;">Hours of Content</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card text-center" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 2rem; transition: all 0.3s ease;"
+               onmouseover="this.style.transform='translateY(-10px) scale(1.05)'; this.style.boxShadow='0 20px 40px rgba(29, 161, 242, 0.3)'"
+               onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'">
+            <div class="stat-icon mb-3" style="font-size: 3rem; color: #1da1f2;"><i class="fas fa-comments"></i></div>
+            <div class="stat-number text-white fw-bold" style="font-size: 2.5rem; color: #1da1f2;">5K+</div>
+            <div class="stat-label text-white" style="opacity: 0.8;">Community Discussions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Media Cards -->
+    <div class="social-cards-container">
+      <div class="row g-4 justify-content-center">
+        <!-- YouTube Card -->
+        <div class="col-lg-3 col-md-6">
+          <div class="social-card youtube-card" style="background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.1)); backdrop-filter: blur(15px); border: 2px solid rgba(255, 0, 0, 0.3); border-radius: 25px; padding: 2rem; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;"
+               onmouseover="this.style.transform='translateY(-15px) rotate(2deg)'; this.style.boxShadow='0 25px 50px rgba(255, 0, 0, 0.4)'; this.style.borderColor='#ff0000'"
+               onmouseout="this.style.transform='translateY(0) rotate(0deg)'; this.style.boxShadow='none'; this.style.borderColor='rgba(255, 0, 0, 0.3)'">
+            
+            <div class="social-icon mb-3" style="position: relative;">
+              <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #ff0000, #cc0000); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);">
+                <svg width="40" height="40" fill="white" viewBox="0 0 16 16">
+                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                </svg>
+              </div>
+              <div class="pulse-ring" style="position: absolute; top: -5px; left: 50%; transform: translateX(-50%); width: 90px; height: 90px; border: 2px solid rgba(255, 0, 0, 0.5); border-radius: 50%; animation: pulse 2s infinite;"></div>
+            </div>
+            
+            <h4 class="text-white fw-bold mb-2">YouTube</h4>
+            <p class="text-white mb-3" style="opacity: 0.8; font-size: 0.9rem;">Video Tutorials & Live Coding</p>
+            <div class="social-stats mb-3">
+              <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.8rem;">
+                <i class="fas fa-video"></i> Latest Qt Tutorials
+              </span>
+            </div>
+            <a href="{{site.youtube}}" target="_blank" class="btn btn-light fw-bold px-4 py-2" 
+               style="border-radius: 20px; color: #ff0000; transition: all 0.3s ease; text-decoration: none;"
+               onmouseover="this.style.background='#ff0000'; this.style.color='white'; this.style.transform='scale(1.1)'"
+               onmouseout="this.style.background='white'; this.style.color='#ff0000'; this.style.transform='scale(1)'">
+              Subscribe Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Facebook Card -->
+        <div class="col-lg-3 col-md-6">
+          <div class="social-card facebook-card" style="background: linear-gradient(135deg, rgba(24, 119, 242, 0.2), rgba(24, 119, 242, 0.1)); backdrop-filter: blur(15px); border: 2px solid rgba(24, 119, 242, 0.3); border-radius: 25px; padding: 2rem; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;"
+               onmouseover="this.style.transform='translateY(-15px) rotate(-2deg)'; this.style.boxShadow='0 25px 50px rgba(24, 119, 242, 0.4)'; this.style.borderColor='#1877f2'"
+               onmouseout="this.style.transform='translateY(0) rotate(0deg)'; this.style.boxShadow='none'; this.style.borderColor='rgba(24, 119, 242, 0.3)'">
+            
+            <div class="social-icon mb-3" style="position: relative;">
+              <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #1877f2, #0d47a1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(24, 119, 242, 0.3);">
+                <svg width="40" height="40" fill="white" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg>
+              </div>
+              <div class="pulse-ring" style="position: absolute; top: -5px; left: 50%; transform: translateX(-50%); width: 90px; height: 90px; border: 2px solid rgba(24, 119, 242, 0.5); border-radius: 50%; animation: pulse 2s infinite 0.5s;"></div>
+            </div>
+            
+            <h4 class="text-white fw-bold mb-2">Facebook</h4>
+            <p class="text-white mb-3" style="opacity: 0.8; font-size: 0.9rem;">Community Updates & News</p>
+            <div class="social-stats mb-3">
+              <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.8rem;">
+                <i class="fas fa-users"></i> Join Discussions
+              </span>
+            </div>
+            <a href="{{site.facebook}}" target="_blank" class="btn btn-light fw-bold px-4 py-2" 
+               style="border-radius: 20px; color: #1877f2; transition: all 0.3s ease; text-decoration: none;"
+               onmouseover="this.style.background='#1877f2'; this.style.color='white'; this.style.transform='scale(1.1)'"
+               onmouseout="this.style.background='white'; this.style.color='#1877f2'; this.style.transform='scale(1)'">
+              Follow Us
+            </a>
+          </div>
+        </div>
+
+        <!-- Twitter Card -->
+        <div class="col-lg-3 col-md-6">
+          <div class="social-card twitter-card" style="background: linear-gradient(135deg, rgba(29, 161, 242, 0.2), rgba(29, 161, 242, 0.1)); backdrop-filter: blur(15px); border: 2px solid rgba(29, 161, 242, 0.3); border-radius: 25px; padding: 2rem; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;"
+               onmouseover="this.style.transform='translateY(-15px) rotate(2deg)'; this.style.boxShadow='0 25px 50px rgba(29, 161, 242, 0.4)'; this.style.borderColor='#1da1f2'"
+               onmouseout="this.style.transform='translateY(0) rotate(0deg)'; this.style.boxShadow='none'; this.style.borderColor='rgba(29, 161, 242, 0.3)'">
+            
+            <div class="social-icon mb-3" style="position: relative;">
+              <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #1da1f2, #0d8ec7); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(29, 161, 242, 0.3);">
+                <svg width="40" height="40" fill="white" viewBox="0 0 16 16">
+                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                </svg>
+              </div>
+              <div class="pulse-ring" style="position: absolute; top: -5px; left: 50%; transform: translateX(-50%); width: 90px; height: 90px; border: 2px solid rgba(29, 161, 242, 0.5); border-radius: 50%; animation: pulse 2s infinite 1s;"></div>
+            </div>
+            
+            <h4 class="text-white fw-bold mb-2">Twitter</h4>
+            <p class="text-white mb-3" style="opacity: 0.8; font-size: 0.9rem;">Quick Tips & Industry News</p>
+            <div class="social-stats mb-3">
+              <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.8rem;">
+                🐦 Daily Qt Tips
+              </span>
+            </div>
+            <a href="{{site.twitter}}" target="_blank" class="btn btn-light fw-bold px-4 py-2" 
+               style="border-radius: 20px; color: #1da1f2; transition: all 0.3s ease; text-decoration: none;"
+               onmouseover="this.style.background='#1da1f2'; this.style.color='white'; this.style.transform='scale(1.1)'"
+               onmouseout="this.style.background='white'; this.style.color='#1da1f2'; this.style.transform='scale(1)'">
+              Follow Us
+            </a>
+          </div>
+        </div>
+
+        <!-- LinkedIn Card -->
+        <div class="col-lg-3 col-md-6">
+          <div class="social-card linkedin-card" style="background: linear-gradient(135deg, rgba(0, 119, 181, 0.2), rgba(0, 119, 181, 0.1)); backdrop-filter: blur(15px); border: 2px solid rgba(0, 119, 181, 0.3); border-radius: 25px; padding: 2rem; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden;"
+               onmouseover="this.style.transform='translateY(-15px) rotate(-2deg)'; this.style.boxShadow='0 25px 50px rgba(0, 119, 181, 0.4)'; this.style.borderColor='#0077b5'"
+               onmouseout="this.style.transform='translateY(0) rotate(0deg)'; this.style.boxShadow='none'; this.style.borderColor='rgba(0, 119, 181, 0.3)'">
+            
+            <div class="social-icon mb-3" style="position: relative;">
+              <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #0077b5, #005885); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 10px 30px rgba(0, 119, 181, 0.3);">
+                <svg width="40" height="40" fill="white" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                </svg>
+              </div>
+              <div class="pulse-ring" style="position: absolute; top: -5px; left: 50%; transform: translateX(-50%); width: 90px; height: 90px; border: 2px solid rgba(0, 119, 181, 0.5); border-radius: 50%; animation: pulse 2s infinite 1.5s;"></div>
+            </div>
+            
+            <h4 class="text-white fw-bold mb-2">LinkedIn</h4>
+            <p class="text-white mb-3" style="opacity: 0.8; font-size: 0.9rem;">Professional Networking</p>
+            <div class="social-stats mb-3">
+              <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.8rem;">
+                💼 Career Growth
+              </span>
+            </div>
+            <a href="{{site.linked}}" target="_blank" class="btn btn-light fw-bold px-4 py-2" 
+               style="border-radius: 20px; color: #0077b5; transition: all 0.3s ease; text-decoration: none;"
+               onmouseover="this.style.background='#0077b5'; this.style.color='white'; this.style.transform='scale(1.1)'"
+               onmouseout="this.style.background='white'; this.style.color='#0077b5'; this.style.transform='scale(1)'">
+              Connect
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Community CTA -->
+    <div class="community-cta mt-5 text-center">
+      <div class="cta-card mx-auto" style="max-width: 600px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 25px; padding: 3rem 2rem;">
+        <h3 class="text-white fw-bold mb-3">Ready to Level Up Your Qt Skills?</h3>
+        <p class="text-white mb-4" style="opacity: 0.9;">
+          Join our community and get exclusive access to advanced tutorials, code examples, and direct support from Qt experts.
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="/courses/" class="btn btn-lg fw-bold px-4 py-2" 
+             style="background: linear-gradient(45deg, #ffd700, #ffed4e); color: #1a202c; border: none; border-radius: 25px; transition: all 0.3s ease; text-decoration: none;"
+             onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 25px rgba(255, 215, 0, 0.4)'"
+             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            <i class="fas fa-rocket"></i> Explore Courses
+          </a>
+          <a href="#newsletter" class="btn btn-outline-light btn-lg fw-bold px-4 py-2" 
+             style="border-radius: 25px; transition: all 0.3s ease; text-decoration: none;"
+             onmouseover="this.style.background='white'; this.style.color='#1a202c'; this.style.transform='scale(1.05)'"
+             onmouseout="this.style.background='transparent'; this.style.color='white'; this.style.transform='scale(1)'">
+            📬 Get Free Resources
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Community Connect Section Animations */
+@keyframes floatCode {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+  25% { transform: translateY(-20px) rotate(2deg); opacity: 1; }
+  50% { transform: translateY(-10px) rotate(-1deg); opacity: 0.8; }
+  75% { transform: translateY(-15px) rotate(1deg); opacity: 0.9; }
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-15px) scale(1.1); }
+}
+
+@keyframes pulse {
+  0% { transform: translateX(-50%) scale(1); opacity: 1; }
+  100% { transform: translateX(-50%) scale(1.2); opacity: 0; }
+}
+
+.code-snippet-social {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #15ba29;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 20px rgba(21, 186, 41, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .community-connect-section h2 {
+    font-size: 2rem !important;
+  }
+  
+  .stat-card {
+    margin-bottom: 1rem;
+  }
+  
+  .social-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .community-bg-elements {
+    display: none;
+  }
+  
+  .cta-card {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .d-flex.gap-3 {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .community-connect-section {
+    padding: 4rem 0 !important;
+  }
+  
+  .community-connect-section h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  .social-card {
+    padding: 1.5rem !important;
+  }
+  
+  .stat-card {
+    padding: 1.5rem !important;
+  }
+}
+</style>

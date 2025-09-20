@@ -1,4 +1,867 @@
 {% include seo.html %}
 {% include navpage.html %}
-{% include book/starter.html %}
-{% include footerpage.html %}
+
+<!-- Books Collection Section -->
+<section id="books-collection" class="books-collection py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Our Book Collection</h2>
+            <p class="section-subtitle">Choose your learning path with our expertly crafted Qt books</p>
+        </div>
+
+        <!-- Books Grid -->
+        <div class="books-grid">
+            {% for book in site.data.books.books %}
+            {% unless book.status == "planning" %}
+            <div class="book-card-modern" data-aos="fade-up" data-aos-delay="{{ forloop.index | minus: 1 | times: 100 }}">
+                <div class="book-card-inner">
+                    <!-- Book Status Badge -->
+                    {% assign status_color = site.data.books.status_config[book.status].color %}
+                    {% assign status_icon = site.data.books.status_config[book.status].icon %}
+                    {% assign status_label = site.data.books.status_config[book.status].label %}
+                    
+                    <div class="status-badge" style="background: {{ status_color }};">
+                        <i class="{{ status_icon }}"></i>
+                        <span>{{ status_label }}</span>
+                    </div>
+                    
+                    <!-- Book Cover -->
+                    <div class="book-cover-section">
+                        <div class="book-cover-container">
+                            {% if book.status == "coming_up" %}
+                                <div style="position: relative; display: inline-block;">
+                                    <img src="{{ book.cover }}" alt="{{ book.title }}" class="book-cover-img" style="filter: brightness(0.8);">
+                                    
+                                    <!-- Progress Bar for Coming Up Books -->
+                                    <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 80%; background: rgba(255,255,255,0.2); height: 4px; border-radius: 2px;">
+                                        <div style="width: {{ book.progress }}%; height: 100%; background: {{ status_color }}; border-radius: 2px;"></div>
+                                    </div>
+                                    <div style="position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); color: {{ status_color }}; font-size: 0.8rem; font-weight: 600; white-space: nowrap;">{{ book.progress }}% Complete</div>
+                                </div>
+                            {% else %}
+                                <img src="{{ book.cover }}" alt="{{ book.title }}" class="book-cover-img">
+                            {% endif %}
+                            
+                            <div class="book-overlay">
+                                <div class="book-meta">
+                                    <span class="book-category">{{ book.category }}</span>
+                                    <span class="book-level">{{ book.level }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Book Content -->
+                    <div class="book-content-section">
+                        <div class="book-header">
+                            <h3 class="book-title">{{ book.title }}</h3>
+                            <p class="book-description">{{ book.description }}</p>
+                        </div>
+                        
+                        <!-- Rating for Available Books -->
+                        {% if book.status == "available" and book.rating %}
+                        <div class="book-rating mb-3" style="color: #ffd700;">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span style="color: #6c757d; margin-left: 0.5rem; font-size: 0.9rem;">({{ book.rating }}/5)</span>
+                        </div>
+                        {% endif %}
+
+                        <!-- Timeline for Coming Up Books -->
+                        {% if book.status == "coming_up" %}
+                        <div class="coming-up-info mb-3" style="background: rgba(243, 156, 18, 0.1); border: 1px solid rgba(243, 156, 18, 0.3); border-radius: 10px; padding: 1rem;">
+                            <div style="color: {{ status_color }}; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">
+                                <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>Expected: {{ book.expected_date }}
+                            </div>
+                            <div style="color: #6c757d; font-size: 0.85rem;">Get notified when available</div>
+                        </div>
+                        {% endif %}
+                        
+                        <!-- Book Highlights -->
+                        <div class="book-highlights">
+                            {% for highlight in book.highlights limit:3 %}
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>{{ highlight }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        
+                        <!-- Book Stats -->
+                        <div class="book-stats">
+                            <div class="stat">
+                                <i class="fas fa-file-alt"></i>
+                                <span>{{ book.pages }}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-list"></i>
+                                <span>{{ book.chapters }}</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-download"></i>
+                                <span>{{ book.formats | join: ', ' }}</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Book Footer -->
+                        <div class="book-footer">
+                            <div class="book-price">
+                                {% if book.status == "coming_up" %}
+                                    <span class="price-label">{{ book.price }}</span>
+                                {% else %}
+                                    <span class="price">{{ book.price }}</span>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="book-action">
+                                {% if book.status == "coming_up" %}
+                                    <a href="/#newsletter" class="btn btn-notify">
+                                        <i class="fas fa-bell me-2"></i>
+                                        Get Notified
+                                    </a>
+                                {% else %}
+                                    <a href="{{ book.gumroad_link }}" target="_blank" class="btn btn-get-book">
+                                        <span>Get This Book</span>
+                                        <i class="fas fa-external-link-alt ms-2"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endunless %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Customer Testimonials Section -->
+<section class="testimonials-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title">What Our Readers Say</h2>
+                <p class="section-subtitle">Join thousands of developers who've mastered Qt with our books</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            {% for testimonial in site.data.books.testimonials.featured limit:3 %}
+            <div class="col-lg-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating mb-3">
+                        {% for i in (1..5) %}
+                        <i class="fas fa-star{% if i > testimonial.rating %} text-muted{% endif %}"></i>
+                        {% endfor %}
+                    </div>
+                    <p class="testimonial-content">"{{ testimonial.content }}"</p>
+                    <div class="testimonial-author">
+                        <strong>{{ testimonial.name }}</strong>
+                        <small class="text-muted d-block">{{ testimonial.role }}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<style>
+/* Modern Books Page Styles */
+:root {
+    --primary-green: #15ba29;
+    --secondary-green: #0d8a1f;
+    --dark-green: #0a6818;
+    --light-gray: #f8f9fa;
+    --medium-gray: #6c757d;
+    --dark-gray: #343a40;
+    --white: #ffffff;
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 15px 35px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --border-radius-lg: 20px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Books Collection Section */
+.books-collection {
+    background: var(--white);
+    position: relative;
+    padding-top: 4rem;
+    margin-top: 80px; /* Account for fixed navbar */
+}
+
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+/* Books Grid */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Modern Book Card */
+.book-card-modern {
+    position: relative;
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    border: 1px solid #e9ecef;
+}
+
+.book-card-modern:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.book-card-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Status Badges */
+.status-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-medium);
+    color: white;
+}
+
+/* Book Cover Section */
+.book-cover-section {
+    position: relative;
+    height: 280px;
+    background: linear-gradient(135deg, var(--light-gray), #e9ecef);
+    overflow: hidden;
+}
+
+.book-cover-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.book-cover-img {
+    max-width: 70%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition);
+}
+
+.book-card-modern:hover .book-cover-img {
+    transform: scale(1.05);
+}
+
+.book-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.8));
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.book-card-modern:hover .book-overlay {
+    opacity: 1;
+}
+
+.book-meta {
+    color: var(--white);
+}
+
+.book-category {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.book-level {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* Book Content Section */
+.book-content-section {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-header {
+    margin-bottom: 1.5rem;
+}
+
+.book-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.book-description {
+    color: var(--medium-gray);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Book Highlights */
+.book-highlights {
+    margin-bottom: 2rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.highlight-item i {
+    color: var(--primary-green);
+    font-size: 0.8rem;
+}
+
+.highlight-item span {
+    color: var(--dark-gray);
+}
+
+/* Book Stats */
+.book-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: var(--border-radius);
+    flex-wrap: wrap;
+}
+
+.book-stats .stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--medium-gray);
+}
+
+.book-stats .stat i {
+    color: var(--primary-green);
+}
+
+/* Book Footer */
+.book-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.book-price {
+    flex: 1;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.price-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--medium-gray);
+    font-style: italic;
+}
+
+.book-action {
+    flex: 1;
+    text-align: right;
+}
+
+/* Book Action Buttons */
+.btn-get-book {
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+    color: var(--white);
+    border: 2px solid transparent;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    min-width: 180px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+}
+
+.btn-get-book:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+    color: var(--white);
+    background: linear-gradient(135deg, var(--secondary-green), var(--dark-green));
+}
+
+.btn-notify {
+    background: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    min-width: 180px;
+    text-align: center;
+}
+
+.btn-notify:hover {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Newsletter Section */
+.newsletter {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v20h40V20H20z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+
+.newsletter-content {
+    position: relative;
+    z-index: 2;
+}
+
+.newsletter-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.3;
+}
+
+.newsletter-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.newsletter-book-preview {
+    text-align: center;
+}
+
+.newsletter-book-image {
+    position: relative;
+    display: inline-block;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.newsletter-book-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.newsletter-book-image:hover img {
+    transform: scale(1.05);
+}
+
+.book-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: var(--dark-gray);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-medium);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.newsletter-benefits {
+    margin-bottom: 2rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.benefit-item i {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+.btn-newsletter-cta {
+    background: var(--white);
+    color: var(--primary-green);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: var(--shadow-medium);
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.btn-newsletter-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-heavy);
+    color: var(--primary-green);
+    background: #f8f9fa;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-text {
+    flex: 1;
+}
+
+.btn-main-text {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.btn-icon {
+    background: var(--primary-green);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.btn-newsletter-cta:hover .btn-icon {
+    background: var(--secondary-green);
+    transform: rotate(360deg);
+}
+
+.newsletter-privacy {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: var(--light-gray);
+    position: relative;
+}
+
+.testimonials-section .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+.testimonials-section .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    border: 1px solid #e9ecef;
+    height: 100%;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.testimonial-rating {
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-rating i {
+    color: #ffc107;
+    font-size: 1.1rem;
+    margin-right: 0.25rem;
+}
+
+.testimonial-content {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    border-top: 1px solid #e9ecef;
+    padding-top: 1rem;
+}
+
+.testimonial-author strong {
+    color: var(--dark-gray);
+    font-weight: 600;
+}
+
+.testimonial-author small {
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+}
+
+/* Background Pattern for Newsletter */
+.bg-primary.background-pattern::before {
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v20h40V20H20z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .books-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .stat-card {
+        min-width: 200px;
+    }
+    
+    .books-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .book-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .book-action {
+        text-align: center;
+    }
+    
+    .newsletter-title {
+        font-size: 2rem;
+    }
+    
+    .newsletter-benefits .row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .book-card-modern {
+        margin: 0 0.5rem;
+    }
+    
+    .book-content-section {
+        padding: 1.5rem;
+    }
+    
+    .newsletter-title {
+        font-size: 1.75rem;
+    }
+    
+    .btn-newsletter-cta {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+/* Smooth Scrolling for Newsletter Link */
+html {
+    scroll-behavior: smooth;
+}
+</style>
+
+<script>
+// Add some interactive effects
+document.addEventListener('DOMContentLoaded', function() {
+    // Add hover effects to book cards
+    const bookCards = document.querySelectorAll('.book-card-modern');
+    
+    bookCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Handle "Get Notified" button clicks
+    const notifyButtons = document.querySelectorAll('.btn-notify');
+    
+    notifyButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Navigate to home page and scroll to newsletter (domain-agnostic)
+            window.location.href = '/#newsletter';
+        });
+    });
+    
+    // Animate stats on scroll
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe stat cards
+    document.querySelectorAll('.stat-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+    });
+    
+    // Observe book cards
+    document.querySelectorAll('.book-card-modern').forEach((card, index) => {
+        // No animation delays - books appear instantly
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+    });
+});
+</script>
+</style>
+
+{% include footer.html %}

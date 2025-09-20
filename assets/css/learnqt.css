@@ -15,10 +15,6 @@ body,html{
 .btn-greenos,.btn-greenoss{
     background-color:#15ba29
 }
-.nav-item:hover{
-    background-color:#8ebe30;
-    color:#fff
-}
 .nav-item{
     text-align: center;
 }
@@ -126,12 +122,6 @@ a{
 .nav-item{
     border-bottom:1px solid #000;
     text-align: center;
-}
-.nav-link {
-    color: #fff !important;
-}
-.nav-item:hover .nav-link {
-    color: #000 !important;
 }
 .img-cards{
     border-radius:5px 5px 0 0

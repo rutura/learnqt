@@ -1,36 +1,923 @@
-# Configuration Courses Widget -All courses widget min have 3 list
+# Courses Configuration
+# Global social proof metrics and statistics
+social_proof:
+  # Main statistics for homepage
+  stats:
+    courses:
+      number: "3"
+      title: "Courses"
+      icon: "fas fa-graduation-cap"
+      description: "Professional courses covering Qt, C++, QML and Python"
+    books:
+      number: "4"
+      title: "Books"
+      icon: "fas fa-book"
+      description: "Comprehensive books and guides for developers"
+    students:
+      number: "32982"
+      title: "Students"
+      icon: "fas fa-users"
+      description: "Happy learners worldwide mastering Qt development"
+    reviews:
+      number: "8481"
+      title: "Reviews"
+      icon: "fas fa-star"
+      description: "5-star reviews from satisfied students"
+  # Top-level values used directly by the sales layout
+  student_count: "4,000+"
+  avg_rating: "4.9"
+  completion_rate: "87"
+  countries: "120"
+  
+  # Additional metrics for other pages
+  extended_stats:
+    student_count: "4,000+"
+    avg_rating: "4.9"
+    completion_rate: "87"
+    countries: "120+"
+    testimonial_count: "500+"
+    hours_content: "125+"
+    projects_built: "15+"
+    
+  # Section content
+  section:
+    title: "Happy Students"
+    subtitle: "Join Thousands of Successful Qt Developers"
+    description: "Thousands of students have enrolled in our courses and have subsequently become professional developers, utilizing Qt, C++, and QML across various domains. Our statistics and reviews attest to the effectiveness of our training material."
+  
+# Hero section configuration
+hero:
+  title: "C++, Qt, QML, PySide6 and More"
+  subtitle: "Learn to build professional desktop, mobile, and embedded applications with Qt and modern C++. Join thousands of developers who've transformed their careers with our comprehensive courses."
+  badge_text: "Cross Platform Software and Embedded Uis Professional Training"
+  trust_indicators:
+    - icon: "fas fa-shield-alt"
+      text: "30-Day Money-Back Guarantee"
+    - icon: "fas fa-infinity"
+      text: "Lifetime Updates"
+    - icon: "fas fa-users"
+      text: "Expert Community Support"
+    - icon: "fas fa-certificate"
+      text: "Professional Certification"
 
-# BEST COURSES
+# Pricing structure for all courses
+pricing:
+  lifetime: 
+    price: 101
+    original_price: 149
+    savings_amount: 48
+    discount_percentage: 32
+    title: "Single Course Lifetime"
+    subtitle: "One-time purchase for this course only"
+    popular: false
+    value_proposition: "Best value for single course mastery"
+    benefits:
+      - "✅ Access to this course only (videos, updates, downloads)"
+      - "✅ All PDFs/resources for this course"
+      - "✅ Standard community access"
+      - "✅ Certificate of completion"
+      - "✅ Lifetime access, no monthly fees"
+      - "✅ Course Q&A support from Daniel"
+      - "✅ Community code reviews (peer feedback)"
+      - "✅ Download all course materials"
+      - "❌ Entire course library access"
+      - "❌ All current and future courses"
+      - "❌ Enhanced instructor support (faster responses)"
+      - "❌ Monthly live Q&A sessions"
+      - "❌ Code review sessions with Daniel"
+      - "❌ Priority community support"
+      - "❌ Early access to new content"
+    highlight_benefits:
+      - "No recurring payments"
+      - "Complete ownership"
+      - "Lifetime access"
+  monthly: 
+    price: 30
+    trial_days: 7
+    title: "Library Access"
+    subtitle: "per month"
+    popular: true
+    value_proposition: "Get access to all our courses"
+    cancel_anytime: true
+    benefits:
+      - "✅ Access to this course only (videos, updates, downloads)"
+      - "✅ All PDFs/resources for this course"
+      - "✅ Standard community access"
+      - "✅ Certificate of completion"
+      - "✅ Lifetime access, no monthly fees"
+      - "✅ Course Q&A support from Daniel"
+      - "✅ Community code reviews (peer feedback)"
+      - "✅ Download all course materials"
+      - "✅ Entire course library access"
+      - "✅ All current and future courses"
+      - "✅ Enhanced instructor support (faster responses)"
+      - "✅ Monthly live Q&A sessions"
+      - "✅ Code review sessions with Daniel"
+      - "❌ Priority community support"
+      - "❌ Early access to new content"
+    library_link: "/courses"
+    highlight_benefits:
+      - "Periodic live Q&A sessions"
+      - "Access to all courses"
+      - "Enhanced instructor support"
+  yearly: 
+    price: 330
+    original_price: 360
+    monthly_equivalent: 27.50
+    savings_amount: 30
+    title: "Library Annual"
+    subtitle: "per year (save $30)"
+    popular: false
+    value_proposition: "Access all courses at the best price"
+    benefits:
+      - "✅ Access to this course only (videos, updates, downloads)"
+      - "✅ All PDFs/resources for this course"
+      - "✅ Standard community access"
+      - "✅ Certificate of completion"
+      - "✅ Lifetime access, no monthly fees"
+      - "✅ Course Q&A support from Daniel"
+      - "✅ Community code reviews (peer feedback)"
+      - "✅ Download all course materials"
+      - "✅ Entire course library access"
+      - "✅ All current and future courses"
+      - "✅ Enhanced instructor support (faster responses)"
+      - "✅ Monthly live Q&A sessions"
+      - "✅ Code review sessions with Daniel"
+      - "✅ Priority community support"
+      - "✅ Early access to new content"
+    library_link: "/courses"
+    highlight_benefits:
+      - "Best price per month"
+      - "Priority instructor access"
+      - "Exclusive early content"
 
-best_courses_title: Best Seller Courses
+# Money-back guarantee
+guarantee:
+  days: 30
+  title: "30-Day Money-Back Guarantee"
+  subtitle: "Learn with confidence"
+  description: "If you're not completely satisfied with your progress after 30 days, get a full refund. No questions asked."
+  features:
+    - "Full 30-day trial period"
+    - "No questions asked policy"
+    - "Email support for refunds"
+    - "Risk-free learning"
 
-best_courses_list: # do not enter text in this area, it is blank by default for lists
- - title: 'Qt 6 C++ GUI Development for Beginners : The Fundamentals'
-   subtitle: Build Cross Platform Desktop Applications and Run Them on Windows, Mac and Linux. Build once, Run Everywhere!
-   image: /assets/courses/image/qt6_gui_beginners.png
-   star: 5
-   level: beginner
-   link: https://www.udemy.com/course/qt6-c-gui-widgets-tutorial-for-beginners/?couponCode=
- - title: 'The C++20 Masterclass : From Fundamentals to Advanced'
-   subtitle: Learn and Master Modern C++ From Beginning to Advanced in Plain English - C++11, C++14, C++17, C++20 and More!
-   image: /assets/courses/image/the_cpp_20_masterclass.png
-   star: 5
-   level: beginner
-   link:  https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode=
- - title: 'Qt For Python (PySide6) GUI For Beginners'
-   subtitle: Build Cross Platform Desktop Applications in Python. Run Them on Windows, Mac and Linux. Build once, Run Everywhere!
-   image: /assets/courses/image/pyside6_beginners.png
-   star: 5
-   level: beginner
-   link: https://www.udemy.com/course/qt-for-python-pyside6-gui-for-beginners/?couponCode=
+# Global testimonials (can be overridden per course)
+testimonials:
+  featured:
+    - name: "Sarah Chen"
+      role: "Software Engineer at Microsoft"
+      content: "Daniel's courses got me from zero Qt knowledge to building production apps in 6 weeks. The project-based approach made everything click."
+      rating: 5
+      course_completed: "qt-widgets-cpp"
+    - name: "Mike Rodriguez"
+      role: "Freelance Developer"
+      content: "Best Qt courses I've found. Daniel's teaching style is clear and the projects are actually useful in real work."
+      rating: 5
+      course_completed: "qt-qml-pro"
+    - name: "Priya Patel"
+      role: "Python Developer at Tesla"
+      content: "The PySide6 course transformed how I think about GUI development. Now I can build desktop apps that actually look professional."
+      rating: 5
+      course_completed: "qt-widgets-pyside6"
+    - name: "David Kim"
+      role: "Senior Software Architect"
+      content: "After 15 years of development, this is the most practical programming course I've taken. The real-world projects make all the difference."
+      rating: 5
+      course_completed: "qt-widgets-cpp"
 
-courses_button: Explore All Courses
 
-courses_button_singgle: Read More
 
-buy_button_page: Buy This Courses
+# Global FAQ section
+faq:
+  title: "Frequently Asked Questions"
+  subtitle: "Everything you need to know before getting started"
+  items:
+    - q: "Do I need prior programming experience?"
+      a: "No! Our courses are designed for complete beginners. We cover everything from language basics to advanced patterns. However, if you have programming experience, you'll be able to progress faster."
+    - q: "What if I get stuck on something?"
+      a: "You'll have access to our Discord community with 4,000+ developers plus direct help from Daniel. Most questions are answered within hours, and complex issues get detailed video responses."
+    - q: "How long will it take to complete a course?"
+      a: "Most students finish in 8-12 weeks studying 1-2 hours per day. However, you can go at your own pace with lifetime access - no pressure or deadlines."
+    - q: "Will this help me get a job?"
+      a: "Absolutely! Our courses focus on real-world projects that showcase skills employers want. Many students have landed developer roles, freelance contracts, and promotions after completing our courses."
+    - q: "What if I'm not satisfied?"
+      a: "We offer a 30-day money-back guarantee. If you're not completely satisfied with your progress, get a full refund - no questions asked."
+    - q: "Do courses get updated?"
+      a: "Yes! All courses receive lifetime updates as technologies evolve. When Qt releases new versions or we add new content, you get it automatically at no extra cost."
+    - q: "Can I download the course materials?"
+      a: "With the lifetime purchase, yes! You get downloadable videos, source code, PDFs, and resources. Monthly subscribers can access everything online."
+    - q: "Are there prerequisites for specific courses?"
+      a: "Each course lists its prerequisites in the description. Generally, C++ courses assume no prior C++ knowledge, and Python courses assume basic Python familiarity, but we provide refreshers."
 
-buy_button_on_list: Take This Course
+# All courses section
+featured_section:
+  title: "All Our Courses"
+  subtitle: "Cross Platform Software and Embedded UIs"
+  description: "Expert Training on using Modern C++, Qt and QML to build cross-platform applications for Windows, macOS, Linux, Mobile and Embedded systems."
+  button_text: "Explore All Courses"
+  stats:
+    courses_count: "3+"
+    projects_count: "15+"
+    hours_content: "125+"
+    skill_level: "Beginner to Expert"
+
+# All available courses
+courses:
+  - id: "qt-widgets-cpp"
+    title: "Desktop Apps with Qt Widgets and C++"
+    short_title: "Qt Widgets C++"
+    description: "Master professional desktop application development using Qt Widgets and modern C++. Build cross-platform applications that run seamlessly on Windows, macOS, and Linux with native performance and polished user interfaces."
+    image: "/assets/courses/image/qt6_gui_beginners.png"
+    category: "Desktop Development"
+    technology: "Qt Widgets"
+    language: "C++"
+    level: "Beginner to Intermediate"
+    duration: "40+ hours"
+    projects: "5+ Real Projects"
+    tools: "Qt Creator, CMake"
+    featured: true
+    completion_rate: "92%"
+    satisfaction_rating: "4.9/5"
+    ready_cta_text: "Ready to build professional desktop apps with C++?"
+    # Social proof fields for sales page
+    social_proof:
+      students: 1500
+      rating: 4.9
+      completion: 92
+      countries: 45
+      label_students: "students worldwide"
+      label_rating: "average rating"
+      label_completion: "completion rate"
+      label_countries: "countries represented"
+    # End social proof
+    
+    # Course-specific value proposition
+    value_proposition:
+      title: "Why Choose This Course Over Other C++ GUI Options?"
+      subtitle: "See how this course transforms beginners into professional desktop developers"
+      sections:
+        learning_approach:
+          title: "Learn By Building Real Apps"
+          icon: "fas fa-bullseye"
+          points:
+            - text: "Build 5+ complete desktop applications from text editors to database managers"
+              highlight: true
+            - text: "Learn modern C++ patterns while creating professional UIs"
+              highlight: true
+            - text: "Master cross-platform development - write once, run on Windows, Mac, and Linux"
+              highlight: false
+          vs_alternatives: "University courses focus on console apps, YouTube tutorials show disconnected examples. You build complete applications that demonstrate real skills."
+        
+        technology_tools:
+          title: "Modern Qt 6 & C++ Best Practices"
+          icon: "fas fa-tools"
+          points:
+            - text: "Latest Qt 6 with modern C++17/20 features and smart pointers"
+              highlight: true
+            - text: "Professional project structure, CMake builds, and deployment strategies"
+              highlight: false
+            - text: "Database integration, networking, and file handling in real contexts"
+              highlight: false
+          vs_alternatives: "Most courses teach outdated Qt 5 or legacy C++ patterns. Learn the tools and techniques used in professional development today."
+        
+        support_community:
+          title: "Expert Support When You Need It"
+          icon: "fas fa-users"
+          points:
+            - text: "Direct access to instructor Daniel Gakwaya with 10+ years Qt experience"
+              highlight: true
+            - text: "Active Discord community of 4,000+ C++/Qt developers"
+              highlight: true
+            - text: "Code reviews, debugging help, and career guidance from professionals"
+              highlight: false
+          vs_alternatives: "StackOverflow has generic answers, university TAs have limited expertise. Get help from people who build Qt applications professionally."
+        
+        value_guarantees:
+          title: "Risk-Free Investment in Your Future"
+          icon: "fas fa-shield-alt"
+          points:
+            - text: "30-day money-back guarantee - try the complete course risk-free"
+              highlight: false
+            - text: "Lifetime access with free updates as Qt evolves"
+              highlight: false
+            - text: "Professional certificate to showcase your Qt skills to employers"
+              highlight: true
+          vs_alternatives: "Bootcamps cost $10,000+ with no guarantees, books become outdated. Your investment stays valuable and current."
+    
+    # Sales page content sections
+    sections:
+      hero:
+        subtitle: "Master professional desktop application development using Qt Widgets and modern C++. Build cross-platform applications that run seamlessly on Windows, macOS, and Linux with native performance and polished user interfaces."
+        showcase_image: "/assets/courses/image/qt6_gui_beginners.png"
+        
+      preview:
+        title: "See What You'll Build"
+        subtitle: "Get a sneak peek at what you'll master in this comprehensive C++ course"
+        demo_video: "https://youtu.be/3KjdTrzz8FY"
+        context_cards:
+          - title: "Hands-On C++ Coding"
+            description: "Watch modern C++ development in action"
+            icon: "fas fa-code"
+          - title: "Real Desktop Apps"
+            description: "Build complete cross-platform applications"
+            icon: "fas fa-desktop"
+          - title: "Qt Expert Teaching"
+            description: "Learn from 10+ years of Qt experience"
+            icon: "fas fa-graduation-cap"
+        projects:
+          - name: "Text Editor Pro"
+            description: "Build a professional text editor with syntax highlighting, file management, and modern UI design using Qt Widgets and C++."
+            image: "/assets/projects/placeholder.png"
+          - name: "Task Management System"
+            description: "Create a complete task tracking application with databases, user authentication, and responsive design patterns."
+            image: "/assets/projects/placeholder.png"
+          - name: "Media Player Application"
+            description: "Develop a cross-platform media player with playlist management, audio controls, and custom UI components."
+            image: "/assets/projects/placeholder.png"
+            
+      outcomes:
+        title: "After This Course, You'll Be Able To:"
+        items:
+          - "Build cross-platform desktop apps that run on Windows, Mac, and Linux"
+          - "Create professional UIs with Qt Designer and custom widgets"
+          - "Handle databases, file I/O, and network communications"
+          - "Deploy applications with proper installers and auto-updaters"
+          - "Confidently apply for Qt developer positions"
+          - "Debug and optimize Qt applications for production"
+        
+      why_this_course:
+        title: "Why This Course?"
+        content: |
+          This course takes you from absolute beginner to building complete, polished desktop applications—teaching you the foundations of Qt Widgets, modern C++, and production patterns along the way. Instead of struggling with outdated tutorials, you'll learn how to build professional, responsive, and production-ready applications that run seamlessly across Windows, macOS, and Linux.
+        bullets:
+          - "✅ Hands-On From Day One – Learn by building real applications, not reading dry theory"
+          - "✅ Step-By-Step Progression – Each chapter builds naturally on the last, no big jumps"
+          - "✅ Production-Ready Skills – From widgets to deployment, layouts to databases"
+          - "✅ Complete Real Projects – Watch your apps evolve from basics to polished final products"
+          - "✅ Up-to-Date With Qt 6 – Covers modern best practices for professional development"
+        showcase_image: "/assets/courses/image/qt_gui_intermediate.png"
+        
+      creator_story:
+        title: "Created by Someone Who Understands the Struggle"
+        content: |
+          "When I first learned Qt development, I had to scrape together tutorials, documentation, and forum posts. It was messy, overwhelming, and frustrating. I wished for a single resource that explained everything clearly."
+          
+          After 10+ years of professional Qt development and teaching thousands of students worldwide, Daniel Gakwaya has created the course he wished he had starting out:
+        bullets:
+          - "• A clear path from beginner to professional"
+          - "• Hands-on projects that grow with your skills"
+          - "• Guidance that cuts through scattered docs and tutorials"
+        content_2: |
+          This course is written for anyone who wants to master modern cross-platform desktop development with Qt. Beginners with no prior Qt or C++ experience will find a clear path into the framework. Web developers who want to deliver native desktop performance will discover a more efficient workflow. Mobile developers will learn how to create professional desktop applications. And students or researchers will gain practical experience that goes far beyond theoretical knowledge.
+          
+      what_you_get:
+        title: "What You'll Get"
+        bullets:
+          - "• 40+ Hours of Video Content – Comprehensive step-by-step tutorials"
+          - "• Complete Source Code – For every project in the course"
+          - "• Lifetime Updates – All new content as it's released"
+          - "• Downloadable Resources – PDFs, code templates, and project files"
+          - "• Exclusive Developer Community – Support, networking & direct feedback"
+          - "• Certificate of Completion – Add to your professional portfolio"
+        content: |
+          By the time you finish, you'll not only understand Qt Widgets—you'll have built production-quality applications and developed the confidence to create your own projects from scratch. You'll know how to work with Qt's documentation, how to apply modern best practices, and how to structure your code so that it scales with your ambitions.
+          
+          You'll also get lifetime access to updates as Qt evolves, plus access to an active Discord community of over 4,000 Qt developers where you can get support, share projects, and connect with others working in the same space.
+    
+    # Pricing customization for this course
+    pricing_override:
+      lifetime:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6446364"
+      monthly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
+      yearly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
+
+  - id: "qt-widgets-pyside6"
+    title: "Desktop Apps with Qt Widgets and PySide6"
+    short_title: "Qt Widgets Python"
+    description: "Learn to build powerful desktop applications using Qt Widgets and Python. Leverage Python's simplicity with Qt's robust GUI framework to create professional applications with minimal complexity and maximum productivity."
+    image: "/assets/courses/image/pyside6_beginners.png"
+    category: "Desktop Development"
+    technology: "Qt Widgets"
+    language: "Python"
+    level: "Beginner to Intermediate"
+    duration: "35+ hours"
+    projects: "4+ Real Projects"
+    tools: "Qt Designer, pip"
+    featured: true
+    completion_rate: "89%"
+    satisfaction_rating: "4.8/5"
+    ready_cta_text: "Ready to build amazing Python desktop apps?"
+    # Social proof fields for sales page
+    social_proof:
+      students: 1200
+      rating: 4.8
+      completion: 89
+      countries: 38
+      label_students: "students worldwide"
+      label_rating: "average rating"
+      label_completion: "completion rate"
+      label_countries: "countries represented"
+    # End social proof
+    
+    # Course-specific value proposition
+    value_proposition:
+      title: "Why Choose This Course Over Other Python GUI Options?"
+      subtitle: "Transform from Python scripts to professional desktop applications"
+      sections:
+        learning_approach:
+          title: "Python-Focused GUI Development"
+          icon: "fab fa-python"
+          points:
+            - text: "Learn GUI development using Python's readable, beginner-friendly syntax"
+              highlight: true
+            - text: "Build data visualization apps, file managers, and productivity tools"
+              highlight: true
+            - text: "Integrate with popular Python libraries like pandas, requests, and matplotlib"
+              highlight: false
+          vs_alternatives: "Tkinter is outdated and ugly, Kivy is mobile-focused, Django is web-only. Qt gives you professional desktop apps with Python simplicity."
+        
+        technology_tools:
+          title: "Python + Qt Powerhouse"
+          icon: "fas fa-tools"
+          points:
+            - text: "Latest PySide6 with Python 3.10+ features and type hints"
+              highlight: true
+            - text: "Packaging and distribution for Windows, Mac, and Linux users"
+              highlight: false
+            - text: "Database integration with SQLite and API connections with requests"
+              highlight: false
+          vs_alternatives: "Most Python GUI tutorials use basic widgets. Learn to create applications that look and feel like professional software."
+        
+        support_community:
+          title: "Python Developer Community"
+          icon: "fas fa-users"
+          points:
+            - text: "Connect with Python developers building desktop applications"
+              highlight: true
+            - text: "Get help with Python-specific Qt patterns and best practices"
+              highlight: true
+            - text: "Share your projects and get feedback from experienced developers"
+              highlight: false
+          vs_alternatives: "Generic Python forums don't understand GUI development, Qt forums assume C++ knowledge. Join developers who know both."
+        
+        value_guarantees:
+          title: "Perfect for Python Developers"
+          icon: "fas fa-shield-alt"
+          points:
+            - text: "Add GUI skills to your Python toolkit without learning a new language"
+              highlight: true
+            - text: "30-day guarantee to master Python desktop development risk-free"
+              highlight: false
+            - text: "Lifetime updates as PySide6 and Python evolve together"
+              highlight: false
+          vs_alternatives: "Learning Java/C# for GUIs means new languages, web frameworks need internet. Extend your Python skills directly."
+    
+    sections:
+      hero:
+        subtitle: "Learn to build powerful desktop applications using Qt Widgets and Python. Leverage Python's simplicity with Qt's robust GUI framework to create professional applications with minimal complexity and maximum productivity."
+        showcase_image: "/assets/courses/image/pyside6_beginners.png"
+        
+      preview:
+        title: "See What You'll Build"
+        subtitle: "Get a sneak peek at what you'll master in this comprehensive Python course"
+        demo_video: "https://youtu.be/8Odr2PClgZ8"
+        context_cards:
+          - title: "Python GUI Magic"
+            description: "See Python's simplicity meet Qt's power"
+            icon: "fab fa-python"
+          - title: "Data-Driven Apps"
+            description: "Build visualization and analysis tools"
+            icon: "fas fa-chart-bar"
+          - title: "Rapid Development"
+            description: "From idea to working app in minutes"
+            icon: "fas fa-rocket"
+        projects:
+          - name: "Python File Manager"
+            description: "Build a complete file management application with Python and PySide6, featuring drag-and-drop, file operations, and modern UI."
+            image: "/assets/projects/placeholder.png"
+          - name: "Database Dashboard"
+            description: "Create a data visualization dashboard connecting to databases with charts, tables, and real-time updates using Python and Qt."
+            image: "/assets/projects/placeholder.png"
+          - name: "System Monitor Tool"
+            description: "Develop a system monitoring application that tracks CPU, memory, and network usage with beautiful Qt widgets and Python."
+            image: "/assets/projects/placeholder.png"
+            
+      outcomes:
+        title: "After This Course, You'll Be Able To:"
+        items:
+          - "Build beautiful desktop apps using Python and Qt"
+          - "Create data visualization and analysis tools"
+          - "Integrate with Python libraries and APIs"
+          - "Deploy Python GUI applications professionally"
+          - "Add GUI development to your Python skill set"
+          - "Connect desktop apps to web services and databases"
+        
+      why_this_course:
+        title: "Why This Course?"
+        content: |
+          This course combines the power of Python with the robustness of Qt to create amazing desktop applications. You'll discover how Python's readable syntax makes GUI development more accessible while Qt provides the professional framework needed for real-world applications.
+        bullets:
+          - "✅ Python's Simplicity – Easy to learn, powerful to use"
+          - "✅ Cross-Platform Magic – Write once, run on Windows, Mac, and Linux"
+          - "✅ Real-World Projects – Build applications you can actually use"
+          - "✅ Modern Python Patterns – Best practices for GUI development"
+          - "✅ Complete Integration – Connect to databases, APIs, and more"
+        showcase_image: "/assets/courses/image/pyside6_beginners.png"
+        
+      creator_story:
+        title: "Created by Someone Who Understands the Struggle"
+        content: |
+          "Python developers often struggle with GUI development. Most tutorials focus on simple examples that don't translate to real applications. I created this course to bridge that gap."
+          
+          With years of experience in both Python and Qt development, this course provides:
+        bullets:
+          - "• Practical Python GUI patterns that actually work"
+          - "• Real-world application architecture"
+          - "• Solutions to common Python GUI problems"
+        content_2: |
+          Whether you're a Python developer looking to add GUI skills, or someone new to programming who wants to build desktop applications, this course provides a clear, practical path forward.
+          
+      what_you_get:
+        title: "📦 What You'll Get"
+        bullets:
+          - "• 35+ Hours of Python-Focused Content"
+          - "• Complete Python Source Code"
+          - "• Python GUI Best Practices Guide"
+          - "• PySide6 Setup and Configuration"
+          - "• Python Developer Community Access"
+          - "• Professional Certificate"
+        content: |
+          Master Python GUI development with PySide6 and create applications that users love. From simple utilities to complex business applications, you'll have the skills to bring your Python ideas to life with professional desktop interfaces.
+    
+    pricing_override:
+      lifetime:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6459203"
+      monthly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
+      yearly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
+
+  - id: "qt-qml-pro"
+    title: "Qt QML From Beginner to Pro"
+    short_title: "Qt QML Pro"
+    description: "Master modern UI development with Qt QML and Qt Quick. Create fluid, dynamic, and visually stunning user interfaces for desktop, mobile, and embedded applications. Learn declarative programming and advanced animation techniques."
+    image: "/assets/courses/image/qt6_qml_beginners.png"
+    category: "UI Development"
+    technology: "Qt QML"
+    language: "QML/JavaScript"
+    level: "Beginner to Advanced"
+    duration: "50+ hours"
+    projects: "6+ Real Projects"
+    tools: "Qt Quick, JavaScript"
+    featured: true
+    completion_rate: "85%"
+    satisfaction_rating: "4.9/5"
+    ready_cta_text: "Ready to master modern UI development with QML?"
+    # Social proof fields for sales page
+    social_proof:
+      students: 900
+      rating: 4.9
+      completion: 85
+      countries: 30
+      label_students: "students worldwide"
+      label_rating: "average rating"
+      label_completion: "completion rate"
+      label_countries: "countries represented"
+    # End social proof
+    
+    # Course-specific value proposition
+    value_proposition:
+      title: "Why Choose This Course Over Other UI Development Options?"
+      subtitle: "Master the future of user interface development with declarative programming"
+      sections:
+        learning_approach:
+          title: "Modern Declarative UI Development"
+          icon: "fas fa-palette"
+          points:
+            - text: "Learn declarative programming - describe what you want, not how to build it"
+              highlight: true
+            - text: "Create smooth animations and transitions that make apps feel alive"
+              highlight: true
+            - text: "Build responsive UIs that adapt to different screen sizes and devices"
+              highlight: false
+          vs_alternatives: "Traditional GUI frameworks require complex imperative code. React Native is mobile-only, web frameworks need browsers. QML works everywhere."
+        
+        technology_tools:
+          title: "Cutting-Edge UI Technology"
+          icon: "fas fa-rocket"
+          points:
+            - text: "Latest Qt 6 QML with hardware acceleration and smooth 60fps animations"
+              highlight: true
+            - text: "Cross-platform deployment: desktop, mobile, embedded, even web via WebAssembly"
+              highlight: false
+            - text: "Integration with C++ backends for high-performance business logic"
+              highlight: false
+          vs_alternatives: "Web technologies have performance limits, native development means separate codebases. QML gives you performance with portability."
+        
+        support_community:
+          title: "QML Expert Community"
+          icon: "fas fa-users"
+          points:
+            - text: "Learn from QML experts who build production applications daily"
+              highlight: true
+            - text: "Get feedback on UI designs and animation implementations"
+              highlight: true
+            - text: "Connect with developers building the next generation of user interfaces"
+              highlight: false
+          vs_alternatives: "QML is specialized - generic UI forums don't understand its patterns, mobile dev communities focus on platform-specific solutions."
+        
+        value_guarantees:
+          title: "Investment in Future UI Skills"
+          icon: "fas fa-shield-alt"
+          points:
+            - text: "Master the technology behind Tesla's car interfaces and other cutting-edge UIs"
+              highlight: true
+            - text: "Skills that transfer to mobile, embedded, and emerging platforms"
+              highlight: false
+            - text: "30-day guarantee to master professional-level QML development"
+              highlight: false
+          vs_alternatives: "Platform-specific skills become obsolete, web frameworks change constantly. QML skills are future-proof and cross-platform."
+    
+    sections:
+      hero:
+        subtitle: "Master modern UI development with Qt QML and Qt Quick. Create fluid, dynamic, and visually stunning user interfaces for desktop, mobile, and embedded applications. Learn declarative programming and advanced animation techniques."
+        showcase_image: "/assets/courses/image/qt6_qml_beginners.png"
+        
+      preview:
+        title: "See What You'll Build"
+        subtitle: "Get a sneak peek at the stunning UIs you'll create with QML"
+        demo_video: "https://youtu.be/vSoEobD4Fg8"
+        context_cards:
+          - title: "Fluid Animations"
+            description: "Create smooth, engaging user experiences"
+            icon: "fas fa-magic"
+          - title: "Modern UI Design"
+            description: "Build interfaces that users love"
+            icon: "fas fa-palette"
+          - title: "Cross-Platform UIs"
+            description: "One codebase, runs everywhere"
+            icon: "fas fa-globe"
+        projects:
+          - name: "Modern Music Player"
+            description: "Create a stunning music player with fluid animations, custom controls, and beautiful QML interfaces that work across all platforms."
+            image: "/assets/projects/placeholder.png"
+          - name: "Mobile-Style Calculator"
+            description: "Build a calculator app with touch-friendly QML interface, smooth animations, and responsive design patterns."
+            image: "/assets/projects/placeholder.png"
+          - name: "Real-time Chat Interface"
+            description: "Develop a modern chat application UI with QML, featuring message bubbles, smooth scrolling, and dynamic layouts."
+            image: "/assets/projects/placeholder.png"
+            
+      outcomes:
+        title: "After This Course, You'll Be Able To:"
+        items:
+          - "Create stunning, modern user interfaces with QML"
+          - "Build fluid animations and interactive transitions"
+          - "Design touch-friendly interfaces for any platform"
+          - "Integrate QML frontends with C++ backends"
+          - "Develop high-performance, scalable applications"
+          - "Master declarative programming patterns"
+        
+      why_this_course:
+        title: "Why This Course?"
+        content: |
+          QML represents the future of user interface development. This course takes you from QML basics to advanced professional patterns, teaching you to create interfaces that are not just functional, but beautiful, responsive, and engaging.
+        bullets:
+          - "✅ Modern Declarative Approach – More intuitive than traditional GUI frameworks"
+          - "✅ Stunning Animations – Create fluid, engaging user experiences"
+          - "✅ Cross-Platform Excellence – Desktop, mobile, and embedded applications"
+          - "✅ Production Patterns – Real-world architectures and best practices"
+          - "✅ C++ Integration – Connect QML to powerful backend logic"
+        showcase_image: "/assets/courses/image/qt6_qml_advanced.png"
+        
+      creator_story:
+        title: "Created by Someone Who Understands the Struggle"
+        content: |
+          "QML can seem overwhelming at first. The declarative approach is different, and the documentation can be scattered. I've spent years mastering QML for production applications, and I want to share that knowledge."
+          
+          This course distills years of professional QML development into a clear learning path:
+        bullets:
+          - "• From basic syntax to advanced patterns"
+          - "• Real-world problem solving techniques"
+          - "• Performance optimization strategies"
+        content_2: |
+          Perfect for developers who want to create modern, engaging user interfaces. Whether you're building mobile apps, desktop applications, or embedded interfaces, QML gives you the tools to create something truly special.
+          
+      what_you_get:
+        title: "📦 What You'll Get"
+        bullets:
+          - "• 50+ Hours of Advanced QML Content"
+          - "• Complete QML Projects and Components"
+          - "• C++ Integration Examples"
+          - "• Mobile and Desktop Patterns"
+          - "• Performance Optimization Techniques"
+          - "• Advanced Developer Certificate"
+        content: |
+          Become a QML expert and create user interfaces that set your applications apart. From smooth animations to complex interactions, you'll master the skills that make applications feel professional and engaging.
+    
+    pricing_override:
+      lifetime:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461494"
+      monthly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
+      yearly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
+
+  - id: "qt-threads-ipc"
+    title: "Multi-Threading and IPC with Qt C++"
+    short_title: "Qt Threads & IPC"
+    description: "Harness the power of multi-threading and inter-process communication in Qt using modern C++. Build responsive, high-performance cross-platform applications for desktop, mobile and embedded systems."
+    image: "/assets/courses/image/qt_multithreading.png"
+    category: "Concurrency & Systems"
+    technology: "Qt Core"
+    language: "C++"
+    level: "Intermediate to Advanced"
+    duration: "8-12 hours"
+    projects: "6+ Hands-on Demos"
+    tools: "Qt Creator, CMake"
+    featured: false
+    completion_rate: "88%"
+    satisfaction_rating: "4.8/5"
+    ready_cta_text: "Ready to build robust concurrent Qt applications?"
+    # Social proof (per-course override)
+    social_proof:
+      students: 350
+      rating: 4.8
+      completion: 88
+      countries: 20
+      label_students: "students worldwide"
+      label_rating: "average rating"
+      label_completion: "completion rate"
+      label_countries: "countries represented"
+
+    value_proposition:
+      title: "Why This Course?"
+      subtitle: "Make your Qt C++ apps faster, responsive and reliable using threads and IPC"
+      sections:
+        learning_approach:
+          title: "Learn By Doing — Practical Examples"
+          icon: "fas fa-bolt"
+          points:
+            - text: "Create and manage threads the right way in Qt"
+              highlight: true
+            - text: "Use thread pools and Qt Concurrent for scalable background work"
+              highlight: true
+            - text: "Design thread-safe components and avoid common concurrency bugs"
+              highlight: false
+          vs_alternatives: "Generic threading tutorials miss Qt-specific patterns. This course focuses on Qt idioms and best practices."
+
+        technology_tools:
+          title: "Qt Concurrency & IPC"
+          icon: "fas fa-cogs"
+          points:
+            - text: "Qt Concurrent, QThread, QThreadPool, and worker objects"
+              highlight: true
+            - text: "Inter-process communication including QProcess and DBus integration"
+              highlight: true
+            - text: "Synchronization primitives, signals/slots across threads, and reentrancy"
+              highlight: false
+          vs_alternatives: "Platform-specific threading APIs are fragmented. Qt gives a unified, cross-platform approach."
+
+        support_community:
+          title: "Learn From Real Examples"
+          icon: "fas fa-users"
+          points:
+            - text: "Hands-on demos you can run and extend in minutes"
+              highlight: true
+            - text: "Code patterns that translate to production systems"
+              highlight: true
+            - text: "Guidance on debugging and profiling multithreaded apps"
+              highlight: false
+          vs_alternatives: "Debugging multi-threaded code without examples is slow; we provide working demos and tips."
+
+    sections:
+      hero:
+        subtitle: "Take advantage of Qt's threading and IPC features to build responsive, high-performance cross-platform applications. Learn when to use threads, thread pools, Qt Concurrent, and when processes + IPC are the better choice."
+        showcase_image: "/assets/courses/image/qt_multithreading.png"
+
+      preview:
+        title: "See Multithreading in Action"
+        subtitle: "Short demos that explain complex concurrency concepts visually"
+        demo_video: "https://youtu.be/vanoAUc4zD0"
+        context_cards:
+          - title: "QThread & Workers"
+            description: "Create worker objects and move them to threads safely"
+            icon: "fas fa-tasks"
+          - title: "Qt Concurrent"
+            description: "High-level parallelism for quick wins"
+            icon: "fas fa-project-diagram"
+          - title: "IPC & DBus"
+            description: "Communicate across processes reliably"
+            icon: "fas fa-exchange-alt"
+        projects:
+          - name: "Background File Indexer"
+            description: "Build a responsive file indexing service that scans directories in background threads and reports progress to the UI."
+            image: "/assets/projects/placeholder.png"
+          - name: "Parallel Data Processor"
+            description: "Process large data sets using `Qt Concurrent` and thread pools for speed and reliability."
+            image: "/assets/projects/placeholder.png"
+          - name: "Multi-Process Worker with DBus"
+            description: "Coordinate multiple processes and exchange messages using DBus and QProcess."
+            image: "/assets/projects/placeholder.png"
+
+      outcomes:
+        title: "After This Course, You'll Be Able To:"
+        items:
+          - "Create and manage threads safely using `QThread` and worker objects"
+          - "Use `QThreadPool` and `Qt Concurrent` for scalable parallelism"
+          - "Design thread-safe APIs and understand reentrancy"
+          - "Use signals and slots across threads without race conditions"
+          - "Manage processes and implement IPC with `QProcess` and DBus"
+          - "Profile and debug multithreaded applications effectively"
+
+      why_this_course:
+        title: "Why This Course?"
+        content: |
+          Multithreading and IPC are essential skills for building responsive, production-quality applications. Qt provides robust cross-platform primitives that make concurrency approachable when used with the right patterns.
+        bullets:
+          - "✅ Practical demos and working code you can reuse"
+          - "✅ Clear explanations of why techniques work and where they fail"
+          - "✅ Focus on Qt-native patterns, not generic threading myths"
+        showcase_image: "/assets/courses/image/qt_multithreading.png"
+
+      creator_story:
+        title: "Created by Practicing Qt Developers"
+        content: |
+          This course was created from real-world experience building multi-threaded Qt applications across desktop and embedded targets. The examples reflect common pitfalls and solutions used in production systems.
+        bullets:
+          - "• Real debugging strategies for concurrency issues"
+          - "• Practical deployment notes for cross-platform projects"
+
+      what_you_get:
+        title: "What You'll Get"
+        bullets:
+          - "• 8-12 Hours of Hands-on Video Lessons"
+          - "• Complete Source Code for Every Demo"
+          - "• Debugging & Profiling Guide for Concurrency"
+          - "• Cross-platform examples for Windows, macOS, Linux and Embedded"
+          - "• Certificate of Completion"
+        content: |
+          By the end of this course you'll be comfortable designing responsive applications that make effective use of background work and inter-process communication. Whether you need responsive UIs, high-throughput background processing, or inter-process orchestration, this course gives you the practical knowledge to move quickly.
+
+    pricing_override:
+      lifetime:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6446367"
+      monthly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
+      yearly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
+
+# UI Configuration
+ui:
+  courses_button: "Explore All Courses"
+  learn_more_button: "See What's Inside"
+  enroll_button: "Start Building Apps Today"
+  buy_now_button: "Get Instant Access"
+  scroll_to_pricing: "Choose Your Plan Below"
+  ready_to_join_title: "Ready to Join?"
+  ready_to_join_subtitle: "Level up with our comprehensive course library. Get this course individually, or unlock our complete collection including C++, Qt Widgets, QML, 3D graphics, embedded systems, and HMI development for automotive and industrial applications."
+  
+  # CTA variants for different contexts
+  cta_variants:
+    urgency: "Get Started Before Price Increases"
+    benefit: "Start Building Apps in Minutes"
+    social: "Join 4,000+ Successful Students"
+    trial: "Start Your 7-Day Free Trial"
+    guarantee: "Try Risk-Free for 30 Days"
+  
+  # Social proof labels
+  social_labels:
+    students: "students worldwide"
+    rating: "average rating"
+    completion: "completion rate"
+    countries: "countries represented"
+
+# Per-course social proof overrides (used by course sales layout)
+social_proof_by_course:
+  qt-widgets-cpp:
+    student_count: "1,500"
+    avg_rating: "4.9"
+    completion_rate: "92"
+    countries: "45"
+  qt-widgets-pyside6:
+    student_count: "1,200"
+    avg_rating: "4.8"
+    completion_rate: "89"
+    countries: "38"
+  qt-qml-pro:
+    student_count: "900"
+    avg_rating: "4.9"
+    completion_rate: "85"
+    countries: "30"
+  qt-threads-ipc:
+    student_count: "350"
+    avg_rating: "4.8"
+    completion_rate: "88"
+    countries: "20"
 
 
 

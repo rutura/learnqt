@@ -17,7 +17,7 @@ navhome:
  - name: Home
    link: '#'
  - name: Courses
-   link: '#learning-paths'
+   link: '#featured-courses'
  - name: Books
    link: '#book'
  - name: About
@@ -67,7 +67,7 @@ multithreading: 'https://www.udemy.com/course/multi-threading-and-ipc-with-qt-c-
 #footer area
 footer:
   logo: /assets/blog/image/LearnQt.png
-  title: LearnQtGuide
+  title: LearnQt
   content: >-
     Clear, up front courses on Qt. We have made it our business to provide the best 
     online learning resources for Qt Development. We put in the required effort to make 
@@ -93,7 +93,7 @@ author:
   description: Daniel is a Senior Software Engineer at Blikoon Technologies. He has been writing software since  2011 and Qt is one of his favorite frameworks. Many of his cross platform Qt based projects are completed and out there on the market. Autodidact by nature ,he has a passion for learning new things and loves sharing knowledge with others. Especially people new to the dark art of software development.
 
 # copyrights
-footercopyrights: "© LearnQt Guide. All Rights Reserved"
+footercopyrights: "© LearnQt . All Rights Reserved"
 
 # blog post pagination
 paginate: 3

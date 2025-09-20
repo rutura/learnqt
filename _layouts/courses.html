@@ -1,4 +1,1923 @@
 {% include seo.html %}
 {% include navpage.html %}
-{% include courses/starter.html %}
-{% include footerpage.html %}
+
+<!-- Enhanced Courses Showcase Section -->
+<section id="courses-showcase" class="courses-showcase py-5 bg-light background-pattern" style="padding-top: 120px !important;">
+    <div class="floating-elements">
+        <div class="floating-element floating-sm" style="top: 25%; left: 5%;"></div>
+        <div class="floating-element floating-md" style="top: 70%; right: 8%;"></div>
+        <div class="floating-element floating-lg" style="top: 45%; left: 85%;"></div>
+    </div>
+    <div class="container position-relative">
+        <!-- Section Header -->
+        <div class="row mb-5">
+            <div class="col-lg-10 mx-auto text-center">
+                <div class="section-badge mb-4">
+                    <span class="badge-content">
+                        <i class="fas fa-star me-2"></i>
+                        {{ site.data.courses.featured_section.title }}
+                    </span>
+                </div>
+                <h2 class="section-title mb-4">{{ site.data.courses.featured_section.subtitle }}</h2>
+                <p class="section-subtitle mb-4">{{ site.data.courses.featured_section.description }}</p>
+                
+                <!-- Featured Stats -->
+                <div class="featured-stats">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">{{ site.data.courses.featured_section.stats.courses_count }}</div>
+                            <div class="stat-label">Comprehensive Courses</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">{{ site.data.courses.featured_section.stats.projects_count }}</div>
+                            <div class="stat-label">Real-World Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">{{ site.data.courses.featured_section.stats.hours_content }}</div>
+                            <div class="stat-label">Hours of Content</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">{{ site.data.courses.featured_section.stats.skill_level }}</div>
+                            <div class="stat-label">Skill Range</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Courses Grid -->
+        <div class="courses-grid">
+            {% for course in site.data.courses.courses %}
+            <div class="course-card-wrapper">
+                <div class="course-card glass-card">
+                    {% if course.featured %}
+                    <div class="featured-badge">
+                        <span><i class="fas fa-star me-1"></i>Featured</span>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="course-image-container">
+                        <div class="image-glow"></div>
+                        <img class="course-image" alt="{{ course.title }}" src="{{ site.baseurl }}{{ course.image }}">
+                        <div class="image-overlay">
+                            <div class="tech-stack-container">
+                                <div class="tech-stack-indicator">
+                                    <div class="tech-icon">
+                                        {% if course.language == "C++" %}
+                                        <i class="fab fa-cuttlefish"></i>
+                                        {% elsif course.language == "Python" %}
+                                        <i class="fab fa-python"></i>
+                                        {% else %}
+                                        <i class="fas fa-code"></i>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="tech-label">{{ course.language }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-category">{{ course.category }}</span>
+                            <span class="course-level">{{ course.level }}</span>
+                        </div>
+                        
+                        <h3 class="course-title">{{ course.title }}</h3>
+                        <p class="course-description">{{ course.description }}</p>
+                        
+                        <!-- Course Stats -->
+                        <div class="course-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-clock"></i>
+                                <span>{{ course.duration }}</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>{{ course.projects }}</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-star"></i>
+                                <span>{{ course.satisfaction_rating }}</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Course Highlights -->
+                        <div class="course-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>{{ course.completion_rate }} completion rate</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-tools"></i>
+                                <span>{{ course.tools }}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="course-actions mt-4">
+                            <a href="/courses/{{ course.id }}/" class="btn btn-course-primary w-100">
+                                <span class="btn-text">{{ site.data.courses.ui.learn_more_button }}</span>
+                                <div class="btn-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if site.data.courses.courses.size == 0 %}
+        <div class="empty-state text-center py-5">
+            <div class="empty-state-icon mb-4">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3 class="empty-state-title">Courses Coming Soon</h3>
+            <p class="empty-state-subtitle">We're working hard to bring you amazing Qt development courses. Check back soon!</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Enhanced Pricing Section -->
+<section id="pricing" class="pricing-overview py-5 bg-secondary-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-lg" style="top: 20%; left: 8%;"></div>
+        <div class="floating-element floating-md" style="top: 60%; right: 12%;"></div>
+        <div class="floating-element floating-sm" style="top: 40%; left: 80%;"></div>
+    </div>
+    <div class="container position-relative">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="section-badge mb-4">
+                    <span class="badge-content text-white">
+                        <i class="fas fa-tags me-2"></i>
+                        Flexible Learning Options
+                    </span>
+                </div>
+                <h2 class="section-title text-white mb-4">Choose Your Learning Journey</h2>
+                <p class="section-subtitle text-white-75">Whether you want to master one course or access our entire library of Modern C++, Qt, QML, Qt 3D, and Embedded UI courses, we have the perfect plan for you.</p>
+            </div>
+        </div>
+        
+        <div class="pricing-comparison">
+            <div class="row g-4 justify-content-center">
+                <!-- Single Course -->
+                <div class="col-lg-4">
+                    <div class="pricing-card single-course">
+                        <div class="card-header">
+                            <h3 class="plan-title">{{ site.data.courses.pricing.lifetime.title }}</h3>
+                            <div class="price-display">
+                                {% if site.data.courses.pricing.lifetime.original_price %}
+                                <span class="original-price">${{ site.data.courses.pricing.lifetime.original_price }}</span>
+                                {% endif %}
+                                <div class="current-price">
+                                    <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.lifetime.price }}</span>
+                                </div>
+                            </div>
+                            <p class="plan-subtitle">{{ site.data.courses.pricing.lifetime.subtitle }}</p>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="plan-description mb-4">
+                                <p>{{ site.data.courses.pricing.lifetime.value_proposition }}</p>
+                            </div>
+                            
+                            <div class="highlight-benefits-section">
+                                <h6 class="highlight-benefits-title mb-3">Perfect For:</h6>
+                                <ul class="highlight-benefits-list">
+                                    {% for highlight in site.data.courses.pricing.lifetime.highlight_benefits %}
+                                    <li>{{ highlight }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            
+                            <!-- CTA Button for Lifetime Plan -->
+                            <div class="pricing-cta mt-4">
+                                <a href="#courses-showcase" class="btn btn-pricing-primary w-100">
+                                    <i class="fas fa-arrow-up me-2"></i>Choose Your Course
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Library Access -->
+                <div class="col-lg-4">
+                    <div class="pricing-card library-access popular">
+                        <div class="popular-badge">
+                            <span>Most Popular</span>
+                        </div>
+                        <div class="card-header">
+                            <h3 class="plan-title">{{ site.data.courses.pricing.monthly.title }}</h3>
+                            <div class="price-display">
+                                <div class="current-price">
+                                    <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.monthly.price }}</span>
+                                    <span class="period">{{ site.data.courses.pricing.monthly.subtitle }}</span>
+                                </div>
+                            </div>
+                            <p class="plan-subtitle">{{ site.data.courses.pricing.monthly.value_proposition }}</p>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="plan-description mb-4">
+                                <p>Expert Training on Modern C++, Qt, QML, Qt 3D, Embedded UIs and more. You won't find this content anywhere else in a structured, easy to understand manner.</p>
+                            </div>
+                            
+                            <div class="highlight-benefits-section">
+                                <h6 class="highlight-benefits-title mb-3">Why Choose This:</h6>
+                                <ul class="highlight-benefits-list">
+                                    {% for highlight in site.data.courses.pricing.monthly.highlight_benefits %}
+                                    <li>{{ highlight }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            
+                            <!-- CTA Button for Monthly Plan -->
+                            <div class="pricing-cta mt-4">
+                                <a href="{{ site.data.courses.courses[0].pricing_override.monthly.teachable_link }}" target="_blank" class="btn btn-pricing-primary w-100">
+                                    <i class="fas fa-credit-card me-2"></i>Get Monthly Access
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Annual Plan -->
+                <div class="col-lg-4">
+                    <div class="pricing-card library-annual">
+                        <div class="card-header">
+                            <h3 class="plan-title">{{ site.data.courses.pricing.yearly.title }}</h3>
+                            <div class="price-display">
+                                {% if site.data.courses.pricing.yearly.original_price %}
+                                <span class="original-price">${{ site.data.courses.pricing.yearly.original_price }}</span>
+                                {% endif %}
+                                <div class="current-price">
+                                    <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.yearly.price }}</span>
+                                    <span class="period">{{ site.data.courses.pricing.yearly.subtitle }}</span>
+                                </div>
+                            </div>
+                            <p class="plan-subtitle">{{ site.data.courses.pricing.yearly.value_proposition }}</p>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="plan-description mb-4">
+                                <p>All the perks from Library Access, plus priority support and exclusive content.</p>
+                            </div>
+                            
+                            <div class="highlight-benefits-section">
+                                <h6 class="highlight-benefits-title mb-3">Premium Advantages:</h6>
+                                <ul class="highlight-benefits-list">
+                                    {% for highlight in site.data.courses.pricing.yearly.highlight_benefits %}
+                                    <li>{{ highlight }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            
+                            <!-- CTA Button for Yearly Plan -->
+                            <div class="pricing-cta mt-4">
+                                <a href="{{ site.data.courses.courses[0].pricing_override.yearly.teachable_link }}" target="_blank" class="btn btn-pricing-primary w-100">
+                                    <i class="fas fa-crown me-2"></i>Get Premium Access
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Enhanced CTA Section -->
+<section class="cta-section py-5 bg-primary-gradient text-white background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 30%; left: 15%;"></div>
+        <div class="floating-element floating-lg" style="top: 60%; right: 10%;"></div>
+        <div class="floating-element floating-sm" style="top: 20%; right: 75%;"></div>
+    </div>
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="cta-content">
+                    <h2 class="cta-title mb-4">{{ site.data.courses.ui.ready_to_join_title }}</h2>
+                    <p class="cta-subtitle mb-5">{{ site.data.courses.ui.ready_to_join_subtitle }}</p>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators mb-5">
+                        <div class="trust-items">
+                            <div class="trust-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>{{ site.data.courses.guarantee.title }}</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-infinity"></i>
+                                <span>Lifetime Updates</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-users"></i>
+                                <span>{{ site.data.courses.social_proof.student_count }} Students</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="#courses-showcase" class="btn btn-cta-primary me-3">
+                            <div class="btn-content">
+                                <div class="btn-main-text">{{ site.data.courses.ui.enroll_button }}</div>
+                                <div class="btn-sub-text">Start your journey</div>
+                            </div>
+                            <div class="btn-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                        </a>
+                        <a href="/contact/" class="btn btn-outline-light">
+                            <span class="btn-text">Contact Us</span>
+                            <div class="btn-arrow">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials py-5 bg-light background-pattern">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title mb-4">What Our Students Say</h2>
+                <p class="section-subtitle">Join thousands of developers who have transformed their careers with our Qt courses.</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            {% for testimonial in site.data.courses.testimonials.featured limit:3 %}
+            <div class="col-lg-4">
+                <div class="testimonial-card glass-card h-100">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="avatar-img">
+                                {{ testimonial.name | slice: 0 }}
+                            </div>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">{{ testimonial.name }}</div>
+                            <div class="testimonial-role">{{ testimonial.role }}</div>
+                        </div>
+                        <div class="testimonial-rating">
+                            {% for i in (1..testimonial.rating) %}
+                            <i class="fas fa-star text-warning"></i>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"{{ testimonial.content }}"</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<style>
+:root {
+    --qt-green: #15ba29;
+    --qt-green-dark: #149f25;
+    --qt-green-light: #4dd865;
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --warning-color: #f39c12;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    --text-dark: #2d3748;
+    --text-muted: #718096;
+    --bg-light: #f7fafc;
+    --border-light: #e2e8f0;
+    --white: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    
+    /* Shared Design System Variables */
+    --primary-gradient: linear-gradient(135deg, #15ba29 0%, #149f25 50%, #0d7a1c 100%);
+    --secondary-gradient: linear-gradient(135deg, #0ea5e9 0%, #15ba29 50%, #059669 100%);
+    --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --neutral-gradient: linear-gradient(135deg, #15ba29 0%, #3b82f6 50%, #1e40af 100%);
+    --gray-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-blur: blur(15px);
+}
+
+/* Shared Background Pattern System */
+.background-pattern {
+    position: relative;
+    overflow: hidden;
+}
+
+.background-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.3) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.2) 1px, transparent 1px);
+    background-size: 100px 100px, 120px 120px, 80px 80px;
+    animation: patternMove 20s linear infinite;
+    z-index: 1;
+}
+
+/* Green background specific patterns */
+.bg-green-gradient.background-pattern::before {
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 1px, transparent 1px);
+}
+
+/* Light background specific patterns */
+.bg-light.background-pattern::before {
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(21,186,41,0.05) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(21,186,41,0.03) 1px, transparent 1px);
+}
+
+/* Primary gradient background patterns */
+.bg-primary-gradient.background-pattern::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.1) 1px, transparent 1px);
+    opacity: 0.6;
+}
+
+/* Secondary gradient background patterns */
+.bg-secondary-gradient.background-pattern::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.1) 1px, transparent 1px);
+    opacity: 0.6;
+}
+
+.background-pattern > .container {
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes patternMove {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-100px) translateY(-100px); }
+}
+
+/* Floating Elements System */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.floating-element {
+    position: absolute;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    backdrop-filter: var(--glass-blur);
+}
+
+/* Green background specific floating elements */
+.bg-green-gradient .floating-element {
+    background: rgba(255,255,255,0.15);
+}
+
+/* Light background specific floating elements */
+.bg-light .floating-element {
+    background: rgba(21,186,41,0.08);
+}
+
+/* Primary gradient background floating elements */
+.bg-primary-gradient .floating-element {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Secondary gradient background floating elements */
+.bg-secondary-gradient .floating-element {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-sm {
+    width: 60px;
+    height: 60px;
+    animation: float-small 7s ease-in-out infinite;
+}
+
+.floating-md {
+    width: 80px;
+    height: 80px;
+    animation: float-medium 6s ease-in-out infinite;
+}
+
+.floating-lg {
+    width: 120px;
+    height: 120px;
+    animation: float-large 8s ease-in-out infinite;
+}
+
+@keyframes float-small {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(360deg); }
+}
+
+@keyframes float-medium {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes float-large {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(-180deg); }
+}
+
+/* Section Background Classes */
+.bg-primary-gradient {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.bg-secondary-gradient {
+    background: var(--secondary-gradient);
+    color: white;
+}
+
+.bg-accent-gradient {
+    background: var(--accent-gradient);
+    color: white;
+}
+
+.bg-neutral-gradient {
+    background: var(--neutral-gradient);
+    color: white;
+}
+
+.bg-gray-gradient {
+    background: var(--gray-gradient);
+    color: #1f2937;
+}
+
+.bg-green-gradient {
+    background: linear-gradient(135deg, var(--qt-green) 0%, var(--qt-green-dark) 100%);
+}
+
+.bg-green-light {
+    background: linear-gradient(135deg, var(--qt-green-light) 0%, var(--qt-green) 100%);
+}
+
+.bg-white-clean {
+    background: var(--white);
+}
+
+/* Glassmorphism System */
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.glass-button {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Hero Section */
+.courses-hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding-top: 120px !important; /* Account for fixed navbar */
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.hero-badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.badge-content {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.35rem;
+    font-weight: 400;
+    opacity: 0.95;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+/* Enhanced Social Proof in Hero */
+.social-proof-section {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.social-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.social-proof-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.proof-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    backdrop-filter: var(--glass-blur);
+}
+
+.proof-icon i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.proof-content {
+    flex-grow: 1;
+}
+
+.social-proof-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
+.social-proof-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Trust Indicators */
+.trust-indicators-section {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.trust-indicators-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.trust-indicator-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.trust-indicator-item i {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hero CTA Buttons */
+.hero-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn-hero-primary {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: none;
+    border-radius: 16px;
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #15ba29;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 280px;
+}
+
+.btn-hero-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.btn-hero-primary:hover::before {
+    left: 100%;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.2);
+    color: #149f25;
+    text-decoration: none;
+}
+
+.btn-hero-primary .btn-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.btn-hero-primary .btn-main-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.btn-hero-primary .btn-sub-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.8;
+    line-height: 1.2;
+}
+
+.btn-hero-primary .btn-icon {
+    background: rgba(21, 186, 41, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-primary:hover .btn-icon {
+    background: rgba(21, 186, 41, 0.2);
+    transform: scale(1.1);
+}
+
+.btn-hero-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 20px 32px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: var(--glass-blur);
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-hero-secondary .btn-arrow {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-secondary:hover .btn-arrow {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Section Headers */
+.section-badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.section-badge .badge-content {
+    background: var(--white);
+    color: var(--qt-green);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid var(--qt-green);
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bg-secondary-gradient .section-badge .badge-content {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.bg-secondary-gradient .section-title {
+    color: white;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.bg-secondary-gradient .section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Featured Stats */
+.featured-stats {
+    margin-top: 2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--qt-green);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* Enhanced Courses Grid */
+.courses-showcase {
+    padding: 5rem 0;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.course-card-wrapper {
+    position: relative;
+}
+
+.course-card {
+    height: 100%;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    background: var(--white);
+    border: 2px solid var(--border-light);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.course-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.15);
+    border-color: var(--qt-green);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10;
+}
+
+.featured-badge span {
+    background: linear-gradient(135deg, var(--qt-green) 0%, var(--qt-green-dark) 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.course-image-container {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 24px 24px 0 0;
+}
+
+.image-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(21,186,41,0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.course-card:hover .image-glow {
+    opacity: 1;
+}
+
+.course-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.course-card:hover .course-image {
+    transform: scale(1.08);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+.tech-stack-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.tech-stack-indicator {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border: 3px solid var(--qt-green);
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.2);
+}
+
+.tech-icon {
+    font-size: 1.8rem;
+    color: var(--qt-green);
+}
+
+.tech-label {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--qt-green);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--qt-green);
+}
+
+.course-content {
+    padding: 2.5rem;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.course-category {
+    background: rgba(21, 186, 41, 0.1);
+    color: var(--qt-green);
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.course-level {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.course-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.course-description {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.course-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-light);
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+}
+
+.course-stats .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.course-stats .stat-item i {
+    color: var(--qt-green);
+    font-size: 1rem;
+}
+
+.course-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.highlight-item i {
+    color: var(--success-color);
+    font-size: 1rem;
+}
+
+.course-actions {
+    margin-top: auto;
+}
+
+.btn-course-primary {
+    background: linear-gradient(135deg, var(--qt-green) 0%, var(--qt-green-dark) 100%);
+    border: none;
+    color: white;
+    padding: 16px 24px;
+    font-weight: 600;
+    border-radius: 16px;
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.25);
+}
+
+.btn-course-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-course-primary:hover::before {
+    left: 100%;
+}
+
+.btn-course-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(21, 186, 41, 0.35);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-course-primary .btn-arrow {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-course-primary:hover .btn-arrow {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(3px);
+}
+
+/* Empty State */
+.empty-state {
+    padding: 4rem 0;
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.empty-state-title {
+    font-size: 2rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.empty-state-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Enhanced Pricing Section */
+.pricing-overview {
+    padding: 5rem 0;
+}
+
+.pricing-comparison .pricing-card {
+    background: var(--white);
+    border: 2px solid var(--border-light);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    height: 100%;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+    border-color: var(--qt-green);
+}
+
+.pricing-card.popular {
+    border-color: var(--qt-green);
+    transform: scale(1.05);
+    box-shadow: 0 16px 50px rgba(21, 186, 41, 0.2);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.popular-badge span {
+    background: linear-gradient(135deg, var(--qt-green) 0%, var(--qt-green-dark) 100%);
+    color: white;
+    padding: 8px 24px;
+    border-radius: 0 0 16px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);
+}
+
+.pricing-card .card-header {
+    background: transparent;
+    border: none;
+    padding: 2.5rem 2rem 1rem;
+    text-align: center;
+}
+
+.plan-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.price-display {
+    margin-bottom: 1rem;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.current-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.currency {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--qt-green);
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--qt-green);
+    line-height: 1;
+}
+
+.period {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.plan-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.pricing-card .card-body {
+    padding: 1rem 2rem 2.5rem;
+}
+
+.plan-description {
+    text-align: center;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.highlight-benefits-section {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+    margin-bottom: 2rem;
+}
+
+.highlight-benefits-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.highlight-benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.highlight-benefits-list li {
+    padding: 0.75rem 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+}
+
+.highlight-benefits-list li:before {
+    content: '✓';
+    color: var(--qt-green);
+    font-weight: bold;
+    margin-right: 0.75rem;
+    margin-top: 0.1rem;
+    font-size: 1.1rem;
+}
+
+/* Pricing CTA Buttons */
+.pricing-cta {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.btn-pricing-primary {
+    background: linear-gradient(135deg, var(--qt-green) 0%, var(--qt-green-dark) 100%);
+    border: none;
+    color: white;
+    padding: 16px 24px;
+    font-weight: 600;
+    border-radius: 16px;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.25);
+}
+
+.btn-pricing-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-pricing-primary:hover::before {
+    left: 100%;
+}
+
+.btn-pricing-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(21, 186, 41, 0.35);
+    color: white;
+    text-decoration: none;
+}
+
+/* Enhanced CTA Section */
+.cta-section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+.cta-content {
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.cta-subtitle {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.trust-indicators {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.trust-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.trust-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+}
+
+.trust-item i {
+    font-size: 1.8rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn-cta-primary {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: none;
+    border-radius: 16px;
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #15ba29;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 280px;
+}
+
+.btn-cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.2);
+    color: #149f25;
+    text-decoration: none;
+}
+
+.btn-cta-primary .btn-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.btn-cta-primary .btn-main-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.btn-cta-primary .btn-sub-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.8;
+    line-height: 1.2;
+}
+
+.btn-cta-primary .btn-icon {
+    background: rgba(21, 186, 41, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-cta-primary:hover .btn-icon {
+    background: rgba(21, 186, 41, 0.2);
+    transform: scale(1.1);
+}
+
+.btn-outline-light {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 20px 32px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: var(--glass-blur);
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.btn-outline-light .btn-arrow {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover .btn-arrow {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 5rem 0;
+}
+
+.testimonial-card {
+    padding: 2.5rem;
+    height: 100%;
+    transition: all 0.4s ease;
+    background: var(--white);
+    border: 2px solid var(--border-light);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--qt-green);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.testimonial-avatar {
+    flex-shrink: 0;
+}
+
+.avatar-img {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--qt-green) 0%, var(--qt-green-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.2);
+}
+
+.testimonial-info {
+    flex-grow: 1;
+}
+
+.testimonial-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-role {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.testimonial-rating {
+    flex-shrink: 0;
+}
+
+.testimonial-content {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+    
+    .social-proof-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .cta-title {
+        font-size: 2.5rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .courses-hero {
+        padding-top: 100px !important; /* Adjusted for mobile navbar */
+    }
+    
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .course-card {
+        margin: 0 1rem;
+    }
+    
+    .social-proof-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .trust-indicators-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .trust-items {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .hero-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero-cta-buttons .btn-hero-primary,
+    .hero-cta-buttons .btn-hero-secondary {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .cta-buttons .btn-cta-primary,
+    .cta-buttons .btn-outline-light {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+    
+    .pricing-comparison {
+        margin-top: 2rem;
+    }
+    
+    .pricing-card.popular {
+        transform: none;
+        margin-bottom: 1rem;
+    }
+    
+    .course-stats {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .course-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .course-content {
+        padding: 2rem;
+    }
+    
+    .course-image-container {
+        height: 220px;
+    }
+    
+    .social-proof-section {
+        padding: 1.5rem;
+    }
+    
+    .trust-indicators-section {
+        padding: 1.5rem;
+    }
+    
+    .featured-stats {
+        padding: 1.5rem;
+    }
+    
+    .testimonial-card {
+        padding: 2rem;
+    }
+    
+    .pricing-card .card-header {
+        padding: 2rem 1.5rem 1rem;
+    }
+    
+    .pricing-card .card-body {
+        padding: 1rem 1.5rem 2rem;
+    }
+    
+    .highlight-benefits-section {
+        padding: 1.5rem;
+    }
+    
+    .trust-indicators {
+        padding: 1.5rem;
+    }
+    
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        padding: 16px 24px;
+        min-width: 260px;
+    }
+    
+    .btn-cta-primary,
+    .btn-outline-light {
+        padding: 16px 24px;
+        min-width: 260px;
+    }
+}
+</style>
+
+{% include footer.html %}

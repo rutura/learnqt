@@ -9,13 +9,6 @@ button_video_link: '/courses/'
 button_book: Books on Qt, C++ and QML
 button_book_link: '/books/'
 
-courses: 
- title: Featured courses
- description: Our video courses span a range of topics revolving around Qt, C++, QML, Python and the tooling ecosystem around these technologies. 
- display: 3
- button: Explore All Courses
- button_post: Learn More
-
 books: 
  title: Featured books
  description: Our content is also provided in book format. Topics revolve around Qt, modern C++, QML and Python, the tools we use on a daily basis.
@@ -59,7 +52,7 @@ why:
     description: We don't simply present concepts without context. Instead, we actively engage by firing up the editor and constructing applications alongside you.
   - title: Certificate
     image: /assets/img/award.svg
-    description: Upon completing the course, you will receive a Udemy course completion certificate.
+    description: Upon completing the course, you will receive a course completion certificate.
 
 notified: 
  title: JOIN OUR NEWSLETTER & GET A FREE QT6 QML BOOK! STAY UPDATED. 
@@ -71,7 +64,7 @@ student:
  title: Happy Students
  description: Thousands of students have enrolled in our courses and have subsequently become professional developers, utilizing Qt, C++, and QML across various domains. Our statistics and reviews attest to the effectiveness of our training material.
 
-count1_number: '8'
+count1_number: '3'
 count1_title: Courses
 
 count2_number: '4'

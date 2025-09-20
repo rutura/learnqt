@@ -1,0 +1,5152 @@
+{% include seo.html %}
+{% include navpage.html %}
+
+<!-- Get Course Data -->
+{% assign course_data = site.data.courses.courses | where: "id", page.course_id | first %}
+{% comment %} Per-course social proof: prefer course-specific overrides, fall back to global social_proof {% endcomment %}
+{% assign course_sp_map = site.data.courses.social_proof_by_course %}
+{% if course_sp_map and course_sp_map[page.course_id] %}
+    {% assign sp = course_sp_map[page.course_id] %}
+{% else %}
+    {% assign sp = site.data.courses.social_proof %}
+{% endif %}
+
+<!-- Course Hero Section -->
+<section class="course-hero py-5 bg-primary-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 20%; right: 15%;"></div>
+        <div class="floating-element floating-lg" style="top: 60%; left: 10%;"></div>
+        <div class="floating-element floating-sm" style="top: 40%; right: 30%;"></div>
+    </div>
+    
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content text-white">
+                    <!-- Course Badge -->
+                    <div class="hero-course-badge mb-4">
+                        <div class="badge-content">
+                            <i class="fas fa-star"></i>
+                            <span>{{ course_data.category }}</span>
+                        </div>
+                    </div>
+                    
+                    <h1 class="hero-title fw-bold mb-4">{{ course_data.title }}</h1>
+                    <p class="hero-subtitle mb-4">{{ course_data.sections.hero.subtitle }}</p>
+                    
+                    <!-- Enhanced Social Proof -->
+                    <div class="social-proof-section mb-4">
+                        <div class="social-proof-grid">
+                            <div class="social-proof-item">
+                                <div class="proof-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="proof-content">
+                                    <div class="social-proof-number">{{ sp.student_count }}</div>
+                                    <div class="social-proof-label">{{ site.data.courses.ui.social_labels.students }}</div>
+                                </div>
+                            </div>
+                            <div class="social-proof-item">
+                                <div class="proof-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="proof-content">
+                                    <div class="social-proof-number">{{ sp.avg_rating }}/5</div>
+                                    <div class="social-proof-label">{{ site.data.courses.ui.social_labels.rating }}</div>
+                                </div>
+                            </div>
+                            <div class="social-proof-item">
+                                <div class="proof-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="proof-content">
+                                    <div class="social-proof-number">{{ sp.completion_rate }}%</div>
+                                    <div class="social-proof-label">{{ site.data.courses.ui.social_labels.completion }}</div>
+                                </div>
+                            </div>
+                            <div class="social-proof-item">
+                                <div class="proof-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="proof-content">
+                                    <div class="social-proof-number">{{ sp.countries }}+</div>
+                                    <div class="social-proof-label">{{ site.data.courses.ui.social_labels.countries }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-badges mb-4">
+                        <div class="badge-item">
+                            <i class="fas fa-signal"></i>
+                            <span>{{ course_data.level }}</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-clock"></i>
+                            <span>{{ course_data.duration }}</span>
+                        </div>
+                        <div class="badge-item">
+                            <i class="fas fa-code"></i>
+                            <span>{{ course_data.language }}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-cta-buttons">
+                        <a href="#ready-to-join" class="btn btn-hero-primary scroll-to-pricing me-3">
+                            <div class="btn-content">
+                                <div class="btn-main-text">{{ site.data.courses.ui.enroll_button }}</div>
+                                <div class="btn-sub-text">Join 4,000+ developers</div>
+                            </div>
+                            <div class="btn-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                        </a>
+                        <a href="#preview" class="btn btn-hero-secondary">
+                            <span class="btn-text">{{ site.data.courses.ui.learn_more_button }}</span>
+                            <div class="btn-arrow">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image-container">
+                    <div class="hero-image-frame">
+                        <div class="image-glow"></div>
+                        <img src="{{ site.baseurl }}{{ course_data.sections.hero.showcase_image }}" alt="{{ course_data.title }}" class="hero-image">
+                        <div class="image-overlay">
+                            <div class="tech-stack-indicator">
+                                <div class="tech-icon qt-icon">
+                                    <img src="/assets/img/qt-logo.png" alt="Qt" style="width: 24px; height: 24px;">
+                                </div>
+                                <div class="tech-icon language-icon">
+                                    {% if course_data.language == 'C++' %}
+                                        <i class="fas fa-code"></i>
+                                    {% elsif course_data.language == 'Python' %}
+                                        <i class="fab fa-python"></i>
+                                    {% else %}
+                                        <i class="fas fa-code"></i>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Preview Section -->
+{% if course_data.sections.preview %}
+<section id="preview" class="course-preview py-5 bg-secondary-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-sm" style="top: 15%; left: 5%;"></div>
+        <div class="floating-element floating-md" style="top: 70%; right: 10%;"></div>
+        <div class="floating-element floating-lg" style="top: 30%; left: 80%;"></div>
+    </div>
+    
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <!-- Section Header -->
+                <div class="preview-header text-center mb-5">
+                    <div class="preview-badge">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Course Preview</span>
+                    </div>
+                    <h2 class="preview-title">{{ course_data.sections.preview.title }}</h2>
+                    <p class="preview-subtitle">{% if course_data.sections.preview.subtitle %}{{ course_data.sections.preview.subtitle }}{% else %}Get a sneak peek at what you'll master in this comprehensive course{% endif %}</p>
+                    <div class="preview-divider"></div>
+                </div>
+                
+                {% if course_data.sections.preview.demo_video %}
+                <div class="demo-video-container mb-5">
+                    <div class="video-frame">
+                        <div class="video-frame-header">
+                            <div class="frame-controls">
+                                <span class="control-dot red"></span>
+                                <span class="control-dot yellow"></span>
+                                <span class="control-dot green"></span>
+                            </div>
+                            <div class="frame-title">{{ course_data.title }} - Course Demo</div>
+                            <div class="frame-actions">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="video-wrapper">
+                            {% assign video_url = course_data.sections.preview.demo_video %}
+                            {% if video_url contains 'youtube.com' or video_url contains 'youtu.be' %}
+                                {% comment %} Extract YouTube video ID for embed {% endcomment %}
+                                {% assign video_id = '' %}
+                                {% if video_url contains 'youtu.be/' %}
+                                    {% assign url_parts = video_url | split: 'youtu.be/' %}
+                                    {% assign video_id = url_parts[1] | split: '?' | first %}
+                                {% elsif video_url contains 'youtube.com/watch?v=' %}
+                                    {% assign url_parts = video_url | split: 'v=' %}
+                                    {% assign video_id = url_parts[1] | split: '&' | first %}
+                                {% endif %}
+                                {% if video_id != '' %}
+                                    <div class="youtube-embed-container">
+                                        <iframe 
+                                            src="https://www.youtube.com/embed/{{ video_id }}" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen
+                                            class="youtube-video">
+                                        </iframe>
+                                    </div>
+                                {% endif %}
+                            {% else %}
+                                {% comment %} Local video file {% endcomment %}
+                                <video class="demo-video" controls poster="{{ site.baseurl }}{{ course_data.image }}">
+                                    <source src="{{ site.baseurl }}{{ video_url }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="video-info-overlay">
+                            <div class="video-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>{{ course_data.duration }}</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>{{ sp.student_count }} students</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>{{ sp.avg_rating }} rating</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Context Information -->
+                    <div class="video-context mt-4">
+                        <div class="row g-4">
+                            {% if course_data.sections.preview.context_cards %}
+                                {% for card in course_data.sections.preview.context_cards %}
+                                <div class="col-md-4">
+                                    <div class="context-card">
+                                        <div class="context-icon">
+                                            <i class="{{ card.icon }}"></i>
+                                        </div>
+                                        <h5>{{ card.title }}</h5>
+                                        <p>{{ card.description }}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            {% else %}
+                                <!-- Fallback content if no cards defined -->
+                                <div class="col-md-4">
+                                    <div class="context-card">
+                                        <div class="context-icon">
+                                            <i class="fas fa-code"></i>
+                                        </div>
+                                        <h5>Hands-On Coding</h5>
+                                        <p>Watch real development in action</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="context-card">
+                                        <div class="context-icon">
+                                            <i class="fas fa-rocket"></i>
+                                        </div>
+                                        <h5>Project-Based</h5>
+                                        <p>Build complete applications step-by-step</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="context-card">
+                                        <div class="context-icon">
+                                            <i class="fas fa-graduation-cap"></i>
+                                        </div>
+                                        <h5>Expert Teaching</h5>
+                                        <p>Learn from industry professionals</p>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if course_data.sections.preview.projects %}
+                <div class="projects-showcase">
+                    <div class="projects-header text-center mb-5">
+                        <h3 class="projects-main-title">Real-World Projects You'll Build</h3>
+                        <p class="projects-subtitle">Learn by building practical Qt applications that you can showcase in your portfolio</p>
+                    </div>
+                    
+                    <div class="projects-grid">
+                        <div class="row g-5">
+                            {% for project in course_data.sections.preview.projects %}
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="project-number">{{ forloop.index }}</div>
+                                    <div class="project-image">
+                                        <img src="{{ site.baseurl }}{{ project.image }}" alt="{{ project.name }}" class="img-fluid">
+                                        <div class="project-overlay">
+                                            <div class="project-tech-stack">
+                                                <span class="tech-badge">Qt</span>
+                                                <span class="tech-badge">C++</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">{{ project.name }}</h4>
+                                        <p class="project-description">{{ project.description }}</p>
+                                        <div class="project-features">
+                                            <div class="feature-item">
+                                                <i class="fas fa-code project-icon"></i>
+                                                <span>Full Source Code</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-video project-icon"></i>
+                                                <span>Step-by-step Guide</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-status">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Beginner Friendly</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            <!-- Add placeholder projects if there are fewer than 3 -->
+                            {% assign projects_count = course_data.sections.preview.projects.size %}
+                            {% if projects_count < 3 %}
+                                {% for i in (1..3) %}
+                                    {% assign placeholder_index = projects_count | plus: forloop.index %}
+                                    {% if placeholder_index <= 3 %}
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="project-card">
+                                            <div class="project-number">{{ placeholder_index }}</div>
+                                            <div class="project-image">
+                                                <img src="{{ site.baseurl }}/assets/projects/placeholder.png" alt="Project {{ placeholder_index }}" class="img-fluid">
+                                                <div class="project-overlay">
+                                                    <div class="project-tech-stack">
+                                                        <span class="tech-badge">Qt</span>
+                                                        <span class="tech-badge">C++</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="project-content">
+                                                <h4 class="project-title">Amazing Qt Project #{{ placeholder_index }}</h4>
+                                                <p class="project-description">Build a professional Qt application with modern C++ practices and clean architecture patterns.</p>
+                                                <div class="project-features">
+                                                    <div class="feature-item">
+                                                        <i class="fas fa-code project-icon"></i>
+                                                        <span>Full Source Code</span>
+                                                    </div>
+                                                    <div class="feature-item">
+                                                        <i class="fas fa-video project-icon"></i>
+                                                        <span>Step-by-step Guide</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="project-status">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>Beginner Friendly</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <!-- Fallback for when no projects are defined -->
+                <div class="projects-showcase">
+                    <div class="projects-header text-center mb-5">
+                        <h3 class="projects-main-title">Real-World Projects You'll Build</h3>
+                        <p class="projects-subtitle">Learn by building practical Qt applications that you can showcase in your portfolio</p>
+                    </div>
+                    
+                    <div class="projects-grid">
+                        <div class="row g-4">
+                            {% for i in (1..3) %}
+                            <div class="col-lg-4 col-md-6">
+                                <div class="project-card">
+                                    <div class="project-number">{{ forloop.index }}</div>
+                                    <div class="project-image">
+                                        <img src="{{ site.baseurl }}/assets/projects/placeholder.png" alt="Project {{ forloop.index }}" class="img-fluid">
+                                        <div class="project-overlay">
+                                            <div class="project-tech-stack">
+                                                <span class="tech-badge">Qt</span>
+                                                <span class="tech-badge">C++</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">Professional Qt Application #{{ forloop.index }}</h4>
+                                        <p class="project-description">Build a complete Qt application with modern C++ practices, clean architecture, and professional UI design.</p>
+                                        <div class="project-features">
+                                            <div class="feature-item">
+                                                <i class="fas fa-code project-icon"></i>
+                                                <span>Full Source Code</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-video project-icon"></i>
+                                                <span>Step-by-step Guide</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-status">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Beginner Friendly</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <div class="text-center mt-5">
+                    <a href="#ready-to-join" class="btn btn-projects-cta scroll-to-pricing">
+                        <div class="btn-content">
+                            <div class="btn-main-text">Start Building These Projects</div>
+                            <div class="btn-sub-text">Begin your developer journey</div>
+                        </div>
+                        <div class="btn-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Learning Outcomes Section -->
+{% if course_data.sections.outcomes %}
+<section class="learning-outcomes py-5 bg-gray-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-lg" style="top: 15%; left: 8%;"></div>
+        <div class="floating-element floating-md" style="top: 45%; right: 12%;"></div>
+        <div class="floating-element floating-sm" style="top: 70%; left: 15%;"></div>
+        <div class="floating-element floating-md" style="top: 25%; right: 75%;"></div>
+        <div class="floating-element floating-sm" style="top: 55%; left: 80%;"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="text-center mb-5">{{ course_data.sections.outcomes.title }}</h2>
+                
+                <div class="outcomes-container">
+                    <div class="row g-4">
+                        {% for outcome in course_data.sections.outcomes.items %}
+                        <div class="col-lg-6">
+                            <div class="outcome-card">
+                                <div class="outcome-header">
+                                    <div class="outcome-number">{{ forloop.index }}</div>
+                                    <div class="outcome-icon-wrapper">
+                                        <i class="fas fa-rocket outcome-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="outcome-content">
+                                    <p class="outcome-text">{{ outcome }}</p>
+                                </div>
+                                <div class="outcome-gradient"></div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="#ready-to-join" class="btn btn-skills-cta scroll-to-pricing">
+                        <div class="btn-content">
+                            <div class="btn-main-text">Master These Skills</div>
+                            <div class="btn-sub-text">Unlock your potential</div>
+                        </div>
+                        <div class="btn-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Testimonials Section -->
+<section class="testimonials py-5 bg-primary text-white background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 20%; right: 10%;"></div>
+        <div class="floating-element floating-lg" style="top: 60%; left: 5%;"></div>
+        <div class="floating-element floating-sm" style="top: 40%; left: 85%;"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="text-center mb-5">What Students Are Saying</h2>
+                
+                <div class="row g-4">
+                    {% assign course_testimonials = site.data.courses.testimonials.featured | where: "course_completed", course_data.id %}
+                    {% assign other_testimonials = site.data.courses.testimonials.featured | where_exp: "item", "item.course_completed != course_data.id" %}
+                    {% assign all_testimonials = course_testimonials | concat: other_testimonials %}
+                    
+                    {% for testimonial in all_testimonials limit: 6 %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="{{ site.baseurl }}{{ testimonial.avatar }}" alt="{{ testimonial.name }}" class="avatar-img">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h5 class="testimonial-name">{{ testimonial.name }}</h5>
+                                    <p class="testimonial-role">{{ testimonial.role }}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="testimonial-rating mb-3">
+                                {% for i in (1..testimonial.rating) %}
+                                <i class="fas fa-star text-warning"></i>
+                                {% endfor %}
+                            </div>
+                            
+                            <blockquote class="testimonial-content">
+                                "{{ testimonial.content }}"
+                            </blockquote>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="text-center mt-5">
+                    <p class="lead mb-4">Join {{ sp.student_count }} successful students</p>
+                    <a href="#ready-to-join" class="btn btn-social-cta scroll-to-pricing">
+                        <span class="btn-text">{{ site.data.courses.ui.cta_variants.social }}</span>
+                        <div class="btn-arrow">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why This Course Section -->
+<section class="why-course py-5 bg-accent-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 25%; right: 8%;"></div>
+        <div class="floating-element floating-sm" style="top: 65%; left: 12%;"></div>
+        <div class="floating-element floating-lg" style="top: 45%; right: 75%;"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="why-course-wrapper">
+                    <!-- Section Header -->
+                    <div class="why-course-header text-center mb-5">
+                        <div class="header-badge">
+                            <i class="fas fa-star"></i>
+                            <span>Course Spotlight</span>
+                        </div>
+                        <h2 class="why-course-title">{{ course_data.sections.why_this_course.title }}</h2>
+                        <div class="title-underline"></div>
+                    </div>
+
+                    <!-- Main Content Grid -->
+                    <div class="why-course-grid">
+                        <div class="row g-5 align-items-center">
+                            <!-- Content Side -->
+                            <div class="col-lg-6">
+                                <div class="why-content-area">
+                                    <div class="content-intro mb-4">
+                                        <p class="intro-text">{{ course_data.sections.why_this_course.content }}</p>
+                                    </div>
+                                    
+                                    <div class="feature-highlights">
+                                        {% for bullet in course_data.sections.why_this_course.bullets %}
+                                        <div class="feature-highlight-item">
+                                            <div class="highlight-icon">
+                                                <i class="fas fa-rocket"></i>
+                                            </div>
+                                            <div class="highlight-content">
+                                                <div class="highlight-text">{{ bullet | remove: '✅ ' }}</div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="why-course-cta mt-5">
+                                        <a href="#ready-to-join" class="btn btn-why-course scroll-to-pricing">
+                                            <span class="btn-text">{{ site.data.courses.ui.buy_now_button }}</span>
+                                            <div class="btn-arrow">
+                                                <i class="fas fa-arrow-right"></i>
+                                            </div>
+                                        </a>
+                                        <p class="cta-subtext">Join thousands of successful developers</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Visual Side -->
+                            <div class="col-lg-6">
+                                <div class="why-visual-area">
+                                    {% if course_data.sections.why_this_course.showcase_image %}
+                                    <div class="showcase-container">
+                                        <div class="showcase-frame">
+                                            <div class="frame-header">
+                                                <div class="frame-dots">
+                                                    <span class="dot red"></span>
+                                                    <span class="dot yellow"></span>
+                                                    <span class="dot green"></span>
+                                                </div>
+                                                <div class="frame-title">Live Coding Session</div>
+                                            </div>
+                                            <div class="showcase-content">
+                                                <img src="{{ site.baseurl }}{{ course_data.sections.why_this_course.showcase_image }}" 
+                                                     alt="Live coding demonstration" 
+                                                     class="showcase-media">
+                                                <div class="play-overlay">
+                                                    <div class="play-button">
+                                                        <i class="fas fa-play"></i>
+                                                    </div>
+                                                    <p class="play-text">Watch me build this app</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Floating Stats -->
+                                        <div class="floating-stats">
+                                            <div class="stat-item stat-1">
+                                                <div class="stat-icon">
+                                                    <i class="fas fa-clock"></i>
+                                                </div>
+                                                <div class="stat-info">
+                                                    <div class="stat-number">{{ course_data.duration }}</div>
+                                                    <div class="stat-label">of content</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="stat-item stat-2">
+                                                <div class="stat-icon">
+                                                    <i class="fas fa-code"></i>
+                                                </div>
+                                                <div class="stat-info">
+                                                    <div class="stat-number">{{ course_data.language }}</div>
+                                                    <div class="stat-label">focused</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="stat-item stat-3">
+                                                <div class="stat-icon">
+                                                    <i class="fas fa-trophy"></i>
+                                                </div>
+                                                <div class="stat-info">
+                                                    <div class="stat-number">{{ sp.avg_rating }}</div>
+                                                    <div class="stat-label">rating</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Creator Story Section -->
+<section class="creator-story py-5 bg-light background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-lg" style="top: 25%; left: 12%;"></div>
+        <div class="floating-element floating-sm" style="top: 55%; right: 8%;"></div>
+        <div class="floating-element floating-md" style="top: 75%; left: 70%;"></div>
+        <div class="floating-element floating-sm" style="top: 15%; right: 75%;"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="text-center mb-5">{{ course_data.sections.creator_story.title }}</h2>
+                
+                <div class="creator-card">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                            <div class="creator-image-container">
+                                <div class="creator-image">
+                                    <img src="{{ site.baseurl }}/assets/img/daniel.jpg" alt="Daniel Gakwaya" class="img-fluid">
+                                </div>
+                                <div class="creator-badge">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="creator-content">
+                                <div class="creator-quote mb-4">
+                                    <i class="fas fa-quote-left quote-icon"></i>
+                                    <p class="lead font-italic">{{ course_data.sections.creator_story.content | split: '"' | join: '"' }}</p>
+                                </div>
+                                
+                                <div class="creator-credentials mb-4">
+                                    {% for bullet in course_data.sections.creator_story.bullets %}
+                                    <div class="credential-item mb-2">
+                                        <i class="fas fa-check-circle text-success me-2"></i>{{ bullet }}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                
+                                <div class="creator-additional">
+                                    <p>{{ course_data.sections.creator_story.content_2 }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="#ready-to-join" class="btn btn-experience-cta scroll-to-pricing">
+                        <div class="btn-content">
+                            <div class="btn-main-text">Learn From Experience</div>
+                            <div class="btn-sub-text">Get expert guidance</div>
+                        </div>
+                        <div class="btn-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What You'll Get Section -->
+<section class="what-you-get py-5 bg-neutral-gradient background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-lg" style="top: 20%; left: 5%;"></div>
+        <div class="floating-element floating-sm" style="top: 55%; right: 15%;"></div>
+        <div class="floating-element floating-md" style="top: 75%; left: 70%;"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="what-you-get-wrapper">
+                    <!-- Section Header -->
+                    <div class="get-header text-center mb-5">
+                        <div class="get-badge-container">
+                            <div class="get-badge">
+                                <i class="fas fa-gift"></i>
+                                <span>Course Package</span>
+                            </div>
+                        </div>
+                        <h2 class="get-title">{{ course_data.sections.what_you_get.title }}</h2>
+                        <p class="get-subtitle">Everything you need to master {{ course_data.technology }} development</p>
+                        <div class="get-divider"></div>
+                    </div>
+
+                    <!-- Features Grid -->
+                    <div class="get-features-container mb-5">
+                        <div class="row g-4">
+                            {% for bullet in course_data.sections.what_you_get.bullets %}
+                            <div class="col-lg-6">
+                                <div class="get-feature-card">
+                                    <div class="feature-card-content">
+                                        <div class="feature-icon-area">
+                                            {% assign icon_index = forloop.index0 | modulo: 6 %}
+                                            {% case icon_index %}
+                                                {% when 0 %}
+                                                    <i class="fas fa-video feature-icon"></i>
+                                                {% when 1 %}
+                                                    <i class="fas fa-code feature-icon"></i>
+                                                {% when 2 %}
+                                                    <i class="fas fa-sync-alt feature-icon"></i>
+                                                {% when 3 %}
+                                                    <i class="fas fa-download feature-icon"></i>
+                                                {% when 4 %}
+                                                    <i class="fas fa-users feature-icon"></i>
+                                                {% when 5 %}
+                                                    <i class="fas fa-certificate feature-icon"></i>
+                                            {% endcase %}
+                                        </div>
+                                        <div class="feature-text-area">
+                                            <div class="feature-text">{{ bullet | remove: '• ' }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="feature-hover-effect"></div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Content Description -->
+                    <div class="get-content-section">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="content-description-card">
+                                    <div class="description-header">
+                                        <i class="fas fa-star-of-life description-icon"></i>
+                                        <h3 class="description-title">Your Complete Learning Journey</h3>
+                                    </div>
+                                    <div class="description-content">
+                                        <p class="description-text">{{ course_data.sections.what_you_get.content }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="get-cta-section text-center mt-5">
+                        <div class="cta-container">
+                            <div class="cta-highlight">
+                                <span class="cta-highlight-text">🎯 {% if course_data.ready_cta_text %}{{ course_data.ready_cta_text }}{% else %}Ready to transform your {{ course_data.language }} skills?{% endif %}</span>
+                            </div>
+                            <a href="#ready-to-join" class="btn btn-get-started scroll-to-pricing">
+                                <div class="btn-content">
+                                    <div class="btn-main-text">Get All This Today</div>
+                                    <div class="btn-sub-text">Start your journey now</div>
+                                </div>
+                                <div class="btn-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                            </a>
+                            <div class="cta-guarantee">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>{{ site.data.courses.guarantee.title }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Value Proposition Section -->
+<section class="value-proposition py-5 bg-light background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 30%; right: 15%;"></div>
+        <div class="floating-element floating-lg" style="top: 65%; left: 10%;"></div>
+        <div class="floating-element floating-sm" style="top: 20%; left: 80%;"></div>
+        <div class="floating-element floating-md" style="top: 80%; right: 70%;"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                {% assign course_data = site.data.courses.courses | where: "id", page.course_id | first %}
+                {% if course_data.value_proposition %}
+                    {% assign value_prop = course_data.value_proposition %}
+                {% else %}
+                    {% assign value_prop = site.data.courses.default_value_proposition %}
+                {% endif %}
+                
+                <h2 class="text-center mb-4">{{ value_prop.title }}</h2>
+                <p class="text-center text-muted mb-5">{{ value_prop.subtitle }}</p>
+                
+                <div class="row">
+                    {% for section_data in value_prop.sections %}
+                        {% assign section = section_data[1] %}
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <div class="value-section card h-100 shadow-sm border-0">
+                                <div class="card-body p-4">
+                                    <div class="section-header mb-3">
+                                        <i class="{{ section.icon }} section-icon text-primary me-2"></i>
+                                        <h4 class="section-title d-inline">{{ section.title }}</h4>
+                                    </div>
+                                    
+                                    <ul class="value-points mb-4">
+                                        {% for point in section.points %}
+                                        <li class="value-point mb-2 {% if point.highlight %}highlighted{% endif %}">
+                                            <span class="point-text">{{ point.text }}</span>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    
+                                    {% if section.vs_alternatives %}
+                                    <div class="vs-alternatives mt-3">
+                                        <p class="vs-text mb-0"><strong>Why This Matters:</strong> {{ section.vs_alternatives }}</p>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="#ready-to-join" class="btn btn-testimonials-cta scroll-to-pricing">
+                        <div class="btn-content">
+                            <div class="btn-main-text">Start Learning Today</div>
+                            <div class="btn-sub-text">Join thousands of developers</div>
+                        </div>
+                        <div class="btn-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </a>
+                    <p class="text-muted mt-2 small">
+                        <i class="fas fa-shield-alt me-1"></i>
+                        {{ site.data.courses.guarantee.title }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ready to Join Section (Enhanced with Urgency) -->
+<section id="ready-to-join" class="ready-to-join py-5 bg-light background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 30%; right: 5%;"></div>
+        <div class="floating-element floating-lg" style="top: 60%; left: 8%;"></div>
+        <div class="floating-element floating-sm" style="top: 15%; left: 75%;"></div>
+    </div>
+    <div class="container">
+        <!-- Urgency Banner -->
+        {% if site.data.courses.pricing.lifetime.urgency_text %}
+        <div class="urgency-banner text-center mb-4">
+            <div class="alert alert-warning border-0 shadow-sm">
+                <i class="fas fa-clock me-2"></i>
+                <strong>⏰ {{ site.data.courses.pricing.lifetime.urgency_text }}</strong>
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Section Header -->
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title mb-4">{{ site.data.courses.ui.ready_to_join_title }}</h2>
+                <p class="section-subtitle">{{ site.data.courses.ui.ready_to_join_subtitle }}</p>
+            </div>
+        </div>
+        
+        <!-- Pricing Cards -->
+        <div class="pricing-container">
+            <div class="row g-4 justify-content-center">
+                <!-- Single Course -->
+                <div class="col-lg-4">
+                    <div class="pricing-card single-course">
+                        {% if site.data.courses.pricing.lifetime.urgency_text %}
+                        <div class="urgency-badge">
+                            <span>{{ site.data.courses.ui.urgency.early_bird_message }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="card-header">
+                            <h3 class="plan-title">{{ site.data.courses.pricing.lifetime.title }}</h3>
+                            <div class="price-display">
+                                {% if site.data.courses.pricing.lifetime.original_price %}
+                                <span class="original-price">${{ site.data.courses.pricing.lifetime.original_price }}</span>
+                                {% endif %}
+                                <div class="current-price">
+                                    <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.lifetime.price }}</span>
+                                </div>
+                            </div>
+                            <p class="plan-subtitle">{{ site.data.courses.pricing.lifetime.subtitle }}</p>
+                        </div>
+                        
+                        <div class="card-body">
+                            <a href="{% if course_data.pricing_override.lifetime.teachable_link %}{{ course_data.pricing_override.lifetime.teachable_link }}{% else %}{{ site.data.courses.pricing.lifetime.teachable_link }}{% endif %}" 
+                               class="btn btn-outline-primary w-100 mb-4">
+                                {{ site.data.courses.ui.buy_now_button }}
+                            </a>
+                            
+                            <ul class="benefits-list">
+                                {% for benefit in site.data.courses.pricing.lifetime.benefits %}
+                                <li>{{ benefit }}</li>
+                                {% endfor %}
+                            </ul>
+                            
+                            {% if site.data.courses.pricing.lifetime.highlight_benefits %}
+                            <div class="highlight-benefits-section mt-3">
+                                <h6 class="highlight-benefits-title mb-2">Why Choose This Plan:</h6>
+                                <ul class="highlight-benefits-list">
+                                    {% for highlight in site.data.courses.pricing.lifetime.highlight_benefits %}
+                                    <li>{{ highlight }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+                            
+                            <!-- Duplicate CTA Button -->
+                            <div class="mt-4">
+                                <a href="{% if course_data.pricing_override.lifetime.teachable_link %}{{ course_data.pricing_override.lifetime.teachable_link }}{% else %}{{ site.data.courses.pricing.lifetime.teachable_link }}{% endif %}" 
+                                   class="btn btn-outline-primary w-100">
+                                    {{ site.data.courses.ui.buy_now_button }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Library Access (Popular) -->
+                <div class="col-lg-4">
+                    <div class="pricing-card library-access popular">
+                        {% if site.data.courses.pricing.monthly.popular %}
+                        <div class="popular-badge">
+                            <span>Popular</span>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="card-header">
+                            <h3 class="plan-title">{{ site.data.courses.pricing.monthly.title }}</h3>
+                            <div class="price-display">
+                                <div class="current-price">
+                                    <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.monthly.price }}</span>
+                                    <span class="period">{{ site.data.courses.pricing.monthly.subtitle }}</span>
+                                </div>
+                            </div>
+                            <p class="plan-subtitle">{{ site.data.courses.pricing.monthly.value_proposition }}</p>
+                        </div>
+                        
+                        <div class="card-body">
+                            <a href="{% if course_data.pricing_override.monthly.teachable_link %}{{ course_data.pricing_override.monthly.teachable_link }}{% else %}{{ site.data.courses.pricing.monthly.teachable_link }}{% endif %}" 
+                               class="btn btn-primary w-100 mb-4">
+                                Start Learning Today
+                            </a>
+                            
+                            <div class="library-link mb-3">
+                                <a href="{{ site.data.courses.pricing.monthly.library_link }}" class="library-access-link">
+                                    <i class="fas fa-books me-1"></i>View full course library
+                                </a>
+                            </div>
+                            
+                            <ul class="benefits-list">
+                                {% for benefit in site.data.courses.pricing.monthly.benefits %}
+                                <li>{{ benefit }}</li>
+                                {% endfor %}
+                            </ul>
+                            
+                            {% if site.data.courses.pricing.monthly.highlight_benefits %}
+                            <div class="highlight-benefits-section mt-3">
+                                <h6 class="highlight-benefits-title mb-2">Subscription Perks:</h6>
+                                <ul class="highlight-benefits-list">
+                                    {% for highlight in site.data.courses.pricing.monthly.highlight_benefits %}
+                                    <li>{{ highlight }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+                            
+                            <!-- Duplicate CTA Button -->
+                            <div class="mt-4">
+                                <a href="{% if course_data.pricing_override.monthly.teachable_link %}{{ course_data.pricing_override.monthly.teachable_link }}{% else %}{{ site.data.courses.pricing.monthly.teachable_link }}{% endif %}" 
+                                   class="btn btn-primary w-100">
+                                    Start Learning Today
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Library Pro -->
+                <div class="col-lg-4">
+                    <div class="pricing-card library-pro">
+                        <div class="card-header">
+                            <h3 class="plan-title">{{ site.data.courses.pricing.yearly.title }}</h3>
+                            <div class="price-display">
+                                {% if site.data.courses.pricing.yearly.original_price %}
+                                <span class="original-price">${{ site.data.courses.pricing.yearly.original_price }}</span>
+                                {% endif %}
+                                <div class="current-price">
+                                    <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.yearly.price }}</span>
+                                    <span class="period">{{ site.data.courses.pricing.yearly.subtitle }}</span>
+                                </div>
+                            </div>
+                            <p class="plan-subtitle">{{ site.data.courses.pricing.yearly.value_proposition }}</p>
+                        </div>
+                        
+                        <div class="card-body">
+                            <a href="{% if course_data.pricing_override.yearly.teachable_link %}{{ course_data.pricing_override.yearly.teachable_link }}{% else %}{{ site.data.courses.pricing.yearly.teachable_link }}{% endif %}" 
+                               class="btn btn-outline-primary w-100 mb-4">
+                                Join Now & Save
+                            </a>
+                            
+                            <div class="library-link mb-3">
+                                <a href="{{ site.data.courses.pricing.yearly.library_link }}" class="library-access-link">
+                                    <i class="fas fa-books me-1"></i>View full course library
+                                </a>
+                            </div>
+                            
+                            <ul class="benefits-list">
+                                {% for benefit in site.data.courses.pricing.yearly.benefits %}
+                                <li>{{ benefit }}</li>
+                                {% endfor %}
+                            </ul>
+                            
+                            {% if site.data.courses.pricing.yearly.highlight_benefits %}
+                            <div class="highlight-benefits-section mt-3">
+                                <h6 class="highlight-benefits-title mb-2">Premium Advantages:</h6>
+                                <ul class="highlight-benefits-list">
+                                    {% for highlight in site.data.courses.pricing.yearly.highlight_benefits %}
+                                    <li>{{ highlight }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+                            
+                            <!-- Duplicate CTA Button -->
+                            <div class="mt-4">
+                                <a href="{% if course_data.pricing_override.yearly.teachable_link %}{{ course_data.pricing_override.yearly.teachable_link }}{% else %}{{ site.data.courses.pricing.yearly.teachable_link }}{% endif %}" 
+                                   class="btn btn-outline-primary w-100">
+                                    Join Now & Save
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Money-back Guarantee -->
+        <div class="guarantee-section mt-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="guarantee-title">{{ site.data.courses.guarantee.title }}</h3>
+                        <p class="guarantee-subtitle">{{ site.data.courses.guarantee.subtitle }}</p>
+                        <p class="guarantee-description">{{ site.data.courses.guarantee.description }}</p>
+                        
+                        <div class="guarantee-features">
+                            {% for feature in site.data.courses.guarantee.features %}
+                            <span class="guarantee-feature">
+                                <i class="fas fa-check text-success me-1"></i>{{ feature }}
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Trust Indicators -->
+        <div class="trust-indicators mt-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="trust-items">
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>{{ site.data.courses.guarantee.title }}</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure payment processing</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-users"></i>
+                            <span>Join {{ sp.student_count }} students</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq py-5 bg-light background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-sm" style="top: 25%; left: 8%;"></div>
+        <div class="floating-element floating-md" style="top: 50%; right: 12%;"></div>
+        <div class="floating-element floating-lg" style="top: 75%; left: 15%;"></div>
+        <div class="floating-element floating-sm" style="top: 35%; right: 80%;"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">{{ site.data.courses.faq.title }}</h2>
+                <p class="text-center text-muted mb-5">{{ site.data.courses.faq.subtitle }}</p>
+                
+                <div class="accordion" id="faqAccordion">
+                    {% for item in site.data.courses.faq.items %}
+                    <div class="accordion-item mb-3">
+                        <h3 class="accordion-header" id="faq{{ forloop.index }}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse{{ forloop.index }}" aria-expanded="false" aria-controls="faqCollapse{{ forloop.index }}">
+                                {{ item.q }}
+                            </button>
+                        </h3>
+                        <div id="faqCollapse{{ forloop.index }}" class="accordion-collapse collapse" aria-labelledby="faq{{ forloop.index }}" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                {{ item.a }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <!-- Contact Section -->
+                <div class="contact-section mt-5">
+                    <div class="contact-card glass-card p-4">
+                        <div class="text-center mb-4">
+                            <h4 class="contact-title mb-3">Still Have Questions?</h4>
+                            <p class="contact-subtitle">Get personalized help from instructor Daniel Gakwaya and our community</p>
+                        </div>
+                        
+                        <div class="contact-options">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <a href="https://discord.com/invite/PcATcraESW" target="_blank" class="contact-option discord-option">
+                                        <div class="contact-icon discord-icon">
+                                            <i class="fab fa-discord"></i>
+                                        </div>
+                                        <div class="contact-content">
+                                            <h5 class="contact-method">Join Our Discord</h5>
+                                            <p class="contact-description">Chat with 4,000+ Qt developers and get instant help</p>
+                                            <div class="contact-badge">
+                                                <span>Usually replied within hours</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-arrow">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="mailto:daniel.g@learnqt.guide" class="contact-option email-option">
+                                        <div class="contact-icon email-icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="contact-content">
+                                            <h5 class="contact-method">Email the Instructor</h5>
+                                            <p class="contact-description">Send a direct message to Daniel for detailed questions</p>
+                                            <div class="contact-badge">
+                                                <span>daniel.g@learnqt.guide</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-arrow">
+                                            <i class="fas fa-paper-plane"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-cta text-center mt-4">
+                            <p class="mb-3"><strong>Ready to start your journey?</strong></p>
+                            <a href="#ready-to-join" class="btn btn-contact-cta scroll-to-pricing">
+                                <span class="btn-text">{{ site.data.courses.ui.cta_variants.guarantee }}</span>
+                                <div class="btn-arrow">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter py-5 bg-primary background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-lg" style="top: 20%; right: 10%;"></div>
+        <div class="floating-element floating-md" style="top: 60%; left: 5%;"></div>
+        <div class="floating-element floating-sm" style="top: 40%; right: 75%;"></div>
+        <div class="floating-element floating-md" style="top: 80%; left: 80%;"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="newsletter-content">
+                    <h2 class="newsletter-title text-white mb-3">Not Sure If This Course Is Right For You?</h2>
+                    <h3 class="newsletter-subtitle text-white mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-weight: 700; background: rgba(21, 186, 41, 0.2); padding: 15px; border-radius: 12px;">Get Our FREE Qt6 QML Guide & See Our Teaching Style Risk-Free!</h3>
+                    <p class="newsletter-description text-white-75 mb-4">
+                        <strong>Before investing in the full course</strong>, experience our proven teaching method with this 
+                        comprehensive Qt6 QML beginner's guide. You'll get the same clear explanations, 
+                        step-by-step approach, and practical examples that have helped <strong>32,000+ students</strong> 
+                        master Qt development.
+                    </p>
+                    
+                    <div class="newsletter-benefits mb-4">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span class="text-white"><strong>Test our teaching style</strong> before committing</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span class="text-white"><strong>Start learning immediately</strong> with practical examples</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span class="text-white"><strong>Get exclusive tips</strong> and course updates</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span class="text-white"><strong>Zero risk</strong> - unsubscribe anytime</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-proof mb-3">
+                        <p class="text-white-75 mb-0">
+                            <i class="fas fa-users text-success me-2"></i>
+                            <strong>Join 32,000+ developers</strong> who started their Qt journey with us
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="newsletter-form-container">
+                    <div class="newsletter-book-preview mb-4 text-center">
+                        <img src="{{ site.baseurl }}/assets/img/qt6_qml_for_beginners.png" 
+                             alt="Free Qt6 QML Book" 
+                             class="newsletter-book-image">
+                        <div class="book-badge">
+                            <span>FREE</span>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-form glass-card p-4">
+                        <style>
+                        .formkit-form[data-uid="67a33fe28d"] {
+                          margin: 0 !important;
+                          display: flex !important;
+                          justify-content: flex-start !important;
+                          align-items: flex-start !important;
+                          width: 100% !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] > div {
+                          width: 100% !important;
+                          margin: 0 !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] .formkit-fields {
+                          display: flex !important;
+                          gap: 10px !important;
+                          flex-direction: column !important;
+                          align-items: stretch !important;
+                          width: 100% !important;
+                          margin: 0 !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] .formkit-field {
+                          width: 100% !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] .formkit-input {
+                          font-size: 16px !important;
+                          padding: 12px 15px !important;
+                          width: 100% !important;
+                          min-height: 40px !important;
+                          border: 2px solid #e2e8f0 !important;
+                          border-radius: 12px !important;
+                          background: rgba(255, 255, 255, 0.9) !important;
+                          color: #1f2937 !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] .formkit-input:focus {
+                          border-color: var(--qt-green) !important;
+                          box-shadow: 0 0 0 3px rgba(21, 186, 41, 0.1) !important;
+                          outline: none !important;
+                          background: white !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] .formkit-input::placeholder {
+                          color: #9ca3af !important;
+                          opacity: 1 !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] .formkit-submit {
+                          margin: 0 !important;
+                          width: 100% !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] .formkit-submit > span {
+                          width: 100% !important;
+                          min-height: 60px !important;
+                          background: var(--primary-gradient) !important;
+                          border: none !important;
+                          border-radius: 15px !important;
+                          font-size: 1rem !important;
+                          font-weight: 600 !important;
+                          color: white !important;
+                          transition: all 0.3s ease !important;
+                          box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3) !important;
+                          display: flex !important;
+                          align-items: center !important;
+                          justify-content: center !important;
+                          gap: 1rem !important;
+                          position: relative !important;
+                          overflow: hidden !important;
+                          padding: 1rem 2rem !important;
+                          text-transform: none !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] .formkit-submit > span:hover {
+                          transform: translateY(-3px) !important;
+                          box-shadow: 0 12px 35px rgba(21, 186, 41, 0.4) !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] .formkit-submit > span::before {
+                          content: '' !important;
+                          margin-right: 0 !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] .formkit-submit > span::after {
+                          content: '' !important;
+                          display: flex !important;
+                          align-items: center !important;
+                          justify-content: center !important;
+                          width: 40px !important;
+                          height: 40px !important;
+                          background: rgba(255, 255, 255, 0.2) !important;
+                          border-radius: 50% !important;
+                          transition: all 0.3s ease !important;
+                          font-size: 1.2rem !important;
+                        }
+                        .formkit-form[data-uid="67a33fe28d"] .formkit-submit > span:hover::after {
+                          background: rgba(255, 255, 255, 0.3) !important;
+                          transform: rotate(10deg) !important;
+                        }
+                        @media (max-width: 768px) {
+                          .formkit-form[data-uid="67a33fe28d"] {
+                            margin-top: 20px !important;
+                          }
+                        }
+                        </style>
+
+                        <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
+                        
+                        <p class="newsletter-privacy text-center text-muted mb-3">
+                            <small>Your email will never be shared.</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<style>
+:root {
+    --qt-green: #15ba29;
+    --qt-green-dark: #149f25;
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --warning-color: #f39c12;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    
+    /* Shared Design System Variables */
+    --primary-gradient: linear-gradient(135deg, #15ba29 0%, #149f25 50%, #0d7a1c 100%);
+    --secondary-gradient: linear-gradient(135deg, #0ea5e9 0%, #15ba29 50%, #059669 100%);
+    --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --neutral-gradient: linear-gradient(135deg, #15ba29 0%, #3b82f6 50%, #1e40af 100%);
+    --gray-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-blur: blur(15px);
+}
+
+/* Shared Background Pattern System */
+.background-pattern {
+    position: relative;
+    overflow: hidden;
+}
+
+.background-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.3) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.2) 1px, transparent 1px);
+    background-size: 100px 100px, 120px 120px, 80px 80px;
+    animation: patternMove 20s linear infinite;
+    z-index: 1;
+}
+
+/* Gray background specific patterns */
+.bg-gray-gradient.background-pattern::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(0,0,0,0.05) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(0,0,0,0.05) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(0,0,0,0.03) 1px, transparent 1px);
+    opacity: 0.3;
+}
+
+/* Light background specific patterns */
+.bg-light.background-pattern::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(21, 186, 41, 0.08) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(21, 186, 41, 0.08) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(21, 186, 41, 0.05) 1px, transparent 1px);
+    opacity: 0.4;
+}
+
+/* Primary background specific patterns */
+.bg-primary.background-pattern::before {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 2px, transparent 2px),
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.1) 1px, transparent 1px);
+    opacity: 0.6;
+}
+
+.background-pattern > .container {
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes patternMove {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-100px) translateY(-100px); }
+}
+
+/* Floating Elements System */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.floating-element {
+    position: absolute;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    backdrop-filter: var(--glass-blur);
+}
+
+/* Gray background specific floating elements */
+.bg-gray-gradient .floating-element {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Light background specific floating elements */
+.bg-light .floating-element {
+    background: rgba(21, 186, 41, 0.08);
+    border: 1px solid rgba(21, 186, 41, 0.15);
+}
+
+/* Primary background specific floating elements */
+.bg-primary .floating-element {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-sm {
+    width: 60px;
+    height: 60px;
+    animation: float-small 7s ease-in-out infinite;
+}
+
+.floating-md {
+    width: 80px;
+    height: 80px;
+    animation: float-medium 6s ease-in-out infinite;
+}
+
+.floating-lg {
+    width: 120px;
+    height: 120px;
+    animation: float-large 8s ease-in-out infinite;
+}
+
+@keyframes float-small {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(360deg); }
+}
+
+@keyframes float-medium {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes float-large {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(-180deg); }
+}
+
+/* Glassmorphism System */
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 16px;
+}
+
+.glass-button {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Section Background Classes */
+.bg-primary-gradient {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.bg-secondary-gradient {
+    background: var(--secondary-gradient);
+    color: white;
+}
+
+.bg-accent-gradient {
+    background: var(--accent-gradient);
+    color: white;
+}
+
+.bg-neutral-gradient {
+    background: var(--neutral-gradient);
+    color: white;
+}
+
+.bg-gray-gradient {
+    background: var(--gray-gradient);
+    color: #1f2937;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+    color: #1f2937;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+    color: #6b7280;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.contact-options {
+    margin: 2rem 0;
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.5);
+    height: 100%;
+}
+
+.contact-option:hover {
+    text-decoration: none;
+    color: inherit;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.discord-option {
+    border-color: rgba(88, 101, 242, 0.3);
+}
+
+.discord-option:hover {
+    border-color: #5865f2;
+    background: rgba(88, 101, 242, 0.05);
+}
+
+.email-option {
+    border-color: rgba(21, 186, 41, 0.3);
+}
+
+.email-option:hover {
+    border-color: #15ba29;
+    background: rgba(21, 186, 41, 0.05);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.discord-icon {
+    background: linear-gradient(135deg, #5865f2, #7289da);
+    color: white;
+}
+
+.email-icon {
+    background: linear-gradient(135deg, #15ba29, #149f25);
+    color: white;
+}
+
+.contact-content {
+    flex-grow: 1;
+}
+
+.contact-method {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+.contact-description {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.contact-badge {
+    display: inline-block;
+}
+
+.contact-badge span {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.discord-option .contact-badge span {
+    background: rgba(88, 101, 242, 0.1);
+    color: #5865f2;
+}
+
+.email-option .contact-badge span {
+    background: rgba(21, 186, 41, 0.1);
+    color: #15ba29;
+}
+
+.contact-arrow {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+}
+
+.contact-option:hover .contact-arrow {
+    color: #6b7280;
+    transform: translateX(3px);
+}
+
+.contact-cta {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 1.5rem;
+}
+
+.btn-contact-cta {
+    background: linear-gradient(135deg, #15ba29 0%, #149f25 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(21, 186, 41, 0.3);
+}
+
+.btn-contact-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(21, 186, 41, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-contact-cta .btn-arrow {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-contact-cta:hover .btn-arrow {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-option {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .contact-arrow {
+        display: none;
+    }
+    
+    .contact-title {
+        font-size: 1.5rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Enhanced Hero Section */
+.course-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    z-index: 10;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.hero-course-badge {
+    display: inline-block;
+}
+
+.badge-content {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+/* Enhanced Social Proof in Hero */
+.social-proof-section {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.social-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.social-proof-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+
+.proof-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.proof-icon i {
+    color: white;
+    font-size: 1rem;
+}
+
+.proof-content {
+    flex-grow: 1;
+}
+
+.social-proof-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+}
+
+.social-proof-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.3;
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.badge-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+}
+
+.hero-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+
+.btn-hero-primary {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #15ba29;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+}
+
+.btn-hero-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.btn-hero-primary:hover::before {
+    left: 100%;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    color: #149f25;
+}
+
+.btn-hero-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-arrow {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-secondary:hover .btn-arrow {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.hero-image-container {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-image-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: all 0.3s ease;
+}
+
+.hero-image-frame:hover {
+    transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+}
+
+.image-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(21, 186, 41, 0.3) 0%, transparent 70%);
+    filter: blur(20px);
+    z-index: -1;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.hero-image-frame:hover .hero-image {
+    transform: scale(1.02);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.tech-stack-indicator {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.tech-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Hero Responsive Design */
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .social-proof-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .hero-image-frame {
+        transform: none;
+        margin-top: 2rem;
+    }
+    
+    .floating-elements {
+        display: none;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        justify-content: center;
+    }
+}
+
+/* Enhanced Course Preview Section */
+.course-preview {
+    position: relative;
+}
+
+/* Section Header */
+.preview-header {
+    position: relative;
+    z-index: 3;
+}
+
+.preview-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.preview-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.preview-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.preview-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--qt-green), rgba(255,255,255,0.5));
+    border-radius: 2px;
+    margin: 0 auto 3rem;
+}
+
+/* Enhanced Video Container */
+.demo-video-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+}
+
+.video-frame {
+    background: #2d3748;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.video-frame-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: #1a202c;
+    border-bottom: 1px solid #4a5568;
+}
+
+.frame-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.control-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.control-dot.red { background: #ff5f57; }
+.control-dot.yellow { background: #ffbd2e; }
+.control-dot.green { background: #28ca42; }
+
+.frame-title {
+    color: #e2e8f0;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.frame-actions {
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background: #000;
+}
+
+.demo-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.youtube-embed-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.youtube-video {
+    width: 100%;
+    height: 100%;
+}
+
+/* Video Info Overlay */
+.video-info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 2rem 1.5rem 1rem;
+}
+
+.video-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.stat-item i {
+    color: var(--qt-green);
+}
+
+/* Video Context Cards */
+.video-context {
+    position: relative;
+    z-index: 3;
+}
+
+.context-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.context-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.context-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--qt-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.context-card h5 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.context-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .preview-title {
+        font-size: 2rem;
+    }
+    
+    .preview-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .video-stats {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .frame-title {
+        display: none;
+    }
+    
+    .context-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .context-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.project-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.project-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Learning Outcomes */
+.outcomes-container {
+    margin-bottom: 2rem;
+}
+
+.outcome-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.outcome-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(21, 186, 41, 0.15);
+    border-color: var(--qt-green);
+}
+
+.outcome-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.outcome-number {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(21, 186, 41, 0.3);
+}
+
+.outcome-icon-wrapper {
+    background: rgba(21, 186, 41, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.outcome-icon {
+    color: var(--qt-green);
+    font-size: 1.3rem;
+}
+
+.outcome-content {
+    position: relative;
+    z-index: 2;
+}
+
+.outcome-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    margin: 0;
+    font-weight: 500;
+}
+
+.outcome-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--qt-green), var(--qt-green-dark));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.outcome-card:hover .outcome-gradient {
+    opacity: 1;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: linear-gradient(135deg, var(--qt-green) 0%, var(--qt-green-dark) 100%);
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--secondary-color);
+}
+
+.testimonial-role {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.testimonial-rating {
+    margin-bottom: 1rem;
+}
+
+.testimonial-content {
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+/* Content Sections */
+.content-block p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+.benefits-list .benefit-item,
+.features-grid .feature-item {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding-left: 0;
+    color: #2c3e50;
+}
+
+.credentials-list .credential-item {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Creator Story Section */
+.creator-card {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.creator-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.creator-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--qt-green);
+    box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3);
+    position: relative;
+    margin: 0 auto;
+}
+
+.creator-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.creator-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--qt-green);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(21, 186, 41, 0.4);
+}
+
+.creator-content {
+    padding-left: 2rem;
+}
+
+.creator-quote {
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: var(--qt-green);
+    opacity: 0.3;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+.creator-quote p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+    padding-left: 2rem;
+}
+
+.creator-credentials .credential-item {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.creator-additional p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.showcase-image img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Value Proposition Section */
+.value-proposition {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.value-section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.value-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
+    border-color: var(--primary-color);
+}
+
+.section-header {
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 1rem;
+}
+
+.section-icon {
+    font-size: 1.5rem;
+    width: 30px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.value-points {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.value-point {
+    display: list-item;
+    list-style-type: disc;
+    padding: 0.3rem 0;
+    margin-left: 0;
+    line-height: 1.6;
+}
+
+.value-point.highlighted {
+    font-weight: 600;
+    list-style-type: disc;
+}
+
+.value-point.highlighted .point-text {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.point-text {
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+.vs-alternatives {
+    border-top: 2px solid #e9ecef;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.vs-text {
+    color: #495057;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Ready to Join Section */
+.ready-to-join {
+    position: relative;
+}
+
+/* Urgency Banner */
+.urgency-banner .alert {
+    background: linear-gradient(90deg, var(--warning-color), #e67e22) !important;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.urgency-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--danger-color), #c0392b);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--success-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.pricing-card.popular {
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+}
+
+.pricing-card .card-header {
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+    padding: 2rem 1.5rem 1.5rem;
+}
+
+.plan-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.plan-subtitle {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.price-display {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.original-price {
+    font-size: 1.2rem;
+    color: #999;
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.current-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.currency {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    line-height: 1;
+}
+
+.period {
+    font-size: 1rem;
+    color: #666;
+}
+
+.savings-badge,
+.trial-badge,
+.equivalent-price {
+    display: inline-block;
+    background: var(--success-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.trial-badge {
+    background: var(--primary-color);
+}
+
+.equivalent-price {
+    background: var(--warning-color);
+}
+
+.pricing-card .card-body {
+    padding: 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    list-style: none;
+    list-style-type: none;
+}
+
+.benefits-list li:before {
+    content: none;
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.highlight-benefits {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+.highlight-item {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.highlight-item:last-child {
+    margin-bottom: 0;
+}
+
+/* New Highlight Benefits Bullet Lists */
+.highlight-benefits-section {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.highlight-benefits-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.highlight-benefits-list {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.highlight-benefits-list li {
+    padding: 0.2rem 0;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    line-height: 1.4;
+}
+
+.library-access-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.library-access-link:hover {
+    text-decoration: underline;
+}
+
+/* Guarantee Section */
+.guarantee-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.guarantee-icon {
+    font-size: 3rem;
+    color: var(--success-color);
+    margin-bottom: 1rem;
+}
+
+.guarantee-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.guarantee-subtitle {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.guarantee-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.guarantee-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.guarantee-feature {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* Trust Indicators */
+.trust-indicators {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.trust-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.trust-item i {
+    color: var(--success-color);
+}
+
+/* FAQ Section */
+.faq .accordion-item {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq .accordion-button {
+    background: white;
+    border: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.faq .accordion-button:not(.collapsed) {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: none;
+}
+
+.faq .accordion-button:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.faq .accordion-body {
+    padding: 1.5rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+/* Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #2980b9);
+    border: none;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, var(--qt-green-dark), var(--qt-green));
+}
+
+.btn-outline-light {
+    border: 2px solid rgba(255,255,255,0.7);
+    color: white;
+    font-weight: 600;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+    color: white;
+}
+
+/* Animations */
+/* Removed all animations for cleaner experience */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .course-hero {
+        min-height: auto;
+        padding: 3rem 0;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .pricing-card.popular {
+        transform: none;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-cta-buttons .btn {
+        min-width: auto;
+        margin-bottom: 1rem;
+    }
+    
+    .social-proof-section .row > div {
+        margin-bottom: 1rem;
+    }
+    
+    .trust-items {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .guarantee-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .value-section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .value-section:hover {
+        transform: none;
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .section-icon {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+    }
+    
+    /* Learning Outcomes Responsive */
+    .outcome-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .outcome-card:hover {
+        transform: none;
+    }
+    
+    .outcome-header {
+        margin-bottom: 1rem;
+    }
+    
+    .outcome-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .outcome-icon-wrapper {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .outcome-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Creator Story Responsive */
+    .creator-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .creator-content {
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+    
+    .creator-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-badges .badge {
+        display: block;
+        margin-bottom: 0.5rem;
+        margin-right: 0 !important;
+    }
+    
+    .price {
+        font-size: 2.5rem !important;
+    }
+    
+    .creator-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .creator-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .creator-quote p {
+        font-size: 1.1rem;
+        padding-left: 1.5rem;
+    }
+    
+    .quote-icon {
+        font-size: 1.5rem;
+    }
+    
+    /* Outcome Cards Mobile */
+    .outcome-card {
+        padding: 1.25rem;
+    }
+    
+    .outcome-number {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    
+    .outcome-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .outcome-icon {
+        font-size: 1.1rem;
+    }
+    
+    .outcome-text {
+        font-size: 0.95rem;
+    }
+    
+    .social-proof-number {
+        font-size: 1.5rem;
+    }
+    
+    .project-content {
+        padding: 1rem;
+    }
+    
+    .vs-alternatives {
+        margin-top: 1rem;
+        padding: 1rem !important;
+    }
+    
+    .value-point {
+        padding: 0.4rem 0.3rem;
+    }
+    
+    .value-point {
+        padding: 0.3rem 0;
+    }
+    
+    .point-text {
+        font-size: 0.9rem;
+    }
+    
+    .vs-text {
+        font-size: 0.85rem;
+    }
+    
+    .testimonial-card {
+        padding: 1rem;
+    }
+    
+    .pricing-card .card-header {
+        padding: 1.5rem 1rem 1rem;
+    }
+    
+    .pricing-card .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Enhanced Projects Section Styling */
+.projects-showcase {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, rgba(21, 186, 41, 0.02) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.projects-header {
+    margin-bottom: 4rem;
+}
+
+.projects-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.projects-main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.projects-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(21, 186, 41, 0.15);
+}
+
+.project-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--qt-green);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(21, 186, 41, 0.3);
+}
+
+.project-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(21, 186, 41, 0.8), rgba(20, 159, 37, 0.8));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-tech-stack {
+    display: flex;
+    gap: 10px;
+}
+
+.tech-badge {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--qt-green);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.project-content {
+    padding: 2rem 1.8rem 1.8rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    user-select: text;
+}
+
+.project-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    user-select: text;
+}
+
+.project-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.project-icon {
+    color: var(--qt-green);
+    font-size: 0.8rem;
+}
+
+.project-status {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    padding: 8px 15px;
+    margin: 1rem 1.5rem 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project-status i {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .projects-main-title {
+        font-size: 2rem;
+    }
+    
+    .projects-subtitle {
+        font-size: 1rem;
+    }
+    
+    .projects-grid {
+        padding: 0 1rem;
+    }
+    
+    .project-image {
+        height: 150px;
+    }
+    
+    .project-content {
+        padding: 1.5rem 1.2rem 1.2rem;
+    }
+    
+    .project-card {
+        margin: 0.8rem 0;
+    }
+}
+
+/* Enhanced Why This Course Section */
+.why-course {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-course::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(21, 186, 41, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(21, 186, 41, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.why-course-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.why-course-header {
+    margin-bottom: 4rem;
+}
+
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(21, 186, 41, 0.3);
+}
+
+.header-badge i {
+    font-size: 0.8rem;
+}
+
+.why-course-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--qt-green), var(--qt-green-dark));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.why-course-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.why-content-area {
+    padding: 2rem 0;
+}
+
+.content-intro {
+    position: relative;
+}
+
+.intro-text {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #34495e;
+    font-weight: 400;
+    margin: 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.intro-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--qt-green), var(--qt-green-dark));
+    border-radius: 2px;
+}
+
+.feature-highlights {
+    margin-top: 2.5rem;
+}
+
+.feature-highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(21, 186, 41, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-highlight-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(21, 186, 41, 0.02), rgba(21, 186, 41, 0.05));
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.feature-highlight-item:hover {
+    transform: translateX(5px);
+    border-color: var(--qt-green);
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.15);
+}
+
+.feature-highlight-item:hover::before {
+    transform: translateX(0);
+}
+
+.highlight-icon {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(21, 186, 41, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.highlight-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.highlight-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c3e50;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.why-course-cta {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.btn-why-course {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+}
+
+.btn-why-course::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.btn-why-course:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(21, 186, 41, 0.4);
+    color: white;
+}
+
+.btn-why-course:hover::before {
+    transform: translateX(0);
+}
+
+.btn-text, .btn-arrow {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-arrow {
+    background: rgba(255, 255, 255, 0.2);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.btn-why-course:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+.cta-subtext {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+}
+
+/* Visual Area Styling */
+.why-visual-area {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.showcase-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.showcase-frame {
+    background: #1e1e1e;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 5;
+}
+
+.frame-header {
+    background: #2d2d2d;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #404040;
+}
+
+.frame-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27ca3f; }
+
+.frame-title {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.showcase-content {
+    position: relative;
+    aspect-ratio: 16/10;
+    background: #000;
+}
+
+.showcase-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.showcase-frame:hover .play-overlay {
+    opacity: 0.9;
+}
+
+.play-button {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.4);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+.play-text {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Floating Stats */
+.floating-stats {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.stat-item {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 140px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.stat-1 {
+    top: -120px;
+    left: -80px;
+    animation-delay: 0s;
+}
+
+.stat-2 {
+    top: -60px;
+    right: -100px;
+    animation-delay: 1s;
+}
+
+.stat-3 {
+    bottom: -80px;
+    left: -60px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+.stat-icon {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.stat-info {
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    line-height: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .why-course-title {
+        font-size: 2.2rem;
+    }
+    
+    .intro-text {
+        font-size: 1.1rem;
+    }
+    
+    .floating-stats {
+        display: none;
+    }
+    
+    .showcase-container {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-course-title {
+        font-size: 1.8rem;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+    
+    .feature-highlight-item {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .highlight-text {
+        font-size: 1rem;
+    }
+    
+    .btn-why-course {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .showcase-frame {
+        border-radius: 12px;
+    }
+    
+    .play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Enhanced What You'll Get Section */
+.what-you-get {
+    background: #ffffff;
+    position: relative;
+}
+
+.what-you-get::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(135deg, rgba(21, 186, 41, 0.02) 0%, rgba(255, 255, 255, 1) 30%, rgba(21, 186, 41, 0.01) 100%);
+    pointer-events: none;
+}
+
+.what-you-get-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.get-header {
+    margin-bottom: 4rem;
+}
+
+.get-badge-container {
+    margin-bottom: 2rem;
+}
+
+.get-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.get-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.get-badge i {
+    font-size: 0.9rem;
+}
+
+.get-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.get-subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.get-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.get-features-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.get-feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #f8f9fa;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.get-feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--qt-green);
+    box-shadow: 0 12px 30px rgba(21, 186, 41, 0.15);
+}
+
+.feature-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(21, 186, 41, 0.02), rgba(21, 186, 41, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.get-feature-card:hover .feature-hover-effect {
+    opacity: 1;
+}
+
+.feature-card-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-icon-area {
+    flex-shrink: 0;
+}
+
+.feature-icon {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 6px 20px rgba(21, 186, 41, 0.3);
+    position: relative;
+}
+
+.feature-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+.get-feature-card:hover .feature-icon::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.feature-text-area {
+    flex: 1;
+    padding-top: 0.5rem;
+}
+
+.feature-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    font-weight: 500;
+    margin: 0;
+}
+
+.get-content-section {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.content-description-card {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(21, 186, 41, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.content-description-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 80% 20%, rgba(21, 186, 41, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.description-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.description-icon {
+    color: var(--qt-green);
+    font-size: 1.5rem;
+}
+
+.description-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.description-content {
+    position: relative;
+    z-index: 2;
+}
+
+.description-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #34495e;
+    margin: 0;
+    font-weight: 400;
+}
+
+.get-cta-section {
+    padding: 3rem 0 2rem;
+}
+
+.cta-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cta-highlight {
+    background: rgba(21, 186, 41, 0.1);
+    color: var(--qt-green-dark);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.btn-get-started {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);
+    margin-bottom: 1.5rem;
+}
+
+.btn-get-started::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--qt-green-dark), var(--qt-green));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-get-started:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(21, 186, 41, 0.4);
+    color: white;
+}
+
+.btn-get-started:hover::before {
+    opacity: 1;
+}
+
+.btn-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.btn-main-text {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+}
+
+.btn-sub-text {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1;
+}
+
+.btn-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.btn-get-started:hover .btn-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.cta-guarantee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.cta-guarantee i {
+    color: var(--qt-green);
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .get-title {
+        font-size: 2.2rem;
+    }
+    
+    .feature-card-content {
+        gap: 1rem;
+    }
+    
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+    
+    .content-description-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .get-title {
+        font-size: 1.9rem;
+    }
+    
+    .get-subtitle {
+        font-size: 1rem;
+    }
+    
+    .get-feature-card {
+        padding: 1.5rem;
+    }
+    
+    .feature-card-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .feature-text {
+        font-size: 1rem;
+    }
+    
+    .description-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .description-text {
+        font-size: 1rem;
+    }
+    
+    .btn-get-started {
+        padding: 1.2rem 2rem;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .btn-main-text {
+        font-size: 1.1rem;
+    }
+    
+    .content-description-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Enhanced Button Styles - Unified Design System */
+
+/* Hero Section Buttons */
+.btn-hero-primary {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);
+    margin-bottom: 1rem;
+}
+
+.btn-hero-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--qt-green-dark), var(--qt-green));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(21, 186, 41, 0.4);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-hero-primary:hover::before {
+    opacity: 1;
+}
+
+.btn-hero-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.btn-hero-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+    transform: translateY(-2px);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-hero-secondary:hover::before {
+    transform: translateX(0);
+}
+
+/* Section-Specific Button Styles */
+.btn-projects-cta, 
+.btn-skills-cta, 
+.btn-experience-cta, 
+.btn-testimonials-cta {
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    color: white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);
+    margin-bottom: 1rem;
+}
+
+.btn-projects-cta::before,
+.btn-skills-cta::before,
+.btn-experience-cta::before,
+.btn-testimonials-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--qt-green-dark), var(--qt-green));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-projects-cta:hover,
+.btn-skills-cta:hover,
+.btn-experience-cta:hover,
+.btn-testimonials-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(21, 186, 41, 0.4);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-projects-cta:hover::before,
+.btn-skills-cta:hover::before,
+.btn-experience-cta:hover::before,
+.btn-testimonials-cta:hover::before {
+    opacity: 1;
+}
+
+/* Secondary Action Buttons */
+.btn-social-cta,
+.btn-faq-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+}
+
+.btn-social-cta::before,
+.btn-faq-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--qt-green), var(--qt-green-dark));
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.btn-social-cta:hover,
+.btn-faq-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(21, 186, 41, 0.4);
+    color: white;
+}
+
+.btn-social-cta:hover::before,
+.btn-faq-cta:hover::before {
+    transform: translateX(0);
+}
+
+/* Button Content Styles */
+.btn-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-main-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.btn-sub-text {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 400;
+    margin-top: 0.2rem;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.btn-icon i {
+    font-size: 1.2rem;
+}
+
+.btn-text, .btn-arrow {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.btn-arrow i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects for Icons */
+.btn-hero-primary:hover .btn-icon,
+.btn-projects-cta:hover .btn-icon,
+.btn-skills-cta:hover .btn-icon,
+.btn-experience-cta:hover .btn-icon,
+.btn-testimonials-cta:hover .btn-icon {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(10deg);
+}
+
+.btn-social-cta:hover .btn-arrow,
+.btn-faq-cta:hover .btn-arrow,
+.btn-hero-secondary:hover .btn-arrow {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
+
+.btn-social-cta:hover .btn-arrow i,
+.btn-faq-cta:hover .btn-arrow i,
+.btn-hero-secondary:hover .btn-arrow i {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .btn-hero-primary,
+    .btn-projects-cta,
+    .btn-skills-cta,
+    .btn-experience-cta,
+    .btn-testimonials-cta {
+        padding: 1.2rem 2rem;
+        gap: 1rem;
+    }
+    
+    .btn-hero-secondary,
+    .btn-social-cta,
+    .btn-faq-cta {
+        padding: 1rem 2rem;
+        gap: 0.8rem;
+    }
+    
+    .btn-main-text {
+        font-size: 1rem;
+    }
+    
+    .btn-sub-text {
+        font-size: 0.85rem;
+    }
+    
+    .btn-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .btn-arrow {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Newsletter Section Styles */
+.newsletter {
+    background: var(--primary-gradient);
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.newsletter-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.newsletter-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.benefit-item i {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
+.newsletter-form-container {
+    position: relative;
+}
+
+.newsletter-book-preview {
+    position: relative;
+    display: inline-block;
+}
+
+.newsletter-book-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.newsletter-book-image:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.book-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--warning-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.newsletter-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-input {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1f2937 !important;
+}
+
+.newsletter-input::placeholder {
+    color: #9ca3af !important;
+    opacity: 1;
+}
+
+.newsletter-input:focus {
+    border-color: var(--qt-green);
+    box-shadow: 0 0 0 3px rgba(21, 186, 41, 0.1);
+    outline: none;
+    background: white;
+    color: #1f2937 !important;
+}
+
+.btn-newsletter-cta {
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 15px;
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-transform: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-newsletter-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-newsletter-cta:hover::before {
+    left: 100%;
+}
+
+.btn-newsletter-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(21, 186, 41, 0.4);
+    color: white;
+}
+
+.btn-newsletter-cta .btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-newsletter-cta .btn-main-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+}
+
+.btn-newsletter-cta .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-newsletter-cta:hover .btn-icon {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(10deg);
+}
+
+.newsletter-privacy {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* Responsive Design for Newsletter */
+@media (max-width: 768px) {
+    .newsletter-title {
+        font-size: 2rem;
+    }
+    
+    .newsletter-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .newsletter-description {
+        font-size: 1rem;
+    }
+    
+    .newsletter-book-image {
+        max-width: 150px;
+    }
+    
+    .btn-newsletter-cta {
+        padding: 1rem 1.5rem;
+        gap: 0.8rem;
+    }
+    
+    .btn-newsletter-cta .btn-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .benefit-item {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .newsletter {
+        text-align: center;
+    }
+    
+    .newsletter-benefits {
+        text-align: left;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+}
+
+</style>
+
+<script>
+// Smooth scrolling for pricing buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButtons = document.querySelectorAll('.scroll-to-pricing');
+    
+    scrollButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector('#ready-to-join');
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Initialize Bootstrap components
+    if (typeof bootstrap !== 'undefined') {
+        // Initialize accordion
+        const accordionElements = document.querySelectorAll('.accordion');
+        accordionElements.forEach(element => {
+            new bootstrap.Collapse(element, { toggle: false });
+        });
+    }
+});
+
+// Add entrance animations
+window.addEventListener('load', function() {
+    // Removed entrance animations for cleaner experience
+    console.log('Page loaded - animations disabled for better UX');
+});
+
+// Urgency timer countdown (if needed)
+function updateUrgencyTimer() {
+    const urgencyDate = new Date('{{ site.data.courses.ui.urgency.price_increase_date }}');
+    const now = new Date();
+    const timeLeft = urgencyDate - now;
+    
+    if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        
+        const urgencyElements = document.querySelectorAll('.urgency-countdown');
+        urgencyElements.forEach(element => {
+            element.textContent = `${days} days, ${hours} hours left`;
+        });
+    }
+}
+
+// Update timer every hour
+setInterval(updateUrgencyTimer, 3600000);
+updateUrgencyTimer();
+
+// Track conversion events (for analytics)
+function trackConversionEvent(eventName, planType) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, {
+            'event_category': 'Course Purchase',
+            'event_label': planType,
+            'value': 1
+        });
+    }
+    
+    console.log(`Conversion event: ${eventName} - ${planType}`);
+}
+
+// Add click tracking to pricing buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const pricingButtons = document.querySelectorAll('.pricing-card a[href*="teachable"]');
+    
+    pricingButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.pricing-card');
+            let planType = 'unknown';
+            
+            if (card.classList.contains('single-course')) {
+                planType = 'lifetime';
+            } else if (card.classList.contains('library-access')) {
+                planType = 'monthly';
+            } else if (card.classList.contains('library-pro')) {
+                planType = 'yearly';
+            }
+            
+            trackConversionEvent('pricing_button_click', planType);
+        });
+    });
+});
+
+// Pricing card hover effects
+document.addEventListener('DOMContentLoaded', function() {
+    // Removed hover animations for cleaner experience
+    console.log('Pricing cards initialized without hover effects');
+});
+
+// Lazy load videos
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('video[data-src]');
+    
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const video = entry.target;
+                video.src = video.dataset.src;
+                video.load();
+                videoObserver.unobserve(video);
+            }
+        });
+    });
+    
+    videos.forEach(video => {
+        videoObserver.observe(video);
+    });
+});
+</script>
+
+<style>
+/* Force remove all list styling from benefits - Override any existing styles */
+.pricing-card ul,
+.pricing-card ol,
+.benefits-list,
+.highlight-benefits-list {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.pricing-card ul li,
+.pricing-card ol li,
+.benefits-list li,
+.highlight-benefits-list li {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    position: relative;
+}
+
+.pricing-card ul li:before,
+.pricing-card ol li:before,
+.benefits-list li:before,
+.highlight-benefits-list li:before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Ensure clean emoji display */
+.benefits-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: block;
+}
+</style>

@@ -1,35 +1,274 @@
-<div class="container-fluid" id="blog">
-<div class="col-md-10 mx-auto">
-<div class="row">
+<!-- Featured Blog Section -->
+<section class="featured-blog-section" id="blog" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 5rem 0; position: relative; overflow: hidden;">
+  <!-- Background Pattern -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(&quot;data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='30' cy='30' r='1' fill='%2315ba29' opacity='0.05'/><circle cx='70' cy='70' r='1' fill='%2315ba29' opacity='0.05'/></svg>&quot;) repeat; background-size: 120px 120px; animation: blog-pattern 60s linear infinite;"></div>
+  
+  <!-- Floating Blog Icons -->
+  <div style="position: absolute; top: 20%; left: 5%; font-size: 2.5rem; color: rgba(21, 186, 41, 0.1); animation: float-blog 12s ease-in-out infinite;"><i class="fas fa-feather-alt"></i></div>
+  <div style="position: absolute; top: 30%; right: 8%; font-size: 2rem; color: rgba(21, 186, 41, 0.1); animation: float-blog 10s ease-in-out infinite reverse;"><i class="fas fa-lightbulb"></i></div>
+  <div style="position: absolute; bottom: 25%; left: 10%; font-size: 2.3rem; color: rgba(21, 186, 41, 0.1); animation: float-blog 11s ease-in-out infinite;"><i class="fas fa-newspaper"></i></div>
 
-<div class="col-md-12 p-3 p-md-5 mt-5 text-center">
-<h2><strong>{{page.blog.title}}</strong></h2>
-<div class="bot-center col-md-1 col-2 mt-3"></div>
-<p class="mt-5 col-md-8 mx-auto">{{page.blog.description}}</p>
-</div>
-{% for b in site.posts limit:2 %}
-<div class="col-md-12 p-3">
-<div class="sers bg-light zoom row shadow-sm">
-<a class="col-md-4 p-3" href="{{b.url}}" title="{{b.title}}"><img class="img-fluid sers lazyload" loading="lazy" width="100%" height="100%" alt="{{b.title}}" 
-data-src="{% if b.cover %}{{b.cover}}{% else %}/assets/img/learnqtguide-social-cover.webp{% endif %}"/></a>
-<div class="col-md-8 p-3">
-<a href="{{b.url}}">
-<h3 class="mt-3">{{b.title}}</h3>
-<p class="text-dark mt-3">{{b.description}}</p>
-</a>
-<p><img class="img-fluid rounded-circle me-3" width="40" height="40" alt="{{site.author.name}}" src="{{site.author.image}}"/>
-{{site.author.name}}</p>
-</div>
-</div>
-</div>
-{% endfor %}
+  <div class="container" style="position: relative; z-index: 2;">
+    <!-- Section Header -->
+    <div class="row text-center mb-5">
+      <div class="col-md-12">
+        <!-- Blog Badge -->
+        <div class="blog-badge mb-4" style="display: inline-flex; align-items: center; background: linear-gradient(45deg, #15ba29, #28a745); color: white; padding: 1rem 2rem; border-radius: 50px; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3); transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 0.2s both;">
+          <i class="fas fa-rss" style="font-size: 1.3rem; margin-right: 0.8rem; animation: pulse-rss 3s ease-in-out infinite;"></i>
+          <span style="font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Latest Insights</span>
+        </div>
 
-<div class="col-md-12 p-3 p-md-5 mt-3 mb-5 text-center">
-<a href="/blog" class="btn btn-greenos ser zoom" title="Visit {{site.url}} blog">
-{{page.blog.button}}
-</a>
-</div>
+        <!-- Main Title -->
+        <h2 class="fw-bold mb-3" style="font-size: 3rem; background: linear-gradient(135deg, #2c3e50 0%, #15ba29 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 0.4s both;">
+          {{page.blog.title}}
+        </h2>
+        
+        <!-- Subtitle -->
+        <h3 class="text-muted mb-4" style="font-size: 1.3rem; font-weight: 400; transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 0.6s both;">
+          Discover the latest Qt techniques, tutorials, and industry insights
+        </h3>
+        
+        <!-- Animated Underline -->
+        <div class="mx-auto mb-5" style="width: 80px; height: 4px; background: linear-gradient(90deg, #15ba29, #28a745); border-radius: 2px; position: relative; transform: scaleX(0); animation: expandLine 1s ease-out 0.8s both;">
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%); border-radius: 2px; animation: shimmer 2s infinite 1s;"></div>
+        </div>
+      </div>
+    </div>
 
-</div>
-</div>
-</div>
+    <!-- Blog Posts Grid -->
+    <div class="row">
+      {% for post in site.posts limit:2 %}
+      <div class="col-lg-6 mb-4">
+        <article class="blog-post-card" style="background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); border: 1px solid rgba(21, 186, 41, 0.1); position: relative; transition: all 0.3s ease; transform: translateY(30px); opacity: 0; animation: slideInFromBottom 1s ease-out {{ forloop.index | times: 0.2 | plus: 1 }}s both; height: 100%;">
+          
+          <!-- Card Glow Effect -->
+          <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, rgba(21,186,41,0.1), rgba(40,167,69,0.1)); border-radius: 25px; z-index: -1; opacity: 0; transition: opacity 0.3s ease;"></div>
+          
+          <!-- Featured Image -->
+          <div class="blog-image-container" style="position: relative; overflow: hidden; height: 250px;">
+            <a href="{{post.url}}" title="{{post.title}}">
+              <img src="{% if post.cover %}{{post.cover}}{% else %}/assets/img/learnqtguide-social-cover.webp{% endif %}" 
+                   alt="{{post.title}}" 
+                   class="img-fluid" 
+                   style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+            </a>
+            
+            <!-- Overlay Gradient -->
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(transparent, rgba(0,0,0,0.3)); pointer-events: none;"></div>
+            
+            <!-- Category Badge -->
+            <div style="position: absolute; top: 1rem; left: 1rem; background: linear-gradient(45deg, #15ba29, #28a745); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fas fa-tag" style="margin-right: 0.3rem;"></i>
+              {% if post.categories %}{{ post.categories | first }}{% else %}Tutorial{% endif %}
+            </div>
+            
+            <!-- Reading Time -->
+            <div style="position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.7); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">
+              <i class="fas fa-clock" style="margin-right: 0.3rem;"></i>
+              {% assign words = post.content | number_of_words %}
+              {% if words < 360 %}1 min{% else %}{{ words | divided_by: 180 }} min{% endif %} read
+            </div>
+          </div>
+          
+          <!-- Card Content -->
+          <div class="blog-content" style="padding: 2rem;">
+            <!-- Post Date -->
+            <div class="post-meta mb-3" style="display: flex; align-items: center; gap: 1rem; color: #6c757d; font-size: 0.9rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-calendar-alt" style="color: #15ba29;"></i>
+                <span>{{ post.date | date: "%B %d, %Y" }}</span>
+              </div>
+              {% if post.tags %}
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-tags" style="color: #15ba29;"></i>
+                <span>{{ post.tags | first }}</span>
+              </div>
+              {% endif %}
+            </div>
+            
+            <!-- Post Title -->
+            <h3 style="color: #2c3e50; font-weight: 700; font-size: 1.4rem; line-height: 1.3; margin-bottom: 1rem; transition: color 0.3s ease;">
+              <a href="{{post.url}}" style="text-decoration: none; color: inherit;">{{post.title}}</a>
+            </h3>
+            
+            <!-- Post Description -->
+            <p style="color: #6c757d; font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+              {% if post.description %}
+                {{post.description | truncate: 120}}
+              {% else %}
+                {{post.content | strip_html | truncate: 120}}
+              {% endif %}
+            </p>
+            
+            <!-- Author Info & Read More -->
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <!-- Author -->
+              <div style="display: flex; align-items: center; gap: 0.8rem;">
+                <img src="{{site.author.image}}" 
+                     alt="{{site.author.name}}" 
+                     class="rounded-circle" 
+                     style="width: 40px; height: 40px; object-fit: cover; border: 2px solid #15ba29;">
+                <div>
+                  <div style="font-weight: 600; color: #2c3e50; font-size: 0.9rem;">{{site.author.name}}</div>
+                  <div style="color: #6c757d; font-size: 0.8rem;">Instructor</div>
+                </div>
+              </div>
+              
+              <!-- Read More Button -->
+              <a href="{{post.url}}" 
+                 class="btn-read-more" 
+                 style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(45deg, #15ba29, #28a745); color: white; padding: 0.7rem 1.5rem; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(21, 186, 41, 0.3);"
+                 title="Read {{post.title}}">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.3s ease;"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- View All Posts Section -->
+    <div class="row mt-5">
+      <div class="col-md-12 text-center">
+        <div style="background: rgba(21, 186, 41, 0.05); border-radius: 25px; padding: 3rem; border: 1px solid rgba(21, 186, 41, 0.1); transform: translateY(20px); opacity: 0; animation: slideInFromBottom 1s ease-out 1.4s both;">
+          
+          <!-- Browse Icon -->
+          <div class="browse-icon mb-4" style="display: inline-block;">
+            <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 50%; padding: 1.5rem; box-shadow: 0 10px 25px rgba(21, 186, 41, 0.3); animation: bounce-browse 4s ease-in-out infinite;">
+              <i class="fas fa-book-open" style="color: white; font-size: 2rem;"></i>
+            </div>
+          </div>
+          
+          <!-- Browse Content -->
+          <h4 class="fw-bold mb-3" style="color: #2c3e50; font-size: 1.8rem;">Explore Our Complete Blog</h4>
+          <p style="color: #6c757d; font-size: 1.1rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+            Discover dozens of tutorials, tips, and insights covering Qt, C++, QML, and modern development practices.
+          </p>
+          
+          <!-- Blog Stats -->
+          <div class="blog-stats mb-4" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+            <div style="text-align: center;">
+              <div style="color: #15ba29; font-size: 2rem; font-weight: 700;">{{ site.posts.size }}+</div>
+              <div style="color: #6c757d; font-size: 0.9rem;">Articles</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="color: #15ba29; font-size: 2rem; font-weight: 700;">5+</div>
+              <div style="color: #6c757d; font-size: 0.9rem;">Categories</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="color: #15ba29; font-size: 2rem; font-weight: 700;">Weekly</div>
+              <div style="color: #6c757d; font-size: 0.9rem;">Updates</div>
+            </div>
+          </div>
+          
+          <!-- View All Button -->
+          <a href="/blog" 
+             class="btn-view-all-posts" 
+             style="display: inline-flex; align-items: center; gap: 1rem; background: linear-gradient(45deg, #15ba29, #28a745); color: white; padding: 1.2rem 3rem; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3); text-transform: uppercase; letter-spacing: 0.5px;"
+             title="Visit our complete blog">
+            <i class="fas fa-newspaper" style="font-size: 1.3rem;"></i>
+            <span>{{page.blog.button}}</span>
+            <i class="fas fa-external-link-alt" style="font-size: 1rem;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom CSS and Animations -->
+  <style>
+    /* Hover Effects */
+    .blog-post-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    .blog-post-card:hover > div:first-child {
+      opacity: 1 !important;
+    }
+    
+    .blog-post-card:hover .blog-image-container img {
+      transform: scale(1.05) !important;
+    }
+    
+    .blog-post-card:hover h3 {
+      color: #15ba29 !important;
+    }
+    
+    .btn-read-more:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 25px rgba(21, 186, 41, 0.4) !important;
+    }
+    
+    .btn-read-more:hover i {
+      transform: translateX(3px) !important;
+    }
+    
+    .btn-view-all-posts:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 15px 40px rgba(21, 186, 41, 0.4) !important;
+    }
+
+    /* Animations */
+    @keyframes slideInFromBottom {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes expandLine {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    @keyframes blog-pattern {
+      0% { transform: translateX(0) translateY(0); }
+      100% { transform: translateX(-120px) translateY(-120px); }
+    }
+    
+    @keyframes float-blog {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(5deg); }
+    }
+    
+    @keyframes pulse-rss {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    
+    @keyframes bounce-browse {
+      0%, 100% { transform: translateY(0px); }
+      25% { transform: translateY(-8px); }
+      50% { transform: translateY(0px); }
+      75% { transform: translateY(-4px); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .blog-stats {
+        gap: 2rem !important;
+      }
+      
+      .blog-content {
+        padding: 1.5rem !important;
+      }
+      
+      .btn-view-all-posts {
+        padding: 1rem 2rem !important;
+        font-size: 1rem !important;
+      }
+    }
+  </style>
+</section>
