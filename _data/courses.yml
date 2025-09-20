@@ -259,7 +259,7 @@ courses:
       subtitle: "See how this course transforms beginners into professional desktop developers"
       sections:
         learning_approach:
-          title: "🎯 Learn By Building Real Apps"
+          title: "Learn By Building Real Apps"
           icon: "fas fa-bullseye"
           points:
             - text: "Build 5+ complete desktop applications from text editors to database managers"
@@ -271,7 +271,7 @@ courses:
           vs_alternatives: "University courses focus on console apps, YouTube tutorials show disconnected examples. You build complete applications that demonstrate real skills."
         
         technology_tools:
-          title: "🔧 Modern Qt 6 & C++ Best Practices"
+          title: "Modern Qt 6 & C++ Best Practices"
           icon: "fas fa-tools"
           points:
             - text: "Latest Qt 6 with modern C++17/20 features and smart pointers"
@@ -283,7 +283,7 @@ courses:
           vs_alternatives: "Most courses teach outdated Qt 5 or legacy C++ patterns. Learn the tools and techniques used in professional development today."
         
         support_community:
-          title: "👥 Expert Support When You Need It"
+          title: "Expert Support When You Need It"
           icon: "fas fa-users"
           points:
             - text: "Direct access to instructor Daniel Gakwaya with 10+ years Qt experience"
@@ -295,7 +295,7 @@ courses:
           vs_alternatives: "StackOverflow has generic answers, university TAs have limited expertise. Get help from people who build Qt applications professionally."
         
         value_guarantees:
-          title: "💰 Risk-Free Investment in Your Future"
+          title: "Risk-Free Investment in Your Future"
           icon: "fas fa-shield-alt"
           points:
             - text: "30-day money-back guarantee - try the complete course risk-free"
@@ -340,12 +340,12 @@ courses:
       outcomes:
         title: "After This Course, You'll Be Able To:"
         items:
-          - "🎯 Build cross-platform desktop apps that run on Windows, Mac, and Linux"
-          - "🎨 Create professional UIs with Qt Designer and custom widgets"
-          - "💾 Handle databases, file I/O, and network communications"
-          - "🚀 Deploy applications with proper installers and auto-updaters"
-          - "💼 Confidently apply for Qt developer positions"
-          - "🔧 Debug and optimize Qt applications for production"
+          - "Build cross-platform desktop apps that run on Windows, Mac, and Linux"
+          - "Create professional UIs with Qt Designer and custom widgets"
+          - "Handle databases, file I/O, and network communications"
+          - "Deploy applications with proper installers and auto-updaters"
+          - "Confidently apply for Qt developer positions"
+          - "Debug and optimize Qt applications for production"
         
       why_this_course:
         title: "Why This Course?"
@@ -373,14 +373,14 @@ courses:
           This course is written for anyone who wants to master modern cross-platform desktop development with Qt. Beginners with no prior Qt or C++ experience will find a clear path into the framework. Web developers who want to deliver native desktop performance will discover a more efficient workflow. Mobile developers will learn how to create professional desktop applications. And students or researchers will gain practical experience that goes far beyond theoretical knowledge.
           
       what_you_get:
-        title: "📦 What You'll Get"
+        title: "What You'll Get"
         bullets:
-          - "• 🎥 40+ Hours of Video Content – Comprehensive step-by-step tutorials"
-          - "• 📄 Complete Source Code – For every project in the course"
-          - "• 🔄 Lifetime Updates – All new content as it's released"
-          - "• 💻 Downloadable Resources – PDFs, code templates, and project files"
-          - "• 🌐 Exclusive Developer Community – Support, networking & direct feedback"
-          - "• 📜 Certificate of Completion – Add to your professional portfolio"
+          - "• 40+ Hours of Video Content – Comprehensive step-by-step tutorials"
+          - "• Complete Source Code – For every project in the course"
+          - "• Lifetime Updates – All new content as it's released"
+          - "• Downloadable Resources – PDFs, code templates, and project files"
+          - "• Exclusive Developer Community – Support, networking & direct feedback"
+          - "• Certificate of Completion – Add to your professional portfolio"
         content: |
           By the time you finish, you'll not only understand Qt Widgets—you'll have built production-quality applications and developed the confidence to create your own projects from scratch. You'll know how to work with Qt's documentation, how to apply modern best practices, and how to structure your code so that it scales with your ambitions.
           
