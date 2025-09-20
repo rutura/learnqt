@@ -429,7 +429,7 @@ courses:
       subtitle: "Transform from Python scripts to professional desktop applications"
       sections:
         learning_approach:
-          title: "🐍 Python-Focused GUI Development"
+          title: "Python-Focused GUI Development"
           icon: "fab fa-python"
           points:
             - text: "Learn GUI development using Python's readable, beginner-friendly syntax"
@@ -441,7 +441,7 @@ courses:
           vs_alternatives: "Tkinter is outdated and ugly, Kivy is mobile-focused, Django is web-only. Qt gives you professional desktop apps with Python simplicity."
         
         technology_tools:
-          title: "🔧 Python + Qt Powerhouse"
+          title: "Python + Qt Powerhouse"
           icon: "fas fa-tools"
           points:
             - text: "Latest PySide6 with Python 3.10+ features and type hints"
@@ -453,7 +453,7 @@ courses:
           vs_alternatives: "Most Python GUI tutorials use basic widgets. Learn to create applications that look and feel like professional software."
         
         support_community:
-          title: "👥 Python Developer Community"
+          title: "Python Developer Community"
           icon: "fas fa-users"
           points:
             - text: "Connect with Python developers building desktop applications"
@@ -465,7 +465,7 @@ courses:
           vs_alternatives: "Generic Python forums don't understand GUI development, Qt forums assume C++ knowledge. Join developers who know both."
         
         value_guarantees:
-          title: "💰 Perfect for Python Developers"
+          title: "Perfect for Python Developers"
           icon: "fas fa-shield-alt"
           points:
             - text: "Add GUI skills to your Python toolkit without learning a new language"
@@ -509,12 +509,12 @@ courses:
       outcomes:
         title: "After This Course, You'll Be Able To:"
         items:
-          - "🐍 Build beautiful desktop apps using Python and Qt"
-          - "📊 Create data visualization and analysis tools"
-          - "🔧 Integrate with Python libraries and APIs"
-          - "📱 Deploy Python GUI applications professionally"
-          - "💼 Add GUI development to your Python skill set"
-          - "🌐 Connect desktop apps to web services and databases"
+          - "Build beautiful desktop apps using Python and Qt"
+          - "Create data visualization and analysis tools"
+          - "Integrate with Python libraries and APIs"
+          - "Deploy Python GUI applications professionally"
+          - "Add GUI development to your Python skill set"
+          - "Connect desktop apps to web services and databases"
         
       why_this_course:
         title: "Why This Course?"
@@ -544,12 +544,12 @@ courses:
       what_you_get:
         title: "📦 What You'll Get"
         bullets:
-          - "• 🎥 35+ Hours of Python-Focused Content"
-          - "• 🐍 Complete Python Source Code"
-          - "• 📚 Python GUI Best Practices Guide"
-          - "• 🔧 PySide6 Setup and Configuration"
-          - "• 🌐 Python Developer Community Access"
-          - "• 📜 Professional Certificate"
+          - "• 35+ Hours of Python-Focused Content"
+          - "• Complete Python Source Code"
+          - "• Python GUI Best Practices Guide"
+          - "• PySide6 Setup and Configuration"
+          - "• Python Developer Community Access"
+          - "• Professional Certificate"
         content: |
           Master Python GUI development with PySide6 and create applications that users love. From simple utilities to complex business applications, you'll have the skills to bring your Python ideas to life with professional desktop interfaces.
     
@@ -595,7 +595,7 @@ courses:
       subtitle: "Master the future of user interface development with declarative programming"
       sections:
         learning_approach:
-          title: "🎨 Modern Declarative UI Development"
+          title: "Modern Declarative UI Development"
           icon: "fas fa-palette"
           points:
             - text: "Learn declarative programming - describe what you want, not how to build it"
@@ -607,7 +607,7 @@ courses:
           vs_alternatives: "Traditional GUI frameworks require complex imperative code. React Native is mobile-only, web frameworks need browsers. QML works everywhere."
         
         technology_tools:
-          title: "🚀 Cutting-Edge UI Technology"
+          title: "Cutting-Edge UI Technology"
           icon: "fas fa-rocket"
           points:
             - text: "Latest Qt 6 QML with hardware acceleration and smooth 60fps animations"
@@ -619,7 +619,7 @@ courses:
           vs_alternatives: "Web technologies have performance limits, native development means separate codebases. QML gives you performance with portability."
         
         support_community:
-          title: "👥 QML Expert Community"
+          title: "QML Expert Community"
           icon: "fas fa-users"
           points:
             - text: "Learn from QML experts who build production applications daily"
@@ -631,7 +631,7 @@ courses:
           vs_alternatives: "QML is specialized - generic UI forums don't understand its patterns, mobile dev communities focus on platform-specific solutions."
         
         value_guarantees:
-          title: "💰 Investment in Future UI Skills"
+          title: "Investment in Future UI Skills"
           icon: "fas fa-shield-alt"
           points:
             - text: "Master the technology behind Tesla's car interfaces and other cutting-edge UIs"
@@ -675,12 +675,12 @@ courses:
       outcomes:
         title: "After This Course, You'll Be Able To:"
         items:
-          - "🎨 Create stunning, modern user interfaces with QML"
-          - "⚡ Build fluid animations and interactive transitions"
-          - "📱 Design touch-friendly interfaces for any platform"
-          - "🔗 Integrate QML frontends with C++ backends"
-          - "🚀 Develop high-performance, scalable applications"
-          - "🎯 Master declarative programming patterns"
+          - "Create stunning, modern user interfaces with QML"
+          - "Build fluid animations and interactive transitions"
+          - "Design touch-friendly interfaces for any platform"
+          - "Integrate QML frontends with C++ backends"
+          - "Develop high-performance, scalable applications"
+          - "Master declarative programming patterns"
         
       why_this_course:
         title: "Why This Course?"
@@ -710,18 +710,162 @@ courses:
       what_you_get:
         title: "📦 What You'll Get"
         bullets:
-          - "• 🎥 50+ Hours of Advanced QML Content"
-          - "• 🎨 Complete QML Projects and Components"
-          - "• 🔧 C++ Integration Examples"
-          - "• 📱 Mobile and Desktop Patterns"
-          - "• ⚡ Performance Optimization Techniques"
-          - "• 📜 Advanced Developer Certificate"
+          - "• 50+ Hours of Advanced QML Content"
+          - "• Complete QML Projects and Components"
+          - "• C++ Integration Examples"
+          - "• Mobile and Desktop Patterns"
+          - "• Performance Optimization Techniques"
+          - "• Advanced Developer Certificate"
         content: |
           Become a QML expert and create user interfaces that set your applications apart. From smooth animations to complex interactions, you'll master the skills that make applications feel professional and engaging.
     
     pricing_override:
       lifetime:
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461494"
+      monthly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
+      yearly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
+
+  - id: "qt-threads-ipc"
+    title: "Multi-Threading and IPC with Qt C++"
+    short_title: "Qt Threads & IPC"
+    description: "Harness the power of multi-threading and inter-process communication in Qt using modern C++. Build responsive, high-performance cross-platform applications for desktop, mobile and embedded systems."
+    image: "/assets/courses/image/qt_multithreading.png"
+    category: "Concurrency & Systems"
+    technology: "Qt Core"
+    language: "C++"
+    level: "Intermediate to Advanced"
+    duration: "8-12 hours"
+    projects: "6+ Hands-on Demos"
+    tools: "Qt Creator, CMake"
+    featured: false
+    completion_rate: "--"
+    satisfaction_rating: "--/5"
+    ready_cta_text: "Ready to build robust concurrent Qt applications?"
+    # Social proof (per-course override)
+    social_proof:
+      students: 350
+      rating: 4.8
+      completion: 88
+      countries: 20
+      label_students: "students worldwide"
+      label_rating: "average rating"
+      label_completion: "completion rate"
+      label_countries: "countries represented"
+
+    value_proposition:
+      title: "Why This Course?"
+      subtitle: "Make your Qt C++ apps faster, responsive and reliable using threads and IPC"
+      sections:
+        learning_approach:
+          title: "Learn By Doing — Practical Examples"
+          icon: "fas fa-bolt"
+          points:
+            - text: "Create and manage threads the right way in Qt"
+              highlight: true
+            - text: "Use thread pools and Qt Concurrent for scalable background work"
+              highlight: true
+            - text: "Design thread-safe components and avoid common concurrency bugs"
+              highlight: false
+          vs_alternatives: "Generic threading tutorials miss Qt-specific patterns. This course focuses on Qt idioms and best practices."
+
+        technology_tools:
+          title: "Qt Concurrency & IPC"
+          icon: "fas fa-cogs"
+          points:
+            - text: "Qt Concurrent, QThread, QThreadPool, and worker objects"
+              highlight: true
+            - text: "Inter-process communication including QProcess and DBus integration"
+              highlight: true
+            - text: "Synchronization primitives, signals/slots across threads, and reentrancy"
+              highlight: false
+          vs_alternatives: "Platform-specific threading APIs are fragmented. Qt gives a unified, cross-platform approach."
+
+        support_community:
+          title: "Learn From Real Examples"
+          icon: "fas fa-users"
+          points:
+            - text: "Hands-on demos you can run and extend in minutes"
+              highlight: true
+            - text: "Code patterns that translate to production systems"
+              highlight: true
+            - text: "Guidance on debugging and profiling multithreaded apps"
+              highlight: false
+          vs_alternatives: "Debugging multi-threaded code without examples is slow; we provide working demos and tips."
+
+    sections:
+      hero:
+        subtitle: "Take advantage of Qt's threading and IPC features to build responsive, high-performance cross-platform applications. Learn when to use threads, thread pools, Qt Concurrent, and when processes + IPC are the better choice."
+        showcase_image: "/assets/courses/image/qt_multithreading.png"
+
+      preview:
+        title: "See Multithreading in Action"
+        subtitle: "Short demos that explain complex concurrency concepts visually"
+        demo_video: "https://youtu.be/uoA_bybiV9g?si=AZtXgY8zXLfnFZWe"
+        context_cards:
+          - title: "QThread & Workers"
+            description: "Create worker objects and move them to threads safely"
+            icon: "fas fa-tasks"
+          - title: "Qt Concurrent"
+            description: "High-level parallelism for quick wins"
+            icon: "fas fa-project-diagram"
+          - title: "IPC & DBus"
+            description: "Communicate across processes reliably"
+            icon: "fas fa-exchange-alt"
+        projects:
+          - name: "Background File Indexer"
+            description: "Build a responsive file indexing service that scans directories in background threads and reports progress to the UI."
+            image: "/assets/projects/placeholder.png"
+          - name: "Parallel Data Processor"
+            description: "Process large data sets using `Qt Concurrent` and thread pools for speed and reliability."
+            image: "/assets/projects/placeholder.png"
+          - name: "Multi-Process Worker with DBus"
+            description: "Coordinate multiple processes and exchange messages using DBus and QProcess."
+            image: "/assets/projects/placeholder.png"
+
+      outcomes:
+        title: "After This Course, You'll Be Able To:"
+        items:
+          - "Create and manage threads safely using `QThread` and worker objects"
+          - "Use `QThreadPool` and `Qt Concurrent` for scalable parallelism"
+          - "Design thread-safe APIs and understand reentrancy"
+          - "Use signals and slots across threads without race conditions"
+          - "Manage processes and implement IPC with `QProcess` and DBus"
+          - "Profile and debug multithreaded applications effectively"
+
+      why_this_course:
+        title: "Why This Course?"
+        content: |
+          Multithreading and IPC are essential skills for building responsive, production-quality applications. Qt provides robust cross-platform primitives that make concurrency approachable when used with the right patterns.
+        bullets:
+          - "✅ Practical demos and working code you can reuse"
+          - "✅ Clear explanations of why techniques work and where they fail"
+          - "✅ Focus on Qt-native patterns, not generic threading myths"
+        showcase_image: "/assets/courses/image/qt_multithreading.png"
+
+      creator_story:
+        title: "Created by Practicing Qt Developers"
+        content: |
+          This course was created from real-world experience building multi-threaded Qt applications across desktop and embedded targets. The examples reflect common pitfalls and solutions used in production systems.
+        bullets:
+          - "• Real debugging strategies for concurrency issues"
+          - "• Practical deployment notes for cross-platform projects"
+
+      what_you_get:
+        title: "What You'll Get"
+        bullets:
+          - "• 8-12 Hours of Hands-on Video Lessons"
+          - "• Complete Source Code for Every Demo"
+          - "• Debugging & Profiling Guide for Concurrency"
+          - "• Cross-platform examples for Windows, macOS, Linux and Embedded"
+          - "• Certificate of Completion"
+        content: |
+          By the end of this course you'll be comfortable designing responsive applications that make effective use of background work and inter-process communication. Whether you need responsive UIs, high-throughput background processing, or inter-process orchestration, this course gives you the practical knowledge to move quickly.
+
+    pricing_override:
+      lifetime:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6446367"
       monthly:
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
       yearly:
@@ -769,6 +913,11 @@ social_proof_by_course:
     avg_rating: "4.9"
     completion_rate: "85"
     countries: "30"
+  qt-threads-ipc:
+    student_count: "350"
+    avg_rating: "4.8"
+    completion_rate: "88"
+    countries: "20"
 
 
 
