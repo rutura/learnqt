@@ -3,6 +3,13 @@
 
 <!-- Get Course Data -->
 {% assign course_data = site.data.courses.courses | where: "id", page.course_id | first %}
+{% comment %} Per-course social proof: prefer course-specific overrides, fall back to global social_proof {% endcomment %}
+{% assign course_sp_map = site.data.courses.social_proof_by_course %}
+{% if course_sp_map and course_sp_map[page.course_id] %}
+    {% assign sp = course_sp_map[page.course_id] %}
+{% else %}
+    {% assign sp = site.data.courses.social_proof %}
+{% endif %}
 
 <!-- Course Hero Section -->
 <section class="course-hero py-5 bg-primary-gradient background-pattern">
@@ -35,7 +42,7 @@
                                     <i class="fas fa-users"></i>
                                 </div>
                                 <div class="proof-content">
-                                    <div class="social-proof-number">{{ site.data.courses.social_proof.student_count }}</div>
+                                    <div class="social-proof-number">{{ sp.student_count }}</div>
                                     <div class="social-proof-label">{{ site.data.courses.ui.social_labels.students }}</div>
                                 </div>
                             </div>
@@ -44,7 +51,7 @@
                                     <i class="fas fa-star"></i>
                                 </div>
                                 <div class="proof-content">
-                                    <div class="social-proof-number">{{ site.data.courses.social_proof.avg_rating }}/5</div>
+                                    <div class="social-proof-number">{{ sp.avg_rating }}/5</div>
                                     <div class="social-proof-label">{{ site.data.courses.ui.social_labels.rating }}</div>
                                 </div>
                             </div>
@@ -53,7 +60,7 @@
                                     <i class="fas fa-graduation-cap"></i>
                                 </div>
                                 <div class="proof-content">
-                                    <div class="social-proof-number">{{ site.data.courses.social_proof.completion_rate }}%</div>
+                                    <div class="social-proof-number">{{ sp.completion_rate }}%</div>
                                     <div class="social-proof-label">{{ site.data.courses.ui.social_labels.completion }}</div>
                                 </div>
                             </div>
@@ -62,7 +69,7 @@
                                     <i class="fas fa-globe"></i>
                                 </div>
                                 <div class="proof-content">
-                                    <div class="social-proof-number">{{ site.data.courses.social_proof.countries }}+</div>
+                                    <div class="social-proof-number">{{ sp.countries }}+</div>
                                     <div class="social-proof-label">{{ site.data.courses.ui.social_labels.countries }}</div>
                                 </div>
                             </div>
@@ -209,11 +216,11 @@
                                 </div>
                                 <div class="stat-item">
                                     <i class="fas fa-users"></i>
-                                    <span>{{ site.data.courses.social_proof.student_count }} students</span>
+                                    <span>{{ sp.student_count }} students</span>
                                 </div>
                                 <div class="stat-item">
                                     <i class="fas fa-star"></i>
-                                    <span>{{ site.data.courses.social_proof.avg_rating }} rating</span>
+                                    <span>{{ sp.avg_rating }} rating</span>
                                 </div>
                             </div>
                         </div>
@@ -521,7 +528,7 @@
                 </div>
                 
                 <div class="text-center mt-5">
-                    <p class="lead mb-4">Join {{ site.data.courses.social_proof.student_count }} successful students</p>
+                    <p class="lead mb-4">Join {{ sp.student_count }} successful students</p>
                     <a href="#ready-to-join" class="btn btn-social-cta scroll-to-pricing">
                         <span class="btn-text">{{ site.data.courses.ui.cta_variants.social }}</span>
                         <div class="btn-arrow">
@@ -644,7 +651,7 @@
                                                     <i class="fas fa-trophy"></i>
                                                 </div>
                                                 <div class="stat-info">
-                                                    <div class="stat-number">{{ site.data.courses.social_proof.avg_rating }}</div>
+                                                    <div class="stat-number">{{ sp.avg_rating }}</div>
                                                     <div class="stat-label">rating</div>
                                                 </div>
                                             </div>
@@ -1142,7 +1149,7 @@
                         </div>
                         <div class="trust-item">
                             <i class="fas fa-users"></i>
-                            <span>Join {{ site.data.courses.social_proof.student_count }} students</span>
+                            <span>Join {{ sp.student_count }} students</span>
                         </div>
                     </div>
                 </div>

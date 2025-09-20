@@ -23,6 +23,11 @@ social_proof:
       title: "Reviews"
       icon: "fas fa-star"
       description: "5-star reviews from satisfied students"
+  # Top-level values used directly by the sales layout
+  student_count: "4,000+"
+  avg_rating: "4.9"
+  completion_rate: "87"
+  countries: "120"
   
   # Additional metrics for other pages
   extended_stats:
@@ -236,6 +241,17 @@ courses:
     completion_rate: "92%"
     satisfaction_rating: "4.9/5"
     ready_cta_text: "Ready to build professional desktop apps with C++?"
+    # Social proof fields for sales page
+    social_proof:
+      students: 1500
+      rating: 4.9
+      completion: 92
+      countries: 45
+      label_students: "students worldwide"
+      label_rating: "average rating"
+      label_completion: "completion rate"
+      label_countries: "countries represented"
+    # End social proof
     
     # Course-specific value proposition
     value_proposition:
@@ -395,6 +411,17 @@ courses:
     completion_rate: "89%"
     satisfaction_rating: "4.8/5"
     ready_cta_text: "Ready to build amazing Python desktop apps?"
+    # Social proof fields for sales page
+    social_proof:
+      students: 1200
+      rating: 4.8
+      completion: 89
+      countries: 38
+      label_students: "students worldwide"
+      label_rating: "average rating"
+      label_completion: "completion rate"
+      label_countries: "countries represented"
+    # End social proof
     
     # Course-specific value proposition
     value_proposition:
@@ -550,6 +577,17 @@ courses:
     completion_rate: "85%"
     satisfaction_rating: "4.9/5"
     ready_cta_text: "Ready to master modern UI development with QML?"
+    # Social proof fields for sales page
+    social_proof:
+      students: 900
+      rating: 4.9
+      completion: 85
+      countries: 30
+      label_students: "students worldwide"
+      label_rating: "average rating"
+      label_completion: "completion rate"
+      label_countries: "countries represented"
+    # End social proof
     
     # Course-specific value proposition
     value_proposition:
@@ -713,6 +751,24 @@ ui:
     rating: "average rating"
     completion: "completion rate"
     countries: "countries represented"
+
+# Per-course social proof overrides (used by course sales layout)
+social_proof_by_course:
+  qt-widgets-cpp:
+    student_count: "1,500"
+    avg_rating: "4.9"
+    completion_rate: "92"
+    countries: "45"
+  qt-widgets-pyside6:
+    student_count: "1,200"
+    avg_rating: "4.8"
+    completion_rate: "89"
+    countries: "38"
+  qt-qml-pro:
+    student_count: "900"
+    avg_rating: "4.9"
+    completion_rate: "85"
+    countries: "30"
 
 
 
