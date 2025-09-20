@@ -373,11 +373,11 @@ courses:
     # Pricing customization for this course
     pricing_override:
       lifetime:
-        teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-widgets-cpp-lifetime"
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6446364"
       monthly:
-        teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-widgets-cpp-monthly"
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
       yearly:
-        teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-widgets-cpp-yearly"
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
 
   - id: "qt-widgets-pyside6"
     title: "Desktop Apps with Qt Widgets and PySide6"
@@ -528,11 +528,11 @@ courses:
     
     pricing_override:
       lifetime:
-        teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-widgets-pyside6-lifetime"
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6459203"
       monthly:
-        teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-widgets-pyside6-monthly"
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
       yearly:
-        teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-widgets-pyside6-yearly"
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
 
   - id: "qt-qml-pro"
     title: "Qt QML From Beginner to Pro"
@@ -683,11 +683,11 @@ courses:
     
     pricing_override:
       lifetime:
-        teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-qml-pro-lifetime"
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461494"
       monthly:
-        teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-qml-pro-monthly"
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
       yearly:
-        teachable_link: "https://sso.teachable.com/secure/470184/checkout/3900022/qt-qml-pro-yearly"
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
 
 # UI Configuration
 ui:
