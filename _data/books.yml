@@ -118,8 +118,8 @@ books:
     featured: true
     status: "coming_up"
     price: "Coming Soon"
-    expected_date: "Q2 2025"
-    progress: "75"
+    expected_date: "Q1 2026"
+    progress: "5"
     notify_link: "https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts"
     
     highlights:
