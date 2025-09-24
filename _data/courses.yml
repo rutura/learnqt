@@ -526,7 +526,7 @@ courses:
           - "✅ Real-World Projects – Build applications you can actually use"
           - "✅ Modern Python Patterns – Best practices for GUI development"
           - "✅ Complete Integration – Connect to databases, APIs, and more"
-        showcase_image: "/assets/courses/image/pyside6_beginners.png"
+        showcase_image: "/assets/courses/image/qt_widgets_pyside.gif"
         
       creator_story:
         title: "Created by Someone Who Understands the Struggle"
