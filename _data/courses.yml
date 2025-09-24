@@ -357,7 +357,7 @@ courses:
           - "✅ Production-Ready Skills – From widgets to deployment, layouts to databases"
           - "✅ Complete Real Projects – Watch your apps evolve from basics to polished final products"
           - "✅ Up-to-Date With Qt 6 – Covers modern best practices for professional development"
-        showcase_image: "/assets/courses/image/qt_gui_intermediate.png"
+        showcase_image: "/assets/courses/image/qt_widgets_cpp.gif"
         
       creator_story:
         title: "Created by Someone Who Understands the Struggle"
@@ -526,7 +526,7 @@ courses:
           - "✅ Real-World Projects – Build applications you can actually use"
           - "✅ Modern Python Patterns – Best practices for GUI development"
           - "✅ Complete Integration – Connect to databases, APIs, and more"
-        showcase_image: "/assets/courses/image/pyside6_beginners.png"
+        showcase_image: "/assets/courses/image/qt_widgets_pyside.gif"
         
       creator_story:
         title: "Created by Someone Who Understands the Struggle"
@@ -692,7 +692,7 @@ courses:
           - "✅ Cross-Platform Excellence – Desktop, mobile, and embedded applications"
           - "✅ Production Patterns – Real-world architectures and best practices"
           - "✅ C++ Integration – Connect QML to powerful backend logic"
-        showcase_image: "/assets/courses/image/qt6_qml_advanced.png"
+        showcase_image: "/assets/courses/image/qml_beginner_to_pro.gif"
         
       creator_story:
         title: "Created by Someone Who Understands the Struggle"
@@ -842,7 +842,7 @@ courses:
           - "✅ Practical demos and working code you can reuse"
           - "✅ Clear explanations of why techniques work and where they fail"
           - "✅ Focus on Qt-native patterns, not generic threading myths"
-        showcase_image: "/assets/courses/image/qt_multithreading.png"
+        showcase_image: "/assets/courses/image/qt_widgets_cpp.gif"
 
       creator_story:
         title: "Created by Practicing Qt Developers"
