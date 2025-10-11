@@ -54,9 +54,21 @@ why:
     image: /assets/img/award.svg
     description: Upon completing the course, you will receive a course completion certificate.
 
-notified: 
- title: JOIN OUR NEWSLETTER & GET A FREE QT6 QML BOOK! STAY UPDATED. 
+notified:
+ title: Get a taste of our Qt Training. Grab a free Qt6 QML book.
  description: Your email will never be shared.
+ feature1:
+  title: Instant Download
+  subtitle: Get your eBook now
+  icon: fa-download
+ feature2:
+  title: Latest Qt6 Tech
+  subtitle: Modern QML practices
+  icon: fa-code
+ feature3:
+  title: Weekly Tips
+  subtitle: Expert Qt insights
+  icon: fa-paper-plane
 
 follow: FOLLOW US
 
