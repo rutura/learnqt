@@ -4,13 +4,26 @@
 <h3 class="p-3 lead">
 <strong><a href="{{ca.link}}">{{ca.title}}</a></strong>
 </h3>
-<img class="img-fluid p-1 lazyload" loading="lazy" 
+<img class="img-fluid p-1 lazyload" loading="lazy"
 width="100%" height="100%" data-src="{{ca.image}}"/>
-<p class="text-dark p-1 mt-3">
+{% if ca.status %}
+<div class="p-2 mt-2">
+<span class="badge bg-success">{{ca.status}}</span>
+</div>
+{% endif %}
+{% if ca.rating or ca.level or ca.pages or ca.price %}
+<div class="p-2 mt-2">
+{% if ca.rating %}<span class="badge bg-warning text-dark me-1">⭐ {{ca.rating}}</span>{% endif %}
+{% if ca.level %}<span class="badge bg-info text-dark me-1">{{ca.level}}</span>{% endif %}
+{% if ca.pages %}<span class="badge bg-secondary me-1">{{ca.pages}}</span>{% endif %}
+{% if ca.price %}<span class="badge bg-success">{{ca.price}}</span>{% endif %}
+</div>
+{% endif %}
+<p class="text-dark p-2 mt-2">
 {{ca.subtitle}}
 </p>
-<p><a href="{{ca.link}}" 
-class="btn col-12 mt-3 mb-3 bg-green btn-outline-success" 
+<p><a href="{{ca.link}}"
+class="btn col-12 mt-3 mb-3 bg-green btn-outline-success"
 style="border-radius:0;">{{ca.button}}</a></p>
 </div>
 {% endfor %}

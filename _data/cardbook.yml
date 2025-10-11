@@ -1,18 +1,37 @@
-cardlist: 
+cardlist:
   - title: Qt6 QML For Beginners Book
-    subtitle: Fluid and dynamic user interfaces for desktop, mobile and embedded devices.
+    subtitle: Master the fundamentals of Qt6 QML development with this comprehensive 400+ page guide. Learn declarative UI programming from scratch with real-world examples and cross-platform development techniques.
     image: /assets/img/qt6_qml_for_beginners.png
     button: GET YOUR COPY!
     link: https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners
+    rating: '4.8/5'
+    level: 'Beginner'
+    pages: '400+ pages'
+    price: '$45'
+
+  - title: Qt6 QML Advanced - C++ Integration
+    subtitle: Take your Qt6 QML skills to the next level with advanced C++ integration techniques. 350+ pages covering QML-C++ integration, performance optimization, and advanced patterns for production-ready applications.
+    image: /assets/img/interfacing_cpp_to_qml_book_cover.png
+    button: GET YOUR COPY!
+    link: https://dgakwaya.gumroad.com/l/qt6_qml_advanced
+    rating: '4.9/5'
+    level: 'Intermediate to Advanced'
+    pages: '350+ pages'
+    price: '$65'
+
+  - title: Qt For Python (PySide6) For Beginners
+    subtitle: Build cross-platform desktop applications with Python and PySide6. Learn Python GUI development fundamentals with practical examples. Coming Q1 2026 - Join our newsletter to get notified when available!
+    image: /assets/img/learnqtbook3.webp
+    button: NOTIFY ME!
+    link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+    status: 'Coming Soon - Q1 2026'
+    level: 'Beginner'
+    pages: '300+ pages (expected)'
+
   # - title: Free Qt Creator Booklet
-  #   subtitle: 33 Tips on Qt Creator to Speed Up your workflow 
+  #   subtitle: 33 Tips on Qt Creator to Speed Up your workflow
   #   image: /assets/img/qt_creator_guide.webp
   #   button: GET IT FOR FREE!
-  #   link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
-  # - title: Example Book 3.
-  #   subtitle: Description example book 3 you can write anything in here...
-  #   image: /assets/img/qt_creator_guide.webp
-  #   button: GET IT NOW!
   #   link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
 
 display_on_blog_list: 2

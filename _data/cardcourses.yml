@@ -1,21 +1,47 @@
-cardlist: 
- - title: 'High Quality Video Courses on Qt, Modern C++, QML and More'
-   subtitle: 'Learn and Master Qt, QML and C++ with Minimal Effort, Time and Cost'
-   image: /assets/img/qt_courses.webp
-   button: Learn More
-   link: /courses
- - title: 'All our courses and books on discounted price'
-   subtitle: 'The discounts are available for limited time only!'
+cardlist:
+ - title: 'Desktop Apps with Qt Widgets and C++'
+   subtitle: 'Master professional desktop application development using Qt Widgets and modern C++. 40+ hours of content with 5+ real projects. Perfect for beginners to intermediate developers.'
+   image: /assets/img/learnqtcourses1.webp
+   button: Explore Course
+   link: /courses/qt-widgets-cpp/
+   rating: '4.9/5'
+   level: 'Beginner to Intermediate'
+   duration: '40+ hours'
+
+ - title: 'Desktop Apps with Qt Widgets and PySide6'
+   subtitle: 'Learn to build powerful desktop applications using Qt Widgets and Python. 35+ hours of hands-on content with 4+ real-world projects to boost your Python GUI skills.'
+   image: /assets/img/learnqtcourses2.webp
+   button: Explore Course
+   link: /courses/qt-widgets-pyside6/
+   rating: '4.8/5'
+   level: 'Beginner to Intermediate'
+   duration: '35+ hours'
+
+ - title: 'Qt QML From Beginner to Pro'
+   subtitle: 'Master modern UI development with Qt QML and Qt Quick. 50+ hours of comprehensive training with 6+ real projects. Build fluid, dynamic interfaces for desktop, mobile, and embedded devices.'
+   image: /assets/img/learnqtcourses3.webp
+   button: Explore Course
+   link: /courses/qt-qml-pro/
+   rating: '4.9/5'
+   level: 'Beginner to Advanced'
+   duration: '50+ hours'
+
+ - title: 'Multi-Threading and IPC with Qt C++'
+   subtitle: 'Harness the power of multi-threading and inter-process communication in Qt. 8-12 hours of intensive training with 6+ hands-on demos. Take your Qt C++ skills to the next level.'
+   image: /assets/img/learnqtcourses4.webp
+   button: Explore Course
+   link: /courses/qt-threads-ipc/
+   rating: '4.8/5'
+   level: 'Intermediate to Advanced'
+   duration: '8-12 hours'
+
+ - title: 'All Courses with Special Discount'
+   subtitle: 'Get lifetime access to all our Qt and C++ courses at a special discounted price. Limited time offer with 30-day money-back guarantee!'
    image: /assets/img/learn_qt_guide_course_discounts.png
    button: Grab your discount now!
    link: /udemy-discounted-9/
-#  - title: Courses video 3
-#    subtitle: This is courses video 3 description or subtitle just write in here for courses information.
-#    image: /assets/img/qt_quick_advanced.png
-#    button: Take Courses
-#    link: /courses
- 
- 
+
+
 display_on_blog_list: 2
 
-display_on_blog_page: 2
+display_on_blog_page: 5
