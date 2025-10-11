@@ -352,25 +352,70 @@
 
               <!-- Feature Icons -->
               <div class="newsletter-features" style="width: 100%;">
-                <div class="feature-row mb-3" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                  <div style="background: linear-gradient(45deg, #15ba29, #28a745); border-radius: 12px; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <i class="fas fa-download" style="color: white; font-size: 1.1rem;"></i>
+                <div class="feature-row mb-3" style="background: white; border-radius: 18px; padding: 1.2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid rgba(21, 186, 41, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden; cursor: pointer;"
+                     onmouseover="this.style.transform='translateY(-5px) translateX(5px)'; this.style.boxShadow='0 12px 30px rgba(21, 186, 41, 0.2)'; this.style.borderColor='#15ba29'"
+                     onmouseout="this.style.transform='translateY(0) translateX(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)'; this.style.borderColor='rgba(21, 186, 41, 0.1)'">
+                  <!-- Hover Glow Effect -->
+                  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(21, 186, 41, 0.03), transparent); opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+                  <div style="position: relative; display: flex; align-items: center; gap: 1.2rem;">
+                    <div style="position: relative;">
+                      <!-- Icon Ring -->
+                      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 65px; height: 65px; border: 2px solid rgba(21, 186, 41, 0.2); border-radius: 50%; animation: pulse-ring 2s ease-in-out infinite;"></div>
+                      <!-- Icon Circle -->
+                      <div style="background: linear-gradient(135deg, #15ba29, #28a745); border-radius: 15px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 6px 20px rgba(21, 186, 41, 0.3); position: relative;">
+                        <i class="fas fa-download" style="color: white; font-size: 1.2rem;"></i>
+                      </div>
+                    </div>
+                    <div style="flex: 1;">
+                      <div style="color: #2c3e50; font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem;">Instant Download</div>
+                      <div style="color: #6c757d; font-size: 0.8rem; font-weight: 500;">Get your eBook now</div>
+                    </div>
+                    <i class="fas fa-arrow-right" style="color: #15ba29; font-size: 1rem; opacity: 0.6;"></i>
                   </div>
-                  <span style="color: #2c3e50; font-size: 0.95rem; font-weight: 500;">Instant Download</span>
                 </div>
 
-                <div class="feature-row mb-3" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                  <div style="background: linear-gradient(45deg, #1da1f2, #0d8bf2); border-radius: 12px; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <i class="fas fa-code" style="color: white; font-size: 1.1rem;"></i>
+                <div class="feature-row mb-3" style="background: white; border-radius: 18px; padding: 1.2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid rgba(29, 161, 242, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden; cursor: pointer;"
+                     onmouseover="this.style.transform='translateY(-5px) translateX(5px)'; this.style.boxShadow='0 12px 30px rgba(29, 161, 242, 0.2)'; this.style.borderColor='#1da1f2'"
+                     onmouseout="this.style.transform='translateY(0) translateX(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)'; this.style.borderColor='rgba(29, 161, 242, 0.1)'">
+                  <!-- Hover Glow Effect -->
+                  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(29, 161, 242, 0.03), transparent); opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+                  <div style="position: relative; display: flex; align-items: center; gap: 1.2rem;">
+                    <div style="position: relative;">
+                      <!-- Icon Ring -->
+                      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 65px; height: 65px; border: 2px solid rgba(29, 161, 242, 0.2); border-radius: 50%; animation: pulse-ring 2s ease-in-out infinite 0.3s;"></div>
+                      <!-- Icon Circle -->
+                      <div style="background: linear-gradient(135deg, #1da1f2, #0d8bf2); border-radius: 15px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 6px 20px rgba(29, 161, 242, 0.3); position: relative;">
+                        <i class="fas fa-code" style="color: white; font-size: 1.2rem;"></i>
+                      </div>
+                    </div>
+                    <div style="flex: 1;">
+                      <div style="color: #2c3e50; font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem;">Latest Qt6 Tech</div>
+                      <div style="color: #6c757d; font-size: 0.8rem; font-weight: 500;">Modern QML practices</div>
+                    </div>
+                    <i class="fas fa-arrow-right" style="color: #1da1f2; font-size: 1rem; opacity: 0.6;"></i>
                   </div>
-                  <span style="color: #2c3e50; font-size: 0.95rem; font-weight: 500;">Latest Qt6 Tech</span>
                 </div>
 
-                <div class="feature-row" style="display: flex; align-items: center; gap: 1rem; padding: 0.8rem; background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                  <div style="background: linear-gradient(45deg, #ff6b35, #f7931e); border-radius: 12px; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <i class="fas fa-paper-plane" style="color: white; font-size: 1.1rem;"></i>
+                <div class="feature-row" style="background: white; border-radius: 18px; padding: 1.2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid rgba(255, 107, 53, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden; cursor: pointer;"
+                     onmouseover="this.style.transform='translateY(-5px) translateX(5px)'; this.style.boxShadow='0 12px 30px rgba(255, 107, 53, 0.2)'; this.style.borderColor='#ff6b35'"
+                     onmouseout="this.style.transform='translateY(0) translateX(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)'; this.style.borderColor='rgba(255, 107, 53, 0.1)'">
+                  <!-- Hover Glow Effect -->
+                  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255, 107, 53, 0.03), transparent); opacity: 0; transition: opacity 0.3s ease; pointer-events: none;"></div>
+                  <div style="position: relative; display: flex; align-items: center; gap: 1.2rem;">
+                    <div style="position: relative;">
+                      <!-- Icon Ring -->
+                      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 65px; height: 65px; border: 2px solid rgba(255, 107, 53, 0.2); border-radius: 50%; animation: pulse-ring 2s ease-in-out infinite 0.6s;"></div>
+                      <!-- Icon Circle -->
+                      <div style="background: linear-gradient(135deg, #ff6b35, #f7931e); border-radius: 15px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3); position: relative;">
+                        <i class="fas fa-paper-plane" style="color: white; font-size: 1.2rem;"></i>
+                      </div>
+                    </div>
+                    <div style="flex: 1;">
+                      <div style="color: #2c3e50; font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem;">Weekly Tips</div>
+                      <div style="color: #6c757d; font-size: 0.8rem; font-weight: 500;">Expert Qt insights</div>
+                    </div>
+                    <i class="fas fa-arrow-right" style="color: #ff6b35; font-size: 1rem; opacity: 0.6;"></i>
                   </div>
-                  <span style="color: #2c3e50; font-size: 0.95rem; font-weight: 500;">Weekly Tips</span>
                 </div>
               </div>
             </div>
@@ -395,17 +440,35 @@
 
               <!-- Benefits Grid -->
               <div class="newsletter-benefits mb-4" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                <div class="benefit-card" style="display: flex; align-items: center; gap: 0.8rem; padding: 1rem; background: rgba(21, 186, 41, 0.05); border-radius: 15px; border-left: 3px solid #15ba29;">
-                  <i class="fas fa-check-circle" style="color: #15ba29; font-size: 1.3rem; flex-shrink: 0;"></i>
-                  <span style="color: #2c3e50; font-size: 0.95rem; font-weight: 500;">No spam, ever</span>
+                <div class="benefit-card" style="background: white; border-radius: 15px; padding: 1rem 1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid rgba(21, 186, 41, 0.1); transition: all 0.3s ease; cursor: pointer;"
+                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(21, 186, 41, 0.15)'; this.style.borderColor='#15ba29'"
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.08)'; this.style.borderColor='rgba(21, 186, 41, 0.1)'">
+                  <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="background: linear-gradient(135deg, rgba(21, 186, 41, 0.1), rgba(40, 167, 69, 0.15)); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <i class="fas fa-check-circle" style="color: #15ba29; font-size: 1.2rem;"></i>
+                    </div>
+                    <span style="color: #2c3e50; font-size: 0.95rem; font-weight: 600;">No spam, ever</span>
+                  </div>
                 </div>
-                <div class="benefit-card" style="display: flex; align-items: center; gap: 0.8rem; padding: 1rem; background: rgba(21, 186, 41, 0.05); border-radius: 15px; border-left: 3px solid #15ba29;">
-                  <i class="fas fa-shield-alt" style="color: #15ba29; font-size: 1.3rem; flex-shrink: 0;"></i>
-                  <span style="color: #2c3e50; font-size: 0.95rem; font-weight: 500;">Privacy protected</span>
+                <div class="benefit-card" style="background: white; border-radius: 15px; padding: 1rem 1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid rgba(21, 186, 41, 0.1); transition: all 0.3s ease; cursor: pointer;"
+                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(21, 186, 41, 0.15)'; this.style.borderColor='#15ba29'"
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.08)'; this.style.borderColor='rgba(21, 186, 41, 0.1)'">
+                  <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="background: linear-gradient(135deg, rgba(21, 186, 41, 0.1), rgba(40, 167, 69, 0.15)); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <i class="fas fa-shield-alt" style="color: #15ba29; font-size: 1.2rem;"></i>
+                    </div>
+                    <span style="color: #2c3e50; font-size: 0.95rem; font-weight: 600;">Privacy protected</span>
+                  </div>
                 </div>
-                <div class="benefit-card" style="display: flex; align-items: center; gap: 0.8rem; padding: 1rem; background: rgba(21, 186, 41, 0.05); border-radius: 15px; border-left: 3px solid #15ba29;">
-                  <i class="fas fa-times-circle" style="color: #15ba29; font-size: 1.3rem; flex-shrink: 0;"></i>
-                  <span style="color: #2c3e50; font-size: 0.95rem; font-weight: 500;">Unsubscribe anytime</span>
+                <div class="benefit-card" style="background: white; border-radius: 15px; padding: 1rem 1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid rgba(21, 186, 41, 0.1); transition: all 0.3s ease; cursor: pointer;"
+                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(21, 186, 41, 0.15)'; this.style.borderColor='#15ba29'"
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.08)'; this.style.borderColor='rgba(21, 186, 41, 0.1)'">
+                  <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="background: linear-gradient(135deg, rgba(21, 186, 41, 0.1), rgba(40, 167, 69, 0.15)); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <i class="fas fa-times-circle" style="color: #15ba29; font-size: 1.2rem;"></i>
+                    </div>
+                    <span style="color: #2c3e50; font-size: 0.95rem; font-weight: 600;">Unsubscribe anytime</span>
+                  </div>
                 </div>
               </div>
 
@@ -559,7 +622,11 @@
                               </div>
                               <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1b8fef66a5b917ebcfa9841d4_d55d2f15f3" tabindex="-1" value=""></div>
                               <div class="clear">
-                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="📚 Send Me The Free Book">
+                                <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" style="display: flex; align-items: center; justify-content: center; gap: 0.8rem;">
+                                  <i class="fas fa-book-open" style="font-size: 1.3rem;"></i>
+                                  <span>Send Me The Free Book</span>
+                                  <i class="fas fa-arrow-right" style="font-size: 1.1rem;"></i>
+                                </button>
                               </div>
                           </div>
                       </form>
@@ -631,6 +698,17 @@
     @keyframes pulse-gift {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.2); }
+    }
+
+    @keyframes pulse-ring {
+      0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.6;
+      }
     }
   </style>
 </section>
