@@ -55,7 +55,7 @@ why:
     description: Upon completing the course, you will receive a course completion certificate.
 
 notified: 
- title: JOIN OUR NEWSLETTER & GET A FREE QT6 QML BOOK! STAY UPDATED. 
+ title: Get a taste of our Qt Training. Grab a free Qt6 QML book. 
  description: Your email will never be shared.
 
 follow: FOLLOW US
