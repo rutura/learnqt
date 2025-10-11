@@ -165,14 +165,21 @@ a.xp-link{
     color:#000
 }
 code{
-	margin: 10px;
-    padding: 5px;
+    padding: 2px 5px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
 }
- pre {
+pre {
     padding: 15px;
     background-color:#F8F9F8;
-	border-radius: 2px 2px 2px 2px;
-	border: solid 1px #D4D4D4;
+    border-radius: 2px 2px 2px 2px;
+    border: solid 1px #D4D4D4;
+}
+pre code {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
 }
 
 
