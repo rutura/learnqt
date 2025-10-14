@@ -96,7 +96,7 @@ author:
 footercopyrights: "© LearnQt . All Rights Reserved"
 
 # blog post pagination
-paginate: 3
+paginate: 5
 # default blog post
 paginate_path: "/blog/page:num/"
 
