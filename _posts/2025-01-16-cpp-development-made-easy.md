@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "C++ Development Made Easy: Why I Ditched VS Code Setup for Full IDEs"
+title: "C++ Development Made Easy: Why I Ditched VS Code Tasks for Full IDEs with CMake"
 description: From Manual Compiler Setup to Seamless Development with Visual Studio and Qt Creator.
 cover: /assets/img/blog/cpp-development-made-easy/cpp-development-hero.png
 date: '2025-01-16'
@@ -25,7 +25,7 @@ That was fun for me, as it filled me with a sense of enjoyment I can't explain, 
 
 ![One of the Positive Reviews](/assets/img/blog/cpp20-m-tool-update/review1.png)
 
-They definitely radiated the same enerty I had making the course. Enjoying manually setting up the compilers, having the power to seemlesly switch between MSVC, GCC and Clang almost makes you feel like a god. I am not lying
+They definitely radiated the same enerty I had making the course. Enjoying manually setting up the compilers, having the power to seemlesly switch between MSVC, GCC and Clang almost makes you feel like a small god. I am not lying!
 
 
 If you've ever tried to get started with C++ development, you know the drill: spend hours setting up compilers, configuring build systems, wrestling with `tasks.json` files, and debugging path issues before you even write your first `Hello World` program. It's like having to assemble your car before you can learn to drive.
