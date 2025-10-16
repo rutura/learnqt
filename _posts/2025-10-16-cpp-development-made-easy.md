@@ -2,8 +2,8 @@
 layout: post
 title: "C++ Development Made Easy: Why I Ditched VS Code Tasks for Full IDEs with CMake"
 description: From Manual Compiler Setup to Seamless Development with Visual Studio and Qt Creator.
-cover: /assets/img/blog/cpp-development-made-easy/cpp-development-hero.png
-date: '2025-01-16'
+cover: /assets/img/blog/cpp20-m-tool-update/vsstudio.png
+date: '2025-10-16'
 categories:
     - C++
 tags:
@@ -102,11 +102,11 @@ add_executable(rooster main.cpp)
 
 That's it. Twelve lines of CMake, and you're ready to build complex C++20 projects on any platform. Here is a sample project in Visual Studio:
 
-![Visual Studio Example](/assets/img/blog/cpp20-m-tool-update/vsstudio.png)
+<img src="/assets/img/blog/cpp20-m-tool-update/vsstudio.png" alt="Visual Studio Example" style="max-width: 100%; height: auto; width: 600px;">
 
 Below is the same project opened in Qt Creator, which works seamlessly on Linux and macOS. Even on Windows, Qt Creator is a fantastic free alternative to Visual Studio.
 
-![Qt Creator Example](/assets/img/blog/cpp20-m-tool-update/qtcreator.png)
+<img src="/assets/img/blog/cpp20-m-tool-update/qtcreator.png" alt="Qt Creator Example" style="max-width: 100%; height: auto; width: 600px;">
 
 ## The Benefits of This New Approach
 
