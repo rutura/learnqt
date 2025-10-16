@@ -25,18 +25,13 @@ That was fun for me, as it filled me with a sense of enjoyment I can't explain, 
 
 ![One of the Positive Reviews](/assets/img/blog/cpp20-m-tool-update/review1.png)
 
-They definitely radiated the same enerty I had making the course. Enjoying manually setting up the compilers, having the power to seemlesly switch between MSVC, GCC and Clang almost makes you feel like a small god. I am not lying!
+They definitely radiated the same enerty I had making the course. Enjoying manually setting up the compilers, having the power to seemlesly switch between MSVC, GCC and Clang almost makes you feel like a small god. I am not lying! As I came to realize later, the feeling wasn't shared by all students, especially those not keen on fiddling with environment setup, but ready to just tackle C++ development. 
 
+I then thought of reducing that pain, but still give to students to a decent compiler that would handle most of C++ 20, and get the code to work regardless of the Operating System the students are using. On Windows, I could use Microsoft Visual Studio as its support for C++ 20 has been top notch at least for the last 2 or three years. The problem was Linux and Mac. For Linux, students could use GCC or Clang, but the default compilers that you get through package managers were old, forcing students to install their own slightly shinier versions of the compilers. I have come to learn that at least 80% of the students don't appreciate the effort it takes these things to work properly.
 
-If you've ever tried to get started with C++ development, you know the drill: spend hours setting up compilers, configuring build systems, wrestling with `tasks.json` files, and debugging path issues before you even write your first `Hello World` program. It's like having to assemble your car before you can learn to drive.
+But now we are in 2025 and some of my favorite tools have good support for most of the things we do in the [C++20 Masterclass](https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode=STARTAPRIL2025). You may know that Qt is my favorite GUI framework and I have been eyeing Qt Creator as a tool I can recommend in the course for years. Even better, the Qt project had been moving from QMake to CMake as the favored build system. 
 
-Well, I've had enough of that. After years of teaching C++ and watching students get frustrated before they even started coding, I made a big change to my [C++20 Masterclass](https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode=STARTAPRIL2025). Out with the manual VS Code compiler configurations. In with full-featured IDEs that just work.
-
-Let me tell you why this change is a game-changer for C++ beginners and seasoned developers alike.
-
-## The Old Way: Pain Before Programming
-
-Picture this: you're excited to learn modern C++. You install VS Code, then spend the next two hours:
+I am happy to share that the little dream of mine, sparing the students the pain of environmnet while trying to use C++ 20 and other later standards, has finally been realized. I spent the last few weeks refactoring the code for the course to rely on CMake and make the code work without hassle with both Qt Creator and the Visual Studio IDE on Windows. Just for perspective, here is what you used to do in the old environment set up section of the course:
 
 - Installing MinGW or MSVC manually
 - Setting up compiler paths
@@ -76,13 +71,7 @@ Here's what a typical VS Code setup used to look like in the old course material
 }
 ```
 
-And that's just for a single file! Multi-file projects? Good luck with that complexity.
-
-![Old VS Code Setup](/assets/img/blog/cpp-development-made-easy/old-vscode-setup.png)
-
-By the time you finally got everything working, your enthusiasm for actually learning C++ had probably taken a serious hit. I watched too many students give up at this stage, and frankly, I don't blame them.
-
-## The New Way: CMake + Modern IDEs = Pure Joy
+And this is only tied to the VS Code editor, making the project less portable if you wanted to switch to another IDE or editor. This process was not only tedious, but it also distracted from the main goal: learning C++20. 
 
 So what changed? Three words: **Visual Studio**, **Qt Creator**, and **CMake**.
 
@@ -111,11 +100,15 @@ add_executable(rooster main.cpp)
 # add_executable(rooster main.cpp dog.cpp dog.h cat.cpp cat.h)
 ```
 
-That's it. Twelve lines of CMake, and you're ready to build complex C++20 projects on any platform.
+That's it. Twelve lines of CMake, and you're ready to build complex C++20 projects on any platform. Here is a sample project in Visual Studio:
 
-![New IDE Setup](/assets/img/blog/cpp-development-made-easy/new-ide-setup.png)
+![Visual Studio Example](/assets/img/blog/cpp20-m-tool-update/vsstudio.png)
 
-## Why This Changes Everything
+Below is the same project opened in Qt Creator, which works seamlessly on Linux and macOS. Even on Windows, Qt Creator is a fantastic free alternative to Visual Studio.
+
+![Qt Creator Example](/assets/img/blog/cpp20-m-tool-update/qtcreator.png)
+
+## The Benefits of This New Approach
 
 ### 1. **Zero Configuration Anxiety**
 
@@ -172,63 +165,6 @@ No more losing half the first lesson to tooling setup. No more "it works on my m
 
 The old approach had its place when we needed maximum flexibility. But for learning modern C++? The new approach wins hands down.
 
-## Real Example: From Pain to Pleasure
-
-Let me show you a concrete example. Here's how the same first C++ program experience differs:
-
-**Old way (VS Code + manual setup):**
-1. Install VS Code
-2. Install compiler toolchain manually
-3. Configure paths and environment variables
-4. Write tasks.json configuration
-5. Debug why compiler isn't found
-6. Create c_cpp_properties.json
-7. Test build system
-8. Finally write `Hello World`
-9. Spend 20 minutes figuring out why includes don't work
-
-**New way (Visual Studio/Qt Creator + CMake):**
-1. Install IDE (one download, one installer)
-2. Create new CMake project
-3. Write your C++ code
-4. Hit build and run
-
-You can see the difference. One approach gets you coding in 5 minutes. The other might take hours, and that's if you're lucky.
-
-## The `.gitignore` That Works Everywhere
-
-Another nice touch with the new setup: a comprehensive `.gitignore` that handles all the IDE-specific files you don't want in version control:
-
-```gitignore
-# IDE and Editor files
-.vscode/*
-.vs/
-.idea/
-
-# Build directories (nested anywhere)
-**/build/
-**/Build/
-**/out/
-**/bin/
-
-# Visual Studio files
-*.user
-*.suo
-*.vcxproj.user
-
-# Qt Creator files
-*.pro.user
-CMakeLists.txt.user
-*.autosave
-
-# CMake generated files
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-```
-
-One `.gitignore` file that covers Visual Studio, Qt Creator, VS Code, and any other IDE someone might use. Clean repositories, happy team members.
-
 ## But What About Flexibility?
 
 I can already hear the objections: "But Daniel, what about developers who prefer VS Code? What about customization? What about learning how the build system actually works?"
@@ -243,7 +179,7 @@ Fair points. Here's my take:
 
 ## The Bottom Line
 
-After making this change, I've seen:
+After making this change in one of my other courses, I've seen:
 - Students getting to actual C++ code faster
 - Fewer "I can't get it working" support requests  
 - Better debugging experiences in class
@@ -253,7 +189,6 @@ The old manual setup approach taught valuable skills about how C++ compilation w
 
 The new approach gets you writing and understanding C++20 features like modules, concepts, ranges, and coroutines without the ceremony. You can always dive deeper into build systems later, once you're comfortable with the language itself.
 
-![Modern C++ Features](/assets/img/blog/cpp-development-made-easy/modern-cpp-features.png)
 
 ## Making the Switch
 
@@ -264,18 +199,12 @@ If you're starting your C++ journey, or if you're teaching C++, I strongly recom
 3. **Everyone**: Learn CMake basics (much simpler than you think)
 4. **Start coding**: Focus on C++, not configuration
 
-The [updated C++20 Masterclass](https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode=STARTAPRIL2025) now uses this approach throughout. Students are getting to advanced C++20 features faster and with less frustration.
-
-You can check out the old manual setup approach [here in the main branch](https://github.com/rutura/The-C-20-Masterclass-Source-Code/tree/main/03.FirstSteps), and compare it with the [new streamlined approach here](https://github.com/rutura/The-C-20-Masterclass-Source-Code/tree/tooling_rework/03.FirstSteps/3.2FirstCppProgram).
-
-The difference is night and day.
+The [updated C++20 Masterclass](https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode=STARTAPRIL2025) now uses this approach throughout. Students are getting to advanced C++20 features faster and with less frustration. The difference is night and day.
 
 ## What's Next?
 
-This tooling change is just the beginning. With students spending less time fighting build systems, we can spend more time exploring the incredible features that make C++20 such an exciting language to learn and use.
-
-Speaking of which, if you missed my recent post on [The Ranges Library in C++20](/cpp-20-ranges.html), check it out. It's exactly the kind of modern C++ feature that's much more fun to explore when your development environment just works.
+This tooling change is just the beginning. With students spending less time fighting build systems, we can spend more time exploring the incredible features that make C++20 such an exciting language to learn and use. Speaking of which, if you missed my recent post on [The Ranges Library in C++20](/cpp-20-ranges.html), check it out. It's exactly the kind of modern C++ feature that's much more fun to explore when your development environment just works.
 
 **Ready to experience C++ development the way it should be?** The [C++20 Masterclass](https://www.udemy.com/course/the-modern-cpp-20-masterclass/?couponCode=STARTAPRIL2025) has been completely updated with this new approach. No more configuration headaches, no more tooling frustration—just pure C++ learning from day one.
 
-Let me know in the comments what your experience has been with C++ development environments. Have you made the switch to modern IDEs? Are you still wrestling with manual configurations? I'd love to hear your thoughts!
+Let me know in the comments what your experience has been with C++ development environments. What tools do you use? What challenges have you faced? And if you've tried this new approach, how has it changed your learning or development experience? 
