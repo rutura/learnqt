@@ -315,7 +315,7 @@ courses:
       preview:
         title: "See What You'll Build"
         subtitle: "Get a sneak peek at what you'll master in this comprehensive C++ course"
-        demo_video: "https://youtu.be/3KjdTrzz8FY"
+        demo_video: "https://youtu.be/DiHfhTMiBn8"
         context_cards:
           - title: "Hands-On C++ Coding"
             description: "Watch modern C++ development in action"
@@ -484,7 +484,7 @@ courses:
       preview:
         title: "See What You'll Build"
         subtitle: "Get a sneak peek at what you'll master in this comprehensive Python course"
-        demo_video: "https://youtu.be/8Odr2PClgZ8"
+        demo_video: "https://youtu.be/Q_pPnPWbWDo"
         context_cards:
           - title: "Python GUI Magic"
             description: "See Python's simplicity meet Qt's power"
@@ -650,7 +650,7 @@ courses:
       preview:
         title: "See What You'll Build"
         subtitle: "Get a sneak peek at the stunning UIs you'll create with QML"
-        demo_video: "https://youtu.be/vSoEobD4Fg8"
+        demo_video: "https://youtu.be/VCrk1lp2j4I"
         context_cards:
           - title: "Fluid Animations"
             description: "Create smooth, engaging user experiences"
@@ -802,7 +802,7 @@ courses:
       preview:
         title: "See Multithreading in Action"
         subtitle: "Short demos that explain complex concurrency concepts visually"
-        demo_video: "https://youtu.be/vanoAUc4zD0"
+        demo_video: "https://youtu.be/HYjL1m2LIrE"
         context_cards:
           - title: "QThread & Workers"
             description: "Create worker objects and move them to threads safely"
