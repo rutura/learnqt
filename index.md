@@ -55,18 +55,18 @@ why:
     description: Upon completing the course, you will receive a course completion certificate.
 
 notified:
- title: Get a taste of our Qt Training. Grab a free Qt6 QML book.
- description: Your email will never be shared.
+ title: Get Your Free eBook
+ description: Build a cross-platform System Monitor with Qt that runs on Windows, Mac, and Linux.
  feature1:
   title: Instant Download
   subtitle: Get your eBook now
   icon: fa-download
  feature2:
   title: Latest Qt6 Tech
-  subtitle: Modern QML practices
+  subtitle: Modern Qt practices
   icon: fa-code
  feature3:
-  title: Weekly Tips
+  title: Pro Tips
   subtitle: Expert Qt insights
   icon: fa-paper-plane
 
