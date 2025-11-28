@@ -1,105 +1,362 @@
 ---
 layout: promo
-title: "Modern C++ and UI Design with Qt, QML and PySide6"
-description: "Get Our Most Popular Time-Tested Course Bundles at Special Discount Prices"
+title: "Special Discounts on Qt Courses & Books"
+description: "Limited Time Offer - Save {{site.offby}}% on Professional Qt Development Training"
 cover: /assets/courses/image/LearnQt.png
 permalink: "/discounts"
 ---
 
-<div class="alert text-white p-4 mb-5 shadow-sm" style="background-color: #15ba29;">
-  <div class="text-center">
-    <h4 class="alert-heading mb-3">🎉 LIMITED TIME SPECIAL OFFER!</h4>
-    <p class="h5 mb-2">Get Complete Learning Paths for Just {{site.price}} per Course</p>
-    <div class="badge bg-white px-3 py-2 mb-2" style="color: #15ba29;">Use Code: <strong>{{site.coupon}}</strong></div>
-    <p class="mb-0"><small>Offer Valid Until {{site.couponvalidity}}</small></p>
+<!-- Coupon Banner -->
+<div class="discount-banner">
+  <div class="container">
+    <div class="banner-content">
+      <h1 class="banner-title">🎉 Save {{site.offby}}% on All Courses & Books</h1>
+      <p class="banner-subtitle">Limited time offer - Use coupon code at checkout</p>
+      <div class="coupon-display">
+        <span class="coupon-label">Coupon Code:</span>
+        <code class="coupon-code">{{site.coupon}}</code>
+        <button class="copy-button" onclick="copyCoupon()">Copy</button>
+      </div>
+      <p class="validity-text">Valid until {{site.couponvalidity}}</p>
+    </div>
   </div>
 </div>
 
-<div class="learning-paths">
-{% for path in site.data.learning_paths.learning_paths %}
-  <div class="learning-path-card mb-5 p-4 bg-white shadow-sm rounded">
-    <h3 class="path-title mb-4">{{ path.title }}</h3>
+<!-- Courses Section -->
+<section class="products-section">
+  <div class="container">
+    <h2 class="section-heading">Qt Courses <span class="discount-badge">{{site.offby}}% OFF</span></h2>
     
-    <div class="path-content">
-      <div class="what-youll-learn mb-4">
-        <h4 class="section-title h5" style="color: #15ba29;">For Who?</h4>
-        <p class="mb-3">{{ path.description }}</p>
+    <div class="products-list">
+      {% for course in site.data.courses.courses %}
+      <div class="product-item">
+        <div class="product-image">
+          <img src="{{course.image}}" alt="{{course.title}}" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">{{course.title}}</h3>
+          <p class="product-description">{{course.description}}</p>
+          <div class="product-meta">
+            <span class="meta-item"><i class="fas fa-clock"></i> {{course.duration}}</span>
+            <span class="meta-item"><i class="fas fa-code"></i> {{course.projects}}</span>
+            <span class="meta-item"><i class="fas fa-star"></i> {{course.satisfaction_rating}}</span>
+          </div>
+          <a href="https://www.learnqt.guide/courses/" class="learn-more-btn">Learn More →</a>
+        </div>
       </div>
-
-      <div class="learning-outcome mb-4">
-        <h4 class="section-title h5" style="color: #15ba29;">What You Will Achieve:</h4>
-        <p>{{ path.outcome }}</p>
-      </div>
-
-      <div class="courses-included">
-        <h4 class="section-title h5 mb-3" style="color: #15ba29;">Courses in This Path:</h4>
-        <ul class="course-list list-unstyled">
-        {% for course in path.courses %}
-          <li class="mb-3">
-            <div class="d-flex align-items-start">
-              <span style="color: #15ba29;" class="me-2">✓</span>
-              <div>
-                <strong>{{ course.title }}</strong>
-                {% if course.tag %}
-                <span class="badge ms-2" style="background-color: #15ba29;">{{ course.tag }}</span>
-                {% endif %}
-                <br>
-                <small class="text-muted">{{ course.subtitle }}</small>
-              </div>
-            </div>
-          </li>
-        {% endfor %}
-        </ul>
-      </div>
-
-      <div class="text-center mt-4">
-        <a href="/courses#{{ path.path_id }}" onclick="localStorage.setItem('scrollTo', '{{ path.path_id }}')" class="btn btn-lg px-4" style="background-color: #15ba29; color: white;">
-          I Want These Courses
-        </a>
-      </div>
+      {% endfor %}
     </div>
   </div>
-{% endfor %}
-</div>
+</section>
 
-<div class="free-resource-card mt-5 p-4 bg-light rounded shadow-sm">
-  <div class="row align-items-center">
-    <div class="col-md-4 text-center mb-4 mb-md-0">
-      <img src="/assets/books/image/qt6_qml_mock.jpg" alt="Qt6 QML For Beginners Book Cover" class="img-fluid rounded shadow-sm" style="max-width: 200px;">
-    </div>
-    <div class="col-md-8">
-      <h2 class="h3 mb-3">Start Learning Qt QML Today.</h2>
-      <p class="lead mb-4">Get Our Qt6 QML For Beginners Book For Free!</p>
-      <div class="newsletter-form bg-white p-4 rounded shadow-sm">
-        <script async data-uid="67a33fe28d" src="https://learnqtguide.kit.com/67a33fe28d/index.js"></script>
+<!-- Books Section -->
+<section class="products-section books-bg">
+  <div class="container">
+    <h2 class="section-heading">Qt Books <span class="discount-badge">{{site.offby}}% OFF</span></h2>
+    
+    <div class="products-list">
+      {% for book in site.data.books.books %}
+      <div class="product-item">
+        <div class="product-image book-image">
+          <img src="{{book.cover}}" alt="{{book.title}}" loading="lazy">
+          {% if book.status == 'available' %}
+          <span class="status-badge available">Available Now</span>
+          {% elsif book.status == 'coming_up' %}
+          <span class="status-badge coming-soon">Coming {{book.expected_date}}</span>
+          {% endif %}
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">{{book.title}}</h3>
+          <p class="product-description">{{book.description}}</p>
+          <div class="product-meta">
+            <span class="meta-item"><i class="fas fa-file-alt"></i> {{book.pages}} Pages</span>
+            {% if book.rating %}
+            <span class="meta-item"><i class="fas fa-star"></i> {{book.rating}}/5</span>
+            {% endif %}
+            <span class="meta-item"><i class="fas fa-book"></i> {{book.formats | join: ", "}}</span>
+          </div>
+          <a href="https://www.learnqt.guide/books/" class="learn-more-btn">Learn More →</a>
+        </div>
       </div>
+      {% endfor %}
     </div>
   </div>
-</div>
+</section>
+
+<!-- Newsletter Section -->
+{% include newsletter.html %}
 
 <style>
-.learning-path-card {
-  border-left: 4px solid #15ba29;
+/* Banner Styles */
+.discount-banner {
+  background: linear-gradient(135deg, #15ba29 0%, #0d8a1f 100%);
+  padding: 3rem 0;
+  margin-bottom: 3rem;
 }
 
-.path-title {
-  color: #333;
-  font-size: 1.75rem;
+.banner-content {
+  text-align: center;
+  color: white;
 }
 
-.section-title {
+.banner-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.banner-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.coupon-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.coupon-label {
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
-.course-list li {
-  padding-left: 1rem;
+.coupon-code {
+  background: white;
+  color: #15ba29;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-family: 'Courier New', monospace;
 }
 
-.free-resource-card {
-  background: linear-gradient(145deg, #f8f9fa 0%, #ffffff 100%);
+.copy-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.newsletter-form {
-  border: 1px solid rgba(21, 186, 41, 0.1);
+.copy-button:hover {
+  background: white;
+  color: #15ba29;
+}
+
+.validity-text {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Products Section */
+.products-section {
+  padding: 2rem 0;
+}
+
+.books-bg {
+  background: #f8f9fa;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.discount-badge {
+  background: #15ba29;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.product-item {
+  display: flex;
+  gap: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.product-item:hover {
+  box-shadow: 0 5px 20px rgba(21, 186, 41, 0.2);
+  transform: translateY(-3px);
+}
+
+.product-image {
+  flex-shrink: 0;
+  width: 200px;
+  height: 150px;
+  position: relative;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-image.book-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7fafc;
+  height: auto;
+  padding: 1rem;
+}
+
+.product-image.book-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.status-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-badge.available {
+  background: #15ba29;
+  color: white;
+}
+
+.status-badge.coming-soon {
+  background: #ed8936;
+  color: white;
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.75rem;
+}
+
+.product-description {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.product-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.meta-item i {
+  color: #15ba29;
+  margin-right: 0.4rem;
+}
+
+.learn-more-btn {
+  display: inline-block;
+  background: #15ba29;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background: #0d8a1f;
+  transform: translateX(5px);
+  color: white;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 1.8rem;
+  }
+  
+  .coupon-code {
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .product-item {
+    flex-direction: column;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .section-heading {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>
+
+<script>
+function copyCoupon() {
+  const couponCode = document.querySelector('.coupon-code').textContent;
+  navigator.clipboard.writeText(couponCode).then(function() {
+    const btn = document.querySelector('.copy-button');
+    const originalText = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.style.background = 'white';
+    btn.style.color = '#15ba29';
+    
+    setTimeout(function() {
+      btn.textContent = originalText;
+      btn.style.background = 'rgba(255, 255, 255, 0.2)';
+      btn.style.color = 'white';
+    }, 2000);
+  });
+}
+</script>
