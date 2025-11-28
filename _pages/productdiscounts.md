@@ -25,21 +25,21 @@ permalink: "/discounts"
 <!-- Courses Section -->
 <section class="products-section">
   <div class="container">
-    <h2 class="section-heading">Qt Courses <span class="discount-badge">{{site.offby}}% OFF</span></h2>
+    <h2 class="section-heading">Qt Courses <span class="discount-badge">{{ site.offby }}% OFF</span></h2>
     
     <div class="products-list">
       {% for course in site.data.courses.courses %}
       <div class="product-item">
         <div class="product-image">
-          <img src="{{course.image}}" alt="{{course.title}}" loading="lazy">
+          <img src="{{ course.image }}" alt="{{ course.title }}">
         </div>
         <div class="product-info">
-          <h3 class="product-title">{{course.title}}</h3>
-          <p class="product-description">{{course.description}}</p>
+          <h3 class="product-title">{{ course.title }}</h3>
+          <p class="product-description">{{ course.description }}</p>
           <div class="product-meta">
-            <span class="meta-item"><i class="fas fa-clock"></i> {{course.duration}}</span>
-            <span class="meta-item"><i class="fas fa-code"></i> {{course.projects}}</span>
-            <span class="meta-item"><i class="fas fa-star"></i> {{course.satisfaction_rating}}</span>
+            <span class="meta-item"><i class="fas fa-clock"></i> {{ course.duration }}</span>
+            <span class="meta-item"><i class="fas fa-code"></i> {{ course.projects }}</span>
+            <span class="meta-item"><i class="fas fa-star"></i> {{ course.satisfaction_rating }}</span>
           </div>
           <a href="https://www.learnqt.guide/courses/" class="learn-more-btn">Learn More →</a>
         </div>
@@ -52,28 +52,28 @@ permalink: "/discounts"
 <!-- Books Section -->
 <section class="products-section books-bg">
   <div class="container">
-    <h2 class="section-heading">Qt Books <span class="discount-badge">{{site.offby}}% OFF</span></h2>
+    <h2 class="section-heading">Qt Books <span class="discount-badge">{{ site.offby }}% OFF</span></h2>
     
     <div class="products-list">
       {% for book in site.data.books.books %}
       <div class="product-item">
         <div class="product-image book-image">
-          <img src="{{book.cover}}" alt="{{book.title}}" loading="lazy">
+          <img src="{{ book.cover }}" alt="{{ book.title }}">
           {% if book.status == 'available' %}
           <span class="status-badge available">Available Now</span>
           {% elsif book.status == 'coming_up' %}
-          <span class="status-badge coming-soon">Coming {{book.expected_date}}</span>
+          <span class="status-badge coming-soon">Coming {{ book.expected_date }}</span>
           {% endif %}
         </div>
         <div class="product-info">
-          <h3 class="product-title">{{book.title}}</h3>
-          <p class="product-description">{{book.description}}</p>
+          <h3 class="product-title">{{ book.title }}</h3>
+          <p class="product-description">{{ book.description }}</p>
           <div class="product-meta">
-            <span class="meta-item"><i class="fas fa-file-alt"></i> {{book.pages}} Pages</span>
+            <span class="meta-item"><i class="fas fa-file-alt"></i> {{ book.pages }} Pages</span>
             {% if book.rating %}
-            <span class="meta-item"><i class="fas fa-star"></i> {{book.rating}}/5</span>
+            <span class="meta-item"><i class="fas fa-star"></i> {{ book.rating }}/5</span>
             {% endif %}
-            <span class="meta-item"><i class="fas fa-book"></i> {{book.formats | join: ", "}}</span>
+            <span class="meta-item"><i class="fas fa-book"></i> {{ book.formats | join: ", " }}</span>
           </div>
           <a href="https://www.learnqt.guide/books/" class="learn-more-btn">Learn More →</a>
         </div>
