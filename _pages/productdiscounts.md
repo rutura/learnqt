@@ -56,14 +56,11 @@ permalink: "/discounts"
     
     <div class="products-list">
       {% for book in site.data.books.books %}
+      {% if book.status == 'available' %}
       <div class="product-item">
         <div class="product-image book-image">
           <img src="{{ book.cover }}" alt="{{ book.title }}">
-          {% if book.status == 'available' %}
           <span class="status-badge available">Available Now</span>
-          {% elsif book.status == 'coming_up' %}
-          <span class="status-badge coming-soon">Coming {{ book.expected_date }}</span>
-          {% endif %}
         </div>
         <div class="product-info">
           <h3 class="product-title">{{ book.title }}</h3>
@@ -75,13 +72,10 @@ permalink: "/discounts"
             {% endif %}
             <span class="meta-item"><i class="fas fa-book"></i> {{ book.formats | join: ", " }}</span>
           </div>
-          {% if book.status == 'available' %}
           <a href="{{ book.gumroad_link }}" target="_blank" class="learn-more-btn">Get This Book →</a>
-          {% else %}
-          <a href="/#newsletter" class="learn-more-btn">Get Notified →</a>
-          {% endif %}
         </div>
       </div>
+      {% endif %}
       {% endfor %}
     </div>
   </div>
