@@ -1,7 +1,7 @@
 ---
 layout: promo
 title: "Special Discounts on Qt Courses & Books"
-description: "Limited Time Offer - Save {{site.offby}}% on Professional Qt Development Training"
+description: "Get a free copy of our book to Build a System Monitor with Qt and C++ "
 cover: /assets/courses/image/LearnQt.png
 permalink: "/discounts"
 ---
@@ -10,7 +10,7 @@ permalink: "/discounts"
 <div class="discount-banner">
   <div class="container">
     <div class="banner-content">
-      <h1 class="banner-title">🎉 Save {{site.offby}}% on All Courses & Books</h1>
+      <h1 class="banner-title">Save {{site.offby}}% on All Courses & Books</h1>
       <p class="banner-subtitle">Limited time offer - Use coupon code at checkout</p>
       <div class="coupon-display">
         <span class="coupon-label">Coupon Code:</span>
