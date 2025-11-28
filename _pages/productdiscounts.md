@@ -3,7 +3,7 @@ layout: promo
 title: "Modern C++ and UI Design with Qt, QML and PySide6"
 description: "Get Our Most Popular Time-Tested Course Bundles at Special Discount Prices"
 cover: /assets/courses/image/LearnQt.png
-permalink: "/udemy-discounted-9/"
+permalink: "/discounts"
 ---
 
 <div class="alert text-white p-4 mb-5 shadow-sm" style="background-color: #15ba29;">
