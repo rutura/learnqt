@@ -41,7 +41,7 @@ permalink: "/discounts"
             <span class="meta-item"><i class="fas fa-code"></i> {{ course.projects }}</span>
             <span class="meta-item"><i class="fas fa-star"></i> {{ course.satisfaction_rating }}</span>
           </div>
-          <a href="https://www.learnqt.guide/courses/" class="learn-more-btn">Learn More →</a>
+          <a href="/courses/{{ course.id }}/" class="learn-more-btn">Learn More →</a>
         </div>
       </div>
       {% endfor %}
@@ -75,7 +75,11 @@ permalink: "/discounts"
             {% endif %}
             <span class="meta-item"><i class="fas fa-book"></i> {{ book.formats | join: ", " }}</span>
           </div>
-          <a href="https://www.learnqt.guide/books/" class="learn-more-btn">Learn More →</a>
+          {% if book.status == 'available' %}
+          <a href="{{ book.gumroad_link }}" target="_blank" class="learn-more-btn">Get This Book →</a>
+          {% else %}
+          <a href="/#newsletter" class="learn-more-btn">Get Notified →</a>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
