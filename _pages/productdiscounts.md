@@ -94,8 +94,8 @@ permalink: "/discounts"
 /* Banner Styles */
 .discount-banner {
   background: linear-gradient(135deg, #15ba29 0%, #0d8a1f 100%);
-  padding: 3rem 0;
-  margin-bottom: 3rem;
+  padding: 1.25rem 0;
+  margin-bottom: 1.5rem;
 }
 
 .banner-content {
@@ -104,39 +104,39 @@ permalink: "/discounts"
 }
 
 .banner-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .banner-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
 }
 
 .coupon-display {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
   flex-wrap: wrap;
 }
 
 .coupon-label {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 
 .coupon-code {
   background: white;
   color: #15ba29;
-  padding: 0.75rem 2rem;
-  border-radius: 8px;
-  font-size: 1.8rem;
-  font-weight: 900;
-  letter-spacing: 2px;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 1px;
   font-family: 'Courier New', monospace;
 }
 
@@ -144,11 +144,12 @@ permalink: "/discounts"
   background: rgba(255, 255, 255, 0.2);
   color: white;
   border: 2px solid white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .copy-button:hover {
@@ -157,13 +158,14 @@ permalink: "/discounts"
 }
 
 .validity-text {
-  font-size: 1rem;
-  opacity: 0.9;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin: 0;
 }
 
 /* Products Section */
 .products-section {
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .books-bg {
@@ -320,13 +322,27 @@ permalink: "/discounts"
 
 /* Responsive */
 @media (max-width: 768px) {
-  .banner-title {
-    font-size: 1.8rem;
+  .discount-banner {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
   }
-  
+
+  .banner-title {
+    font-size: 1.25rem;
+  }
+
+  .banner-subtitle {
+    font-size: 0.85rem;
+  }
+
   .coupon-code {
-    font-size: 1.4rem;
-    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .copy-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
   }
   
   .product-item {
