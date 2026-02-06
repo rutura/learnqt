@@ -1,6 +1,10 @@
-title: "Desktop Apps with Qt Widgets and PySide6 - Course Curriculum"
+title: "Desktop Apps with Qt Widgets and C++ - Course Curriculum"
+subtitle: "23 Chapters, 270+ Lessons — Master Every Building Block of Professional Desktop Development"
 chapters:
   - title: "Chapter 1: Welcome"
+    icon: "fas fa-door-open"
+    description: "See the impressive applications you'll build by the end of this course. Get oriented with the course structure, download all resources and source code, and get excited about the journey ahead."
+    outcome: "A clear roadmap of your learning journey and all resources downloaded"
     lessons:
       - name: "Welcome"
         duration: "5:31"
@@ -9,12 +13,18 @@ chapters:
       - name: "What You'll Build"
         duration: "11:48"
   - title: "Chapter 2: Environment Setup"
+    icon: "fas fa-laptop-code"
+    description: "Set up your complete Qt development environment on Windows or Linux — step by step, no guesswork. You'll install Qt Creator, configure your compiler, and verify everything works with your first build."
+    outcome: "A fully configured Qt 6 development environment ready for real projects"
     lessons:
       - name: "Environment setup - Windows"
         duration: "17:09"
       - name: "Environment setup - Linux Ubuntu"
         duration: "18:43"
   - title: "Chapter 3: Getting Started, C++ Crash Course"
+    icon: "fas fa-code"
+    description: "Master the C++ fundamentals you need for Qt development. From data types and control flow to classes and the build process — you'll write real code from day one and build your first GUI application with a hands-on Guess My Number game."
+    outcome: "Solid C++ foundations and your first working Qt GUI application"
     lessons:
       - name: "Introduction"
         duration: "2:17"
@@ -49,6 +59,9 @@ chapters:
       - name: "Summary"
         duration: "0:52"
   - title: "Chapter 4: Memory Management"
+    icon: "fas fa-microchip"
+    description: "Understand how memory works in C++ and Qt. Learn the difference between heap and stack, use smart pointers to prevent memory leaks, and master Qt's parent-child ownership model that makes memory management almost automatic."
+    outcome: "Leak-free code using smart pointers and Qt's parent-child memory model"
     lessons:
       - name: "Introduction"
         duration: "0:49"
@@ -61,6 +74,9 @@ chapters:
       - name: "Summary"
         duration: "1:00"
   - title: "Chapter 5: Signals and Slots"
+    icon: "fas fa-bolt"
+    description: "Master Qt's powerful communication mechanism. Connect widgets, respond to user actions, and build reactive interfaces using signals, slots, and lambdas. Practice with real projects including a Calory Counter app."
+    outcome: "Interactive applications that respond to user actions using signals and slots"
     lessons:
       - name: "Introduction"
         duration: "1:01"
@@ -77,6 +93,9 @@ chapters:
       - name: "Summary"
         duration: "1:00"
   - title: "Chapter 6: A Tour of Qt Widgets"
+    icon: "fas fa-th-large"
+    description: "Get hands-on with every essential Qt widget. From buttons and text fields to layouts and tab systems — you'll learn how to combine 18+ widget types into polished, professional user interfaces with proper sizing and spacing."
+    outcome: "Ability to build any standard UI layout using Qt's complete widget toolkit"
     lessons:
       - name: "Introduction"
         duration: "1:08"
@@ -117,6 +136,9 @@ chapters:
       - name: "Summary"
         duration: "2:19"
   - title: "Chapter 7: Dialogs"
+    icon: "fas fa-window-restore"
+    description: "Build professional dialog windows that your users expect. Master file pickers, font selectors, color choosers, input dialogs, and custom dialog boxes with proper button layouts and return values."
+    outcome: "Professional dialog systems for file operations, settings, and user input"
     lessons:
       - name: "Introduction"
         duration: "0:50"
@@ -135,6 +157,9 @@ chapters:
       - name: "Summary"
         duration: "1:05"
   - title: "Chapter 8: Resources"
+    icon: "fas fa-folder-open"
+    description: "Embed images, icons, and files directly into your application binary. Learn Qt's resource system so your apps ship as a single executable with no missing assets — ever."
+    outcome: "Self-contained applications with embedded icons, images, and assets"
     lessons:
       - name: "Qt Resource System Theory"
         duration: "4:45"
@@ -143,6 +168,9 @@ chapters:
       - name: "Summary"
         duration: "1:26"
   - title: "Chapter 9: Styling"
+    icon: "fas fa-palette"
+    description: "Transform plain widgets into stunning interfaces. Master QPalette for system-level theming and Qt Stylesheets (CSS for Qt) for pixel-perfect visual customization — inline and from external files."
+    outcome: "Beautifully styled applications with custom themes and visual polish"
     lessons:
       - name: "Styling Overview"
         duration: "6:26"
@@ -157,6 +185,9 @@ chapters:
       - name: "Summary"
         duration: "2:56"
   - title: "Chapter 10: Settings"
+    icon: "fas fa-cog"
+    description: "Save and restore user preferences across sessions. Learn QSettings to persist window positions, theme choices, and any custom settings — so your app remembers how users like it."
+    outcome: "Applications that remember user preferences between sessions"
     lessons:
       - name: "Settings Theory"
         duration: "5:48"
@@ -165,6 +196,9 @@ chapters:
       - name: "Summary"
         duration: "0:53"
   - title: "Chapter 11: Files and Directories"
+    icon: "fas fa-file-alt"
+    description: "Read, write, and manage files and directories with Qt's cross-platform APIs. Handle text files, binary data, and directory operations that work identically on Windows, Linux, and Mac."
+    outcome: "Cross-platform file I/O that works seamlessly on any operating system"
     lessons:
       - name: "QFile"
         duration: "21:32"
@@ -173,6 +207,9 @@ chapters:
       - name: "Summary"
         duration: "0:42"
   - title: "Chapter 12: Networking"
+    icon: "fas fa-globe"
+    description: "Connect your desktop apps to the internet. Make HTTP requests, consume REST APIs, parse JSON responses, and build a complete HTTP client that communicates with web services."
+    outcome: "A working JSON HTTP client and the ability to connect any app to web APIs"
     lessons:
       - name: "Qt Network Offerings"
         duration: "7:28"
@@ -183,6 +220,9 @@ chapters:
       - name: "Summary"
         duration: "0:52"
   - title: "Chapter 13: Event Handling"
+    icon: "fas fa-hand-pointer"
+    description: "Take full control of user interaction. Understand Qt's event system from top to bottom — handle mouse clicks, key presses, custom events, event filters, and propagation chains like a pro."
+    outcome: "Complete mastery of Qt's event pipeline from widget to application level"
     lessons:
       - name: "Chapter Intro"
         duration: "0:36"
@@ -207,6 +247,9 @@ chapters:
       - name: "Chapter Summary"
         duration: "2:03"
   - title: "Chapter 14: Custom Widgets"
+    icon: "fas fa-puzzle-piece"
+    description: "Go beyond standard widgets — create your own. Compose widgets, modify existing ones, and build completely custom controls like a Water Level Monitor with real-time visual indicators."
+    outcome: "Custom reusable widgets including a professional Water Level Monitor control"
     lessons:
       - name: "Chapter Intro"
         duration: "1:13"
@@ -225,6 +268,9 @@ chapters:
       - name: "Chapter Summary"
         duration: "1:00"
   - title: "Chapter 15: Painting and Drawing"
+    icon: "fas fa-paint-brush"
+    description: "Unlock the full power of custom 2D graphics. Master coordinate systems, draw shapes with precision, apply gradients and transforms, and build two complete painting applications from scratch — including a fully featured PainterApp."
+    outcome: "Two complete painting applications and mastery of Qt's 2D graphics pipeline"
     lessons:
       - name: "Chapter Intro"
         duration: "1:43"
@@ -261,6 +307,9 @@ chapters:
       - name: "Chapter Summary"
         duration: "1:57"
   - title: "Chapter 16: Drag and Drop / Clipboard"
+    icon: "fas fa-arrows-alt"
+    description: "Add professional drag-and-drop interactions to your apps. Transfer data between widgets, handle dropped images, work with the system clipboard, and integrate it all into your PainterApp project."
+    outcome: "Drag-and-drop and clipboard support in production-quality applications"
     lessons:
       - name: "Chapter Intro"
         duration: "1:13"
@@ -281,6 +330,9 @@ chapters:
       - name: "Chapter Summary"
         duration: "1:39"
   - title: "Chapter 17: Model View Architecture - Advanced"
+    icon: "fas fa-database"
+    description: "Master Qt's most powerful data display framework. Build custom models, editable views, delegates with star ratings, tree structures, and a complete Expense Tracker with SQLite — the skills that separate juniors from seniors."
+    outcome: "Custom models, delegates, tree structures, and an Expense Tracker with SQLite"
     lessons:
       - name: "Model View Architecture Birds Eye View"
         duration: "6:53"
@@ -343,6 +395,9 @@ chapters:
       - name: "Expense Tracker Project with SQLite"
         duration: "13:24"
   - title: "Chapter 18: Graphics View Framework"
+    icon: "fas fa-vector-square"
+    description: "Build complex interactive scenes with thousands of items. Master the Graphics View Framework to create scene editors, handle selections and transforms, build resizable items, and develop two complete projects — a Flappy Bird game and an advanced PainterApp."
+    outcome: "A Flappy Bird game, an advanced PainterApp, and mastery of scene-based graphics"
     lessons:
       - name: "Graphics View Framework: Chapter Overview"
         duration: "10:38"
@@ -413,6 +468,9 @@ chapters:
       - name: "GraphicsView Framework: Chapter Review"
         duration: "5:39"
   - title: "Chapter 19: Miscellaneous - Tuning PainterApp Like a Real App"
+    icon: "fas fa-magic"
+    description: "Transform your PainterApp from a prototype into a polished, production-ready application. Add pen/brush property panels, a color picker, custom tool cursors, copy/cut/paste with data serialization, document save/load, and full undo/redo — exactly how professional apps are built."
+    outcome: "A production-quality PainterApp with undo/redo, clipboard, and document persistence"
     lessons:
       - name: "Chapter Overview"
         duration: "7:06"
@@ -455,6 +513,9 @@ chapters:
       - name: "Fix Smoothness"
         duration: "11:36"
   - title: "Chapter 20: Internationalization"
+    icon: "fas fa-language"
+    description: "Make your app speak every language. Learn Qt's full internationalization pipeline — prepare strings for translation, use Qt Linguist, generate translation files, and let users switch languages at runtime with their preference saved."
+    outcome: "A multi-language application with runtime language switching"
     lessons:
       - name: "Internationalization Overview"
         duration: "10:37"
@@ -473,10 +534,16 @@ chapters:
       - name: "Saving User Translation Choice"
         duration: "38:53"
   - title: "Chapter 21: Application Icons"
+    icon: "fas fa-icons"
+    description: "Give your application a professional identity. Set up application icons that display correctly in the taskbar, window title, and desktop — the finishing touch that makes your app look production-ready."
+    outcome: "Professional application icons across all platforms and contexts"
     lessons:
       - name: "Application Icons"
         duration: "8:46"
   - title: "Chapter 22: Deployment"
+    icon: "fas fa-box-open"
+    description: "Ship your application to real users. Master deployment on Windows (windeployqt + Qt Installer Framework), Linux (linuxdeployqt + installer), and Mac — so your app installs cleanly on any machine without requiring Qt to be installed."
+    outcome: "Installable application packages for Windows, Linux, and Mac"
     lessons:
       - name: "Deployment Overview"
         duration: "10:18"
@@ -493,6 +560,9 @@ chapters:
       - name: "Deployment on Mac OS"
         duration: "4:08"
   - title: "Chapter 23: Next Steps"
+    icon: "fas fa-road"
+    description: "You've built a rock-solid foundation. Now discover what to learn next, which advanced Qt topics to explore, and how to continue growing as a professional Qt developer."
+    outcome: "A clear path forward for your continued Qt development career"
     lessons:
       - name: "Next Steps"
         duration: "2:46"
