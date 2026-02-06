@@ -566,4 +566,4 @@ chapters:
     icon: "fas fa-road"
     description: "You've built a rock-solid foundation. Now discover what to learn next, which advanced Qt topics to explore, and how to continue growing as a professional Qt developer."
     outcome: "A clear path forward for your continued Qt development career"
-    l
+    lessons: []
