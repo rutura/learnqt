@@ -430,6 +430,92 @@
 </section>
 {% endif %}
 
+<!-- Course Curriculum Section -->
+<section class="course-curriculum py-5 bg-white background-pattern">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 25%; left: 5%;"></div>
+        <div class="floating-element floating-lg" style="top: 65%; right: 8%;"></div>
+        <div class="floating-element floating-sm" style="top: 45%; left: 88%;"></div>
+    </div>
+    
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <!-- Section Header -->
+                <div class="curriculum-header text-center mb-5">
+                    <div class="curriculum-badge">
+                        <i class="fas fa-list-alt"></i>
+                        <span>Complete Course Content</span>
+                    </div>
+                    <h2 class="curriculum-title">What's Inside The Course</h2>
+                    <p class="curriculum-subtitle">Comprehensive curriculum designed to take you from beginner to professional developer</p>
+                    <div class="curriculum-divider"></div>
+                </div>
+                
+                <!-- Curriculum Content -->
+                <div class="curriculum-content">
+                    {% assign curriculum = site.data.curriculums[page.course_id] %}
+                    <div class="curriculum-chapters" id="curriculumChapters">
+                        {% if curriculum and curriculum.chapters %}
+                        {% for chapter in curriculum.chapters %}
+                        <div class="curriculum-chapter{% if forloop.index > 3 %} curriculum-chapter-hidden{% endif %}">
+                            <div class="chapter-header">
+                                <div class="chapter-number">{{ forloop.index }}</div>
+                                <h3 class="chapter-title">{{ chapter.title }}</h3>
+                                <div class="chapter-meta">
+                                    <span class="lesson-count">
+                                        <i class="fas fa-play-circle"></i>
+                                        {{ chapter.lessons | size }} lessons
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="chapter-lessons">
+                                <ul class="lessons-list">
+                                    {% for lesson in chapter.lessons %}
+                                    <li class="lesson-item">
+                                        <i class="fas fa-check-circle lesson-check"></i>
+                                        <span class="lesson-name">{{ lesson.name }}</span>
+                                        {% if lesson.duration and lesson.duration != "" %}
+                                        <span class="lesson-duration">{{ lesson.duration }}</span>
+                                        {% endif %}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <p class="text-center text-muted">Curriculum information will be available soon.</p>
+                        {% endif %}
+                    </div>
+
+                    {% if curriculum and curriculum.chapters and curriculum.chapters.size > 3 %}
+                    <div class="text-center mt-5">
+                        <button class="btn btn-curriculum-expand" id="expandCurriculumBtn">
+                            <span class="btn-text-show">
+                                <i class="fas fa-chevron-down me-2"></i>
+                                Show Full Curriculum
+                            </span>
+                            <span class="btn-text-hide" style="display: none;">
+                                <i class="fas fa-chevron-up me-2"></i>
+                                Show Less
+                            </span>
+                        </button>
+                    </div>
+                    {% endif %}
+
+                    <div class="curriculum-footer text-center mt-5">
+                        <p class="curriculum-note">
+                            <i class="fas fa-infinity me-2"></i>
+                            Lifetime access to all course materials and future updates
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Learning Outcomes Section -->
 {% if course_data.sections.outcomes %}
 <section class="learning-outcomes py-5 bg-gray-gradient background-pattern">
@@ -4825,6 +4911,254 @@
     }
 }
 
+/* Course Curriculum Section Styles */
+.course-curriculum {
+    position: relative;
+    overflow: hidden;
+}
+
+.curriculum-header {
+    margin-bottom: 3rem;
+}
+
+.curriculum-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, #15ba29 0%, #12a324 100%);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(21, 186, 41, 0.2);
+}
+
+.curriculum-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.curriculum-subtitle {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.curriculum-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #15ba29 0%, #12a324 100%);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.curriculum-content {
+    margin-top: 3rem;
+}
+
+.curriculum-chapter {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.curriculum-chapter:hover {
+    border-color: #15ba29;
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.1);
+    transform: translateY(-2px);
+}
+
+.curriculum-chapter-hidden {
+    display: none;
+}
+
+.chapter-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.chapter-number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #15ba29 0%, #12a324 100%);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(21, 186, 41, 0.3);
+}
+
+.chapter-title {
+    flex: 1;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.chapter-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lesson-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.lesson-count i {
+    color: #15ba29;
+}
+
+.chapter-lessons {
+    padding-left: 0;
+}
+
+.lessons-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lesson-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    transition: all 0.2s ease;
+}
+
+.lesson-item:last-child {
+    border-bottom: none;
+}
+
+.lesson-item:hover {
+    background: #f8fafc;
+    padding-left: 0.5rem;
+}
+
+.lesson-check {
+    flex-shrink: 0;
+    color: #15ba29;
+    font-size: 1rem;
+}
+
+.lesson-name {
+    flex: 1;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.lesson-duration {
+    flex-shrink: 0;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+}
+
+.btn-curriculum-expand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #15ba29 0%, #12a324 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(21, 186, 41, 0.3);
+}
+
+.btn-curriculum-expand:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(21, 186, 41, 0.4);
+}
+
+.curriculum-footer {
+    margin-top: 2rem;
+}
+
+.curriculum-note {
+    color: #64748b;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.curriculum-note i {
+    color: #15ba29;
+}
+
+/* Responsive Design for Curriculum */
+@media (max-width: 768px) {
+    .curriculum-title {
+        font-size: 2rem;
+    }
+    
+    .curriculum-subtitle {
+        font-size: 1rem;
+    }
+    
+    .chapter-header {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .chapter-title {
+        font-size: 1.2rem;
+        flex-basis: 100%;
+    }
+    
+    .chapter-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .curriculum-chapter {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .lesson-item {
+        flex-wrap: wrap;
+    }
+    
+    .lesson-duration {
+        margin-left: 2rem;
+    }
+}
+
 </style>
 
 <script>
@@ -4859,6 +5193,46 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('load', function() {
     // Removed entrance animations for cleaner experience
     console.log('Page loaded - animations disabled for better UX');
+});
+
+// Curriculum expand/collapse
+document.addEventListener('DOMContentLoaded', function() {
+    const expandBtn = document.getElementById('expandCurriculumBtn');
+    if (!expandBtn) return;
+
+    const showText = expandBtn.querySelector('.btn-text-show');
+    const hideText = expandBtn.querySelector('.btn-text-hide');
+    let isExpanded = false;
+
+    expandBtn.addEventListener('click', function() {
+        const hiddenChapters = document.querySelectorAll('.curriculum-chapter-hidden');
+
+        if (!isExpanded) {
+            hiddenChapters.forEach(chapter => {
+                chapter.classList.remove('curriculum-chapter-hidden');
+                chapter.style.display = 'block';
+            });
+            showText.style.display = 'none';
+            hideText.style.display = 'inline';
+            isExpanded = true;
+        } else {
+            const allChapters = document.querySelectorAll('.curriculum-chapter');
+            allChapters.forEach((chapter, index) => {
+                if (index >= 3) {
+                    chapter.classList.add('curriculum-chapter-hidden');
+                    chapter.style.display = 'none';
+                }
+            });
+            showText.style.display = 'inline';
+            hideText.style.display = 'none';
+            isExpanded = false;
+
+            document.querySelector('.course-curriculum').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
 });
 
 // Urgency timer countdown (if needed)
