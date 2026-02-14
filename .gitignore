@@ -6,3 +6,5 @@ _site/
 .Gemfile.lock
 vendor/
 .bundle
+.claude/
+CLAUDE.md

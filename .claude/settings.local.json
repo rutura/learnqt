@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(copy:*)",
-      "Bash(find:*)",
-      "Bash(wc:*)"
-    ]
-  }
-}
