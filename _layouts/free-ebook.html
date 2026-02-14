@@ -1,168 +1,140 @@
 {% include seo.html %}
 {% include navpage.html %}
 
-<!-- Free eBook Landing Page -->
+<!-- ============================================================
+     HERO SECTION — Above the fold, first email capture
+     ============================================================ -->
 <section class="free-ebook-hero py-5 bg-primary-gradient background-pattern" style="padding-top: 120px !important; min-height: 100vh;">
-    <!-- Floating Elements -->
     <div class="floating-elements">
         <div class="floating-element floating-md" style="top: 20%; right: 15%;"></div>
         <div class="floating-element floating-lg" style="top: 60%; left: 10%;"></div>
         <div class="floating-element floating-sm" style="top: 40%; right: 30%;"></div>
     </div>
-    
+
     <div class="container position-relative" style="padding-top: 3rem;">
         <div class="row align-items-center">
-            <!-- Left Column - Content -->
+            <!-- Left Column -->
             <div class="col-lg-7">
                 <div class="hero-content text-white">
                     <!-- Urgency Badge -->
                     <div class="urgency-badge mb-4" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 107, 53, 0.95); color: white; padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase; box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4); animation: pulse-badge 2s ease-in-out infinite;">
                         <i class="fas fa-fire"></i>
-                        <span>4,000+ Developers Already Learning</span>
+                        <span>FREE — 63 Pages of Qt Mastery + Full Source Code</span>
                     </div>
-                    
-                    <!-- Main Headline -->
-                    <h1 class="hero-title display-2 fw-bold mb-4" style="line-height: 1.1;">
-                        Build <span style="background: linear-gradient(135deg, #ffd700, #ffed4e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 900;">Professional Dashboards</span> From Scratch—Line by Line
+
+                    <!-- Headline -->
+                    <h1 class="hero-title display-3 fw-bold mb-4" style="line-height: 1.08;">
+                        Build <span style="background: linear-gradient(135deg, #ffd700, #ffed4e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 900;">3 Professional Dashboards</span> in One Weekend
                     </h1>
-                    
+
                     <!-- Sub Headline -->
-                    <p class="hero-subtitle lead mb-4" style="font-size: 1.4rem; opacity: 0.95; line-height: 1.6;">
-                        Open <strong>Qt Creator</strong> and build data visualization UIs step by step with C++ and CMake. 
-                        Create <em>real-time dashboards, charts, and monitoring interfaces</em> you can use in any desktop app—from IoT to financial software.
+                    <p class="hero-subtitle lead mb-4" style="font-size: 1.35rem; opacity: 0.95; line-height: 1.6;">
+                        Stop choosing between Qt technologies blind. Build the <strong>same stunning dashboard</strong> three ways — <strong>C++, Python & QML</strong> — and discover which one fits YOUR projects.
                     </p>
-                    
-                    <!-- Social Proof -->
-                    <div class="social-proof-section mb-4">
-                        <div class="social-proof-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
-                            <div class="social-proof-item" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 1rem; border-radius: 15px; border: 2px solid rgba(255, 255, 255, 0.2);">
-                                <div class="proof-content">
-                                    <div class="social-proof-number" style="font-size: 1.8rem; font-weight: 800;">4,000+</div>
-                                    <div class="social-proof-label" style="font-size: 0.9rem; opacity: 0.9;">Students</div>
-                                </div>
-                            </div>
-                            <div class="social-proof-item" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 1rem; border-radius: 15px; border: 2px solid rgba(255, 255, 255, 0.2);">
-                                <div class="proof-content">
-                                    <div class="social-proof-number" style="font-size: 1.8rem; font-weight: 800;">92%</div>
-                                    <div class="social-proof-label" style="font-size: 0.9rem; opacity: 0.9;">Completion</div>
-                                </div>
-                            </div>
-                            <div class="social-proof-item" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 1rem; border-radius: 15px; border: 2px solid rgba(255, 255, 255, 0.2);">
-                                <div class="proof-content">
-                                    <div class="social-proof-number" style="font-size: 1.8rem; font-weight: 800;">100%</div>
-                                    <div class="social-proof-label" style="font-size: 0.9rem; opacity: 0.9;">FREE</div>
-                                </div>
-                            </div>
+
+                    <!-- Three Tech Badges -->
+                    <div class="tech-badges mb-4" style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                        <div style="background: rgba(52, 152, 219, 0.3); border: 2px solid rgba(52, 152, 219, 0.6); padding: 0.6rem 1.3rem; border-radius: 50px; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-code"></i> Qt Widgets + C++
+                        </div>
+                        <div style="background: rgba(46, 204, 113, 0.3); border: 2px solid rgba(46, 204, 113, 0.6); padding: 0.6rem 1.3rem; border-radius: 50px; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-python"></i> PySide6 + Python
+                        </div>
+                        <div style="background: rgba(155, 89, 182, 0.3); border: 2px solid rgba(155, 89, 182, 0.6); padding: 0.6rem 1.3rem; border-radius: 50px; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-layer-group"></i> Qt Quick / QML
                         </div>
                     </div>
-                    
-                    <!-- Benefits List -->
-                    <div class="benefits-list mb-4" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 20px; border: 2px solid rgba(255, 255, 255, 0.2);">
+
+                    <!-- Benefits -->
+                    <div class="benefits-list mb-4" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1.8rem; border-radius: 20px; border: 2px solid rgba(255, 255, 255, 0.2);">
                         <div class="benefit-item mb-3" style="display: flex; align-items: flex-start; gap: 1rem;">
-                            <div class="benefit-icon" style="width: 28px; height: 28px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fas fa-check" style="color: #15ba29; font-size: 0.8rem;"></i>
                             </div>
-                            <div class="benefit-text" style="flex: 1; font-size: 1.05rem; font-weight: 500;">
-                                <strong>Start from absolute zero</strong> — Open Qt Creator and build your project line by line. No prior Qt experience needed if you know C++
+                            <div style="flex: 1; font-size: 1.05rem; font-weight: 500;">
+                                <strong>Same dashboard, 3 technologies</strong> — Compare C++, Python, and QML side-by-side with real code, not theory
                             </div>
                         </div>
-                        
                         <div class="benefit-item mb-3" style="display: flex; align-items: flex-start; gap: 1rem;">
-                            <div class="benefit-icon" style="width: 28px; height: 28px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fas fa-check" style="color: #15ba29; font-size: 0.8rem;"></i>
                             </div>
-                            <div class="benefit-text" style="flex: 1; font-size: 1.05rem; font-weight: 500;">
-                                <strong>Learn reusable dashboard components</strong> — Real-time data visualization, progress bars, charts that work in ANY app (finance, IoT, analytics, monitoring)
+                            <div style="flex: 1; font-size: 1.05rem; font-weight: 500;">
+                                <strong>6 production-ready themes</strong> — Dark, Cyberpunk, Nord, Ocean, Forest & Purple. Swap in 60 seconds
                             </div>
                         </div>
-                        
                         <div class="benefit-item mb-3" style="display: flex; align-items: flex-start; gap: 1rem;">
-                            <div class="benefit-icon" style="width: 28px; height: 28px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fas fa-check" style="color: #15ba29; font-size: 0.8rem;"></i>
                             </div>
-                            <div class="benefit-text" style="flex: 1; font-size: 1.05rem; font-weight: 500;">
-                                <strong>Modern C++ and CMake workflow</strong> — Industry-standard build system and C++14/17 patterns used at Tesla and Mercedes
+                            <div style="flex: 1; font-size: 1.05rem; font-weight: 500;">
+                                <strong>Complete source code included</strong> — Charts, stat cards, sidebar navigation, data tables — all yours to keep and extend
                             </div>
                         </div>
-                        
                         <div class="benefit-item" style="display: flex; align-items: flex-start; gap: 1rem;">
-                            <div class="benefit-icon" style="width: 28px; height: 28px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                 <i class="fas fa-check" style="color: #15ba29; font-size: 0.8rem;"></i>
                             </div>
-                            <div class="benefit-text" style="flex: 1; font-size: 1.05rem; font-weight: 500;">
-                                <strong>Deploy to Windows, Mac, Linux</strong> — Write once, deploy everywhere with native performance. No Electron bloat
+                            <div style="flex: 1; font-size: 1.05rem; font-weight: 500;">
+                                <strong>Cross-platform</strong> — Windows, Mac & Linux. No Electron. Native performance
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- CTA Button for Mobile -->
+
+                    <!-- Mobile CTA -->
                     <div class="d-lg-none mb-4">
-                        <a href="#ebook-form" class="btn btn-light btn-lg w-100 fw-bold" style="padding: 1.2rem; font-size: 1.3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
-                            <i class="fas fa-download me-2"></i>Get Your FREE eBook<i class="fas fa-arrow-down ms-2"></i>
+                        <a href="#ebook-form-hero" class="btn btn-light btn-lg w-100 fw-bold" style="padding: 1.2rem; font-size: 1.3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+                            <i class="fas fa-download me-2"></i>Get the Free Book<i class="fas fa-arrow-down ms-2"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            
-            <!-- Right Column - Book Image and Form -->
+
+            <!-- Right Column — Book + Form -->
             <div class="col-lg-5">
                 <div class="book-and-form-container">
-                    <!-- Book Showcase -->
+                    <!-- Book Cover -->
                     <div class="book-showcase mb-4" style="text-align: center;">
                         <div class="book-image-wrapper" style="position: relative; display: inline-block;">
-                            <!-- Rotating Ring -->
                             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 350px; height: 350px; border: 3px solid rgba(255, 255, 255, 0.2); border-radius: 50%; border-top-color: #ffd700; animation: rotate-ring 15s linear infinite;"></div>
-                            
-                            <!-- Book Image -->
-                            <img src="{{ site.baseurl }}/assets/img/bookis.png" alt="Qt6 Widgets eBook" class="img-fluid" style="max-width: 300px; border-radius: 20px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); position: relative; z-index: 2;">
-                            
-                            <!-- Free Badge -->
-                            <div class="free-badge" style="position: absolute; top: -15px; right: -15px; background: linear-gradient(45deg, #ffd700, #ffed4e); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1rem; color: #15ba29; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5); z-index: 3; text-align: center; line-height: 1.2;">
-                                100%<br>FREE
+                            <img src="{{ site.baseurl }}/assets/img/ebook/book-cover.png" alt="Three Dashboards One Weekend — Free Qt Book" class="img-fluid" style="max-width: 280px; border-radius: 15px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); position: relative; z-index: 2;">
+                            <div style="position: absolute; top: -15px; right: -15px; background: linear-gradient(45deg, #ffd700, #ffed4e); width: 75px; height: 75px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.85rem; color: #15ba29; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5); z-index: 3; text-align: center; line-height: 1.1;">
+                                63<br>PAGES<br>FREE
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Form Card -->
-                    <div id="ebook-form" class="form-card" style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); position: relative;">
-                        <!-- Form Header -->
+
+                    <!-- FORM #1 — Hero -->
+                    <div id="ebook-form-hero" class="ebook-form-card" style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); position: relative;">
                         <div class="text-center mb-4">
-                            <h2 class="fw-bold mb-2" style="color: #2c3e50; font-size: 2rem;">Get the Free Qt Widgets + C++ eBook</h2>
-                            <p style="color: #6c757d; font-size: 1rem;">Build professional dashboards step by step + weekly C++ and Qt tips from a pro developer</p>
+                            <h2 class="fw-bold mb-2" style="color: #2c3e50; font-size: 1.7rem;">Get the Free Book + Source Code</h2>
+                            <p style="color: #6c757d; font-size: 0.95rem;">Instant download. Start building this weekend.</p>
                         </div>
-                        
-                        <!-- Form -->
-                        <form action="https://guide.us12.list-manage.com/subscribe/post?u=1b8fef66a5b917ebcfa9841d4&amp;id=d55d2f15f3&amp;f_id=0005d7e8f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate">
+
+                        <form action="https://guide.us12.list-manage.com/subscribe/post?u=1b8fef66a5b917ebcfa9841d4&amp;id=d55d2f15f3&amp;f_id=0005d7e8f0" method="post" class="ebook-subscribe-form validate">
                             <div class="mb-3">
-                                <label for="mce-EMAIL" class="form-label" style="color: #2c3e50; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                                    <i class="fas fa-envelope" style="color: #15ba29;"></i>
-                                    Email Address <span style="color: #15ba29;">*</span>
+                                <label class="form-label" style="color: #2c3e50; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-envelope" style="color: #15ba29;"></i> Email Address <span style="color: #15ba29;">*</span>
                                 </label>
-                                <input type="email" name="EMAIL" id="mce-EMAIL" class="form-control form-control-lg" placeholder="your.email@example.com" required style="border: 2px solid #e9ecef; border-radius: 12px; padding: 0.9rem 1.2rem; transition: all 0.3s ease;">
+                                <input type="email" name="EMAIL" class="form-control form-control-lg ebook-email" placeholder="your.email@example.com" required style="border: 2px solid #e9ecef; border-radius: 12px; padding: 0.9rem 1.2rem; transition: all 0.3s ease;">
                             </div>
-                            
                             <div class="mb-4">
-                                <label for="mce-FIRSTNAME" class="form-label" style="color: #2c3e50; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                                    <i class="fas fa-user" style="color: #15ba29;"></i>
-                                    First Name <span style="color: #15ba29;">*</span>
+                                <label class="form-label" style="color: #2c3e50; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-user" style="color: #15ba29;"></i> First Name <span style="color: #15ba29;">*</span>
                                 </label>
-                                <input type="text" name="FIRSTNAME" id="mce-FIRSTNAME" class="form-control form-control-lg" placeholder="Enter your first name" required style="border: 2px solid #e9ecef; border-radius: 12px; padding: 0.9rem 1.2rem; transition: all 0.3s ease;">
+                                <input type="text" name="FIRSTNAME" class="form-control form-control-lg ebook-firstname" placeholder="Enter your first name" required style="border: 2px solid #e9ecef; border-radius: 12px; padding: 0.9rem 1.2rem; transition: all 0.3s ease;">
                             </div>
-                            
                             <div hidden><input type="hidden" name="tags" value="12681541,free-ebook-landing"></div>
                             <div style="position: absolute; left: -5000px;" aria-hidden="true">
                                 <input type="text" name="b_1b8fef66a5b917ebcfa9841d4_d55d2f15f3" tabindex="-1" value="">
                             </div>
-                            
-                            <button type="submit" class="btn btn-lg w-100 fw-bold submit-btn" style="background: linear-gradient(135deg, #15ba29 0%, #28a745 100%); color: white; padding: 1.2rem; font-size: 1.3rem; border-radius: 15px; border: none; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.8rem;">
+                            <button type="submit" class="btn btn-lg w-100 fw-bold submit-btn" style="background: linear-gradient(135deg, #15ba29 0%, #28a745 100%); color: white; padding: 1.2rem; font-size: 1.2rem; border-radius: 15px; border: none; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.8rem;">
                                 <i class="fas fa-download"></i>
-                                <span>Send Me The Free eBook</span>
+                                <span>Send Me The Free Book</span>
                                 <i class="fas fa-arrow-right"></i>
                             </button>
-                            
                             <p class="text-center mt-3 mb-0" style="color: #6c757d; font-size: 0.85rem;">
-                                <i class="fas fa-lock me-1"></i> 
-                                No spam. Unsubscribe anytime. Join 4,000+ developers learning Qt.
+                                <i class="fas fa-lock me-1"></i> No spam. Unsubscribe anytime. Join 4,000+ Qt developers.
                             </p>
                         </form>
                     </div>
@@ -172,136 +144,195 @@
     </div>
 </section>
 
-<!-- What You'll Build Section -->
-<section class="build-showcase-section py-5" style="background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%); position: relative; overflow: hidden;">
+<!-- ============================================================
+     THREE TECHNOLOGIES SECTION
+     ============================================================ -->
+<section class="py-5" style="background: #0d1117; position: relative; overflow: hidden;">
     <div class="container">
-        <!-- Section Header -->
         <div class="text-center mb-5">
-            <h2 class="fw-bold mb-3" style="font-size: 2.8rem; color: #2c3e50;">
-                See What You'll Build <span style="color: #15ba29;">Line by Line</span>
+            <h2 class="fw-bold mb-3" style="font-size: 2.8rem; color: #ffffff;">
+                One Dashboard. <span style="background: linear-gradient(135deg, #3498db, #2ecc71, #9b59b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Three Technologies.</span>
             </h2>
-            <p class="lead" style="font-size: 1.2rem; color: #6c757d; max-width: 700px; margin: 0 auto;">
-                A real System Monitor with live charts, data visualization, and professional UI components you can reuse in any project
+            <p class="lead" style="font-size: 1.25rem; color: #8b949e; max-width: 750px; margin: 0 auto;">
+                The same professional dashboard built with Qt Widgets C++, PySide6, and QML. Run all three. Compare the code. Pick your favorite.
             </p>
         </div>
-        
-        <!-- Screenshots Grid -->
+
         <div class="row g-4">
-            <!-- Main Feature - Large Screenshot -->
-            <div class="col-lg-7">
-                <div class="showcase-card" style="background: white; border-radius: 20px; padding: 1.5rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15); position: relative; overflow: hidden;">
-                    <div class="card-badge" style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #15ba29, #28a745); color: white; padding: 0.5rem 1rem; border-radius: 30px; font-weight: 700; font-size: 0.9rem; box-shadow: 0 5px 15px rgba(21, 186, 41, 0.3); z-index: 10;">
-                        <i class="fas fa-chart-line me-1"></i> Real-Time Monitoring
+            <!-- C++ -->
+            <div class="col-lg-4">
+                <div class="tech-card" style="background: #161b22; border: 2px solid #30363d; border-radius: 20px; overflow: hidden; transition: all 0.4s ease; height: 100%;">
+                    <div style="background: linear-gradient(135deg, #3498db, #2980b9); padding: 0.8rem 1.5rem; text-align: center;">
+                        <span class="fw-bold" style="color: white; font-size: 1.1rem;"><i class="fas fa-code me-2"></i>Qt Widgets + C++</span>
                     </div>
-                    <img src="{{ site.baseurl }}/assets/courses/screenshots/system-monitor/14-system-monitor-running.png" alt="System Monitor Running" class="img-fluid" style="border-radius: 12px; width: 100%; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);">
-                    <div class="mt-3" style="padding: 0 0.5rem;">
-                        <h3 class="fw-bold mb-2" style="font-size: 1.4rem; color: #2c3e50;">Complete Desktop Application</h3>
-                        <p style="color: #6c757d; font-size: 1rem; margin: 0;">Real-time CPU and memory monitoring with live updating charts and system information panels</p>
+                    <div style="padding: 1.2rem;">
+                        <img src="{{ site.baseurl }}/assets/img/ebook/dashboard-dark-full.png" alt="Qt Widgets C++ Dashboard" class="img-fluid" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);">
+                    </div>
+                    <div style="padding: 0 1.5rem 1.5rem;">
+                        <p style="color: #8b949e; font-size: 0.95rem; margin: 0;">CMake, QPainter, QSS stylesheets. Maximum control & native performance.</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Side Feature Cards -->
-            <div class="col-lg-5">
-                <div class="row g-4 h-100">
-                    <!-- Feature 1 -->
-                    <div class="col-12">
-                        <div class="showcase-card" style="background: white; border-radius: 20px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden;">
-                            <div class="row align-items-center">
-                                <div class="col-5">
-                                    <img src="{{ site.baseurl }}/assets/courses/screenshots/system-monitor/10-system-charts-added.png" alt="System Charts" class="img-fluid" style="border-radius: 8px; width: 100%; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);">
-                                </div>
-                                <div class="col-7">
-                                    <h4 class="fw-bold mb-2" style="font-size: 1.2rem; color: #2c3e50;">
-                                        <i class="fas fa-chart-area me-1" style="color: #15ba29;"></i> Dynamic Charts
-                                    </h4>
-                                    <p style="color: #6c757d; font-size: 0.95rem; margin: 0;">Animated data visualization components for any dashboard</p>
-                                </div>
-                            </div>
-                        </div>
+
+            <!-- PySide6 -->
+            <div class="col-lg-4">
+                <div class="tech-card" style="background: #161b22; border: 2px solid #30363d; border-radius: 20px; overflow: hidden; transition: all 0.4s ease; height: 100%;">
+                    <div style="background: linear-gradient(135deg, #2ecc71, #27ae60); padding: 0.8rem 1.5rem; text-align: center;">
+                        <span class="fw-bold" style="color: white; font-size: 1.1rem;"><i class="fab fa-python me-2"></i>PySide6 + Python</span>
                     </div>
-                    
-                    <!-- Feature 2 -->
-                    <div class="col-12">
-                        <div class="showcase-card" style="background: white; border-radius: 20px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden;">
-                            <div class="row align-items-center">
-                                <div class="col-5">
-                                    <img src="{{ site.baseurl }}/assets/courses/screenshots/system-monitor/12-system-monitor-light-mode.png" alt="Light Mode UI" class="img-fluid" style="border-radius: 8px; width: 100%; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);">
-                                </div>
-                                <div class="col-7">
-                                    <h4 class="fw-bold mb-2" style="font-size: 1.2rem; color: #2c3e50;">
-                                        <i class="fas fa-palette me-1" style="color: #15ba29;"></i> Professional Themes
-                                    </h4>
-                                    <p style="color: #6c757d; font-size: 0.95rem; margin: 0;">Light/dark mode with polished, modern styling</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div style="padding: 1.2rem;">
+                        <img src="{{ site.baseurl }}/assets/img/ebook/dashboard-pyside.png" alt="PySide6 Python Dashboard" class="img-fluid" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);">
                     </div>
-                    
-                    <!-- Feature 3 -->
-                    <div class="col-12">
-                        <div class="showcase-card" style="background: white; border-radius: 20px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden;">
-                            <div class="row align-items-center">
-                                <div class="col-5">
-                                    <img src="{{ site.baseurl }}/assets/courses/screenshots/system-monitor/14-chart-widget-with-axis-labels.png" alt="Chart Widget Detail" class="img-fluid" style="border-radius: 8px; width: 100%; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);">
-                                </div>
-                                <div class="col-7">
-                                    <h4 class="fw-bold mb-2" style="font-size: 1.2rem; color: #2c3e50;">
-                                        <i class="fas fa-code me-1" style="color: #15ba29;"></i> Custom Widgets
-                                    </h4>
-                                    <p style="color: #6c757d; font-size: 0.95rem; margin: 0;">Build reusable components with proper labels and styling</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div style="padding: 0 1.5rem 1.5rem;">
+                        <p style="color: #8b949e; font-size: 0.95rem; margin: 0;">Zero compilation. <code style="color: #2ecc71;">pip install PySide6</code> and run. Same Qt API, instant feedback loop.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QML -->
+            <div class="col-lg-4">
+                <div class="tech-card" style="background: #161b22; border: 2px solid #30363d; border-radius: 20px; overflow: hidden; transition: all 0.4s ease; height: 100%;">
+                    <div style="background: linear-gradient(135deg, #9b59b6, #8e44ad); padding: 0.8rem 1.5rem; text-align: center;">
+                        <span class="fw-bold" style="color: white; font-size: 1.1rem;"><i class="fas fa-layer-group me-2"></i>Qt Quick / QML</span>
+                    </div>
+                    <div style="padding: 1.2rem;">
+                        <img src="{{ site.baseurl }}/assets/img/ebook/dashboard-qml.png" alt="QML Dashboard" class="img-fluid" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);">
+                    </div>
+                    <div style="padding: 0 1.5rem 1.5rem;">
+                        <p style="color: #8b949e; font-size: 0.95rem; margin: 0;">Declarative UI. Property bindings, Theme singletons, and C++ integration where needed.</p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Key Skills Banner -->
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="showcase-card" style="background: linear-gradient(135deg, #15ba29 0%, #28a745 100%); border-radius: 20px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(21, 186, 41, 0.2); position: relative; overflow: hidden;">
-                    <div class="text-center mb-4">
-                        <h3 class="fw-bold" style="font-size: 2rem; color: white;">
-                            <i class="fas fa-code me-2"></i> Learn Reusable Patterns for Any App
-                        </h3>
+
+        <div class="text-center mt-5">
+            <a href="#ebook-form-hero" class="btn btn-outline-light btn-lg fw-bold px-5 py-3" style="border-radius: 50px; font-size: 1.1rem; border-width: 2px;">
+                <i class="fas fa-download me-2"></i>Download All Three — Free
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     WHAT'S INSIDE — Book Preview
+     ============================================================ -->
+<section class="py-5" style="background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%); position: relative; overflow: hidden;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3" style="font-size: 2.8rem; color: #2c3e50;">
+                63 Pages of <span style="color: #15ba29;">Hands-On</span> Qt Development
+            </h2>
+            <p class="lead" style="font-size: 1.2rem; color: #6c757d; max-width: 700px; margin: 0 auto;">
+                Not a reference manual. A weekend project. Open the book, open your IDE, and build along.
+            </p>
+        </div>
+
+        <!-- Book Pages Preview -->
+        <div class="row g-4 mb-5">
+            <div class="col-6 col-md-3">
+                <div class="showcase-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.4s ease;">
+                    <img src="{{ site.baseurl }}/assets/img/ebook/page-12.png" alt="Book Page - Stat Cards Customization" class="img-fluid" style="width: 100%;">
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="showcase-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.4s ease;">
+                    <img src="{{ site.baseurl }}/assets/img/ebook/page-15.png" alt="Book Page - New Page Tutorial" class="img-fluid" style="width: 100%;">
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="showcase-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.4s ease;">
+                    <img src="{{ site.baseurl }}/assets/img/ebook/page-30.png" alt="Book Page - PySide6 Dashboard" class="img-fluid" style="width: 100%;">
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="showcase-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.4s ease;">
+                    <img src="{{ site.baseurl }}/assets/img/ebook/page-56.png" alt="Book Page - Technology Comparison" class="img-fluid" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter Breakdown -->
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); height: 100%;">
+                    <h3 class="fw-bold mb-4" style="color: #2c3e50; font-size: 1.6rem;"><i class="fas fa-book-open me-2" style="color: #15ba29;"></i>What's Inside</h3>
+                    <div class="chapter-list">
+                        <div class="chapter-item mb-3" style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #15ba29, #28a745); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; font-weight: 800; font-size: 0.9rem;">1</div>
+                            <div>
+                                <div class="fw-bold" style="color: #2c3e50; font-size: 1.05rem;">Introduction & Setup</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">What you'll build, how the book works, installing Qt</div>
+                            </div>
+                        </div>
+                        <div class="chapter-item mb-3" style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; font-weight: 800; font-size: 0.9rem;">2</div>
+                            <div>
+                                <div class="fw-bold" style="color: #2c3e50; font-size: 1.05rem;">Qt Widgets + C++</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">CMake, QPainter custom widgets, QSS themes, 5 guided customizations</div>
+                            </div>
+                        </div>
+                        <div class="chapter-item mb-3" style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #2ecc71, #27ae60); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; font-weight: 800; font-size: 0.9rem;">3</div>
+                            <div>
+                                <div class="fw-bold" style="color: #2c3e50; font-size: 1.05rem;">Qt Widgets + PySide6</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">Same dashboard in Python. Zero compilation, save-and-run workflow</div>
+                            </div>
+                        </div>
+                        <div class="chapter-item mb-3" style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; font-weight: 800; font-size: 0.9rem;">4</div>
+                            <div>
+                                <div class="fw-bold" style="color: #2c3e50; font-size: 1.05rem;">Qt Quick / QML</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">Declarative UI, property bindings, Theme.qml singleton</div>
+                            </div>
+                        </div>
+                        <div class="chapter-item" style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #f39c12, #e67e22); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; font-weight: 800; font-size: 0.9rem;">5</div>
+                            <div>
+                                <div class="fw-bold" style="color: #2c3e50; font-size: 1.05rem;">Choosing Your Technology</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">Side-by-side comparison with concrete data from your own experience</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row g-4">
-                        <div class="col-md-3 col-6">
-                            <div class="text-center">
-                                <div style="width: 70px; height: 70px; background: rgba(255, 255, 255, 0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                    <i class="fas fa-tachometer-alt" style="color: white; font-size: 2rem;"></i>
-                                </div>
-                                <div class="fw-bold" style="color: white; font-size: 1.1rem; margin-bottom: 0.5rem;">Real-time Data</div>
-                                <div style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Dashboards, IoT, monitoring</div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); height: 100%;">
+                    <h3 class="fw-bold mb-4" style="color: #2c3e50; font-size: 1.6rem;"><i class="fas fa-gift me-2" style="color: #15ba29;"></i>What You Get</h3>
+                    <div class="value-list">
+                        <div class="value-item mb-3" style="display: flex; gap: 1rem; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 12px;">
+                            <i class="fas fa-file-pdf" style="color: #e74c3c; font-size: 1.5rem;"></i>
+                            <div>
+                                <div class="fw-bold" style="color: #2c3e50;">63-Page Illustrated PDF</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">Full-color screenshots, code listings, architecture diagrams</div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-6">
-                            <div class="text-center">
-                                <div style="width: 70px; height: 70px; background: rgba(255, 255, 255, 0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                    <i class="fas fa-chart-bar" style="color: white; font-size: 2rem;"></i>
-                                </div>
-                                <div class="fw-bold" style="color: white; font-size: 1.1rem; margin-bottom: 0.5rem;">Custom Charts</div>
-                                <div style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Finance, analytics, data viz</div>
+                        <div class="value-item mb-3" style="display: flex; gap: 1rem; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 12px;">
+                            <i class="fas fa-folder-open" style="color: #3498db; font-size: 1.5rem;"></i>
+                            <div>
+                                <div class="fw-bold" style="color: #2c3e50;">3 Complete Project Folders</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">C++, Python, and QML — ready to open in Qt Creator / VS Code</div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-6">
-                            <div class="text-center">
-                                <div style="width: 70px; height: 70px; background: rgba(255, 255, 255, 0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                    <i class="fas fa-layer-group" style="color: white; font-size: 2rem;"></i>
-                                </div>
-                                <div class="fw-bold" style="color: white; font-size: 1.1rem; margin-bottom: 0.5rem;">Modern UI</div>
-                                <div style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Model-View, signals/slots</div>
+                        <div class="value-item mb-3" style="display: flex; gap: 1rem; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 12px;">
+                            <i class="fas fa-palette" style="color: #9b59b6; font-size: 1.5rem;"></i>
+                            <div>
+                                <div class="fw-bold" style="color: #2c3e50;">6 Professional Themes</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">Dark, Cyberpunk, Nord, Ocean Breeze, Forest, and Purple</div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-6">
-                            <div class="text-center">
-                                <div style="width: 70px; height: 70px; background: rgba(255, 255, 255, 0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                                    <i class="fas fa-desktop" style="color: white; font-size: 2rem;"></i>
-                                </div>
-                                <div class="fw-bold" style="color: white; font-size: 1.1rem; margin-bottom: 0.5rem;">Cross-Platform</div>
-                                <div style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem;">Windows, Mac, Linux</div>
+                        <div class="value-item mb-3" style="display: flex; gap: 1rem; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 12px;">
+                            <i class="fas fa-puzzle-piece" style="color: #2ecc71; font-size: 1.5rem;"></i>
+                            <div>
+                                <div class="fw-bold" style="color: #2c3e50;">Reusable Components</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">Stat cards, charts, sidebar, data tables — drop into any project</div>
+                            </div>
+                        </div>
+                        <div class="value-item" style="display: flex; gap: 1rem; align-items: center; padding: 1rem; background: #f8f9fa; border-radius: 12px;">
+                            <i class="fas fa-desktop" style="color: #f39c12; font-size: 1.5rem;"></i>
+                            <div>
+                                <div class="fw-bold" style="color: #2c3e50;">Cross-Platform Ready</div>
+                                <div style="color: #6c757d; font-size: 0.9rem;">Runs on Windows, macOS, and Linux out of the box</div>
                             </div>
                         </div>
                     </div>
@@ -311,17 +342,211 @@
     </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="testimonials-landing py-5 bg-light background-pattern">
+<!-- ============================================================
+     SIX THEMES — Visual Impact
+     ============================================================ -->
+<section class="py-5" style="background: #0d1117;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3" style="font-size: 2.8rem; color: #ffffff;">
+                This Is <span style="color: #e74c3c; text-decoration: line-through;">NOT</span> Your Grandfather's Qt
+            </h2>
+            <p class="lead" style="font-size: 1.2rem; color: #8b949e; max-width: 700px; margin: 0 auto;">
+                Modern dark themes. Custom-painted charts. Neon cyberpunk accents. Six complete stylesheets you can swap in 60 seconds.
+            </p>
+        </div>
+
+        <!-- Before/After -->
+        <div class="row g-4 mb-5 align-items-center">
+            <div class="col-md-5">
+                <div style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+                    <div style="position: absolute; top: 15px; left: 15px; background: #e74c3c; color: white; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem; z-index: 2;">BEFORE</div>
+                    <img src="{{ site.baseurl }}/assets/img/ebook/before-qt.png" alt="Old-style Qt application" class="img-fluid" style="width: 100%; opacity: 0.9;">
+                </div>
+            </div>
+            <div class="col-md-2 text-center d-none d-md-block">
+                <div style="font-size: 3rem; color: #ffd700;"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="col-md-5">
+                <div style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 40px rgba(52, 152, 219, 0.3);">
+                    <div style="position: absolute; top: 15px; left: 15px; background: #2ecc71; color: white; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem; z-index: 2;">AFTER</div>
+                    <img src="{{ site.baseurl }}/assets/img/ebook/after-qt.png" alt="Modern Qt dashboard" class="img-fluid" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Pages Grid -->
+        <div class="row g-3">
+            <div class="col-6 col-md-3">
+                <div class="tech-card" style="border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); transition: all 0.4s ease;">
+                    <img src="{{ site.baseurl }}/assets/img/ebook/page-dashboard.png" alt="Dashboard Page" class="img-fluid" style="width: 100%;">
+                    <div style="background: #161b22; padding: 0.8rem; text-align: center;">
+                        <span class="fw-bold" style="color: #ffffff; font-size: 0.9rem;">Dashboard</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="tech-card" style="border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); transition: all 0.4s ease;">
+                    <img src="{{ site.baseurl }}/assets/img/ebook/page-analytics.png" alt="Analytics Page" class="img-fluid" style="width: 100%;">
+                    <div style="background: #161b22; padding: 0.8rem; text-align: center;">
+                        <span class="fw-bold" style="color: #ffffff; font-size: 0.9rem;">Analytics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="tech-card" style="border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); transition: all 0.4s ease;">
+                    <img src="{{ site.baseurl }}/assets/img/ebook/page-reports.png" alt="Reports Page" class="img-fluid" style="width: 100%;">
+                    <div style="background: #161b22; padding: 0.8rem; text-align: center;">
+                        <span class="fw-bold" style="color: #ffffff; font-size: 0.9rem;">Reports</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="tech-card" style="border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); transition: all 0.4s ease;">
+                    <img src="{{ site.baseurl }}/assets/img/ebook/page-users.png" alt="Users Page" class="img-fluid" style="width: 100%;">
+                    <div style="background: #161b22; padding: 0.8rem; text-align: center;">
+                        <span class="fw-bold" style="color: #ffffff; font-size: 0.9rem;">Users</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Theme Swap -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div style="background: #161b22; border: 2px solid #30363d; border-radius: 20px; padding: 2rem; text-align: center;">
+                    <img src="{{ site.baseurl }}/assets/img/ebook/color-swap.png" alt="Theme Color Swap Comparison" class="img-fluid" style="border-radius: 12px; max-width: 800px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+                    <p class="mt-3 mb-0" style="color: #8b949e; font-size: 1.05rem;">Change one line. Entire app transforms. <strong style="color: #ffd700;">6 themes included.</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     WHO IS THIS FOR — Audience targeting + FORM #2
+     ============================================================ -->
+<section class="py-5" style="background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3" style="font-size: 2.8rem; color: #2c3e50;">
+                Built for <span style="color: #15ba29;">Your</span> Technology Stack
+            </h2>
+            <p class="lead" style="font-size: 1.2rem; color: #6c757d; max-width: 700px; margin: 0 auto;">
+                Whether you code in C++, Python, or prefer declarative UI — this book has a chapter written specifically for you.
+            </p>
+        </div>
+
+        <!-- Audience Cards -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); height: 100%; border-top: 5px solid #3498db; transition: all 0.4s ease;" class="showcase-card">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-code" style="color: white; font-size: 2rem;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-3" style="color: #2c3e50; font-size: 1.4rem;">C++ Developers</h3>
+                    <p style="color: #6c757d; font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                        You know C++ but desktop UI feels like a black box. This chapter gives you the complete Qt Widgets workflow: <strong>CMake builds, QPainter custom rendering, QSS stylesheets</strong>, and modern signal/slot connections.
+                    </p>
+                    <ul style="color: #6c757d; font-size: 0.95rem; padding-left: 1.2rem;">
+                        <li>Qt Creator + CMake setup</li>
+                        <li>Custom-painted stat cards & charts</li>
+                        <li>Centralized color palette architecture</li>
+                        <li>Add a new page in under 5 minutes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); height: 100%; border-top: 5px solid #2ecc71; transition: all 0.4s ease;" class="showcase-card">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #2ecc71, #27ae60); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fab fa-python" style="color: white; font-size: 2rem;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-3" style="color: #2c3e50; font-size: 1.4rem;">Python Developers</h3>
+                    <p style="color: #6c757d; font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                        You love Python but Tkinter makes you cry. PySide6 gives you the <strong>full Qt API without compilation</strong>. Same powerful widgets, instant save-and-run feedback.
+                    </p>
+                    <ul style="color: #6c757d; font-size: 0.95rem; padding-left: 1.2rem;">
+                        <li><code>pip install PySide6</code> — that's it</li>
+                        <li>VS Code workflow, no Qt Creator needed</li>
+                        <li>Same QSS themes work unchanged</li>
+                        <li>~40 lines to add a new page</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); height: 100%; border-top: 5px solid #9b59b6; transition: all 0.4s ease;" class="showcase-card">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-layer-group" style="color: white; font-size: 2rem;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-3" style="color: #2c3e50; font-size: 1.4rem;">QML / Declarative UI Fans</h3>
+                    <p style="color: #6c757d; font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                        If you come from React, Flutter, or SwiftUI, QML will feel natural. <strong>Property bindings propagate automatically</strong>. Theme changes cascade without recompiling.
+                    </p>
+                    <ul style="color: #6c757d; font-size: 0.95rem; padding-left: 1.2rem;">
+                        <li>Theme.qml singleton for all styling</li>
+                        <li>Named properties: <code>title: "Total Users"</code></li>
+                        <li>C++ integration for performance-critical code</li>
+                        <li>~30 lines to add a new page</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORM #2 — Mid-page -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div id="ebook-form-mid" class="ebook-form-card" style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12); border: 3px solid #15ba29; position: relative;">
+                    <div style="position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #15ba29, #28a745); color: white; padding: 0.5rem 2rem; border-radius: 30px; font-weight: 700; font-size: 0.9rem; white-space: nowrap;">
+                        <i class="fas fa-bolt me-1"></i> Pick Your Tech — Or Try All Three
+                    </div>
+                    <div class="text-center mb-4 mt-2">
+                        <h3 class="fw-bold mb-2" style="color: #2c3e50; font-size: 1.8rem;">Get the Free Book + All Source Code</h3>
+                        <p style="color: #6c757d; font-size: 1rem;">C++, Python, and QML projects included. No credit card required.</p>
+                    </div>
+
+                    <form action="https://guide.us12.list-manage.com/subscribe/post?u=1b8fef66a5b917ebcfa9841d4&amp;id=d55d2f15f3&amp;f_id=0005d7e8f0" method="post" class="ebook-subscribe-form validate">
+                        <div class="row g-3">
+                            <div class="col-md-5">
+                                <input type="email" name="EMAIL" class="form-control form-control-lg ebook-email" placeholder="Your email address" required style="border: 2px solid #e9ecef; border-radius: 12px; padding: 0.9rem 1.2rem;">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" name="FIRSTNAME" class="form-control form-control-lg ebook-firstname" placeholder="First name" required style="border: 2px solid #e9ecef; border-radius: 12px; padding: 0.9rem 1.2rem;">
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-lg w-100 fw-bold submit-btn" style="background: linear-gradient(135deg, #15ba29, #28a745); color: white; padding: 0.9rem; border-radius: 12px; border: none; font-size: 1rem;">
+                                    <i class="fas fa-download me-1"></i> Get It Free
+                                </button>
+                            </div>
+                        </div>
+                        <div hidden><input type="hidden" name="tags" value="12681541,free-ebook-landing"></div>
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_1b8fef66a5b917ebcfa9841d4_d55d2f15f3" tabindex="-1" value="">
+                        </div>
+                        <p class="text-center mt-3 mb-0" style="color: #6c757d; font-size: 0.85rem;">
+                            <i class="fas fa-lock me-1"></i> No spam. Unsubscribe anytime.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="testimonials-landing py-5 background-pattern" style="background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="fw-bold" style="font-size: 2.5rem; color: #2c3e50;">What Developers Are Saying</h2>
-            <p class="text-muted" style="font-size: 1.1rem;">From complete beginners to senior engineers — see what students achieve</p>
+            <p class="text-muted" style="font-size: 1.1rem;">From complete beginners to senior engineers</p>
         </div>
-        
+
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="testimonial-card" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); height: 100%; border-left: 5px solid #15ba29;">
+                <div class="testimonial-card" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); height: 100%; border-left: 5px solid #3498db;">
                     <div class="testimonial-stars mb-3">
                         <i class="fas fa-star" style="color: #ffd700;"></i>
                         <i class="fas fa-star" style="color: #ffd700;"></i>
@@ -329,21 +554,21 @@
                         <i class="fas fa-star" style="color: #ffd700;"></i>
                         <i class="fas fa-star" style="color: #ffd700;"></i>
                     </div>
-                    <p class="testimonial-text mb-4" style="font-size: 1.05rem; font-style: italic; color: #495057; line-height: 1.7;">
-                        "The step-by-step approach made everything click. I built my first real-time dashboard and now use those patterns in all my projects."
+                    <p style="font-size: 1.05rem; font-style: italic; color: #495057; line-height: 1.7;">
+                        "I was torn between C++ and Python for my Qt project. Building the same dashboard both ways made the decision obvious. Saved me weeks of false starts."
                     </p>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #15ba29, #28a745); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">SC</div>
-                        <div class="author-info">
-                            <div class="author-name" style="font-weight: 700; color: #2c3e50;">Sarah Chen</div>
-                            <div class="author-title" style="color: #6c757d; font-size: 0.9rem;">Software Engineer at Microsoft</div>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #3498db, #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">SC</div>
+                        <div>
+                            <div class="fw-bold" style="color: #2c3e50;">Sarah Chen</div>
+                            <div style="color: #6c757d; font-size: 0.9rem;">Software Engineer</div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-4 mb-4">
-                <div class="testimonial-card" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); height: 100%; border-left: 5px solid #15ba29;">
+                <div class="testimonial-card" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); height: 100%; border-left: 5px solid #2ecc71;">
                     <div class="testimonial-stars mb-3">
                         <i class="fas fa-star" style="color: #ffd700;"></i>
                         <i class="fas fa-star" style="color: #ffd700;"></i>
@@ -351,21 +576,21 @@
                         <i class="fas fa-star" style="color: #ffd700;"></i>
                         <i class="fas fa-star" style="color: #ffd700;"></i>
                     </div>
-                    <p class="testimonial-text mb-4" style="font-size: 1.05rem; font-style: italic; color: #495057; line-height: 1.7;">
-                        "Coming from Python, I thought C++ GUI development would be overwhelming. The line-by-line approach made it actually manageable."
+                    <p style="font-size: 1.05rem; font-style: italic; color: #495057; line-height: 1.7;">
+                        "Coming from Python, I thought C++ GUI development would be overwhelming. The side-by-side approach made it click instantly. Now I use Qt professionally."
                     </p>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #15ba29, #28a745); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">MR</div>
-                        <div class="author-info">
-                            <div class="author-name" style="font-weight: 700; color: #2c3e50;">Mike Rodriguez</div>
-                            <div class="author-title" style="color: #6c757d; font-size: 0.9rem;">Freelance Developer</div>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #2ecc71, #27ae60); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">MR</div>
+                        <div>
+                            <div class="fw-bold" style="color: #2c3e50;">Mike Rodriguez</div>
+                            <div style="color: #6c757d; font-size: 0.9rem;">Freelance Developer</div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-4 mb-4">
-                <div class="testimonial-card" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); height: 100%; border-left: 5px solid #15ba29;">
+                <div class="testimonial-card" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); height: 100%; border-left: 5px solid #9b59b6;">
                     <div class="testimonial-stars mb-3">
                         <i class="fas fa-star" style="color: #ffd700;"></i>
                         <i class="fas fa-star" style="color: #ffd700;"></i>
@@ -373,42 +598,151 @@
                         <i class="fas fa-star" style="color: #ffd700;"></i>
                         <i class="fas fa-star" style="color: #ffd700;"></i>
                     </div>
-                    <p class="testimonial-text mb-4" style="font-size: 1.05rem; font-style: italic; color: #495057; line-height: 1.7;">
-                        "The dashboard skills I learned apply everywhere—built monitoring UIs for IoT devices and financial apps. Career game-changer."
+                    <p style="font-size: 1.05rem; font-style: italic; color: #495057; line-height: 1.7;">
+                        "The dashboard patterns I learned apply everywhere — built monitoring UIs for IoT devices and financial trading apps. Career game-changer."
                     </p>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #15ba29, #28a745); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">PP</div>
-                        <div class="author-info">
-                            <div class="author-name" style="font-weight: 700; color: #2c3e50;">Priya Patel</div>
-                            <div class="author-title" style="color: #6c757d; font-size: 0.9rem;">Engineer at Tesla</div>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #9b59b6, #8e44ad); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">PP</div>
+                        <div>
+                            <div class="fw-bold" style="color: #2c3e50;">Priya Patel</div>
+                            <div style="color: #6c757d; font-size: 0.9rem;">Embedded Systems Engineer</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Trust Badge -->
-        <div class="trust-badge text-center mt-4">
-            <p class="text-muted mb-2" style="font-weight: 600;">Trusted By Developers At</p>
-            <div class="company-names" style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
-                <span style="font-weight: 700; color: #6c757d;"><i class="fas fa-building me-2" style="color: #15ba29;"></i>Microsoft</span>
-                <span style="font-weight: 700; color: #6c757d;"><i class="fas fa-car me-2" style="color: #15ba29;"></i>Tesla</span>
-                <span style="font-weight: 700; color: #6c757d;"><i class="fas fa-industry me-2" style="color: #15ba29;"></i>Amazon</span>
-                <span style="font-weight: 700; color: #6c757d;"><i class="fas fa-cogs me-2" style="color: #15ba29;"></i>Mercedes</span>
-                <span style="font-weight: 700; color: #6c757d;"><i class="fas fa-microchip me-2" style="color: #15ba29;"></i>Bosch</span>
+
+        <div class="text-center mt-4">
+            <p class="text-muted mb-2" style="font-weight: 600;">Qt Powers These Industries — Your Dashboard Skills Apply Everywhere</p>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 1.8rem; flex-wrap: wrap;">
+                <span style="font-weight: 700; color: #6c757d;"><i class="fas fa-car me-2" style="color: #3498db;"></i>Automotive</span>
+                <span style="font-weight: 700; color: #6c757d;"><i class="fas fa-heartbeat me-2" style="color: #e74c3c;"></i>Medical Devices</span>
+                <span style="font-weight: 700; color: #6c757d;"><i class="fas fa-microchip me-2" style="color: #2ecc71;"></i>IoT & Embedded</span>
+                <span style="font-weight: 700; color: #6c757d;"><i class="fas fa-chart-line me-2" style="color: #f39c12;"></i>Finance & Trading</span>
+                <span style="font-weight: 700; color: #6c757d;"><i class="fas fa-industry me-2" style="color: #9b59b6;"></i>Industrial Automation</span>
+                <span style="font-weight: 700; color: #6c757d;"><i class="fas fa-satellite me-2" style="color: #1abc9c;"></i>Aerospace & Defense</span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Final CTA Section -->
-<section class="final-cta py-5 bg-primary-gradient text-white text-center background-pattern">
+<!-- ============================================================
+     VALUE STACK — What You Walk Away With
+     ============================================================ -->
+<section class="py-5" style="background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
     <div class="container">
-        <h2 class="fw-bold mb-3" style="font-size: 2.5rem;">Ready to Build Professional Dashboards From Scratch?</h2>
-        <p class="lead mb-4" style="font-size: 1.3rem; opacity: 0.95;">Join 4,000+ developers building data visualization UIs with Qt Widgets, C++, and CMake (plus QML and PySide6 courses available)</p>
-        <a href="#ebook-form" class="btn btn-light btn-lg fw-bold px-5 py-3" style="font-size: 1.2rem; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
-            <i class="fas fa-download me-2"></i>Get Your Free eBook Now<i class="fas fa-arrow-up ms-2"></i>
-        </a>
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3" style="font-size: 2.8rem; color: #2c3e50;">
+                After One Weekend, You'll Have...
+            </h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="showcase-card" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); height: 100%; text-align: center; transition: all 0.4s ease;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.2)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-bullseye" style="color: #3498db; font-size: 2.2rem;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #2c3e50;">Confidence to Choose</h4>
+                    <p style="color: #6c757d; font-size: 0.95rem; margin: 0;">Pick your Qt technology based on YOUR hands-on experience — not someone else's blog post</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="showcase-card" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); height: 100%; text-align: center; transition: all 0.4s ease;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(46, 204, 113, 0.2)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-brain" style="color: #2ecc71; font-size: 2.2rem;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #2c3e50;">Qt Mental Model</h4>
+                    <p style="color: #6c757d; font-size: 0.95rem; margin: 0;">CMake, QSS, color palettes, QPainter, signals/slots, multi-page navigation — all internalized</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="showcase-card" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); height: 100%; text-align: center; transition: all 0.4s ease;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(155, 89, 182, 0.2)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-balance-scale" style="color: #9b59b6; font-size: 2.2rem;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #2c3e50;">Clear Trade-offs</h4>
+                    <p style="color: #6c757d; font-size: 0.95rem; margin: 0;">~80 lines for a new page in C++, ~40 in Python, ~30 in QML. You'll see it yourself</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="showcase-card" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); height: 100%; text-align: center; transition: all 0.4s ease;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(243, 156, 18, 0.2)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-rocket" style="color: #f39c12; font-size: 2.2rem;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #2c3e50;">A Real Project to Extend</h4>
+                    <p style="color: #6c757d; font-size: 0.95rem; margin: 0;">Replace the placeholder data with your own API. Build IoT dashboards, CRM tools, financial apps</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="showcase-card" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); height: 100%; text-align: center; transition: all 0.4s ease;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(231, 76, 60, 0.2)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-palette" style="color: #e74c3c; font-size: 2.2rem;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #2c3e50;">6 Ready-Made Themes</h4>
+                    <p style="color: #6c757d; font-size: 0.95rem; margin: 0;">Dark, Cyberpunk, Nord, Ocean Breeze, Forest, Purple. Use them. Modify them. Create your own</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="showcase-card" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); height: 100%; text-align: center; transition: all 0.4s ease;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, rgba(21, 186, 41, 0.1), rgba(21, 186, 41, 0.2)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-check-double" style="color: #15ba29; font-size: 2.2rem;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #2c3e50;">15 Guided Customizations</h4>
+                    <p style="color: #6c757d; font-size: 0.95rem; margin: 0;">5 per technology. Swap themes, change data, add pages — step by step with real results</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA — FORM #3
+     ============================================================ -->
+<section class="py-5 bg-primary-gradient text-white text-center background-pattern" style="position: relative; overflow: hidden;">
+    <div class="floating-elements">
+        <div class="floating-element floating-md" style="top: 30%; left: 10%;"></div>
+        <div class="floating-element floating-sm" style="top: 70%; right: 20%;"></div>
+    </div>
+
+    <div class="container position-relative">
+        <h2 class="fw-bold mb-3" style="font-size: 2.8rem;">Stop Guessing. Start Building.</h2>
+        <p class="lead mb-2" style="font-size: 1.3rem; opacity: 0.95; max-width: 700px; margin: 0 auto;">
+            63 pages. 3 technologies. 6 themes. Complete source code. One weekend.
+        </p>
+        <p class="mb-5" style="font-size: 1.1rem; opacity: 0.8;">Join 4,000+ developers who stopped debating and started building.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div id="ebook-form-bottom" class="ebook-form-card" style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); position: relative;">
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold mb-2" style="color: #2c3e50; font-size: 1.7rem;">Get Your Free Copy Now</h3>
+                        <p style="color: #6c757d; font-size: 0.95rem;">Delivered instantly to your inbox. Start this weekend.</p>
+                    </div>
+
+                    <form action="https://guide.us12.list-manage.com/subscribe/post?u=1b8fef66a5b917ebcfa9841d4&amp;id=d55d2f15f3&amp;f_id=0005d7e8f0" method="post" class="ebook-subscribe-form validate">
+                        <div class="mb-3">
+                            <input type="email" name="EMAIL" class="form-control form-control-lg ebook-email" placeholder="your.email@example.com" required style="border: 2px solid #e9ecef; border-radius: 12px; padding: 0.9rem 1.2rem;">
+                        </div>
+                        <div class="mb-4">
+                            <input type="text" name="FIRSTNAME" class="form-control form-control-lg ebook-firstname" placeholder="First name" required style="border: 2px solid #e9ecef; border-radius: 12px; padding: 0.9rem 1.2rem;">
+                        </div>
+                        <div hidden><input type="hidden" name="tags" value="12681541,free-ebook-landing"></div>
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_1b8fef66a5b917ebcfa9841d4_d55d2f15f3" tabindex="-1" value="">
+                        </div>
+                        <button type="submit" class="btn btn-lg w-100 fw-bold submit-btn" style="background: linear-gradient(135deg, #15ba29, #28a745); color: white; padding: 1.2rem; font-size: 1.3rem; border-radius: 15px; border: none; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3); display: flex; align-items: center; justify-content: center; gap: 0.8rem;">
+                            <i class="fas fa-download"></i>
+                            <span>Send Me The Free Book</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <p class="text-center mt-3 mb-0" style="color: #6c757d; font-size: 0.85rem;">
+                            <i class="fas fa-lock me-1"></i> No spam. Unsubscribe anytime.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -420,15 +754,11 @@
     position: relative;
     overflow: hidden;
 }
-
 .background-pattern::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
         radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
     pointer-events: none;
@@ -436,73 +766,41 @@
 
 /* Gradient Backgrounds */
 .bg-primary-gradient {
-    background: linear-gradient(135deg, 
-        #1a202c 0%, 
-        #2d3748 25%, 
-        #15ba29 75%, 
+    background: linear-gradient(135deg,
+        #1a202c 0%,
+        #2d3748 25%,
+        #15ba29 75%,
         #0d8a1f 100%);
 }
 
 /* Floating Elements */
 .floating-elements {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none;
     z-index: 0;
 }
-
 .floating-element {
     position: absolute;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     animation: float 6s ease-in-out infinite;
 }
-
-.floating-sm {
-    width: 60px;
-    height: 60px;
-}
-
-.floating-md {
-    width: 100px;
-    height: 100px;
-    animation-duration: 8s;
-}
-
-.floating-lg {
-    width: 140px;
-    height: 140px;
-    animation-duration: 10s;
-}
+.floating-sm { width: 60px; height: 60px; }
+.floating-md { width: 100px; height: 100px; animation-duration: 8s; }
+.floating-lg { width: 140px; height: 140px; animation-duration: 10s; }
 
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-20px) rotate(10deg);
-    }
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
 }
-
 @keyframes pulse-badge {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
-
 @keyframes rotate-ring {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* Form Enhancements */
@@ -510,14 +808,28 @@
     border-color: #15ba29 !important;
     box-shadow: 0 0 0 0.25rem rgba(21, 186, 41, 0.15) !important;
 }
-
 .submit-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 40px rgba(21, 186, 41, 0.4) !important;
 }
-
 .submit-btn:active {
     transform: translateY(-1px);
+}
+
+/* Tech Cards */
+.tech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important;
+    border-color: #ffd700 !important;
+}
+
+/* Showcase Cards */
+.showcase-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.showcase-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Smooth Scroll */
@@ -525,185 +837,109 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Showcase Card Hover Effects */
-.showcase-card {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.showcase-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2) !important;
-}
-
-.showcase-card img {
-    transition: transform 0.4s ease;
-}
-
-.showcase-card:hover img {
-    transform: scale(1.02);
-}
-
-.card-badge {
-    animation: badge-float 3s ease-in-out infinite;
-}
-
-@keyframes badge-float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
 /* Responsive */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2rem !important;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem !important;
-    }
-    
-    .social-proof-grid {
-        grid-template-columns: 1fr !important;
-    }
+    .hero-title { font-size: 2rem !important; }
+    .hero-subtitle { font-size: 1.1rem !important; }
+    .tech-badges { justify-content: center; }
 }
 </style>
 
 <script>
-// Enhanced form validation and success handling (matching homepage newsletter behavior)
+// Form validation and submission for all 3 forms
 document.addEventListener('DOMContentLoaded', function() {
-    var form = document.getElementById('mc-embedded-subscribe-form');
-    var emailField = document.getElementById('mce-EMAIL');
-    var firstNameField = document.getElementById('mce-FIRSTNAME');
-    var submitButton = form.querySelector('.submit-btn');
-    
-    if(form && emailField && firstNameField && submitButton) {
-        // Function to validate email format
-        function isValidEmail(email) {
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-        
-        // Function to validate form
-        function validateForm() {
-            var isValid = true;
-            
-            // Reset previous error states
-            emailField.style.borderColor = '#e9ecef';
-            firstNameField.style.borderColor = '#e9ecef';
-            
-            // Remove any existing error messages
-            var existingErrors = form.querySelectorAll('.field-error');
-            existingErrors.forEach(function(error) {
-                error.remove();
+    var forms = document.querySelectorAll('.ebook-subscribe-form');
+
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function showFieldError(field, message) {
+        field.style.borderColor = '#e74c3c';
+        field.style.boxShadow = '0 0 0 0.125rem rgba(231, 76, 60, 0.25)';
+        var existing = field.parentNode.querySelector('.field-error');
+        if (existing) existing.remove();
+        var errorDiv = document.createElement('div');
+        errorDiv.className = 'field-error';
+        errorDiv.style.cssText = 'color: #e74c3c; font-size: 0.875rem; margin-top: 0.25rem; font-weight: 600;';
+        errorDiv.textContent = message;
+        field.parentNode.appendChild(errorDiv);
+    }
+
+    function showSuccess(formCard) {
+        formCard.innerHTML = '<div style="text-align: center; padding: 2rem;">' +
+            '<div style="width: 80px; height: 80px; background: linear-gradient(135deg, #15ba29, #28a745); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3);"><i class="fas fa-check" style="font-size: 2.5rem; color: white;"></i></div>' +
+            '<h3 style="color: #15ba29; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Check Your Email!</h3>' +
+            '<p style="color: #495057; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;">Your free book and source code are on the way. Check your inbox (and spam folder) for the download link. <strong>Start building this weekend!</strong></p>' +
+            '</div>';
+    }
+
+    forms.forEach(function(form) {
+        var emailField = form.querySelector('.ebook-email');
+        var firstNameField = form.querySelector('.ebook-firstname');
+        var submitBtn = form.querySelector('.submit-btn');
+
+        // Clear errors on focus
+        [emailField, firstNameField].forEach(function(field) {
+            if (!field) return;
+            field.addEventListener('focus', function() {
+                this.style.borderColor = '#15ba29';
+                this.style.boxShadow = '0 0 0 0.25rem rgba(21, 186, 41, 0.15)';
+                var err = this.parentNode.querySelector('.field-error');
+                if (err) err.remove();
             });
-            
-            // Validate email
-            if (!emailField.value.trim()) {
+            field.addEventListener('blur', function() {
+                this.style.borderColor = '#e9ecef';
+                this.style.boxShadow = '';
+            });
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var isValid = true;
+
+            // Remove previous errors
+            form.querySelectorAll('.field-error').forEach(function(el) { el.remove(); });
+            if (emailField) emailField.style.borderColor = '#e9ecef';
+            if (firstNameField) firstNameField.style.borderColor = '#e9ecef';
+
+            if (!emailField || !emailField.value.trim()) {
                 showFieldError(emailField, 'Email address is required');
                 isValid = false;
             } else if (!isValidEmail(emailField.value.trim())) {
                 showFieldError(emailField, 'Please enter a valid email address');
                 isValid = false;
             }
-            
-            // Validate first name
-            if (!firstNameField.value.trim()) {
+            if (!firstNameField || !firstNameField.value.trim()) {
                 showFieldError(firstNameField, 'First name is required');
                 isValid = false;
             }
-            
-            return isValid;
-        }
-        
-        // Function to show field error
-        function showFieldError(field, message) {
-            field.style.borderColor = '#e74c3c';
-            field.style.boxShadow = '0 0 0 0.125rem rgba(231, 76, 60, 0.25)';
-            
-            var errorDiv = document.createElement('div');
-            errorDiv.className = 'field-error';
-            errorDiv.style.color = '#e74c3c';
-            errorDiv.style.fontSize = '0.875rem';
-            errorDiv.style.marginTop = '0.25rem';
-            errorDiv.style.fontWeight = '600';
-            errorDiv.textContent = message;
-            
-            field.parentNode.appendChild(errorDiv);
-        }
-        
-        // Function to show success message
-        function showSuccessMessage() {
-            var formCard = document.getElementById('ebook-form');
-            formCard.innerHTML = '<div style="text-align: center; padding: 2rem;">' +
-                '<div style="width: 80px; height: 80px; background: linear-gradient(135deg, #15ba29, #28a745); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3);"><i class="fas fa-check" style="font-size: 2.5rem; color: white;"></i></div>' +
-                '<h3 style="color: #15ba29; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Success! Check Your Email</h3>' +
-                '<p style="color: #495057; font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;">Thank you for signing up! Please check your inbox for a confirmation email and your free Qt6 book. Don\'t forget to check your spam folder if you don\'t see it within a few minutes.</p>' +
-                '</div>';
-        }
-        
-        // Clear error styling on focus
-        [emailField, firstNameField].forEach(function(field) {
-            field.addEventListener('focus', function() {
-                this.style.borderColor = '#15ba29';
-                this.style.boxShadow = '0 0 0 0.25rem rgba(21, 186, 41, 0.15)';
-                
-                // Remove error message for this field
-                var errorMsg = this.parentNode.querySelector('.field-error');
-                if (errorMsg) {
-                    errorMsg.remove();
-                }
-            });
-            
-            field.addEventListener('blur', function() {
-                this.style.borderColor = '#e9ecef';
-                this.style.boxShadow = '';
-            });
-        });
-        
-        // Handle form submission
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default submission
-            
-            if (validateForm()) {
-                // If validation passes, submit the form
+
+            if (isValid) {
                 var formData = new FormData(form);
-                
-                // Disable submit button to prevent double submission
-                submitButton.disabled = true;
-                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
-                
-                // Submit form data
-                fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    mode: 'no-cors' // Required for Mailchimp
-                }).then(function() {
-                    // Show success message after successful submission
-                    setTimeout(showSuccessMessage, 300);
-                }).catch(function() {
-                    // Even if fetch fails due to CORS, the form was likely submitted successfully
-                    setTimeout(showSuccessMessage, 300);
-                });
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
+
+                fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' })
+                    .then(function() {
+                        var card = form.closest('.ebook-form-card');
+                        setTimeout(function() { showSuccess(card); }, 300);
+                    })
+                    .catch(function() {
+                        var card = form.closest('.ebook-form-card');
+                        setTimeout(function() { showSuccess(card); }, 300);
+                    });
             }
         });
-    }
-});
+    });
 
-// Smooth scroll for CTA buttons
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
-        }
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
     });
 });
 </script>
