@@ -72,64 +72,115 @@
         </div>
       </div>
 
-      <!-- Right Column — Book Cover + Form -->
-      <div class="col-lg-5">
-        <div style="text-align: center;">
-          <!-- Book Cover -->
-          <div class="mb-4" style="position: relative; display: inline-block;">
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; border: 3px solid rgba(255, 255, 255, 0.15); border-radius: 50%; border-top-color: #ffd700; animation: rotate-ring 15s linear infinite;"></div>
-            <img src="{{ site.baseurl }}/assets/img/ebook/book-cover.png" alt="Three Dashboards One Weekend — Free Qt Book" style="max-width: 230px; border-radius: 15px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5); position: relative; z-index: 2;">
-            <div style="position: absolute; top: -12px; right: -12px; background: linear-gradient(45deg, #ffd700, #ffed4e); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.75rem; color: #15ba29; box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5); z-index: 3; text-align: center; line-height: 1.1; animation: float-badge 2s ease-in-out infinite;">
-              63<br>PAGES<br>FREE
-            </div>
-          </div>
+    </div>
 
-          <!-- Form Card -->
-          <div class="newsletter-form-card" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); text-align: left;">
-            <div class="text-center mb-3">
-              <h4 class="fw-bold mb-1" style="color: #2c3e50; font-size: 1.4rem;">Get the Free Book + Source Code</h4>
-              <p style="color: #6c757d; font-size: 0.85rem; margin-bottom: 0;">Instant download. Start building this weekend.</p>
-            </div>
+    <!-- ── Full-Width Form Card: Visuals Left + Form Right ── -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="newsletter-form-card" style="background: rgba(255, 255, 255, 0.97); border-radius: 24px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); overflow: hidden; position: relative;">
 
-            <form action="https://guide.us12.list-manage.com/subscribe/post?u=1b8fef66a5b917ebcfa9841d4&amp;id=d55d2f15f3&amp;f_id=0005d7e8f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter-subscribe-form" target="_blank">
-              <div id="mc_embed_signup_scroll">
-                <div class="mb-3">
-                  <label for="mce-EMAIL" style="color: #2c3e50; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.4rem;">
-                    <i class="fas fa-envelope" style="color: #15ba29; font-size: 0.9rem;"></i>
-                    Email Address <span style="color: #15ba29;">*</span>
-                  </label>
-                  <input type="email" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" required value="" placeholder="your.email@example.com" style="width: 100%; padding: 0.85rem 1.2rem; border-radius: 12px; border: 2px solid #e9ecef; background: #ffffff; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(0,0,0,0.04);">
+          <div class="row g-0 align-items-stretch">
+            <!-- Left — Visual Showcase -->
+            <div class="col-lg-6 newsletter-visual-col" style="background: linear-gradient(160deg, #0d1117 0%, #161b22 60%, #1a2332 100%); padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;">
+              <!-- Subtle grid pattern -->
+              <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 24px 24px; pointer-events: none;"></div>
+
+              <!-- Dashboard Screenshot -->
+              <div style="position: relative; z-index: 2; margin-bottom: 1.5rem;">
+                <div style="position: relative;">
+                  <img src="{{ site.baseurl }}/assets/img/ebook/dashboard-dark-full.png" alt="Professional Qt Dashboard — What you'll build" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.1);">
+                  <!-- "What you'll build" label -->
+                  <div style="position: absolute; top: 12px; left: 12px; background: rgba(21, 186, 41, 0.9); color: white; padding: 0.3rem 0.9rem; border-radius: 20px; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.5px; text-transform: uppercase; backdrop-filter: blur(5px);">
+                    <i class="fas fa-eye me-1"></i> What you'll build
+                  </div>
                 </div>
-                <div class="mb-3">
-                  <label for="mce-FIRSTNAME" style="color: #2c3e50; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.4rem;">
-                    <i class="fas fa-user" style="color: #15ba29; font-size: 0.9rem;"></i>
-                    First Name <span style="color: #15ba29;">*</span>
-                  </label>
-                  <input type="text" name="FIRSTNAME" class="required text newsletter-firstname" id="mce-FIRSTNAME" required value="" placeholder="Enter your first name" style="width: 100%; padding: 0.85rem 1.2rem; border-radius: 12px; border: 2px solid #e9ecef; background: #ffffff; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(0,0,0,0.04);">
-                </div>
-                <div hidden><input type="hidden" name="tags" value="12681541,free-ebook-landing"></div>
-                <div id="mce-responses" class="clear">
-                  <div class="response" id="mce-error-response" style="display: none;"></div>
-                  <div class="response" id="mce-success-response" style="display: none;"></div>
-                </div>
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1b8fef66a5b917ebcfa9841d4_d55d2f15f3" tabindex="-1" value=""></div>
-                <div class="clear">
-                  <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="newsletter-submit-btn" style="width: 100%; min-height: 52px; background: linear-gradient(135deg, #15ba29 0%, #28a745 100%); color: #fff; border-radius: 12px; font-weight: 700; font-size: 1.1rem; border: none; box-shadow: 0 8px 25px rgba(21, 186, 41, 0.3); cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.6rem; position: relative; overflow: hidden;">
-                    <i class="fas fa-download" style="font-size: 1.1rem;"></i>
-                    <span>Send Me The Free Book</span>
-                    <i class="fas fa-arrow-right" style="font-size: 0.9rem;"></i>
-                  </button>
-                </div>
-                <p class="text-center mt-2 mb-0" style="color: #6c757d; font-size: 0.8rem;">
-                  <i class="fas fa-lock me-1"></i> No spam. Unsubscribe anytime. Join 4,000+ Qt developers.
-                </p>
               </div>
-            </form>
+
+              <!-- Book Cover + What You Get — Side by side -->
+              <div style="position: relative; z-index: 2; display: flex; gap: 1.2rem; align-items: center;">
+                <!-- Book Cover -->
+                <div style="flex-shrink: 0; position: relative;">
+                  <img src="{{ site.baseurl }}/assets/img/ebook/book-cover.png" alt="Three Dashboards One Weekend — Free Qt Book" style="width: 120px; border-radius: 10px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); border: 2px solid rgba(255, 255, 255, 0.15); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05) rotate(-2deg)'" onmouseout="this.style.transform='scale(1)'">
+                  <!-- Badge -->
+                  <div style="position: absolute; top: -8px; right: -8px; background: linear-gradient(45deg, #ffd700, #ffed4e); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.55rem; color: #15ba29; box-shadow: 0 6px 18px rgba(255, 215, 0, 0.5); text-align: center; line-height: 1.1; animation: float-badge 2s ease-in-out infinite;">
+                    63<br>PGS<br>FREE
+                  </div>
+                </div>
+
+                <!-- What's included list -->
+                <div style="flex: 1;">
+                  <div class="mb-2" style="display: flex; align-items: center; gap: 0.6rem;">
+                    <i class="fas fa-file-pdf" style="color: #e74c3c; font-size: 0.95rem; width: 18px; text-align: center;"></i>
+                    <span style="color: #c9d1d9; font-size: 0.85rem; font-weight: 600;">63-page illustrated PDF</span>
+                  </div>
+                  <div class="mb-2" style="display: flex; align-items: center; gap: 0.6rem;">
+                    <i class="fas fa-folder-open" style="color: #3498db; font-size: 0.95rem; width: 18px; text-align: center;"></i>
+                    <span style="color: #c9d1d9; font-size: 0.85rem; font-weight: 600;">3 complete project folders</span>
+                  </div>
+                  <div class="mb-2" style="display: flex; align-items: center; gap: 0.6rem;">
+                    <i class="fas fa-palette" style="color: #9b59b6; font-size: 0.95rem; width: 18px; text-align: center;"></i>
+                    <span style="color: #c9d1d9; font-size: 0.85rem; font-weight: 600;">6 professional themes</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <i class="fas fa-desktop" style="color: #f39c12; font-size: 0.95rem; width: 18px; text-align: center;"></i>
+                    <span style="color: #c9d1d9; font-size: 0.85rem; font-weight: 600;">Win / Mac / Linux ready</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right — Form -->
+            <div class="col-lg-6" style="padding: 2.5rem; display: flex; flex-direction: column; justify-content: center;">
+              <div class="text-center mb-3">
+                <div class="mb-2" style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(21, 186, 41, 0.1); border: 1px solid rgba(21, 186, 41, 0.2); border-radius: 20px; padding: 0.35rem 1rem;">
+                  <i class="fas fa-gift" style="color: #15ba29; font-size: 0.8rem;"></i>
+                  <span style="color: #15ba29; font-weight: 600; font-size: 0.8rem;">100% Free — No Credit Card</span>
+                </div>
+                <h4 class="fw-bold mb-1" style="color: #2c3e50; font-size: 1.5rem;">Get the Free Book + Source Code</h4>
+                <p style="color: #6c757d; font-size: 0.9rem; margin-bottom: 0;">Instant download. Start building this weekend.</p>
+              </div>
+
+              <form action="https://guide.us12.list-manage.com/subscribe/post?u=1b8fef66a5b917ebcfa9841d4&amp;id=d55d2f15f3&amp;f_id=0005d7e8f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter-subscribe-form" target="_blank">
+                <div id="mc_embed_signup_scroll">
+                  <div class="mb-3">
+                    <label for="mce-EMAIL" style="color: #2c3e50; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.4rem;">
+                      <i class="fas fa-envelope" style="color: #15ba29; font-size: 0.9rem;"></i>
+                      Email Address <span style="color: #15ba29;">*</span>
+                    </label>
+                    <input type="email" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" required value="" placeholder="your.email@example.com" style="width: 100%; padding: 0.85rem 1.2rem; border-radius: 12px; border: 2px solid #e9ecef; background: #ffffff; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(0,0,0,0.04);">
+                  </div>
+                  <div class="mb-3">
+                    <label for="mce-FIRSTNAME" style="color: #2c3e50; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.4rem;">
+                      <i class="fas fa-user" style="color: #15ba29; font-size: 0.9rem;"></i>
+                      First Name <span style="color: #15ba29;">*</span>
+                    </label>
+                    <input type="text" name="FIRSTNAME" class="required text newsletter-firstname" id="mce-FIRSTNAME" required value="" placeholder="Enter your first name" style="width: 100%; padding: 0.85rem 1.2rem; border-radius: 12px; border: 2px solid #e9ecef; background: #ffffff; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(0,0,0,0.04);">
+                  </div>
+                  <div hidden><input type="hidden" name="tags" value="12681541,free-ebook-landing"></div>
+                  <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                  </div>
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1b8fef66a5b917ebcfa9841d4_d55d2f15f3" tabindex="-1" value=""></div>
+                  <div class="clear">
+                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="newsletter-submit-btn" style="width: 100%; min-height: 54px; background: linear-gradient(135deg, #15ba29 0%, #28a745 100%); color: #fff; border-radius: 14px; font-weight: 700; font-size: 1.15rem; border: none; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3); cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.6rem; position: relative; overflow: hidden;">
+                      <i class="fas fa-download" style="font-size: 1.1rem;"></i>
+                      <span>Send Me The Free Book</span>
+                      <i class="fas fa-arrow-right" style="font-size: 0.9rem;"></i>
+                    </button>
+                  </div>
+                  <p class="text-center mt-2 mb-0" style="color: #6c757d; font-size: 0.8rem;">
+                    <i class="fas fa-lock me-1"></i> No spam. Unsubscribe anytime. Join 4,000+ Qt developers.
+                  </p>
+                </div>
+              </form>
+            </div>
           </div>
+
         </div>
       </div>
-
     </div>
+
   </div>
 
   <!-- Animations -->
@@ -186,6 +237,7 @@
       .newsletter-section .col-lg-7 { text-align: center; }
       .newsletter-section .col-lg-7 h3 { font-size: 2rem !important; }
       .newsletter-section .col-lg-7 > div > div:last-child { text-align: left; }
+      .newsletter-visual-col { padding: 2rem !important; }
     }
   </style>
 
