@@ -1,464 +1,193 @@
-<!-- Newsletter Section -->
-<section id="newsletter" class="newsletter-section" style="background: linear-gradient(135deg, #15ba29 0%, #28a745 100%); padding: 6rem 0; position: relative; overflow: hidden;">
+<!-- Newsletter Section — Dashboard eBook Lead Magnet -->
+<section id="newsletter" class="newsletter-section" style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 25%, #15ba29 75%, #0d8a1f 100%); padding: 5rem 0; position: relative; overflow: hidden;">
   <!-- Background Effects -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(&quot;data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='20' cy='20' r='1' fill='white' opacity='0.1'/><circle cx='80' cy='40' r='1' fill='white' opacity='0.1'/><circle cx='40' cy='80' r='1' fill='white' opacity='0.1'/></svg>&quot;) repeat; background-size: 100px 100px; animation: newsletter-pattern 30s linear infinite;"></div>
-
-  <!-- Floating Elements -->
-  <div style="position: absolute; top: 10%; left: 5%; font-size: 3rem; color: rgba(255,255,255,0.1); animation: float-newsletter 6s ease-in-out infinite;"><i class="fas fa-envelope-open"></i></div>
-  <div style="position: absolute; top: 20%; right: 8%; font-size: 2.5rem; color: rgba(255,255,255,0.1); animation: float-newsletter 8s ease-in-out infinite reverse;"><i class="fas fa-book-open"></i></div>
-  <div style="position: absolute; bottom: 15%; left: 8%; font-size: 2rem; color: rgba(255,255,255,0.1); animation: float-newsletter 7s ease-in-out infinite;"><i class="fas fa-download"></i></div>
-  <div style="position: absolute; bottom: 25%; right: 10%; font-size: 2.8rem; color: rgba(255,255,255,0.1); animation: float-newsletter 9s ease-in-out infinite reverse;"><i class="fas fa-bell"></i></div>
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+    <div style="position: absolute; top: 20%; right: 15%; width: 100px; height: 100px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); animation: float-newsletter 8s ease-in-out infinite;"></div>
+    <div style="position: absolute; top: 60%; left: 10%; width: 140px; height: 140px; border-radius: 50%; background: rgba(255, 255, 255, 0.06); animation: float-newsletter 10s ease-in-out infinite reverse;"></div>
+    <div style="position: absolute; top: 40%; right: 30%; width: 60px; height: 60px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); animation: float-newsletter 6s ease-in-out infinite;"></div>
+  </div>
 
   <div class="container" style="position: relative; z-index: 2;">
-    <div class="row">
-      <div class="col-lg-11 mx-auto">
-        <div class="newsletter-card" style="background: rgba(255, 255, 255, 0.98); border-radius: 30px; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.5); backdrop-filter: blur(20px); position: relative; overflow: hidden;">
+    <div class="row align-items-center">
 
-          <!-- Card Glow Effect -->
-          <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, rgba(255,255,255,0.6), rgba(21,186,41,0.3), rgba(255,255,255,0.6)); border-radius: 30px; z-index: -1; filter: blur(12px); opacity: 0.7;"></div>
+      <!-- Left Column — Copy + Benefits -->
+      <div class="col-lg-7 mb-4 mb-lg-0">
+        <div class="text-white">
+          <!-- Urgency Badge -->
+          <div class="mb-3" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 107, 53, 0.95); color: white; padding: 0.5rem 1.3rem; border-radius: 50px; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.5px; text-transform: uppercase; box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4); animation: pulse-newsletter-badge 2s ease-in-out infinite;">
+            <i class="fas fa-fire"></i>
+            <span>FREE — 63 Pages + Full Source Code</span>
+          </div>
 
-          <div class="row g-0">
-            <!-- Left Side - Book Image (Narrower) -->
-            <div class="col-lg-4" style="background: linear-gradient(135deg, rgba(21, 186, 41, 0.05) 0%, rgba(40, 167, 69, 0.1) 100%); border-radius: 30px 0 0 30px; padding: 3rem 2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+          <!-- Headline -->
+          <h3 class="fw-bold mb-3" style="font-size: 2.4rem; line-height: 1.15; color: #ffffff;">
+            Build <span style="background: linear-gradient(135deg, #ffd700, #ffed4e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 900;">3 Professional Dashboards</span> in One Weekend
+          </h3>
 
-              <!-- Background Decorative Elements -->
-              <div style="position: absolute; top: -30px; right: -30px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(21, 186, 41, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
-              <div style="position: absolute; bottom: -40px; left: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(40, 167, 69, 0.08) 0%, transparent 70%); border-radius: 50%;"></div>
+          <!-- Subtitle -->
+          <p class="mb-4" style="font-size: 1.15rem; opacity: 0.92; line-height: 1.6; max-width: 560px;">
+            Build the <strong>same stunning dashboard</strong> three ways — <strong>C++, Python & QML</strong> — and discover which Qt technology fits YOUR projects.
+          </p>
 
-              <!-- Book Image Container -->
-              <div class="newsletter-book-container mb-4" style="position: relative; z-index: 2;">
-                <!-- Rotating Ring -->
-                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 280px; height: 280px; border: 3px solid rgba(21, 186, 41, 0.2); border-radius: 50%; border-top-color: #15ba29; animation: rotate-ring 12s linear infinite;"></div>
-                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 260px; height: 260px; border: 2px solid rgba(21, 186, 41, 0.15); border-radius: 50%; border-bottom-color: #28a745; animation: rotate-ring 10s linear infinite reverse;"></div>
-
-                <!-- Book Image with Shadow -->
-                <div style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); transition: all 0.3s ease;"
-                     onmouseover="this.style.transform='scale(1.05) rotateY(5deg)'; this.style.boxShadow='0 25px 60px rgba(21, 186, 41, 0.4)'"
-                     onmouseout="this.style.transform='scale(1) rotateY(0deg)'; this.style.boxShadow='0 20px 50px rgba(0, 0, 0, 0.3)'">
-                  <img src="{{ site.baseurl }}/assets/img/bookis.png" alt="Qt6 QML Book" style="width: 100%; max-width: 250px; height: auto; display: block;">
-
-                  <!-- Floating Badge -->
-                  <div style="position: absolute; top: -10px; right: -10px; background: linear-gradient(45deg, #ffd700, #ffed4e); border-radius: 50%; width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5); animation: float-badge 2s ease-in-out infinite; z-index: 10;">
-                    <i class="fas fa-gift" style="font-size: 1.5rem; color: #15ba29;"></i>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Free Badge -->
-              <div class="newsletter-badge mb-3" style="display: inline-flex; align-items: center; background: linear-gradient(45deg, #15ba29, #28a745); color: white; padding: 0.8rem 1.8rem; border-radius: 50px; box-shadow: 0 8px 25px rgba(21, 186, 41, 0.35); position: relative; overflow: hidden; z-index: 2;">
-                <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation: badge-shine 3s infinite;"></div>
-                <i class="fas fa-star" style="font-size: 1rem; margin-right: 0.6rem; color: #ffd700;"></i>
-                <span style="font-weight: 700; font-size: 1rem; letter-spacing: 0.5px;">100% FREE</span>
-              </div>
-
-              <!-- Title -->
-              <h4 class="text-center fw-bold mb-2" style="font-size: 1.6rem; background: linear-gradient(135deg, #2c3e50 0%, #15ba29 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.3; z-index: 2; position: relative;">
-                Qt6 Widgets eBook
-              </h4>
-
-              <!-- Subtitle -->
-              <p class="text-center text-muted" style="font-size: 0.95rem; z-index: 2; position: relative;">
-                Your free guide to modern Qt development
-              </p>
+          <!-- Three Tech Badges -->
+          <div class="mb-4" style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <div style="background: rgba(52, 152, 219, 0.3); border: 2px solid rgba(52, 152, 219, 0.6); padding: 0.45rem 1rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; color: white; display: flex; align-items: center; gap: 0.4rem;">
+              <i class="fas fa-code"></i> C++
             </div>
+            <div style="background: rgba(46, 204, 113, 0.3); border: 2px solid rgba(46, 204, 113, 0.6); padding: 0.45rem 1rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; color: white; display: flex; align-items: center; gap: 0.4rem;">
+              <i class="fab fa-python"></i> PySide6
+            </div>
+            <div style="background: rgba(155, 89, 182, 0.3); border: 2px solid rgba(155, 89, 182, 0.6); padding: 0.45rem 1rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; color: white; display: flex; align-items: center; gap: 0.4rem;">
+              <i class="fas fa-layer-group"></i> QML
+            </div>
+          </div>
 
-            <!-- Right Side - Form (Wider) -->
-            <div class="col-lg-8" style="padding: 4rem 4rem;">
-              <!-- Section Header -->
-              <div class="newsletter-header mb-4">
-                <div class="d-inline-flex align-items-center mb-3" style="background: rgba(21, 186, 41, 0.1); border: 1px solid rgba(21, 186, 41, 0.2); border-radius: 25px; padding: 0.6rem 1.5rem;">
-                  <i class="fas fa-envelope-open-text" style="color: #15ba29; margin-right: 0.6rem; font-size: 1rem;"></i>
-                  <span style="color: #15ba29; font-weight: 600; font-size: 0.95rem;">Join The Club</span>
-                </div>
-
-                <h3 class="fw-bold mb-3" style="font-size: 2.8rem; color: #2c3e50; line-height: 1.2;">
-                  {% if include.title %}{{ include.title }}{% else %}Get a taste of our Qt Training. Grab a free Qt6 QML book.{% endif %}
-                </h3>
-
-                <p class="text-muted mb-4" style="font-size: 1.15rem; line-height: 1.7; max-width: 550px;">
-                  {% if include.description %}{{ include.description }}{% else %}Your email will never be shared.{% endif %}
-                </p>
+          <!-- Benefits -->
+          <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.15);">
+            <div class="mb-2" style="display: flex; align-items: center; gap: 0.8rem;">
+              <div style="width: 24px; height: 24px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-check" style="color: #15ba29; font-size: 0.65rem;"></i>
               </div>
-
-              <!-- Feature Benefits Grid -->
-              <div class="newsletter-benefits mb-4" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                <!-- Feature 1: Instant Download -->
-                <div class="feature-card" style="background: white; border-radius: 18px; padding: 1.2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid rgba(21, 186, 41, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden; cursor: pointer;"
-                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(21, 186, 41, 0.2)'; this.style.borderColor='#15ba29'"
-                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)'; this.style.borderColor='rgba(21, 186, 41, 0.1)'">
-                  <div style="display: flex; align-items: center; gap: 1rem;">
-                    <div style="position: relative;">
-                      <!-- Icon Ring -->
-                      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border: 2px solid rgba(21, 186, 41, 0.2); border-radius: 50%; animation: pulse-ring 2s ease-in-out infinite;"></div>
-                      <!-- Icon Circle -->
-                      <div style="background: linear-gradient(135deg, #15ba29, #28a745); border-radius: 12px; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 6px 20px rgba(21, 186, 41, 0.3); position: relative;">
-                        <i class="fas fa-download" style="color: white; font-size: 1.1rem;"></i>
-                      </div>
-                    </div>
-                    <div style="flex: 1;">
-                      <div style="color: #2c3e50; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem;">Instant Download</div>
-                      <div style="color: #6c757d; font-size: 0.75rem; font-weight: 500;">Get your eBook now</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Feature 2: Latest Qt6 Tech -->
-                <div class="feature-card" style="background: white; border-radius: 18px; padding: 1.2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid rgba(29, 161, 242, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden; cursor: pointer;"
-                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(29, 161, 242, 0.2)'; this.style.borderColor='#1da1f2'"
-                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)'; this.style.borderColor='rgba(29, 161, 242, 0.1)'">
-                  <div style="display: flex; align-items: center; gap: 1rem;">
-                    <div style="position: relative;">
-                      <!-- Icon Ring -->
-                      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border: 2px solid rgba(29, 161, 242, 0.2); border-radius: 50%; animation: pulse-ring 2s ease-in-out infinite 0.3s;"></div>
-                      <!-- Icon Circle -->
-                      <div style="background: linear-gradient(135deg, #1da1f2, #0d8bf2); border-radius: 12px; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 6px 20px rgba(29, 161, 242, 0.3); position: relative;">
-                        <i class="fab fa-js-square" style="color: white; font-size: 1.1rem;"></i>
-                      </div>
-                    </div>
-                    <div style="flex: 1;">
-                      <div style="color: #2c3e50; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem;">Latest Qt6 Tech</div>
-                      <div style="color: #6c757d; font-size: 0.75rem; font-weight: 500;">Modern Qt practices</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Feature 3: Weekly Tips -->
-                <div class="feature-card" style="background: white; border-radius: 18px; padding: 1.2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid rgba(255, 107, 53, 0.1); transition: all 0.3s ease; position: relative; overflow: hidden; cursor: pointer;"
-                     onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 30px rgba(255, 107, 53, 0.2)'; this.style.borderColor='#ff6b35'"
-                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.08)'; this.style.borderColor='rgba(255, 107, 53, 0.1)'">
-                  <div style="display: flex; align-items: center; gap: 1rem;">
-                    <div style="position: relative;">
-                      <!-- Icon Ring -->
-                      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border: 2px solid rgba(255, 107, 53, 0.2); border-radius: 50%; animation: pulse-ring 2s ease-in-out infinite 0.6s;"></div>
-                      <!-- Icon Circle -->
-                      <div style="background: linear-gradient(135deg, #ff6b35, #f7931e); border-radius: 12px; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3); position: relative;">
-                        <i class="fas fa-lightbulb" style="color: white; font-size: 1.1rem;"></i>
-                      </div>
-                    </div>
-                    <div style="flex: 1;">
-                      <div style="color: #2c3e50; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem;">Weekly Tips</div>
-                      <div style="color: #6c757d; font-size: 0.75rem; font-weight: 500;">Expert Qt insights</div>
-                    </div>
-                  </div>
-                </div>
+              <span style="font-size: 0.95rem; font-weight: 500;"><strong>Same dashboard, 3 technologies</strong> — compare side-by-side with real code</span>
+            </div>
+            <div class="mb-2" style="display: flex; align-items: center; gap: 0.8rem;">
+              <div style="width: 24px; height: 24px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-check" style="color: #15ba29; font-size: 0.65rem;"></i>
               </div>
-
-              <!-- Newsletter Form -->
-              <div class="newsletter-form-container">
-                <div id="mc_embed_shell">
-                  <style>
-                  /* Ultra-Modern Newsletter Form Styles */
-                  #mc_embed_signup {
-                    background: transparent;
-                    border: none;
-                    box-shadow: none;
-                    padding: 0;
-                    max-width: 100%;
-                    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-                  }
-                  #mc_embed_signup h2 {
-                    display: none;
-                  }
-                  #mc_embed_signup .indicates-required {
-                    color: #6c757d;
-                    font-size: 0.85rem;
-                    margin-bottom: 1.5rem;
-                    font-weight: 500;
-                  }
-                  #mc_embed_signup label {
-                    color: #2c3e50;
-                    font-weight: 600;
-                    margin-bottom: 0.6rem;
-                    font-size: 1rem;
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                  }
-                  #mc_embed_signup label i {
-                    color: #15ba29;
-                    font-size: 1.1rem;
-                  }
-                  #mc_embed_signup .mc-field-group {
-                    margin-bottom: 1.5rem;
-                  }
-                  #mc_embed_signup input[type="email"],
-                  #mc_embed_signup input[type="text"] {
-                    width: 100%;
-                    padding: 1rem 1.5rem;
-                    border-radius: 18px;
-                    border: 2px solid #e9ecef;
-                    background: #ffffff;
-                    font-size: 1.05rem;
-                    transition: all 0.3s ease;
-                    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-                  }
-                  #mc_embed_signup input[type="email"]:focus,
-                  #mc_embed_signup input[type="text"]:focus {
-                    outline: none;
-                    border-color: #15ba29;
-                    box-shadow: 0 6px 20px rgba(21, 186, 41, 0.15), 0 0 0 4px rgba(21, 186, 41, 0.1);
-                    transform: translateY(-2px);
-                  }
-                  #mc_embed_signup input[type="email"]::placeholder,
-                  #mc_embed_signup input[type="text"]::placeholder {
-                    color: #adb5bd;
-                  }
-                  #mc_embed_signup .button,
-                  #mc_embed_signup input[type="submit"] {
-                    width: 100%;
-                    min-height: 60px;
-                    background: linear-gradient(135deg, #15ba29 0%, #28a745 100%);
-                    color: #fff;
-                    border-radius: 18px;
-                    font-weight: 700;
-                    font-size: 1.2rem;
-                    letter-spacing: 0.5px;
-                    border: none;
-                    box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3);
-                    margin-top: 0.5rem;
-                    transition: all 0.3s ease;
-                    cursor: pointer;
-                    position: relative;
-                    overflow: hidden;
-                  }
-                  #mc_embed_signup .button::before,
-                  #mc_embed_signup input[type="submit"]::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: -100%;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-                    transition: left 0.5s ease;
-                  }
-                  #mc_embed_signup .button:hover::before,
-                  #mc_embed_signup input[type="submit"]:hover::before {
-                    left: 100%;
-                  }
-                  #mc_embed_signup .button:hover,
-                  #mc_embed_signup input[type="submit"]:hover {
-                    background: linear-gradient(135deg, #28a745 0%, #15ba29 100%);
-                    box-shadow: 0 15px 40px rgba(21, 186, 41, 0.4);
-                    transform: translateY(-3px);
-                  }
-                  #mc_embed_signup .button:active,
-                  #mc_embed_signup input[type="submit"]:active {
-                    transform: translateY(-1px);
-                    box-shadow: 0 8px 20px rgba(21, 186, 41, 0.3);
-                  }
-                  #mc_embed_signup .asterisk {
-                    color: #15ba29;
-                    font-weight: bold;
-                  }
-                  #mc_embed_signup .response {
-                    font-size: 1rem;
-                    margin: 1rem 0;
-                    padding: 1rem;
-                    border-radius: 12px;
-                    color: #e74c3c;
-                    background: rgba(231, 76, 60, 0.1);
-                    border-left: 3px solid #e74c3c;
-                  }
-                  @media (max-width: 991px) {
-                    #mc_embed_signup input[type="email"],
-                    #mc_embed_signup input[type="text"] {
-                      padding: 0.9rem 1.2rem;
-                      font-size: 1rem;
-                    }
-                  }
-                  </style>
-                  <div id="mc_embed_signup">
-                      <form action="https://guide.us12.list-manage.com/subscribe/post?u=1b8fef66a5b917ebcfa9841d4&amp;id=d55d2f15f3&amp;f_id=0005d7e8f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                          <div id="mc_embed_signup_scroll">
-                              <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                              <div class="mc-field-group">
-                                  <label for="mce-EMAIL">
-                                    <i class="fas fa-envelope"></i>
-                                    Email Address <span class="asterisk">*</span>
-                                  </label>
-                                  <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="" placeholder="your.email@example.com">
-                              </div>
-                              <div class="mc-field-group">
-                                  <label for="mce-FIRSTNAME">
-                                    <i class="fas fa-user"></i>
-                                    First Name <span class="asterisk">*</span>
-                                  </label>
-                                  <input type="text" name="FIRSTNAME" class="required text" id="mce-FIRSTNAME" required value="" placeholder="Enter your first name">
-                              </div>
-                              <div hidden><input type="hidden" name="tags" value="12681541"></div>
-                              <div id="mce-responses" class="clear">
-                                  <div class="response" id="mce-error-response" style="display: none;"></div>
-                                  <div class="response" id="mce-success-response" style="display: none;"></div>
-                              </div>
-                              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1b8fef66a5b917ebcfa9841d4_d55d2f15f3" tabindex="-1" value=""></div>
-                              <div class="clear">
-                                <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" style="display: flex; align-items: center; justify-content: center; gap: 0.8rem;">
-                                  <i class="fas fa-book-open" style="font-size: 1.3rem;"></i>
-                                  <span>Send Me The Book</span>
-                                  <i class="fas fa-arrow-right" style="font-size: 1.1rem;"></i>
-                                </button>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-                  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-                  <script type="text/javascript">
-                    // Enhanced form validation and success handling
-                    document.addEventListener('DOMContentLoaded', function() {
-                      var form = document.getElementById('mc-embedded-subscribe-form');
-                      var emailField = document.getElementById('mce-EMAIL');
-                      var firstNameField = document.getElementById('mce-FIRSTNAME');
-                      var submitButton = document.getElementById('mc-embedded-subscribe');
-                      
-                      if(form && emailField && firstNameField && submitButton) {
-                        // Function to validate email format
-                        function isValidEmail(email) {
-                          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                          return emailRegex.test(email);
-                        }
-                        
-                        // Function to validate form
-                        function validateForm() {
-                          var isValid = true;
-                          
-                          // Reset previous error states
-                          emailField.style.borderColor = '#e9ecef';
-                          firstNameField.style.borderColor = '#e9ecef';
-                          
-                          // Remove any existing error messages
-                          var existingErrors = form.querySelectorAll('.field-error');
-                          existingErrors.forEach(function(error) {
-                            error.remove();
-                          });
-                          
-                          // Validate email
-                          if (!emailField.value.trim()) {
-                            showFieldError(emailField, 'Email address is required');
-                            isValid = false;
-                          } else if (!isValidEmail(emailField.value.trim())) {
-                            showFieldError(emailField, 'Please enter a valid email address');
-                            isValid = false;
-                          }
-                          
-                          // Validate first name
-                          if (!firstNameField.value.trim()) {
-                            showFieldError(firstNameField, 'First name is required');
-                            isValid = false;
-                          }
-                          
-                          return isValid;
-                        }
-                        
-                        // Function to show field error
-                        function showFieldError(field, message) {
-                          field.style.borderColor = '#e74c3c';
-                          field.style.boxShadow = '0 0 0 0.125rem rgba(231, 76, 60, 0.25)';
-                          
-                          var errorDiv = document.createElement('div');
-                          errorDiv.className = 'field-error';
-                          errorDiv.style.color = '#e74c3c';
-                          errorDiv.style.fontSize = '0.875rem';
-                          errorDiv.style.marginTop = '0.25rem';
-                          errorDiv.style.fontWeight = '500';
-                          errorDiv.textContent = message;
-                          
-                          field.parentNode.appendChild(errorDiv);
-                        }
-                        
-                        // Function to show success message
-                        function showSuccessMessage() {
-                          var parent = form.parentElement;
-                          form.style.display = 'none';
-                          var card = document.createElement('div');
-                          card.style.textAlign = 'center';
-                          card.style.padding = '3rem';
-                          card.style.background = 'linear-gradient(135deg, rgba(21, 186, 41, 0.1) 0%, rgba(40, 167, 69, 0.05) 100%)';
-                          card.style.borderRadius = '20px';
-                          card.style.border = '2px solid #15ba29';
-                          card.style.marginTop = '1.5rem';
-                          card.innerHTML = '<div style="width: 80px; height: 80px; background: linear-gradient(135deg, #15ba29, #28a745); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3);"><i class="fas fa-check" style="font-size: 2.5rem; color: white;"></i></div>' +
-                            '<h4 style="color: #15ba29; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Success! Check Your Email</h4>' +
-                            '<p style="color: #495057; font-size: 1.1rem; line-height: 1.7; margin-bottom: 0;">Thank you for signing up! Please check your inbox for a confirmation email and your free Qt6 QML book. Don\'t forget to check your spam folder if you don\'t see it within a few minutes.</p>';
-                          parent.appendChild(card);
-                        }
-                        
-                        // Clear error styling on focus
-                        [emailField, firstNameField].forEach(function(field) {
-                          field.addEventListener('focus', function() {
-                            this.style.borderColor = '#15ba29';
-                            this.style.boxShadow = '0 6px 20px rgba(21, 186, 41, 0.15), 0 0 0 4px rgba(21, 186, 41, 0.1)';
-                            
-                            // Remove error message for this field
-                            var errorMsg = this.parentNode.querySelector('.field-error');
-                            if (errorMsg) {
-                              errorMsg.remove();
-                            }
-                          });
-                          
-                          field.addEventListener('blur', function() {
-                            this.style.borderColor = '#e9ecef';
-                            this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
-                          });
-                        });
-                        
-                        // Handle form submission
-                        form.addEventListener('submit', function(e) {
-                          e.preventDefault(); // Prevent default submission initially
-                          
-                          if (validateForm()) {
-                            // If validation passes, submit the form
-                            var formData = new FormData(form);
-                            
-                            // Disable submit button to prevent double submission
-                            submitButton.disabled = true;
-                            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin" style="font-size: 1.3rem;"></i> <span>Sending...</span>';
-                            
-                            // Submit form data
-                            fetch(form.action, {
-                              method: 'POST',
-                              body: formData,
-                              mode: 'no-cors' // Required for Mailchimp
-                            }).then(function() {
-                              // Show success message after successful submission
-                              setTimeout(showSuccessMessage, 300);
-                            }).catch(function() {
-                              // Even if fetch fails due to CORS, the form was likely submitted successfully
-                              // Mailchimp forms typically work this way
-                              setTimeout(showSuccessMessage, 300);
-                            });
-                          }
-                          // If validation fails, do nothing (errors are already shown)
-                        });
-                      }
-                    });
-                  </script>
-                </div>
+              <span style="font-size: 0.95rem; font-weight: 500;"><strong>6 production-ready themes</strong> — Dark, Cyberpunk, Nord, Ocean, Forest & Purple</span>
+            </div>
+            <div class="mb-2" style="display: flex; align-items: center; gap: 0.8rem;">
+              <div style="width: 24px; height: 24px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-check" style="color: #15ba29; font-size: 0.65rem;"></i>
               </div>
+              <span style="font-size: 0.95rem; font-weight: 500;"><strong>Complete source code</strong> — charts, stat cards, sidebar, data tables</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.8rem;">
+              <div style="width: 24px; height: 24px; border-radius: 50%; background: #ffd700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-check" style="color: #15ba29; font-size: 0.65rem;"></i>
+              </div>
+              <span style="font-size: 0.95rem; font-weight: 500;"><strong>Cross-platform</strong> — Windows, Mac & Linux. Native performance</span>
             </div>
           </div>
         </div>
       </div>
+
     </div>
+
+    <!-- ── Full-Width Form Card: Visuals Left + Form Right ── -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="newsletter-form-card" style="background: rgba(255, 255, 255, 0.97); border-radius: 24px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); overflow: hidden; position: relative;">
+
+          <div class="row g-0 align-items-stretch">
+            <!-- Left — Visual Showcase -->
+            <div class="col-lg-6 newsletter-visual-col" style="background: linear-gradient(160deg, #0d1117 0%, #161b22 60%, #1a2332 100%); padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden;">
+              <!-- Subtle grid pattern -->
+              <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 24px 24px; pointer-events: none;"></div>
+
+              <!-- Dashboard Screenshot -->
+              <div style="position: relative; z-index: 2; margin-bottom: 1.5rem;">
+                <div style="position: relative;">
+                  <img src="{{ site.baseurl }}/assets/img/ebook/dashboard-dark-full.png" alt="Professional Qt Dashboard — What you'll build" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.1);">
+                  <!-- "What you'll build" label -->
+                  <div style="position: absolute; top: 12px; left: 12px; background: rgba(21, 186, 41, 0.9); color: white; padding: 0.3rem 0.9rem; border-radius: 20px; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.5px; text-transform: uppercase; backdrop-filter: blur(5px);">
+                    <i class="fas fa-eye me-1"></i> What you'll build
+                  </div>
+                </div>
+              </div>
+
+              <!-- Book Cover + What You Get — Side by side -->
+              <div style="position: relative; z-index: 2; display: flex; gap: 1.2rem; align-items: center;">
+                <!-- Book Cover -->
+                <div style="flex-shrink: 0; position: relative;">
+                  <img src="{{ site.baseurl }}/assets/img/ebook/book-cover.png" alt="Three Dashboards One Weekend — Free Qt Book" style="width: 120px; border-radius: 10px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); border: 2px solid rgba(255, 255, 255, 0.15); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05) rotate(-2deg)'" onmouseout="this.style.transform='scale(1)'">
+                  <!-- Badge -->
+                  <div style="position: absolute; top: -8px; right: -8px; background: linear-gradient(45deg, #ffd700, #ffed4e); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.55rem; color: #15ba29; box-shadow: 0 6px 18px rgba(255, 215, 0, 0.5); text-align: center; line-height: 1.1; animation: float-badge 2s ease-in-out infinite;">
+                    63<br>PGS<br>FREE
+                  </div>
+                </div>
+
+                <!-- What's included list -->
+                <div style="flex: 1;">
+                  <div class="mb-2" style="display: flex; align-items: center; gap: 0.6rem;">
+                    <i class="fas fa-file-pdf" style="color: #e74c3c; font-size: 0.95rem; width: 18px; text-align: center;"></i>
+                    <span style="color: #c9d1d9; font-size: 0.85rem; font-weight: 600;">63-page illustrated PDF</span>
+                  </div>
+                  <div class="mb-2" style="display: flex; align-items: center; gap: 0.6rem;">
+                    <i class="fas fa-folder-open" style="color: #3498db; font-size: 0.95rem; width: 18px; text-align: center;"></i>
+                    <span style="color: #c9d1d9; font-size: 0.85rem; font-weight: 600;">3 complete project folders</span>
+                  </div>
+                  <div class="mb-2" style="display: flex; align-items: center; gap: 0.6rem;">
+                    <i class="fas fa-palette" style="color: #9b59b6; font-size: 0.95rem; width: 18px; text-align: center;"></i>
+                    <span style="color: #c9d1d9; font-size: 0.85rem; font-weight: 600;">6 professional themes</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <i class="fas fa-desktop" style="color: #f39c12; font-size: 0.95rem; width: 18px; text-align: center;"></i>
+                    <span style="color: #c9d1d9; font-size: 0.85rem; font-weight: 600;">Win / Mac / Linux ready</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right — Form -->
+            <div class="col-lg-6" style="padding: 2.5rem; display: flex; flex-direction: column; justify-content: center;">
+              <div class="text-center mb-3">
+                <div class="mb-2" style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(21, 186, 41, 0.1); border: 1px solid rgba(21, 186, 41, 0.2); border-radius: 20px; padding: 0.35rem 1rem;">
+                  <i class="fas fa-gift" style="color: #15ba29; font-size: 0.8rem;"></i>
+                  <span style="color: #15ba29; font-weight: 600; font-size: 0.8rem;">100% Free — No Credit Card</span>
+                </div>
+                <h4 class="fw-bold mb-1" style="color: #2c3e50; font-size: 1.5rem;">Get the Free Book + Source Code</h4>
+                <p style="color: #6c757d; font-size: 0.9rem; margin-bottom: 0;">Instant download. Start building this weekend.</p>
+              </div>
+
+              <form action="https://guide.us12.list-manage.com/subscribe/post?u=1b8fef66a5b917ebcfa9841d4&amp;id=d55d2f15f3&amp;f_id=0005d7e8f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter-subscribe-form" target="_blank">
+                <div id="mc_embed_signup_scroll">
+                  <div class="mb-3">
+                    <label for="mce-EMAIL" style="color: #2c3e50; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.4rem;">
+                      <i class="fas fa-envelope" style="color: #15ba29; font-size: 0.9rem;"></i>
+                      Email Address <span style="color: #15ba29;">*</span>
+                    </label>
+                    <input type="email" name="EMAIL" class="required email newsletter-email" id="mce-EMAIL" required value="" placeholder="your.email@example.com" style="width: 100%; padding: 0.85rem 1.2rem; border-radius: 12px; border: 2px solid #e9ecef; background: #ffffff; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(0,0,0,0.04);">
+                  </div>
+                  <div class="mb-3">
+                    <label for="mce-FIRSTNAME" style="color: #2c3e50; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.4rem;">
+                      <i class="fas fa-user" style="color: #15ba29; font-size: 0.9rem;"></i>
+                      First Name <span style="color: #15ba29;">*</span>
+                    </label>
+                    <input type="text" name="FIRSTNAME" class="required text newsletter-firstname" id="mce-FIRSTNAME" required value="" placeholder="Enter your first name" style="width: 100%; padding: 0.85rem 1.2rem; border-radius: 12px; border: 2px solid #e9ecef; background: #ffffff; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(0,0,0,0.04);">
+                  </div>
+                  <div hidden><input type="hidden" name="tags" value="12681541,free-ebook-landing"></div>
+                  <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                  </div>
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1b8fef66a5b917ebcfa9841d4_d55d2f15f3" tabindex="-1" value=""></div>
+                  <div class="clear">
+                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="newsletter-submit-btn" style="width: 100%; min-height: 54px; background: linear-gradient(135deg, #15ba29 0%, #28a745 100%); color: #fff; border-radius: 14px; font-weight: 700; font-size: 1.15rem; border: none; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3); cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.6rem; position: relative; overflow: hidden;">
+                      <i class="fas fa-download" style="font-size: 1.1rem;"></i>
+                      <span>Send Me The Free Book</span>
+                      <i class="fas fa-arrow-right" style="font-size: 0.9rem;"></i>
+                    </button>
+                  </div>
+                  <p class="text-center mt-2 mb-0" style="color: #6c757d; font-size: 0.8rem;">
+                    <i class="fas fa-lock me-1"></i> No spam. Unsubscribe anytime. Join 4,000+ Qt developers.
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Enhanced Animations -->
+  <!-- Animations -->
   <style>
-    @keyframes newsletter-pattern {
-      0% { background-position: 0 0; }
-      100% { background-position: 100px 100px; }
-    }
-
     @keyframes float-newsletter {
-      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
-      25% { transform: translateY(-15px) rotate(3deg); opacity: 0.8; }
-      50% { transform: translateY(-8px) rotate(-2deg); opacity: 0.9; }
-      75% { transform: translateY(-20px) rotate(2deg); opacity: 0.7; }
-    }
-
-    @keyframes pulse-icon {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
     }
 
     @keyframes float-badge {
@@ -466,30 +195,131 @@
       50% { transform: translateY(-5px) rotate(5deg); }
     }
 
-    @keyframes badge-shine {
-      0% { left: -100%; }
-      50%, 100% { left: 100%; }
-    }
-
-    @keyframes pulse-gift {
+    @keyframes pulse-newsletter-badge {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-    }
-
-    @keyframes pulse-ring {
-      0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: translate(-50%, -50%) scale(1.1);
-        opacity: 0.6;
-      }
+      50% { transform: scale(1.03); }
     }
 
     @keyframes rotate-ring {
       0% { transform: translate(-50%, -50%) rotate(0deg); }
       100% { transform: translate(-50%, -50%) rotate(360deg); }
     }
+
+    .newsletter-submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transition: left 0.5s ease;
+    }
+    .newsletter-submit-btn:hover::before {
+      left: 100%;
+    }
+    .newsletter-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(21, 186, 41, 0.4) !important;
+    }
+    .newsletter-submit-btn:active {
+      transform: translateY(-1px);
+    }
+
+    .newsletter-email:focus,
+    .newsletter-firstname:focus {
+      outline: none;
+      border-color: #15ba29 !important;
+      box-shadow: 0 4px 15px rgba(21, 186, 41, 0.15), 0 0 0 3px rgba(21, 186, 41, 0.1) !important;
+    }
+
+    @media (max-width: 991px) {
+      .newsletter-section .col-lg-7 { text-align: center; }
+      .newsletter-section .col-lg-7 h3 { font-size: 2rem !important; }
+      .newsletter-section .col-lg-7 > div > div:last-child { text-align: left; }
+      .newsletter-visual-col { padding: 2rem !important; }
+    }
   </style>
+
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.querySelector('.newsletter-subscribe-form');
+      if (!form) return;
+
+      var emailField = form.querySelector('.newsletter-email');
+      var firstNameField = form.querySelector('.newsletter-firstname');
+      var submitButton = form.querySelector('.newsletter-submit-btn');
+
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function showFieldError(field, message) {
+        field.style.borderColor = '#e74c3c';
+        field.style.boxShadow = '0 0 0 0.125rem rgba(231, 76, 60, 0.25)';
+        var existing = field.parentNode.querySelector('.field-error');
+        if (existing) existing.remove();
+        var errorDiv = document.createElement('div');
+        errorDiv.className = 'field-error';
+        errorDiv.style.cssText = 'color: #e74c3c; font-size: 0.8rem; margin-top: 0.25rem; font-weight: 600;';
+        errorDiv.textContent = message;
+        field.parentNode.appendChild(errorDiv);
+      }
+
+      function showSuccess() {
+        var card = form.closest('.newsletter-form-card');
+        card.innerHTML = '<div style="text-align: center; padding: 1.5rem;">' +
+          '<div style="width: 70px; height: 70px; background: linear-gradient(135deg, #15ba29, #28a745); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 10px 30px rgba(21, 186, 41, 0.3);"><i class="fas fa-check" style="font-size: 2rem; color: white;"></i></div>' +
+          '<h4 style="color: #15ba29; font-weight: 700; font-size: 1.5rem; margin-bottom: 0.8rem;">Check Your Email!</h4>' +
+          '<p style="color: #495057; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">Your free book and source code are on the way. Check your inbox (and spam folder). <strong>Start building this weekend!</strong></p>' +
+          '</div>';
+      }
+
+      [emailField, firstNameField].forEach(function(field) {
+        if (!field) return;
+        field.addEventListener('focus', function() {
+          this.style.borderColor = '#15ba29';
+          this.style.boxShadow = '0 4px 15px rgba(21, 186, 41, 0.15), 0 0 0 3px rgba(21, 186, 41, 0.1)';
+          var err = this.parentNode.querySelector('.field-error');
+          if (err) err.remove();
+        });
+        field.addEventListener('blur', function() {
+          this.style.borderColor = '#e9ecef';
+          this.style.boxShadow = '0 3px 10px rgba(0,0,0,0.04)';
+        });
+      });
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var isValid = true;
+
+        form.querySelectorAll('.field-error').forEach(function(el) { el.remove(); });
+        if (emailField) emailField.style.borderColor = '#e9ecef';
+        if (firstNameField) firstNameField.style.borderColor = '#e9ecef';
+
+        if (!emailField || !emailField.value.trim()) {
+          showFieldError(emailField, 'Email address is required');
+          isValid = false;
+        } else if (!isValidEmail(emailField.value.trim())) {
+          showFieldError(emailField, 'Please enter a valid email address');
+          isValid = false;
+        }
+        if (!firstNameField || !firstNameField.value.trim()) {
+          showFieldError(firstNameField, 'First name is required');
+          isValid = false;
+        }
+
+        if (isValid) {
+          var formData = new FormData(form);
+          submitButton.disabled = true;
+          submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
+
+          fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' })
+            .then(function() { setTimeout(showSuccess, 300); })
+            .catch(function() { setTimeout(showSuccess, 300); });
+        }
+      });
+    });
+  </script>
 </section>
