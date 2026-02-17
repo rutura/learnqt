@@ -34,7 +34,9 @@ But then real life shows up.
 
 You need to fetch data from a REST API. You need a list that users can search, filter, and sort. You need to save things to disk. Before you know it, your `Main.qml` is 800 lines long, you've got business logic mixed in with your button colors, and adding a new feature feels like performing surgery with oven mitts.
 
-I've been there. And after building several Qt 6 applications, a GitHub Repository Explorer, a Contact Manager, and modular component libraries, I've landed on a project structure that scales without making you hate your code three months later. Let me walk you through it.
+I've been there. And after building several Qt 6 applications, I've landed on a project structure that scales without making you hate your code three months later. I use this structure in the book projects like the GitHub Repository Explorer and the Contact Manager, and it's the same pattern I use in my own apps. Well, at least variations of it.
+
+ Let me walk you through it.
 
 These are real, fully functional applications. Here is the GitHub Repository Explorer, for example, pulling live data from the GitHub API:
 
