@@ -167,7 +167,7 @@ The QML version running for the first time:
 
 <img src="/assets/img/blog/qt-dashboard-guide/24.dashboard-qml-first-run.png" alt="QML Dashboard - First Run" style="max-width: 100%; height: auto; width: 700px;">
 
-The thing that immediately stands out with QML theming is that there's only *one* system, not two. Instead of QSS plus a `Colors` struct, you have `Theme.qml`: a singleton with `readonly property color` definitions. Every component in the application reads from it. Switch the active color block in `Theme.qml` and every component updates automatically through property bindings. It's elegant in a way that the dual-system Widgets approach is not.
+The thing that immediately stands out with QML theming is `Theme.qml`: a singleton with `readonly property color` definitions that every component reads from. Switch the active color block and every component updates automatically through property bindings. In the Widgets versions, theming is split across a QSS file and a `Colors` struct, but that's a convenience choice rather than a hard Qt requirement. You could consolidate everything into the stylesheet if you wanted.
 
 Declaring a stat card in QML looks like this:
 
