@@ -199,11 +199,13 @@ After building the same application three times, a few things become undeniable.
 
 **The edit-run loop matters more than you think.** PySide6 wins here, obviously. You edit a file and run the script. No waiting. With C++ Widgets and QML, you're rebuilding, and those seconds accumulate across a day of iteration. For rapid prototyping and exploratory work, Python's feedback loop is a genuine advantage.
 
-**QML's theming system is cleaner.** Running a single `Theme.qml` through property bindings is more coherent than maintaining a QSS file alongside a `Colors` struct. When you add a new component in Widgets, you have to remember to paint it using the right colors from two different sources. In QML, you just reference `Theme.*` and you're done.
+**QML makes property bindings a first-class citizen.** `Theme.qml` is a singleton that every component reads from, and swapping the active color block automatically propagates through the entire UI. You achieve the same result in Qt Widgets, it just takes some manual wiring on your part.
 
 **But QML has a learning curve.** The declarative mental model, signal handlers, property bindings, `Flickable` vs. `ScrollView`, `StackLayout` vs. `StackView`: there's a vocabulary to learn before you're productive. Widgets are more immediately approachable, especially for developers coming from traditional desktop frameworks.
 
-**C++ Widgets scales to production demands.** The compiled nature, the memory model, the performance ceiling: when you're building something that has to run reliably on constrained hardware or handle large datasets without hiccups, the C++ Widgets path gives you the most control.
+**C++ Widgets is the established choice for desktop applications.** It's the foundation for serious desktop software — KDE, Qt Creator itself — and it shines there. It's not the right tool for mobile or embedded targets where QML was purpose-built to excel.
+
+**QML reaches further than desktop.** It's optimized for touch interfaces, animations, and embedded and mobile targets. That said, plenty of desktop applications are built with QML too — it's a capable UI layer wherever you need it, and it's the direction Qt is clearly investing in.
 
 **PySide6 is underrated for internal tooling.** If your audience is a data science team, a research group, or internal users who don't care what framework you used, PySide6 gets you to a real application faster than almost anything else. `pip install PySide6`, open VS Code, and you're building.
 
