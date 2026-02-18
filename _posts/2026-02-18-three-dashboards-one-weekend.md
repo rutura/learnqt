@@ -240,6 +240,6 @@ If you've been sitting on the fence about Qt, maybe you've done a tutorial or tw
 
 You come out the other side knowing what Qt Widgets C++ development actually feels like. What it costs in boilerplate, what it gives you in performance and control. You know what PySide6 feels like: the speed, the flexibility, the Python trade-offs. You know what QML feels like: the declarative style, the property bindings, the elegant theming. And you know which one felt most like *yours*.
 
-Grab the book at [learnqt.guide/ebook](https://www.learnqt.guide/ebook/), spend a weekend with all three, and make the call yourself.
+Grab the book at [{{ site.url }}/ebook](/ebook/), spend a weekend with all three, and make the call yourself.
 
 Happy coding!
