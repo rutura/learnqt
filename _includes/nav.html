@@ -18,6 +18,11 @@
                     <a class="nav-link" href="{{nav.link}}">{{nav.name}}</a>
                 </li>
                 {% endfor %}
+                <li class="nav-item login-nav-item">
+                    <a class="nav-link login-button" href="https://learnqtguide.teachable.com/sign_in" target="_blank" rel="noopener">
+                        <i class="fas fa-user-circle me-2"></i>Sign In
+                    </a>
+                </li>
                 <li class="nav-item cta-nav-item">
                     <a class="nav-link cta-button" href="/courses">
                         <i class="fas fa-play me-2"></i>Start Learning
@@ -138,6 +143,38 @@
     display: none;
 }
 
+.login-nav-item {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.25rem;
+}
+
+.login-button {
+    color: #15ba29 !important;
+    border: 2px solid #15ba29 !important;
+    border-radius: 25px !important;
+    padding: 0.6rem 1.25rem !important;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    position: relative;
+    top: -6px;
+    background: transparent !important;
+    transition: all 0.3s ease !important;
+    letter-spacing: 0.02em;
+}
+
+.navbar-nav .nav-item .login-button:hover {
+    background: #15ba29 !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(21, 186, 41, 0.3);
+    transform: translateY(-2px) !important;
+    border-color: #0d8a1f !important;
+}
+
+.login-button::after {
+    display: none;
+}
+
 /* Custom Toggler */
 .custom-toggler {
     border: none;
@@ -194,11 +231,20 @@
         margin: 0.25rem 0;
     }
     
-    .cta-button {
+    .login-button {
         margin-left: 0 !important;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         text-align: center;
         display: block;
+        top: 0 !important;
+    }
+
+    .cta-button {
+        margin-left: 0 !important;
+        margin-top: 0.5rem;
+        text-align: center;
+        display: block;
+        top: 0 !important;
     }
 }
 
