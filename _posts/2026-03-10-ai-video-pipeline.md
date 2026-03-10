@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "How I'm Using AI to Produce Videos (Without Burning Out)"
-description: A behind-the-scenes look at the AI-powered pipeline I built to produce LearnQt course videos, from script to a Blender-ready draft, without a full recording session every time.
+title: "I Cloned My Voice and Published a Video. Here's What Happened."
+description: A behind-the-scenes look at the AI pipeline I built to produce LearnQt videos without burning out, from script to a Blender-ready draft, without a full recording session every time.
 cover: /assets/img/blog/ai-video-pipeline/hero-videostudio.png
 date: '2026-03-10'
 categories:
@@ -19,7 +19,7 @@ coursescard: true
 bookcard: true
 ---
 
-I have been playing with AI tools in my spare time: image generation, video generation, all of it. A few weeks ago I gave some serious attention to the Qwen3-TTS model, which can take a text transcript and turn it into spoken audio. I cloned my own voice, ran it through a few test videos, and then did something I wasn't sure I was ready to do: I published one. I sent it to a dozen people who don't know me beforehand. Eight of them didn't say a word about the voice. They went straight to the content, and most of them even signed up to the newsletter.
+I have been playing with AI tools in my spare time: image generation, video generation, all of it. A few weeks ago I gave some serious attention to the Qwen3-TTS model, which can take a text transcript and turn it into spoken audio. I cloned my own voice, ran it through a few test videos, and then did something I wasn't sure I was ready to do: I published one. You can watch it here: [https://www.youtube.com/watch?v=67Gh8Kk4I3I](https://www.youtube.com/watch?v=67Gh8Kk4I3I). Before I did, I got it sent to a dozen people who don't know me. Eight of them didn't say a word about the voice. They went straight to the content, and most of them even signed up to the newsletter.
 
 That told me something worth sharing.
 
@@ -27,7 +27,9 @@ That told me something worth sharing.
 
 Let me be clear about where I stand. I walk away from anything that feels AI-generated the moment I notice it. Bad synthetic voices, soulless generated images dropped into a video as filler, AI-written scripts that circle the point without ever landing. I have no patience for any of it.
 
-But burying my head in the sand and assuming the bubble will pop and things will go back to the way they were isn't a strategy either. So I quietly experiment. I try things. I try to understand where these tools genuinely help and where they produce garbage. And I share what I find.
+But on the other hand, there are people out there who are using these tools to create incredible things. As one of my friends like to say, "AI will amplify whatever you are." If you are an expert in your field, you can 10x or 100x your output, whatever that output is. If you are a hack, you can 10x or 100x your output too, but it won't be good output. The tools themselves don't care. They will amplify whatever you feed into them.
+
+I won't sugarcoat it: the potential for abuse is real. The potential for a flood of low-quality content is real. The potential for people to use these tools as a crutch instead of a boost is real. I see all of that happening in real time, and it's uncomfortable. But burying my head in the sand and assuming the bubble will pop and things will go back to the way they were isn't a strategy either. So I quietly experiment. I try things. I try to understand where these tools genuinely help and where they produce garbage. And I share what I find.
 
 This post is one of those findings.
 
@@ -69,7 +71,7 @@ Final edit in Blender
 Publish
 ```
 
-Large parts of this can be delegated or automated. The screen capture can go to another person on my team. The narration audio can come from a TTS engine running locally on my machine, or I can drop in a recording of my own voice for specific sections if I want. I stay focused on two things that genuinely need me: writing a script that's up to the standards of my brand, and doing the final editorial pass to make sure what goes out is actually good.
+Large parts of this can be delegated or automated. The screen capture can go to another person on my team. The narration audio can come from a TTS engine running locally on my machine, or I can choose to record it myself if I want. I stay focused on two things that genuinely need me: writing a script that's up to the standards of my brand, and doing the final editorial pass to make sure what goes out is actually good.
 
 ## The Tool: VideoStudio
 
@@ -91,7 +93,7 @@ This is where the TTS engine comes in. I run Qwen3-TTS locally on an RTX 3060. I
 
 <img src="/assets/img/blog/ai-video-pipeline/02-second-stage-audio-generation.png" alt="VideoStudio Stage 2: Audio generation and review screen showing accepted audio sections with waveforms" style="max-width: 100%; height: auto; width: 700px;">
 
-For each section I press play, listen, and decide: accept or regenerate. If a section sounds off (wrong emphasis, odd pacing, a word mangled), I regenerate it, sometimes with a different voice profile to see if another variant handles it better. And here's the part I want to highlight: if I'm not happy with any generated clip at all, I can record that section myself and drop the file into the project. The tool uses it exactly like a generated file. The pipeline doesn't care where the audio came from. That flexibility matters.
+For each section I press play, listen, and decide: accept or regenerate. If a section sounds off (wrong emphasis, odd pacing, a word mangled), I regenerate it, sometimes with a different voice profile to see if another variant handles it better. And here's the part I want to highlight: if I'm not happy with the generated audio, I can opt to record it myself and drop the files into the project. The tool uses it exactly like a generated file. The pipeline doesn't care where the audio came from. That flexibility matters.
 
 When all sections are accepted, the counter in the top right reads 17 / 17 and the "Next: Export" button lights up.
 
@@ -101,7 +103,7 @@ The export stage stitches all the accepted audio files together using FFmpeg, th
 
 <img src="/assets/img/blog/ai-video-pipeline/03-export-blender-file.png" alt="VideoStudio Stage 3: Export screen showing the three export steps: stitch audio, prepare visuals, build Blender draft" style="max-width: 100%; height: auto; width: 700px;">
 
-The output is a `draft.blend` file I can open in Blender and start editing immediately. This is why I chose Blender as the editing environment: it's scriptable, it's free, and it has enough customization points that I can keep bending it to fit my workflow. It's resource-heavy, but older versions run fine for this kind of work.
+The output is a `draft.blend` file I can open in Blender and start editing immediately. This is why I chose Blender as the editing environment: it's scriptable, it's open source, and it has enough customization points that I can keep bending it to fit my workflow. It's resource-heavy, but older versions run fine for this kind of work.
 
 <img src="/assets/img/blog/ai-video-pipeline/04-blender-draft.png" alt="Blender open with draft.blend, showing the Video Sequence Editor with audio and video strips laid out and ready to edit" style="max-width: 100%; height: auto; width: 700px;">
 
@@ -113,11 +115,9 @@ The cloned voice still needs work in certain passages: technical terms, unusual 
 
 What I can say is that this pipeline has already removed the single biggest blocker in my old workflow. I no longer need to be in front of a microphone at exactly the right moment.
 
-## Back to Those Eight People
+## One Question Before You Go
 
-I sent the video to twelve people who had no prior context about me or my channel. Eight of them didn't comment on the voice at all. They watched the content, engaged with it, and most signed up to the newsletter. The four who did notice weren't offended. They were just curious about the process. Which is roughly why I'm writing this post.
-
-My best work from this first round is here: [https://www.youtube.com/watch?v=67Gh8Kk4I3I](https://www.youtube.com/watch?v=67Gh8Kk4I3I). I'd genuinely appreciate it if you watched a minute of it and told me what you think. Is the AI voice a turn-off? Would you have noticed without this context? I take quality seriously. I wouldn't publish something I hadn't personally reviewed. But I also acknowledge the danger of these tools in the hands of people who don't.
+If you haven't watched the video yet, I'd appreciate it if you spared a minute: [https://www.youtube.com/watch?v=67Gh8Kk4I3I](https://www.youtube.com/watch?v=67Gh8Kk4I3I). Then come back and tell me honestly: is the AI voice a turn-off? Would you have noticed without the context this post gives you? I take quality seriously. I wouldn't publish something I hadn't personally reviewed and was proud of. But I also acknowledge the danger of these tools in the hands of people who don't.
 
 ## Where This Leaves Me
 
