@@ -103,7 +103,7 @@ The export stage stitches all the accepted audio files together using FFmpeg, th
 
 The output is a `draft.blend` file I can open in Blender and start editing immediately. This is why I chose Blender as the editing environment: it's scriptable, it's free, and it has enough customization points that I can keep bending it to fit my workflow. It's resource-heavy, but older versions run fine for this kind of work.
 
-[IMAGE: blender-draft.png - Blender open with draft.blend, showing the VSE with audio strips on channel 1 and image/video strips on channel 2]
+<img src="/assets/img/blog/ai-video-pipeline/04-blender-draft.png" alt="Blender open with draft.blend, showing the Video Sequence Editor with audio and video strips laid out and ready to edit" style="max-width: 100%; height: auto; width: 700px;">
 
 ## Is It Perfect?
 
