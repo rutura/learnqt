@@ -127,6 +127,6 @@ But folding arms and hoping for the best has never been a strategy. I'd rather u
 
 What are you doing to fight forward? I'm genuinely curious. Drop it in the comments.
 
-Happy coding.
+Happy building!
 
 Daniel.
