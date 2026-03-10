@@ -27,7 +27,9 @@ That told me something worth sharing.
 
 Let me be clear about where I stand. I walk away from anything that feels AI-generated the moment I notice it. Bad synthetic voices, soulless generated images dropped into a video as filler, AI-written scripts that circle the point without ever landing. I have no patience for any of it.
 
-But burying my head in the sand and assuming the bubble will pop and things will go back to the way they were isn't a strategy either. So I quietly experiment. I try things. I try to understand where these tools genuinely help and where they produce garbage. And I share what I find.
+On the other hand, there are people out there who are using these tools to create things that are genuinely good. As one of my friends likes to say,"these AI tools will help you amplify whatever you are". If you are an expert in your field, they will help you 10x or even 100x your output. If you are a hack, they will help you produce hacky content at scale. The tools themselves are neutral. It's how we use them that matters.
+
+I am not going to sugarcoat it: these tools are set to turn things upside down in the creative world. But burying my head in the sand and assuming the bubble will pop and things will go back to the way they were isn't a strategy either. So I quietly experiment. I try things. I try to understand where these tools genuinely help and where they produce garbage. And I share what I find.
 
 This post is one of those findings.
 
