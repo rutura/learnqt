@@ -98,49 +98,18 @@ The full source is also mirrored on GitHub at [github.com/rutura/SystemMonitor](
 
 ## A Look Inside the Book
 
-Rather than tell you what the book reads like, here are real pages from it. Code, diagrams, screenshots-in-context. Every page below is from the actual PDF you would download.
+Here are real pages from the PDF. Code, diagrams, and screenshots-in-context.
 
-The Project Overview chapter sets the bar by showing real, custom-painted charts running against live system data:
-
-<img src="/assets/img/blog/system-monitor-book/page-charts-overview.png" alt="Book page showing real-time charts from Chapter 1" style="max-width: 100%; height: auto; width: 650px;">
-
-It then explains exactly why building this one project will teach you more than any number of disconnected tutorials:
-
-<img src="/assets/img/blog/system-monitor-book/page-why-more-than-tutorials.png" alt="Book page - Why This Project Will Teach You More Than Most Tutorials" style="max-width: 100%; height: auto; width: 650px;">
-
-The Data Collection chapter is where the cross-platform work really begins. On Windows, you implement `getCpuUsage()` against the Performance Data Helper API:
-
-<img src="/assets/img/blog/system-monitor-book/page-windows-pdh.png" alt="Book page showing Windows PDH implementation of getCpuUsage()" style="max-width: 100%; height: auto; width: 650px;">
-
-Then the same function on macOS, this time talking to the Mach kernel through `host_statistics64`:
-
-<img src="/assets/img/blog/system-monitor-book/page-macos-mach.png" alt="Book page showing macOS Mach kernel implementation" style="max-width: 100%; height: auto; width: 650px;">
-
-And the Linux memory implementation, parsing real values straight out of `/proc/meminfo`:
-
-<img src="/assets/img/blog/system-monitor-book/page-linux-memory.png" alt="Book page showing Linux memory implementation" style="max-width: 100%; height: auto; width: 650px;">
-
-Network statistics on Windows lean on the IP Helper API, with the book walking you through every field you need to read:
-
-<img src="/assets/img/blog/system-monitor-book/page-windows-network.png" alt="Book page showing Windows IP Helper network code" style="max-width: 100%; height: auto; width: 650px;">
-
-Once the data layer is done, Chapter 4 introduces the `SystemMonitor` business-logic class with its full set of Qt signals and getters:
-
-<img src="/assets/img/blog/system-monitor-book/page-systemmonitor-class.png" alt="Book page showing the SystemMonitor class declaration" style="max-width: 100%; height: auto; width: 650px;">
-
-Then the InfoCard chapter shows you how to set up a fully custom widget, complete with a `QGraphicsDropShadowEffect` glow, theme-aware styling, and a clean layout structure:
-
-<img src="/assets/img/blog/system-monitor-book/page-infocard-setupui.png" alt="Book page showing InfoCard setupUI() implementation" style="max-width: 100%; height: auto; width: 650px;">
-
-The chart chapter is where things get really visual. Here is the page that wires three `ChartWidget` instances into `MainWindow` and connects them to the live data stream:
-
-<img src="/assets/img/blog/system-monitor-book/page-chart-integration.png" alt="Book page showing chart widget integration in MainWindow" style="max-width: 100%; height: auto; width: 650px;">
-
-And here is the page where the chart line gets Bezier-smoothed, with a screenshot of the result on the same page so you know exactly what you should see:
-
-<img src="/assets/img/blog/system-monitor-book/page-bezier-chart.png" alt="Book page showing Bezier curve smoothing with result screenshot" style="max-width: 100%; height: auto; width: 650px;">
-
-That is the rhythm of the whole book. Code, walkthrough, build, screenshot of the result. Page after page.
+<img src="/assets/img/blog/system-monitor-book/page-charts-overview.png" alt="Book page" style="max-width: 100%; height: auto; width: 650px;">
+<img src="/assets/img/blog/system-monitor-book/page-why-more-than-tutorials.png" alt="Book page" style="max-width: 100%; height: auto; width: 650px;">
+<img src="/assets/img/blog/system-monitor-book/page-windows-pdh.png" alt="Book page" style="max-width: 100%; height: auto; width: 650px;">
+<img src="/assets/img/blog/system-monitor-book/page-macos-mach.png" alt="Book page" style="max-width: 100%; height: auto; width: 650px;">
+<img src="/assets/img/blog/system-monitor-book/page-linux-memory.png" alt="Book page" style="max-width: 100%; height: auto; width: 650px;">
+<img src="/assets/img/blog/system-monitor-book/page-windows-network.png" alt="Book page" style="max-width: 100%; height: auto; width: 650px;">
+<img src="/assets/img/blog/system-monitor-book/page-systemmonitor-class.png" alt="Book page" style="max-width: 100%; height: auto; width: 650px;">
+<img src="/assets/img/blog/system-monitor-book/page-infocard-setupui.png" alt="Book page" style="max-width: 100%; height: auto; width: 650px;">
+<img src="/assets/img/blog/system-monitor-book/page-chart-integration.png" alt="Book page" style="max-width: 100%; height: auto; width: 650px;">
+<img src="/assets/img/blog/system-monitor-book/page-bezier-chart.png" alt="Book page" style="max-width: 100%; height: auto; width: 650px;">
 
 ## Who This Book Is For
 
