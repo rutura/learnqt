@@ -24,8 +24,6 @@ Most Qt tutorials show you a button that prints "Hello World" and call it a desk
 
 I wrote a new book to close that gap, and it is now live on Amazon: [Professional Desktop Apps with Qt and C++: Build a Complete System Monitor with Custom Widgets, Real-Time Charts, and Cross-Platform Architecture](https://www.amazon.com/dp/B0GXQ62235).
 
-<img src="/assets/img/blog/system-monitor-book/cover.png" alt="Professional Desktop Apps with Qt and C++ - Book Cover" style="max-width: 100%; height: auto; width: 500px;">
-
 The premise is simple. You build one non-trivial application from an empty Qt Creator project all the way to a polished, themed, cross-platform desktop tool. Not a toy. A real system monitor that talks to the operating system, samples live data, paints custom widgets, and runs natively on Windows, Linux, and macOS.
 
 Here is what you end up with by the final chapter:
@@ -37,8 +35,6 @@ That is real CPU usage, real memory pressure, real disk capacity, real network t
 ## What This Book Is Actually About
 
 The book is built around one idea: you learn to build real software by building real software. No mock data. No "imagine if this were a database." Every iteration adds a piece you can build, run, and see working before the next chapter starts.
-
-<img src="/assets/img/blog/system-monitor-book/preface-who-its-for.png" alt="Preface - Who This Book Is For" style="max-width: 100%; height: auto; width: 600px;">
 
 If you know some C++ and you have done a tutorial or two on Qt, this book is the next step. It does not assume you have ever touched the Win32 API, or `/proc`, or Mach kernel calls. It does assume you are willing to compile something, run it, and look at the output before turning the page.
 
@@ -96,11 +92,55 @@ The reason the book keeps coming back to this is that it actually transfers. You
 
 The book shows complete code. No `...` elisions. No "rest of the implementation is left as an exercise." If a function is on the page, it is a function you can copy into your project and watch compile.
 
-<img src="/assets/img/blog/system-monitor-book/code-sample.png" alt="Sample Code Page from the InfoCard Chapter" style="max-width: 100%; height: auto; width: 600px;">
-
 Every chapter follows the same rhythm. Show the code. Walk through what it does. Tell you to build and run. Describe what you should see. Then move on. If you have ever read a programming book that left you guessing whether your output was right, you know how much that rhythm matters.
 
 The full source is also mirrored on GitHub at [github.com/rutura/SystemMonitor](https://github.com/rutura/SystemMonitor) so you can compare your code against the reference at any iteration boundary.
+
+## A Look Inside the Book
+
+Rather than tell you what the book reads like, here are real pages from it. Code, diagrams, screenshots-in-context. Every page below is from the actual PDF you would download.
+
+The Project Overview chapter sets the bar by showing real, custom-painted charts running against live system data:
+
+<img src="/assets/img/blog/system-monitor-book/page-charts-overview.png" alt="Book page showing real-time charts from Chapter 1" style="max-width: 100%; height: auto; width: 650px;">
+
+It then explains exactly why building this one project will teach you more than any number of disconnected tutorials:
+
+<img src="/assets/img/blog/system-monitor-book/page-why-more-than-tutorials.png" alt="Book page - Why This Project Will Teach You More Than Most Tutorials" style="max-width: 100%; height: auto; width: 650px;">
+
+The Data Collection chapter is where the cross-platform work really begins. On Windows, you implement `getCpuUsage()` against the Performance Data Helper API:
+
+<img src="/assets/img/blog/system-monitor-book/page-windows-pdh.png" alt="Book page showing Windows PDH implementation of getCpuUsage()" style="max-width: 100%; height: auto; width: 650px;">
+
+Then the same function on macOS, this time talking to the Mach kernel through `host_statistics64`:
+
+<img src="/assets/img/blog/system-monitor-book/page-macos-mach.png" alt="Book page showing macOS Mach kernel implementation" style="max-width: 100%; height: auto; width: 650px;">
+
+And the Linux memory implementation, parsing real values straight out of `/proc/meminfo`:
+
+<img src="/assets/img/blog/system-monitor-book/page-linux-memory.png" alt="Book page showing Linux memory implementation" style="max-width: 100%; height: auto; width: 650px;">
+
+Network statistics on Windows lean on the IP Helper API, with the book walking you through every field you need to read:
+
+<img src="/assets/img/blog/system-monitor-book/page-windows-network.png" alt="Book page showing Windows IP Helper network code" style="max-width: 100%; height: auto; width: 650px;">
+
+Once the data layer is done, Chapter 4 introduces the `SystemMonitor` business-logic class with its full set of Qt signals and getters:
+
+<img src="/assets/img/blog/system-monitor-book/page-systemmonitor-class.png" alt="Book page showing the SystemMonitor class declaration" style="max-width: 100%; height: auto; width: 650px;">
+
+Then the InfoCard chapter shows you how to set up a fully custom widget, complete with a `QGraphicsDropShadowEffect` glow, theme-aware styling, and a clean layout structure:
+
+<img src="/assets/img/blog/system-monitor-book/page-infocard-setupui.png" alt="Book page showing InfoCard setupUI() implementation" style="max-width: 100%; height: auto; width: 650px;">
+
+The chart chapter is where things get really visual. Here is the page that wires three `ChartWidget` instances into `MainWindow` and connects them to the live data stream:
+
+<img src="/assets/img/blog/system-monitor-book/page-chart-integration.png" alt="Book page showing chart widget integration in MainWindow" style="max-width: 100%; height: auto; width: 650px;">
+
+And here is the page where the chart line gets Bezier-smoothed, with a screenshot of the result on the same page so you know exactly what you should see:
+
+<img src="/assets/img/blog/system-monitor-book/page-bezier-chart.png" alt="Book page showing Bezier curve smoothing with result screenshot" style="max-width: 100%; height: auto; width: 650px;">
+
+That is the rhythm of the whole book. Code, walkthrough, build, screenshot of the result. Page after page.
 
 ## Who This Book Is For
 
