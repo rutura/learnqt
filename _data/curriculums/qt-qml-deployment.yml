@@ -2,6 +2,7 @@ title: "Qt QML Cross-Platform Deployment - Course Curriculum"
 subtitle: "9 Chapters, 67 Lectures — Ship Your Qt QML App to Every Platform"
 chapters:
   - title: "Chapter 1: Welcome & Orientation"
+    status: done
     icon: "fas fa-door-open"
     description: "Get oriented with the course structure, meet the Squared app you'll ship to every platform, and learn how to follow along effectively."
     outcome: "A clear roadmap of your deployment learning journey and all resources ready to go"
@@ -14,6 +15,7 @@ chapters:
         duration: ""
 
   - title: "Chapter 2: Play with the Environment"
+    status: done
     icon: "fas fa-laptop-code"
     description: "Get a working Qt dev environment on your OS with the Squared app building and running. Covers Windows, Linux, and macOS setup so you're ready to deploy from any host."
     outcome: "Squared app building and running on your machine, ready for deployment work"
@@ -26,6 +28,7 @@ chapters:
         duration: ""
 
   - title: "Chapter 3: Windows Deployment"
+    status: done
     icon: "fab fa-windows"
     description: "Package Squared for Windows. You'll fix the missing DLL launch failure with windeployqt, build a proper cmake --install tree, and produce an NSIS installer with Start Menu and Desktop shortcuts plus a portable ZIP for zero-install users."
     outcome: "A polished NSIS installer and a portable ZIP ready for Windows users"
@@ -44,6 +47,7 @@ chapters:
         duration: ""
 
   - title: "Chapter 4: Linux Deployment"
+    status: done
     icon: "fab fa-linux"
     description: "Package Squared for any modern Linux distribution. Strip RUNPATH, wire up qt.conf, run linuxdeploy inside Docker for reproducible builds, and produce three distributable formats: a portable AppImage, a Debian .deb, and a plain tar.gz bundle. FreeDesktop .desktop files and hicolor icon theme included."
     outcome: "An AppImage, a .deb, and a tar.gz bundle — plus a Docker-based build you can run in CI"
@@ -70,6 +74,7 @@ chapters:
         duration: ""
 
   - title: "Chapter 5: macOS Deployment"
+    status: done
     icon: "fab fa-apple"
     description: "Produce a macOS app bundle that launches on any Mac without Gatekeeper warnings. Run macdeployqt, fix @rpath and @executable_path library paths, sign with a Developer ID certificate, notarize through Apple, staple the ticket, and package into a branded DMG."
     outcome: "A signed, notarized, distributable DMG plus a tar.gz portable bundle"
@@ -96,6 +101,7 @@ chapters:
         duration: ""
 
   - title: "Chapter 6: Android Deployment"
+    status: coming_soon
     icon: "fab fa-android"
     description: "Cross-compile Squared for Android, configure the manifest and launcher icons, build with qt-cmake, understand the android-build directory and APK internals, sign with a keystore, and produce both an APK and an AAB ready for Play Store upload."
     outcome: "A signed APK and an Android App Bundle (AAB) ready for Play Store upload"
@@ -120,6 +126,7 @@ chapters:
         duration: ""
 
   - title: "Chapter 7: iOS Deployment"
+    status: coming_soon
     icon: "fas fa-mobile-alt"
     description: "Build Squared for iOS with static Qt linking, produce a simulator build and a device build, handle asset catalogs and export options, sign with a provisioning profile, and create a distributable IPA."
     outcome: "A simulator build, a device build, and a signed IPA"
@@ -144,6 +151,7 @@ chapters:
         duration: ""
 
   - title: "Chapter 8: Embedded Linux ARM (Raspberry Pi)"
+    status: coming_soon
     icon: "fas fa-microchip"
     description: "Cross-compile Qt and Squared for Raspberry Pi using Docker. Generate a sysroot, write a CMake toolchain file, build Qt from source inside a container, deploy to the Pi, and configure Squared to run as a systemd service on boot."
     outcome: "A cross-compiled Qt + Squared build running on a Raspberry Pi as a systemd service"
@@ -168,6 +176,7 @@ chapters:
         duration: ""
 
   - title: "Chapter 9: CI/CD with GitHub Actions"
+    status: coming_soon
     icon: "fab fa-github"
     description: "Turn all your manual deployment steps into a GitHub Actions workflow that produces Linux (AppImage + DEB + tar.gz), macOS (Apple Silicon + Intel tar.gz), and Windows (NSIS + ZIP) artifacts from a single git tag push."
     outcome: "A GitHub Actions workflow that builds all desktop artifacts automatically from one tag"
