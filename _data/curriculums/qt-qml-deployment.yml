@@ -1,5 +1,5 @@
 title: "Qt QML Cross-Platform Deployment - Course Curriculum"
-subtitle: "9 Chapters, 67 Lectures — Ship Your Qt QML App to Every Platform"
+subtitle: "9 Chapters, 67 Lectures: Ship Your Qt QML App to Every Platform"
 chapters:
   - title: "Chapter 1: Welcome & Orientation"
     status: done
@@ -50,7 +50,7 @@ chapters:
     status: done
     icon: "fab fa-linux"
     description: "Package Squared for any modern Linux distribution. Strip RUNPATH, wire up qt.conf, run linuxdeploy inside Docker for reproducible builds, and produce three distributable formats: a portable AppImage, a Debian .deb, and a plain tar.gz bundle. FreeDesktop .desktop files and hicolor icon theme included."
-    outcome: "An AppImage, a .deb, and a tar.gz bundle — plus a Docker-based build you can run in CI"
+    outcome: "An AppImage, a .deb, and a tar.gz bundle, plus a Docker-based build you can run in CI"
     lessons:
       - name: "Configure and Build"
         duration: ""
