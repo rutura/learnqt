@@ -872,7 +872,7 @@ courses:
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
 
   - id: "qt-qml-deployment"
-    title: "Qt QML Cross-Platform Deployment"
+    title: "Qt QML: Deploy to Desktop, Mobile and Embedded"
     short_title: "Qt QML Deployment"
     description: "Take one Qt QML application and ship it to every platform Qt supports: Windows, Linux, macOS, Android, iOS, and embedded ARM. Complete with installers, signed bundles, and a GitHub Actions pipeline that builds it all from a single git tag."
     image: "/assets/courses/image/qt6_qml_beginners.png"
