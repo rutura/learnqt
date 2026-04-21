@@ -875,7 +875,7 @@ courses:
     title: "Qt QML: Deploy to Desktop, Mobile and Embedded"
     short_title: "Qt QML Deployment"
     description: "Take one Qt QML application and ship it to every platform Qt supports: Windows, Linux, macOS, Android, iOS, and embedded ARM. Complete with installers, signed bundles, and a GitHub Actions pipeline that builds it all from a single git tag."
-    image: "/assets/courses/image/qt6_qml_beginners.png"
+    image: "/assets/courses/image/qt_qml_deployment.png"
     category: "Deployment & DevOps"
     technology: "Qt QML"
     language: "C++/QML"
@@ -952,7 +952,7 @@ courses:
     sections:
       hero:
         subtitle: "Take one Qt QML application and ship it to every platform Qt supports: Windows, Linux, macOS, Android, iOS, and embedded ARM. Complete with installers, signed bundles, and a GitHub Actions pipeline that builds it all from a single git tag."
-        showcase_image: "/assets/courses/image/qt6_qml_beginners.png"
+        showcase_image: "/assets/courses/image/qt_qml_deployment.png"
 
       preview:
         title: "See What You'll Ship"
@@ -1001,7 +1001,7 @@ courses:
           - "✅ Under-the-hood explanations. Understand why, not just which command to run."
           - "✅ Docker-first for reproducibility. Linux and embedded builds that work locally and in CI."
           - "✅ Complete CI/CD. GitHub Actions workflow producing 7 artifacts from one git tag."
-        showcase_image: "/assets/courses/image/qt6_qml_beginners.png"
+        showcase_image: "/assets/courses/image/qt_qml_deployment.png"
 
       creator_story:
         title: "Created by Someone Who Ships Qt Apps Daily"
