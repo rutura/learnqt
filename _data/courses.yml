@@ -973,13 +973,13 @@ courses:
         projects:
           - name: "Desktop"
             description: "Ship Squared as polished native packages on Windows (NSIS installer + ZIP), Linux (AppImage + DEB + tar.gz), and macOS (signed & notarized DMG). Learn windeployqt, linuxdeploy, macdeployqt, CPack, codesign, and notarytool."
-            image: "/assets/projects/deployment_desktop.png"
+            image: "/assets/projects/deployment_desktop.svg"
           - name: "Mobile"
             description: "Cross-compile Squared for Android (signed APK + AAB for the Play Store) and iOS (simulator build, device build, signed IPA). Covers keystores, provisioning profiles, and the full signing chain for both platforms."
-            image: "/assets/projects/deployment_mobile.png"
+            image: "/assets/projects/deployment_mobile.svg"
           - name: "Embedded"
             description: "Cross-compile Qt and Squared for Raspberry Pi using Docker. Generate a sysroot, write a CMake toolchain file, build Qt from source in a container, deploy to the Pi, and run as a systemd service."
-            image: "/assets/projects/deployment_embedded.png"
+            image: "/assets/projects/deployment_embedded.svg"
 
       outcomes:
         title: "After This Course, You'll Be Able To:"
