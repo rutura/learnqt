@@ -1,7 +1,7 @@
 ---
 layout: promo
-title: "Discounts on Qt Courses & Books"
-description: "All products, all prices — apply one code at checkout to save."
+title: "Save on Qt, C++ and QML Training"
+description: "Expert courses and books for building cross-platform apps on Windows, macOS, Linux, Mobile and Embedded. All at a discount."
 cover: /assets/courses/image/LearnQt.png
 permalink: "/discounts"
 ---
