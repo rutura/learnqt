@@ -44,7 +44,7 @@ permalink: "/discounts"
         {% else %}
           <span class="dl-price">${{ c_full }}</span>
         {% endif %}
-        <a class="dl-btn" href="{{ buy_link }}" target="_blank">Buy →</a>
+        <a class="dl-btn dl-btn--course" href="{{ buy_link }}" target="_blank"><img src="/assets/blog/image/LearnQt.png" class="dl-btn-icon dl-btn-icon--outline"> Buy</a>
       </div>
     </li>
     {% endfor %}
@@ -87,11 +87,11 @@ permalink: "/discounts"
           <span class="dl-price">${{ b_full }}</span>
         {% endif %}
 
-        <a class="dl-btn" href="{{ book_link }}" target="_blank">Digital →</a>
+        <a class="dl-btn dl-btn--gumroad" href="{{ book_link }}" target="_blank"><img src="/assets/img/gumroad-icon.svg" class="dl-btn-icon"> PDF &amp; EPUB</a>
         {% if book.amazon_link and book.amazon_link != '' %}
-          <a class="dl-btn dl-btn--secondary" href="{{ book.amazon_link }}" target="_blank">Paperback →</a>
+          <a class="dl-btn dl-btn--amazon" href="{{ book.amazon_link }}" target="_blank"><i class="fab fa-amazon"></i> Paperback</a>
         {% else %}
-          <span class="dl-btn dl-btn--disabled">Paperback</span>
+          <span class="dl-btn dl-btn--disabled"><i class="fab fa-amazon"></i> Paperback</span>
         {% endif %}
       </div>
     </li>
@@ -286,33 +286,70 @@ permalink: "/discounts"
 }
 
 .dl-btn {
-  background: #15ba29;
-  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0.35rem 0.85rem;
   border-radius: 8px;
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
-.dl-btn:hover {
-  background: #0d8a1f;
+/* LearnQt green — video courses */
+.dl-btn--course {
+  background: #15ba29;
   color: #fff;
 }
 
-.dl-btn--secondary {
-  background: #fff;
-  color: #1a202c;
-  border: 1.5px solid #cbd5e0;
-  border-radius: 8px;
+.dl-btn--course:hover {
+  background: #0d8a1f;
+  color: #fff;
+  transform: translateY(-1px);
 }
 
-.dl-btn--secondary:hover {
-  background: #f7fafc;
+.dl-btn-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.dl-btn-icon--outline {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 1px;
+  border-radius: 4px;
+}
+
+/* Gumroad — digital books */
+.dl-btn--gumroad {
+  background: #fff;
   color: #1a202c;
-  border-color: #a0aec0;
+  border: 1.5px solid #ff90e8;
+}
+
+.dl-btn--gumroad:hover {
+  background: #fff0fc;
+  color: #1a202c;
+  border-color: #f070d8;
+  transform: translateY(-1px);
+}
+
+/* Amazon — paperback */
+.dl-btn--amazon {
+  background: #fff;
+  color: #1a202c;
+  border: 1.5px solid #ff9900;
+}
+
+.dl-btn--amazon:hover {
+  background: #fff8ee;
+  color: #1a202c;
+  border-color: #e68a00;
+  transform: translateY(-1px);
 }
 
 .dl-btn--disabled {
@@ -369,7 +406,8 @@ permalink: "/discounts"
     font-size: 0.8rem;
   }
 
-  .dl-btn--secondary,
+  .dl-btn--gumroad,
+  .dl-btn--amazon,
   .dl-btn--disabled {
     padding: 0.3rem 0.65rem;
     font-size: 0.8rem;
