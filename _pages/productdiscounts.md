@@ -338,11 +338,41 @@ permalink: "/discounts"
   .dl-item {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem 0.85rem;
+  }
+
+  .dl-item-main {
+    gap: 0.15rem;
   }
 
   .dl-item-price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
     width: 100%;
-    justify-content: space-between;
+  }
+
+  .dl-price {
+    font-size: 1rem;
+  }
+
+  .dl-original {
+    font-size: 0.8rem;
+    margin-right: auto;
+  }
+
+  .dl-btn {
+    padding: 0.3rem 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  .dl-btn--secondary,
+  .dl-btn--disabled {
+    padding: 0.3rem 0.65rem;
+    font-size: 0.8rem;
   }
 
   .coupon-bar {
