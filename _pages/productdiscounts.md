@@ -1,6 +1,6 @@
 ---
 layout: promo
-title: "Save on Qt, C++ and QML Training"
+title: "Save on Qt, C++ and QML Training from the Professionals"
 description: "Expert courses and books for building cross-platform apps on Windows, macOS, Linux, Mobile and Embedded. All at a discount."
 cover: /assets/courses/image/LearnQt.png
 permalink: "/discounts"
