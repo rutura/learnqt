@@ -18,7 +18,7 @@ permalink: "/discounts"
 <!-- VIDEO COURSES -->
 <section class="dl-section">
   <h2 class="dl-heading"><i class="fas fa-graduation-cap"></i> Video Courses</h2>
-  <p class="dl-subheading">Hosted on Teachable · Lifetime access · 30-day money-back guarantee</p>
+  <p class="dl-subheading">Video on demand · Lifetime access · 30-day money-back guarantee</p>
 
   <ul class="dl-list">
     {% for course in site.data.courses.courses %}
@@ -56,7 +56,7 @@ permalink: "/discounts"
 <!-- BOOKS -->
 <section class="dl-section dl-section--alt">
   <h2 class="dl-heading"><i class="fas fa-book"></i> Books</h2>
-  <p class="dl-subheading">Sold on Gumroad · PDF, EPUB & Paperback · Instant download</p>
+  <p class="dl-subheading">Sold on Gumroad and Amazon · PDF, EPUB & Paperback · Instant download</p>
 
   <ul class="dl-list">
     {% for book in site.data.books.books %}
