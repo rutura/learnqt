@@ -1,376 +1,504 @@
 ---
 layout: promo
-title: "Special Discounts on Qt Courses & Books"
-description: "Get a free copy of our book to Build a System Monitor with Qt and C++ "
+title: "Save on Qt, C++ and QML Training from the Professionals"
+description: "Expert courses and books for building cross-platform apps on Windows, macOS, Linux, Mobile and Embedded. All at a discount."
 cover: /assets/courses/image/LearnQt.png
 permalink: "/discounts"
 ---
 
-<!-- Coupon Banner -->
-<div class="discount-banner">
-  <div class="container">
-    <div class="banner-content">
-      <h1 class="banner-title">Save {{site.offby}}% on All Courses & Books</h1>
-      <p class="banner-subtitle">Limited time offer - Use coupon code at checkout</p>
-      <div class="coupon-display">
-        <span class="coupon-label">Coupon Code:</span>
-        <code class="coupon-code">{{site.coupon}}</code>
-        <button class="copy-button" onclick="copyCoupon()">Copy</button>
-      </div>
-      <p class="validity-text">Valid until {{site.couponvalidity}}</p>
-    </div>
-  </div>
+{% if site.coupon and site.coupon != '' %}
+<div class="coupon-bar">
+  <span>Use code</span>
+  <code class="coupon-code" id="coupon-code">{{ site.coupon }}</code>
+  <button class="copy-btn" onclick="copyCoupon()">Copy</button>
+  <span class="coupon-save">— save {{ site.offby }}% · valid until {{ site.couponvalidity }}</span>
+</div>
+{% endif %}
+
+<!-- VIDEO COURSES -->
+<section class="dl-section">
+  <h2 class="dl-heading"><i class="fas fa-graduation-cap"></i> Video Courses</h2>
+  <p class="dl-subheading">Video on demand · Lifetime access · 30-day money-back guarantee</p>
+
+  <ul class="dl-list">
+    {% for course in site.data.courses.courses %}
+    {% assign c_full = course.pricing_override.lifetime.price %}
+    {% assign base_link = course.pricing_override.lifetime.teachable_link %}
+    {% if site.coupon and site.coupon != '' %}
+      {% assign buy_link = base_link | append: "&coupon_code=" | append: site.coupon %}
+      {% assign c_keep = 100 | minus: site.offby %}
+      {% assign c_price = c_full | times: c_keep | divided_by: 100 %}
+    {% else %}
+      {% assign buy_link = base_link %}
+      {% assign c_price = c_full %}
+    {% endif %}
+    <li class="dl-item">
+      <details class="dl-details">
+        <summary class="dl-summary">
+          <div class="dl-item-main">
+            <span class="dl-title">{{ course.title }} <i class="fas fa-chevron-down dl-chevron"></i></span>
+            <span class="dl-meta">{{ course.level }} &middot; {{ course.duration }} &middot; <i class="fas fa-star dl-star"></i> {{ course.satisfaction_rating }}</span>
+          </div>
+          <div class="dl-item-price">
+            {% if site.coupon and site.coupon != '' %}
+              <span class="dl-price">${{ c_price }}</span>
+              <s class="dl-original">${{ c_full }}</s>
+            {% else %}
+              <span class="dl-price">${{ c_full }}</span>
+            {% endif %}
+            <a class="dl-btn dl-btn--course" href="{{ buy_link }}" target="_blank"><img src="/assets/blog/image/LearnQt.png" class="dl-btn-icon dl-btn-icon--outline"> Buy</a>
+          </div>
+        </summary>
+        <div class="dl-description">
+          <p>{{ course.description }}</p>
+          <a class="dl-desc-link" href="/courses/{{ course.id }}/">Full course details →</a>
+        </div>
+      </details>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p class="dl-note">Need access to all courses? <a href="/courses/#pricing">Library plans start at ${{ site.data.courses.pricing.monthly.price }}/mo</a> with a {{ site.data.courses.pricing.monthly.trial_days }}-day free trial.</p>
+</section>
+
+<!-- BOOKS -->
+<section class="dl-section dl-section--alt">
+  <h2 class="dl-heading"><i class="fas fa-book"></i> Books</h2>
+  <p class="dl-subheading">Sold on Gumroad and Amazon · PDF, EPUB & Paperback · Instant download</p>
+
+  <ul class="dl-list">
+    {% for book in site.data.books.books %}
+    {% if book.status == 'available' %}
+    {% assign base_book_link = book.gumroad_link %}
+    {% if site.coupon and site.coupon != '' %}
+      {% assign book_link = base_book_link | append: "/" | append: site.coupon %}
+    {% else %}
+      {% assign book_link = base_book_link %}
+    {% endif %}
+    {% assign b_full = book.price | remove: "$" | times: 1 %}
+    {% if site.coupon and site.coupon != '' and site.offby != '' %}
+      {% assign b_keep = 100 | minus: site.offby %}
+      {% assign b_price = b_full | times: b_keep | divided_by: 100 %}
+    {% else %}
+      {% assign b_price = b_full %}
+    {% endif %}
+    <li class="dl-item">
+      <details class="dl-details">
+        <summary class="dl-summary">
+          <div class="dl-item-main">
+            <span class="dl-title">{{ book.title }} <i class="fas fa-chevron-down dl-chevron"></i></span>
+            <span class="dl-meta">{{ book.level }} &middot; {{ book.pages }} pages{% if book.rating and book.rating != '' %} &middot; <i class="fas fa-star dl-star"></i> {{ book.rating }}/5{% endif %} &middot; {{ book.formats | join: ", " }}</span>
+          </div>
+          <div class="dl-item-price">
+            {% if site.coupon and site.coupon != '' %}
+              <span class="dl-price">${{ b_price }}</span>
+              <s class="dl-original">${{ b_full }}</s>
+            {% else %}
+              <span class="dl-price">${{ b_full }}</span>
+            {% endif %}
+            <a class="dl-btn dl-btn--gumroad" href="{{ book_link }}" target="_blank"><img src="/assets/img/gumroad-icon.svg" class="dl-btn-icon"> PDF &amp; EPUB</a>
+            {% if book.amazon_link and book.amazon_link != '' %}
+              <a class="dl-btn dl-btn--amazon" href="{{ book.amazon_link }}" target="_blank"><i class="fab fa-amazon"></i> Paperback</a>
+            {% else %}
+              <span class="dl-btn dl-btn--disabled"><i class="fab fa-amazon"></i> Paperback</span>
+            {% endif %}
+          </div>
+        </summary>
+        <div class="dl-description">
+          <p>{{ book.description }}</p>
+        </div>
+      </details>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+
+<div class="dl-newsletter-wave">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none" style="height:60px;">
+    <path fill="#1a202c" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"/>
+  </svg>
 </div>
 
-<!-- Courses Section -->
-<section class="products-section">
-  <div class="container">
-    <h2 class="section-heading">Qt Courses <span class="discount-badge">{{ site.offby }}% OFF</span></h2>
-    
-    <div class="products-list">
-      {% for course in site.data.courses.courses %}
-      <div class="product-item">
-        <div class="product-image">
-          <img src="{{ course.image }}" alt="{{ course.title }}">
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">{{ course.title }}</h3>
-          <p class="product-description">{{ course.description }}</p>
-          <div class="product-meta">
-            <span class="meta-item"><i class="fas fa-clock"></i> {{ course.duration }}</span>
-            <span class="meta-item"><i class="fas fa-code"></i> {{ course.projects }}</span>
-            <span class="meta-item"><i class="fas fa-star"></i> {{ course.satisfaction_rating }}</span>
-          </div>
-          <a href="/courses/{{ course.id }}/" class="learn-more-btn">Learn More →</a>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- Books Section -->
-<section class="products-section books-bg">
-  <div class="container">
-    <h2 class="section-heading">Qt Books <span class="discount-badge">{{ site.offby }}% OFF</span></h2>
-    
-    <div class="products-list">
-      {% for book in site.data.books.books %}
-      {% if book.status == 'available' %}
-      <div class="product-item">
-        <div class="product-image book-image">
-          <img src="{{ book.cover }}" alt="{{ book.title }}">
-          <span class="status-badge available">Available Now</span>
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">{{ book.title }}</h3>
-          <p class="product-description">{{ book.description }}</p>
-          <div class="product-meta">
-            <span class="meta-item"><i class="fas fa-file-alt"></i> {{ book.pages }} Pages</span>
-            {% if book.rating %}
-            <span class="meta-item"><i class="fas fa-star"></i> {{ book.rating }}/5</span>
-            {% endif %}
-            <span class="meta-item"><i class="fas fa-book"></i> {{ book.formats | join: ", " }}</span>
-          </div>
-          <a href="{{ book.gumroad_link }}" target="_blank" class="learn-more-btn">Get This Book →</a>
-        </div>
-      </div>
-      {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- Newsletter Section -->
 {% include newsletter.html %}
 
 <style>
-/* Banner Styles */
-.discount-banner {
-  background: linear-gradient(135deg, #15ba29 0%, #0d8a1f 100%);
-  padding: 1.25rem 0;
-  margin-bottom: 1.5rem;
+/* ── Page breathing room ── */
+.promo-header {
+  padding-top: 120px !important;
+  padding-bottom: 1rem !important;
 }
 
-.banner-content {
-  text-align: center;
-  color: white;
-}
-
-.banner-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.banner-subtitle {
-  font-size: 0.95rem;
-  margin-bottom: 0.75rem;
-  opacity: 0.9;
-}
-
-.coupon-display {
+/* ── Coupon bar ── */
+.coupon-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 0.5rem;
   flex-wrap: wrap;
-}
-
-.coupon-label {
+  gap: 0.6rem;
+  background: #f0fdf4;
+  border: 1.5px solid #15ba29;
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0 2rem;
   font-size: 0.95rem;
-  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(21, 186, 41, 0.08);
 }
 
 .coupon-code {
-  background: white;
-  color: #15ba29;
-  padding: 0.5rem 1.25rem;
+  background: #15ba29;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
   border-radius: 6px;
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 700;
   letter-spacing: 1px;
   font-family: 'Courier New', monospace;
 }
 
-.copy-button {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid white;
-  padding: 0.5rem 1rem;
+.copy-btn {
+  background: none;
+  border: 1.5px solid #15ba29;
+  color: #15ba29;
+  padding: 0.2rem 0.65rem;
   border-radius: 6px;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background: #15ba29;
+  color: #fff;
+}
+
+.coupon-save {
+  color: #4a5568;
   font-size: 0.9rem;
 }
 
-.copy-button:hover {
-  background: white;
-  color: #15ba29;
+/* ── Sections ── */
+.dl-section {
+  padding: 2.5rem 0;
 }
 
-.validity-text {
-  font-size: 0.85rem;
-  opacity: 0.85;
-  margin: 0;
+.dl-section:first-of-type {
+  padding-top: 0;
 }
 
-/* Products Section */
-.products-section {
-  padding: 1rem 0;
-}
-
-.books-bg {
-  background: #f8f9fa;
-}
-
-.section-heading {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 2rem;
-  color: #2d3748;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.discount-badge {
-  background: #15ba29;
-  color: white;
-  padding: 0.5rem 1rem;
+.dl-section--alt {
+  background: linear-gradient(180deg, #f8faf8 0%, #ffffff 100%);
   border-radius: 20px;
-  font-size: 1rem;
-  font-weight: 700;
+  padding: 2rem 1.5rem;
+  margin: 1rem 0;
 }
 
-.products-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+/* ── Wave transition before newsletter ── */
+.dl-newsletter-wave {
+  display: block;
+  line-height: 0;
+  margin-bottom: -2px;
 }
 
-.product-item {
-  display: flex;
-  gap: 2rem;
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.product-item:hover {
-  box-shadow: 0 5px 20px rgba(21, 186, 41, 0.2);
-  transform: translateY(-3px);
-}
-
-.product-image {
-  flex-shrink: 0;
-  width: 200px;
-  height: 150px;
-  position: relative;
-}
-
-.product-image img {
+.dl-newsletter-wave svg {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
-.product-image.book-image {
+/* ── Collapsible cards ── */
+.dl-details {
+  width: 100%;
+}
+
+.dl-summary {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: #f7fafc;
-  height: auto;
-  padding: 1rem;
-}
-
-.product-image.book-image img {
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  list-style: none;
+  cursor: pointer;
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.status-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 0.4rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
+.dl-summary::-webkit-details-marker { display: none; }
+
+.dl-chevron {
+  font-size: 0.65rem;
+  color: #a0aec0;
+  margin-left: 0.3rem;
+  transition: transform 0.2s;
 }
 
-.status-badge.available {
-  background: #15ba29;
-  color: white;
+details[open] .dl-chevron {
+  transform: rotate(180deg);
 }
 
-.status-badge.coming-soon {
-  background: #ed8936;
-  color: white;
+.dl-description {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f4f0;
+  color: #4a5568;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
-.product-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+.dl-description p {
+  margin: 0 0 0.5rem;
 }
 
-.product-title {
+.dl-desc-link {
+  font-size: 0.85rem;
+  color: #15ba29;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dl-desc-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Headings ── */
+.dl-heading {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 0.75rem;
+  color: #1a202c;
+  margin-bottom: 0.25rem;
 }
 
-.product-description {
-  color: #4a5568;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  flex-grow: 1;
-}
-
-.product-meta {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-.meta-item {
-  font-size: 0.9rem;
-  color: #718096;
-}
-
-.meta-item i {
+.dl-heading i {
   color: #15ba29;
   margin-right: 0.4rem;
 }
 
-.learn-more-btn {
-  display: inline-block;
-  background: #15ba29;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
+.dl-subheading {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Cards ── */
+.dl-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dl-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  flex-wrap: wrap;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.dl-item:hover {
+  box-shadow: 0 4px 16px rgba(21, 186, 41, 0.12), 0 1px 4px rgba(0,0,0,0.06);
+  transform: translateY(-1px);
+}
+
+.dl-item-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.dl-title {
+  font-size: 1rem;
   font-weight: 600;
-  align-self: flex-start;
-  transition: all 0.3s ease;
+  color: #1a202c;
+  text-decoration: none;
 }
 
-.learn-more-btn:hover {
+.dl-title:hover {
+  color: #15ba29;
+}
+
+.dl-meta {
+  font-size: 0.82rem;
+  color: #718096;
+}
+
+.dl-star {
+  color: #f6ad55;
+  font-size: 0.75rem;
+}
+
+.dl-item-price {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.dl-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #15ba29;
+}
+
+.dl-original {
+  font-size: 0.85rem;
+  color: #a0aec0;
+}
+
+.dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+/* LearnQt green — video courses */
+.dl-btn--course {
+  background: #15ba29;
+  color: #fff;
+}
+
+.dl-btn--course:hover {
   background: #0d8a1f;
-  transform: translateX(5px);
-  color: white;
+  color: #fff;
+  transform: translateY(-1px);
 }
 
+.dl-btn-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 
+.dl-btn-icon--outline {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 1px;
+  border-radius: 4px;
+}
 
-/* Responsive */
-@media (max-width: 768px) {
-  .discount-banner {
-    padding: 1rem 0;
-    margin-bottom: 1rem;
-  }
+/* Gumroad — digital books */
+.dl-btn--gumroad {
+  background: #fff;
+  color: #1a202c;
+  border: 1.5px solid #ff90e8;
+}
 
-  .banner-title {
-    font-size: 1.25rem;
-  }
+.dl-btn--gumroad:hover {
+  background: #fff0fc;
+  color: #1a202c;
+  border-color: #f070d8;
+  transform: translateY(-1px);
+}
 
-  .banner-subtitle {
-    font-size: 0.85rem;
-  }
+/* Amazon — paperback */
+.dl-btn--amazon {
+  background: #fff;
+  color: #1a202c;
+  border: 1.5px solid #ff9900;
+}
 
-  .coupon-code {
-    font-size: 1.1rem;
-    padding: 0.4rem 1rem;
-  }
+.dl-btn--amazon:hover {
+  background: #fff8ee;
+  color: #1a202c;
+  border-color: #e68a00;
+  transform: translateY(-1px);
+}
 
-  .copy-button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
-  }
-  
-  .product-item {
-    flex-direction: column;
-  }
-  
-  .product-image {
-    width: 100%;
-    height: 200px;
-  }
-  
-  .section-heading {
-    font-size: 1.5rem;
+.dl-btn--disabled {
+  background: #f7fafc;
+  color: #cbd5e0;
+  border: 1.5px solid #edf2f7;
+  border-radius: 8px;
+  cursor: not-allowed;
+}
+
+.dl-note {
+  font-size: 0.875rem;
+  color: #718096;
+  margin-top: 0.5rem;
+}
+
+.dl-note a {
+  color: #15ba29;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .dl-item {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem 0.85rem;
+  }
+
+  .dl-item-main {
+    gap: 0.15rem;
+  }
+
+  .dl-item-price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .dl-price {
+    font-size: 1rem;
+  }
+
+  .dl-original {
+    font-size: 0.8rem;
+    margin-right: auto;
+  }
+
+  .dl-btn {
+    padding: 0.3rem 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  .dl-btn--gumroad,
+  .dl-btn--amazon,
+  .dl-btn--disabled {
+    padding: 0.3rem 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  .coupon-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dl-section--alt {
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
   }
 }
 </style>
 
 <script>
 function copyCoupon() {
-  const couponCode = document.querySelector('.coupon-code').textContent;
-  navigator.clipboard.writeText(couponCode).then(function() {
-    const btn = document.querySelector('.copy-button');
-    const originalText = btn.textContent;
+  const code = document.getElementById('coupon-code').textContent.trim();
+  navigator.clipboard.writeText(code).then(function () {
+    const btn = document.querySelector('.copy-btn');
     btn.textContent = 'Copied!';
-    btn.style.background = 'white';
-    btn.style.color = '#15ba29';
-    
-    setTimeout(function() {
-      btn.textContent = originalText;
-      btn.style.background = 'rgba(255, 255, 255, 0.2)';
-      btn.style.color = 'white';
-    }, 2000);
+    setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
   });
 }
 </script>
