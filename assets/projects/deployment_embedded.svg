@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348 200" width="348" height="200">
+  <rect width="348" height="200" fill="#1a1a2e"/>
+
+  <!-- Chip centered, scaled down to fit with padding -->
+  <g transform="translate(174, 98)">
+    <!-- outer body -->
+    <rect x="-52" y="-52" width="104" height="104" rx="8" fill="#22C55E"/>
+    <!-- inner dark area -->
+    <rect x="-40" y="-40" width="80" height="80" rx="5" fill="#1a1a2e"/>
+    <!-- die surface -->
+    <rect x="-26" y="-26" width="52" height="52" rx="3" fill="#22C55E" opacity="0.2"/>
+    <!-- grid lines -->
+    <line x1="-26" y1="-8"  x2="26" y2="-8"  stroke="#22C55E" stroke-width="1.5" opacity="0.7"/>
+    <line x1="-26" y1="8"   x2="26" y2="8"   stroke="#22C55E" stroke-width="1.5" opacity="0.7"/>
+    <line x1="-8"  y1="-26" x2="-8" y2="26"  stroke="#22C55E" stroke-width="1.5" opacity="0.7"/>
+    <line x1="8"   y1="-26" x2="8"  y2="26"  stroke="#22C55E" stroke-width="1.5" opacity="0.7"/>
+    <!-- center dot -->
+    <circle cx="0" cy="0" r="8" fill="#22C55E"/>
+    <circle cx="0" cy="0" r="4" fill="#1a1a2e"/>
+
+    <!-- pins top (4) -->
+    <rect x="-36" y="-64" width="9" height="13" rx="2" fill="#22C55E"/>
+    <rect x="-12" y="-64" width="9" height="13" rx="2" fill="#22C55E"/>
+    <rect x="12"  y="-64" width="9" height="13" rx="2" fill="#22C55E"/>
+    <rect x="36"  y="-64" width="9" height="13" rx="2" fill="#22C55E"/>
+    <!-- pins bottom (4) -->
+    <rect x="-36" y="51" width="9" height="13" rx="2" fill="#22C55E"/>
+    <rect x="-12" y="51" width="9" height="13" rx="2" fill="#22C55E"/>
+    <rect x="12"  y="51" width="9" height="13" rx="2" fill="#22C55E"/>
+    <rect x="36"  y="51" width="9" height="13" rx="2" fill="#22C55E"/>
+    <!-- pins left (4) -->
+    <rect x="-64" y="-36" width="13" height="9" rx="2" fill="#22C55E"/>
+    <rect x="-64" y="-12" width="13" height="9" rx="2" fill="#22C55E"/>
+    <rect x="-64" y="12"  width="13" height="9" rx="2" fill="#22C55E"/>
+    <rect x="-64" y="36"  width="13" height="9" rx="2" fill="#22C55E"/>
+    <!-- pins right (4) -->
+    <rect x="51" y="-36" width="13" height="9" rx="2" fill="#22C55E"/>
+    <rect x="51" y="-12" width="13" height="9" rx="2" fill="#22C55E"/>
+    <rect x="51" y="12"  width="13" height="9" rx="2" fill="#22C55E"/>
+    <rect x="51" y="36"  width="13" height="9" rx="2" fill="#22C55E"/>
+
+    <text y="82" text-anchor="middle" fill="white" font-family="monospace" font-size="12" letter-spacing="2">EMBEDDED • ARM</text>
+  </g>
+</svg>

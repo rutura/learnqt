@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348 200" width="348" height="200">
+  <rect width="348" height="200" fill="#1a1a2e"/>
+
+  <!-- Android - left half, centered at x=100 -->
+  <g transform="translate(100, 98)">
+    <!-- body -->
+    <rect x="-32" y="-24" width="64" height="54" rx="7" fill="#22C55E"/>
+    <!-- screen -->
+    <rect x="-23" y="-16" width="46" height="38" rx="3" fill="#1a1a2e"/>
+    <!-- head dome -->
+    <path d="M-30,-24 Q-30,-52 0,-52 Q30,-52 30,-24 Z" fill="#22C55E"/>
+    <!-- antennae -->
+    <line x1="-14" y1="-48" x2="-22" y2="-66" stroke="#22C55E" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="14"  y1="-48" x2="22"  y2="-66" stroke="#22C55E" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- eyes -->
+    <circle cx="-10" cy="-36" r="4" fill="#1a1a2e"/>
+    <circle cx="10"  cy="-36" r="4" fill="#1a1a2e"/>
+    <!-- side buttons -->
+    <rect x="-38" y="-8" width="6" height="16" rx="3" fill="#22C55E"/>
+    <rect x="32"  y="-8" width="6" height="16" rx="3" fill="#22C55E"/>
+    <!-- bottom button -->
+    <circle cx="0" cy="38" r="6" fill="#1a1a2e" stroke="#22C55E" stroke-width="2"/>
+    <text y="60" text-anchor="middle" fill="white" font-family="monospace" font-size="12" letter-spacing="1">Android</text>
+  </g>
+
+  <!-- Apple - right half, centered at x=248 -->
+  <g transform="translate(248, 95)">
+    <path d="M0,-50 C-32,-50 -42,6 -42,26 C-42,56 -21,76 0,76 C21,76 42,56 42,26 C42,6 32,-50 0,-50 Z" fill="#22C55E"/>
+    <!-- bite -->
+    <circle cx="30" cy="-32" r="24" fill="#1a1a2e"/>
+    <!-- leaf -->
+    <path d="M2,-52 C12,-76 34,-68 26,-46" fill="#22C55E"/>
+    <path d="M3,-53 C14,-78 36,-66 24,-44" fill="none" stroke="#1a1a2e" stroke-width="3"/>
+    <text y="96" text-anchor="middle" fill="white" font-family="monospace" font-size="12" letter-spacing="1">iOS</text>
+  </g>
+</svg>

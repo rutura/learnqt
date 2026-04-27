@@ -279,8 +279,8 @@
                 {% if course_data.sections.preview.projects %}
                 <div class="projects-showcase">
                     <div class="projects-header text-center mb-5">
-                        <h3 class="projects-main-title">Real-World Projects You'll Build</h3>
-                        <p class="projects-subtitle">Learn by building practical Qt applications that you can showcase in your portfolio</p>
+                        <h3 class="projects-main-title">{% if course_data.sections.preview.projects_title %}{{ course_data.sections.preview.projects_title }}{% else %}Real-World Projects You'll Build{% endif %}</h3>
+                        <p class="projects-subtitle">{% if course_data.sections.preview.projects_subtitle %}{{ course_data.sections.preview.projects_subtitle }}{% else %}Learn by building practical Qt applications that you can showcase in your portfolio{% endif %}</p>
                     </div>
                     
                     <div class="projects-grid">
@@ -368,8 +368,8 @@
                 <!-- Fallback for when no projects are defined -->
                 <div class="projects-showcase">
                     <div class="projects-header text-center mb-5">
-                        <h3 class="projects-main-title">Real-World Projects You'll Build</h3>
-                        <p class="projects-subtitle">Learn by building practical Qt applications that you can showcase in your portfolio</p>
+                        <h3 class="projects-main-title">{% if course_data.sections.preview.projects_title %}{{ course_data.sections.preview.projects_title }}{% else %}Real-World Projects You'll Build{% endif %}</h3>
+                        <p class="projects-subtitle">{% if course_data.sections.preview.projects_subtitle %}{{ course_data.sections.preview.projects_subtitle }}{% else %}Learn by building practical Qt applications that you can showcase in your portfolio{% endif %}</p>
                     </div>
                     
                     <div class="projects-grid">
@@ -527,7 +527,14 @@
                                     {% endif %}
                                 </div>
                                 <div class="chapter-info">
-                                    <h3 class="chapter-title">{{ chapter.title }}</h3>
+                                    <h3 class="chapter-title">
+                                        {{ chapter.title }}
+                                        {% if chapter.status == 'coming_soon' %}
+                                        <span class="chapter-status-badge chapter-status-coming-soon"><i class="fas fa-clock"></i> Coming Soon</span>
+                                        {% elsif chapter.status == 'done' %}
+                                        <span class="chapter-status-badge chapter-status-done"><i class="fas fa-check-circle"></i> Available</span>
+                                        {% endif %}
+                                    </h3>
                                     <div class="chapter-meta-row">
                                         <span class="chapter-meta-item">
                                             <i class="fas fa-play-circle"></i>
@@ -5141,6 +5148,27 @@
 }
 
 /* Enhanced Chapter Card */
+.chapter-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    vertical-align: middle;
+    margin-left: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.chapter-status-done {
+    background: #d1fae5;
+    color: #065f46;
+}
+.chapter-status-coming-soon {
+    background: #fef3c7;
+    color: #92400e;
+}
 .curriculum-chapter {
     background: white;
     border: 2px solid #e2e8f0;

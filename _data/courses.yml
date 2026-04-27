@@ -871,6 +871,171 @@ courses:
       yearly:
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
 
+  - id: "qt-qml-deployment"
+    title: "Qt QML: Deploy to Desktop, Mobile and Embedded"
+    short_title: "Qt QML Deployment"
+    description: "Take one Qt QML application and ship it to every platform Qt supports: Windows, Linux, macOS, Android, iOS, and embedded ARM. Complete with installers, signed bundles, and a GitHub Actions pipeline that builds it all from a single git tag."
+    image: "/assets/courses/image/qt_qml_deployment.png"
+    category: "Deployment & DevOps"
+    technology: "Qt QML"
+    language: "C++/QML"
+    level: "Intermediate"
+    duration: "60+ hours"
+    projects: "7 Platform Targets"
+    tools: "CMake, CPack, GitHub Actions"
+    featured: true
+    completion_rate: "90%"
+    satisfaction_rating: "4.8/5"
+    ready_cta_text: "Ready to ship your Qt QML app to every platform?"
+    social_proof:
+      students: 500
+      rating: 4.8
+      completion: 90
+      countries: 40
+      label_students: "students worldwide"
+      label_rating: "average rating"
+      label_completion: "completion rate"
+      label_countries: "countries represented"
+
+    value_proposition:
+      title: "Why This Course Over Alternatives?"
+      subtitle: "Stop guessing which DLL is missing. Learn the full deployment layer Qt Creator hides from you."
+      sections:
+        learning_approach:
+          title: "One App, Every Platform"
+          icon: "fas fa-globe"
+          points:
+            - text: "Take the same Qt QML app and produce real installers for Windows, Linux, macOS, Android, iOS, and Raspberry Pi"
+              highlight: true
+            - text: "Every chapter ends with an artifact you can hand to a real user. Not a demo, a real package."
+              highlight: true
+            - text: "Branch-per-chapter source repo so you can follow along or jump straight to any platform"
+              highlight: false
+          vs_alternatives: "Most Qt tutorials stop the moment the app runs in Qt Creator. This course starts there and takes you all the way to a signed, notarized, user-installable package."
+
+        technology_tools:
+          title: "Production-Grade Tooling"
+          icon: "fas fa-tools"
+          points:
+            - text: "windeployqt, linuxdeploy, macdeployqt, androiddeployqt, CPack, codesign, notarytool, hdiutil"
+              highlight: true
+            - text: "Docker-first builds for Linux AppImage and embedded ARM, reproducible locally and in CI"
+              highlight: true
+            - text: "GitHub Actions workflow that produces seven release artifacts from a single tag push"
+              highlight: false
+          vs_alternatives: "These are the tools real shipping teams use. No shortcuts, no magic scripts. You will understand each one."
+
+        support_community:
+          title: "The Why, Not Just the How"
+          icon: "fas fa-users"
+          points:
+            - text: "Code signing is not just 'run this command'. Understand Apple's CA chain, Gatekeeper, and Android keystores."
+              highlight: true
+            - text: "Know what to check when an app won't launch: missing DLLs, broken RPATH, unsigned binaries"
+              highlight: true
+            - text: "Active Discord community of 4,000+ Qt developers for deployment questions"
+              highlight: false
+          vs_alternatives: "StackOverflow has scattered answers. This course teaches the mental model so you can debug failures you haven't seen before."
+
+        value_guarantees:
+          title: "Risk-Free Investment"
+          icon: "fas fa-shield-alt"
+          points:
+            - text: "30-day money-back guarantee. Try the complete course risk-free."
+              highlight: false
+            - text: "Lifetime access with free updates as Qt and platform tooling evolve"
+              highlight: false
+            - text: "Certificate of completion to showcase your deployment expertise"
+              highlight: true
+          vs_alternatives: "Deployment knowledge is evergreen. It transfers across Qt versions and project types."
+
+    sections:
+      hero:
+        subtitle: "Take one Qt QML application and ship it to every platform Qt supports: Windows, Linux, macOS, Android, iOS, and embedded ARM. Complete with installers, signed bundles, and a GitHub Actions pipeline that builds it all from a single git tag."
+        showcase_image: "/assets/courses/image/qt_qml_deployment.png"
+
+      preview:
+        title: "See What You'll Ship"
+        subtitle: "One Qt QML app. Seven production-ready targets. Every chapter ends with an artifact you can distribute."
+        demo_video: "https://youtu.be/PLACEHOLDER"
+        projects_title: "Package and Deploy on Desktop, Mobile and Embedded"
+        projects_subtitle: "One Qt QML application. Seven production-ready targets. Every platform your users are on."
+        context_cards:
+          - title: "Real Packages, Not Demos"
+            description: "Installers, signed DMGs, AppImages, signed APKs. Real artifacts that real users can install."
+            icon: "fas fa-box-open"
+          - title: "Every Tool Explained"
+            description: "windeployqt, linuxdeploy, macdeployqt, CPack, codesign, notarytool and more"
+            icon: "fas fa-tools"
+          - title: "One App, Seven Targets"
+            description: "Same CMakeLists.txt produces Windows, Linux, macOS, Android, iOS, ARM, and CI builds"
+            icon: "fas fa-globe"
+        projects:
+          - name: "Desktop"
+            description: "Ship Squared as polished native packages on Windows (NSIS installer + ZIP), Linux (AppImage + DEB + tar.gz), and macOS (signed & notarized DMG). Learn windeployqt, linuxdeploy, macdeployqt, CPack, codesign, and notarytool."
+            image: "/assets/projects/deployment_desktop.svg"
+          - name: "Mobile"
+            description: "Cross-compile Squared for Android (signed APK + AAB for the Play Store) and iOS (simulator build, device build, signed IPA). Covers keystores, provisioning profiles, and the full signing chain for both platforms."
+            image: "/assets/projects/deployment_mobile.svg"
+          - name: "Embedded"
+            description: "Cross-compile Qt and Squared for Raspberry Pi using Docker. Generate a sysroot, write a CMake toolchain file, build Qt from source in a container, deploy to the Pi, and run as a systemd service."
+            image: "/assets/projects/deployment_embedded.svg"
+
+      outcomes:
+        title: "After This Course, You'll Be Able To:"
+        items:
+          - "Understand exactly what libraries, plugins, and QML modules your app needs on every target"
+          - "Build distributable packages for every Qt platform: NSIS, AppImage, DMG, APK, IPA, and Raspberry Pi"
+          - "Sign and notarize for macOS, configure Android keystores, handle iOS provisioning profiles"
+          - "Cross-compile for embedded ARM using Docker, CMake toolchain files, and sysroots"
+          - "Automate everything with a GitHub Actions workflow that produces seven artifacts from one tag push"
+          - "Debug deployment failures confidently: missing DLLs, broken RPATH, unsigned binaries, wrong ABI"
+
+      why_this_course:
+        title: "Why This Course?"
+        content: |
+          Most Qt tutorials stop the moment the app runs in Qt Creator. This course starts there and takes you all the way to a signed, notarized, user-installable package on every platform Qt supports. You'll deploy the same Qt QML app (Squared) to six platforms plus a full CI/CD pipeline, using the exact tools and workflows professional Qt teams use daily.
+        bullets:
+          - "✅ One application, every target. No abstract exercises, just real artifacts for real users."
+          - "✅ Branch-per-chapter repo. Follow along or jump to any platform's finished configuration."
+          - "✅ Under-the-hood explanations. Understand why, not just which command to run."
+          - "✅ Docker-first for reproducibility. Linux and embedded builds that work locally and in CI."
+          - "✅ Complete CI/CD. GitHub Actions workflow producing 7 artifacts from one git tag."
+        showcase_image: "/assets/courses/image/qt_qml_deployment.png"
+
+      creator_story:
+        title: "Created by Someone Who Ships Qt Apps Daily"
+        content: |
+          "When I first tried to deploy a Qt app to macOS, I spent a week fighting Gatekeeper warnings, broken @rpath links, and notarization errors. The documentation was scattered and the forums assumed you already knew the answer. I wished someone had just explained the whole system."
+
+          After 10+ years of professional Qt development and teaching tens of thousands of students worldwide, Daniel Gakwaya has built the deployment course he wished existed:
+        bullets:
+          - "• Every platform covered end-to-end, not just the easy ones"
+          - "• The mental model, not just the commands, so you can debug what breaks"
+          - "• Real workflows from production Qt teams, not contrived examples"
+        content_2: |
+          This course is for Qt developers who can already build a Qt QML app and want to ship it. Whether you're a desktop developer who needs a macOS build, an embedded engineer targeting Raspberry Pi, or a team lead who wants a CI/CD pipeline that actually works, this course gives you the complete deployment layer Qt Creator doesn't teach.
+
+      what_you_get:
+        title: "What You'll Get"
+        bullets:
+          - "• 60+ Hours of Video Content: 67 lectures across 9 chapters"
+          - "• Full Source Code: SquaredApp repo with a branch at the end of every chapter"
+          - "• Lifetime Updates as Qt and platform tooling evolve"
+          - "• Deployment Cheat Sheets with every command for every platform in one place"
+          - "• CMake and GitHub Actions Templates reusable in your own projects"
+          - "• Certificate of Completion"
+        content: |
+          By the end of the course you'll have a single Qt QML application that ships as an NSIS installer, a portable Windows ZIP, a Linux AppImage, a Debian .deb, a tar.gz portable bundle for Linux and macOS, a signed and notarized macOS DMG, a signed Android APK, an Android App Bundle, an iOS IPA, and a cross-compiled Raspberry Pi build running as a systemd service. All produced by the same CMakeLists.txt and the same GitHub Actions workflow.
+
+    pricing_override:
+      lifetime:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=PLACEHOLDER"
+      monthly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
+      yearly:
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
+
 # UI Configuration
 ui:
   courses_button: "Explore All Courses"
@@ -918,6 +1083,11 @@ social_proof_by_course:
     avg_rating: "4.8"
     completion_rate: "88"
     countries: "20"
+  qt-qml-deployment:
+    student_count: "500"
+    avg_rating: "4.8"
+    completion_rate: "90"
+    countries: "40"
 
 
 
