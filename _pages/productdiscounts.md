@@ -21,20 +21,16 @@ permalink: "/discounts"
   <p class="dl-subheading">Hosted on Teachable · Lifetime access · 30-day money-back guarantee</p>
 
   <ul class="dl-list">
-    {% assign c_original = site.data.courses.pricing.lifetime.original_price %}
-    {% assign c_full = site.data.courses.pricing.lifetime.price %}
-    {% if site.coupon and site.coupon != '' and site.offby != '' %}
-      {% assign c_keep = 100 | minus: site.offby %}
-      {% assign c_price = c_full | times: c_keep | divided_by: 100 %}
-    {% else %}
-      {% assign c_price = c_full %}
-    {% endif %}
     {% for course in site.data.courses.courses %}
+    {% assign c_full = course.pricing_override.lifetime.price %}
     {% assign base_link = course.pricing_override.lifetime.teachable_link %}
     {% if site.coupon and site.coupon != '' %}
       {% assign buy_link = base_link | append: "&coupon_code=" | append: site.coupon %}
+      {% assign c_keep = 100 | minus: site.offby %}
+      {% assign c_price = c_full | times: c_keep | divided_by: 100 %}
     {% else %}
       {% assign buy_link = base_link %}
+      {% assign c_price = c_full %}
     {% endif %}
     <li class="dl-item">
       <div class="dl-item-main">
@@ -67,7 +63,7 @@ permalink: "/discounts"
     {% if book.status == 'available' %}
     {% assign base_book_link = book.gumroad_link %}
     {% if site.coupon and site.coupon != '' %}
-      {% assign book_link = base_book_link | append: "?wanted=true&coupon=" | append: site.coupon %}
+      {% assign book_link = base_book_link | append: "/" | append: site.coupon %}
     {% else %}
       {% assign book_link = base_book_link %}
     {% endif %}

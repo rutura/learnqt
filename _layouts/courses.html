@@ -169,11 +169,8 @@
                         <div class="card-header">
                             <h3 class="plan-title">{{ site.data.courses.pricing.lifetime.title }}</h3>
                             <div class="price-display">
-                                {% if site.data.courses.pricing.lifetime.original_price %}
-                                <span class="original-price">${{ site.data.courses.pricing.lifetime.original_price }}</span>
-                                {% endif %}
                                 <div class="current-price">
-                                    <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.lifetime.price }}</span>
+                                    <span class="currency">$</span><span class="price">from $100</span>
                                 </div>
                             </div>
                             <p class="plan-subtitle">{{ site.data.courses.pricing.lifetime.subtitle }}</p>
@@ -250,9 +247,6 @@
                         <div class="card-header">
                             <h3 class="plan-title">{{ site.data.courses.pricing.yearly.title }}</h3>
                             <div class="price-display">
-                                {% if site.data.courses.pricing.yearly.original_price %}
-                                <span class="original-price">${{ site.data.courses.pricing.yearly.original_price }}</span>
-                                {% endif %}
                                 <div class="current-price">
                                     <span class="currency">$</span><span class="price">{{ site.data.courses.pricing.yearly.price }}</span>
                                     <span class="period">{{ site.data.courses.pricing.yearly.subtitle }}</span>

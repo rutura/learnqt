@@ -62,11 +62,7 @@ hero:
 
 # Pricing structure for all courses
 pricing:
-  lifetime: 
-    price: 101
-    original_price: 149
-    savings_amount: 48
-    discount_percentage: 32
+  lifetime:
     title: "Single Course Lifetime"
     subtitle: "One-time purchase for this course only"
     popular: false
@@ -389,6 +385,7 @@ courses:
     # Pricing customization for this course
     pricing_override:
       lifetime:
+        price: 100
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6446364"
       monthly:
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
@@ -555,6 +552,7 @@ courses:
     
     pricing_override:
       lifetime:
+        price: 100
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6459203"
       monthly:
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
@@ -721,6 +719,7 @@ courses:
     
     pricing_override:
       lifetime:
+        price: 100
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461494"
       monthly:
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
@@ -865,6 +864,7 @@ courses:
 
     pricing_override:
       lifetime:
+        price: 100
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6446367"
       monthly:
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
@@ -1030,6 +1030,7 @@ courses:
 
     pricing_override:
       lifetime:
+        price: 100
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=PLACEHOLDER"
       monthly:
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
