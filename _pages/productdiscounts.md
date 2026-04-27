@@ -33,19 +33,27 @@ permalink: "/discounts"
       {% assign c_price = c_full %}
     {% endif %}
     <li class="dl-item">
-      <div class="dl-item-main">
-        <a class="dl-title" href="/courses/{{ course.id }}/">{{ course.title }}</a>
-        <span class="dl-meta">{{ course.level }} &middot; {{ course.duration }} &middot; <i class="fas fa-star dl-star"></i> {{ course.satisfaction_rating }}</span>
-      </div>
-      <div class="dl-item-price">
-        {% if site.coupon and site.coupon != '' %}
-          <span class="dl-price">${{ c_price }}</span>
-          <s class="dl-original">${{ c_full }}</s>
-        {% else %}
-          <span class="dl-price">${{ c_full }}</span>
-        {% endif %}
-        <a class="dl-btn dl-btn--course" href="{{ buy_link }}" target="_blank"><img src="/assets/blog/image/LearnQt.png" class="dl-btn-icon dl-btn-icon--outline"> Buy</a>
-      </div>
+      <details class="dl-details">
+        <summary class="dl-summary">
+          <div class="dl-item-main">
+            <span class="dl-title">{{ course.title }} <i class="fas fa-chevron-down dl-chevron"></i></span>
+            <span class="dl-meta">{{ course.level }} &middot; {{ course.duration }} &middot; <i class="fas fa-star dl-star"></i> {{ course.satisfaction_rating }}</span>
+          </div>
+          <div class="dl-item-price">
+            {% if site.coupon and site.coupon != '' %}
+              <span class="dl-price">${{ c_price }}</span>
+              <s class="dl-original">${{ c_full }}</s>
+            {% else %}
+              <span class="dl-price">${{ c_full }}</span>
+            {% endif %}
+            <a class="dl-btn dl-btn--course" href="{{ buy_link }}" target="_blank"><img src="/assets/blog/image/LearnQt.png" class="dl-btn-icon dl-btn-icon--outline"> Buy</a>
+          </div>
+        </summary>
+        <div class="dl-description">
+          <p>{{ course.description }}</p>
+          <a class="dl-desc-link" href="/courses/{{ course.id }}/">Full course details →</a>
+        </div>
+      </details>
     </li>
     {% endfor %}
   </ul>
@@ -75,25 +83,31 @@ permalink: "/discounts"
       {% assign b_price = b_full %}
     {% endif %}
     <li class="dl-item">
-      <div class="dl-item-main">
-        <span class="dl-title">{{ book.title }}</span>
-        <span class="dl-meta">{{ book.level }} &middot; {{ book.pages }} pages{% if book.rating and book.rating != '' %} &middot; <i class="fas fa-star dl-star"></i> {{ book.rating }}/5{% endif %} &middot; {{ book.formats | join: ", " }}</span>
-      </div>
-      <div class="dl-item-price">
-        {% if site.coupon and site.coupon != '' %}
-          <span class="dl-price">${{ b_price }}</span>
-          <s class="dl-original">${{ b_full }}</s>
-        {% else %}
-          <span class="dl-price">${{ b_full }}</span>
-        {% endif %}
-
-        <a class="dl-btn dl-btn--gumroad" href="{{ book_link }}" target="_blank"><img src="/assets/img/gumroad-icon.svg" class="dl-btn-icon"> PDF &amp; EPUB</a>
-        {% if book.amazon_link and book.amazon_link != '' %}
-          <a class="dl-btn dl-btn--amazon" href="{{ book.amazon_link }}" target="_blank"><i class="fab fa-amazon"></i> Paperback</a>
-        {% else %}
-          <span class="dl-btn dl-btn--disabled"><i class="fab fa-amazon"></i> Paperback</span>
-        {% endif %}
-      </div>
+      <details class="dl-details">
+        <summary class="dl-summary">
+          <div class="dl-item-main">
+            <span class="dl-title">{{ book.title }} <i class="fas fa-chevron-down dl-chevron"></i></span>
+            <span class="dl-meta">{{ book.level }} &middot; {{ book.pages }} pages{% if book.rating and book.rating != '' %} &middot; <i class="fas fa-star dl-star"></i> {{ book.rating }}/5{% endif %} &middot; {{ book.formats | join: ", " }}</span>
+          </div>
+          <div class="dl-item-price">
+            {% if site.coupon and site.coupon != '' %}
+              <span class="dl-price">${{ b_price }}</span>
+              <s class="dl-original">${{ b_full }}</s>
+            {% else %}
+              <span class="dl-price">${{ b_full }}</span>
+            {% endif %}
+            <a class="dl-btn dl-btn--gumroad" href="{{ book_link }}" target="_blank"><img src="/assets/img/gumroad-icon.svg" class="dl-btn-icon"> PDF &amp; EPUB</a>
+            {% if book.amazon_link and book.amazon_link != '' %}
+              <a class="dl-btn dl-btn--amazon" href="{{ book.amazon_link }}" target="_blank"><i class="fab fa-amazon"></i> Paperback</a>
+            {% else %}
+              <span class="dl-btn dl-btn--disabled"><i class="fab fa-amazon"></i> Paperback</span>
+            {% endif %}
+          </div>
+        </summary>
+        <div class="dl-description">
+          <p>{{ book.description }}</p>
+        </div>
+      </details>
     </li>
     {% endif %}
     {% endfor %}
@@ -189,6 +203,59 @@ permalink: "/discounts"
 .dl-newsletter-wave svg {
   display: block;
   width: 100%;
+}
+
+/* ── Collapsible cards ── */
+.dl-details {
+  width: 100%;
+}
+
+.dl-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  list-style: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dl-summary::-webkit-details-marker { display: none; }
+
+.dl-chevron {
+  font-size: 0.65rem;
+  color: #a0aec0;
+  margin-left: 0.3rem;
+  transition: transform 0.2s;
+}
+
+details[open] .dl-chevron {
+  transform: rotate(180deg);
+}
+
+.dl-description {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f4f0;
+  color: #4a5568;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.dl-description p {
+  margin: 0 0 0.5rem;
+}
+
+.dl-desc-link {
+  font-size: 0.85rem;
+  color: #15ba29;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dl-desc-link:hover {
+  text-decoration: underline;
 }
 
 /* ── Headings ── */
