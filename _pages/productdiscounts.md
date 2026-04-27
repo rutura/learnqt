@@ -100,7 +100,22 @@ permalink: "/discounts"
   </ul>
 </section>
 
+<div class="dl-newsletter-wave">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none" style="height:60px;">
+    <path fill="#1a202c" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"/>
+  </svg>
+</div>
+
+{% include newsletter.html %}
+
 <style>
+/* ── Page breathing room ── */
+.promo-header {
+  padding-top: 120px !important;
+  padding-bottom: 1rem !important;
+}
+
+/* ── Coupon bar ── */
 .coupon-bar {
   display: flex;
   align-items: center;
@@ -108,17 +123,18 @@ permalink: "/discounts"
   gap: 0.6rem;
   background: #f0fdf4;
   border: 1.5px solid #15ba29;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 0.75rem 1.25rem;
   margin: 1.5rem 0 2rem;
   font-size: 0.95rem;
+  box-shadow: 0 2px 12px rgba(21, 186, 41, 0.08);
 }
 
 .coupon-code {
   background: #15ba29;
   color: #fff;
   padding: 0.25rem 0.75rem;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -130,7 +146,7 @@ permalink: "/discounts"
   border: 1.5px solid #15ba29;
   color: #15ba29;
   padding: 0.2rem 0.65rem;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -147,19 +163,35 @@ permalink: "/discounts"
   font-size: 0.9rem;
 }
 
+/* ── Sections ── */
 .dl-section {
-  padding: 2rem 0;
-  border-top: 1px solid #e2e8f0;
+  padding: 2.5rem 0;
+}
+
+.dl-section:first-of-type {
+  padding-top: 0;
 }
 
 .dl-section--alt {
-  background: #f8f9fa;
-  margin-left: -15px;
-  margin-right: -15px;
-  padding-left: 15px;
-  padding-right: 15px;
+  background: linear-gradient(180deg, #f8faf8 0%, #ffffff 100%);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  margin: 1rem 0;
 }
 
+/* ── Wave transition before newsletter ── */
+.dl-newsletter-wave {
+  display: block;
+  line-height: 0;
+  margin-bottom: -2px;
+}
+
+.dl-newsletter-wave svg {
+  display: block;
+  width: 100%;
+}
+
+/* ── Headings ── */
 .dl-heading {
   font-size: 1.4rem;
   font-weight: 700;
@@ -178,13 +210,14 @@ permalink: "/discounts"
   margin-bottom: 1.25rem;
 }
 
+/* ── Cards ── */
 .dl-list {
   list-style: none;
   padding: 0;
   margin: 0 0 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.75rem;
 }
 
 .dl-item {
@@ -192,15 +225,17 @@ permalink: "/discounts"
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.75rem 1rem;
+  padding: 0.9rem 1.1rem;
   background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
   flex-wrap: wrap;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .dl-item:hover {
-  border-color: #15ba29;
+  box-shadow: 0 4px 16px rgba(21, 186, 41, 0.12), 0 1px 4px rgba(0,0,0,0.06);
+  transform: translateY(-1px);
 }
 
 .dl-item-main {
@@ -254,7 +289,7 @@ permalink: "/discounts"
   background: #15ba29;
   color: #fff;
   padding: 0.35rem 0.85rem;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
@@ -271,6 +306,7 @@ permalink: "/discounts"
   background: #fff;
   color: #1a202c;
   border: 1.5px solid #cbd5e0;
+  border-radius: 8px;
 }
 
 .dl-btn--secondary:hover {
@@ -282,7 +318,8 @@ permalink: "/discounts"
 .dl-btn--disabled {
   background: #f7fafc;
   color: #cbd5e0;
-  border: 1.5px solid #e2e8f0;
+  border: 1.5px solid #edf2f7;
+  border-radius: 8px;
   cursor: not-allowed;
 }
 
@@ -311,6 +348,11 @@ permalink: "/discounts"
   .coupon-bar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .dl-section--alt {
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
   }
 }
 </style>
