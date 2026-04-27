@@ -21,6 +21,14 @@ permalink: "/discounts"
   <p class="dl-subheading">Hosted on Teachable · Lifetime access · 30-day money-back guarantee</p>
 
   <ul class="dl-list">
+    {% assign c_original = site.data.courses.pricing.lifetime.original_price %}
+    {% assign c_full = site.data.courses.pricing.lifetime.price %}
+    {% if site.coupon and site.coupon != '' and site.offby != '' %}
+      {% assign c_keep = 100 | minus: site.offby %}
+      {% assign c_price = c_full | times: c_keep | divided_by: 100 %}
+    {% else %}
+      {% assign c_price = c_full %}
+    {% endif %}
     {% for course in site.data.courses.courses %}
     {% assign base_link = course.pricing_override.lifetime.teachable_link %}
     {% if site.coupon and site.coupon != '' %}
@@ -34,8 +42,12 @@ permalink: "/discounts"
         <span class="dl-meta">{{ course.level }} &middot; {{ course.duration }} &middot; <i class="fas fa-star dl-star"></i> {{ course.satisfaction_rating }}</span>
       </div>
       <div class="dl-item-price">
-        <span class="dl-price">${{ site.data.courses.pricing.lifetime.price }}</span>
-        <s class="dl-original">${{ site.data.courses.pricing.lifetime.original_price }}</s>
+        {% if site.coupon and site.coupon != '' %}
+          <span class="dl-price">${{ c_price }}</span>
+          <s class="dl-original">${{ c_full }}</s>
+        {% else %}
+          <span class="dl-price">${{ c_full }}</span>
+        {% endif %}
         <a class="dl-btn" href="{{ buy_link }}" target="_blank">Buy →</a>
       </div>
     </li>
@@ -59,16 +71,31 @@ permalink: "/discounts"
     {% else %}
       {% assign book_link = base_book_link %}
     {% endif %}
+    {% assign b_full = book.price | remove: "$" | times: 1 %}
+    {% if site.coupon and site.coupon != '' and site.offby != '' %}
+      {% assign b_keep = 100 | minus: site.offby %}
+      {% assign b_price = b_full | times: b_keep | divided_by: 100 %}
+    {% else %}
+      {% assign b_price = b_full %}
+    {% endif %}
     <li class="dl-item">
       <div class="dl-item-main">
         <span class="dl-title">{{ book.title }}</span>
         <span class="dl-meta">{{ book.level }} &middot; {{ book.pages }} pages{% if book.rating and book.rating != '' %} &middot; <i class="fas fa-star dl-star"></i> {{ book.rating }}/5{% endif %} &middot; {{ book.formats | join: ", " }}</span>
       </div>
       <div class="dl-item-price">
-        <span class="dl-price">{{ book.price }}</span>
+        {% if site.coupon and site.coupon != '' %}
+          <span class="dl-price">${{ b_price }}</span>
+          <s class="dl-original">${{ b_full }}</s>
+        {% else %}
+          <span class="dl-price">${{ b_full }}</span>
+        {% endif %}
+
         <a class="dl-btn" href="{{ book_link }}" target="_blank">Digital →</a>
         {% if book.amazon_link and book.amazon_link != '' %}
-        <a class="dl-btn dl-btn--secondary" href="{{ book.amazon_link }}" target="_blank">Paperback →</a>
+          <a class="dl-btn dl-btn--secondary" href="{{ book.amazon_link }}" target="_blank">Paperback →</a>
+        {% else %}
+          <span class="dl-btn dl-btn--disabled">Paperback</span>
         {% endif %}
       </div>
     </li>
@@ -254,6 +281,13 @@ permalink: "/discounts"
   background: #f7fafc;
   color: #1a202c;
   border-color: #a0aec0;
+}
+
+.dl-btn--disabled {
+  background: #f7fafc;
+  color: #cbd5e0;
+  border: 1.5px solid #e2e8f0;
+  cursor: not-allowed;
 }
 
 .dl-note {
