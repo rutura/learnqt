@@ -61,12 +61,15 @@ permalink: "/discounts"
     {% endif %}
     <li class="dl-item">
       <div class="dl-item-main">
-        <a class="dl-title" href="{{ book_link }}" target="_blank">{{ book.title }}</a>
-        <span class="dl-meta">{{ book.level }} &middot; {{ book.pages }} pages &middot; <i class="fas fa-star dl-star"></i> {{ book.rating }}/5 &middot; {{ book.formats | join: ", " }}</span>
+        <span class="dl-title">{{ book.title }}</span>
+        <span class="dl-meta">{{ book.level }} &middot; {{ book.pages }} pages{% if book.rating and book.rating != '' %} &middot; <i class="fas fa-star dl-star"></i> {{ book.rating }}/5{% endif %} &middot; {{ book.formats | join: ", " }}</span>
       </div>
       <div class="dl-item-price">
         <span class="dl-price">{{ book.price }}</span>
-        <a class="dl-btn" href="{{ book_link }}" target="_blank">Buy →</a>
+        <a class="dl-btn" href="{{ book_link }}" target="_blank">Digital →</a>
+        {% if book.amazon_link and book.amazon_link != '' %}
+        <a class="dl-btn dl-btn--secondary" href="{{ book.amazon_link }}" target="_blank">Paperback →</a>
+        {% endif %}
       </div>
     </li>
     {% endif %}
@@ -239,6 +242,18 @@ permalink: "/discounts"
 .dl-btn:hover {
   background: #0d8a1f;
   color: #fff;
+}
+
+.dl-btn--secondary {
+  background: #fff;
+  color: #1a202c;
+  border: 1.5px solid #cbd5e0;
+}
+
+.dl-btn--secondary:hover {
+  background: #f7fafc;
+  color: #1a202c;
+  border-color: #a0aec0;
 }
 
 .dl-note {
