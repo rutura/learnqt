@@ -50,7 +50,7 @@ permalink: "/discounts"
     {% endfor %}
   </ul>
 
-  <p class="dl-note">Need access to all courses? <a href="/courses">Library plans start at ${{ site.data.courses.pricing.monthly.price }}/mo</a> with a {{ site.data.courses.pricing.monthly.trial_days }}-day free trial.</p>
+  <p class="dl-note">Need access to all courses? <a href="/courses/#pricing">Library plans start at ${{ site.data.courses.pricing.monthly.price }}/mo</a> with a {{ site.data.courses.pricing.monthly.trial_days }}-day free trial.</p>
 </section>
 
 <!-- BOOKS -->
