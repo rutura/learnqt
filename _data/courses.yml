@@ -1031,7 +1031,7 @@ courses:
     pricing_override:
       lifetime:
         price: 100
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=PLACEHOLDER"
+        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6718228"
       monthly:
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
       yearly:
