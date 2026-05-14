@@ -44,10 +44,10 @@ navigation:
 
 
 # Course Links
-coupon: 'ENDAPRIL2026'
-couponvalidity: 'Apr 30, 2028'
-price: '$12.99'
-offby: '15'
+coupon: 'STARTMAY2026'
+couponvalidity: 'May 19, 2026'
+price: '00.99'
+offby: '10'
 qtwidgetsintermediatecpp: 'https://www.udemy.com/course/qt-cpp-widgets-intermediate-events-painting_custom_widgets_drag_drop/?couponCode='
 pyside6mvc: 'https://www.udemy.com/course/pyside6_model_view_architecture/?couponCode='
 cppqt6mvc: 'https://www.udemy.com/course/qt-6-model-view-architecture-in-cplusplus/?couponCode='
