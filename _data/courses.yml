@@ -957,7 +957,7 @@ courses:
       preview:
         title: "See What You'll Ship"
         subtitle: "One Qt QML app. Seven production-ready targets. Every chapter ends with an artifact you can distribute."
-        demo_video: "https://youtu.be/PLACEHOLDER"
+        demo_video: "https://youtu.be/Xzx6KlFmovE"
         projects_title: "Package and Deploy on Desktop, Mobile and Embedded"
         projects_subtitle: "One Qt QML application. Seven production-ready targets. Every platform your users are on."
         context_cards:
