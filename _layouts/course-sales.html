@@ -207,23 +207,6 @@
                                 </video>
                             {% endif %}
                         </div>
-                        
-                        <div class="video-info-overlay">
-                            <div class="video-stats">
-                                <div class="stat-item">
-                                    <i class="fas fa-clock"></i>
-                                    <span>{{ course_data.duration }}</span>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fas fa-users"></i>
-                                    <span>{{ sp.student_count }} students</span>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fas fa-star"></i>
-                                    <span>{{ sp.avg_rating }} rating</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     
                     <!-- Video Context Information -->
@@ -3944,7 +3927,7 @@
     z-index: 3;
 }
 
-.stat-item {
+.floating-stats .stat-item {
     position: absolute;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -3959,19 +3942,19 @@
     animation: float 3s ease-in-out infinite;
 }
 
-.stat-1 {
+.floating-stats .stat-1 {
     top: -120px;
     left: -80px;
     animation-delay: 0s;
 }
 
-.stat-2 {
+.floating-stats .stat-2 {
     top: -60px;
     right: -100px;
     animation-delay: 1s;
 }
 
-.stat-3 {
+.floating-stats .stat-3 {
     bottom: -80px;
     left: -60px;
     animation-delay: 2s;
