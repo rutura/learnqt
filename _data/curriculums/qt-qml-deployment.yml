@@ -101,7 +101,7 @@ chapters:
         duration: ""
 
   - title: "Chapter 6: Android Deployment"
-    status: coming_soon
+    status: done
     icon: "fab fa-android"
     description: "Cross-compile Squared for Android, configure the manifest and launcher icons, build with qt-cmake, understand the android-build directory and APK internals, sign with a keystore, and produce both an APK and an AAB ready for Play Store upload."
     outcome: "A signed APK and an Android App Bundle (AAB) ready for Play Store upload"
@@ -126,7 +126,7 @@ chapters:
         duration: ""
 
   - title: "Chapter 7: iOS Deployment"
-    status: coming_soon
+    status: done
     icon: "fas fa-mobile-alt"
     description: "Build Squared for iOS with static Qt linking, produce a simulator build and a device build, handle asset catalogs and export options, sign with a provisioning profile, and create a distributable IPA."
     outcome: "A simulator build, a device build, and a signed IPA"
@@ -151,7 +151,7 @@ chapters:
         duration: ""
 
   - title: "Chapter 8: Embedded Linux ARM (Raspberry Pi)"
-    status: coming_soon
+    status: done
     icon: "fas fa-microchip"
     description: "Cross-compile Qt and Squared for Raspberry Pi using Docker. Generate a sysroot, write a CMake toolchain file, build Qt from source inside a container, deploy to the Pi, and configure Squared to run as a systemd service on boot."
     outcome: "A cross-compiled Qt + Squared build running on a Raspberry Pi as a systemd service"
