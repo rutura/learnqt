@@ -44,8 +44,8 @@ navigation:
 
 
 # Course Links
-coupon: 'ENDJUNE2026'
-couponvalidity: 'June 28, 2026'
+coupon: 'STARTJULY2026'
+couponvalidity: 'July 19, 2026'
 price: '00.99'
 offby: '10'
 qtwidgetsintermediatecpp: 'https://www.udemy.com/course/qt-cpp-widgets-intermediate-events-painting_custom_widgets_drag_drop/?couponCode='
