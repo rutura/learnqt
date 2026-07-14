@@ -90,6 +90,7 @@ books:
     rating: "4.9"
     rating_count: "89"
     gumroad_link: "https://dgakwaya.gumroad.com/l/qt6_qml_advanced"
+    amazon_link: "https://www.amazon.com/dp/B0H767D1X2"
 
     highlights:
       - "QML-C++ integration"
