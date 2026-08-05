@@ -880,7 +880,7 @@ courses:
     technology: "Qt QML"
     language: "C++/QML"
     level: "Intermediate"
-    duration: "60+ hours"
+    duration: "15+ hours"
     projects: "7 Platform Targets"
     tools: "CMake, CPack, GitHub Actions"
     featured: true
@@ -1019,7 +1019,7 @@ courses:
       what_you_get:
         title: "What You'll Get"
         bullets:
-          - "• 60+ Hours of Video Content: 67 lectures across 9 chapters"
+          - "• 15+ Hours of Video Content: 68 lectures across 9 chapters"
           - "• Full Source Code: SquaredApp repo with a branch at the end of every chapter"
           - "• Lifetime Updates as Qt and platform tooling evolve"
           - "• Deployment Cheat Sheets with every command for every platform in one place"
