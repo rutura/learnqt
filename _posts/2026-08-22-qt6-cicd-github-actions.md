@@ -20,7 +20,11 @@ If you've been following along with the deployment side of Qt development, you k
 
 It works. It also means every release depends on you remembering the right sequence of commands, having access to a Linux box, a Mac, and a Windows machine, and doing the whole thing again for the next version.
 
-This post walks through replacing that with a GitHub Actions pipeline that does it for you. The promise is simple, you push a tag like `host-v1.2.0`, and a few minutes later there's a GitHub Release with a **Linux AppImage**, a **DEB package**, a **tar.gz**, a **macOS tar.gz** for both Apple Silicon and Intel, a **Windows ZIP**, and a **Windows installer**. Here's how it looks in practice:
+This post walks through replacing that with a GitHub Actions pipeline that does it for you. The promise is simple, you push a tag like `host-v1.2.0`, and a few minutes later there's a GitHub Release with a **Linux AppImage**, a **DEB package**, a **tar.gz**, a **macOS tar.gz** for both Apple Silicon and Intel, a **Windows ZIP**, and a **Windows installer**. 
+
+<img src="/assets/img/blog/qt6-cicd-github-actions/release-list.png" alt="GitHub Release page with the seven downloadable build artifacts" style="max-width: 100%; height: auto; width: 900px;">
+
+Here's how it looks in practice:
 
 ```
                         git tag host-v1.2.0
@@ -50,6 +54,8 @@ This is the pipeline built for **Squared**, a real cross-platform Qt 6 QML app, 
 ## What CI/CD Actually Is
 
 "CI/CD" gets thrown around a lot, so let's strip the acronym down. It stands for **Continuous Integration / Continuous Delivery**. Instead of a person manually building and packaging software, a server does it automatically, the same way, every time, triggered by something you did anyway, like pushing code. "Continuous Integration" is the automatic building-and-testing half. "Continuous Delivery" is the automatic packaging-for-release half. This post is really about the CD side. We already know the app builds; we want it **packaged and published** without touching a keyboard on three (ore more) different computers.
+
+<img src="/assets/img/blog/qt6-cicd-github-actions/ci-cd.png" alt="GitHub Action Machines Building the Project" style="max-width: 100%; height: auto; width: 900px;">
 
 We're using **GitHub Actions**, GitHub's own built-in automation system, because Squared's code already lives on GitHub. Other CI providers exist (Jenkins, CircleCI, GitLab CI), but GitHub Actions is already sitting there, reading the same repository, free for public repos and available for a fee for private ones.
 
