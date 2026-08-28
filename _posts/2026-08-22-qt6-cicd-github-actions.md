@@ -2,7 +2,7 @@
 layout: post
 title: "Stop Building Qt Releases by Hand: Automate Releases for Windows, macOS, and Linux with GitHub Actions"
 description: A practical walkthrough of building a real GitHub Actions CI/CD pipeline that packages a Qt 6 QML app for Linux, macOS, and Windows from a single tag push.
-cover: /assets/img/blog/qt6-cicd-github-actions/ci-cd.png
+cover: /assets/img/blog/qt6-cicd-github-actions/cover.png
 date: '2026-08-22'
 categories:
     - Qt 6
