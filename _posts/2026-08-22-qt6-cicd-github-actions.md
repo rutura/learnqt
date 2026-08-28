@@ -295,6 +295,7 @@ macOS introduces a problem the Linux job didn't have. We need *two* different Ma
 
 You can think of a matrix as a blueprint for a job that will be replicated once for each combination of values you give it in the `include` list. 
 
+{% raw %}
 ```yaml
 build-desktop:
   strategy:
@@ -312,8 +313,9 @@ build-desktop:
           arch: amd64
   runs-on: ${{ matrix.os }}
 ```
+{% endraw %}
 
-In our case, the blueprint has three combinations of `os`, `platform`, and `arch` that we want to build for. `runs-on: ${{ matrix.os }}` means each combination runs as its own independent instance of this same job. You could have manually defined three separate jobs, but this is cleaner and easier to maintain. The result looks like this:
+In our case, the blueprint has three combinations of `os`, `platform`, and `arch` that we want to build for. `runs-on: {% raw %}${{ matrix.os }}{% endraw %}` means each combination runs as its own independent instance of this same job. You could have manually defined three separate jobs, but this is cleaner and easier to maintain. The result looks like this:
 
 ```
                        build-desktop (one job definition)
@@ -328,7 +330,7 @@ In our case, the blueprint has three combinations of `os`, `platform`, and `arch
                                                     + NSIS installer
 ```
 
-`strategy.matrix.include` lists three combinations, and `runs-on: ${{ matrix.os }}` means each combination runs as its own independent instance of this same job. Three runners, three parallel executions of the same steps, each with different values for `os`, `platform`, and `arch`. This is why Windows lives in the same job as macOS even though its steps look nothing alike. It's a third row in the matrix, not a separate job.
+`strategy.matrix.include` lists three combinations, and `runs-on: {% raw %}${{ matrix.os }}{% endraw %}` means each combination runs as its own independent instance of this same job. Three runners, three parallel executions of the same steps, each with different values for `os`, `platform`, and `arch`. This is why Windows lives in the same job as macOS even though its steps look nothing alike. It's a third row in the matrix, not a separate job.
 
 `fail-fast: false` matters specifically because these are release builds. Without it, GitHub cancels every other matrix instance the moment any one fails, and a Windows-only installer problem would take down both macOS builds you actually needed. With it, all three run to completion independently, and you get whichever artifacts succeeded.
 
@@ -374,11 +376,13 @@ This is also the first `uses:` step worth pausing on properly, since we've used 
 
 Build and Install are the same two lines used everywhere in this pipeline. On macOS, `cmake --install` produces a `.app` bundle (macOS's standard self-contained application package format) rather than a flat tree, because the project sets `MACOSX_BUNDLE TRUE`. No **macdeployqt** step anywhere (Qt's own macOS bundling tool) because `qt_generate_deploy_qml_app_script` already does everything macdeployqt would: copying frameworks, rewriting install names, generating `qt.conf`.
 
+{% raw %}
 ```yaml
 - name: Package (macOS tar.gz)
   if: runner.os == 'macOS'
   run: tar czf squared-host_${{ matrix.platform }}_${{ matrix.arch }}.tar.gz -C install .
 ```
+{% endraw %}
 
 Same one-liner as the Linux tar.gz, except the filename is built from matrix variables: `squared-host_darwin_arm64.tar.gz` on the `macos-14` row, `squared-host_darwin_amd64.tar.gz` on `macos-15`. One step definition, running twice, with different values each time.
 
@@ -412,6 +416,7 @@ Unlike GCC or Clang, MSVC's compiler executable (`cl.exe`) isn't reachable from 
 
 **Chocolatey** (`choco`) is Windows's most common command-line package manager, pre-installed on GitHub's Windows runners the same way Homebrew is on macOS. One line installs both Ninja and **NSIS** (Nullsoft Scriptable Install System, a tool for building Windows `.exe` installers). Notice there's no `shell:` override here. GitHub's default shell on a Windows runner is PowerShell, and this step just uses it as-is. That's why the syntax differs from every other cmake call in this pipeline: a backtick for line continuation instead of a backslash, and `$env:Qt6_DIR` instead of bash's `$Qt6_DIR`.
 
+{% raw %}
 ```yaml
 - name: Package (Windows portable ZIP)
   if: runner.os == 'Windows'
@@ -422,6 +427,7 @@ Unlike GCC or Clang, MSVC's compiler executable (`cl.exe`) isn't reachable from 
   if: runner.os == 'Windows'
   run: cd build && cpack -G NSIS
 ```
+{% endraw %}
 
 Two artifacts from one runner: a portable ZIP for users who just want to unzip and run, and an NSIS installer (reading the same `CPACK_NSIS_*` variables set in `CMakeLists.txt`) for users who want Start Menu shortcuts and an uninstaller.
 
@@ -429,6 +435,7 @@ Two artifacts from one runner: a portable ZIP for users who just want to unzip a
 
 The trim step runs here too, once per matrix row, right after Build and Install. Windows shares Linux's flat `install/` layout, so its half is identical to what you already saw. macOS doesn't, and the difference is worth understanding, because it's the kind of thing that's easy to get wrong:
 
+{% raw %}
 ```yaml
 - name: Trim install
   shell: bash
@@ -450,6 +457,7 @@ The trim step runs here too, once per matrix row, right after Build and Install.
       rm -rf plugins/qmltooling plugins/egldeviceintegrations
     fi
 ```
+{% endraw %}
 
 ```
   Linux / Windows layout              macOS bundle layout
@@ -516,6 +524,7 @@ The result: one GitHub Release page, seven downloadable files. A Linux user pick
 
 Put together, this is the entire `.github/workflows/release-host.yml`, nothing simplified, nothing omitted:
 
+{% raw %}
 ```yaml
 name: Release Host Binary
 
@@ -706,6 +715,7 @@ jobs:
             squared-host_*.zip
             build/Squared-*-win64.exe
 ```
+{% endraw %}
 
 Notice something about this whole file: there's no packaging logic actually *in* the workflow. The DEB reads `CPACK_DEBIAN_*` from `CMakeLists.txt`. The NSIS installer reads `CPACK_NSIS_*` from the same place. The AppImage step is the same linuxdeploy invocation you'd run locally, with one flag added for the Docker/FUSE conflict. The trim loop is identical to what you'd run by hand after any local install. **The pipeline doesn't invent new deployment logic. It automates the exact solutions already worked out by hand, running them on a schedule instead of at a keyboard.**
 
