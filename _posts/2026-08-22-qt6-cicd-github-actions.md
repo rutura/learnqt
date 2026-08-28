@@ -520,15 +520,15 @@ Glob patterns (wildcard filename matches, like `*` standing in for "anything") a
 
 ```
                      GitHub Release: host-v1.2.0
-  ┌──────────────────────────────────────────────────────────────┐
-  │  squared-host_linux_amd64.tar.gz     ◀── build-linux           │
-  │  squared_0.1.0_amd64.deb             ◀── build-linux           │
-  │  Squared-x86_64.AppImage             ◀── build-linux           │
+  ┌────────────────────────────────────────────────────────────────────┐
+  │  squared-host_linux_amd64.tar.gz     ◀── build-linux              │
+  │  squared_0.1.0_amd64.deb             ◀── build-linux              │
+  │  Squared-x86_64.AppImage             ◀── build-linux              │
   │  squared-host_darwin_arm64.tar.gz    ◀── build-desktop (macos-14) │
   │  squared-host_darwin_amd64.tar.gz    ◀── build-desktop (macos-15) │
   │  squared-host_windows_amd64.zip      ◀── build-desktop (windows)  │
   │  Squared-0.1.0-win64.exe             ◀── build-desktop (windows)  │
-  └──────────────────────────────────────────────────────────────┘
+  └────────────────────────────────────────────────────────────────────┘
 ```
 
 The result is a single GitHub Release page with seven downloadable files. A Linux user can choose the AppImage, the DEB, or the tar.gz. A macOS user can choose the tar.gz that matches their architecture. A Windows user can choose either the ZIP or the installer.
@@ -565,15 +565,15 @@ It is important to highlight the difference between **doing the job directly on 
 ```
    plain runner                       runner + container
    ─────────────                      ────────────────────
-   ┌───────────────────┐              ┌───────────────────┐
-   │  ubuntu-24.04 VM   │              │  ubuntu-24.04 VM   │
+   ┌────────────────────┐              ┌───────────────────┐
+   │  ubuntu-24.04 VM   │              │  ubuntu-24.04 VM  │
    │                    │              │  ┌───────────────┐│
-   │  your steps run    │              │  │ Docker image   ││
-   │  directly here     │              │  │ (Qt included)  ││
-   │  (no Qt)           │              │  │                ││
-   │                    │              │  │ your steps run ││
-   │                    │              │  │ here instead   ││
-   └───────────────────┘              │  └───────────────┘│
+   │  your steps run    │              │  │ Docker image  ││
+   │  directly here     │              │  │ (Qt included) ││
+   │  (no Qt)           │              │  │               ││
+   │                    │              │  │ your steps run││
+   │                    │              │  │ here instead  ││
+   └────────────────────┘              │  └───────────────┘│
                                        └───────────────────┘
 ```
 
