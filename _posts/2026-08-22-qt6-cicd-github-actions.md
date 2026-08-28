@@ -330,7 +330,7 @@ In our case, the blueprint has three combinations of `os`, `platform`, and `arch
                                                     + NSIS installer
 ```
 
-`strategy.matrix.include` lists three combinations, and `runs-on: {% raw %}${{ matrix.os }}{% endraw %}` means each combination runs as its own independent instance of this same job. Three runners, three parallel executions of the same steps, each with different values for `os`, `platform`, and `arch`. This is why Windows lives in the same job as macOS even though its steps look nothing alike. It's a third row in the matrix, not a separate job.
+Let me rephrase this for those of you new to this concept: `strategy.matrix.include` lists three combinations, and `runs-on: {% raw %}${{ matrix.os }}{% endraw %}` means each combination runs as its own independent instance of this same job. We get three runners and three parallel executions of the same steps, each with different values for `os`, `platform`, and `arch`. This is why Windows lives in the same job as macOS even though its steps look nothing alike.
 
 `fail-fast: false` matters specifically because these are release builds. Without it, GitHub cancels every other matrix instance the moment any one fails, and a Windows-only installer problem would take down both macOS builds you actually needed. With it, all three run to completion independently, and you get whichever artifacts succeeded.
 
@@ -352,7 +352,9 @@ Unlike the Linux job's container, none of these three runners come with Qt pre-i
 
 Notice what's missing: no `if: runner.os == '...'` guard. This one step runs identically on all three matrix rows, because `jurplel/install-qt-action` detects the runner's operating system itself and fetches the right Qt build for it.
 
-This is also the first `uses:` step worth pausing on properly, since we've used `run:` almost everywhere else. An **action** is a public GitHub repository containing a file called `action.yml` at its root, declaring its inputs, its outputs, and how it runs under the hood: a JavaScript program, a Docker container, or a bundle of ordinary steps given a name. The `uses:` string, `jurplel/install-qt-action@v4`, is literally an address: `{owner}/{repo}@{ref}`. There's no separate vetted registry behind the scenes. GitHub fetches that exact repository at that exact tag and runs whatever `action.yml` says. The GitHub Marketplace is just a searchable storefront for discovering actions published this way, not a more-vetted category of them, which is exactly why pinning to a specific tag like `@v4`, rather than something that can silently move like `@main`, matters more for a third-party action than an official one.
+This is also the first `uses:` step worth pausing on properly, since we've used `run:` almost everywhere else. An **action** is a public GitHub repository containing a file called `action.yml` at its root, declaring its inputs, its outputs, and how it runs under the hood: a JavaScript program, a Docker container, or a bundle of ordinary steps given a name. The `uses:` string, `jurplel/install-qt-action@v4`, is literally an address: `{owner}/{repo}@{ref}`. You can confirm this yourself by visiting [the action's repository](https://github.com/jurplel/install-qt-action).
+
+ There's no separate vetted registry behind the scenes. GitHub fetches that exact repository at that exact tag and runs whatever `action.yml` says. The GitHub Marketplace is just a searchable storefront for discovering actions published this way, not a more-vetted category of them, which is exactly why pinning to a specific tag like `@v4`, rather than something that can silently move like `@main`, matters more for a third-party action than an official one.
 
 `jurplel/install-qt-action` wraps **aqtinstall**, an unofficial but widely used command-line tool for downloading Qt SDKs, and downloads the actual SDK from Qt's servers at whatever version you specify. `modules: qtshadertools` adds Qt Quick's shader-compilation module, not in the default install set but required here. `cache: true` stores the downloaded SDK in GitHub's Actions cache, so a second run with the same version and modules skips the download entirely, saving three to four minutes per run.
 
@@ -372,9 +374,9 @@ This is also the first `uses:` step worth pausing on properly, since we've used 
       -DCMAKE_INSTALL_PREFIX=install
 ```
 
-**Homebrew** (`brew`) is macOS's most widely used command-line package manager, and GitHub's macOS runners ship with it pre-installed. The configure command is the familiar Ninja/Release/install-prefix trio, except `CMAKE_PREFIX_PATH=$Qt6_DIR` reads the environment variable the Install Qt step already set, rather than a hardcoded local path.
+**Homebrew** (`brew`) is macOS's most widely used command-line package manager, and GitHub's macOS runners ship with it pre-installed. We use it to install Ninja, that the next commands are about to use. The configure command is the familiar Ninja/Release/install-prefix trio, except `CMAKE_PREFIX_PATH=$Qt6_DIR` reads the environment variable the Install Qt step already set, rather than a hardcoded local path.
 
-Build and Install are the same two lines used everywhere in this pipeline. On macOS, `cmake --install` produces a `.app` bundle (macOS's standard self-contained application package format) rather than a flat tree, because the project sets `MACOSX_BUNDLE TRUE`. No **macdeployqt** step anywhere (Qt's own macOS bundling tool) because `qt_generate_deploy_qml_app_script` already does everything macdeployqt would: copying frameworks, rewriting install names, generating `qt.conf`.
+Build and Install are the same two lines used everywhere in this pipeline. On macOS, `cmake --install` produces a `.app` bundle (macOS's standard self-contained application package format) rather than a flat tree, because the project sets `MACOSX_BUNDLE TRUE`. Let's now look at packaging:
 
 {% raw %}
 ```yaml
@@ -384,13 +386,13 @@ Build and Install are the same two lines used everywhere in this pipeline. On ma
 ```
 {% endraw %}
 
-Same one-liner as the Linux tar.gz, except the filename is built from matrix variables: `squared-host_darwin_arm64.tar.gz` on the `macos-14` row, `squared-host_darwin_amd64.tar.gz` on `macos-15`. One step definition, running twice, with different values each time.
+Same one-liner as the Linux tar.gz, except the filename is built from matrix variables. This will produce the `squared-host_darwin_arm64.tar.gz` file on the `macos-14`, and the `squared-host_darwin_amd64.tar.gz`  file on `macos-15`.
 
 ### Windows: MSVC in CI, MinGW Locally
 
 Windows is the third row in the same matrix (same checkout, same shared Install Qt step) but its own steps diverge because of one rule resurfacing from local development: your compiler must match your Qt build.
 
-Locally, **MinGW** (a GCC-based compiler toolchain for Windows) ships bundled with the Qt installer, so there's nothing extra to install. In CI, we use **MSVC**, Microsoft's own C++ compiler that ships with Visual Studio, instead, for an entirely practical reason: the shared Install Qt step downloads the MSVC variant of Qt by default on Windows. We could fight that and separately install a MinGW toolchain, but MSVC is already pre-installed on GitHub's Windows runners. The path of least resistance.
+Locally, **MinGW** (a GCC-based compiler toolchain for Windows) ships bundled with the Qt installer, so there's nothing extra to install. In CI, we use **MSVC**, Microsoft's own C++ compiler that ships with Visual Studio, instead, for an entirely practical reason: the shared Install Qt step downloads the MSVC variant of Qt by default on Windows. We could fight that and separately install a MinGW toolchain, but MSVC is already pre-installed on GitHub's Windows runners. 
 
 ```yaml
 - name: Setup MSVC
@@ -398,7 +400,7 @@ Locally, **MinGW** (a GCC-based compiler toolchain for Windows) ships bundled wi
   uses: ilammy/msvc-dev-cmd@v1
 ```
 
-Unlike GCC or Clang, MSVC's compiler executable (`cl.exe`) isn't reachable from an arbitrary terminal just because Visual Studio is installed. It only becomes usable after `vcvarsall.bat`, a setup script that ships with Visual Studio, runs in that session and populates `PATH`, `INCLUDE`, and `LIB`. A developer normally launches a "Developer Command Prompt" shortcut that runs this automatically. A CI step has no such shortcut. `ilammy/msvc-dev-cmd` runs `vcvarsall.bat` on your behalf and exports its environment variables into every step that follows. Skip it, and `cmake -G Ninja` fails to find a working C++ compiler at all.
+Unlike GCC or Clang, MSVC's compiler executable (`cl.exe`) isn't reachable from an arbitrary terminal just because Visual Studio is installed. It only becomes usable after `vcvarsall.bat`, a setup script that ships with Visual Studio, runs in that session and populates `PATH`, `INCLUDE`, and `LIB`. A developer normally launches a "Developer Command Prompt" shortcut that runs this automatically. A CI step has no such shortcut. `ilammy/msvc-dev-cmd` runs `vcvarsall.bat` on your behalf and exports its environment variables into every step that follows. If we skip this,`cmake -G Ninja` will fail to find a working C++ compiler at all.
 
 ```yaml
 - name: Install Windows dependencies
@@ -416,6 +418,8 @@ Unlike GCC or Clang, MSVC's compiler executable (`cl.exe`) isn't reachable from 
 
 **Chocolatey** (`choco`) is Windows's most common command-line package manager, pre-installed on GitHub's Windows runners the same way Homebrew is on macOS. One line installs both Ninja and **NSIS** (Nullsoft Scriptable Install System, a tool for building Windows `.exe` installers). Notice there's no `shell:` override here. GitHub's default shell on a Windows runner is PowerShell, and this step just uses it as-is. That's why the syntax differs from every other cmake call in this pipeline: a backtick for line continuation instead of a backslash, and `$env:Qt6_DIR` instead of bash's `$Qt6_DIR`.
 
+Now we can shift our focus to packaging. Windows has two different formats, and both are built from the same `install/` directory:
+
 {% raw %}
 ```yaml
 - name: Package (Windows portable ZIP)
@@ -429,11 +433,13 @@ Unlike GCC or Clang, MSVC's compiler executable (`cl.exe`) isn't reachable from 
 ```
 {% endraw %}
 
-Two artifacts from one runner: a portable ZIP for users who just want to unzip and run, and an NSIS installer (reading the same `CPACK_NSIS_*` variables set in `CMakeLists.txt`) for users who want Start Menu shortcuts and an uninstaller.
+We produce a Windows portable ZIP, which is just a compressed archive of the `install/` directory, and an NSIS installer, which is a self-extracting `.exe` that can create Start Menu shortcuts and an uninstaller. The ZIP is built with PowerShell's `Compress-Archive`, while the NSIS installer is built with CPack, just like the Linux DEB package. 
 
-### Trimming on macOS: Same Goal, Different Shape
+### Trimming on macOS 
 
-The trim step runs here too, once per matrix row, right after Build and Install. Windows shares Linux's flat `install/` layout, so its half is identical to what you already saw. macOS doesn't, and the difference is worth understanding, because it's the kind of thing that's easy to get wrong:
+Just as we as we saw on Linux, the install directory on macOS contains all the Quick Controls styles, but our app only uses Basic. The trim step removes the unused styles and their compiled libraries, as well as two plugin directories that are not needed in a release build. The result is a smaller, cleaner release package.
+
+Windows shares Linux's flat `install/` layout, so its half is identical to what you already saw. macOS doesn't, and this difference is why the trim step is more complicated than the Linux one. 
 
 {% raw %}
 ```yaml
@@ -501,7 +507,7 @@ Each job uploads its own artifacts directly to the GitHub Release:
       build/Squared-*-win64.exe
 ```
 
-`softprops/action-gh-release` is a community action that creates a GitHub Release for the triggering tag and attaches the listed files. If the release already exists because another job created it first, it adds files to the existing one. That's how both jobs upload independently without any coordination. First job to finish creates the release, the rest attach to it. No race condition, no locking.
+`softprops/action-gh-release` is a community action that creates a GitHub Release for the triggering tag and attaches the listed files. If the release already exists because another job created it first, it adds files to the existing one. That's how both jobs upload independently without any coordination. First job to finish creates the release, the rest attach to it. So we don't have issues like race conditions or locking.
 
 Glob patterns (wildcard filename matches, like `*` standing in for "anything") absorb the filenames that include matrix variables. `squared-host_*.tar.gz` matches both macOS archives. `squared-host_*.zip` matches only the Windows portable ZIP. The macOS runners don't produce a `.zip` at all, so that glob simply matches nothing on those runners and the step silently skips it. Same story in reverse for the tar.gz pattern on Windows.
 
@@ -518,257 +524,36 @@ Glob patterns (wildcard filename matches, like `*` standing in for "anything") a
   └──────────────────────────────────────────────────────────────┘
 ```
 
-The result: one GitHub Release page, seven downloadable files. A Linux user picks the AppImage, the DEB, or the tar.gz. A macOS user picks the tar.gz matching their architecture. A Windows user picks the ZIP or the installer.
+The result is a single GitHub Release page with seven downloadable files. A Linux user can choose the AppImage, the DEB, or the tar.gz. A macOS user can choose the tar.gz that matches their architecture. A Windows user can choose either the ZIP or the installer.
 
 ## The Complete Workflow
 
-Put together, this is the entire `.github/workflows/release-host.yml`, nothing simplified, nothing omitted:
+Putting everything together, you can a full workflow file like the one [shown here](https://github.com/learnqtkenya/SquaredApp/blob/course/ci/.github/workflows/release-host.yml)
 
-{% raw %}
-```yaml
-name: Release Host Binary
-
-on:
-  push:
-    tags:
-      - "host-v*"
-
-permissions:
-  contents: write
-
-jobs:
-  # --- Linux: Docker container with full Qt ---
-  build-linux:
-    runs-on: ubuntu-24.04
-    container:
-      image: carlonluca/qt-dev:6.8.3
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-
-      - name: Install system dependencies
-        run: apt-get update && apt-get install -y libsecret-1-dev curl file
-
-      - name: Configure
-        run: |
-          QT_PREFIX=$(find /opt -type f -path "*/gcc_64/lib/cmake/Qt6/Qt6Config.cmake" -exec dirname {} \; | sed 's#/lib/cmake/Qt6$##' | head -1)
-          test -n "$QT_PREFIX" || { echo "No desktop Qt kit found"; exit 1; }
-          test -f "$QT_PREFIX/lib/cmake/Qt6DBus/Qt6DBusConfig.cmake" || { echo "Qt6DBus missing in $QT_PREFIX"; exit 1; }
-
-          cmake -G Ninja -B build \
-            -DCMAKE_BUILD_TYPE=Release \
-            -DCMAKE_PREFIX_PATH="$QT_PREFIX" \
-            -DCMAKE_INSTALL_PREFIX=install
-
-      - name: Build
-        run: cmake --build build --target Squared --parallel
-
-      - name: Install
-        run: cmake --install build
-
-      - name: Trim install
-        run: |
-          cd install
-          for style in FluentWinUI3 Material Imagine Fusion Universal; do
-            rm -rf qml/QtQuick/Controls/$style
-            rm -f lib/libQt6QuickControls2${style}* lib/libQt6QuickControls2${style}StyleImpl*
-          done
-          rm -rf plugins/qmltooling plugins/egldeviceintegrations
-
-      - name: Package (tar.gz)
-        run: tar czf squared-host_linux_amd64.tar.gz -C install .
-
-      - name: Package (DEB)
-        run: cd build && cpack -G DEB
-
-      - name: Package (AppImage)
-        run: |
-          curl -sL https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -o linuxdeploy.AppImage
-          chmod +x linuxdeploy.AppImage
-          ./linuxdeploy.AppImage --appimage-extract
-          mv squashfs-root linuxdeploy-extracted
-          rm -rf AppDir && mkdir -p AppDir/usr
-          cp -r install/* AppDir/usr/
-          mkdir -p AppDir/usr/share/applications AppDir/usr/share/icons
-          cp linux/com.squared.app.desktop AppDir/usr/share/applications/
-          cp -r linux/icons/hicolor AppDir/usr/share/icons/
-          ./linuxdeploy-extracted/AppRun \
-            --appdir AppDir \
-            --executable AppDir/usr/bin/Squared \
-            --desktop-file AppDir/usr/share/applications/com.squared.app.desktop \
-            --icon-file linux/icons/hicolor/256x256/apps/com.squared.app.png \
-            --output appimage
-          rm -rf AppDir linuxdeploy-extracted linuxdeploy.AppImage
-
-      - name: Upload release assets
-        uses: softprops/action-gh-release@v2
-        with:
-          files: |
-            squared-host_linux_amd64.tar.gz
-            build/squared-*.deb
-            Squared-*.AppImage
-
-  # --- macOS + Windows: install-qt-action ---
-  build-desktop:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - os: macos-14
-            platform: darwin
-            arch: arm64
-          - os: macos-15
-            platform: darwin
-            arch: amd64
-          - os: windows-latest
-            platform: windows
-            arch: amd64
-    runs-on: ${{ matrix.os }}
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v4
-        with:
-          version: "6.8.3"
-          target: desktop
-          modules: qtshadertools
-          cache: true
-
-      - name: Install macOS dependencies
-        if: runner.os == 'macOS'
-        run: brew install ninja
-
-      - name: Install Windows dependencies
-        if: runner.os == 'Windows'
-        run: choco install ninja nsis -y
-
-      - name: Setup MSVC
-        if: runner.os == 'Windows'
-        uses: ilammy/msvc-dev-cmd@v1
-
-      - name: Configure (macOS)
-        if: runner.os == 'macOS'
-        run: |
-          cmake -G Ninja -B build \
-            -DCMAKE_BUILD_TYPE=Release \
-            -DCMAKE_PREFIX_PATH=$Qt6_DIR \
-            -DCMAKE_INSTALL_PREFIX=install
-
-      - name: Configure (Windows)
-        if: runner.os == 'Windows'
-        run: |
-          cmake -G Ninja -B build `
-            -DCMAKE_BUILD_TYPE=Release `
-            -DCMAKE_PREFIX_PATH="$env:Qt6_DIR" `
-            -DCMAKE_INSTALL_PREFIX=install
-
-      - name: Build
-        run: cmake --build build --target Squared --parallel
-
-      - name: Install
-        run: cmake --install build
-
-      - name: Trim install
-        shell: bash
-        run: |
-          if [ "${{ runner.os }}" = "macOS" ]; then
-            cd install/Squared.app/Contents/Resources
-            for style in FluentWinUI3 Material Imagine Fusion Universal; do
-              rm -rf "qml/QtQuick/Controls/$style"
-              rm -rf "../Frameworks/QtQuickControls2${style}.framework" \
-                     "../Frameworks/QtQuickControls2${style}StyleImpl.framework"
-            done
-            rm -rf ../PlugIns/qmltooling ../PlugIns/egldeviceintegrations
-          else
-            cd install
-            for style in FluentWinUI3 Material Imagine Fusion Universal; do
-              rm -rf "qml/QtQuick/Controls/$style"
-              rm -f "lib/libQt6QuickControls2${style}"* "lib/libQt6QuickControls2${style}StyleImpl"*
-            done
-            rm -rf plugins/qmltooling plugins/egldeviceintegrations
-          fi
-
-      - name: Package (macOS tar.gz)
-        if: runner.os == 'macOS'
-        run: tar czf squared-host_${{ matrix.platform }}_${{ matrix.arch }}.tar.gz -C install .
-
-      - name: Package (Windows portable ZIP)
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: Compress-Archive -Path install/* -DestinationPath squared-host_${{ matrix.platform }}_${{ matrix.arch }}.zip
-
-      - name: Package (Windows NSIS installer)
-        if: runner.os == 'Windows'
-        run: cd build && cpack -G NSIS
-
-      - name: Upload release assets
-        uses: softprops/action-gh-release@v2
-        with:
-          files: |
-            squared-host_*.tar.gz
-            squared-host_*.zip
-            build/Squared-*-win64.exe
-```
-{% endraw %}
-
-Notice something about this whole file: there's no packaging logic actually *in* the workflow. The DEB reads `CPACK_DEBIAN_*` from `CMakeLists.txt`. The NSIS installer reads `CPACK_NSIS_*` from the same place. The AppImage step is the same linuxdeploy invocation you'd run locally, with one flag added for the Docker/FUSE conflict. The trim loop is identical to what you'd run by hand after any local install. **The pipeline doesn't invent new deployment logic. It automates the exact solutions already worked out by hand, running them on a schedule instead of at a keyboard.**
+Notice something about this whole file: there's no packaging logic actually *in* the workflow. The DEB reads `CPACK_DEBIAN_*` from `CMakeLists.txt`. The NSIS installer reads `CPACK_NSIS_*` from the same place. The AppImage step is the same linuxdeploy invocation you'd run locally, with one flag added for the Docker/FUSE conflict. The trim loop is identical to what you'd run by hand after any local install. **The pipeline doesn't invent new deployment logic. It automates the exact solutions already worked out by hand, running them on a schedule instead of at a keyboard.** Now let's see how to trigger the whole thing.
 
 ## Triggering a Release
 
-From the developer's side, shipping a new version is three steps.
+Here are the steps you would run locally to trigger the workflow and produce a new release:
 
 **1. Run the tests locally.** Catch problems before they reach CI.
 
-**2. Bump the version.** Update `PROJECT_VERSION` in the root `CMakeLists.txt`. That string propagates into the DEB metadata, the NSIS installer version, and every artifact filename CPack generates.
+**2. Bump the version.** Our projject uses a `PROJECT_VERSION` CMake variable to keep track of version info in the project. So update it in the root `CMakeLists.txt` file. That string propagates into the DEB metadata, the NSIS installer version, and every artifact filename CPack generates.
 
 **3. Tag and push:**
+
+Nothing fancy to do here. We just need to create a new git tag and push it to GitHub. 
 
 ```bash
 git tag host-v0.1.0
 git push origin host-v0.1.0
 ```
 
-That push triggers the workflow. Two jobs start in parallel. A few minutes later, the release page has seven downloadable artifacts. No manual builds on three machines, no copying files between operating systems, no uploading anything by hand.
-
-### A Note on Tag Namespaces
-
-If your repository ships more than one deliverable, separate tag patterns keep their pipelines from colliding. Squared also has a CLI tool written in Go, with its own workflow triggered on plain `v*` tags:
-
-```yaml
-name: Release CLI
-
-on:
-  push:
-    tags:
-      - "v*"
-```
-
-That workflow uses GoReleaser (a release automation tool for Go projects) to cross-compile the CLI for every target platform from a single Ubuntu runner. Just one runner, because Go has native cross-compilation support: a single Go toolchain can produce binaries for Linux, macOS, and Windows without needing to run on each one. The contrast is instructive:
-
-```
-  Qt host app (native C++)              Go CLI
-  ─────────────────────────             ─────────────────────
-  needs 4 runners, because              needs 1 runner, because
-  each platform's C++ toolchain          Go cross-compiles natively
-  and Qt SDK only builds for
-  its own platform
-
-  ubuntu ─▶ Linux binary                 ubuntu ─┬▶ Linux binary
-  macos  ─▶ macOS binary                         ├▶ macOS binary
-  windows─▶ Windows binary                       └▶ Windows binary
-```
-
-Native C++ applications with framework dependencies need per-platform runners; your CI configuration should reflect that rather than fight it. `host-v` tags build the Qt app, `v` tags build the CLI. They never overlap.
+The push will trigger the workflow because the workflow is configured to run on `push` events that create tags matching `host-v*`. The `host-v` prefix is a namespace for this particular deliverable, keeping it separate from any other deliverables that might exist in the same repository.
 
 ## Runner vs. Container: Don't Conflate Them
 
-One distinction is worth calling out on its own, since it's easy to blur.
+It is important to highlight the difference between **doing the job directly on the runner** and **doing the job inside a container on the runner**. The Linux job uses a container, while the macOS and Windows jobs do not.
 
 ```
    plain runner                       runner + container
@@ -785,14 +570,16 @@ One distinction is worth calling out on its own, since it's easy to blur.
                                        └───────────────────┘
 ```
 
-The **runner** is the virtual machine GitHub gives your job. Unavoidable, every job needs one. A **container** is optional and layered on top. When a job specifies `jobs.<job_id>.container`, every step in that job runs inside a Docker container on the runner instead of directly on its filesystem. The runner's job is reduced to hosting Docker. That's exactly what `build-linux` does with `carlonluca/qt-dev:6.8.3`, and exactly what `build-desktop` does *not* do, installing Qt as a step instead. Same underlying problem (get Qt onto a clean machine), two different mechanisms, chosen per-platform based on which one is cheaper to set up.
+The **runner** is the virtual machine GitHub gives your job. Unavoidable, every job needs one. A **container** is optional and layered on top. When a job specifies `jobs.<job_id>.container`, every step in that job runs inside a Docker container on the runner instead of directly on its filesystem. The runner's job is reduced to hosting Docker. That's exactly what `build-linux` does with `carlonluca/qt-dev:6.8.3`, and exactly what `build-desktop` does *not* do, installing Qt as a step instead. 
+
+These two ways are available to you and it is up to you to decide which one is more appropriate for your project. 
 
 ## The Takeaway
 
 Every CI step in this pipeline maps to something you'd otherwise do by hand. `cmake --install` replaces manually copying libraries. The linuxdeploy invocation is the same command you'd run locally, extended with one flag for a container-specific FUSE limitation. `cpack -G DEB` and `cpack -G NSIS` are identical to running them at your own terminal. The trim loop is the same cleanup you'd run after any local install.
 
-What changes isn't the deployment logic. It's who's driving. Once this file is committed, releasing a new version stops being a personal ritual involving three operating systems and becomes `git tag && git push`. That's the entire point of CI/CD: not new capabilities, just the same capabilities, running unattended, the same way, every single time.
+What changes isn't the deployment logic. It's who's driving. Once this file is committed, releasing a new version stops being a personal fight involving three operating systems and becomes `git tag && git push`. That's the entire point of CI/CD: we're not introducing something new, we're just automating the same steps we already know how to do.
 
-If you want to see this pipeline built from scratch alongside the rest of Squared's deployment story (packaging for Windows, Linux, macOS, Android, iOS, and embedded ARM, with proper installers and signed bundles before any of this CI work even starts) I walk through the whole thing in my [Qt QML Cross-Platform Deployment course](/courses/qt-qml-deployment/). Nine chapters, taking one Qt QML application from a working build to a release pipeline that ships itself.
+If you want to see this pipeline built from scratch alongside the rest of Squared's deployment story (packaging for Windows, Linux, macOS, Android, iOS, and embedded ARM, with proper installers and signed bundles before any of this CI work even starts) I walk through the whole thing in my [Qt QML Cross-Platform Deployment course](/courses/qt-qml-deployment/). It's designed to let you experience live how a Qt application can get to be built and shipped on every platform, and how to automate that process with CI/CD.
 
 Happy shipping!
