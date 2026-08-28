@@ -80,6 +80,8 @@ Translated into what we actually want:
 - **Jobs**: one for Linux, one for macOS and Windows together (via a matrix, explained below), running in parallel since neither depends on the other.
 - **Steps**: checkout the code, install Qt, configure, build, install, package, upload. The exact same commands you'd type by hand, just running on hosted runners instead of your own machine.
 
+The bulk of the post will explain the main YAML workflow file and we will run it towards the end to see the results. This note is a heads-up to those of you that are not patient! I know there's a lot of us :-)
+
 ## Creating the Workflow File
 
 I am going to assume that you have a project ready to build, and that you can build it locally on Linux, macOS, and Windows. The project should also be in a GitHub repository, because GitHub Actions only runs on GitHub. I would recommend cloning the Squared repository and changing to the `course/ci` branch, which has the workflow file already in place, so you can see a working example.
@@ -115,11 +117,11 @@ permissions:
 
 The `permissions` block grants `contents: write`. Every workflow run gets a temporary token for talking back to GitHub's API, and by default that token is read-only. We need write access because later steps create a GitHub Release and upload files to it. Without this line, the upload step would fail on us. 
 
-The workflow has two jobs: `build-linux`, which runs inside a Docker container with Qt pre-installed, and `build-desktop`, a matrix () that covers macOS Apple Silicon, macOS Intel, and Windows. They run in parallel. Nothing about the Linux artifacts depends on the macOS or Windows ones.
+The workflow has two jobs: `build-linux`, which runs inside a Docker container with Qt pre-installed, and `build-desktop`, a matrix (a blueprint for a job that GitHub instantiates once per entry in a list of values you give it, here one copy for macOS and one for Windows, more on this later) that covers macOS Apple Silicon, macOS Intel, and Windows. They run in parallel. Nothing about the Linux artifacts depends on the macOS or Windows ones.
 
 ## The Linux Job: Building Inside a Container
 
-GitHub's `ubuntu-24.04` runner is a clean Ubuntu virtual machine. No Qt, nothing project-specific. There are two ways to get Qt onto it: install it as a step, or run the job inside a container that already has it. We pick the second.
+GitHub's `ubuntu-24.04` runner is a clean Ubuntu virtual machine. It doesn't have Qt installed and has nothing project-specific. There are two ways to get Qt onto it: install it as a step, or run the job inside a container that already has it. We pick the second for this Linux job.
 
 A quick primer if containers are new to you: **Docker** packages an application together with everything it needs (libraries, tools, an entire filesystem) into a single portable unit called an image, and runs it in an isolated environment called a container. Instead of installing Qt fresh on a bare Ubuntu machine every single run, we can point at an image that already has Qt built in and start from there.
 
@@ -130,9 +132,7 @@ build-linux:
     image: carlonluca/qt-dev:6.8.3
 ```
 
-`runs-on: ubuntu-24.04` still requests the virtual machine, same as any job. `container.image` tells Actions to pull `carlonluca/qt-dev:6.8.3` from Docker Hub (Docker's public registry of images) and run every subsequent step inside it. It's a community-maintained image, not an official Qt or GitHub image, that ships Qt 6.8.3 pre-built under `/opt`, including a desktop build, an Android build, and others side by side. We only need the desktop one.
-
-Pinning the tag to `:6.8.3` rather than `:latest` matters for a reason easy to overlook: **glibc**, the C standard library that almost every Linux binary links against at runtime. The tar.gz this pipeline produces doesn't bundle glibc, so the app's real compatibility floor is whatever glibc ships inside the container it was built in. glibc guarantees backward compatibility (a binary built against an older glibc runs fine on newer systems) but not forward compatibility, so pinning the image tag keeps that floor fixed and reproducible across every release instead of silently shifting whenever the image maintainer pushes an update.
+`runs-on: ubuntu-24.04` still requests the virtual machine, same as any job. `container.image` tells Actions to pull `carlonluca/qt-dev:6.8.3` from Docker Hub (Docker's public registry of images) and run every subsequent step inside it. It's a community-maintained image, not an official Qt or GitHub image, that ships Qt 6.8.3 (at the time of this writing) pre-built under `/opt`, including a desktop build, an Android build, and others side by side. We only need the desktop one.
 
 ### Checkout, System Dependencies, Configure
 
@@ -145,7 +145,7 @@ steps:
       submodules: recursive
 ```
 
-`actions/checkout` is GitHub's official action (a ready-made, reusable step, explained fully below) for cloning your repo at the commit that triggered the workflow. `submodules: recursive` matters specifically here. Squared pulls in `external/qtkeychain` as a git submodule (a separate git repository embedded inside this one), and a plain clone leaves that directory empty. Every job runs with `$GITHUB_WORKSPACE` already set, and checkout puts the code exactly there, so no step in this whole pipeline ever needs to `cd` into the project first.
+`actions/checkout` is GitHub's official action (a ready-made, reusable step, explained fully below) for cloning your repo at the commit that triggered the workflow. `submodules: recursive` matters specifically here. Squared pulls in `external/qtkeychain` as a git submodule (a separate git repository embedded inside this one), and a plain clone leaves that directory empty. Every job runs with `$GITHUB_WORKSPACE` already set, and checkout puts the code exactly there, so no step in this whole pipeline ever needs to `cd` into the project first. That means that we can directly get to running commands that assume we are at the root of the repository, like `cmake -G Ninja -B build`. But we'll do that later. We start by installing the system dependencies the container doesn't already include:
 
 ```yaml
 - name: Install system dependencies
@@ -154,7 +154,7 @@ steps:
 
 `apt-get` is Ubuntu's package manager, used here to install packages the Docker image doesn't already include. `libsecret-1-dev` is needed because Squared's SecureStorage links against libsecret on Linux. `curl` (a command-line tool for downloading files over HTTP) and `file` (a tool that identifies file types) are needed later by linuxdeploy.
 
-Then comes Configure, the part where the pipeline earns its keep by doing something you'd never want to do by hand every time:
+Then comes configuration part:
 
 ```yaml
 - name: Configure
@@ -169,7 +169,7 @@ Then comes Configure, the part where the pipeline earns its keep by doing someth
       -DCMAKE_INSTALL_PREFIX=install
 ```
 
-**CMake** is the build system generator Qt projects use. It doesn't compile anything itself. It reads `CMakeLists.txt` and generates the actual build files for whichever tool will do the compiling, in this case **Ninja**, a small, fast build tool designed to just run the compiler steps as quickly as possible once CMake has figured out what needs building.
+**CMake** is the build system generator our project is using. It doesn't compile anything itself. It reads `CMakeLists.txt` and generates the actual build files for whichever tool will do the compiling, in this case **Ninja**, a small, fast build tool designed to just run the compiler steps as quickly as possible once CMake has figured out what needs building.
 
 The Docker image has Qt somewhere under `/opt`, but the exact path varies by image version, and we don't control that image. So this finds it at run time instead of hardcoding it. Worth unpacking piece by piece:
 
@@ -189,7 +189,7 @@ The Docker image has Qt somewhere under `/opt`, but the exact path varies by ima
 - **`head -1`**. A safety net in case more than one desktop Qt version ever exists in the same image.
 - **The `test` guards**. Fail loudly and immediately if the image's layout ever changes, instead of handing `cmake` an empty `CMAKE_PREFIX_PATH` and failing confusingly several steps later. The second guard specifically checks for `Qt6::DBus`, which Squared requires for desktop integration, catching a mismatched Qt install before spending minutes compiling against it.
 
-Configure only plans the build. Build and Install are one line each, identical to what you'd run locally:
+Once the project is configured, we have a `build/` directory with Ninja build files, and an `install/` directory that will eventually hold the final release layout. The next two steps actually compile and install the app. The same things you would do by hand on your own machine, but now running automatically in the CI environment:
 
 ```yaml
 - name: Build
@@ -199,11 +199,11 @@ Configure only plans the build. Build and Install are one line each, identical t
   run: cmake --install build
 ```
 
-`cmake --install` runs the deploy script `qt_generate_deploy_qml_app_script` generated during configure: it copies the binary, Qt's shared libraries, the platform plugin, the QML modules, generates `qt.conf`, and patches RPATH (the lookup path a Linux binary uses to find its shared libraries at runtime). Same four layers as building it by hand.
+`cmake --install` runs the deploy script `qt_generate_deploy_qml_app_script` generated during configure: it copies the binary, Qt's shared libraries, the platform plugin, the QML modules, generates `qt.conf`, and patches RPATH (the lookup path a Linux binary uses to find its shared libraries at runtime). After the build and install steps, the `install/` directory is a complete, runnable Linux application. 
 
 ### Trimming Dead Weight
 
-Between install and packaging, the pipeline removes what it doesn't need. Qt's deploy script copies every Quick Controls style it finds (Basic, Fusion, Material, Imagine, FluentWinUI3, Universal) into `install/qml/QtQuick/Controls/`. Squared only imports Basic, so the rest are dead weight the app never loads.
+The application files in `install/` are complete, but not all of them are actually needed. Our application only uses the Basic Quick Controls style, but Qt's deploy script copies every style it finds into the install tree. That means the other styles (Fusion, Material, Imagine, FluentWinUI3, Universal) are just taking up space and will never be loaded by the app. The *Trim install* step removes these unused styles and their compiled libraries, as well as two plugin directories that are not needed in a release build.
 
 ```yaml
 - name: Trim install
@@ -226,9 +226,6 @@ Between install and packaging, the pipeline removes what it doesn't need. Qt's d
   ├── FluentWinUI3/   (unused) ✗
   └── Universal/      (unused) ✗
 ```
-
-The loop deletes each unused style's QML directory and its compiled library. The last line removes two plugin directories that don't belong in a release build regardless of platform: `qmltooling` (the QML debugger's hooks, a development-time tool) and `egldeviceintegrations` (EGL backends for embedded targets this desktop build doesn't run on).
-
 ### Packaging: tar.gz, DEB, and the AppImage/FUSE Problem
 
 ```yaml
@@ -241,7 +238,7 @@ The loop deletes each unused style's QML directory and its compiled library. The
 
 **CPack** is CMake's companion packaging tool. It reads packaging metadata already declared in `CMakeLists.txt` and produces installers or archives in whatever format you ask for with `-G` (here, `DEB`, Debian's native package format used by Ubuntu and other Debian-based distributions). Both of these are exact commands you'd run locally, unchanged. Nothing CI-specific to configure, because the packaging logic lives in the CMake project, not the workflow file.
 
-The AppImage is where CI genuinely diverges from local development. An **AppImage** is a self-contained, portable Linux application format: one file a user can download, mark executable, and run directly, with no installation step. **linuxdeploy** is the tool that builds one, bundling the binary and its dependencies together.
+The AppImage is where CI diverges from local development. An **AppImage** is a self-contained, portable Linux application format: one file a user can download, mark executable, and run directly, with no installation step. **linuxdeploy** is the tool that builds one, bundling the binary and its dependencies together.
 
 ```yaml
 - name: Package (AppImage)
@@ -280,7 +277,7 @@ The AppImage is where CI genuinely diverges from local development. An **AppImag
 
 Mounting a filesystem requires the `SYS_ADMIN` Linux capability and access to `/dev/fuse`. Docker containers run with a deliberately reduced capability set, and `SYS_ADMIN` is excluded precisely because it's broad enough to let a container reach outside its intended isolation. So `linuxdeploy.AppImage` tries to mount itself, the container has neither the capability nor the device node, and the step fails.
 
-You could grant the missing capability via the `container.options` field, but that's a wider hole than the problem deserves, and it's brittle. The fix instead: `--appimage-extract` unpacks the AppImage into a plain directory. No mounting, just regular file extraction any container can do. Inside sits `AppRun`, the same entry point the runtime stub would normally invoke after mounting, so calling it directly reaches the identical program without the FUSE step. Everything after that is unchanged: build the AppDir (the standard staging directory layout AppImage tooling expects) from `install/`, add the desktop file and icons, run linuxdeploy, get an `.AppImage` back.
+You could grant the missing capability via the `container.options` field, but that's a wider hole than the problem deserves, and it's brittle. The fix instead: `--appimage-extract` unpacks the AppImage into a plain directory. Inside sits `AppRun`, the same entry point the runtime stub would normally invoke after mounting, so calling it directly reaches the identical program without the FUSE step. Everything after that is unchanged: build the AppDir (the standard staging directory layout AppImage tooling expects) from `install/`, add the desktop file and icons, run linuxdeploy, get an `.AppImage` back.
 
 If you ever see `fuse: device not found` in a CI log for any AppImage tool, this is the fix. Extract, then run `AppRun` directly.
 
