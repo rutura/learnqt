@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ship Qt on Three Platforms With One Git Tag: A GitHub Actions Pipeline for Qt 6"
+title: "Stop Building Qt Releases by Hand: Automate Releases for Windows, macOS, and Linux with GitHub Actions"
 description: A practical walkthrough of building a real GitHub Actions CI/CD pipeline that packages a Qt 6 QML app for Linux, macOS, and Windows from a single tag push.
 date: '2026-08-22'
 categories:
@@ -15,9 +15,11 @@ comments: true
 sidebar: true
 ---
 
-If you've been following along with the deployment side of Qt development, you know the drill by now. You run `cmake --install`, then `linuxdeploy` or `macdeployqt` or `cpack`, by hand, on your own machine, one platform at a time. It works. It also means every release depends on you remembering the right sequence of commands, having access to a Linux box, a Mac, and a Windows machine, and doing the whole thing again for the next version.
+If you've been following along with the deployment side of Qt development, you know the drill by now. You run `cmake --install`, then `linuxdeploy` or `macdeployqt` or `cpack`, by hand, on your own machine, one platform at a time. 
 
-This post walks through replacing that with a GitHub Actions pipeline that does it for you. Push a tag like `host-v1.2.0`, and a few minutes later there's a GitHub Release with a Linux AppImage, a DEB package, a tar.gz, a macOS tar.gz for both Apple Silicon and Intel, a Windows ZIP, and a Windows installer. Seven artifacts, three platforms, zero terminals opened on any of them.
+It works. It also means every release depends on you remembering the right sequence of commands, having access to a Linux box, a Mac, and a Windows machine, and doing the whole thing again for the next version.
+
+This post walks through replacing that with a GitHub Actions pipeline that does it for you. The promise is simple, you push a tag like `host-v1.2.0`, and a few minutes later there's a GitHub Release with a **Linux AppImage**, a **DEB package**, a **tar.gz**, a **macOS tar.gz** for both Apple Silicon and Intel, a **Windows ZIP**, and a **Windows installer**. Here's how it looks in practice:
 
 ```
                         git tag host-v1.2.0
@@ -42,25 +44,25 @@ This post walks through replacing that with a GitHub Actions pipeline that does 
                         7 downloadable files
 ```
 
-This is the pipeline built for **Squared**, a real cross-platform Qt 6 QML app, as part of my [Qt QML Cross-Platform Deployment course](/courses/qt-qml-deployment/). Everything below is the actual workflow file, not a simplified example.
+This is the pipeline built for **Squared**, a real cross-platform Qt 6 QML app, as part of my [Qt QML Cross-Platform Deployment course](/courses/qt-qml-deployment/). **You don't need to be a student from that course to follow along though**. The whole workflow is available from the [project GitHub repository](https://github.com/learnqtkenya/SquaredApp/tree/course/ci). In the following, we will be reproducing the workflow file from that repository, step by step, explaining what each part does and why it matters. 
 
 ## What CI/CD Actually Is
 
-"CI/CD" gets thrown around a lot, so let's strip the acronym down. It stands for **Continuous Integration / Continuous Delivery**. Instead of a person manually building and packaging software, a server does it automatically, the same way, every time, triggered by something you did anyway, like pushing code. "Continuous Integration" is the automatic building-and-testing half. "Continuous Delivery" is the automatic packaging-for-release half. This post is really about the CD side. We already know the app builds; we want it *packaged and published* without touching a keyboard on three different computers.
+"CI/CD" gets thrown around a lot, so let's strip the acronym down. It stands for **Continuous Integration / Continuous Delivery**. Instead of a person manually building and packaging software, a server does it automatically, the same way, every time, triggered by something you did anyway, like pushing code. "Continuous Integration" is the automatic building-and-testing half. "Continuous Delivery" is the automatic packaging-for-release half. This post is really about the CD side. We already know the app builds; we want it **packaged and published** without touching a keyboard on three (ore more) different computers.
 
-We're using **GitHub Actions**, GitHub's own built-in automation system, because Squared's code already lives on GitHub. Other CI providers exist (Jenkins, CircleCI, GitLab CI), but GitHub Actions is already sitting there, reading the same repository, free for public repos and generously priced for private ones.
+We're using **GitHub Actions**, GitHub's own built-in automation system, because Squared's code already lives on GitHub. Other CI providers exist (Jenkins, CircleCI, GitLab CI), but GitHub Actions is already sitting there, reading the same repository, free for public repos and available for a fee for private ones.
 
-## Five Words That Explain Everything
+## Five Foundational Concepts 
 
-GitHub Actions has five terms that show up constantly. Once these click, every YAML file below reads as plain English instead of magic:
+GitHub Actions has five terms that show up constantly. Let's define them clearly before we dive into the mechanics of automating the release of our Qt 6 QML app: 
 
-- **Event**: something that happens to the repository, like a push, a pull request, or a new tag. This is the *trigger*.
-- **Workflow**: the automation you define, as a YAML file. One event can trigger one workflow, or several.
-- **Job**: a workflow is made of one or more jobs. Each job gets its own fresh machine to run on. Jobs can run in parallel or wait on each other.
+- **Event**: something that happens to the repository, like a push, a pull request, or a new tag. This is the *trigger*. In this example, we will explicitly trigger the workflow by pushing a tag that matches `host-v*`. More on that later.
+- **Workflow**: the automation you define, as a YAML file. In this example, the workflow is a single file called `release-host.yml` that reacts to the event above. One event can trigger one workflow, or several.
+- **Job**: a workflow is made of one or more jobs. In our example, the workflow has two jobs: one for Linux, and one for macOS + Windows. Each job gets its own fresh machine to run on. Jobs can run in parallel or wait on each other.
 - **Step**: a job is a sequence of steps, run in order, on that same machine. A step is either a shell command or a reusable **action** (a packaged, reusable unit of work someone else wrote, more on this below).
 - **Runner**: the actual machine. A fresh Linux, Windows, or macOS virtual machine that GitHub spins up, runs your steps on, and throws away afterward.
 
-Chain them together and you get the whole mental model:
+If you chain all of these together, you stand a better chance to understand the whole model: 
 
 ```
   EVENT                WORKFLOW              JOB                   STEP
@@ -80,13 +82,22 @@ Translated into what we actually want:
 
 ## Creating the Workflow File
 
-GitHub looks for workflow files in one exact path: `.github/workflows/`, at the repository root. Any `.yml` file placed there is picked up automatically. No registration step, no config elsewhere pointing at it.
+I am going to assume that you have a project ready to build, and that you can build it locally on Linux, macOS, and Windows. The project should also be in a GitHub repository, because GitHub Actions only runs on GitHub. I would recommend cloning the Squared repository and changing to the `course/ci` branch, which has the workflow file already in place, so you can see a working example.
+
+```
+git clone https://github.com/learnqtkenya/SquaredApp.git
+git branch course/ci
+```
+
+This will give you a local copy of the repository with the workflow file already in place. You can use those files as a reference to follow along.
+
+GitHub looks for workflow files in one exact path: `.github/workflows/`, at the repository root. Any `.yml` file placed there is picked up automatically. You can create such a directory with the following command:
 
 ```bash
 mkdir -p .github/workflows
 ```
 
-Create a file called `release-host.yml` inside it:
+After that, you would create create a file called `release-host.yml` inside it. Again, you can find the [full workflow file here](https://github.com/learnqtkenya/SquaredApp/blob/course/ci/.github/workflows/release-host.yml).:
 
 ```yaml
 name: Release Host Binary
@@ -100,11 +111,11 @@ permissions:
   contents: write
 ```
 
-`on.push.tags` defines the event. Push a tag matching `host-v*` (`host-v0.1.0`, `host-v1.2.3`, anything starting with `host-v`) and this workflow runs. Nothing else triggers it. Not a push to main, not a pull request.
+`on.push.tags` defines the event. If you push a tag matching `host-v*` (`host-v0.1.0`, `host-v1.2.3`, anything starting with `host-v`) GitHub Actions will automatically run this workflow. Nothing else triggers it. Not a push to main, not a pull request.
 
-The `permissions` block grants `contents: write`. Every workflow run gets a temporary token for talking back to GitHub's API, and by default that token is read-only. We need write access because later steps create a GitHub Release and upload files to it. Without this line, the upload step fails with a 403.
+The `permissions` block grants `contents: write`. Every workflow run gets a temporary token for talking back to GitHub's API, and by default that token is read-only. We need write access because later steps create a GitHub Release and upload files to it. Without this line, the upload step would fail on us. 
 
-The workflow has two jobs: `build-linux`, which runs inside a Docker container with Qt pre-installed, and `build-desktop`, a matrix that covers macOS Apple Silicon, macOS Intel, and Windows. They run in parallel. Nothing about the Linux artifacts depends on the macOS or Windows ones.
+The workflow has two jobs: `build-linux`, which runs inside a Docker container with Qt pre-installed, and `build-desktop`, a matrix () that covers macOS Apple Silicon, macOS Intel, and Windows. They run in parallel. Nothing about the Linux artifacts depends on the macOS or Windows ones.
 
 ## The Linux Job: Building Inside a Container
 
