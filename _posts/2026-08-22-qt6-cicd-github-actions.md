@@ -80,7 +80,9 @@ Translated into what we actually want:
 - **Jobs**: one for Linux, one for macOS and Windows together (via a matrix, explained below), running in parallel since neither depends on the other.
 - **Steps**: checkout the code, install Qt, configure, build, install, package, upload. The exact same commands you'd type by hand, just running on hosted runners instead of your own machine.
 
-The bulk of the post will explain the main YAML workflow file and we will run it towards the end to see the results. This note is a heads-up to those of you that are not patient! I know there's a lot of us :-)
+<div class="alert alert-info" markdown="1">
+**Note:** The bulk of the post will explain the main YAML workflow file and we will run it towards the end to see the results. This note is a heads-up to those of you that are not patient! I know there's a lot of us :-)
+</div>
 
 ## Creating the Workflow File
 
@@ -283,9 +285,15 @@ If you ever see `fuse: device not found` in a CI log for any AppImage tool, this
 
 One detail worth knowing: `--output appimage` writes the finished file to the current working directory, not inside `AppDir/`. So this step produces `Squared-x86_64.AppImage` sitting directly at the repo root, ready for the upload step.
 
+<div class="alert alert-info" markdown="1">
+**Note:** Here we are still describing the workflow, and we will get to see the actual files generated later on when we get to run the workflow. Be patient!
+</div>
+
 ## The macOS + Windows Job: One Job, Three Runners
 
 macOS introduces a problem the Linux job didn't have. We need *two* different Mac binaries, one for Apple Silicon and one for Intel, built the same way, on different machines. Rather than duplicate the job definition, GitHub Actions has a feature built for exactly this: the **strategy matrix**.
+
+You can think of a matrix as a blueprint for a job that will be replicated once for each combination of values you give it in the `include` list. 
 
 ```yaml
 build-desktop:
@@ -304,6 +312,8 @@ build-desktop:
           arch: amd64
   runs-on: ${{ matrix.os }}
 ```
+
+In our case, the blueprint has three combinations of `os`, `platform`, and `arch` that we want to build for. `runs-on: ${{ matrix.os }}` means each combination runs as its own independent instance of this same job. You could have manually defined three separate jobs, but this is cleaner and easier to maintain. The result looks like this:
 
 ```
                        build-desktop (one job definition)
