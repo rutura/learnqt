@@ -14,6 +14,9 @@ tags:
     - Deployment
 comments: true
 sidebar: true
+
+coursescard: true
+bookcard: true
 ---
 
 If you've been following along with the deployment side of Qt development, you know the drill by now. You run `cmake --install`, then `linuxdeploy` or `macdeployqt` or `cpack`, by hand, on your own machine, one platform at a time. 
