@@ -1146,7 +1146,7 @@
                         </div>
                         
                         <div class="card-body">
-                            <a href="{% if course_data.pricing_override.lifetime.teachable_link %}{{ course_data.pricing_override.lifetime.teachable_link }}{% else %}{{ site.data.courses.pricing.lifetime.teachable_link }}{% endif %}" 
+                            <a href="{% if course_data.pricing_override.squared_course %}{{ course_data.pricing_override.squared_course }}{% elsif course_data.pricing_override.lifetime.teachable_link %}{{ course_data.pricing_override.lifetime.teachable_link }}{% else %}{{ site.data.courses.pricing.lifetime.teachable_link }}{% endif %}"
                                class="btn btn-outline-primary w-100 mb-4">
                                 {{ site.data.courses.ui.buy_now_button }}
                             </a>
@@ -1170,7 +1170,7 @@
                             
                             <!-- Duplicate CTA Button -->
                             <div class="mt-4">
-                                <a href="{% if course_data.pricing_override.lifetime.teachable_link %}{{ course_data.pricing_override.lifetime.teachable_link }}{% else %}{{ site.data.courses.pricing.lifetime.teachable_link }}{% endif %}" 
+                                <a href="{% if course_data.pricing_override.squared_course %}{{ course_data.pricing_override.squared_course }}{% elsif course_data.pricing_override.lifetime.teachable_link %}{{ course_data.pricing_override.lifetime.teachable_link }}{% else %}{{ site.data.courses.pricing.lifetime.teachable_link }}{% endif %}"
                                    class="btn btn-outline-primary w-100">
                                     {{ site.data.courses.ui.buy_now_button }}
                                 </a>
@@ -1200,14 +1200,15 @@
                         </div>
                         
                         <div class="card-body">
-                            <a href="{% if course_data.pricing_override.monthly.teachable_link %}{{ course_data.pricing_override.monthly.teachable_link }}{% else %}{{ site.data.courses.pricing.monthly.teachable_link }}{% endif %}" 
+                            <a href="{{ site.data.courses.pricing.monthly.link }}"
                                class="btn btn-primary w-100 mb-4">
-                                Start Learning Today
+                                Become a Member
                             </a>
                             
                             <div class="library-link mb-3">
+                                <p>{% if course_data.pricing_override.squared_course %}This course is on Squared Academy and included in the membership.{% else %}This course has not moved to Squared Academy yet, so the membership does not include it today. To take it now, choose the single course.{% endif %}</p>
                                 <a href="{{ site.data.courses.pricing.monthly.library_link }}" class="library-access-link">
-                                    <i class="fas fa-books me-1"></i>View full course library
+                                    <i class="fas fa-books me-1"></i>See what is in the library today
                                 </a>
                             </div>
                             
@@ -1230,9 +1231,9 @@
                             
                             <!-- Duplicate CTA Button -->
                             <div class="mt-4">
-                                <a href="{% if course_data.pricing_override.monthly.teachable_link %}{{ course_data.pricing_override.monthly.teachable_link }}{% else %}{{ site.data.courses.pricing.monthly.teachable_link }}{% endif %}" 
+                                <a href="{{ site.data.courses.pricing.monthly.link }}"
                                    class="btn btn-primary w-100">
-                                    Start Learning Today
+                                    Become a Member
                                 </a>
                             </div>
                         </div>
@@ -1254,14 +1255,15 @@
                         </div>
                         
                         <div class="card-body">
-                            <a href="{% if course_data.pricing_override.yearly.teachable_link %}{{ course_data.pricing_override.yearly.teachable_link }}{% else %}{{ site.data.courses.pricing.yearly.teachable_link }}{% endif %}" 
+                            <a href="{{ site.data.courses.pricing.yearly.link }}"
                                class="btn btn-outline-primary w-100 mb-4">
                                 Join Now & Save
                             </a>
                             
                             <div class="library-link mb-3">
+                                <p>{% if course_data.pricing_override.squared_course %}This course is on Squared Academy and included in the membership.{% else %}This course has not moved to Squared Academy yet, so the membership does not include it today. To take it now, choose the single course.{% endif %}</p>
                                 <a href="{{ site.data.courses.pricing.yearly.library_link }}" class="library-access-link">
-                                    <i class="fas fa-books me-1"></i>View full course library
+                                    <i class="fas fa-books me-1"></i>See what is in the library today
                                 </a>
                             </div>
                             
@@ -1284,7 +1286,7 @@
                             
                             <!-- Duplicate CTA Button -->
                             <div class="mt-4">
-                                <a href="{% if course_data.pricing_override.yearly.teachable_link %}{{ course_data.pricing_override.yearly.teachable_link }}{% else %}{{ site.data.courses.pricing.yearly.teachable_link }}{% endif %}" 
+                                <a href="{{ site.data.courses.pricing.yearly.link }}"
                                    class="btn btn-outline-primary w-100">
                                     Join Now & Save
                                 </a>
@@ -5745,7 +5747,7 @@ function trackConversionEvent(eventName, planType) {
 
 // Add click tracking to pricing buttons
 document.addEventListener('DOMContentLoaded', function() {
-    const pricingButtons = document.querySelectorAll('.pricing-card a[href*="teachable"]');
+    const pricingButtons = document.querySelectorAll('.pricing-card a.btn');
     
     pricingButtons.forEach(button => {
         button.addEventListener('click', function() {

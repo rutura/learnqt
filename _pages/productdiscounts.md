@@ -24,7 +24,12 @@ permalink: "/discounts"
     {% for course in site.data.courses.courses %}
     {% assign c_full = course.pricing_override.lifetime.price %}
     {% assign base_link = course.pricing_override.lifetime.teachable_link %}
-    {% if site.coupon and site.coupon != '' %}
+    {% assign discounted = false %}
+    {% if course.pricing_override.squared_course %}
+      {% assign buy_link = course.pricing_override.squared_course %}
+      {% assign c_price = c_full %}
+    {% elsif site.coupon and site.coupon != '' %}
+      {% assign discounted = true %}
       {% assign buy_link = base_link | append: "&coupon_code=" | append: site.coupon %}
       {% assign c_keep = 100 | minus: site.offby %}
       {% assign c_price = c_full | times: c_keep | divided_by: 100 %}
@@ -40,7 +45,7 @@ permalink: "/discounts"
             <span class="dl-meta">{{ course.level }} &middot; {{ course.duration }} &middot; <i class="fas fa-star dl-star"></i> {{ course.satisfaction_rating }}</span>
           </div>
           <div class="dl-item-price">
-            {% if site.coupon and site.coupon != '' %}
+            {% if discounted %}
               <span class="dl-price">${{ c_price }}</span>
               <s class="dl-original">${{ c_full }}</s>
             {% else %}
@@ -58,7 +63,7 @@ permalink: "/discounts"
     {% endfor %}
   </ul>
 
-  <p class="dl-note">Need access to all courses? <a href="/courses/#pricing">Library plans start at ${{ site.data.courses.pricing.monthly.price }}/mo</a> with a {{ site.data.courses.pricing.monthly.trial_days }}-day free trial.</p>
+  <p class="dl-note">Want more than one course? <a href="{{ site.data.courses.pricing.monthly.link }}">Squared Academy membership starts at ${{ site.data.courses.pricing.monthly.price }}/mo</a> and covers every course published there.</p>
 </section>
 
 <!-- BOOKS -->
