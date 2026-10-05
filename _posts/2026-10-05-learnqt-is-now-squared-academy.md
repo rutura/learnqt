@@ -42,7 +42,7 @@ For the last 3 or 4 years, our work has taken us down the rabbit hole of embedde
 
 **3. Our channels become Squared Academy.** YouTube, LinkedIn, Discord, X and the others will all carry the Squared Academy name. We will try our best to share as much info as we can about the change as it happens. If you face any issue along the way, just shoot us an email at [daniel.g@learnqt.guide](mailto:daniel.g@learnqt.guide) and we will do the best we can to help out.
 
-## A change to the emails you get from us
+## Emails
 
 All future emails from us will come from a **squared.academy** address, not from **learnqt.guide** as they have for the last couple of years. If you are on our mailing list, you will get a formal announcement from us about this change.
 
@@ -58,6 +58,6 @@ If you want to see where this is headed, have a look at [squared.academy](https:
 
 Thank you for learning with us all these years. The best parts are still ahead.
 
-Happy coding!
+Happy building!
 
 Daniel.
