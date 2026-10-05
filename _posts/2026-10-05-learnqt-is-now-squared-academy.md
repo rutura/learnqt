@@ -22,11 +22,39 @@ Quick but important update. LearnQt is being rebranded as [Squared Academy](http
 
 <img src="/assets/img/blog/squared-academy-rebrand/cover.png" alt="LearnQt becomes Squared Academy: same Qt, C++ and QML, now down to the hardware" style="max-width: 100%; height: auto; width: 700px;">
 
-## Why
+## What Is What
 
-Here's the honest story. For the last 3 or 4 years, my work has taken me down the rabbit hole of embedded hardware and firmware. Boards, sensors, microcontrollers, the kind of devices that don't have a desktop to draw a window on.
+There are three names in play here, so let me untangle them.
 
-Qt, C++ and QML are still what I'm known for, and they're still a big part of what I do. But the scope of what we have to offer has outgrown the LearnQt name. When most of what I'm teaching and building now touches hardware, a brand that says "Qt" and nothing else doesn't tell the whole story anymore. So the name changes to match the work.
+**[LearnQt](https://www.learnqt.guide/)** is the brand you already know.
+
+- Training for Qt, C++ and QML
+- Courses on Qt Widgets with C++, Qt Widgets with Python (PySide6), and Qt QML Pro
+- Books, including Qt6 QML for Beginners, Qt6 QML Advanced, and Professional Desktop Apps with Qt and C++
+- A technical blog and a Discord community of 4,000+ developers
+- 50,000+ students trained over 10+ years
+
+**[Squared Computing](https://squared.co.ke/)** is our company, based in Nairobi, Kenya.
+
+- An embedded systems engineering company building custom embedded systems and connected products for industrial, logistics and IoT applications
+- Hardware design (custom PCBs), firmware development (drivers, RTOS), HMI (operator interfaces and control panels), and IoT solutions
+- Works with ARM Cortex, RISC-V, STM32, NXP and Atmel MCUs, using Zephyr, FreeRTOS and embedded Linux
+- Develops in C/C++, Rust and Python
+- Products include ParcelPoint (self-service parcel lockers with M-PESA payments) and SquaredIoT (customizable IoT devices with cloud dashboards)
+
+**[Squared Academy](https://squared.academy/)** is the new name for LearnQt, and the training arm of Squared Computing.
+
+- Engineering courses for people who build real systems: firmware and RTOS, modern C++, embedded displays and HMI, Qt and QML, and deployment across platforms
+- Project-based, with real applications instead of toy demos, full source code, and lifetime access
+- Courses so far include Qt QML: Deploy to Desktop, Mobile and Embedded, and Qt Quick 3D: Building Real-World 3D Applications
+- Books and a free lesson library
+- The same instructor, and the same community
+
+The short version: Squared Computing builds the hardware and firmware, and Squared Academy teaches what we learn doing it.
+
+## Why the change
+
+For the last 3 or 4 years, my work has taken me down the rabbit hole of embedded hardware and firmware. Qt, C++ and QML are still what I'm known for, but the scope of what we have to offer has outgrown the LearnQt name. So the name changes to match the work.
 
 ## What this means for you
 
