@@ -76,88 +76,63 @@ pricing:
       - "✅ Course Q&A support from Daniel"
       - "✅ Community code reviews (peer feedback)"
       - "✅ Download all course materials"
-      - "❌ Entire course library access"
-      - "❌ All current and future courses"
-      - "❌ Enhanced instructor support (faster responses)"
-      - "❌ Monthly live Q&A sessions"
-      - "❌ Code review sessions with Daniel"
-      - "❌ Priority community support"
-      - "❌ Early access to new content"
+      - "❌ Every course on Squared Academy"
+      - "❌ Future courses included"
+      - "❌ Priority support from the instructor"
     highlight_benefits:
       - "No recurring payments"
       - "Complete ownership"
       - "Lifetime access"
-  monthly: 
+  monthly:
     price: 30
-    trial_days: 7
-    title: "Library Access"
+    title: "All-Access Monthly"
     subtitle: "per month"
     popular: true
-    value_proposition: "Get access to all our courses"
+    value_proposition: "Every course on Squared Academy, our new home"
     cancel_anytime: true
+    link: "https://squared.academy/membership"
     benefits:
-      - "✅ Access to this course only (videos, updates, downloads)"
-      - "✅ All PDFs/resources for this course"
-      - "✅ Standard community access"
-      - "✅ Certificate of completion"
-      - "✅ Lifetime access, no monthly fees"
-      - "✅ Course Q&A support from Daniel"
-      - "✅ Community code reviews (peer feedback)"
-      - "✅ Download all course materials"
-      - "✅ Entire course library access"
-      - "✅ All current and future courses"
-      - "✅ Enhanced instructor support (faster responses)"
-      - "✅ Monthly live Q&A sessions"
-      - "✅ Code review sessions with Daniel"
-      - "❌ Priority community support"
-      - "❌ Early access to new content"
-    library_link: "/courses"
+      - "✅ Every course on Squared Academy, including future releases"
+      - "✅ LearnQt courses are added there as each one moves over"
+      - "✅ The Discord community of 4,000+ developers"
+      - "✅ Priority support from the instructor"
+      - "✅ Cancel any time and keep access to the end of the period you paid for"
+    library_link: "https://squared.academy/courses"
     highlight_benefits:
-      - "Periodic live Q&A sessions"
-      - "Access to all courses"
-      - "Enhanced instructor support"
-  yearly: 
-    price: 330
-    original_price: 360
-    monthly_equivalent: 27.50
-    savings_amount: 30
-    title: "Library Annual"
-    subtitle: "per year (save $30)"
+      - "One price for every course there"
+      - "Future courses included"
+      - "Cancel any time"
+  yearly:
+    price: 300
+    title: "All-Access Yearly"
+    subtitle: "per year (two months free)"
     popular: false
-    value_proposition: "Access all courses at the best price"
+    value_proposition: "The same membership, two months cheaper than paying monthly"
+    link: "https://squared.academy/membership"
     benefits:
-      - "✅ Access to this course only (videos, updates, downloads)"
-      - "✅ All PDFs/resources for this course"
-      - "✅ Standard community access"
-      - "✅ Certificate of completion"
-      - "✅ Lifetime access, no monthly fees"
-      - "✅ Course Q&A support from Daniel"
-      - "✅ Community code reviews (peer feedback)"
-      - "✅ Download all course materials"
-      - "✅ Entire course library access"
-      - "✅ All current and future courses"
-      - "✅ Enhanced instructor support (faster responses)"
-      - "✅ Monthly live Q&A sessions"
-      - "✅ Code review sessions with Daniel"
-      - "✅ Priority community support"
-      - "✅ Early access to new content"
-    library_link: "/courses"
+      - "✅ Every course on Squared Academy, including future releases"
+      - "✅ LearnQt courses are added there as each one moves over"
+      - "✅ The Discord community of 4,000+ developers"
+      - "✅ Priority support from the instructor"
+      - "✅ Cancel any time and keep access to the end of the period you paid for"
+      - "✅ Prefer to pay once? Lifetime all-access is $600 on the same page"
+    library_link: "https://squared.academy/courses"
     highlight_benefits:
-      - "Best price per month"
-      - "Priority instructor access"
-      - "Exclusive early content"
+      - "Two months free"
+      - "Future courses included"
+      - "Lifetime option on the same page"
 
 # Money-back guarantee
 guarantee:
   days: 30
   title: "30-Day Money-Back Guarantee"
   subtitle: "Learn with confidence"
-  description: "If you're not completely satisfied with your progress after 30 days, get a full refund. No questions asked."
+  description: "Any single course can be refunded within 30 days of purchase, no questions asked. A membership can be cancelled at any time and runs to the end of the period you paid for."
   features:
-    - "Full 30-day trial period"
+    - "30 days on any single course"
     - "No questions asked policy"
     - "Email support for refunds"
-    - "Risk-free learning"
+    - "Cancel a membership any time"
 
 # Global testimonials (can be overridden per course)
 testimonials:
@@ -199,11 +174,11 @@ faq:
     - q: "Will this help me get a job?"
       a: "Absolutely! Our courses focus on real-world projects that showcase skills employers want. Many students have landed developer roles, freelance contracts, and promotions after completing our courses."
     - q: "What if I'm not satisfied?"
-      a: "We offer a 30-day money-back guarantee. If you're not completely satisfied with your progress, get a full refund - no questions asked."
+      a: "Any single course comes with a 30-day money-back guarantee. If you're not completely satisfied with your progress, get a full refund - no questions asked. A membership can be cancelled at any time and runs to the end of the period you paid for."
     - q: "Do courses get updated?"
       a: "Yes! All courses receive lifetime updates as technologies evolve. When Qt releases new versions or we add new content, you get it automatically at no extra cost."
     - q: "Can I download the course materials?"
-      a: "With the lifetime purchase, yes! You get downloadable videos, source code, PDFs, and resources. Monthly subscribers can access everything online."
+      a: "With the lifetime purchase, yes! You get downloadable videos, source code, PDFs, and resources. Members watch everything online at squared.academy."
     - q: "Are there prerequisites for specific courses?"
       a: "Each course lists its prerequisites in the description. Generally, C++ courses assume no prior C++ knowledge, and Python courses assume basic Python familiarity, but we provide refreshers."
 
@@ -387,10 +362,6 @@ courses:
       lifetime:
         price: 100
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6446364"
-      monthly:
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
-      yearly:
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
 
   - id: "qt-widgets-pyside6"
     title: "Desktop Apps with Qt Widgets and PySide6"
@@ -554,10 +525,6 @@ courses:
       lifetime:
         price: 100
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6459203"
-      monthly:
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
-      yearly:
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
 
   - id: "qt-qml-pro"
     title: "Qt QML From Beginner to Pro"
@@ -721,10 +688,6 @@ courses:
       lifetime:
         price: 100
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461494"
-      monthly:
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
-      yearly:
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
 
   - id: "qt-threads-ipc"
     title: "Multi-Threading and IPC with Qt C++"
@@ -866,10 +829,6 @@ courses:
       lifetime:
         price: 100
         teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6446367"
-      monthly:
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
-      yearly:
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
 
   - id: "qt-qml-deployment"
     title: "Qt QML: Deploy to Desktop, Mobile and Embedded"
@@ -1029,13 +988,9 @@ courses:
           By the end of the course you'll have a single Qt QML application that ships as an NSIS installer, a portable Windows ZIP, a Linux AppImage, a Debian .deb, a tar.gz portable bundle for Linux and macOS, a signed and notarized macOS DMG, a signed Android APK, an Android App Bundle, an iOS IPA, and a cross-compiled Raspberry Pi build running as a systemd service. All produced by the same CMakeLists.txt and the same GitHub Actions workflow.
 
     pricing_override:
+      squared_course: "https://squared.academy/courses/qt-qml-deploy-to-desktop-mobile-and-embedded"
       lifetime:
         price: 100
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6718228"
-      monthly:
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6447794"
-      yearly:
-        teachable_link: "https://learnqtguide.teachable.com/purchase?product_id=6461500"
 
 # UI Configuration
 ui:
@@ -1045,7 +1000,7 @@ ui:
   buy_now_button: "Get Instant Access"
   scroll_to_pricing: "Choose Your Plan Below"
   ready_to_join_title: "Ready to Join?"
-  ready_to_join_subtitle: "Level up with our comprehensive course library. Get this course individually, or unlock our complete collection including C++, Qt Widgets, QML, 3D graphics, embedded systems, and HMI development for automotive and industrial applications."
+  ready_to_join_subtitle: "Get this course individually, or join Squared Academy, the new home of LearnQt, for every course published there and each LearnQt course as it moves over."
   
   # CTA variants for different contexts
   cta_variants:

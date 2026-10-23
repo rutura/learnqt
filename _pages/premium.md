@@ -6,20 +6,21 @@ cover: /assets/img/learnqt-green.webp
 
 pro: # pro version package
  image: /assets/img/learnqt-premium.webp
- title: LearnQt Guide Membership
- description: Become a member. Get access to current and future courses
- note: By purchasing from LearnQtGuide, we get 80% of your payment. Other chunk goes to hosting company. This helps us produce more high quality courses.
+ title: Squared Academy Membership
+ description: Become a member on Squared Academy, the new home of LearnQt. Get every course published there, and each LearnQt course as it moves over.
+ note: Membership is now sold on squared.academy. LearnQt courses that have not moved yet can still be bought one at a time below.
  what_you_get: # what you get list
-  - A package of clear cut courses on Qt Development from basic C++ all the way to advanced tricks to interface between QML and C++
-  - Access to all our published courses
-  - When future courses are published, you'll get them too. No need to pay again
-  - Save money off the individual course prices for one low monthly price,yearly price, or one low lifetime price
+  - Every course on Squared Academy, including future releases
+  - LearnQt courses are added there as each one moves over
+  - The Discord community of 4,000+ developers
+  - Priority support from the instructor
+  - Cancel any time and keep access to the end of the period you paid for
  option: # option pro version
-   - Single Purchase. Get lifetime membership
-   - Monthly Subscription for a low fee
-   - Yearly Subscription for a low fee
+   - Monthly, $30 a month
+   - Yearly, $300 a year (two months free)
+   - Lifetime all-access, $600 once
  button: Become A Member
- couroses_link: https://learnqtguide.teachable.com/p/learn-qt-guide-online-membership
+ courses_link: https://squared.academy/membership
 
 standard: # standard version package
  image: /assets/img/learnqt-single-purchase.webp
