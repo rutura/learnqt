@@ -95,7 +95,7 @@
             <p class="mb-4" style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; font-size: 0.95rem;">{{ book.description }}</p>
             
             <!-- Features for Available Books -->
-            {% if book.status == "available" %}
+            {% if book.status == "available" or book.status == "free" %}
             <div class="mb-4" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
               <span class="feature-badge" style="background: rgba(243, 156, 18, 0.1); color: {{ status_color }}; padding: 0.3rem 0.7rem; border-radius: 10px; font-size: 0.8rem; border: 1px solid rgba(243, 156, 18, 0.2);">
                 <i class="fas fa-file-alt" style="margin-right: 0.3rem;"></i>{{ book.pages }} Pages
@@ -108,8 +108,12 @@
             
             <!-- Dynamic Button -->
             {% if book.status == "available" %}
-              <a href="{{ book.gumroad_link }}" class="btn btn-outline-success btn-lg w-100" style="border-radius: 15px; font-weight: 600; transition: all 0.3s ease;">
+              <a href="{{ book.link }}" class="btn btn-outline-success btn-lg w-100" style="border-radius: 15px; font-weight: 600; transition: all 0.3s ease;">
                 <i class="fas fa-book" style="margin-right: 0.5rem;"></i>{{ site.data.books.ui.buy_now_button }}
+              </a>
+            {% elsif book.status == "free" %}
+              <a href="{{ book.link }}" class="btn btn-outline-success btn-lg w-100" style="border-radius: 15px; font-weight: 600; transition: all 0.3s ease;">
+                <i class="fas fa-gift" style="margin-right: 0.5rem;"></i>{{ site.data.books.ui.free_button }}
               </a>
             {% elsif book.status == "coming_up" %}
               <a href="#newsletter" class="btn btn-outline-primary btn-lg w-100 notify-btn" style="border-radius: 15px; font-weight: 600; border-color: #1da1f2; color: #1da1f2; transition: all 0.3s ease;">

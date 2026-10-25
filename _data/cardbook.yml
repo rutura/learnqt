@@ -1,9 +1,18 @@
 cardlist:
+  - title: Three Dashboards, One Weekend
+    subtitle: Build the same professional dashboard three times, in Qt Widgets with C++, in PySide6 and in QML. Six themes, complete source code, cross-platform.
+    image: /assets/img/ebook/book-cover.png
+    button: GET IT FREE!
+    link: /ebook/
+    level: 'Beginner'
+    pages: '63 pages'
+    price: 'Free'
+
   - title: Qt6 QML For Beginners Book
     subtitle: Master the fundamentals of Qt6 QML development with this comprehensive 400+ page guide. Learn declarative UI programming from scratch with real-world examples and cross-platform development techniques.
     image: /assets/img/qt6_qml_for_beginners.png
     button: GET YOUR COPY!
-    link: https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners
+    link: https://squared.academy/books/qt6-qml-for-beginners
     rating: '4.8/5'
     level: 'Beginner'
     pages: '400+ pages'
@@ -13,28 +22,30 @@ cardlist:
     subtitle: Take your Qt6 QML skills to the next level with advanced C++ integration techniques. 350+ pages covering QML-C++ integration, performance optimization, and advanced patterns for production-ready applications.
     image: /assets/img/interfacing_cpp_to_qml_book_cover.png
     button: GET YOUR COPY!
-    link: https://dgakwaya.gumroad.com/l/qt6_qml_advanced
+    link: https://squared.academy/books/qt6-qml-advanced
     rating: '4.9/5'
     level: 'Intermediate to Advanced'
     pages: '350+ pages'
-    price: '$65'
+    price: '$49'
+
+  - title: Professional Desktop Apps with Qt and C++
+    subtitle: Build a complete System Monitor from scratch with real-time CPU graphs, memory tracking, a live process table and light/dark theming, running natively on Windows, Linux and macOS.
+    image: /assets/img/pro_desktop_apps_with_qt_cpp_book_cover.png
+    button: GET YOUR COPY!
+    link: https://squared.academy/books/professional-desktop-apps-with-qt-and-c-plus-plus
+    level: 'Intermediate'
+    pages: '226 pages'
+    price: '$33'
 
   - title: Qt For Python (PySide6) For Beginners
-    subtitle: Build cross-platform desktop applications with Python and PySide6. Learn Python GUI development fundamentals with practical examples. Coming Q1 2026 - Join our newsletter to get notified when available!
+    subtitle: Build cross-platform desktop applications with Python and PySide6. Learn Python GUI development fundamentals with practical examples. Join our newsletter to get notified when it is available!
     image: /assets/img/learnqtbook3.webp
     button: NOTIFY ME!
-    link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
-    status: 'Coming Soon - Q1 2026'
+    link: /#newsletter
+    status: 'Coming Soon'
     level: 'Beginner'
     pages: '300+ pages (expected)'
-
-  # - title: Free Qt Creator Booklet
-  #   subtitle: 33 Tips on Qt Creator to Speed Up your workflow
-  #   image: /assets/img/qt_creator_guide.webp
-  #   button: GET IT FOR FREE!
-  #   link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
 
 display_on_blog_list: 2
 
 display_on_blog_page: 2
-

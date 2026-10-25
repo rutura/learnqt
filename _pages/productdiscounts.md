@@ -1,62 +1,33 @@
 ---
 layout: promo
-title: "Save on Qt, C++ and QML Training from the Professionals"
-description: "Expert courses and books for building cross-platform apps on Windows, macOS, Linux, Mobile and Embedded. All at a discount."
+title: "Qt, C++ and QML Courses and Books"
+description: "Every LearnQt course and book in one list, sold on Squared Academy, the new home of LearnQt, for building cross-platform apps on Windows, macOS, Linux, Mobile and Embedded."
 cover: /assets/courses/image/LearnQt.png
 permalink: "/discounts"
 ---
 
-{% if site.coupon and site.coupon != '' %}
-<div class="coupon-bar">
-  <span>Use code</span>
-  <code class="coupon-code" id="coupon-code">{{ site.coupon }}</code>
-  <button class="copy-btn" onclick="copyCoupon()">Copy</button>
-  <span class="coupon-save">— save {{ site.offby }}% · valid until {{ site.couponvalidity }}</span>
-</div>
-{% endif %}
-
 <!-- VIDEO COURSES -->
 <section class="dl-section">
   <h2 class="dl-heading"><i class="fas fa-graduation-cap"></i> Video Courses</h2>
-  <p class="dl-subheading">Video on demand · Lifetime access · 30-day money-back guarantee</p>
+  <p class="dl-subheading">Video on demand · Lifetime access · Current offers are applied on Squared Academy</p>
 
   <ul class="dl-list">
     {% for course in site.data.courses.courses %}
-    {% assign c_full = course.pricing_override.lifetime.price %}
-    {% assign base_link = course.pricing_override.lifetime.teachable_link %}
-    {% assign discounted = false %}
-    {% if course.pricing_override.squared_course %}
-      {% assign buy_link = course.pricing_override.squared_course %}
-      {% assign c_price = c_full %}
-    {% elsif site.coupon and site.coupon != '' %}
-      {% assign discounted = true %}
-      {% assign buy_link = base_link | append: "&coupon_code=" | append: site.coupon %}
-      {% assign c_keep = 100 | minus: site.offby %}
-      {% assign c_price = c_full | times: c_keep | divided_by: 100 %}
-    {% else %}
-      {% assign buy_link = base_link %}
-      {% assign c_price = c_full %}
-    {% endif %}
     <li class="dl-item">
       <details class="dl-details">
         <summary class="dl-summary">
           <div class="dl-item-main">
             <span class="dl-title">{{ course.title }} <i class="fas fa-chevron-down dl-chevron"></i></span>
-            <span class="dl-meta">{{ course.level }} &middot; {{ course.duration }} &middot; <i class="fas fa-star dl-star"></i> {{ course.satisfaction_rating }}</span>
+            <span class="dl-meta">{{ course.level }} &middot; {{ course.duration }}</span>
           </div>
           <div class="dl-item-price">
-            {% if discounted %}
-              <span class="dl-price">${{ c_price }}</span>
-              <s class="dl-original">${{ c_full }}</s>
-            {% else %}
-              <span class="dl-price">${{ c_full }}</span>
-            {% endif %}
-            <a class="dl-btn dl-btn--course" href="{{ buy_link }}" target="_blank"><img src="/assets/blog/image/LearnQt.png" class="dl-btn-icon dl-btn-icon--outline"> Buy</a>
+            <span class="dl-price">${{ course.price }}</span>
+            <a class="dl-btn dl-btn--course" href="{% include course-link.html course=course %}" target="_blank"><img src="/assets/blog/image/LearnQt.png" class="dl-btn-icon dl-btn-icon--outline"> Buy</a>
           </div>
         </summary>
         <div class="dl-description">
           <p>{{ course.description }}</p>
-          <a class="dl-desc-link" href="/courses/{{ course.id }}/">Full course details →</a>
+          <a class="dl-desc-link" href="{% include course-link.html course=course %}">Full course details →</a>
         </div>
       </details>
     </li>
@@ -69,24 +40,11 @@ permalink: "/discounts"
 <!-- BOOKS -->
 <section class="dl-section dl-section--alt">
   <h2 class="dl-heading"><i class="fas fa-book"></i> Books</h2>
-  <p class="dl-subheading">Sold on Gumroad and Amazon · PDF, EPUB & Paperback · Instant download</p>
+  <p class="dl-subheading">PDF &amp; EPUB on Squared Academy · Paperback on Amazon</p>
 
   <ul class="dl-list">
     {% for book in site.data.books.books %}
-    {% if book.status == 'available' %}
-    {% assign base_book_link = book.gumroad_link %}
-    {% if site.coupon and site.coupon != '' %}
-      {% assign book_link = base_book_link | append: "/" | append: site.coupon %}
-    {% else %}
-      {% assign book_link = base_book_link %}
-    {% endif %}
-    {% assign b_full = book.price | remove: "$" | times: 1 %}
-    {% if site.coupon and site.coupon != '' and site.offby != '' %}
-      {% assign b_keep = 100 | minus: site.offby %}
-      {% assign b_price = b_full | times: b_keep | divided_by: 100 %}
-    {% else %}
-      {% assign b_price = b_full %}
-    {% endif %}
+    {% if book.status == 'available' or book.status == 'free' %}
     <li class="dl-item">
       <details class="dl-details">
         <summary class="dl-summary">
@@ -95,14 +53,14 @@ permalink: "/discounts"
             <span class="dl-meta">{{ book.level }} &middot; {{ book.pages }} pages{% if book.rating and book.rating != '' %} &middot; <i class="fas fa-star dl-star"></i> {{ book.rating }}/5{% endif %} &middot; {{ book.formats | join: ", " }}</span>
           </div>
           <div class="dl-item-price">
-            {% if site.coupon and site.coupon != '' %}
-              <span class="dl-price">${{ b_price }}</span>
-              <s class="dl-original">${{ b_full }}</s>
+            <span class="dl-price">{{ book.price }}</span>
+            {% if book.status == 'free' %}
+              <a class="dl-btn dl-btn--course" href="{{ book.link }}">Get it free</a>
             {% else %}
-              <span class="dl-price">${{ b_full }}</span>
+              <a class="dl-btn dl-btn--course" href="{{ book.link }}" target="_blank"><img src="/assets/blog/image/LearnQt.png" class="dl-btn-icon dl-btn-icon--outline"> PDF &amp; EPUB</a>
             {% endif %}
-            <a class="dl-btn dl-btn--gumroad" href="{{ book_link }}" target="_blank"><img src="/assets/img/gumroad-icon.svg" class="dl-btn-icon"> PDF &amp; EPUB</a>
-            {% if book.amazon_link and book.amazon_link != '' %}
+            {% if book.status == 'free' %}
+            {% elsif book.amazon_link and book.amazon_link != '' %}
               <a class="dl-btn dl-btn--amazon" href="{{ book.amazon_link }}" target="_blank"><i class="fab fa-amazon"></i> Paperback</a>
             {% else %}
               <span class="dl-btn dl-btn--disabled"><i class="fab fa-amazon"></i> Paperback</span>
@@ -132,54 +90,6 @@ permalink: "/discounts"
 .promo-header {
   padding-top: 120px !important;
   padding-bottom: 1rem !important;
-}
-
-/* ── Coupon bar ── */
-.coupon-bar {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  background: #f0fdf4;
-  border: 1.5px solid #15ba29;
-  border-radius: 12px;
-  padding: 0.75rem 1.25rem;
-  margin: 1.5rem 0 2rem;
-  font-size: 0.95rem;
-  box-shadow: 0 2px 12px rgba(21, 186, 41, 0.08);
-}
-
-.coupon-code {
-  background: #15ba29;
-  color: #fff;
-  padding: 0.25rem 0.75rem;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-family: 'Courier New', monospace;
-}
-
-.copy-btn {
-  background: none;
-  border: 1.5px solid #15ba29;
-  color: #15ba29;
-  padding: 0.2rem 0.65rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.copy-btn:hover {
-  background: #15ba29;
-  color: #fff;
-}
-
-.coupon-save {
-  color: #4a5568;
-  font-size: 0.9rem;
 }
 
 /* ── Sections ── */
@@ -396,20 +306,6 @@ details[open] .dl-chevron {
   border-radius: 4px;
 }
 
-/* Gumroad — digital books */
-.dl-btn--gumroad {
-  background: #fff;
-  color: #1a202c;
-  border: 1.5px solid #ff90e8;
-}
-
-.dl-btn--gumroad:hover {
-  background: #fff0fc;
-  color: #1a202c;
-  border-color: #f070d8;
-  transform: translateY(-1px);
-}
-
 /* Amazon — paperback */
 .dl-btn--amazon {
   background: #fff;
@@ -478,16 +374,10 @@ details[open] .dl-chevron {
     font-size: 0.8rem;
   }
 
-  .dl-btn--gumroad,
   .dl-btn--amazon,
   .dl-btn--disabled {
     padding: 0.3rem 0.65rem;
     font-size: 0.8rem;
-  }
-
-  .coupon-bar {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .dl-section--alt {
@@ -496,14 +386,3 @@ details[open] .dl-chevron {
   }
 }
 </style>
-
-<script>
-function copyCoupon() {
-  const code = document.getElementById('coupon-code').textContent.trim();
-  navigator.clipboard.writeText(code).then(function () {
-    const btn = document.querySelector('.copy-btn');
-    btn.textContent = 'Copied!';
-    setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
-  });
-}
-</script>

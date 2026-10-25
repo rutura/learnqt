@@ -53,17 +53,6 @@
                         </div>
                         
                         <div class="course-highlights">
-                            <div class="rating-section">
-                                <div class="rating-stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="rating-text">{{ course.satisfaction_rating }} ({{ course.completion_rate }} completion)</span>
-                            </div>
-                            
                             <div class="key-points">
                                 <div class="key-point">
                                     <i class="fas fa-check-circle text-success me-2"></i>
@@ -86,11 +75,11 @@
                                     <span class="price-label">Starting at</span>
                                     <span class="price-amount">${{ site.data.courses.pricing.monthly.price }}/mo</span>
                                 </div>
-                                <div class="price-note">or lifetime access</div>
+                                <div class="price-note">or ${{ course.price }} for this course</div>
                             </div>
-                            
+
                             <div class="course-actions">
-                                <a href="/courses/{{ course.id }}/" class="btn btn-primary btn-learn-more">
+                                <a href="{% include course-link.html course=course %}" class="btn btn-primary btn-learn-more">
                                     <i class="fas fa-info-circle me-2"></i>Learn More
                                 </a>
                             </div>

@@ -1,7 +1,6 @@
 ---
-layout: course-sales
-title: "Desktop Apps with Qt Widgets and C++ - Course"
-description: "Master professional desktop application development using Qt Widgets and modern C++. Build cross-platform applications that run seamlessly on Windows, macOS, and Linux."
-course_id: "qt-widgets-cpp"
+title: "Desktop Apps with Qt Widgets and C++"
 permalink: /courses/qt-widgets-cpp/
+redirect_to: https://squared.academy/courses/desktop-apps-with-qt-widgets-and-c-plus-plus
+sitemap: false
 ---
