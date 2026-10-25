@@ -46,7 +46,7 @@ And here is the Contact Manager with its search bar, filter panel, tag-based fil
 
 <img src="/assets/img/blog/qt6-qml-architecture/contact-manager-final.png" alt="Contact Manager - Final Application" style="max-width: 100%; height: auto; width: 700px;">
 
-Both of these are built step-by-step in my book [Qt 6 QML Advanced](https://dgakwaya.gumroad.com/l/qt6_qml_advanced). Every architectural decision I describe below comes directly from building them. If you want the full working code and walkthrough, that's where to find it.
+Both of these are built step-by-step in my book [Qt 6 QML Advanced](https://squared.academy/books/qt6-qml-advanced). Every architectural decision I describe below comes directly from building them. If you want the full working code and walkthrough, that's where to find it.
 
 ## The Three-File Start
 
@@ -265,6 +265,6 @@ The architecture doesn't fight you. It grows with you.
 
 Next time you create a new Qt Quick project and see those three familiar files staring back at you, resist the urge to start building everything in `Main.qml`. Take five minutes to create a `qml/` folder, a `src/` folder with some subdirectories, and a manager class with `QML_ELEMENT`. Your future self, the one debugging a feature at 11 PM on a Thursday, will thank you.
 
-If you want to see this architecture in action with full working code, step-by-step, I walk through building both the GitHub Repository Explorer and the Contact Manager from scratch in my book [Qt 6 QML Advanced](https://dgakwaya.gumroad.com/l/qt6_qml_advanced). Every pattern described here comes from a real project you build along the way. And if you're starting from the beginning with Qt 6 and QML, there's a [bundle that includes both the beginner and advanced books](https://dgakwaya.gumroad.com/l/qt6_qml_bundle) so you can go from zero to building apps like these at your own pace.
+If you want to see this architecture in action with full working code, step-by-step, I walk through building both the GitHub Repository Explorer and the Contact Manager from scratch in my book [Qt 6 QML Advanced](https://squared.academy/books/qt6-qml-advanced). Every pattern described here comes from a real project you build along the way. And if you're starting from the beginning with Qt 6 and QML, there's a [beginner book](https://squared.academy/books/qt6-qml-for-beginners) that leads straight into the advanced one, so you can go from zero to building apps like these at your own pace.
 
 Happy coding!

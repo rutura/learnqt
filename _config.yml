@@ -46,8 +46,8 @@ navigation:
 free_book: 'three-dashboards-one-weekend'
 
 # Course Links
-coupon: 'STARTSEP2026'
-couponvalidity: 'Sep 21, 2026'
+coupon: ''
+couponvalidity: ''
 price: '00.99'
 offby: '10'
 qtwidgetsintermediatecpp: 'https://www.udemy.com/course/qt-cpp-widgets-intermediate-events-painting_custom_widgets_drag_drop/?couponCode='
@@ -145,6 +145,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-redirect-from
 
 markdown: kramdown
 highlighter: rouge

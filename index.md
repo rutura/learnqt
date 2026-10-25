@@ -20,21 +20,21 @@ book1:
  description: Fluid and dynamic user interfaces for desktop, mobile and embedded. 
  content: With this book, you'll get a step by step guide to mastering Qt6 QML from the absolute beginning all the way to intermediate topics. You can get it in PDF, EPUB or paperback format.
  cover: /assets/img/qt6_qml_for_beginners.png
- link: https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners
+ link: https://squared.academy/books/qt6-qml-for-beginners
 
 book2: 
- title: Interfacing QML to C++ (Upcoming)
+ title: Qt6 QML Advanced
  description: Connect Your Fluid and Dynamic Qt Quick(QML) User Interface to a Powerful C++ Back End.
- content: This book is not available yet. It will cover the intricacies of how to communicate back and forth between your QML user interface and a C++ backend. Subscribe to our mail list so we can notify you when the book becomes available. You'll also get a free copy of our Qt Creator booklet.
+ content: This book covers the intricacies of how to communicate back and forth between your QML user interface and a C++ backend.
  cover: /assets/img/interfacing_cpp_to_qml_book_cover.png
- link: https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+ link: https://squared.academy/books/qt6-qml-advanced
 
 book3: 
  title: Qt For Python (PySide6) For Beginners
  description: Build Cross Platform Desktop Applications in Python. Run Them on Windows, Mac and Linux. Build once, Run Everywhere! 
  content: Python is now supported as an official language for Qt development. This book will teach you how to use python to build Widgets applications for desktop platforms like Windows, Linux and Mac. This book is not available yet. Subscribe to our mail list so we can notify you when the book becomes available. You'll also get a free copy of our Qt Creator booklet.
  cover: /assets/img/pyside6_beginners_book_cover.png
- link: /https://mailchi.mp/a7c4442d916d/qt-creator-shortcuts
+ link: /#newsletter
 
 why: 
  title: Why choose us

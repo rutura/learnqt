@@ -123,8 +123,8 @@
                                         Get Notified
                                     </a>
                                 {% else %}
-                                    <a href="{{ book.gumroad_link }}" target="_blank" class="btn btn-get-book">
-                                        <span>Get This Book</span>
+                                    <a href="{{ book.link }}"{% if book.status != "free" %} target="_blank"{% endif %} class="btn btn-get-book">
+                                        <span>{% if book.status == "free" %}Get It Free{% else %}Get This Book{% endif %}</span>
                                         <i class="fas fa-external-link-alt ms-2"></i>
                                     </a>
                                 {% endif %}

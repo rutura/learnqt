@@ -96,26 +96,18 @@
                                 <i class="fas fa-project-diagram"></i>
                                 <span>{{ course.projects }}</span>
                             </div>
-                            <div class="stat-item">
-                                <i class="fas fa-star"></i>
-                                <span>{{ course.satisfaction_rating }}</span>
-                            </div>
                         </div>
-                        
+
                         <!-- Course Highlights -->
                         <div class="course-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>{{ course.completion_rate }} completion rate</span>
-                            </div>
                             <div class="highlight-item">
                                 <i class="fas fa-tools"></i>
                                 <span>{{ course.tools }}</span>
                             </div>
                         </div>
-                        
+
                         <div class="course-actions mt-4">
-                            <a href="/courses/{{ course.id }}/" class="btn btn-course-primary w-100">
+                            <a href="{% include course-link.html course=course %}" class="btn btn-course-primary w-100">
                                 <span class="btn-text">{{ site.data.courses.ui.learn_more_button }}</span>
                                 <div class="btn-arrow">
                                     <i class="fas fa-arrow-right"></i>
@@ -170,7 +162,7 @@
                             <h3 class="plan-title">{{ site.data.courses.pricing.lifetime.title }}</h3>
                             <div class="price-display">
                                 <div class="current-price">
-                                    <span class="currency">$</span><span class="price">from $100</span>
+                                    <span class="currency">from $</span><span class="price">100</span>
                                 </div>
                             </div>
                             <p class="plan-subtitle">{{ site.data.courses.pricing.lifetime.subtitle }}</p>
@@ -219,7 +211,7 @@
                         
                         <div class="card-body">
                             <div class="plan-description mb-4">
-                                <p>Membership now lives on Squared Academy, the new home of LearnQt. It covers every course published there, and each LearnQt course joins as it moves over.</p>
+                                <p>Membership lives on Squared Academy, the new home of LearnQt, and covers every course published there.</p>
                             </div>
                             
                             <div class="highlight-benefits-section">
@@ -334,46 +326,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonials Section -->
-<section class="testimonials py-5 bg-light background-pattern">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-title mb-4">What Our Students Say</h2>
-                <p class="section-subtitle">Join thousands of developers who have transformed their careers with our Qt courses.</p>
-            </div>
-        </div>
-        
-        <div class="row g-4">
-            {% for testimonial in site.data.courses.testimonials.featured limit:3 %}
-            <div class="col-lg-4">
-                <div class="testimonial-card glass-card h-100">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <div class="avatar-img">
-                                {{ testimonial.name | slice: 0 }}
-                            </div>
-                        </div>
-                        <div class="testimonial-info">
-                            <div class="testimonial-name">{{ testimonial.name }}</div>
-                            <div class="testimonial-role">{{ testimonial.role }}</div>
-                        </div>
-                        <div class="testimonial-rating">
-                            {% for i in (1..testimonial.rating) %}
-                            <i class="fas fa-star text-warning"></i>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <p>"{{ testimonial.content }}"</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
         </div>
     </div>
 </section>
