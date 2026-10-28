@@ -21,7 +21,7 @@ bookcard: true
 
 Ever written `border.color`, `Layout.fillWidth`, or `NumberAnimation on x` without thinking twice about it? They feel like they're just part of the language, like QML somehow knows what you mean. It doesn't. Each one of these little nuggets is C++ machinery someone built on purpose, so that using it would feel effortless.
 
-In this post we crack a few of them open and look at how they work under the hood, on the C++ side, and what you actually gain by learning to build your own. The intent of the post is to give you a high level view of how these patterns work. I won't dive deep into the C++ code itself, because that would take dozens of pages. Instead, I'll sell you on the patterns and why you should care, and if you are interested, you can find a full walkthrough of this in Chapter 5 of [Qt6 QML Advanced](https://dgakwaya.gumroad.com/l/qt6_qml_advanced), which is also available on [Amazon](https://www.learnqt.guide/discounts).
+In this post we crack a few of them open and look at how they work under the hood, on the C++ side, and what you actually gain by learning to build your own. The intent of the post is to give you a high level view of how these patterns work. I won't dive deep into the C++ code itself, because that would take dozens of pages. Instead, I'll sell you on the patterns and why you should care, and if you are interested, you can find a full walkthrough of this in Chapter 5 of [Qt6 QML Advanced](https://squared.academy/books/qt6-qml-advanced), which is also available on [Amazon](https://www.amazon.com/dp/B0H767D1X2).
 
 The project we build is called QmlAdvCore, and it is structured as a library of reusable QML types, with a demo app that consumes it and a test suite that exercises it directly. We start by setting up the project and it is made up of two sibling projects: `QmlAdvCore` and `QmlAdvCoreDemo`. The library is a CMake project that builds a shared library, and the demo is a CMake project that links against it. We also add a test suite to the library project, so we can guard against regressions as we build each new type. The honest truth is that I wanted an excuse to show you how to use QTest though :-)
 
@@ -198,7 +198,7 @@ None of these patterns are exotic. They are the same building blocks the Qt team
 
 ## Want the Full Walkthrough?
 
-This post covers the shape of each pattern, but there's a lot more to each one: the actual C++ code, the tests that pin down the behavior, and the full packaging and publishing pipeline. All of it is in Chapter 5 of [Qt6 QML Advanced](https://dgakwaya.gumroad.com/l/qt6_qml_advanced), where we build every one of these types from an empty project to a published library, step by step.
+This post covers the shape of each pattern, but there's a lot more to each one: the actual C++ code, the tests that pin down the behavior, and the full packaging and publishing pipeline. All of it is in Chapter 5 of [Qt6 QML Advanced](https://squared.academy/books/qt6-qml-advanced), where we build every one of these types from an empty project to a published library, step by step.
 
 If you'd like a discount on the book or any of the courses, check out [the discounts page](https://www.learnqt.guide/discounts).
 

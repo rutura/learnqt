@@ -172,20 +172,23 @@ permalink: /qt6-qml-books
                 <h1 class="display-4 fw-bold mb-4 responsive-title">Learn to Build Professional Qt6 QML Apps Without the Guesswork</h1>
                 <p class="lead mb-4 fs-5 responsive-lead">Join over <strong>3,000 developers</strong> mastering Qt6 QML through a <strong>step-by-step system</strong> that delivers <strong>real results</strong>.</p>
                 
-                <!-- Bundle Offer Highlight -->
+                <!-- Book Pair Highlight -->
                 <div class="alert alert-warning d-inline-block mb-4 px-4 py-3 shadow">
-                    <h3 class="h5 mb-2 text-dark">🎁 The Qt6 QML Book Bundle</h3>
+                    <h3 class="h5 mb-2 text-dark">🎁 The Qt6 QML Books</h3>
                     <p class="mb-2 text-dark"><strong>🚀 Master QML from Beginner to Pro with Two Powerful Books</strong></p>
-                    <p class="mb-1 text-dark">Buy individually: <span class="text-decoration-line-through">$110</span> — Regular bundle: <strong>$89</strong></p>
-                    <p class="mb-1 text-danger fw-bold">🎉 First 50 buyers get it for only $69</p>
-                    <p class="mb-0 text-dark small">After first 50 sales, price returns to $89 (still a big saving!)</p>
+                    <p class="mb-0 text-dark">Both on Squared Academy, the new home of LearnQt: Beginners <strong>$45</strong>, Advanced <strong>$49</strong></p>
                 </div>
 
                 <!-- Main CTA -->
                 <div class="mb-5">
-                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_bundle/cf06ya7" class="btn btn-warning btn-lg px-4 px-md-5 py-3 fs-6 fs-md-5 fw-bold shadow-lg text-dark responsive-cta">
-                        � Claim Special Offer - $69 (Limited Time)
-                    </a>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a href="https://squared.academy/books/qt6-qml-for-beginners" class="btn btn-warning btn-lg px-4 py-3 fs-6 fw-bold shadow-lg text-dark responsive-cta">
+                            📘 Qt6 QML For Beginners - $45
+                        </a>
+                        <a href="https://squared.academy/books/qt6-qml-advanced" class="btn btn-warning btn-lg px-4 py-3 fs-6 fw-bold shadow-lg text-dark responsive-cta">
+                            📗 Qt6 QML Advanced - $49
+                        </a>
+                    </div>
                     <div class="mt-2">
                         <small class="text-warning">🔒 Secure Checkout • Instant Access • Lifetime Updates</small>
                     </div>
@@ -298,7 +301,7 @@ permalink: /qt6-qml-books
                 
                 <div class="d-flex align-items-center mb-3">
                     <span class="h6 me-2">Individual Price:</span>
-                    <span class="h4 text-success">$65 (Early Access)</span>
+                    <span class="h4 text-success">$49</span>
                 </div>
             </div>
         </div>
@@ -314,19 +317,16 @@ permalink: /qt6-qml-books
                             </div>
                             <div class="col-md-8">
                                 <div class="p-4 p-md-5 text-center" style="background: linear-gradient(135deg, #41cd52 0%, #217a2d 100%);">
-                                    <h2 class="text-white mb-4 responsive-bundle-title">🔥 Get the Complete Qt6 QML Book Bundle</h2>
+                                    <h2 class="text-white mb-4 responsive-bundle-title">🔥 Get Both Qt6 QML Books</h2>
                                     
                                     <div class="mb-4">
-                                        <p class="text-white mb-2">💰 <strong>Save 19% — $89 instead of $110 individually</strong></p>
-                                        <div class="display-5 display-4-md text-warning fw-bold mb-2">$69</div>
-                                        <span class="badge bg-danger fs-6 mb-2">🎉 First 50 buyers only!</span>
-                                        <p class="text-white-50 small">After first 50 sales, price returns to $89 (still a big saving!)</p>
+                                        <p class="text-white mb-2">💰 <strong>Beginners $45 · Advanced $49</strong>, each on Squared Academy</p>
                                     </div>
 
                                     <div class="text-white mb-4">
                                         <h4 class="mb-3">✨ What You Get</h4>
                                         <ul class="list-unstyled text-start">
-                                            <li class="mb-2">📚 <strong>Both books</strong> (Beginner + Advanced)</li>
+                                            <li class="mb-2">📚 <strong>Two books</strong> (Beginner + Advanced)</li>
                                             <li class="mb-2">📄 <strong>PDF and EPUB formats</strong>, with lifetime updates</li>
                                             <li class="mb-2">📖 <strong>650+ pages</strong> of premium content</li>
                                             <li class="mb-2">🛠️ <strong>15+ deployable projects</strong></li>
@@ -335,10 +335,16 @@ permalink: /qt6-qml-books
                                         </ul>
                                     </div>
                                     
-                                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_bundle/cf06ya7" class="btn btn-light btn-lg px-4 px-md-5 py-3 fs-6 fs-5-md fw-bold shadow responsive-bundle-btn">
-                                        <span class="d-block">🔥 Grab the Bundle for $69</span>
-                                        <small class="d-block text-muted">🔒 Secure Checkout • Instant Access • Lifetime Updates</small>
-                                    </a>
+                                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                                        <a href="https://squared.academy/books/qt6-qml-for-beginners" class="btn btn-light btn-lg px-4 py-3 fs-6 fw-bold shadow responsive-bundle-btn">
+                                            <span class="d-block">📘 Beginners - $45</span>
+                                            <small class="d-block text-muted">On Squared Academy</small>
+                                        </a>
+                                        <a href="https://squared.academy/books/qt6-qml-advanced" class="btn btn-light btn-lg px-4 py-3 fs-6 fw-bold shadow responsive-bundle-btn">
+                                            <span class="d-block">📗 Advanced - $49</span>
+                                            <small class="d-block text-muted">On Squared Academy</small>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -488,22 +494,19 @@ permalink: /qt6-qml-books
 <!-- Final CTA Section -->
 <section class="section bg-dark text-white">
     <div class="container text-center">
-        <h2 class="mb-4 responsive-book-title">🔥 Get the Complete Qt6 QML Book Bundle</h2>
+        <h2 class="mb-4 responsive-book-title">🔥 Get Both Qt6 QML Books</h2>
         <p class="lead mb-4 responsive-lead">Join thousands of successful developers who've mastered Qt6 QML with our system.</p>
-        
-        <div class="mb-4">
-            <div class="display-5 text-warning fw-bold mb-2">$69</div>
-            <p class="text-warning">💰 Save 19% — $89 instead of $110 individually</p>
-            <p class="text-danger fw-bold">🎉 First 50 buyers get the bundle for $69</p>
-            <p class="text-white-50 small">After first 50 sales, price returns to $89 (still a big saving!)</p>
-        </div>
         
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                    <a href="https://dgakwaya.gumroad.com/l/qt6_qml_bundle/cf06ya7" class="btn btn-warning btn-lg px-4 py-3 responsive-final-cta text-dark fw-bold">
-                        <span class="d-block">🔥 Grab it Now</span>
-                        <small class="d-block">First 50 buyers only!</small>
+                    <a href="https://squared.academy/books/qt6-qml-for-beginners" class="btn btn-warning btn-lg px-4 py-3 responsive-final-cta text-dark fw-bold">
+                        <span class="d-block">📘 Qt6 QML For Beginners</span>
+                        <small class="d-block">$45 on Squared Academy</small>
+                    </a>
+                    <a href="https://squared.academy/books/qt6-qml-advanced" class="btn btn-warning btn-lg px-4 py-3 responsive-final-cta text-dark fw-bold">
+                        <span class="d-block">📗 Qt6 QML Advanced</span>
+                        <small class="d-block">$49 on Squared Academy</small>
                     </a>
                 </div>
                 <p class="mt-3 text-muted">

@@ -8,7 +8,7 @@
 <div class="col-md-10 mx-auto">
 {% include member/pro.html %}
 {% include member/standard.html %}
-{% include member/udemy.html %}
+{% if page.udemy %}{% include member/udemy.html %}{% endif %}
 </div>
 </div>
 </div>

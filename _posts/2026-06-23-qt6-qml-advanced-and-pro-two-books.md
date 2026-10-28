@@ -18,7 +18,7 @@ coursescard: true
 bookcard: true
 ---
 
-Quick update on the [Qt6 QML Advanced](https://dgakwaya.gumroad.com/l/qt6_qml_advanced) book. It got too big for one book, so I'm splitting it into two.
+Quick update on the [Qt6 QML Advanced](https://squared.academy/books/qt6-qml-advanced) book. It got too big for one book, so I'm splitting it into two.
 
 ## Why
 
@@ -36,7 +36,7 @@ Two books, each a sensible size to print and read, each with one clear focus.
 
 ## The two books
 
-**[Qt6 QML Advanced](https://dgakwaya.gumroad.com/l/qt6_qml_advanced)** keeps its name. Five chapters, around 650 pages:
+**[Qt6 QML Advanced](https://squared.academy/books/qt6-qml-advanced)** keeps its name. Five chapters, around 650 pages:
 
 - QML and C++ integration fundamentals
 - A REST API client with custom types against the real GitHub API
@@ -69,11 +69,11 @@ From here on, both books are in two places:
 
 Same content either way. Pick the format you like, or grab both.
 
-Qt6 QML Advanced is already up on Gumroad here: [dgakwaya.gumroad.com/l/qt6_qml_advanced](https://dgakwaya.gumroad.com/l/qt6_qml_advanced). And if you haven't seen the beginner book yet, it's the natural lead-in to all of this, available in [paperback on Amazon](https://www.amazon.com/dp/B0CPFLPCRK) and [digital on Gumroad](https://dgakwaya.gumroad.com/l/qt6_qml_for_beginners).
+Qt6 QML Advanced is up on Squared Academy here: [squared.academy/books/qt6-qml-advanced](https://squared.academy/books/qt6-qml-advanced). And if you haven't seen the beginner book yet, it's the natural lead-in to all of this, available in [paperback on Amazon](https://www.amazon.com/dp/B0CPFLPCRK) and [digital on Squared Academy](https://squared.academy/books/qt6-qml-for-beginners).
 
 ## If you bought early access
 
-If you bought [Qt6 QML Advanced](https://dgakwaya.gumroad.com/l/qt6_qml_advanced) during early access, you're not losing anything in the split. You get both books, Advanced and Pro.
+If you bought [Qt6 QML Advanced](https://squared.academy/books/qt6-qml-advanced) during early access, you're not losing anything in the split. You get both books, Advanced and Pro.
 
 The deal was lifetime access to new chapters, and the book turning into two books doesn't change that. The second half isn't a separate purchase for you. Nothing to do, nothing to buy again. When Pro chapters land, they land for you too.
 

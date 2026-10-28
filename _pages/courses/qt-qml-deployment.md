@@ -1,7 +1,6 @@
 ---
-layout: course-sales
-title: "Qt QML Cross-Platform Deployment - Course"
-description: "Take one Qt QML application and ship it to every platform Qt supports — Windows, Linux, macOS, Android, iOS, and embedded ARM — with installers, signed bundles, and a GitHub Actions pipeline."
-course_id: "qt-qml-deployment"
+title: "Qt QML: Deploy to Desktop, Mobile and Embedded"
 permalink: /courses/qt-qml-deployment/
+redirect_to: https://squared.academy/courses/qt-qml-deploy-to-desktop-mobile-and-embedded
+sitemap: false
 ---
