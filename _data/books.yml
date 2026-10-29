@@ -46,7 +46,7 @@ status_config:
 # All available books. "link" is where the book's button goes: its Squared Academy page,
 # or for the free book the sign-up page that delivers it.
 books:
-  - id: "three-dashboards-one-weekend"
+  - id: "three-dashboards-in-one-weekend"
     title: "Three Dashboards, One Weekend"
     short_title: "Three Dashboards"
     description: "Build the same professional dashboard three times, in Qt Widgets with C++, in PySide6 and in QML. Six themes, complete source code, and it runs on Windows, macOS and Linux."
